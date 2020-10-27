@@ -53,7 +53,7 @@ Google Maps API Key `AIzaSyBmTAYFwzl41BtNCEShQ2OzTbpHMSnxAL4`
 
 ## CSS Tricks
 
-https://css-tricks.com/snippets/css/complete-guide-grid/
+https://css-tricks.com/snippets/css/complete-guide-grid/ <br>
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
