@@ -18,8 +18,9 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 `WP Sync DB` Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
 `Advanced Custom Fields PRO` <br>
 `Favorites` [Git](https://github.com/kylephillips/favorites) <br>
-`PWA for WP` *later* [Git](https://github.com/ahmedkaludi/pwa-for-wp) <br>
-`Disable Rest API` *later* <br>
+#### Later
+`PWA for WP` [Git](https://github.com/ahmedkaludi/pwa-for-wp) <br>
+`Disable Rest API` <br>
 
 #### Optional (Development)
 `Custom Post Type UI`
