@@ -125,7 +125,7 @@ html {
 }
 
 body {
-	background: #f5efe0;
+	background: #F7F7F7;
 	box-sizing: border-box;
 	color: #000;
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
@@ -137,7 +137,7 @@ body {
 @supports ( font-variation-settings: normal ) {
 
 	body {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 }
 
@@ -200,7 +200,7 @@ path {
 	color: #21759b;
 	display: block;
 	font-size: 0.875rem;
-	font-weight: 700;
+	font-weight: 500;
 	height: auto;
 	left: 5px;
 	line-height: normal;
@@ -226,7 +226,7 @@ path {
 	right: 6px;
 	top: 7px;
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 500;
 	text-decoration: none;
 	line-height: normal;
 	padding: 15px 23px 14px;
@@ -238,10 +238,10 @@ path {
 /* Fonts ------------------------------------- */
 
 /*
- * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * Chrome renders extra-wide &nbsp; characters for the OfficinaSansITCStd-Book font.
  * This results in a jumping cursor when typing in both the classic editor and
  * block editor. The following font-face override fixes the issue by manually
- * inserting a custom font that includes just a Hoefler Text space replacement
+ * inserting a custom font that includes just a OfficinaSansITCStd-Book space replacement
  * for that character instead.
  */
 @font-face {
@@ -250,15 +250,15 @@ path {
 }
 
 /* ----------------------------------------------
-Inter variable font. Usage:
+OfficinaSansITCStd-Bookiable font. Usage:
 
 @supports (font-variation-settings: normal) {
-	html { font-family: 'Inter var', sans-serif; }
+	html { font-family: 'OfficinaSansITCStd-Book', sans-serif; }
 }
 ---------------------------------------------- */
 
 @font-face {
-	font-family: "Inter var";
+	font-family: "OfficinaSansITCStd-Book";
 	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
 	font-style: normal;
 	font-display: swap;
@@ -266,7 +266,7 @@ Inter variable font. Usage:
 }
 
 @font-face {
-	font-family: "Inter var";
+	font-family: "OfficinaSansITCStd-Book";
 	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
 	font-style: italic;
 	font-display: swap;
@@ -304,7 +304,7 @@ h6,
 .faux-heading {
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.0415625em;
 	line-height: 1.25;
 	margin: 3.5rem 0 2rem;
@@ -313,7 +313,7 @@ h6,
 h1,
 .heading-size-1 {
 	font-size: 3.6rem;
-	font-weight: 800;
+	font-weight: 500;
 	line-height: 1.138888889;
 }
 
@@ -375,7 +375,7 @@ small {
 
 b,
 strong {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 ins {
@@ -455,7 +455,7 @@ hr.styled-separator::after {
 }
 
 a {
-	color: #cd2653;
+	color: #0091FF;
 	text-decoration: underline;
 }
 
@@ -523,7 +523,7 @@ dd {
 }
 
 dt {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 dt + dd {
@@ -538,7 +538,7 @@ dd + dt {
 /* Quotes ------------------------------------ */
 
 blockquote {
-	border-color: #cd2653;
+	border-color: #0091FF;
 	border-style: solid;
 	border-width: 0 0 0 0.2rem;
 	color: inherit;
@@ -551,7 +551,7 @@ cite {
 	color: #6d6d6d;
 	font-size: 1.4rem;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 1.25;
 }
 
@@ -674,21 +674,21 @@ fieldset {
 
 legend {
 	font-size: 0.85em;
-	font-weight: 700;
+	font-weight: 500;
 	padding: 0 1rem;
 }
 
 label {
 	display: block;
 	font-size: 1.6rem;
-	font-weight: 400;
+	font-weight: 500;
 	margin: 0 0 0.5rem 0;
 }
 
 label.inline,
 input[type="checkbox"] + label {
 	display: inline;
-	font-weight: 400;
+	font-weight: 500;
 	margin-right: 0.5rem;
 }
 
@@ -742,7 +742,7 @@ button,
 	.faux-button.more-link,
 	.wp-block-button__link,
 	.wp-block-file__button {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 }
 
@@ -829,14 +829,14 @@ input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: #cd2653;
+	background: #0091FF;
 	border: none;
 	border-radius: 0;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.5rem;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: 0.0333em;
 	line-height: 1.25;
 	margin: 0;
@@ -923,7 +923,7 @@ td {
 
 caption {
 	background: #dcd7ca;
-	font-weight: 600;
+	font-weight: 500;
 	padding: 0.5em;
 	text-align: center;
 }
@@ -934,7 +934,7 @@ thead {
 }
 
 th {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 
@@ -1034,7 +1034,7 @@ button.toggle {
 	box-shadow: none;
 	border-radius: 0;
 	font-size: inherit;
-	font-weight: 400;
+	font-weight: 500;
 	letter-spacing: inherit;
 	padding: 0;
 	text-transform: none;
@@ -1085,7 +1085,7 @@ button.toggle {
 .color-accent,
 .color-accent-hover:focus,
 .color-accent-hover:hover {
-	color: #cd2653;
+	color: #0091FF;
 }
 
 /* BACKGROUND COLOR */
@@ -1093,7 +1093,7 @@ button.toggle {
 .bg-accent,
 .bg-accent-hover:focus,
 .bg-accent-hover:hover {
-	background-color: #cd2653;
+	background-color: #0091FF;
 }
 
 /* BORDER COLOR */
@@ -1101,14 +1101,14 @@ button.toggle {
 .border-color-accent,
 .border-color-accent-hover:focus,
 .border-color-accent-hover:hover {
-	border-color: #cd2653;
+	border-color: #0091FF;
 }
 
 /* FILL COLOR */
 
 .fill-children-accent,
 .fill-children-accent * {
-	fill: #cd2653;
+	fill: #0091FF;
 }
 
 .fill-children-current-color,
@@ -1298,7 +1298,7 @@ ul.social-icons li {
 
 .social-icons a {
 	align-items: center;
-	background: #cd2653;
+	background: #0091FF;
 	border-radius: 50%;
 	color: #fff;
 	display: flex;
@@ -1380,7 +1380,7 @@ body:not(.enable-search-modal) .header-titles-wrapper {
 
 .site-title {
 	font-size: 2.1rem;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 1;
 }
 
@@ -1505,7 +1505,7 @@ body:not(.enable-search-modal) .site-logo img {
 .toggle-inner .toggle-text {
 	color: #6d6d6d;
 	font-size: 1rem;
-	font-weight: 600;
+	font-weight: 500;
 	position: absolute;
 	top: calc(100% + 0.5rem);
 	width: auto;
@@ -1886,7 +1886,7 @@ button.close-nav-toggle .toggle-text {
 .modal-menu > li > a,
 .modal-menu > li > .ancestor-wrapper > a {
 	font-size: 2rem;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.0375em;
 }
 
@@ -2353,7 +2353,7 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 .archive-title {
 	font-size: 2.4rem;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.026666667em;
 	margin: 0;
 }
@@ -2405,7 +2405,7 @@ body:not(.singular) main > article:first-of-type {
 .entry-categories a {
 	border-bottom: 0.15rem solid currentColor;
 	font-size: 1.4rem;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: 0.036666667em;
 	margin: 0.5rem 1rem 0 0;
 	text-decoration: none;
@@ -2593,7 +2593,7 @@ h2.entry-title {
 	border-radius: 0.4rem;
 	display: flex;
 	font-size: 0.9em;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 1;
 	margin: 3em auto 0 auto;
 	padding: 0;
@@ -2658,7 +2658,7 @@ h2.entry-title {
 .author-bio .author-link {
 	display: block;
 	font-size: 1.6rem;
-	font-weight: 600;
+	font-weight: 500;
 	margin-top: 1em;
 	text-decoration: none;
 }
@@ -2692,7 +2692,7 @@ h2.entry-title {
 .pagination-single a {
 	align-items: baseline;
 	display: flex;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: -0.0275em;
 	text-decoration: none;
 	flex: 1;
@@ -2727,11 +2727,11 @@ h2.entry-title {
 /* CUSTOM COLORS */
 
 :root .has-accent-color {
-	color: #cd2653;
+	color: #0091FF;
 }
 
 :root .has-accent-background-color {
-	background-color: #cd2653;
+	background-color: #0091FF;
 	color: #fff;
 }
 
@@ -2741,7 +2741,7 @@ h2.entry-title {
 
 :root .has-primary-background-color {
 	background-color: #000;
-	color: #f5efe0;
+	color: #F7F7F7;
 }
 
 :root .has-secondary-color {
@@ -2763,11 +2763,11 @@ h2.entry-title {
 }
 
 :root .has-background-color {
-	color: #f5efe0;
+	color: #F7F7F7;
 }
 
 :root .has-background-background-color {
-	background-color: #f5efe0;
+	background-color: #F7F7F7;
 	color: #000;
 }
 
@@ -2787,10 +2787,10 @@ h2.entry-title {
 }
 
 .has-drop-cap:not(:focus)::first-letter {
-	color: #cd2653;
+	color: #0091FF;
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 5.1em;
-	font-weight: 800;
+	font-weight: 500;
 	margin: 0.05em 0 0 0.1em;
 }
 
@@ -2828,7 +2828,7 @@ h2.entry-title {
 	.entry-content .wp-block-latest-comments,
 	.entry-content .wp-block-cover-image p,
 	.entry-content .wp-block-pullquote {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 }
 
@@ -2951,7 +2951,7 @@ h2.entry-title {
 .wp-block-categories a,
 .wp-block-latest-posts a,
 .wp-block-latest-comments a {
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -2968,7 +2968,7 @@ h2.entry-title {
 
 .wp-block-latest-posts a,
 .wp-block-latest-comments__comment-meta {
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.025em;
 	line-height: 1.25;
 }
@@ -2977,7 +2977,7 @@ h2.entry-title {
 .wp-block-latest-posts__post-date {
 	color: #6d6d6d;
 	font-size: 0.7em;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: normal;
 	margin-top: 0.15em;
 }
@@ -3006,7 +3006,7 @@ h2.entry-title {
 }
 
 .wp-block-button.is-style-outline {
-	color: #cd2653;
+	color: #0091FF;
 }
 
 .is-style-outline .wp-block-button__link:not(.has-text-color) {
@@ -3072,7 +3072,7 @@ h2.entry-title {
 }
 
 .wp-block-file a:not(.wp-block-file__button) {
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -3192,7 +3192,7 @@ figure.wp-block-gallery.alignfull {
 .wp-block-pullquote::before {
 	background: #fff;
 	border-radius: 50%;
-	color: #cd2653;
+	color: #0091FF;
 	content: "”";
 	display: block;
 	font-size: 6.2rem;
@@ -3218,7 +3218,7 @@ figure.wp-block-gallery.alignfull {
 .wp-block-pullquote blockquote p {
 	font-family: inherit;
 	font-size: 2.8rem;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1.178571429;
 	letter-spacing: -0.041785714em;
 	max-width: 100%;
@@ -3312,7 +3312,7 @@ hr.wp-block-separator {
 	background: none;
 	color: inherit;
 	font-size: 3.2rem;
-	font-weight: 700;
+	font-weight: 500;
 	height: auto;
 	letter-spacing: 1em;
 	padding-right: 1em;
@@ -3378,7 +3378,7 @@ figure.wp-block-table.is-style-stripes {
 	font-family: inherit;
 	font-size: 2.4rem;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.02em;
 	line-height: 1.285;
 }
@@ -3516,7 +3516,7 @@ figure.wp-block-table.is-style-stripes {
 /* Font Families ----------------------------- */
 
 .entry-content {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: NonBreakingSpaceOverride, "OfficinaSansITCStd-Book", Garamond, "Times New Roman", serif;
 	letter-spacing: normal;
 }
 
@@ -3549,7 +3549,7 @@ figure.wp-block-table.is-style-stripes {
 	.entry-content address,
 	.entry-content .wp-caption-text,
 	.entry-content .wp-block-file {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 }
 
@@ -3724,7 +3724,7 @@ div.comment:first-of-type {
 
 .comment-author {
 	font-size: 1.8rem;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.027777778em;
 }
 
@@ -3787,7 +3787,7 @@ div.comment:first-of-type {
 	display: flex;
 	flex-wrap: wrap;
 	font-size: 1.2rem;
-	font-weight: 600;
+	font-weight: 500;
 	justify-content: flex-start;
 	letter-spacing: 0.030833333em;
 	line-height: 1;
@@ -3800,7 +3800,7 @@ div.comment:first-of-type {
 }
 
 .comment-reply-link {
-	background-color: #cd2653;
+	background-color: #0091FF;
 	color: #fff;
 	display: block;
 	padding: 0.7rem;
@@ -3960,7 +3960,7 @@ div.comment:first-of-type {
 .comment-reply-title small {
 	display: block;
 	font-size: 1.6rem;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: -0.0277em;
 	margin: 0.5rem 0 0 0;
 	white-space: nowrap;
@@ -3987,7 +3987,7 @@ div.comment:first-of-type {
 	display: flex;
 	flex-wrap: wrap;
 	font-size: 1.8rem;
-	font-weight: 600;
+	font-weight: 500;
 	margin: -1.5rem -2.5rem 0 0;
 	width: calc(100% + 2.5rem);
 }
@@ -4111,7 +4111,7 @@ div.comment:first-of-type {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: NonBreakingSpaceOverride, "OfficinaSansITCStd-Book", Garamond, "Times New Roman", serif;
 	letter-spacing: normal;
 }
 
@@ -4126,7 +4126,7 @@ div.comment:first-of-type {
 	.widget-content cite,
 	.widget-content figcaption,
 	.widget-content .wp-caption-text {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 }
 
@@ -4166,7 +4166,7 @@ div.comment:first-of-type {
 .widget_pages a,
 .widget_meta a,
 .widget_nav_menu a {
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -4252,7 +4252,7 @@ div.comment:first-of-type {
 /* Widget: Recent Comments ------------------- */
 
 .widget_recent_comments li {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .widget_recent_comments a {
@@ -4267,7 +4267,7 @@ div.comment:first-of-type {
 /* Widget: Recent Entries -------------------- */
 
 .widget_recent_entries a {
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -4283,7 +4283,7 @@ div.comment:first-of-type {
 }
 
 .widget_rss .rsswidget {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .widget_rss a {
@@ -4312,7 +4312,7 @@ div.comment:first-of-type {
 /* Widget: Tag Cloud ------------------------- */
 
 .widget_tag_cloud a {
-	font-weight: 700;
+	font-weight: 500;
 	margin-left: 0.5rem;
 	text-decoration: none;
 	white-space: nowrap;
@@ -4369,7 +4369,7 @@ div.comment:first-of-type {
 
 .footer-menu {
 	font-size: 1.8rem;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.0277em;
 }
 
@@ -4415,7 +4415,7 @@ ul.footer-social li {
 }
 
 .footer-social a {
-	background-color: #cd2653;
+	background-color: #0091FF;
 	height: 3.6rem;
 	width: 3.6rem;
 }
@@ -4470,7 +4470,7 @@ a.to-the-top > * {
 }
 
 .footer-copyright {
-	font-weight: 600;
+	font-weight: 500;
 	margin: 0;
 }
 
@@ -4835,7 +4835,7 @@ a.to-the-top > * {
 
 	.site-title {
 		font-size: 2.4rem;
-		font-weight: 700;
+		font-weight: 500;
 	}
 
 	.site-description {
@@ -5472,7 +5472,7 @@ a.to-the-top > * {
 
 	.pagination .nav-links {
 		font-size: 2.4rem;
-		font-weight: 700;
+		font-weight: 500;
 		margin: -2.5rem -4rem 0 0;
 	}
 
@@ -5565,7 +5565,7 @@ a.to-the-top > * {
 	}
 
 	.footer-copyright {
-		font-weight: 700;
+		font-weight: 500;
 	}
 
 	.powered-by-wordpress {

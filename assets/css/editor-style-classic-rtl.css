@@ -7,10 +7,10 @@
 /* Fonts ------------------------------------- */
 
 /*
- * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * Chrome renders extra-wide &nbsp; characters for the OfficinaSansITCStd-Book font.
  * This results in a jumping cursor when typing in both the classic editor and
  * block editor. The following font-face override fixes the issue by manually
- * inserting a custom font that includes just a Hoefler Text space replacement
+ * inserting a custom font that includes just a OfficinaSansITCStd-Book space replacement
  * for that character instead.
  */
 @font-face {
@@ -19,27 +19,21 @@
 }
 
 /* ----------------------------------------------
-Inter variable font. Usage:
+OfficinaSansITCStd-Bookiable font. Usage:
 
 @supports (font-variation-settings: normal) {
-	html { font-family: "Inter var", sans-serif; }
+	html { font-family: "OfficinaSansITCStd-Book", sans-serif; }
 }
 ---------------------------------------------- */
 
-@font-face {
-	font-family: "Inter var";
-	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
-	font-style: normal;
-	src: url(../fonts/inter/Inter-upright-var.woff2) format("woff2");
-}
-
-@font-face {
-	font-family: "Inter var";
-	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
-	font-style: italic;
-	src: url(../fonts/inter/Inter-italic-var.woff2) format("woff2");
-}
-
+@font-face {font-family: 'OfficinaSansITCStd-Book';src: url('../fonts/officina/3901E8_0_0.eot');src: url('../fonts/officina/3901E8_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/officina/3901E8_0_0.woff2') format('woff2'),url('../fonts/officina/3901E8_0_0.woff') format('woff'),url('../fonts/officina/3901E8_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'OfficinaSansITCStd-Bold';src: url('../fonts/officina/3901E8_0_0.eot');src: url('../fonts/officina/3901E8_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/officina/3901E8_1_0.woff2') format('woff2'),url('../fonts/officina/3901E8_1_0.woff') format('woff'),url('../fonts/officina/3901E8_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'OfficinaSansITCStd-BookItalic';src: url('./fonts/officina3901E8_2_0.eot');src: url('../fonts/officina/3901E8_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/officina/3901E8_2_0.woff2') format('woff2'),url('../fonts/officina/3901E8_2_0.woff') format('woff'),url('../fonts/officina/3901E8_2_0.ttf') format('truetype');}
+ 
 /* Structure --------------------------------- */
 
 body#tinymce.wp-editor.content { /* stylelint-disable-line no-duplicate-selectors */
@@ -49,13 +43,13 @@ body#tinymce.wp-editor.content { /* stylelint-disable-line no-duplicate-selector
 @supports ( font-variation-settings: normal ) {
 
 	body#tinymce.wp-editor.content { /* stylelint-disable-line no-duplicate-selectors */
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 
 }
 
 body#tinymce.wp-editor.content { /* stylelint-disable-line no-duplicate-selectors */
-	background: #f5efe0;
+	background: #F7F7F7;
 	color: #000;
 	font-size: 21px;
 	letter-spacing: -0.015em;
@@ -74,7 +68,7 @@ body#tinymce.wp-editor.content ol,
 body#tinymce.wp-editor.content ul,
 body#tinymce.wp-editor.content dl,
 body#tinymce.wp-editor.content dt {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: NonBreakingSpaceOverride, "OfficinaSansITCStd-Book", Garamond, "Times New Roman", serif;
 	letter-spacing: normal;
 }
 
@@ -113,7 +107,7 @@ body#tinymce.wp-editor.content pre {
 body#tinymce.wp-editor.content a,
 body#tinymce.wp-editor.content a:focus,
 body#tinymce.wp-editor.content a:hover {
-	color: #cd2653;
+	color: #0091FF;
 	text-decoration: underline;
 }
 
@@ -164,7 +158,7 @@ body#tinymce.wp-editor.content hr::after {
 }
 
 body#tinymce.wp-editor.content dt {
-	font-weight: 600;
+	font-weight: 500;
 }
 
 body#tinymce.wp-editor.content dd {
@@ -194,7 +188,7 @@ body#tinymce.wp-editor.content table {
 	body#tinymce.wp-editor.content .wp-caption-dd,
 	body#tinymce.wp-editor.content cite,
 	body#tinymce.wp-editor.content table {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 }
 
@@ -209,7 +203,7 @@ body#tinymce.wp-editor.content h5,
 body#tinymce.wp-editor.content h6 {
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.0415625em;
 	line-height: 1.25;
 	margin: 40px 0 25px;
@@ -217,7 +211,7 @@ body#tinymce.wp-editor.content h6 {
 
 body#tinymce.wp-editor.content h1 {
 	font-size: 84px;
-	font-weight: 800;
+	font-weight: 500;
 	line-height: 1.138888889;
 }
 
@@ -247,14 +241,14 @@ body#tinymce.wp-editor.content h6 {
 
 body#tinymce.wp-editor.content blockquote {
 	border: none;
-	border-right: 2px solid #cd2653;
+	border-right: 2px solid #0091FF;
 	margin: 0 0 1.6em 0;
 	padding: 0.25em 1em 0.25em 0;
 }
 
 body#tinymce.wp-editor.content blockquote p {
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 500;
 	margin: 0;
 }
 
@@ -447,14 +441,14 @@ body#tinymce.wp-editor.content fieldset {
 
 body#tinymce.wp-editor.content fieldset legend {
 	font-size: 0.85em;
-	font-weight: 700;
+	font-weight: 500;
 	padding: 0 15px;
 }
 
 body#tinymce.wp-editor.content label {
 	display: block;
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: 500;
 	margin: 0 0 5px 0;
 }
 
@@ -490,7 +484,7 @@ body#tinymce.wp-editor.content textarea {
 	box-shadow: none;
 	display: block;
 	font-size: inherit;
-	font-weight: 400;
+	font-weight: 500;
 	margin: 0;
 	max-width: 100%;
 	padding: 13.5px 18px;
@@ -513,14 +507,14 @@ body#tinymce.wp-editor.content input[type="reset"],
 body#tinymce.wp-editor.content input[type="submit"] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	background: #cd2653;
+	background: #0091FF;
 	border: none;
 	border-radius: 0;
 	color: #fff;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 17px;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: 0.0333em;
 	line-height: 1.25;
 	margin: 0;
@@ -564,7 +558,7 @@ body#tinymce.wp-editor.content input[type="submit"]:hover {
 body#tinymce.wp-editor.content .is-style-outline .wp-block-button__link,
 body#tinymce.wp-editor.content .is-style-outline .wp-block-button__link:focus,
 body#tinymce.wp-editor.content .is-style-outline .wp-block-button__link:hover {
-	color: #cd2653;
+	color: #0091FF;
 }
 
 body#tinymce.wp-editor.content .is-style-outline .wp-block-button__link {
