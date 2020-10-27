@@ -5,7 +5,7 @@ Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
-## Wichtig 
+## Wichtig 💣
 
 * Naming der Templates Files
 * Englisch oder Denglish?
