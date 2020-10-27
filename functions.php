@@ -40,7 +40,7 @@ function twentytwenty_theme_support() {
 	add_theme_support(
 		'custom-background',
 		array(
-			'default-color' => 'f5efe0',
+			'default-color' => 'F7F7F7',
 		)
 	);
 
@@ -640,14 +640,14 @@ function twentytwenty_get_color_for_area( $area = 'content', $context = 'text' )
 		array(
 			'content'       => array(
 				'text'      => '#000000',
-				'accent'    => '#cd2653',
-				'secondary' => '#6d6d6d',
+				'accent'    => '#0091FF',
+				'secondary' => '#0091FF',
 				'borders'   => '#dcd7ca',
 			),
 			'header-footer' => array(
 				'text'      => '#000000',
-				'accent'    => '#cd2653',
-				'secondary' => '#6d6d6d',
+				'accent'    => '#0091FF',
+				'secondary' => '#0091FF',
 				'borders'   => '#dcd7ca',
 			),
 		)

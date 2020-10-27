@@ -4,7 +4,7 @@
 /* ------------------------------------------- */
 
 .editor-styles-wrapper {
-	background: #f5efe0;
+	background: #F7F7F7;
 	color: #000;
 	letter-spacing: -0.015em;
 	-moz-font-smoothing: antialiased;
@@ -19,7 +19,7 @@
 @supports ( font-variation-settings: normal ) {
 
 	.editor-styles-wrapper > * {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 
 }
@@ -33,10 +33,10 @@
 /* Fonts ------------------------------------- */
 
 /*
- * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * Chrome renders extra-wide &nbsp; characters for the OfficinaSansITCStd-Book font.
  * This results in a jumping cursor when typing in both the Classic and block
  * editors. The following font-face override fixes the issue by manually
- * inserting a custom font that includes just a Hoefler Text space replacement
+ * inserting a custom font that includes just a OfficinaSansITCStd-Book space replacement
  * for that character instead.
  */
 @font-face {
@@ -45,26 +45,21 @@
 }
 
 /* ----------------------------------------------
-Inter variable font. Usage:
+OfficinaSansITCStd-Bookiable font. Usage:
 
 @supports (font-variation-settings: normal) {
-	html { font-family: "Inter var", sans-serif; }
+	html { font-family: "OfficinaSansITCStd-Book", sans-serif; }
 }
 ---------------------------------------------- */
 
-@font-face {
-	font-family: "Inter var";
-	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
-	font-style: normal;
-	src: url(../fonts/inter/Inter-upright-var.woff2) format("woff2");
-}
-
-@font-face {
-	font-family: "Inter var";
-	font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
-	font-style: italic;
-	src: url(../fonts/inter/Inter-italic-var.woff2) format("woff2");
-}
+@font-face {font-family: 'OfficinaSansITCStd-Book';src: url('../fonts/officina/3901E8_0_0.eot');src: url('../fonts/officina/3901E8_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/officina/3901E8_0_0.woff2') format('woff2'),url('../fonts/officina/3901E8_0_0.woff') format('woff'),url('../fonts/officina/3901E8_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'OfficinaSansITCStd-Bold';src: url('../fonts/officina/3901E8_0_0.eot');src: url('../fonts/officina/3901E8_1_0.eot?#iefix') format('embedded-opentype'),url('../fonts/officina/3901E8_1_0.woff2') format('woff2'),url('../fonts/officina/3901E8_1_0.woff') format('woff'),url('../fonts/officina/3901E8_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'OfficinaSansITCStd-BookItalic';src: url('./fonts/officina3901E8_2_0.eot');src: url('../fonts/officina/3901E8_2_0.eot?#iefix') format('embedded-opentype'),url('../fonts/officina/3901E8_2_0.woff2') format('woff2'),url('../fonts/officina/3901E8_2_0.woff') format('woff'),url('../fonts/officina/3901E8_2_0.ttf') format('truetype');}
+ 
 
 /* Structure --------------------------------- */
 
@@ -115,7 +110,7 @@ Inter variable font. Usage:
 .editor-styles-wrapper ul,
 .editor-styles-wrapper dl,
 .editor-styles-wrapper dt {
-	font-family: NonBreakingSpaceOverride, "Hoefler Text", Garamond, "Times New Roman", serif;
+	font-family: NonBreakingSpaceOverride, "OfficinaSansITCStd-Book", Garamond, "Times New Roman", serif;
 	letter-spacing: normal;
 }
 
@@ -146,7 +141,7 @@ Inter variable font. Usage:
 	.editor-styles-wrapper cite,
 	.editor-styles-wrapper figcaption,
 	.editor-styles-wrapper .wp-caption-text {
-		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+		font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 	}
 
 }
@@ -157,11 +152,11 @@ Inter variable font. Usage:
 /* CUSTOM COLORS */
 
 :root .has-accent-color {
-	color: #cd2653;
+	color: #0091FF;
 }
 
 :root .has-accent-background-color {
-	background-color: #cd2653;
+	background-color: #0091FF;
 	color: #fff;
 }
 
@@ -171,7 +166,7 @@ Inter variable font. Usage:
 
 :root .has-primary-background-color {
 	background-color: #000;
-	color: #f5efe0;
+	color: #F7F7F7;
 }
 
 :root .has-secondary-color {
@@ -193,11 +188,11 @@ Inter variable font. Usage:
 }
 
 :root .has-background-color {
-	color: #f5efe0;
+	color: #F7F7F7;
 }
 
 :root .has-background-background-color {
-	background-color: #f5efe0;
+	background-color: #F7F7F7;
 	color: #000;
 }
 
@@ -225,7 +220,7 @@ Inter variable font. Usage:
 /* Typography -------------------------------- */
 
 .editor-styles-wrapper .editor-block-list__layout a {
-	color: #cd2653;
+	color: #0091FF;
 	text-decoration: underline;
 }
 
@@ -243,7 +238,7 @@ Inter variable font. Usage:
 .editor-styles-wrapper .wp-block h6 {
 	font-feature-settings: "lnum";
 	font-variant-numeric: lining-nums;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.0415625em;
 	line-height: 1.25;
 	margin: 40px 0 25px;
@@ -252,7 +247,7 @@ Inter variable font. Usage:
 .editor-post-title__block .editor-post-title__input,
 .editor-styles-wrapper .wp-block h1 {
 	font-size: 36px;
-	font-weight: 800;
+	font-weight: 500;
 	line-height: 1.138888889;
 }
 
@@ -298,9 +293,9 @@ Inter variable font. Usage:
 /* DROP CAP */
 
 .editor-styles-wrapper .has-drop-cap:not(:focus)::first-letter {
-	color: #cd2653;
+	color: #0091FF;
 	font-size: 5.1em;
-	font-weight: 800;
+	font-weight: 500;
 	margin: 0.05em 0 0 0.1em;
 }
 
@@ -405,13 +400,13 @@ Inter variable font. Usage:
 
 .editor-styles-wrapper legend {
 	font-size: 0.85em;
-	font-weight: 700;
+	font-weight: 500;
 	padding: 0 10px;
 }
 
 .editor-styles-wrapper label {
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 
@@ -452,7 +447,7 @@ Inter variable font. Usage:
 .editor-styles-wrapper .wp-block-archives li > a,
 .editor-styles-wrapper .wp-block-categories li > a,
 .editor-styles-wrapper .wp-block-latest-posts li > a {
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -462,7 +457,7 @@ Inter variable font. Usage:
 .editor-styles-wrapper .wp-block-categories li > a:hover,
 .editor-styles-wrapper .wp-block-latest-posts li > a:focus,
 .editor-styles-wrapper .wp-block-latest-posts li > a:hover {
-	font-weight: 700;
+	font-weight: 500;
 	text-decoration: none;
 }
 
@@ -475,7 +470,7 @@ Inter variable font. Usage:
 .editor-styles-wrapper .wp-block-latest-posts time {
 	color: #6d6d6d;
 	font-size: 0.7em;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: normal;
 	line-height: 1.476;
 	margin-top: 0.15em;
@@ -526,7 +521,7 @@ Inter variable font. Usage:
 }
 
 .editor-styles-wrapper .wp-block-table th {
-	font-weight: 700;
+	font-weight: 500;
 	text-align: inherit; /* Prevents the header from being centered by default*/
 }
 
@@ -602,7 +597,7 @@ hr.wp-block-separator::after {
 
 hr.wp-block-separator.is-style-dots::before {
 	font-size: 32px;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: 1em;
 	padding-right: 1em;
 }
@@ -615,7 +610,7 @@ hr.wp-block-separator.is-style-dots::before {
 }
 
 .editor-styles-wrapper .wp-block-quote {
-	border-color: #cd2653;
+	border-color: #0091FF;
 	border-style: solid;
 	border-width: 0 2px 0 0;
 	margin: 20px 0;
@@ -642,13 +637,13 @@ hr.wp-block-separator.is-style-dots::before {
 .editor-styles-wrapper .wp-block-quote footer {
 	color: #6d6d6d;
 	font-size: 14px;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 1.25;
 }
 
 .editor-styles-wrapper .wp-block-quote p {
 	color: inherit;
-	font-weight: 400;
+	font-weight: 500;
 	margin: 0 0 20px 0;
 }
 
@@ -661,7 +656,7 @@ hr.wp-block-separator.is-style-dots::before {
 	font-family: inherit;
 	font-size: 24px;
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 500;
 	letter-spacing: -0.035714286em;
 	line-height: 1.285714286;
 }
@@ -763,7 +758,7 @@ hr.wp-block-separator.is-style-dots::before {
 .editor-styles-wrapper .wp-block-pullquote::before {
 	background: #fff;
 	border-radius: 50%;
-	color: #cd2653;
+	color: #0091FF;
 	content: "”";
 	display: block;
 	font-size: 62px;
@@ -778,7 +773,7 @@ hr.wp-block-separator.is-style-dots::before {
 .editor-styles-wrapper .wp-block .wp-block-pullquote p {
 	font-family: inherit;
 	font-size: 28px;
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1.178571429;
 	letter-spacing: -0.041785714em;
 	margin-bottom: 20px;
@@ -885,11 +880,11 @@ hr.wp-block-separator.is-style-dots::before {
 
 .editor-styles-wrapper .wp-block-button__link,
 .editor-styles-wrapper .wp-block-file__button {
-	background: #cd2653;
+	background: #0091FF;
 	border-radius: 0;
 	color: #fff;
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: 500;
 	letter-spacing: 0.0333em;
 	line-height: 1.25;
 	padding: 1.1em 1.44em;
@@ -906,7 +901,7 @@ hr.wp-block-separator.is-style-dots::before {
 .editor-styles-wrapper .is-style-outline.wp-block-button__link {
 	background: none;
 	border-color: currentColor;
-	color: #cd2653;
+	color: #0091FF;
 	padding: calc(1.1em - 2px) calc(1.44em - 2px);
 }
 
@@ -940,7 +935,7 @@ hr.wp-block-separator.is-style-dots::before {
 }
 
 .editor-styles-wrapper .wp-block-latest-comments__comment-meta {
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .editor-styles-wrapper .wp-block-latest-comments__comment-meta a {
@@ -1034,8 +1029,8 @@ hr.wp-block-separator.is-style-dots::before {
 }
 
 .editor-styles-wrapper .wp-block-file .wp-block-file__textlink {
-	color: #cd2653;
-	font-weight: 700;
+	color: #0091FF;
+	font-weight: 500;
 	text-decoration: none;
 }
 

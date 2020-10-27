@@ -62,7 +62,7 @@ if ( ! function_exists( 'twentytwenty_get_customizer_css' ) ) {
 		$borders           = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'borders' ) );
 		$borders_default   = '#dcd7ca';
 		$accent            = sanitize_hex_color( twentytwenty_get_color_for_area( 'content', 'accent' ) );
-		$accent_default    = '#cd2653';
+		$accent_default    = '#0091FF';
 
 		// Header.
 		$header_footer_background         = sanitize_hex_color( twentytwenty_get_color_for_area( 'header-footer', 'background' ) );
@@ -74,7 +74,7 @@ if ( ! function_exists( 'twentytwenty_get_customizer_css' ) ) {
 
 		// Background.
 		$background         = sanitize_hex_color_no_hash( get_theme_mod( 'background_color' ) );
-		$background_default = 'f5efe0';
+		$background_default = 'F7F7F7';
 
 		ob_start();
 

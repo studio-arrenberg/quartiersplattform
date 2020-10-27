@@ -34,6 +34,9 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## Development
 
+
+
+
 ### File structure
 Images, Icons, Fonts, etc. => `assets/` <br>
 Pages (Templates) => `templates/` <br>
@@ -46,3 +49,15 @@ Lists => `template-parts/` <br>
 ### Notes
 
 Google Maps API Key `AIzaSyBmTAYFwzl41BtNCEShQ2OzTbpHMSnxAL4`
+
+
+
+## CSS Tricks
+
+https://css-tricks.com/snippets/css/complete-guide-grid/ <br>
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+## VS Code Plugins
+extension.refreshBrowser
+
