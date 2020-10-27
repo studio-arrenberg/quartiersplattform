@@ -45,11 +45,11 @@ Lists => `template-parts/` <br>
 
 ### Recources 
 
-[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) **
+[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) *thx*
 
 ### Notes
 
-Google Maps API Key `AIzaSyBmTAYFwzl41BtNCEShQ2OzTbpHMSnxAL4`
+Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
 
 
