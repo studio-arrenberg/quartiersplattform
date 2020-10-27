@@ -754,3 +754,27 @@ function twentytwenty_get_elements_array() {
 	*/
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+// ------------------------------------------------------------
+// custom functions
+// ------------------------------------------------------------
+
+
+function remove_default_WP_widgets( ){
+	unregister_widget('WP_Widget_Pages');
+	unregister_widget('WP_Widget_Calendar');
+	unregister_widget('WP_Widget_Archives');
+	unregister_widget('WP_Widget_Links');
+	unregister_widget('WP_Widget_Meta');
+	unregister_widget('WP_Widget_Search');
+	unregister_widget('WP_Widget_Text');
+	unregister_widget('WP_Widget_Categories');
+	unregister_widget('WP_Widget_Recent_Posts');
+	unregister_widget('WP_Widget_Recent_Comments');
+	unregister_widget('WP_Widget_RSS');
+	unregister_widget('WP_Widget_Tag_Cloud');
+	// unregister_widget('BBP_Login_Widget');
+	// unregister_widget('BBP_Views_Widget');
+	// unregister_widget('BBP_Forums_Widget');
+	// unregister_widget('BBP_Replies_Widget');
+}add_action( 'widgets_init', 'remove_default_WP_widgets' );
