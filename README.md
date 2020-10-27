@@ -11,7 +11,7 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 * Englisch oder Denglish?
 * Naming element (landscape_card) css (landscape card)
 
-## Requirements 
+## 🧻 Requirements 
 
 ### Server
 `Wordpress` 5.5.1 <br>
