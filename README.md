@@ -5,7 +5,9 @@ Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
-## Notizen
+## Wichtig 
+
+* Naming der Templates
 
 ## Requirements 
 
@@ -15,22 +17,25 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ### Plugins
 
-`WP Sync DB` Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
-`Advanced Custom Fields PRO` <br>
-`Favorites` [Git](https://github.com/kylephillips/favorites) <br>
+[WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
+[Advanced Custom Fields PRO](https://github.com/AdvancedCustomFields/acf) <br>
+[Favorites](https://github.com/kylephillips/favorites) <br>
 #### Later
-`PWA for WP` [Git](https://github.com/ahmedkaludi/pwa-for-wp) <br>
-`Disable Rest API` <br>
+[PWA for WP](https://github.com/ahmedkaludi/pwa-for-wp) <br>
+Disable Rest API <br>
 
 #### Optional (Development)
 `Custom Post Type UI`
 
 ## Set up
-* Setup local Wordpress 
-* Clone Repository
-`git clone <URL>` in `wp-content/themes`
-* Sync Database with `WP Sync DB`
-* Copy `wp-content` manually
+* 1. Setup local Wordpress 
+* 2. Clone Repository
+```sh
+git clone https://github.com/studio-arrenberg/quartiersplattform.git
+```
+in wp-content/themes
+* 3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db)
+* 4. Copy `wp-content` manually
 
 ## Development
 
@@ -43,14 +48,23 @@ Functions => `functions.php` <br>
 Call to Action, Energie Ampel, Feedback, etc => `components/` <br>
 Lists => `template-parts/` <br>
 
+### Code Snippets
+
+Path to Theme files
+```php
+<?php echo get_template_directory_uri(); ?>
+```
+
+
 ### Recources 
 
-[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) *thx*
+[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html)
 
 ### Notes
 
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
+[WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
 
 ## CSS Tricks

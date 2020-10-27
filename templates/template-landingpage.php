@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Landingpage Template
- * Template Post Type: post, page
+ * Template Post Type: page
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -29,11 +29,11 @@ get_header();
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
 			</p>
 		</div>
-		<img src="wp-content/themes/quartiersplattform/assets/images/400x300.png" alt=""/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
 	</div>
 
 	<div class="card shadow">
-	<img src="wp-content/themes/quartiersplattform/assets/images/400x300.png" alt=""/>	
+	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
 
 		<div class="content">
 			<h3 class="card-title">
@@ -45,24 +45,15 @@ get_header();
 		</div>
 	</div>
 
-
-	<div class="card shadow">
-		<div class="content">
-			<h3 class="card-title">
-				Card Title
-			</h3>
-			<p class="preview-text">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-			</p>
-		</div>
-		<img src="wp-content/themes/quartiersplattform/assets/images/400x300.png" alt=""/>	
-	</div>
+	<?php get_template_part('elements/card', 'nachricht'); ?>
 
 
 	<div class="card landscape">
-		<img src="wp-content/themes/quartiersplattform/assets/images/400x300.png" alt=""/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
 
 	</div>
+
+	<?php get_template_part('elements/card', 'veranstaltung'); ?>
 
 </main><!-- #site-content -->
 
