@@ -82,20 +82,6 @@ get_header();
 
 
 
-	<div class="card shadow">
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
-		<div class="content">
-			<h3 class="card-title">
-				Card Title
-			</h3>
-			<p class="preview-text">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-			</p>
-		</div>
-	</div>
-
-
-
 	<?php 
 
 		$kind =  "nachricht";
