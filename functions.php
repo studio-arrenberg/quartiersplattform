@@ -778,3 +778,5 @@ function remove_default_WP_widgets( ){
 	// unregister_widget('BBP_Forums_Widget');
 	// unregister_widget('BBP_Replies_Widget');
 }add_action( 'widgets_init', 'remove_default_WP_widgets' );
+
+// hello world
