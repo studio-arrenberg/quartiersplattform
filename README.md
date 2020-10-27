@@ -25,23 +25,23 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 Disable Rest API <br>
 
 #### Optional (Development)
-`Custom Post Type UI`
+Custom Post Type UI
 
 ## Set up
-* 1. Setup local Wordpress 
-* 2. Clone Repository
+1. Setup local Wordpress 
+2. Clone Repository
 ```sh
 git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```
 in wp-content/themes
-* 3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db)
-* 4. Copy `wp-content` manually
+3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db)
+4. Copy `wp-content` manually
 
 ## Development
 
 ### File structure
 Images, Icons, Fonts, etc. => `assets/` <br>
-Pages (Templates) => `templates/` <br>
+Pages (Templates) => `pages/` <br>
 Template Parts (WP) => `template-parts` <br>
 Elements (card, list-card, ...) => `elements/` <br>
 Components (call-to-action, energieampel, feedback, ...) => `components/` <br>
@@ -67,12 +67,14 @@ Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
 
-## CSS Tricks
+### CSS Tricks
 
 https://css-tricks.com/snippets/css/complete-guide-grid/ <br>
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
-## VS Code Plugins
+### VS Code Plugins
 extension.refreshBrowser
+felixfbecker.php-intellisense
+wordpresstoolbox.wordpress-toolbox
 
