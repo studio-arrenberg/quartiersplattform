@@ -52,11 +52,17 @@ get_header();
 		
 	?>
 
-
-	<div class="card landscape">
+	<div class="card landscape shadow">
+		<div class="content">
+			<h3 class="card-title">
+				Landscape Card Title
+			</h3>
+			<p class="preview-text">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+			</p>
+		</div>
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
-
-	</div>
+</div>
 
 	<?php get_template_part('elements/card', 'veranstaltung'); ?>
 
