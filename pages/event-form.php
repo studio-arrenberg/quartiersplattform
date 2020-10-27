@@ -11,11 +11,11 @@
 $settings = array(
 	'html_before_fields' => '<p>Hello</p>',
 	'html_after_fields' => '<p>World</p>',
-	'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
+	'html_updated_message'  => '<h1 id="message" class="updated"><p>%s</p></h1>',
 	'uploader' => 'basic',
 	'field_el' => 'div',
 	'form' => true,
-	'post_content' => true,
+	'post_content' => false,
 	'form_attributes' => array(),
 	'fields' => false,
 );
@@ -31,9 +31,9 @@ $settings = array(
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				
-				<h1><?php the_title(); ?></h1>
+				<!-- <h1><?php the_title(); ?></h1> -->
 				
-				<?php the_content(); ?>
+				<!-- <?php the_content(); ?> -->
 				
 				<!-- <p>My custom field: <?php the_field('my_custom_field'); ?></p> -->
 				

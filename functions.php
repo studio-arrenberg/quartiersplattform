@@ -871,3 +871,14 @@ function misha_submit_ajax_comment(){
 	die();
  
 }
+
+// custom excerpt lenght
+function get_excerpt($count = '55') {
+	$permalink = get_permalink($post->ID);
+	$excerpt = get_the_content();
+	$excerpt = strip_tags($excerpt);
+	$excerpt = substr($excerpt, 0, $count);
+	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+	$excerpt = '<p>'.$excerpt.'...';
+	echo $excerpt;
+}

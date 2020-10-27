@@ -19,7 +19,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ### Plugins
 
-[WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
 [Advanced Custom Fields PRO](https://github.com/AdvancedCustomFields/acf) <br>
 [Favorites](https://github.com/kylephillips/favorites) <br>
 #### Later
@@ -28,6 +27,7 @@ Disable Rest API <br>
 
 #### Optional (Development)
 Custom Post Type UI
+[WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
 
 ## Set up
 1. Setup local Wordpress 
@@ -35,7 +35,7 @@ Custom Post Type UI
 ```sh
 git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```
-<br> in wp-content/themes <br>
+in wp-content/themes <br>
 3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) <br>
 4. Copy `wp-content` manually
 
