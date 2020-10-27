@@ -155,13 +155,13 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'default'           => array(
 						'content'       => array(
 							'text'      => '#000000',
-							'accent'    => '#cd2653',
+							'accent'    => '#0091FF',
 							'secondary' => '#6d6d6d',
 							'borders'   => '#dcd7ca',
 						),
 						'header-footer' => array(
 							'text'      => '#000000',
-							'accent'    => '#cd2653',
+							'accent'    => '#0091FF',
 							'secondary' => '#6d6d6d',
 							'borders'   => '#dcd7ca',
 						),

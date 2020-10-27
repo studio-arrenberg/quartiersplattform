@@ -703,7 +703,7 @@ function twentytwenty_body_classes( $classes ) {
 	$header_footer_background = strtolower( '#' . ltrim( $header_footer_background, '#' ) );
 
 	// Get content background color.
-	$background_color = get_theme_mod( 'background_color', 'f5efe0' );
+	$background_color = get_theme_mod( 'background_color', 'F7F7F7' );
 	$background_color = strtolower( '#' . ltrim( $background_color, '#' ) );
 
 	// Add extra class if main background and header/footer background are the same color.

@@ -30,3 +30,14 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 * Copy `wp-content` manually
 
 ## Development
+
+
+## CSS Tricks
+
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+
+## VS Code Plugins
+extension.refreshBrowser
+
