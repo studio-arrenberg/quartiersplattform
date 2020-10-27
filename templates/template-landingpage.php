@@ -59,7 +59,15 @@ get_header();
 	</div>
 
 
-	<div class="card landscape">
+	<div class="card landscape shadow">
+		<div class="content">
+			<h3 class="card-title">
+				Landscape Card Title
+			</h3>
+			<p class="preview-text">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+			</p>
+		</div>
 		<img src="wp-content/themes/quartiersplattform/assets/images/400x300.png" alt=""/>	
 
 	</div>
