@@ -45,7 +45,12 @@ get_header();
 		</div>
 	</div>
 
-	<?php get_template_part('elements/card', 'nachricht'); ?>
+	<?php 
+
+		$kind =  "nachricht";
+		get_template_part('elements/card', $kind); 
+		
+	?>
 
 
 	<div class="card landscape">
@@ -54,6 +59,8 @@ get_header();
 	</div>
 
 	<?php get_template_part('elements/card', 'veranstaltung'); ?>
+
+	<?php get_template_part('components/energieampel'); ?>
 
 </main><!-- #site-content -->
 

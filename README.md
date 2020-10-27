@@ -42,11 +42,11 @@ in wp-content/themes
 ### File structure
 Images, Icons, Fonts, etc. => `assets/` <br>
 Pages (Templates) => `templates/` <br>
-Template Parts (View iteration) => `template-parts` <br>
+Template Parts (WP) => `template-parts` <br>
+Elements (card, list-card, ...) => `elements/` <br>
+Components (call-to-action, energieampel, feedback, ...) => `components/` <br>
 Define colors => `inc/custom-css.php` <br>
 Functions => `functions.php` <br>
-Call to Action, Energie Ampel, Feedback, etc => `components/` <br>
-Lists => `template-parts/` <br>
 
 ### Code Snippets
 
