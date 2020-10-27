@@ -7,7 +7,9 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## Wichtig 
 
-* Naming der Templates
+* Naming der Templates Files
+* Englisch oder Denglish?
+* Naming element (landscape_card) css (landscape card)
 
 ## Requirements 
 
@@ -33,8 +35,8 @@ Custom Post Type UI
 ```sh
 git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```
-in wp-content/themes
-3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db)
+<br> in wp-content/themes <br>
+3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) <br>
 4. Copy `wp-content` manually
 
 ## Development
@@ -74,7 +76,7 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 
 ### VS Code Plugins
-extension.refreshBrowser
-felixfbecker.php-intellisense
-wordpresstoolbox.wordpress-toolbox
+extension.refreshBrowser <br>
+felixfbecker.php-intellisense <br>
+wordpresstoolbox.wordpress-toolbox <br>
 

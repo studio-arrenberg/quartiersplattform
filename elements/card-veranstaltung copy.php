@@ -19,10 +19,10 @@
 	<div class="content">
 		<div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div>
 		<h3 class="card-title">
-			Card Title
+			<?php the_title(); ?>
 		</h3>
 		<p class="preview-text">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			<?php the_excerpt(); ?>
 		</p>
 	</div>
 	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />

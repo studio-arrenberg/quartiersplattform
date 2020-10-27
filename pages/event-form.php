@@ -8,26 +8,40 @@
  * @since Twenty Twenty 1.0
  */
 
-get_header();
+$settings = array(
+	'html_before_fields' => '<p>Hello</p>',
+	'html_after_fields' => '<p>World</p>',
+	'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
+	'uploader' => 'basic',
+	'field_el' => 'div',
+	'form' => true,
+	'post_content' => true,
+	'form_attributes' => array(),
+	'fields' => false,
+);
+
+
 ?>
+<?php acf_form_head(); ?>
+<?php get_header(); ?>
 
-<main id="site-content" role="main">
+	<div id="primary">
+		<div id="content" role="main">
 
-	<?php
+			<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				
+				<h1><?php the_title(); ?></h1>
+				
+				<?php the_content(); ?>
+				
+				<!-- <p>My custom field: <?php the_field('my_custom_field'); ?></p> -->
+				
+				<?php acf_form($settings); ?>
 
-	if ( have_posts() ) {
+			<?php endwhile; ?>
 
-		while ( have_posts() ) {
-			the_post();
-
-			get_template_part( 'template-parts/content-cover' );
-		}
-	}
-
-	?>
-
-</main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+		</div><!-- #content -->
+	</div><!-- #primary -->
 
 <?php get_footer(); ?>
