@@ -34,9 +34,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## Development
 
-
-
-
 ### File structure
 Images, Icons, Fonts, etc. => `assets/` <br>
 Pages (Templates) => `templates/` <br>
@@ -45,6 +42,10 @@ Define colors => `inc/custom-css.php` <br>
 Functions => `functions.php` <br>
 Call to Action, Energie Ampel, Feedback, etc => `components/` <br>
 Lists => `template-parts/` <br>
+
+### Recources 
+
+[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) **
 
 ### Notes
 
