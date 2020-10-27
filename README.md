@@ -11,7 +11,7 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 * Englisch oder Denglish?
 * Naming element (landscape_card) css (landscape card)
 
-## 🧻 Requirements 
+## Requirements 
 
 ### Server
 `Wordpress` 5.5.1 <br>
@@ -31,11 +31,10 @@ Custom Post Type UI
 
 ## 🔗 Set up
 1. Setup local Wordpress 
-2. Clone Repository
+2. Clone Repository *in wp-content/themes*
 ```sh
 git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```
-in wp-content/themes <br>
 3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) <br>
 4. Copy `wp-content` manually
 
