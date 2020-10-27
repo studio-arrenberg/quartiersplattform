@@ -10,7 +10,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 ## Requirements 
 
 ### Server
-*Only a theme* <br>
 `Wordpress` 5.5.1 <br>
 `PHP` 7.2.10
 
@@ -18,6 +17,9 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 `WP Sync DB` Get Data from [http://ap1.arrenberg.studio](http://ap1.arrenberg.studio/wp-admin/) <br>
 `Advanced Custom Fields PRO`
+`Favorites` [Git](https://github.com/kylephillips/favorites)
+`PWA for WP` *later* [Git](https://github.com/ahmedkaludi/pwa-for-wp)
+`Disable Rest API` *later*
 
 #### Optional (Development)
 `Custom Post Type UI`
@@ -30,3 +32,16 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 * Copy `wp-content` manually
 
 ## Development
+
+### File structure
+Images, Icons, Fonts, etc. => `assets/`
+Pages (Templates) => `templates/`
+Template Parts (View iteration) => `template-parts`
+Define colors => `inc/custom-css.php`
+Functions => `functions.php`
+Call to Action, Energie Ampel, Feedback, etc => `components/`
+Lists => `template-parts/`
+
+### Notes
+
+Google Maps API Key `AIzaSyBmTAYFwzl41BtNCEShQ2OzTbpHMSnxAL4`
