@@ -31,7 +31,7 @@ Custom Post Type UI
 
 ## 🔗 Set up
 1. Setup local Wordpress 
-2. Clone Repository *in wp-content/themes*
+2. Clone Repository *into wp-content/themes*
 ```sh
 git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```
@@ -78,4 +78,4 @@ https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 extension.refreshBrowser <br>
 felixfbecker.php-intellisense <br>
 wordpresstoolbox.wordpress-toolbox <br>
-
+rifi2k.format-html-in-php

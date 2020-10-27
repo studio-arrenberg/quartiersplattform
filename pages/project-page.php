@@ -23,7 +23,7 @@ query_posts( $args );
 
 <main id="site-content" role="main">
 
-	<?php
+    <?php
 
 	if (have_posts() ) {
 

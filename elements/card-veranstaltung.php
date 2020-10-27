@@ -15,14 +15,14 @@
 ?>
 
 <div class="card shadow">
-	<div class="content">
-		<div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div>
-		<h3 class="card-title">
-			<?php the_title(); ?>
-		</h3>
-		<p class="preview-text">
-			<?php get_excerpt(); ?>
-		</p>
-	</div>
-	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+    <div class="content">
+        <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div>
+        <h3 class="card-title">
+            <?php the_title(); ?>
+        </h3>
+        <p class="preview-text">
+            <?php get_excerpt(); ?>
+        </p>
+    </div>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
 </div>

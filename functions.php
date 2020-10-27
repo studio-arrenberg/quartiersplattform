@@ -774,10 +774,12 @@ function remove_default_WP_widgets( ){
 	unregister_widget('WP_Widget_Recent_Comments');
 	unregister_widget('WP_Widget_RSS');
 	unregister_widget('WP_Widget_Tag_Cloud');
-	// unregister_widget('BBP_Login_Widget');
-	// unregister_widget('BBP_Views_Widget');
-	// unregister_widget('BBP_Forums_Widget');
-	// unregister_widget('BBP_Replies_Widget');
+
+	unregister_widget('BBP_Login_Widget');
+	unregister_widget('BBP_Views_Widget');
+	unregister_widget('BBP_Forums_Widget');
+	unregister_widget('BBP_Replies_Widget');
+	
 }add_action( 'widgets_init', 'remove_default_WP_widgets' );
 
 // AJAX Comments
