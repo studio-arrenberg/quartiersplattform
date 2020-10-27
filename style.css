@@ -6610,21 +6610,21 @@ a.to-the-top > * {
 }
 
 .card .content{
-	padding: 0px 10px;
+  padding: 0px 10px;
+ 
 }
-
 .card img {
 	min-width: 120px;
 	max-width: 160px;
-	width: 100%;
+  width: 100%;
 	border-radius: 15px;
-  }
+}
 
 .card .pre-title{
 	color: #0091ff;
 	font-size: 1.5rem;
 	font-family: 'OfficinaSansITCStd-Bold';
-	display: flex;
+  display: flex;
 	justify-content: space-between;
 }
 
@@ -6650,8 +6650,24 @@ a.to-the-top > * {
 }
 
 
-/* LANDSCAPE CARD */
+.preview {
+  flex-wrap: wrap;
+}
 
+.preview-item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+
+.preview-item:last-of-type{
+  margin: 0px;
+}
+
+
+
+/* LANDSCAPE CARD */
 
 .landscape{
 	max-height: 200px;
@@ -6682,10 +6698,7 @@ a.to-the-top > * {
 	height: 100%;
 	max-height: 180px;
 	object-fit: cover;
-
 }
-
-
 
 
 
