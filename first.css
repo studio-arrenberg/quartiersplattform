@@ -11,11 +11,13 @@ OfficinaSansITCStd-Bookiable font. Usage:
   font-family: "OfficinaSansITCStd-Book";
   src: url("assets/fonts/officina/3901E8_0_0.woff2") format("woff2"),
     url("assets/fonts/officina/3901E8_0_0.woff") format("woff");
+    font-display: swap;
 }
 
 @font-face {
   font-family: "OfficinaSansITCStd-Bold";
   src: url("assets/fonts/officina/3901E8_1_0.woff2") format("woff2"),
     url("assets/fonts/officina/3901E8_1_0.woff") format("woff");
+    font-display: swap;
 }
 
