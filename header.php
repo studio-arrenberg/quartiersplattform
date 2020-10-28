@@ -19,6 +19,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
 		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
 
 		<?php wp_head(); ?>
 

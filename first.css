@@ -9,13 +9,13 @@ OfficinaSansITCStd-Bookiable font. Usage:
 
 @font-face {
   font-family: "OfficinaSansITCStd-Book";
-  src: url("fonts/officina/3901E8_0_0.woff2") format("woff2"),
-    url("fonts/officina/3901E8_0_0.woff") format("woff");
+  src: url("assets/fonts/officina/3901E8_0_0.woff2") format("woff2"),
+    url("assets/fonts/officina/3901E8_0_0.woff") format("woff");
 }
 
 @font-face {
   font-family: "OfficinaSansITCStd-Bold";
-  src: url("fonts/officina/3901E8_1_0.woff2") format("woff2"),
-    url("fonts/officina/3901E8_1_0.woff") format("woff");
+  src: url("assets/fonts/officina/3901E8_1_0.woff2") format("woff2"),
+    url("assets/fonts/officina/3901E8_1_0.woff") format("woff");
 }
 
