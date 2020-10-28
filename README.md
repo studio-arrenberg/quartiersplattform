@@ -75,15 +75,19 @@ Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
 ⚠️ DB update
 Table: ampel_status -> add row 'name' varchar(20)
-
+##### Phase:
 ```mysql
 SELECT Ampel.status,  ampel_status.color, FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm, FLOOR(ampel_status.carbon_factor) FROM `Ampel` 
 join ampel_status on Ampel.status = ampel_status.id
 WHERE `timestamp` = '2020-10-28 15:00' 
 Limit 0,1
 ```
-
-
+##### Timeline:
+```mysql
+SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
+Join ampel_status on Ampel.status = ampel_status.id
+WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
+```
 
 
 ### CSS Tricks

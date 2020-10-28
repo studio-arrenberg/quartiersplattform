@@ -12,6 +12,9 @@
 
 date_default_timezone_set('Europe/Berlin');
 $now = date('Y-m-d H');
+$datetime = date('Y-m-d H:i');
+
+// echo $datetime;
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
 
@@ -36,18 +39,38 @@ $phase_gramm = $wpdb_b->get_var( "
     Limit 0,1
 " );
 
+$timeline = ("
+SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
+Join ampel_status on Ampel.status = ampel_status.id
+WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
+");
+
+// echo $timeline;
+
 ?>
 
 <div>
     <div>
         <h2>Energie Ampel</h2>
-        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_color; ?> Phase</h3>
+        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?> Phase</h3>
     </div>
 
     <div>
         <h2><?php echo $phase_gramm; ?>g</h2>
         <h3>CO2 pro kWh</h3>
     </div>
+
+    <?php
+    $timeline = mysqli_query($connection, $timeline) or die("could not perform query");
+    while($row = mysqli_fetch_assoc($timeline)) {
+
+        echo "<div class=".$row['color'].">".$row['time']."</div>";
+
+        $color = $row['color'];
+        $time = $row['time'];
+
+    } 
+    ?>
 
     <div class="strom_array">
         <div class="red">Jetzt</div>
