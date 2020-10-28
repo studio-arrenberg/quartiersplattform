@@ -24,5 +24,5 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
     </div>
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x200.png" alt="" />
 </div>
