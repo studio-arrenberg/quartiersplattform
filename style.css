@@ -273,15 +273,6 @@ OfficinaSansITCStd-Bookiable font. Usage:
     url("./assets/fonts/officina/3901E8_1_0.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "OfficinaSansITCStd-BookItalic";
-  src: url("w./assets/fonts/officina3901E8_2_0.eot");
-  src: url("./assets/fonts/officina/3901E8_2_0.eot?#iefix")
-      format("embedded-opentype"),
-    url("./assets/fonts/officina/3901E8_2_0.woff2") format("woff2"),
-    url("./assets/fonts/officina/3901E8_2_0.woff") format("woff"),
-    url("./assets/fonts/officina/3901E8_2_0.ttf") format("truetype");
-}
 
 /* Accessibility Settings -------------------- */
 
