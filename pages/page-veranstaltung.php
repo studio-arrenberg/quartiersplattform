@@ -21,13 +21,15 @@ query_posts( $args );
 
 <main id="site-content" role="main">
 
-	<?php
+
+
+
+    <?php
 
 	if ( have_posts() ) {
 
 		while ( have_posts() ) {
 			the_post();
-
 			get_template_part( 'elements/card', 'veranstaltung');
 			
 

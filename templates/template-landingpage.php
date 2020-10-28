@@ -22,130 +22,43 @@ get_header();
 
     <?php // get_template_part('elements/landscape_card'); ?>
 
-    <div class="card shadow">
-        <div class="content">
-            <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div>
-            <h3 class="card-title">
-                Card Title
-            </h3>
-            <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-        </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
-    </div>
-
-
 
     <div class="owl-carousel owl-theme">
-        <div class="card square shadow">
-            <div class="content">
-                <h3 class="card-title">
-                    Square Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
-        </div>
-
-        <div class="card square shadow">
-            <div class="content">
-                <h3 class="card-title">
-                    Square Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
-        </div>
-
-        <div class="card square shadow">
-            <div class="content">
-                <h3 class="card-title">
-                    Square Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
-        </div>
-
-        <div class="card square shadow">
-            <div class="content">
-                <h3 class="card-title">
-                    Square Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
-        </div>
+        <?php get_template_part('elements/square_card'); ?>
+        <?php get_template_part('elements/square_card'); ?>
+        <?php get_template_part('elements/square_card'); ?>
+        <?php get_template_part('elements/square_card'); ?>
     </div>
 
 
     <script>
-            $(document).ready(function() {
-              var owl = $('.owl-carousel');
-              owl.owlCarousel({
-                loop: false,
-                margin: 10,
-                navRewind: false,
-                responsive: {
-                  0: {
+    $(document).ready(function() {
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+            loop: false,
+            margin: 10,
+            navRewind: false,
+            responsive: {
+                0: {
                     items: 2
-                  },
-                  782: {
+                },
+                782: {
                     items: 4
-                  },
-                  1000: {
+                },
+                1000: {
                     items: 4
-                  }
                 }
-              })
-            })
-          </script>
+            }
+        })
+    })
+    </script>
 
 
 
     <div class="card list shadow">
-        <div class="list-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
-            <div class="content">
-                <h3 class="card-title">
-                    Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </div>
-        <div class="list-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
-            <div class="content">
-                <h3 class="card-title">
-                    Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </div>
-        <div class="list-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
-            <div class="content">
-                <h3 class="card-title">
-                    Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </div>
+        <?php get_template_part('elements/list_card'); ?>
+        <?php get_template_part('elements/list_card'); ?>
+        <?php get_template_part('elements/list_card'); ?>
     </div>
 
 
