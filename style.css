@@ -6608,10 +6608,19 @@ a.to-the-top > * {
 
 #site-content{
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 400px;
+  overflow: visible;
 }
 
 
+
+@media (min-width: 782px) {
+  #site-content{
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: visible;
+  } 
+}
 
 
 
@@ -6698,14 +6707,16 @@ a.to-the-top > * {
 
 /* LANDSCAPE CARD */
 
-.square{
-  width: 100%;
-  min-width: 150px;
-  min-height: 150px;
-  min-height: 100%;
 
+
+.square{
+  max-width: 210px;
+  max-height: 210px;
 }
 
+ .square .preview-text{
+  display: none;
+}
 
 .landscape, .square{
 	max-height: 200px;
@@ -6756,8 +6767,43 @@ a.to-the-top > * {
 
 .owl-carousel{
   height: auto;
+  overflow: visible;
+  margin: 0 auto;
 }
 .owl-carousel .owl-stage {
-  display: flex !important;  height: auto;
+  height: auto;
+  overflow: visible;
+}
 
+.owl-carousel .owl-stage .owl-item, .owl-carousel .owl-stage-outer, .owl-carousel .owl-theme {
+  overflow: visible !important;
+}
+
+.owl-carousel .square {
+  margin-bottom: 0px;
+}
+
+
+@media (min-width: 782px) {
+  #site-content{
+    margin: 0 auto;
+    max-width: 1000px;
+    overflow: visible;
+  } 
+
+
+  .landscape{
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+  
+  .landscape img{
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+
+
+ .square .preview-text{
+  display: block;
+}
 }
