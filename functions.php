@@ -881,23 +881,11 @@ function get_excerpt($count = '55') {
 	$excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-	$excerpt = '<p>'.$excerpt.'...';
+	$excerpt = $excerpt.'...';
 	echo $excerpt;
 }
 
-// template page redirect
-// function single_page_template($single_template) {
-//     global $post;
-
-//     if ($post->post_type == 'projekte') {
-//         $single_template = get_stylesheet_directory() . '/ page-projekte.php';
-//     }
-
-//     return $single_template;
-// }
-// add_filter( 'single_template', 'single_page_template' );
-
-
+// set template for custom post type  
 function tpl_projekte( $single_template ) {
     global $post;
  

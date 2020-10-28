@@ -20,7 +20,7 @@ get_header();
     </header>
 
 
-    <?php get_template_part('elements/landscape_card'); ?>
+    <?php // get_template_part('elements/landscape_card'); ?>
 
 
     <div class="owl-carousel owl-theme">
@@ -67,17 +67,14 @@ get_header();
 
     <?php 
 		$kind =  "nachricht";
-		get_template_part('elements/card', $kind); 
+		// get_template_part('elements/card', $kind); 
 	?>
 
+    <?php  get_template_part('elements/card', 'veranstaltung'); ?>
 
+    <?php  get_template_part('components/energieampel'); ?>
 
-
-    <?php get_template_part('elements/card', 'veranstaltung'); ?>
-
-    <?php get_template_part('components/energieampel'); ?>
-
-    <?php get_template_part('components/call', 'register'); ?>
+    <?php // get_template_part('components/call', 'register'); ?>
 
 </main><!-- #site-content -->
 

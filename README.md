@@ -11,6 +11,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 * Englisch oder Denglish?
 * Naming element (landscape_card) css (landscape card)
 
+* Title letter limit
+
 ## Requirements 
 
 ### Server
@@ -69,6 +71,24 @@ Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
+#### Energie Ampel
+
+⚠️ DB update
+Table: ampel_status -> add row 'name' varchar(20)
+##### Phase:
+```mysql
+SELECT Ampel.status,  ampel_status.color, FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm, FLOOR(ampel_status.carbon_factor) FROM `Ampel` 
+join ampel_status on Ampel.status = ampel_status.id
+WHERE `timestamp` = '2020-10-28 15:00' 
+Limit 0,1
+```
+##### Timeline:
+```mysql
+SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
+Join ampel_status on Ampel.status = ampel_status.id
+WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
+```
+
 
 ### CSS Tricks
 
@@ -89,4 +109,4 @@ rifi2k.format-html-in-php
 2. Comment Setting (WP Settings)
 3. Allow Comment on Post-Type (Post type list Buld action)
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
-
+5. Update Parmalinks
