@@ -11,6 +11,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 * Englisch oder Denglish?
 * Naming element (landscape_card) css (landscape card)
 
+* Title letter limit
+
 ## Requirements 
 
 ### Server
@@ -68,6 +70,24 @@ Path to Theme files
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
+
+#### Energie Ampel
+
+```mysql
+SELECT Ampel.status,  ampel_status.color FROM `Ampel` 
+join ampel_status on Ampel.status = ampel_status.id
+WHERE `timestamp` = '2020-10-28 15:00' 
+Limit 0,1
+```
+
+```mysql
+SELECT Ampel.status,  ampel_status.color, FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm, FLOOR(ampel_status.carbon_factor) FROM `Ampel` 
+join ampel_status on Ampel.status = ampel_status.id
+WHERE `timestamp` = '2020-10-28 15:00' 
+Limit 0,1
+```
+
+
 
 
 ### CSS Tricks

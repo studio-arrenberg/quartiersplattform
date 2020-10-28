@@ -885,19 +885,7 @@ function get_excerpt($count = '55') {
 	echo $excerpt;
 }
 
-// template page redirect
-// function single_page_template($single_template) {
-//     global $post;
-
-//     if ($post->post_type == 'projekte') {
-//         $single_template = get_stylesheet_directory() . '/ page-projekte.php';
-//     }
-
-//     return $single_template;
-// }
-// add_filter( 'single_template', 'single_page_template' );
-
-
+// set template for custom post type  
 function tpl_projekte( $single_template ) {
     global $post;
  

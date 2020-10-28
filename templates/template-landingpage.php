@@ -159,7 +159,7 @@ get_header();
 
     <?php  get_template_part('elements/card', 'veranstaltung'); ?>
 
-    <?php // get_template_part('components/energieampel'); ?>
+    <?php  get_template_part('components/energieampel'); ?>
 
     <?php // get_template_part('components/call', 'register'); ?>
 
