@@ -245,44 +245,6 @@ path {
       format("woff");
 }
 
-/* ----------------------------------------------
-OfficinaSansITCStd-Bookiable font. Usage:
-
-@supports (font-variation-settings: normal) {
-	html { font-family: 'OfficinaSansITCStd-Book', sans-serif; }
-}
----------------------------------------------- */
-
-@font-face {
-  font-family: "OfficinaSansITCStd-Book";
-  src: url("./assets/fonts/officina/3901E8_0_0.eot");
-  src: url("./assets/fonts/officina/3901E8_0_0.eot?#iefix")
-      format("embedded-opentype"),
-    url("./assets/fonts/officina/3901E8_0_0.woff2") format("woff2"),
-    url("./assets/fonts/officina/3901E8_0_0.woff") format("woff"),
-    url("./assets/fonts/officina/3901E8_0_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "OfficinaSansITCStd-Bold";
-  src: url("./assets/fonts/officina/3901E8_1_0.eot");
-  src: url("./assets/fonts/officina/3901E8_1_0.eot?#iefix")
-      format("embedded-opentype"),
-    url("./assets/fonts/officina/3901E8_1_0.woff2") format("woff2"),
-    url("./assets/fonts/officina/3901E8_1_0.woff") format("woff"),
-    url("./assets/fonts/officina/3901E8_1_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "OfficinaSansITCStd-BookItalic";
-  src: url("w./assets/fonts/officina3901E8_2_0.eot");
-  src: url("./assets/fonts/officina/3901E8_2_0.eot?#iefix")
-      format("embedded-opentype"),
-    url("./assets/fonts/officina/3901E8_2_0.woff2") format("woff2"),
-    url("./assets/fonts/officina/3901E8_2_0.woff") format("woff"),
-    url("./assets/fonts/officina/3901E8_2_0.ttf") format("truetype");
-}
-
 /* Accessibility Settings -------------------- */
 
 @media (prefers-reduced-motion: reduce) {
@@ -6676,12 +6638,11 @@ a.to-the-top > * {
   font-size: 1.4rem;
   line-height: 1.5rem;
 }
-
+/* 
 .card:hover {
   transform: scale(
     1.01
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+  ); }/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 
 .list {
   flex-wrap: wrap;
@@ -6707,6 +6668,11 @@ a.to-the-top > * {
 .square {
   max-width: 210px;
   max-height: 210px;
+  margin-right: 15px;
+}
+
+.square a {
+  max-width: 100%;
 }
 
 .square .preview-text {
@@ -6720,19 +6686,14 @@ a.to-the-top > * {
   padding: 0px;
 }
 
-.landscape a,
-.square a  {
-  display: block;
-}
-
-.landscape .content,
-.square .content {
+.landscape a .content,
+.square a .content {
   position: absolute;
   bottom: 0px;
   left: 0px;
   top: 0px;
-  right: 0px;
   padding: 10px;
+  width: 100%;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;
@@ -6788,17 +6749,19 @@ a.to-the-top > * {
 
 @media (min-width: 782px) {
   #site-content {
-    margin: 0 auto;
+    margin: 100px auto;
     max-width: 1000px;
     overflow: visible;
   }
 
-  .landscape, .square{
+  .landscape,
+  .square {
     max-width: 100% !important;
     max-height: 100% !important;
   }
 
-  .landscape img, .square img{
+  .landscape img,
+  .square img {
     max-width: 100% !important;
     max-height: 100% !important;
   }
