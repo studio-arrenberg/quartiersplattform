@@ -59,11 +59,22 @@ Path to Theme files
 ```php
 <?php echo get_template_directory_uri(); ?>
 ```
-
+Home URL
+```php
+<?php echo get_site_url(); ?>
+```
 
 ### Recources 
 
 [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html)
+[tiny-slider](https://github.com/ganlanyuan/tiny-slider) ![version](https://img.shields.io/badge/Version-2.9.3-green.svg)
+
+### Functions
+
+Link Card
+```php
+<?php link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen'); ?>
+```
 
 ### Notes
 
@@ -71,7 +82,6 @@ Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
-#### Energie Ampel
 
 ⚠️ DB update
 Table: ampel_status -> add row 'name' varchar(20)

@@ -76,13 +76,5 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     } 
     ?>
-        <!-- <div class="red">Jetzt</div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="yellow">18:00</div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div> -->
     </div>
 </div>
