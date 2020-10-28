@@ -42,7 +42,7 @@ $phase_gramm = $wpdb_b->get_var( "
 $timeline = ("
 SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
 Join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
+WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$datetime."' + INTERVAL 24 Hour
 ");
 
 // echo $timeline;
@@ -60,6 +60,8 @@ WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime
         <h3>CO2 pro kWh</h3>
     </div>
 
+
+    <div class="strom_array">
     <?php
     $timeline = mysqli_query($connection, $timeline) or die("could not perform query");
     while($row = mysqli_fetch_assoc($timeline)) {
@@ -72,7 +74,7 @@ WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime
     } 
     ?>
 
-    <div class="strom_array">
+    
         <div class="red">Jetzt</div>
         <div class="red"></div>
         <div class="red"></div>
