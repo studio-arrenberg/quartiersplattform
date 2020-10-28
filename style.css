@@ -6676,12 +6676,12 @@ a.to-the-top > * {
   font-size: 1.4rem;
   line-height: 1.5rem;
 }
-
+/* 
 .card:hover {
   transform: scale(
     1.01
-  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-}
+  ); }/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
 
 .list {
   flex-wrap: wrap;
@@ -6707,6 +6707,11 @@ a.to-the-top > * {
 .square {
   max-width: 210px;
   max-height: 210px;
+  margin-right: 15px;
+}
+
+.square a{
+  max-width: 100%;
 }
 
 .square .preview-text {
@@ -6720,19 +6725,15 @@ a.to-the-top > * {
   padding: 0px;
 }
 
-.landscape a,
-.square a  {
-  display: block;
-}
 
-.landscape .content,
-.square .content {
+.landscape a .content,
+.square a .content {
   position: absolute;
   bottom: 0px;
   left: 0px;
   top: 0px;
-  right: 0px;
   padding: 10px;
+  width: 100%;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;
@@ -6788,7 +6789,7 @@ a.to-the-top > * {
 
 @media (min-width: 782px) {
   #site-content {
-    margin: 0 auto;
+    margin: 100px auto;
     max-width: 1000px;
     overflow: visible;
   }
