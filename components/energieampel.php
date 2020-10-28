@@ -18,6 +18,8 @@ $datetime = date('Y-m-d H:i');
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
 
+$connection=mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp") or die ('Verbindungsversuch fehlgeschlagen');
+
 $phase_color = $wpdb_b->get_var( "
     SELECT ampel_status.color FROM `Ampel` 
     join ampel_status on Ampel.status = ampel_status.id
@@ -52,7 +54,8 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 <div>
     <div>
         <h2>Energie Ampel</h2>
-        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?> Phase</h3>
+
+        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?>e Phase</h3>
     </div>
 
     <div>
@@ -63,8 +66,10 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     <div class="strom_array">
     <?php
-    $timeline = mysqli_query($wpdb_b, $timeline) or die("could not perform query");
-    while($row = mysqli_fetch_assoc($timeline)) {
+
+
+    $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
+    while($row = mysqli_fetch_assoc($timeline_r)) {
 
         echo "<div class=".$row['color'].">".$row['time']."</div>";
 
@@ -73,14 +78,16 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     } 
     ?>
-    
-        <div class="red">Jetzt</div>
+
+
         <div class="red"></div>
         <div class="red"></div>
         <div class="red"></div>
         <div class="yellow">18:00</div>
         <div class="yellow"></div>
         <div class="yellow"></div>
-        <div class="yellow"></div>
+
+        <div class="yellow"></div> -->
+
     </div>
 </div>
