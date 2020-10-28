@@ -15,35 +15,37 @@ $now = date('Y-m-d H');
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
 
-$tag_data_missing = "sd";
-$tag_data_missing = $wpdb_b->get_var( "
+$phase_color = $wpdb_b->get_var( "
     SELECT ampel_status.color FROM `Ampel` 
     join ampel_status on Ampel.status = ampel_status.id
     WHERE `timestamp` = '".$now.":00'
     Limit 0,1
 " );
 
+$phase_name = $wpdb_b->get_var( "
+    SELECT ampel_status.name FROM `Ampel` 
+    join ampel_status on Ampel.status = ampel_status.id
+    WHERE `timestamp` = '".$now.":00'
+    Limit 0,1
+" );
 
-
-// echo "
-// SELECT ampel_status.color FROM `Ampel` 
-// join ampel_status on Ampel.status = ampel_status.id
-// WHERE `timestamp` = '".$now.":00'
-// Limit 0,1
-// ";
-
-echo $tag_data_missing;
+$phase_gramm = $wpdb_b->get_var( "
+    SELECT FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm FROM `Ampel` 
+    join ampel_status on Ampel.status = ampel_status.id
+    WHERE `timestamp` = '".$now.":00'
+    Limit 0,1
+" );
 
 ?>
 
 <div>
     <div>
         <h2>Energie Ampel</h2>
-        <h3 class="red">Rote Phase</h3>
+        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?> Phase</h3>
     </div>
 
     <div>
-        <h2>430g</h2>
+        <h2><?php echo $phase_gramm; ?>g</h2>
         <h3>CO2 pro kWh</h3>
     </div>
 
