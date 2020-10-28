@@ -35,7 +35,7 @@ get_header();
     $(document).ready(function() {
         var owl = $('.owl-carousel');
         owl.owlCarousel({
-            loop: false,
+            loop: true,
             margin: 10,
             navRewind: false,
             responsive: {
