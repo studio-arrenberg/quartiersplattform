@@ -6605,6 +6605,7 @@ a.to-the-top > * {
   padding: 5px 5px 5px 5px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   transition: all ease-in-out .1s; /* Animation */
 
 }
@@ -6640,7 +6641,7 @@ a.to-the-top > * {
 }
 
 .card .preview-text {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   line-height: 1.9rem;
 }
 
@@ -6650,32 +6651,38 @@ a.to-the-top > * {
 }
 
 
-.preview {
+.list {
   flex-wrap: wrap;
 }
 
-.preview-item{
+.list-item{
   display: flex;
   align-items: center;
   margin-bottom: 5px;
 }
 
-
-.preview-item:last-of-type{
+.list-item:last-of-type{
   margin: 0px;
 }
 
-
+.card .list-item img{
+  max-width: 135px;
+}
 
 /* LANDSCAPE CARD */
 
-.landscape{
+.square{
+  width: 200px;
+  height: 200px;
+}
+
+.landscape, .square{
 	max-height: 200px;
 	display: block;
 	position: relative;
 }
 
-.landscape .content{
+.landscape .content, .square .content{
 	position: absolute;
 	bottom: 5px;
 	left: 5px;
@@ -6691,14 +6698,17 @@ a.to-the-top > * {
 }
 
 
-.landscape img{
+.landscape img, .square img{
 	width: 100%;
 	min-width: inherit;
 	max-width: inherit;
 	height: 100%;
-	max-height: 180px;
+	max-height: 200px;
 	object-fit: cover;
 }
+
+
+
 
 
 
