@@ -15,6 +15,7 @@ $now = date('Y-m-d H');
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
 
+$tag_data_missing = "sd";
 $tag_data_missing = $wpdb_b->get_var( "
     SELECT ampel_status.color FROM `Ampel` 
     join ampel_status on Ampel.status = ampel_status.id
@@ -22,7 +23,7 @@ $tag_data_missing = $wpdb_b->get_var( "
     Limit 0,1
 " );
 
-$tag_data_missing = "sd";
+
 
 // echo "
 // SELECT ampel_status.color FROM `Ampel` 
