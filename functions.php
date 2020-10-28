@@ -876,7 +876,7 @@ function misha_submit_ajax_comment(){
 
 // custom excerpt lenght
 function get_excerpt($count = '55') {
-	$permalink = get_permalink($post->ID);
+	// $permalink = get_permalink($post->ID);
 	$excerpt = get_the_content();
 	$excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
@@ -884,3 +884,38 @@ function get_excerpt($count = '55') {
 	$excerpt = '<p>'.$excerpt.'...';
 	echo $excerpt;
 }
+
+// template page redirect
+// function single_page_template($single_template) {
+//     global $post;
+
+//     if ($post->post_type == 'projekte') {
+//         $single_template = get_stylesheet_directory() . '/ page-projekte.php';
+//     }
+
+//     return $single_template;
+// }
+// add_filter( 'single_template', 'single_page_template' );
+
+
+function tpl_projekte( $single_template ) {
+    global $post;
+ 
+    if ( 'projekte' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-projekte.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_projekte' );
+
+function tpl_veranstaltungen( $single_template ) {
+    global $post;
+ 
+    if ( 'veranstaltungen' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_veranstaltungen' );

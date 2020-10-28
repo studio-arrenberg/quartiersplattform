@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Event
- * Template Post Type: post
+ * Template Name: Veranstaltung [Default]
+ * Template Post Type: veranstaltungen
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -12,6 +12,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
+
 
 	<?php
 

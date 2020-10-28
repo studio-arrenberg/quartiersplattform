@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Projekt
- * Template Post Type: post
+ * Template Name: Projekte
+ * Template Post Type: page
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -9,6 +9,16 @@
  */
 
 get_header();
+
+
+
+$args = array(
+	'post_type'=>'projekte', 
+	'post_status'=>'publish', 
+	'posts_per_page'=> -1
+);
+query_posts( $args );
+
 ?>
 
 <main id="site-content" role="main">
@@ -20,7 +30,11 @@ get_header();
 		while ( have_posts() ) {
 			the_post();
 
-			get_template_part( 'template-parts/content-cover' );
+			// get_template_part( 'elements/card' );
+
+			get_template_part( 'elements/card', 'projekt' );
+
+			// get_template_part( 'template-parts/content-cover' );
 		}
 	}
 

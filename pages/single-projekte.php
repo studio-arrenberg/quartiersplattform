@@ -1,7 +1,9 @@
 <?php
 /**
- * Template Name: Event
- * Template Post Type: page
+ * Template Name: Projekt [Default]
+ * Template Post Type: projekte
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -9,16 +11,6 @@
  */
 
 get_header();
-
-
-
-$args = array(
-	'post_type'=>'veranstaltungen', 
-	'post_status'=>'publish', 
-	'posts_per_page'=> -1
-);
-query_posts( $args );
-
 ?>
 
 <main id="site-content" role="main">
@@ -30,9 +22,8 @@ query_posts( $args );
 		while ( have_posts() ) {
 			the_post();
 
-			get_template_part( 'elements/card', 'veranstaltung');
-
-			// get_template_part( 'template-parts/content-cover' );
+			// get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'template-parts/content-cover' );
 		}
 	}
 
