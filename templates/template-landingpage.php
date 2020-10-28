@@ -12,12 +12,15 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-    <header class="entry-header has-text-align-center header-footer-group">
 
+    <header class="entry-header has-text-align-center header-footer-group">
         <div class="entry-header-inner section-inner medium">
             <h1 class="entry-title">Landingpage Template</h1>
         </div>
     </header>
+
+
+    <?php get_template_part('elements/landscape_card'); ?>
 
     <div class="card shadow">
         <div class="content">
@@ -31,6 +34,83 @@ get_header();
         </div>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
     </div>
+
+
+
+    <div class="owl-carousel owl-theme">
+        <div class="card square shadow">
+            <div class="content">
+                <h3 class="card-title">
+                    Square Card Title
+                </h3>
+                <p class="preview-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+        </div>
+
+        <div class="card square shadow">
+            <div class="content">
+                <h3 class="card-title">
+                    Square Card Title
+                </h3>
+                <p class="preview-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+        </div>
+
+        <div class="card square shadow">
+            <div class="content">
+                <h3 class="card-title">
+                    Square Card Title
+                </h3>
+                <p class="preview-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+        </div>
+
+        <div class="card square shadow">
+            <div class="content">
+                <h3 class="card-title">
+                    Square Card Title
+                </h3>
+                <p class="preview-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+        </div>
+    </div>
+
+
+    <script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                loop: true,
+                margin: 10,
+                navRewind: false,
+                responsive: {
+                  0: {
+                    items: 2
+                  },
+                  600: {
+                    items: 3
+                  },
+                  1000: {
+                    items: 4
+                  }
+                }
+              })
+            })
+          </script>
+
+
 
     <div class="card list shadow">
         <div class="list-item">
@@ -66,44 +146,19 @@ get_header();
                 </p>
             </div>
         </div>
-        <div class="list-item">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
-            <div class="content">
-                <h3 class="card-title">
-                    Card Title
-                </h3>
-                <p class="preview-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </div>
-	</div>
-	
+    </div>
 
-<div class="card square shadow">
-		<div class="content">
-			<h3 class="card-title">
-				Square Card Title
-			</h3>
-			<p class="preview-text">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-			</p>
-		</div>
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
-</div>
+
 
 
 
     <?php 
-
 		$kind =  "nachricht";
 		get_template_part('elements/card', $kind); 
-		
 	?>
 
 
 
-    <?php get_template_part('elements/landscape_card'); ?>
 
     <?php get_template_part('elements/card', 'veranstaltung'); ?>
 
