@@ -881,7 +881,7 @@ function get_excerpt($count = '55') {
 	$excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-	$excerpt = '<p>'.$excerpt.'...';
+	$excerpt = $excerpt.'...';
 	echo $excerpt;
 }
 

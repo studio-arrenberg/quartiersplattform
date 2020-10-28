@@ -89,4 +89,4 @@ rifi2k.format-html-in-php
 2. Comment Setting (WP Settings)
 3. Allow Comment on Post-Type (Post type list Buld action)
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
-
+5. Update Parmalinks
