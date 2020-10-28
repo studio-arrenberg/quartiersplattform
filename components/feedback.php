@@ -9,8 +9,13 @@
 
 ?>
 
-<h4>Das wünsche ich mir von der App...</h4>
+<h4>Was wünschst du dir von der Quartiersplattform?</h4>
 <form>
-    <input type="text" />
-    <submit />
+    <input placeholder="Was können wir besser machen?" type="text" />
+    <submit value="Feedback senden" />
+</form>
+
+<form action="" method="post">
+    <input type="text">
+    <button></button>
 </form>
