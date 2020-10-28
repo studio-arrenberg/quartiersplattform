@@ -17,6 +17,7 @@ $datetime = date('Y-m-d H:i');
 // echo $datetime;
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
+$connection=mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp") or die ('Verbindungsversuch fehlgeschlagen');
 
 $phase_color = $wpdb_b->get_var( "
     SELECT ampel_status.color FROM `Ampel` 
@@ -63,7 +64,7 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     <div class="strom_array">
     <?php
-    $timeline = mysqli_query($wpdb_b, $timeline) or die("could not perform query");
+    $timeline = mysqli_query($connection, $timeline) or die("could not perform query");
     while($row = mysqli_fetch_assoc($timeline)) {
 
         echo "<div class=".$row['color'].">".$row['time']."</div>";
