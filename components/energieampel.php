@@ -63,7 +63,7 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     <div class="strom_array">
     <?php
-    $timeline = mysqli_query($connection, $timeline) or die("could not perform query");
+    $timeline = mysqli_query($wpdb_b, $timeline) or die("could not perform query");
     while($row = mysqli_fetch_assoc($timeline)) {
 
         echo "<div class=".$row['color'].">".$row['time']."</div>";
@@ -73,7 +73,6 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     } 
     ?>
-
     
         <div class="red">Jetzt</div>
         <div class="red"></div>
