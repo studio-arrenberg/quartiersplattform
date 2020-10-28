@@ -24,6 +24,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 #### Later
 [PWA for WP](https://github.com/ahmedkaludi/pwa-for-wp) <br>
 Disable Rest API <br>
+(Buddy Press)<br>
+(WP Forms)<br>
 
 #### Optional (Development)
 Custom Post Type UI
@@ -79,3 +81,9 @@ extension.refreshBrowser <br>
 felixfbecker.php-intellisense <br>
 wordpresstoolbox.wordpress-toolbox <br>
 rifi2k.format-html-in-php
+
+
+## Database Migration
+
+1. Update (Optimise) through Wordpress
+2. -
