@@ -47,7 +47,7 @@ get_header();
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
         </div>
 
         <div class="card square shadow">
@@ -59,7 +59,7 @@ get_header();
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
         </div>
 
         <div class="card square shadow">
@@ -71,7 +71,7 @@ get_header();
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
         </div>
 
         <div class="card square shadow">
@@ -83,7 +83,7 @@ get_header();
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
         </div>
     </div>
 
@@ -92,15 +92,15 @@ get_header();
             $(document).ready(function() {
               var owl = $('.owl-carousel');
               owl.owlCarousel({
-                loop: true,
+                loop: false,
                 margin: 10,
                 navRewind: false,
                 responsive: {
                   0: {
                     items: 2
                   },
-                  600: {
-                    items: 3
+                  782: {
+                    items: 4
                   },
                   1000: {
                     items: 4
