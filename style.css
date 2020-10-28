@@ -1345,12 +1345,16 @@ ul.social-icons li {
 
 #site-header {
   background: #fff;
-  position: relative;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+  border-radius: 0 0 20px 20px;
 }
 
 .header-inner {
   max-width: 168rem;
-  padding: 3.15rem 0;
+  padding: 20px 0;
   z-index: 100;
 }
 
@@ -1360,7 +1364,7 @@ ul.social-icons li {
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 0 4rem;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -1463,6 +1467,7 @@ body:not(.enable-search-modal) .site-logo img {
 .header-navigation-wrapper {
   align-items: center;
   display: flex;
+  top: 0px;
 }
 
 /* Header Toggles ---------------------------- */
@@ -6603,7 +6608,7 @@ a.to-the-top > * {
 }
 
 #site-content {
-  margin: 0 auto;
+  margin: 100px auto;
   max-width: 400px;
   overflow: visible;
 }
@@ -6662,8 +6667,8 @@ a.to-the-top > * {
 }
 
 .card .card-title {
-  font-size: 2.1rem;
-  line-height: 2.3rem;
+  font-size: 1.8rem;
+  line-height: 2rem;
   margin: 0px;
 }
 
@@ -6711,7 +6716,6 @@ a.to-the-top > * {
 .landscape,
 .square {
   max-height: 200px;
-
   position: relative;
   padding: 0px;
 }
