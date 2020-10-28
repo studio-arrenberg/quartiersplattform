@@ -86,4 +86,6 @@ rifi2k.format-html-in-php
 ## Database Migration
 
 1. Update (Optimise) through Wordpress
-2. -
+2. Comment Setting (WP Settings)
+3. Allow Comment on Post-Type (Post type list Buld action)
+4. Custom Post Type enable Comments (Support)
