@@ -62,17 +62,18 @@ get_header();
     </div>
 
 
+    <?php // get_template_part('elements/landscape_card'); ?>
 
-
+    <?php  link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen'); ?>
 
     <?php 
 		$kind =  "nachricht";
 		// get_template_part('elements/card', $kind); 
 	?>
 
-    <?php  get_template_part('elements/card', 'veranstaltung'); ?>
+    <?php  // get_template_part('elements/card', 'veranstaltung'); ?>
 
-    <?php  get_template_part('components/energieampel'); ?>
+    <?php  // get_template_part('components/energieampel'); ?>
 
     <?php // get_template_part('components/call', 'register'); ?>
 

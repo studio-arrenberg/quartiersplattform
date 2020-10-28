@@ -907,3 +907,16 @@ function tpl_veranstaltungen( $single_template ) {
     return $single_template;
 }
 add_filter( 'single_template', 'tpl_veranstaltungen' );
+
+// function template part test
+// link_card('Hallo Welt','Text....','/assets/images/400x200.png', 'veranstaltungen');
+function link_card($title, $text, $bg, $link){
+
+	set_query_var( 'link_card_title', $title );
+	set_query_var( 'link_card_text', $text );
+	set_query_var( 'link_card_bg', $bg );
+	set_query_var( 'link_card_link', $link );
+
+	get_template_part('components/landscape_card');
+
+}

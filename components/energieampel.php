@@ -78,6 +78,8 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
     } 
     ?>
+<<<<<<< HEAD
+=======
 
 
         <div class="red"></div>
@@ -89,5 +91,6 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
         <div class="yellow"></div> -->
 
+>>>>>>> 84de1caab74fce8ca81b0f2837ef3c800d10211c
     </div>
 </div>
