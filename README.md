@@ -83,9 +83,10 @@ wordpresstoolbox.wordpress-toolbox <br>
 rifi2k.format-html-in-php
 
 
-## Database Migration
+## 🏛 Database Migration
 
 1. Update (Optimise) through Wordpress
 2. Comment Setting (WP Settings)
 3. Allow Comment on Post-Type (Post type list Buld action)
-4. Custom Post Type enable Comments (Support)
+4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
+
