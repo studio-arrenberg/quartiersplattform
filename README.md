@@ -73,12 +73,8 @@ Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
 
 #### Energie Ampel
 
-```mysql
-SELECT Ampel.status,  ampel_status.color FROM `Ampel` 
-join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` = '2020-10-28 15:00' 
-Limit 0,1
-```
+⚠️ DB update
+Table: ampel_status -> add row 'name' varchar(20)
 
 ```mysql
 SELECT Ampel.status,  ampel_status.color, FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm, FLOOR(ampel_status.carbon_factor) FROM `Ampel` 

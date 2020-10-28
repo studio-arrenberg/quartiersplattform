@@ -41,7 +41,7 @@ $phase_gramm = $wpdb_b->get_var( "
 <div>
     <div>
         <h2>Energie Ampel</h2>
-        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?> Phase</h3>
+        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_color; ?> Phase</h3>
     </div>
 
     <div>
