@@ -57,6 +57,7 @@ body {
   border: none;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -6183,7 +6184,7 @@ a.to-the-top > * {
 }
 
 
-.energie-ampel-title h2{
+.energie-ampel-titles h2, .energie-ampel-titles h3{
 margin: 0px;
 
 

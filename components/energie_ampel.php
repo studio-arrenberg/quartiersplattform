@@ -39,56 +39,57 @@ if (mysqli_connect_errno()) {
         </div>
     </div>
 
-
-    <div class="strom_array">
-        <div class="red"><label>18:00</label></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="red"></div>
-        <div class="yellow"><label>14:00</label></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="yellow"></div>
-        <div class="green"><label>00:00</label></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
-        <div class="green"></div>
+    <div class="strom_array-container">
+        <div class="strom_array">
+            <div class="red"><label>18:00</label></div>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="yellow"><label>14:00</label></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="yellow"></div>
+            <div class="green"><label>00:00</label></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green"></div>
+        </div>
     </div>
 </div>
 
@@ -142,9 +143,10 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         </div>
     </div>
 
+    <div class="strom_array-container">
 
-    <div class="strom_array">
-        <?php
+        <div class="strom_array">
+            <?php
 
 
     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
@@ -156,14 +158,15 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         if ($row['color'] == $color) $lable = "";
 
         ?>
-        <div class="<?php echo $row['color']; ?>"><?php echo $lable ?></div>
-        <?php
+            <div class="<?php echo $row['color']; ?>"><?php echo $lable ?></div>
+            <?php
 
         $color = $row['color'];        
     } 
     ?>
         </div>
     </div>
+</div>
 </div>
 <?php
 }
