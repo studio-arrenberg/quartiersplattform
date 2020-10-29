@@ -83,6 +83,10 @@ slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 shorten_title($text, $count = '55'); // für den title
 get_excerpt($text, $count = '55'); // für den fließtext
 ```
+#### Calendar Download
+```php
+calendar_download($post);
+```
 
 ### Notes
 
