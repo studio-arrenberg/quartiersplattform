@@ -17,8 +17,13 @@ $datetime = date('Y-m-d H:i');
 // echo $datetime;
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
+$connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");
 
-$connection=mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp") or die ('Verbindungsversuch fehlgeschlagen');
+if (mysqli_connect_errno()) {
+    // echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    // exit();
+}
+else {
 
 $phase_color = $wpdb_b->get_var( "
     SELECT ampel_status.color FROM `Ampel` 
@@ -73,12 +78,21 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
     while($row = mysqli_fetch_assoc($timeline_r)) {
 
-        echo "<div class=".$row['color'].">".$row['time']."</div>";
-
-        $color = $row['color'];
+        //echo "<div class=".$row['color'].">".$row['time']."</div>";
         $time = $row['time'];
-        
+
+        if ($row['color'] == $color) $time = "";
+
+        ?>
+        <div class="<?php echo $row['color']; ?>"><label><?php echo $time ?></label></div>
+        <?php
+
+        $color = $row['color'];        
     } 
     ?>
         </div>
     </div>
+
+    <?php
+}
+?>

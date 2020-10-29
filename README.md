@@ -63,7 +63,6 @@ Home URL
 ### Recources 
 
 [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) <br>
-
 [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
 
 
@@ -75,18 +74,16 @@ link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltunge
 ```
 #### Card List
 ```php 
-$query = array('post_type'=>'veranstaltungen', 'post_status'=>'publish', 'posts_per_page'=> 3 );
 card_list($query); 
 ```
 #### Slider
 ```php
-slider($args, $type = 'card', $slides = '2', $dragfree = 'true');
+slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 ```
 
 ### Notes
 
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
-
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
 #### 🚦 Energie Ampel

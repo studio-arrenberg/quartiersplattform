@@ -875,14 +875,27 @@ function misha_submit_ajax_comment(){
 }
 
 // custom excerpt lenght
-function get_excerpt($count = '55') {
+function get_excerpt($text, $count = '55') {
 	// $permalink = get_permalink($post->ID);
-	$excerpt = get_the_content();
+	$excerpt = $text;
 	$excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 	$excerpt = $excerpt.'...';
 	echo $excerpt;
+}
+
+// shorten text fuction
+function shorten_title($text, $count = '55') {
+	$chars_limit = $count; // Character length
+	$chars_text = strlen($text);
+	$text = $text." ";
+	$text = substr($text,0,$chars_limit);
+	$text = substr($text,0,strrpos($text,' '));
+  
+	if ($chars_text > $chars_limit)
+	   { $text = $text."..."; } // Ellipsis
+	echo $text;
 }
 
 // set template for custom post type  
@@ -953,13 +966,16 @@ function card_list($args) {
 
 // slider
 // for card & square_card
-function slider($args, $type = 'card', $slides = '2', $dragfree = 'true') {
+function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 
-	$slider_class = uniqid();
+	$slider_class = "q".uniqid();
+	$style_class = "embla-one";
+
+	if ($slides == '2') $style_class = "embla-two";
 
 	$query2 = new WP_Query($args);
 	?>
-	<div class="embla" id="<?php echo $slider_class; ?>">
+	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
 		<div class="embla__container">
 	<?php
 	// The Loop
@@ -982,8 +998,8 @@ function slider($args, $type = 'card', $slides = '2', $dragfree = 'true') {
 var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
 var options = {
-	dragFree: true,
-	slidesToScroll: 2, // viewport > 768px 4
+	dragFree: <?php echo $dragfree; ?>,
+	slidesToScroll: <?php echo $slides; ?>, // viewport > 768px 4
 }
 var embla = EmblaCarousel(emblaNode, options)
 
