@@ -63,11 +63,11 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
             <h2><?php echo $phase_gramm; ?>g</h2>
             <h3>CO2 pro kWh</h3>
         </div>
-</div>
+    </div>
 
 
-        <div class="strom_array">
-            <?php
+    <div class="strom_array">
+        <?php
 
 
     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
@@ -80,5 +80,9 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         
     } 
     ?>
-        </div>
     </div>
+
+
+    
+</div>
+
