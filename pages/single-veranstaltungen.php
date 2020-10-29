@@ -57,6 +57,10 @@ get_header();
 
     <?php edit_post_link(); ?>
 
+    <!-- calendar download -->
+    <!-- not ready yet -->
+    <?php calendar_download($post); ?>
+
     <!-- card: projekt / akteur -->
     <!-- not ready yet -->
 

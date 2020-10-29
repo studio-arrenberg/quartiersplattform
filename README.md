@@ -7,7 +7,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
-* Title letter limit
+- calendar download error (server)
+- slider (desktop)
 
 ## 📦 Requirements 
 
@@ -85,6 +86,10 @@ slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 shorten_title($text, $count = '55'); // für den title
 get_excerpt($text, $count = '55'); // für den fließtext
 ```
+#### Calendar Download
+```php
+calendar_download($post);
+```
 
 ### Notes
 
@@ -128,7 +133,7 @@ rifi2k.format-html-in-php
 3. Allow Comment on Post-Type (Post type list Buld action)
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
-
+6. Delete Calendar Files (created in local host)
 ## 🧫 Fundamental
 
 - Moderiert (Quertier/Stadt) oder demokratisch
