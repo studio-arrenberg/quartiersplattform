@@ -875,14 +875,27 @@ function misha_submit_ajax_comment(){
 }
 
 // custom excerpt lenght
-function get_excerpt($count = '55') {
+function get_excerpt($text, $count = '55') {
 	// $permalink = get_permalink($post->ID);
-	$excerpt = get_the_content();
+	$excerpt = $text;
 	$excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 	$excerpt = $excerpt.'...';
 	echo $excerpt;
+}
+
+// shorten text fuction
+function shorten_title($text, $count = '55') {
+	$chars_limit = $count; // Character length
+	$chars_text = strlen($text);
+	$text = $text." ";
+	$text = substr($text,0,$chars_limit);
+	$text = substr($text,0,strrpos($text,' '));
+  
+	if ($chars_text > $chars_limit)
+	   { $text = $text."..."; } // Ellipsis
+	echo $text;
 }
 
 // set template for custom post type  
@@ -938,15 +951,67 @@ function card_list($args) {
 }
 
 // featured card
-function featured_card($args) {
+// function featured_card($args) {
 
-	$query2 = new WP_Query( $args);
+// 	$query2 = new WP_Query( $args);
+// 	// The Loop
+// 	while ( $query2->have_posts() ) {
+// 		$query2->the_post();
+// 		get_template_part('elements/card', 'projekt');
+// 	}
+// 	// Restore original Post Data
+// 	wp_reset_postdata();
+
+// }
+
+// slider
+// for card & square_card
+function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
+
+	$slider_class = "q".uniqid();
+	$style_class = "embla-one";
+
+	if ($slides == '2') $style_class = "embla-two";
+
+	$query2 = new WP_Query($args);
+	?>
+	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
+		<div class="embla__container">
+	<?php
 	// The Loop
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
-		get_template_part('elements/card', 'projekt');
+		// echo get_post_type();
+		echo "<div class='embrela-slide'>";
+		get_template_part('elements/'.$type.'', get_post_type());
+		echo "</div>";
 	}
 	// Restore original Post Data
 	wp_reset_postdata();
+	?>
+		</div>
+	</div>
 
+<script>
+
+
+var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
+
+var options = {
+	dragFree: <?php echo $dragfree; ?>,
+	slidesToScroll: <?php echo $slides; ?>, // viewport > 768px 4
+}
+var embla = EmblaCarousel(emblaNode, options)
+
+/*embla.on('resize', () => {
+
+- Check current breakpoint
+- Determine how many slides to scroll for this breakpoint
+- Store it in a variable called slidesToScroll
+- Update Embla options
+*/
+/*embla.changeOptions({ slidesToScroll }); }) */
+
+</script>
+<?php
 }

@@ -22,7 +22,16 @@ query_posts( $args );
 <main id="site-content" role="main">
 
 
+	<!-- featured veranstaltungen -->
+	<?php
+	$args3 = array(
+		'post_type'=>'veranstaltungen', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4
+	);
 
+	slider($args3,'square_card', '2','true'); 
+	?>
 
     <?php
 
@@ -30,7 +39,7 @@ query_posts( $args );
 
 		while ( have_posts() ) {
 			the_post();
-			get_template_part( 'elements/card', 'veranstaltung');
+			get_template_part( 'elements/card', 'veranstaltungen');
 			
 
 			// get_template_part( 'template-parts/content-cover' );

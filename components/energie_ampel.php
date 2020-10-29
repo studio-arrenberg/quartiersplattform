@@ -17,8 +17,13 @@ $datetime = date('Y-m-d H:i');
 // echo $datetime;
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
+$connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");
 
-$connection=mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp") or die ('Verbindungsversuch fehlgeschlagen');
+if (mysqli_connect_errno()) {
+    // echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+    // exit();
+}
+else {
 
 $phase_color = $wpdb_b->get_var( "
     SELECT ampel_status.color FROM `Ampel` 
@@ -35,7 +40,7 @@ $phase_name = $wpdb_b->get_var( "
 " );
 
 $phase_gramm = $wpdb_b->get_var( "
-    SELECT FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm FROM `Ampel` 
+    SELECT FLOOR( RAND() * (( ampel_status.carbon_factor + 10) - (ampel_status.carbon_factor - 10)) + (ampel_status.carbon_factor - 10)) as gramm FROM `Ampel` 
     join ampel_status on Ampel.status = ampel_status.id
     WHERE `timestamp` = '".$now.":00'
     Limit 0,1
@@ -73,16 +78,23 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
     while($row = mysqli_fetch_assoc($timeline_r)) {
 
-        echo "<div class=".$row['color'].">".$row['time']."</div>";
-
-        $color = $row['color'];
+        //echo "<div class=".$row['color'].">".$row['time']."</div>";
         $time = $row['time'];
-        
+        $lable = "<label>".$time."</label>";
+
+        if ($row['color'] == $color) $lable = "";
+
+        ?>
+        <div class="<?php echo $row['color']; ?>"><?php echo $lable ?></div>
+        <?php
+
+        $color = $row['color'];        
     } 
     ?>
+
+        </div>
     </div>
 
-
-    
-</div>
-
+    <?php
+}
+?>

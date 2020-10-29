@@ -15,10 +15,11 @@
 ?>
 
 
-<div class="card square shadow">
+<div class="card shadow">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
-
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
         <div class="content">
+            <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div>
             <h3 class="card-title">
                 <?php shorten_title(get_the_title(), '60'); ?>
             </h3>
@@ -26,6 +27,5 @@
                 <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
     </a>
 </div>
