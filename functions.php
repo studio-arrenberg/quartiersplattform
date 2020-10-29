@@ -938,15 +938,64 @@ function card_list($args) {
 }
 
 // featured card
-function featured_card($args) {
+// function featured_card($args) {
 
-	$query2 = new WP_Query( $args);
+// 	$query2 = new WP_Query( $args);
+// 	// The Loop
+// 	while ( $query2->have_posts() ) {
+// 		$query2->the_post();
+// 		get_template_part('elements/card', 'projekt');
+// 	}
+// 	// Restore original Post Data
+// 	wp_reset_postdata();
+
+// }
+
+// slider
+// for card & square_card
+function slider($args, $type = 'card', $slides = '2', $dragfree = 'true') {
+
+	$slider_class = uniqid();
+
+	$query2 = new WP_Query($args);
+	?>
+	<div class="embla" id="<?php echo $slider_class; ?>">
+		<div class="embla__container">
+	<?php
 	// The Loop
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
-		get_template_part('elements/card', 'projekt');
+		// echo get_post_type();
+		echo "<div class='embrela-slide'>";
+		get_template_part('elements/'.$type.'', get_post_type());
+		echo "</div>";
 	}
 	// Restore original Post Data
 	wp_reset_postdata();
+	?>
+		</div>
+	</div>
 
+<script>
+
+
+var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
+
+var options = {
+	dragFree: true,
+	slidesToScroll: 2, // viewport > 768px 4
+}
+var embla = EmblaCarousel(emblaNode, options)
+
+/*embla.on('resize', () => {
+
+- Check current breakpoint
+- Determine how many slides to scroll for this breakpoint
+- Store it in a variable called slidesToScroll
+- Update Embla options
+*/
+/*embla.changeOptions({ slidesToScroll }); }) */
+
+</script>
+<?php
 }

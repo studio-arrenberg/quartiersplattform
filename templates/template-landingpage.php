@@ -19,21 +19,29 @@ get_header();
         </div>
     </header>
 
+<?php
+$args2 = array(
+    'post_type'=>'veranstaltungen', 
+    'post_status'=>'publish', 
+    'posts_per_page'=> 4
+);
 
+slider($args2,'square_card', '2','true'); 
+?>
 
 
     <div class="embla" id="embla-one">
         <div class="embla__container">
             <div class="embrela-slide">
-                <?php get_template_part('elements/card-veranstaltung'); ?>
+                <?php get_template_part('elements/card','veranstaltung'); ?>
             </div>
             <div class="embrela-slide">
-                <?php get_template_part('elements/card-veranstaltung'); ?>
+            <?php get_template_part('elements/card','veranstaltung'); ?>
             </div><div class="embrela-slide">
-                <?php get_template_part('elements/card-veranstaltung'); ?>
+            <?php get_template_part('elements/card','veranstaltung'); ?>
             </div>
             <div class="embrela-slide">
-                <?php get_template_part('elements/card-veranstaltung'); ?>
+            <?php get_template_part('elements/card','veranstaltung'); ?>
             </div>
         </div>
     </div>
@@ -61,6 +69,18 @@ var embla = EmblaCarousel(emblaNode, options)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="embla" id="embla-two">
         <div class="embla__container">
             <div class="embrela-slide">
@@ -80,12 +100,6 @@ var embla = EmblaCarousel(emblaNode, options)
             </div>
         </div>
     </div>
-
-
-
-
-
- 
 
 <script>
 
@@ -109,6 +123,16 @@ var embla = EmblaCarousel(emblaNode, options)
 
 
 </script>
+
+
+
+
+
+
+
+
+
+
 
     <div class="card list shadow">
         <?php get_template_part('elements/list_card'); ?>

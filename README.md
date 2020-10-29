@@ -71,14 +71,16 @@ Home URL
 
 #### Link Card
 ```php
-<?php link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen'); ?>
+link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen');
 ```
-Card List
+#### Card List
 ```php 
-<?php 
 $query = array('post_type'=>'veranstaltungen', 'post_status'=>'publish', 'posts_per_page'=> 3 );
 card_list($query); 
-?>
+```
+#### Slider
+```php
+slider($args, $type = 'card', $slides = '2', $dragfree = 'true');
 ```
 
 ### Notes

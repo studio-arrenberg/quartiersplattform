@@ -15,12 +15,13 @@ get_header();
 
     <!-- neuste meldung (list_card + carousel query + function) -->
     <?php
-	$args = array(
+	$args2 = array(
 		'post_type'=>'veranstaltungen', 
 		'post_status'=>'publish', 
-		'posts_per_page'=> 1
+		'posts_per_page'=> 4
 	);
-	featured_card($args);
+
+	slider($args2,'card', '2','true'); 
 	?>
     <!-- link card -->
     <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/400x200.png', '/das-quartier'); ?>
@@ -32,6 +33,15 @@ get_header();
     <!-- not ready yet -->
 
     <!-- featured projects (square_card + carousel query + function) -->
+	<?php
+	$args3 = array(
+		'post_type'=>'projekte', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4
+	);
+
+	slider($args3,'square_card', '2','true'); 
+	?>
 
     <!-- *zahlen und fakten* -->
     <!-- not ready yet -->
@@ -53,7 +63,7 @@ get_header();
     <?php // link_card('Menschen und Geschichtne am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); ?>
 
     <!-- energie ampel -->
-    <?php get_template_part('components/energieampel'); ?>
+    <?php get_template_part('components/energie_ampel'); ?>
 
     <!-- Aufbruch am Arrenberg link card -->
     <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/400x200.png', '/aufbruch-am-arrenberg'); ?>
