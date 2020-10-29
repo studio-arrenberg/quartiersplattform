@@ -978,7 +978,6 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
 		<div class="embla__container">
 	<?php
-	// The Loop
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
 		// echo get_post_type();
@@ -986,7 +985,6 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 		get_template_part('elements/'.$type.'', get_post_type());
 		echo "</div>";
 	}
-	// Restore original Post Data
 	wp_reset_postdata();
 	?>
 		</div>

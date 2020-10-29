@@ -80,6 +80,11 @@ card_list($query);
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 ```
+#### Shorten
+```php 
+shorten_title($text, $count = '55'); // für den title
+get_excerpt($text, $count = '55'); // für den fließtext
+```
 
 ### Notes
 
