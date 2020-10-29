@@ -23,36 +23,32 @@ get_header();
     <?php // get_template_part('elements/landscape_card'); ?>
 
 
-    <div class="my-slider">
-        <?php get_template_part('elements/square_card'); ?>
-        <?php get_template_part('elements/square_card'); ?>
-        <?php get_template_part('elements/square_card'); ?>
-        <?php get_template_part('elements/square_card'); ?>
+
+
+
+    <div class="embla" id="embla-square">
+        <div class="embla__container">
+            <div class="embrela-slide">
+                <?php get_template_part('elements/square_card'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/square_card'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/square_card'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/square_card'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/square_card'); ?>
+            </div>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-
-    <script>
-  var slider = tns({
-    container: '.my-slider',
-    items: 2,
-    gutter: 0,
-    controls: false,
-    nav: false,
-    mouseDrag: true,
-    preventScrollOnTouch: true,
-    responsive: {
-      0: {
-        items: 2
-      },
-      782: {
-        items: 4
-      }
-    }
-  });
-</script>
 
 
-   
+
+
 
 
     <div class="card list shadow">

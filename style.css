@@ -6136,27 +6136,31 @@ a.to-the-top > * {
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
 }
 
-/* OWL */
 
-.owl-carousel {
-  height: auto;
-  overflow: visible;
-  margin: 0 auto;
-}
-.owl-carousel .owl-stage {
-  height: auto;
+
+
+.embla {
   overflow: visible;
 }
-
-.owl-carousel .owl-stage .owl-item,
-.owl-carousel .owl-stage-outer,
-.owl-carousel .owl-theme  {
-  overflow: visible !important;
+.embla__container {
+  display: flex;
+  margin-left: -10px;
 }
 
-.owl-carousel .square {
-  margin-bottom: 0px;
+/* Mobile - 1 slide in viewport */
+.embrela-slide {
+  flex: 0 0 50%;
+  padding-left: 10px;
 }
+
+/* Tablet - 2 slides in viewport */
+@media (min-width: 768px) {
+  .embrela-slide {
+    flex: 0 0 25%;
+  }
+
+}
+
 
 @media (min-width: 782px) {
   #site-content {
