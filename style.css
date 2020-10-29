@@ -6183,16 +6183,21 @@ a.to-the-top > * {
   }
 }
 
+.energie-ampel{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
 
-.energie-ampel-titles h2, .energie-ampel-titles h3{
-margin: 0px;
-
-
+.energie-ampel-titles h2,
+.energie-ampel-titles h3 {
+  margin: 0px;
+  font-size: 2rem;
 }
 
 .energie-ampel-titles {
   display: flex;
   justify-content: space-between;
+  margin-bottom: -20px;
 }
 
 .strom_array-container {
@@ -6200,14 +6205,13 @@ margin: 0px;
   overflow-y: hidden;
   position: relative;
   padding: 30px 0px;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .strom_array-container::-webkit-scrollbar {
   display: none;
 }
-
 
 .strom_array {
   position: relative;
@@ -6228,24 +6232,30 @@ margin: 0px;
 
 .strom_array .red {
   background: #ef6363;
-  color: #ef6363;
 }
 .strom_array .yellow {
   background: #efd763;
-  color: #efd763;
 }
 .strom_array .green {
   background: #40b82e;
-  color: #40b82e;
 }
 
 .strom_array label {
   position: absolute;
   top: 70px;
   font-size: 1.7rem;
-  
 }
 
-.red .time:first-of-type{
+.red .time:first-of-type {
   display: block;
+}
+
+.red {
+  color: #ef6363;
+}
+.yellow {
+  color: #efd763;
+}
+.green {
+  color: #40b82e;
 }
