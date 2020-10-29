@@ -9,10 +9,14 @@
 
 ?>
 
-<div class="card shadow">
+
+
+
+<div class="card landscape shadow">
+    <a href="">
 		<div class="content">
 			<h3 class="card-title">
-				Werde mitglied in deinem Quartier
+				Werde Mitglied in deinem Quartier
 			</h3>
 			<p class="preview-text">
 				+ Projekte erstellen <br>
@@ -20,5 +24,6 @@
 				+ Veranstaltungen teilen
 			</p>
 		</div>
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt=""/>	
-	</div>
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x200.png" alt=""/>	
+    </a>
+</div>
