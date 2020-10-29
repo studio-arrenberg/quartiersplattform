@@ -40,7 +40,7 @@ $phase_name = $wpdb_b->get_var( "
 " );
 
 $phase_gramm = $wpdb_b->get_var( "
-    SELECT FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm FROM `Ampel` 
+    SELECT FLOOR( RAND() * (( ampel_status.carbon_factor + 10) - (ampel_status.carbon_factor - 10)) + (ampel_status.carbon_factor - 10)) as gramm FROM `Ampel` 
     join ampel_status on Ampel.status = ampel_status.id
     WHERE `timestamp` = '".$now.":00'
     Limit 0,1
@@ -80,8 +80,9 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
         //echo "<div class=".$row['color'].">".$row['time']."</div>";
         $time = $row['time'];
+        $lable = "<label>".$time."</label>";
 
-        if ($row['color'] == $color) $time = "";
+        if ($row['color'] == $color) $lable = "";
 
         ?>
         <div class="<?php echo $row['color']; ?>"><label><?php echo $time ?></label></div>
