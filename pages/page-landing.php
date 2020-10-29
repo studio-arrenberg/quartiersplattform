@@ -53,7 +53,7 @@ get_header();
     <?php // link_card('Menschen und Geschichtne am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); ?>
 
     <!-- energie ampel -->
-    <?php get_template_part('components/energieampel'); ?>
+    <?php get_template_part('components/energie_ampel'); ?>
 
     <!-- Aufbruch am Arrenberg link card -->
     <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/400x200.png', '/aufbruch-am-arrenberg'); ?>
