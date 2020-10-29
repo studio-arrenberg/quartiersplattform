@@ -9,63 +9,48 @@
  * @since Twenty Twenty 1.0
  */
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 
 <html class="no-js" <?php language_attributes(); ?>>
 
-	<head>
+<head>
 
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="profile" href="https://gmpg.org/xfn/11">
-		<link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
 
-		<?php wp_head(); ?>
+    <?php wp_head(); ?>
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+	
+</head>
 
+<body <?php body_class(); ?>>
 
-	</head>
-
-	<body <?php body_class(); ?>>
-
-		<?php
+    <?php
 		wp_body_open();
 		?>
 
-		<header id="site-header" class="header-footer-group" role="banner">
+    <header id="site-header" role="banner">
+        <div class="header-titles-wrapper">
+            <div class="header-titles">
+                <?php twentytwenty_site_logo(); ?>
+            </div>
+            <a class="btn site-header-btn" href="">Login</a>
+        </div>
 
-			<div class="header-inner section-inner">
+        <div class="header-navigation-wrapper">
+            <?php
+				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+					?>
+            <nav class="menu-container" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
+                role="navigation">
 
-				<div class="header-titles-wrapper">
+                <ul class="menu reset-list-style">
 
-					
-					<div class="header-titles">
-
-						<?php
-							// Site title or logo.
-							twentytwenty_site_logo();
-
-						?>
-
-					</div><!-- .header-titles -->
-
-					
-
-				</div><!-- .header-titles-wrapper -->
-
-				<div class="header-navigation-wrapper">
-
-					<?php
-					if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-						?>
-
-							<nav class="primary-menu-wrapper" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
-
-								<ul class="primary-menu reset-list-style">
-
-								<?php
+                    <?php
 								if ( has_nav_menu( 'primary' ) ) {
 
 									wp_nav_menu(
@@ -90,14 +75,11 @@
 								}
 								?>
 
-								</ul>
+                </ul>
 
-							</nav><!-- .primary-menu-wrapper -->
+            </nav><!-- .primary-menu-wrapper -->
 
-						<?php } ?>
+            <?php } ?>
 
-				</div><!-- .header-navigation-wrapper -->
-
-			</div><!-- .header-inner -->
-			
-		</header><!-- #site-header -->
+        </div><!-- .header-navigation-wrapper -->
+    </header><!-- #site-header -->
