@@ -920,3 +920,33 @@ function link_card($title, $text, $bg, $link){
 	get_template_part('components/landscape_card');
 
 }
+
+// list card
+function card_list($args) {
+
+	echo "<div class='card list shadow'>";
+	$query2 = new WP_Query( $args);
+	// The Loop
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+		get_template_part('elements/list_card');
+	}
+	// Restore original Post Data
+	wp_reset_postdata();
+	echo "</div>";
+
+}
+
+// featured card
+function featured_card($args) {
+
+	$query2 = new WP_Query( $args);
+	// The Loop
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+		get_template_part('elements/card', 'projekt');
+	}
+	// Restore original Post Data
+	wp_reset_postdata();
+
+}

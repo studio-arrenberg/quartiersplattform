@@ -5,15 +5,11 @@ Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
-## 🧭 Wichtig 
-
-* Naming der Templates Files
-* Englisch oder Denglish?
-* Naming element (landscape_card) css (landscape card)
+## 🧯 Wichtig 
 
 * Title letter limit
 
-## Requirements 
+## 📦 Requirements 
 
 ### Server
 `Wordpress` 5.5.1 <br>
@@ -66,25 +62,30 @@ Home URL
 
 ### Recources 
 
-[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html)
-[tiny-slider](https://github.com/ganlanyuan/tiny-slider) ![version](https://img.shields.io/badge/Version-2.9.3-green.svg)
+[Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) <br>
+
 
 ### Functions
 
-Link Card
+#### Link Card
 ```php
 <?php link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen'); ?>
+```
+Card List
+```php 
+<?php 
+$query = array('post_type'=>'veranstaltungen', 'post_status'=>'publish', 'posts_per_page'=> 3 );
+card_list($query); 
+?>
 ```
 
 ### Notes
 
-Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz`
+Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
-
-⚠️ DB update
-Table: ampel_status -> add row 'name' varchar(20)
+#### 🚦 Energie Ampel
 ##### Phase:
 ```mysql
 SELECT Ampel.status,  ampel_status.color, FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm, FLOOR(ampel_status.carbon_factor) FROM `Ampel` 
@@ -115,8 +116,14 @@ rifi2k.format-html-in-php
 
 ## 🏛 Database Migration
 
+0. Last Push to [vpp](https://vpp.arrenberg.studio)
 1. Update (Optimise) through Wordpress
 2. Comment Setting (WP Settings)
 3. Allow Comment on Post-Type (Post type list Buld action)
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
+
+## 🧫 Fundamental
+
+- Moderiert (Quertier/Stadt) oder demokratisch
+- Text oder Bildsprache 
