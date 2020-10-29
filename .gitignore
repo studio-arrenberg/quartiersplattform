@@ -23,4 +23,5 @@ node_modules/
 *.sqlite
 
 # calendar files
+!assets/generated/calendar-files/
 assets/generated/calendar-files/*
