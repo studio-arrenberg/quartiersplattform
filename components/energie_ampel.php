@@ -22,6 +22,78 @@ $connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");
 if (mysqli_connect_errno()) {
     // echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
     // exit();
+    // fall back function
+    ?>
+
+<div class="energie-ampel">
+    <div class="energie-ampel-titles">
+        <div>
+            <h2>Energie Ampel</h2>
+
+            <h3 class="green">grüne Phase</h3>
+        </div>
+
+        <div>
+            <h2>230g</h2>
+            <h3>CO2 pro kWh</h3>
+        </div>
+    </div>
+
+
+    <div class="strom_array">
+        <div class="red"><label>18:00</label></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="yellow"><label>14:00</label></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="green"><label>00:00</label></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+    </div>
+</div>
+
+
+<?php
 }
 else {
 
@@ -68,17 +140,16 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
             <h2><?php echo $phase_gramm; ?>g</h2>
             <h3>CO2 pro kWh</h3>
         </div>
-</div>
+    </div>
 
 
-        <div class="strom_array">
-            <?php
+    <div class="strom_array">
+        <?php
 
 
     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
     while($row = mysqli_fetch_assoc($timeline_r)) {
 
-        //echo "<div class=".$row['color'].">".$row['time']."</div>";
         $time = $row['time'];
         $lable = "<label>".$time."</label>";
 
@@ -91,9 +162,9 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         $color = $row['color'];        
     } 
     ?>
-        </div>
     </div>
+</div>
 
-    <?php
+<?php
 }
 ?>
