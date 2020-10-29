@@ -975,6 +975,7 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 
 	$slider_class = "q".uniqid();
 	$style_class = "embla-one";
+	// $slides = "4";
 
 	if ($slides == '2') $style_class = "embla-two";
 
@@ -998,20 +999,30 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 <script>
 var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
+var slides_num = <?php echo $slides; ?>;
+var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+
+if (vw > 768) {
+	slides_num = slides_num * 2;
+}
+
+
 var options = {
     dragFree: <?php echo $dragfree; ?>,
-    slidesToScroll: <?php echo $slides; ?>, // viewport > 768px 4
+    slidesToScroll: slides_num, // viewport > 768px 4
 }
 var embla = EmblaCarousel(emblaNode, options)
 
-/*embla.on('resize', () => {
-
-- Check current breakpoint
-- Determine how many slides to scroll for this breakpoint
-- Store it in a variable called slidesToScroll
-- Update Embla options
-*/
-/*embla.changeOptions({ slidesToScroll }); }) */
+embla.on('resize', () => {
+	var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+	slidesToScroll = '<?php echo $slides; ?>';
+	// console.log(vw);
+	if (vw > 768) {
+		slidesToScroll = slidesToScroll * 2;
+	}
+	// console.log(slidesToScroll);
+  embla.reInit({ slidesToScroll });
+});
 </script>
 <?php
 }
@@ -1112,7 +1123,7 @@ function calendar_download($post) {
     
     ?>
 
-    <a class="btn" href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a>
+    <button class="btn" href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</button>
     
     <?php
     

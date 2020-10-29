@@ -7,6 +7,9 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
+- calendar download error (server)
+- slider (desktop)
+
 ## 📦 Requirements 
 
 ### Server
