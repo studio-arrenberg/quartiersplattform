@@ -85,7 +85,7 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         if ($row['color'] == $color) $lable = "";
 
         ?>
-        <div class="<?php echo $row['color']; ?>"><label><?php echo $time ?></label></div>
+        <div class="<?php echo $row['color']; ?>"><?php echo $lable ?></div>
         <?php
 
         $color = $row['color'];        
