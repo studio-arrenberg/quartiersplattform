@@ -8,7 +8,10 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 ## 🧯 Wichtig 
 
 - calendar download error (server)
-- slider (desktop)
+- nachrichten kachel: nachrichten am arrenberg
+- (archieve) page: nachrichten
+- page: neue plattform für den arrenberg (erklärung + feedback)
+- archieve: vergangene veranstaltungen
 
 ## 📦 Requirements 
 
@@ -134,6 +137,8 @@ rifi2k.format-html-in-php
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
 6. Delete Calendar Files (created in local host)
+7. Set Menu
+
 ## 🧫 Fundamental
 
 - Moderiert (Quertier/Stadt) oder demokratisch
