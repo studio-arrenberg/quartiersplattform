@@ -21,7 +21,7 @@ get_header();
 		'posts_per_page'=> 4
 	);
 
-	slider($args2,'card', '2','true'); 
+	slider($args2,'card', '1','false'); 
 	?>
     <!-- link card -->
     <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/400x200.png', '/das-quartier'); ?>
