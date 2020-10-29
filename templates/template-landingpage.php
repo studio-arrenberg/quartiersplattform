@@ -29,8 +29,7 @@ get_header();
             </div>
             <div class="embrela-slide">
                 <?php get_template_part('elements/card-veranstaltung'); ?>
-            </div>
-            <div class="embrela-slide">
+            </div><div class="embrela-slide">
                 <?php get_template_part('elements/card-veranstaltung'); ?>
             </div>
             <div class="embrela-slide">
@@ -38,6 +37,26 @@ get_header();
             </div>
         </div>
     </div>
+
+    <script>
+var emblaNode = document.getElementById('embla-one')
+
+var options = {
+    dragFree: false,
+    slidesToScroll: 1, // viewport > 768px 2
+}
+
+var embla = EmblaCarousel(emblaNode, options)
+/*embla.on('resize', () => {
+
+  - Check current breakpoint
+  - Determine how many slides to scroll for this breakpoint
+  - Store it in a variable called slidesToScroll
+  - Update Embla options
+  */
+/*embla.changeOptions({ slidesToScroll }); }) */
+
+</script>
 
 
 
@@ -62,6 +81,34 @@ get_header();
         </div>
     </div>
 
+
+
+
+
+ 
+
+<script>
+
+
+var emblaNode = document.getElementById('embla-two')
+
+var options = {
+    dragFree: true,
+    slidesToScroll: 2, // viewport > 768px 4
+}
+
+var embla = EmblaCarousel(emblaNode, options)
+/*embla.on('resize', () => {
+
+  - Check current breakpoint
+  - Determine how many slides to scroll for this breakpoint
+  - Store it in a variable called slidesToScroll
+  - Update Embla options
+  */
+/*embla.changeOptions({ slidesToScroll }); }) */
+
+
+</script>
 
     <div class="card list shadow">
         <?php get_template_part('elements/list_card'); ?>

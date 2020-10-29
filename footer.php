@@ -57,46 +57,7 @@
 
 <?php wp_footer(); ?>
 
-<script src="https://unpkg.com/embla-carousel@latest/embla-carousel.umd.js"> </script>
-<script>
-var emblaNode = document.getElementById('embla-one')
 
-var options = {
-    dragFree: false,
-    slidesToScroll: 1,
-}
-
-var embla = EmblaCarousel(emblaNode, options)
-/*embla.on('resize', () => {
-
-  - Check current breakpoint
-  - Determine how many slides to scroll for this breakpoint
-  - Store it in a variable called slidesToScroll
-  - Update Embla options
-  */
-/*embla.changeOptions({ slidesToScroll }); }) */
-
-
-
-var emblaNode = document.getElementById('embla-two')
-
-var options = {
-    dragFree: true,
-    slidesToScroll: 2,
-}
-
-var embla = EmblaCarousel(emblaNode, options)
-/*embla.on('resize', () => {
-
-  - Check current breakpoint
-  - Determine how many slides to scroll for this breakpoint
-  - Store it in a variable called slidesToScroll
-  - Update Embla options
-  */
-/*embla.changeOptions({ slidesToScroll }); }) */
-
-
-</script>
 
 </body>
 

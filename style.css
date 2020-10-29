@@ -6133,7 +6133,7 @@ a.to-the-top > * {
 }
 
 .embla {
-  overflow: visible;
+  overflow: hidden;
 }
 .embla__container {
   display: flex;
