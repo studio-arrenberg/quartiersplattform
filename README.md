@@ -7,8 +7,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
-* Title letter limit
-
 ## 📦 Requirements 
 
 ### Server

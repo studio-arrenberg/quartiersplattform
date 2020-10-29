@@ -226,10 +226,15 @@ add_action( 'wp_enqueue_scripts', 'twentytwenty_register_scripts' );
 function twentytwenty_skip_link_focus_fix() {
 	// The following is minified via `terser --compress --mangle -- assets/js/skip-link-focus-fix.js`.
 	?>
-	<script>
-	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
-	</script>
-	<?php
+<script>
+/(trident|msie)/i.test(navigator.userAgent) && document.getElementById && window.addEventListener && window
+    .addEventListener("hashchange", function() {
+        var t, e = location.hash.substring(1);
+        /^[A-z0-9_-]+$/.test(e) && (t = document.getElementById(e)) && (/^(?:a|select|input|button|textarea)$/i
+            .test(t.tagName) || (t.tabIndex = -1), t.focus())
+    }, !1);
+</script>
+<?php
 }
 add_action( 'wp_print_footer_scripts', 'twentytwenty_skip_link_focus_fix' );
 
@@ -975,9 +980,9 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 
 	$query2 = new WP_Query($args);
 	?>
-	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
-		<div class="embla__container">
-	<?php
+<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
+    <div class="embla__container">
+        <?php
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
 		// echo get_post_type();
@@ -987,17 +992,15 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 	}
 	wp_reset_postdata();
 	?>
-		</div>
-	</div>
+    </div>
+</div>
 
 <script>
-
-
 var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
 var options = {
-	dragFree: <?php echo $dragfree; ?>,
-	slidesToScroll: <?php echo $slides; ?>, // viewport > 768px 4
+    dragFree: <?php echo $dragfree; ?>,
+    slidesToScroll: <?php echo $slides; ?>, // viewport > 768px 4
 }
 var embla = EmblaCarousel(emblaNode, options)
 
@@ -1009,7 +1012,108 @@ var embla = EmblaCarousel(emblaNode, options)
 - Update Embla options
 */
 /*embla.changeOptions({ slidesToScroll }); }) */
-
 </script>
 <?php
+}
+
+// calendar download button
+function calendar_download($post) {
+    
+    $title = get_the_title();
+    $start = date('Ymd', strtotime(get_field( "zeitpunkt" ))) . "T" . date('His', strtotime(get_field( "zeitpunkt" )));
+    $ende = date('Ymd', strtotime(get_field( "ende" ))) . "T" . date('His', strtotime(get_field( "ende" )));
+	$creation = date('Ymd') . "T" . date('His');
+
+	$links = get_template_directory_uri();
+	
+	echo "hello world<br>";
+	echo "title ".$title."<br>start ".$start."<br>end ".$end."<br>creation ".$creation."<br>link".$links;
+	echo "<br>";
+    
+    // get ort name
+    $taxonomies = get_object_taxonomies( $post );
+    $product_terms = wp_get_object_terms( $post->ID, $taxonomies[1]);
+    
+    if (!empty($product_terms[0]->name)) {
+        $ort = $product_terms[0]->name;
+    }
+    else {
+        $ort = "";
+    }
+    
+    $url = get_site_url(null, '/wp-content/themes/', 'https');
+    $url = str_replace('https://', '', $url);
+    $url = str_replace('/wp-content/themes/', '', $url);
+    
+//    echo $url;
+    
+    $kurz = get_field( "kurzbeschreibung" );
+
+    $file_name = $post->post_name;
+//    $file_name = $post->post_name . "_" . date('Y-m', strtotime(get_field( "zeitpunkt" )));
+
+    $url = "/var/www/vhosts/".$url."/httpdocs/wp/wp-content/themes/";
+//    echo $url;
+    $theme = wp_get_theme();
+    $dir = "/assets/generated/calendar-files/";
+    
+    // frequency
+    $kb_freq = get_field( "wiederholung" );
+    
+    $kb_freq_end = date('Ymd', strtotime(get_field( "ende_der_widerholung" ))) . "T" . date('His', strtotime(get_field( "ende_der_widerholung" )));
+	
+
+
+    $kb_start = $start;
+    $kb_end = $ende;
+    $kb_current_time = $creation;
+    $kb_title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
+    $kb_location = preg_replace('/([\,;])/','\\\$1',$ort); 
+    $kb_location = html_entity_decode($kb_location, ENT_COMPAT, 'UTF-8');
+    $kb_description = html_entity_decode($kurz, ENT_COMPAT, 'UTF-8');
+    $kb_file_name = $file_name;
+
+    $kb_url = get_permalink($post);
+    
+    if($ende == '19700101T000000') {
+        die(); 
+    }
+    
+	// $kb_ical = fopen($url.$theme.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
+	$kb_ical = fopen($links.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
+        
+    $eol = "\r\n";
+    $kb_ics_content =
+    'BEGIN:VCALENDAR'.$eol.
+    'VERSION:2.0'.$eol.
+    'PRODID:-//kulturbanause//kulturbanause.de//DE'.$eol.
+    'CALSCALE:GREGORIAN'.$eol.
+    'BEGIN:VEVENT'.$eol.
+    'DTSTART:'.$kb_start.$eol.
+    'DTEND:'.$kb_end.$eol.
+    'LOCATION:'.$kb_location.$eol.
+    'DTSTAMP:'.$kb_current_time.$eol.
+    // 'RRULE:FREQ='.$kb_freq.';UNTIL='.ende_der_widerholung.
+    'SUMMARY:'.$kb_title.$eol.
+    'URL;VALUE=URI:'.$kb_url.$eol.
+    'DESCRIPTION:'.$kb_description.$eol.
+    'UID:'.$kb_current_time.'-'.$kb_start.'-'.$kb_end.$eol.
+    'END:VEVENT'.$eol.
+    'END:VCALENDAR';
+    
+//    header("Content-Type: text/Calendar;charset=utf-8");
+//        header('Content-Disposition: inline; filename="' . $kb_file_name . '.ics"');
+    header('HTTP/1.0 200 OK', true, 200);
+    
+    
+    fwrite($kb_ical, $kb_ics_content);
+
+    fclose($kb_ical);
+    
+    ?>
+
+    <!-- <a class="btn" href="<?php echo bloginfo('template_url') . "/includes/calendar_export/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a> -->
+    
+    <?php
+    
 }

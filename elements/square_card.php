@@ -20,7 +20,7 @@
 
         <div class="content">
             <h3 class="card-title">
-                <?php shorten_title(get_the_title(), '60'); ?>
+                <?php shorten_title(get_the_title(), '30'); ?>
             </h3>
             <p class="preview-text">
                 <?php  get_excerpt(get_the_content(), '55'); ?>
