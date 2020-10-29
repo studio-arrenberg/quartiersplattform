@@ -1025,10 +1025,15 @@ function calendar_download($post) {
 	$creation = date('Ymd') . "T" . date('His');
 
 	$links = get_template_directory_uri();
+
+	$destination_folder = $_SERVER['DOCUMENT_ROOT'];
+
+	$man_link = getcwd()."/wp-content/themes/".wp_get_theme();
+	// $man_link = getcwd()."/wp-content/uploads/calendar-files/";
 	
-	echo "hello world<br>";
-	echo "title ".$title."<br>start ".$start."<br>end ".$end."<br>creation ".$creation."<br>link".$links;
-	echo "<br>";
+	// echo "hello world<br>";
+	// echo "title ".$title."<br>start ".$start."<br>end ".$end."<br>creation ".$creation."<br>link".$links."<br>server".$destination_folder;
+	// echo "<br>";
     
     // get ort name
     $taxonomies = get_object_taxonomies( $post );
@@ -1041,9 +1046,9 @@ function calendar_download($post) {
         $ort = "";
     }
     
-    $url = get_site_url(null, '/wp-content/themes/', 'https');
-    $url = str_replace('https://', '', $url);
-    $url = str_replace('/wp-content/themes/', '', $url);
+    // $url = get_site_url(null, '/wp-content/themes/', 'https');
+    // $url = str_replace('https://', '', $url);
+    // $url = str_replace('/wp-content/themes/', '', $url);
     
 //    echo $url;
     
@@ -1052,18 +1057,14 @@ function calendar_download($post) {
     $file_name = $post->post_name;
 //    $file_name = $post->post_name . "_" . date('Y-m', strtotime(get_field( "zeitpunkt" )));
 
-    $url = "/var/www/vhosts/".$url."/httpdocs/wp/wp-content/themes/";
-//    echo $url;
-    $theme = wp_get_theme();
+    // $url = "/var/www/vhosts/".$url."/httpdocs/wp/wp-content/themes/";
+    
     $dir = "/assets/generated/calendar-files/";
     
-    // frequency
-    $kb_freq = get_field( "wiederholung" );
-    
-    $kb_freq_end = date('Ymd', strtotime(get_field( "ende_der_widerholung" ))) . "T" . date('His', strtotime(get_field( "ende_der_widerholung" )));
+    // frequency (wiederholung)
+    // $kb_freq = get_field( "wiederholung" );
+    // $kb_freq_end = date('Ymd', strtotime(get_field( "ende_der_widerholung" ))) . "T" . date('His', strtotime(get_field( "ende_der_widerholung" )));
 	
-
-
     $kb_start = $start;
     $kb_end = $ende;
     $kb_current_time = $creation;
@@ -1080,7 +1081,8 @@ function calendar_download($post) {
     }
     
 	// $kb_ical = fopen($url.$theme.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
-	$kb_ical = fopen($links.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
+	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
+	// $kb_ical = fopen($man_link.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
         
     $eol = "\r\n";
     $kb_ics_content =
@@ -1102,17 +1104,15 @@ function calendar_download($post) {
     'END:VCALENDAR';
     
 //    header("Content-Type: text/Calendar;charset=utf-8");
-//        header('Content-Disposition: inline; filename="' . $kb_file_name . '.ics"');
-    header('HTTP/1.0 200 OK', true, 200);
-    
-    
-    fwrite($kb_ical, $kb_ics_content);
+//    header('Content-Disposition: inline; filename="' . $kb_file_name . '.ics"');
 
+    // header('HTTP/1.0 200 OK', true, 200);
+    fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
     
     ?>
 
-    <!-- <a class="btn" href="<?php echo bloginfo('template_url') . "/includes/calendar_export/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a> -->
+    <a class="btn" href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a>
     
     <?php
     

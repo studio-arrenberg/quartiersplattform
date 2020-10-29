@@ -126,7 +126,7 @@ rifi2k.format-html-in-php
 3. Allow Comment on Post-Type (Post type list Buld action)
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
-
+6. Delete Calendar Files (created in local host)
 ## 🧫 Fundamental
 
 - Moderiert (Quertier/Stadt) oder demokratisch
