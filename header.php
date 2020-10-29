@@ -23,6 +23,7 @@
     <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
 
     <?php wp_head(); ?>
+    <script src="https://unpkg.com/embla-carousel@latest/embla-carousel.umd.js"> </script>
 
 	
 </head>

@@ -1325,7 +1325,6 @@ ul.social-icons li {
 
 .site-header-btn {
   align-self: flex-end;
-
 }
 
 .site-title {
@@ -1346,7 +1345,6 @@ ul.social-icons li {
   text-decoration: underline;
 }
 
-
 /* Header Navigation ------------------------- */
 
 .header-navigation-wrapper {
@@ -1354,8 +1352,6 @@ ul.social-icons li {
   display: flex;
   top: 0px;
 }
-
-
 
 /* Primary Menu ---------------------------- */
 
@@ -6136,11 +6132,8 @@ a.to-the-top > * {
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
 }
 
-
-
-
 .embla {
-  overflow: visible;
+  overflow: hidden;
 }
 .embla__container {
   display: flex;
@@ -6148,19 +6141,25 @@ a.to-the-top > * {
 }
 
 /* Mobile - 1 slide in viewport */
-.embrela-slide {
+#embla-one .embrela-slide {
+  flex: 0 0 100%;
+  padding-left: 10px;
+}
+
+#embla-two .embrela-slide {
   flex: 0 0 50%;
   padding-left: 10px;
 }
 
 /* Tablet - 2 slides in viewport */
 @media (min-width: 768px) {
-  .embrela-slide {
+  #embla-one .embrela-slide {
+    flex: 0 0 100%;
+  }
+  #embla-two .embrela-slide {
     flex: 0 0 25%;
   }
-
 }
-
 
 @media (min-width: 782px) {
   #site-content {
