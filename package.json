@@ -54,5 +54,8 @@
 		"lint:css": "wp-scripts lint-style 'style.css' 'assets/**/*.css'",
 		"lint:js": "wp-scripts lint-js 'assets/**/*.js'",
 		"lint:pkg-json": "wp-scripts lint-pkg-json"
+	},
+	"dependencies": {
+		"embla-carousel": "^4.0.6"
 	}
 }

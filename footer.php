@@ -12,52 +12,75 @@
  */
 
 ?>
-			<footer id="site-footer" role="contentinfo" class="header-footer-group">
+<footer id="site-footer" role="contentinfo" class="header-footer-group">
 
-				<div class="section-inner">
+    <div class="section-inner">
 
-					<div class="footer-credits">
+        <div class="footer-credits">
 
-						<p class="footer-copyright">&copy;
-							<?php
+            <p class="footer-copyright">&copy;
+                <?php
 							echo date_i18n(
 								/* translators: Copyright date format, see https://www.php.net/date */
 								_x( 'Y', 'copyright date format', 'twentytwenty' )
 							);
 							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+            </p><!-- .footer-copyright -->
 
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
+            <p class="powered-by-wordpress">
+                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
+                    <?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
+                </a>
+            </p><!-- .powered-by-wordpress -->
 
-					</div><!-- .footer-credits -->
+        </div><!-- .footer-credits -->
 
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
+        <a class="to-the-top" href="#site-header">
+            <span class="to-the-top-long">
+                <?php
 							/* translators: %s: HTML character for up arrow. */
 							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
 							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
+            </span><!-- .to-the-top-long -->
+            <span class="to-the-top-short">
+                <?php
 							/* translators: %s: HTML character for up arrow. */
 							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
 							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
+            </span><!-- .to-the-top-short -->
+        </a><!-- .to-the-top -->
 
-				</div><!-- .section-inner -->
+    </div><!-- .section-inner -->
 
-			</footer><!-- #site-footer -->
+</footer><!-- #site-footer -->
 
-		<?php wp_footer(); ?>
-		
+<?php wp_footer(); ?>
+
+<script src="https://unpkg.com/embla-carousel@latest/embla-carousel.umd.js"> </script>
+<script>
+	var emblaNode = document.getElementById('embla-square')
+	
+	var options = {
+		dragFree: true,
+		slidesToScroll: 2,
+	}
 
 
-	</body>
+	embla.on('resize', () => {
+	/*
+	- Check current breakpoint
+	- Determine how many slides to scroll for this breakpoint
+	- Store it in a variable called slidesToScroll
+	- Update Embla options
+	*/
+	embla.changeOptions({ slidesToScroll });
+	});
+
+	var embla = EmblaCarousel(emblaNode, options)
+
+</script>
+
+</body>
+
 </html>
