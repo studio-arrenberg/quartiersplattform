@@ -1,4 +1,4 @@
-# Quartiersplattform Arrenberg
+# 🏘 Quartiersplattform Arrenberg
 
 Repo für die Quartiersplattform am Arrenberg <br> <br>
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
