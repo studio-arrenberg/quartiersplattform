@@ -20,13 +20,29 @@ get_header();
     </header>
 
 
-    <?php // get_template_part('elements/landscape_card'); ?>
+
+
+    <div class="embla" id="embla-one">
+        <div class="embla__container">
+            <div class="embrela-slide">
+                <?php get_template_part('elements/card-veranstaltung'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/card-veranstaltung'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/card-veranstaltung'); ?>
+            </div>
+            <div class="embrela-slide">
+                <?php get_template_part('elements/card-veranstaltung'); ?>
+            </div>
+        </div>
+    </div>
 
 
 
 
-
-    <div class="embla" id="embla-square">
+    <div class="embla" id="embla-two">
         <div class="embla__container">
             <div class="embrela-slide">
                 <?php get_template_part('elements/square_card'); ?>
@@ -47,16 +63,11 @@ get_header();
     </div>
 
 
-
-
-
-
     <div class="card list shadow">
         <?php get_template_part('elements/list_card'); ?>
         <?php get_template_part('elements/list_card'); ?>
         <?php get_template_part('elements/list_card'); ?>
     </div>
-
 
     <?php // get_template_part('elements/landscape_card'); ?>
 
