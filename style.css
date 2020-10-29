@@ -1315,6 +1315,9 @@ ul.social-icons li {
   border-radius: 0 0 20px 20px;
 }
 
+.admin-bar #site-header{
+  top: 32px;
+}
 /* Header Titles ----------------------------- */
 
 .header-titles-wrapper {
@@ -1353,9 +1356,7 @@ ul.social-icons li {
   top: 0px;
 }
 
-.admin-bar .header-navigation-wrapper{
-  top: 32px;
-}
+
 
 /* Primary Menu ---------------------------- */
 
