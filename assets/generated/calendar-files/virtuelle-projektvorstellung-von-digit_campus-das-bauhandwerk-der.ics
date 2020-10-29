@@ -6,10 +6,18 @@ BEGIN:VEVENT
 DTSTART:20201104T180000
 DTEND:20201104T193000
 LOCATION:
+<<<<<<< HEAD
 DTSTAMP:20201029T182933
+=======
+DTSTAMP:20201029T185759
+>>>>>>> 35c174dfd3a0948b895a57c111c71d3c9be13de2
 SUMMARY:Virtuelle Projektvorstellung von „DigIT_Campus – das Bauhandwerk der …
-URL;VALUE=URI:http://localhost/ap1/veranstaltungen/virtuelle-projektvorstellung-von-digit_campus-das-bauhandwerk-der/
+URL;VALUE=URI:http://192.168.0.157:8888/quatiersplattform/veranstaltungen/virtuelle-projektvorstellung-von-digit_campus-das-bauhandwerk-der/
 DESCRIPTION:
+<<<<<<< HEAD
 UID:20201029T182933-20201104T180000-20201104T193000
+=======
+UID:20201029T185759-20201104T180000-20201104T193000
+>>>>>>> 35c174dfd3a0948b895a57c111c71d3c9be13de2
 END:VEVENT
 END:VCALENDAR

@@ -25,7 +25,7 @@
     <?php wp_head(); ?>
     <script src="https://unpkg.com/embla-carousel@latest/embla-carousel.umd.js"> </script>
 
-	
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -35,11 +35,13 @@
 		?>
 
     <header id="site-header" role="banner">
-        <div class="header-titles-wrapper">
-            <div class="header-titles">
+        <div class="header-top-wrapper">
+            <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
-            <a class="btn site-header-btn" href="">Login</a>
+        <button class="header-button is-style-outline" href="">Login</button>
+        <button class="header-button is-style-outline" href="">Backend</button>
+
         </div>
 
         <div class="header-navigation-wrapper">

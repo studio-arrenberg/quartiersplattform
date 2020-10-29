@@ -17,5 +17,5 @@
 
 <form action="" method="post">
     <input type="text">
-    <button></button>
+    <button type="submit">Feedback senden</button>
 </form>
