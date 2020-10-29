@@ -47,7 +47,7 @@ get_header();
     <p><?php the_field('abschluss'); ?></p>
 
 
-    <!-- Projektbeschreibung felder gibt es noch nicht -->
+    <!-- Projektbeschreibung -->
     <div>
         <h3>Über das Projekt</h3>
         <p>Das Projekt der Arrenberg-Farm, eine moderne, kreislaufbasierte Lebensmittelproduktionsanlage mitten in
@@ -58,11 +58,33 @@ get_header();
         </p>
     </div>
 
+    <!-- Anstehende Veranstaltungen -->
+    <!-- not ready yet -->
 
+    <!-- Projektverlauf -->
+    <!-- not ready yet -->
+
+    <!-- Gutenberg Editor Content -->
+    <!-- not ready yet -->
+
+    <!-- Projekt Teilen -->
+    <!-- not ready yet -->
+
+    <!-- Team -->
+    <!-- not ready yet -->
+
+    <!-- Map -->
+    <!-- not ready yet -->
+
+    <!-- Kontakt -->
+    <!-- not ready yet -->
+
+    <!-- Backend edit link -->
+    <?php edit_post_link(); ?>
+
+
+    <!-- kommentare -->
     <?php			
- 
-			// edit post link (fürs backend)
-			edit_post_link();
 
 			// comments 
 			if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {

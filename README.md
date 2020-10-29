@@ -63,7 +63,7 @@ Home URL
 ### Recources 
 
 [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) <br>
-
+[Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
 
 ### Functions
 
