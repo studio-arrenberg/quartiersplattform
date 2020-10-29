@@ -51,21 +51,23 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 
 ?>
 
-<div>
-    <div>
-        <h2>Energie Ampel</h2>
+<div class="energie-ampel">
+    <div class="energie-ampel-titles">
+        <div>
+            <h2>Energie Ampel</h2>
 
-        <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?>e Phase</h3>
-    </div>
+            <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?>e Phase</h3>
+        </div>
 
-    <div>
-        <h2><?php echo $phase_gramm; ?>g</h2>
-        <h3>CO2 pro kWh</h3>
-    </div>
+        <div>
+            <h2><?php echo $phase_gramm; ?>g</h2>
+            <h3>CO2 pro kWh</h3>
+        </div>
+</div>
 
 
-    <div class="strom_array">
-    <?php
+        <div class="strom_array">
+            <?php
 
 
     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
@@ -78,5 +80,5 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         
     } 
     ?>
+        </div>
     </div>
-</div>
