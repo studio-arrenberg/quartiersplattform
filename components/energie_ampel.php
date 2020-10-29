@@ -162,9 +162,9 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
         $color = $row['color'];        
     } 
     ?>
+        </div>
     </div>
 </div>
-
 <?php
 }
 ?>
