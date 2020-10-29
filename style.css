@@ -1315,6 +1315,9 @@ ul.social-icons li {
   border-radius: 0 0 20px 20px;
 }
 
+.admin-bar #site-header{
+  top: 32px;
+}
 /* Header Titles ----------------------------- */
 
 .header-titles-wrapper {
@@ -1352,6 +1355,8 @@ ul.social-icons li {
   display: flex;
   top: 0px;
 }
+
+
 
 /* Primary Menu ---------------------------- */
 
@@ -5966,15 +5971,7 @@ a.to-the-top > * {
 
 /* LAYOUT */
 
-.flex-content {
-  display: flex;
-  flex-direction: row;
-  max-width: 900px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 #site-content {
   margin: 100px auto;
@@ -6000,7 +5997,7 @@ a.to-the-top > * {
   margin: 20px auto;
   padding: 5px 5px 5px 5px;
 
-  transition: all ease-in-out 0.1s; /* Animation */
+  transition: all ease-in-out 0.2s; /* Animation */
 }
 
 .card a {
@@ -6045,11 +6042,6 @@ a.to-the-top > * {
   font-size: 1.4rem;
   line-height: 1.5rem;
 }
-/* 
-.card:hover {
-  transform: scale(
-    1.01
-  ); }/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 
 .list {
   flex-wrap: wrap;
@@ -6105,12 +6097,6 @@ a.to-the-top > * {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: linear-gradient(
-    0deg,
-    rgba(24, 12, 12, 0.5) 0%,
-    rgba(0, 0, 0, 0) 60%
-  );
-  color: #fff;
 }
 
 .landscape img,
@@ -6132,8 +6118,24 @@ a.to-the-top > * {
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
 }
 
+
+.shadow:hover{
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 32px rgba(0, 0, 0, 0.15),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 126px rgba(0, 0, 0, 0.15);
+}
+
+.gardient a .content{
+  color: #fff;
+  background: linear-gradient(
+    0deg,
+    rgba(24, 12, 12, 0.5) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
 .embla {
-  overflow: hidden;
+  overflow: visible;
 }
 .embla__container {
   display: flex;

@@ -15,7 +15,7 @@
 ?>
 
 
-<div class="card landscape shadow">
+<div class="card landscape shadow gardient">
     <a href="<?php echo get_site_url(); echo get_query_var('link_card_link'); ?>">
         <div class="content">
             <h3 class="card-title">
