@@ -9,8 +9,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 - calendar download error (server)
 
-- nachrichten kachel: nachrichten am arrenberg -> Link
-
 - (archieve) page: nachrichten
 
 - archieve: vergangene veranstaltungen
@@ -28,6 +26,7 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - energie ampel (uhrzeit, current phase) (ap1 fallback?)
 - go back button (header) if subpage
 - [1] veranstaltung seite template (with gutenberg blocks)  
+- nachrichten kachel: nachrichten am arrenberg -> Link
 
 
 
