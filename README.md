@@ -7,29 +7,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
-- calendar download error (server)
-
-- (archieve) page: nachrichten
-
-- archieve: vergangene veranstaltungen
-
-- test pictures (image sizes)
-
-
-- first release Funktionsumfang + (name)
-- db conversion timeline (features)
-- energie ampel seite
-- page: neue plattform für den arrenberg (erklärung + feedback)
-- seo beschreibung 
-
-#### DONE
-- energie ampel (uhrzeit, current phase) (ap1 fallback?)
-- go back button (header) if subpage
-- [1] veranstaltung seite template (with gutenberg blocks)  
-- nachrichten kachel: nachrichten am arrenberg -> Link
-
-
-
 
 ## 📦 Requirements 
 
@@ -175,6 +152,16 @@ rifi2k.format-html-in-php
 5. Update Parmalinks
 6. Delete Calendar Files (created in local host) + (create path to files)
 7. Set Menu (⚠️name/slug: "menu") & Page Templates
+8. ACFs Veranstaltungen
+    - Website
+    - Livestream
+    - start
+    - end
+    
+9. ACFs Projekte
+    - Ort
+    - Kontakt
+
 
 ## 🧫 Fundamental
 
