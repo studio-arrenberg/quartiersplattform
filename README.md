@@ -10,14 +10,19 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - calendar download error (server)
 - nachrichten kachel: nachrichten am arrenberg -> Link
 - (archieve) page: nachrichten
-- page: neue plattform für den arrenberg (erklärung + feedback)
 - archieve: vergangene veranstaltungen
-- energie ampel (uhrzeit, current phase)
+- energie ampel (uhrzeit, current phase) (ap1 fallback?)
 - feedback formular
+- go back button (header) if subpage
+- test pictures (image sizes)
+- veranstaltung seite template (with gutenberg blocks)
+<br>
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
-- go back button (header)
-- test pictures (image sizes)
+- energie ampel seite
+- page: neue plattform für den arrenberg (erklärung + feedback)
+<br>
+- [function link projekt card]
 
 ## 📦 Requirements 
 
@@ -142,7 +147,7 @@ rifi2k.format-html-in-php
 3. Allow Comment on Post-Type (Post type list Buld action) Projekte
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
-6. Delete Calendar Files (created in local host)
+6. Delete Calendar Files (created in local host) + (create path to files)
 7. Set Menu & Page Templates
 
 ## 🧫 Fundamental

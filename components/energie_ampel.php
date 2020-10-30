@@ -28,7 +28,7 @@ if (mysqli_connect_errno()) {
 <div class="energie-ampel">
     <div class="energie-ampel-titles">
         <div>
-            <h2>Energie Ampel</h2>
+            <h2>Energie Ampel Fall Back</h2>
 
             <h3 class="green">grüne Phase</h3>
         </div>
