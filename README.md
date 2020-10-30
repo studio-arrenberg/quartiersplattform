@@ -7,24 +7,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
-- calendar download error (server)
-- nachrichten kachel: nachrichten am arrenberg -> Link
-- (archieve) page: nachrichten
-- archieve: vergangene veranstaltungen
-- test pictures (image sizes)
-- veranstaltung seite template (with gutenberg blocks) 
-
-- first release Funktionsumfang + (name)
-- db conversion timeline (features)
-- energie ampel seite
-- page: neue plattform für den arrenberg (erklärung + feedback)
-- seo beschreibung 
-
-#### DONE
-- energie ampel (uhrzeit, current phase) (ap1 fallback?)
-- go back button (header) if subpage
-
-
+- [ ] Bilder einbetten
+- [ ] Archieve (Nachrichten, Veranstaltungen)
 
 ## 📦 Requirements 
 
@@ -100,7 +84,7 @@ link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltunge
 ```
 #### Card List
 ```php 
-card_list($query); 
+card_list($query, $link); 
 ```
 #### Slider
 ```php
@@ -170,6 +154,16 @@ rifi2k.format-html-in-php
 5. Update Parmalinks
 6. Delete Calendar Files (created in local host) + (create path to files)
 7. Set Menu (⚠️name/slug: "menu") & Page Templates
+8. ACFs Veranstaltungen
+    - Website
+    - Livestream
+    - start
+    - end
+
+9. ACFs Projekte
+    - Ort
+    - Kontakt
+
 
 ## 🧫 Fundamental
 
@@ -184,3 +178,9 @@ rifi2k.format-html-in-php
 - Veranstaltungen
 - Energie Ampel
 - Feedback
+
+- [x] Startseite
+- [x] Projekte
+- [x] Veranstaltungen
+- [x] Energie Ampel
+- [ ] Feedback

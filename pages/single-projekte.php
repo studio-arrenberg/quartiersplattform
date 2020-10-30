@@ -58,6 +58,9 @@ get_header();
         </p>
     </div>
 
+    <!-- Backend edit link -->
+    <?php edit_post_link(); ?>
+
     <!-- Anstehende Veranstaltungen -->
     <!-- not ready yet -->
 
@@ -65,7 +68,13 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Gutenberg Editor Content -->
-    <!-- not ready yet -->
+    <?php
+        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+            the_excerpt();
+        } else {
+            the_content( __( 'Continue reading', 'twentytwenty' ) );
+        }
+    ?>
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->
@@ -79,16 +88,10 @@ get_header();
     <!-- Kontakt -->
     <!-- not ready yet -->
 
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
-
-
     <!-- kommentare -->
     <?php			
-
-			// comments 
-			if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-				?>
+		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+	?>
 
     <div class="comments-wrapper section-inner">
 

@@ -6,10 +6,11 @@ BEGIN:VEVENT
 DTSTART:20201104T180000
 DTEND:20201104T193000
 LOCATION:
-DTSTAMP:20201030T175602
-SUMMARY:Virtuelle Projektvorstellung von „DigIT_Campus – das Bauhandwerk der
-URL;VALUE=URI:http://192.168.0.157:8888/quatiersplattform/veranstaltungen/virtuelle-projektvorstellung-von-digit_campus-das-bauhandwerk-der/
-DESCRIPTION:Ich bin eine Kirzbeschreibung
-UID:20201030T175602-20201104T180000-20201104T193000
+
+DTSTAMP:20201030T150328
+SUMMARY:Virtuelle Projektvorstellung von „DigIT_Campus – das Bauhandwerk der …
+URL;VALUE=URI:http://localhost/ap1/veranstaltungen/virtuelle-projektvorstellung-von-digit_campus-das-bauhandwerk-der/
+DESCRIPTION:Saddam
+UID:20201030T150328-20201104T180000-20201104T193000
 END:VEVENT
 END:VCALENDAR
