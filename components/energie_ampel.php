@@ -132,7 +132,7 @@ WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$da
 <div class="energie-ampel">
     <div class="energie-ampel-titles">
         <div>
-            <h2>Energie Ampel</h2>
+            <h2>Energie Ampel Real</h2>
 
             <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?>e Phase</h3>
         </div>
