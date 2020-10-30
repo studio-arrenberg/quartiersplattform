@@ -33,6 +33,7 @@
     <?php
         wp_body_open();
 
+
         $menu_active = 'off';
         if( cms_is_in_menu( 'menu' ) ) {
             $menu_active = 'on';

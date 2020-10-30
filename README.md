@@ -86,6 +86,24 @@ Home URL
 [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
 
 
+### Image Sizes (Ratio)
+Square: 
+    600x600
+    300x300
+    180x180
+    100x100
+
+4:3:
+    800x600
+    200x150
+    160x120
+    
+
+Landscape 2:1
+    970x485
+    370x158
+
+
 ### Functions
 
 #### Link Card
