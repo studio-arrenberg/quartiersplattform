@@ -124,7 +124,6 @@ SELECT
     ampel_status.color,
     ampel_status.name,
     DATE_FORMAT(Ampel.timestamp, '%H:%i') AS TIME,
-    Ampel.timestamp AS DATE
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
@@ -134,8 +133,6 @@ WHERE
     )
 order by Ampel.timestamp asc
 LIMIT 0, 60
-
-
 ");
 
 // echo $timeline;
