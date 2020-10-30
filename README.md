@@ -7,6 +7,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
+- [ ] Bilder einbetten
+- [ ] Archieve (Nachrichten, Veranstaltungen)
 
 ## 📦 Requirements 
 
@@ -157,7 +159,7 @@ rifi2k.format-html-in-php
     - Livestream
     - start
     - end
-    
+
 9. ACFs Projekte
     - Ort
     - Kontakt
@@ -176,3 +178,9 @@ rifi2k.format-html-in-php
 - Veranstaltungen
 - Energie Ampel
 - Feedback
+
+- [x] Startseite
+- [x] Projekte
+- [x] Veranstaltungen
+- [x] Energie Ampel
+- [ ] Feedback
