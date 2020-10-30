@@ -8,11 +8,15 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 ## 🧯 Wichtig 
 
 - calendar download error (server)
+
 - nachrichten kachel: nachrichten am arrenberg -> Link
+
 - (archieve) page: nachrichten
+
 - archieve: vergangene veranstaltungen
+
 - test pictures (image sizes)
-- veranstaltung seite template (with gutenberg blocks) 
+
 
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
@@ -23,6 +27,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 #### DONE
 - energie ampel (uhrzeit, current phase) (ap1 fallback?)
 - go back button (header) if subpage
+- [1] veranstaltung seite template (with gutenberg blocks)  
+
 
 
 
@@ -100,7 +106,7 @@ link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltunge
 ```
 #### Card List
 ```php 
-card_list($query); 
+card_list($query, $link); 
 ```
 #### Slider
 ```php

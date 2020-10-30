@@ -940,9 +940,12 @@ function link_card($title, $text, $bg, $link){
 }
 
 // list card
-function card_list($args) {
+function card_list($args, $link = '') {
 
-	echo "<div class='card list shadow'>";
+	?>
+	<div class='card list shadow'>
+		<?php if ($link) echo "<a href='".get_site_url().$link."'>"; ?>
+	<?php
 	$query2 = new WP_Query( $args);
 	// The Loop
 	while ( $query2->have_posts() ) {
@@ -952,6 +955,10 @@ function card_list($args) {
 	// Restore original Post Data
 	wp_reset_postdata();
 	echo "</div>";
+	?>
+		</a>
+	</div>
+	<?php
 
 }
 
@@ -1046,7 +1053,9 @@ function calendar_download($post) {
 
 	$destination_folder = $_SERVER['DOCUMENT_ROOT'];
 
-	$man_link = getcwd()."/wp-content/themes/".wp_get_theme();
+	// echo get_template();
+
+	$man_link = getcwd()."/wp-content/themes/".get_template();
 	// $man_link = getcwd()."/wp-content/uploads/calendar-files/";
 	
 	// echo "hello world<br>";
