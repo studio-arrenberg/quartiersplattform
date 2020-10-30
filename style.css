@@ -1196,6 +1196,8 @@ button.toggle {
 
   max-width: 782px;
   margin: 0 auto;
+  transition: all ease-in-out 1s;
+
 }
 
 .admin-bar #site-header {
@@ -1206,10 +1208,16 @@ button.toggle {
   display: flex;
   justify-content: space-between;
 }
-/* 
-.single #site-header{
+
+.on {
+  opacity: 1;
+}
+
+.off{
   opacity: 0;
-} */
+}
+
+
 /* Header Titles ----------------------------- */
 
 .header-title {
@@ -5118,7 +5126,7 @@ a.to-the-top > * {
 
   h1,
   .heading-size-1 {
-    font-size: 8.4rem;
+    font-size: 6.4rem;
   }
 
   /* Helper Classes ------------------------ */
