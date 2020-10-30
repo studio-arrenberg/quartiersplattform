@@ -45,9 +45,10 @@
             <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
-        <button class="header-button is-style-outline" href="">Login</button>
-        <button class="header-button is-style-outline" href="">Backend</button>
 
+        <button class="header-button button-has-icon is-style-outline" href="">
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" /> 
+        </button>
         <!-- back button (ultimately this will be a function)  -->
         <button onclick="history.go(-1);">Back </button> 
 
