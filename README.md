@@ -13,14 +13,14 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - archieve: vergangene veranstaltungen
 - feedback formular
 - test pictures (image sizes)
-- veranstaltung seite template (with gutenberg blocks)
-<br>
+- veranstaltung seite template (with gutenberg blocks) <br> <br>
+
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
 - energie ampel seite
 - page: neue plattform für den arrenberg (erklärung + feedback)
-- seo beschreibung
-<br>
+- seo beschreibung <br><br>
+
 - [function link projekt card]
 
 #### DONE
@@ -125,11 +125,6 @@ Limit 0,1
 ```
 ##### Timeline:
 ```mysql
-SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
-Join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` >= '2020-10-30 13:08' - INTERVAL 24 Hour AND `timestamp` < '2020-10-30 13:08' + INTERVAL 24 Hour
-```
-```mysql
 SELECT
     ampel_status.color,
     ampel_status.name,
@@ -175,9 +170,11 @@ rifi2k.format-html-in-php
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
 
-## 🎉 Version
+## 🎉 Releases
 
 ### development - v1
+- Startseite
 - Projekte
 - Veranstaltungen
 - Energie Ampel
+- Feedback
