@@ -124,7 +124,22 @@ SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:
 Join ampel_status on Ampel.status = ampel_status.id
 WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
 ```
-
+```mysql
+SELECT
+    ampel_status.color,
+    ampel_status.name,
+    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS TIME,
+    Ampel.timestamp AS DATE
+FROM
+    Ampel
+JOIN ampel_status ON Ampel.status = ampel_status.id
+WHERE
+    `timestamp` BETWEEN '2020-10-30 13:08' AND(
+        '2020-10-30 13:08' + INTERVAL 48 HOUR
+    )
+order by Ampel.timestamp asc
+LIMIT 0, 60
+```
 
 ### CSS Tricks
 
