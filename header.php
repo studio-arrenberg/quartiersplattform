@@ -33,34 +33,33 @@
     <?php
         wp_body_open();
         // check if menu is needed
+        $menu = 'page-header';
         $menu_active = 'off';
         $menu_active_back = 'on';
         if( cms_is_in_menu( 'menu' ) ) {
             $menu_active = 'on';
             $menu_active_back = 'off';
-        }
-	?>
+            $menu = 'post-header';
 
-    <header id="site-header" class="<?php echo $menu_active; ?>" role="banner">
+        }
+    ?>
+    
+
+    <header id="site-header" class="<?php echo $menu; ?>" >
         <div class="header-top-wrapper">
             <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
         </div>
 
-
-
         <!-- back button (ultimately this will be a function)  -->
-        <button class="<?php echo $menu_active_back; ?>" onclick="history.go(-1);">Back </button>
-
-
-
-        <button class="header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+    
+        <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
             <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-            Zurück
+            <span class="button-has-icon-label">Zurück</span>
         </button>
 
-        <div class="header-navigation-wrapper">
+        <div class="header-navigation-wrapper <?php echo $menu_active; ?>">
             <?php
 				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
 
@@ -99,15 +98,13 @@
                 </ul>
 
             </nav><!-- .primary-menu-wrapper -->
-
             <?php } ?>
-
         </div><!-- .header-navigation-wrapper -->
 
 
 
 
-        <button class="header-button button-has-icon is-style-outline" href="">
+        <button class="header-button login button-has-icon is-style-outline" href="">
             <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
         </button>
 

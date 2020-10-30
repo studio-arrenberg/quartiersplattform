@@ -588,7 +588,6 @@ label {
   display: block;
   font-size: 1.8rem;
   font-weight: 500;
-  margin: 0 0 0.5rem 0;
 }
 
 label.inline,
@@ -776,12 +775,19 @@ input[type="submit"]:hover {
 
 .button-has-icon{
   padding: 17px !important;
-
 }
+
 .button-icon{
   display: inline ;
   margin-right: 5px;
 }
+
+.button-has-icon-label{
+  margin-bottom: -2px;
+  margin-left: 10px;
+}
+
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -1186,13 +1192,13 @@ button.toggle {
 
 #site-header {
   background: #fff;
+  display: block;
   position: fixed;
   padding: 10px 15px 20px 15px;
   top: 0px;
   width: 100%;
   z-index: 2;
   border-radius: 0 0 20px 20px;
-
   max-width: 782px;
   margin: 0 auto;
   transition: all ease-in-out 1s;
@@ -1274,7 +1280,6 @@ button.toggle {
   font-family: "OfficinaSansITCStd-Bold";
 }
 
-
 .header-button{
   border-radius: 20px;
   display: flex;
@@ -1285,24 +1290,42 @@ button.toggle {
   margin: 0px;
 }
 
-
-
 .header-button .button-icon{
   margin: 0px;
 }
 
 
-.header-button ofty[back] {
-  position: relative;
-}
-
 
 @media (max-width: 782px) {
-  .header-button{
-    right: 15px;
-    top: 0px;
-   
-  }
+.off {
+  display: block;
+  opacity: 1;
+}
+
+#site-header.page-header{
+  background: transparent;
+}
+.page-header .header-top-wrapper, .page-header  .header-navigation-wrapper{
+  position: none;
+  display: none  !important;
+}
+
+.header-button.off {
+  display: none;
+}
+
+.login{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+
+}
+
+.admin-bar .login{
+  top: 45px;
+
+}
+
 
  
 }
@@ -1321,6 +1344,10 @@ button.toggle {
     background: transparent;
     display: flex;
     justify-content: space-between;
+  }
+
+  .header-top-wrapper{
+    display: none;
   }
 
   .header-navigation-wrapper{
@@ -1350,6 +1377,13 @@ button.toggle {
     height: 55px;
     min-width: 55px;
   }
+
+
+
+.header-button.off {
+  display: flex;
+}
+
 
 
 }
@@ -4383,7 +4417,7 @@ a.to-the-top > * {
   input[type="button"],
   input[type="reset"],
   input[type="submit"] {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 
   /* MEDIA */
@@ -5834,7 +5868,7 @@ a.to-the-top > * {
 .strom_array label {
   position: absolute;
   top: 70px;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
 
 .red .time:first-of-type {
