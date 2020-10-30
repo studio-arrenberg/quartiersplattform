@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="single" role="main">
 
     <?php
 
@@ -32,21 +32,25 @@ get_header();
 
 			?>
 
-    <!-- post title -->
-    <h1><?php the_title(); ?></h1>
 
-    <!-- projekt / akteur -->
-    <!-- not ready yet -->
+    <div class="single-header">
+        <!-- post title -->
+        <h1><?php the_title(); ?></h1>
+        <h4>Projekt/ Name/ Akteur <span class="date">Datum, Uhrzeit</span> </h4>
 
-    <!-- datum -->
-    <p><?php the_field('kurzbeschreibung'); ?></p>
+        <!-- projekt / akteur -->
+        <!-- not ready yet -->
 
+        <!-- datum -->
 
-    <!-- Bild -->
-    <img src="<?php echo esc_url( $image_url ) ?>" />
+        <!-- Bild -->
+        <img class="single-header-image"src="<?php echo esc_url( $image_url ) ?>" />
 
-    <!-- Projektbeschreibung felder gibt es noch nicht -->
-    <div>
+        <p><?php the_field('kurzbeschreibung'); ?></p>
+
+    </div>
+    <!-- Eventtext felder gibt es noch nicht -->
+    <div class="single-content">
         <p>Das Projekt der Arrenberg-Farm, eine moderne, kreislaufbasierte Lebensmittelproduktionsanlage mitten in
             Wuppertal zu realisieren, soll in der Zukunft ein Stück dazu beitragen, die Ressource Wasser zu sparen und
             gleichzeitig die Talbewohner mit frischen und gesunden Lebensmitteln zu versorgen. Ganz nach dem Motto
@@ -55,9 +59,16 @@ get_header();
         </p>
     </div>
 
-    <?php edit_post_link(); ?>
+
+    <button class="button-has-icon is-style-outline back">
+            <img class="button-icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/edit.svg">
+            <span class="button-has-icon-label">Bearbeiten</span>
+        </button>
+
+     <?php edit_post_link(); ?>
 
     <!-- Gutenberg Editor Content -->
+    <div class="gutenberg-content">
     <?php
         if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
             the_excerpt();
@@ -65,6 +76,8 @@ get_header();
             the_content( __( 'Continue reading', 'twentytwenty' ) );
         }
     ?>
+
+    </div>
 
     <!-- calendar download -->
     <!-- not ready yet -->

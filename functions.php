@@ -1139,7 +1139,7 @@ function calendar_download($post) {
     
     ?>
 
-    <button><a class="btn" href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a></button>
+    <a class="button" href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a>
     
     <?php
     
