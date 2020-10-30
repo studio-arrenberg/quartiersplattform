@@ -16,7 +16,7 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - feedback formular
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
-- go back button
+- go back button (header)
 - test pictures (image sizes)
 
 ## 📦 Requirements 
