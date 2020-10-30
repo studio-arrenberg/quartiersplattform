@@ -46,14 +46,19 @@
             <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
-
-        <button class="header-button button-has-icon is-style-outline" href="">
-            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" /> 
-        </button>
-        <!-- back button (ultimately this will be a function)  -->
-        <button class="<?php echo $menu_active_back; ?>" onclick="history.go(-1);">Back </button> 
-
         </div>
+
+
+
+        <!-- back button (ultimately this will be a function)  -->
+        <button class="<?php echo $menu_active_back; ?>" onclick="history.go(-1);">Back </button>
+
+
+
+        <button class="header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+            Zurück
+        </button>
 
         <div class="header-navigation-wrapper">
             <?php
@@ -98,4 +103,13 @@
             <?php } ?>
 
         </div><!-- .header-navigation-wrapper -->
+
+
+
+
+        <button class="header-button button-has-icon is-style-outline" href="">
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+        </button>
+
+
     </header><!-- #site-header -->
