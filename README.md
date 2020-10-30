@@ -8,10 +8,16 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 ## 🧯 Wichtig 
 
 - calendar download error (server)
-- nachrichten kachel: nachrichten am arrenberg
+- nachrichten kachel: nachrichten am arrenberg -> Link
 - (archieve) page: nachrichten
 - page: neue plattform für den arrenberg (erklärung + feedback)
 - archieve: vergangene veranstaltungen
+- energie ampel (uhrzeit, current phase)
+- feedback formular
+- first release Funktionsumfang + (name)
+- db conversion timeline (features)
+- go back button
+- test pictures (image sizes)
 
 ## 📦 Requirements 
 
@@ -132,14 +138,21 @@ rifi2k.format-html-in-php
 
 0. Last Push to [vpp](https://vpp.arrenberg.studio)
 1. Update (Optimise) through Wordpress
-2. Comment Setting (WP Settings)
-3. Allow Comment on Post-Type (Post type list Buld action)
+2. Comment Setting (WP Settings) 
+3. Allow Comment on Post-Type (Post type list Buld action) Projekte
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
 6. Delete Calendar Files (created in local host)
-7. Set Menu
+7. Set Menu & Page Templates
 
 ## 🧫 Fundamental
 
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
+
+## 🎉 Version
+
+### development - v1
+- Projekte
+- Veranstaltungen
+- Energie Ampel
