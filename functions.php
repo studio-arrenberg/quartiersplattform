@@ -1001,15 +1001,17 @@ var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
 var slides_num = <?php echo $slides; ?>;
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+var draggable_state = true;
 
 if (vw > 768) {
 	slides_num = slides_num * 2;
+	draggable_state = false;
 }
-
 
 var options = {
     dragFree: <?php echo $dragfree; ?>,
-    slidesToScroll: slides_num, // viewport > 768px 4
+	slidesToScroll: slides_num, // viewport > 768px 4
+	draggable: draggable_state
 }
 var embla = EmblaCarousel(emblaNode, options)
 
@@ -1019,9 +1021,14 @@ embla.on('resize', () => {
 	// console.log(vw);
 	if (vw > 768) {
 		slidesToScroll = slidesToScroll * 2;
+		draggable = false;
 	}
-	// console.log(slidesToScroll);
-  embla.reInit({ slidesToScroll });
+	else {
+		slidesToScroll = slides_num;
+		draggable = true;
+	}
+
+	embla.reInit({ slidesToScroll, draggable });
 });
 </script>
 <?php
