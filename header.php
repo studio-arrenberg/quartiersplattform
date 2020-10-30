@@ -32,11 +32,12 @@
 
     <?php
         wp_body_open();
-
-
+        // check if menu is needed
         $menu_active = 'off';
+        $menu_active_back = 'on';
         if( cms_is_in_menu( 'menu' ) ) {
             $menu_active = 'on';
+            $menu_active_back = 'off';
         }
 	?>
 
@@ -45,19 +46,19 @@
             <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
-       
-
-
-
         </div>
 
-         <!-- back button (ultimately this will be a function)  -->
 
 
-        <button class="header-button button-has-icon is-style-outline back"  onclick="history.go(-1);">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                Zurück
-            </button>
+        <!-- back button (ultimately this will be a function)  -->
+        <button class="<?php echo $menu_active_back; ?>" onclick="history.go(-1);">Back </button>
+
+
+
+        <button class="header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+            Zurück
+        </button>
 
         <div class="header-navigation-wrapper">
             <?php
@@ -107,8 +108,8 @@
 
 
         <button class="header-button button-has-icon is-style-outline" href="">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-            </button>
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+        </button>
 
-           
+
     </header><!-- #site-header -->

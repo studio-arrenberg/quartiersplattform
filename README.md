@@ -11,17 +11,14 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - nachrichten kachel: nachrichten am arrenberg -> Link
 - (archieve) page: nachrichten
 - archieve: vergangene veranstaltungen
-- feedback formular
 - test pictures (image sizes)
-- veranstaltung seite template (with gutenberg blocks)
-<br>
+- veranstaltung seite template (with gutenberg blocks) 
+
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
 - energie ampel seite
 - page: neue plattform für den arrenberg (erklärung + feedback)
-- seo beschreibung
-<br>
-- [function link projekt card]
+- seo beschreibung 
 
 #### DONE
 - energie ampel (uhrzeit, current phase) (ap1 fallback?)
@@ -48,6 +45,7 @@ Disable Rest API <br>
 #### Optional (Development)
 Custom Post Type UI
 [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
+[Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
 
 ## 🔗 Set up
 1. Setup local Wordpress 
@@ -71,11 +69,11 @@ Functions => `functions.php` <br>
 
 ### Code Snippets
 
-Path to Theme files
+#### Path to Theme files
 ```php
 <?php echo get_template_directory_uri(); ?>
 ```
-Home URL
+#### Home URL
 ```php
 <?php echo get_site_url(); ?>
 ```
@@ -87,7 +85,6 @@ Home URL
 
 
 ### Image Sizes (Ratio)
-
 
 |           | S       | M       | L       |
 |-----------|---------|---------|---------|
@@ -134,11 +131,6 @@ Limit 0,1
 ```
 ##### Timeline:
 ```mysql
-SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
-Join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` >= '2020-10-30 13:08' - INTERVAL 24 Hour AND `timestamp` < '2020-10-30 13:08' + INTERVAL 24 Hour
-```
-```mysql
 SELECT
     ampel_status.color,
     ampel_status.name,
@@ -184,9 +176,11 @@ rifi2k.format-html-in-php
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
 
-## 🎉 Version
+## 🎉 Releases
 
 ### development - v1
+- Startseite
 - Projekte
 - Veranstaltungen
 - Energie Ampel
+- Feedback

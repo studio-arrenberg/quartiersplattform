@@ -129,7 +129,7 @@ FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
 WHERE
-    `timestamp` BETWEEN ('".$now.":00' - INTERVAL 1 HOUR) AND(
+    `timestamp` BETWEEN '".$now.":00' AND(
         '".$now.":00' + INTERVAL 48 HOUR
     )
 order by Ampel.timestamp asc
