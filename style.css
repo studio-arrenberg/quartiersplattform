@@ -747,7 +747,6 @@ input[type="submit"] {
   text-align: center;
   text-decoration: none;
   transition: all 0.15s linear;
-  font-family: "OfficinaSansITCStd-Bold";
   box-shadow: 0 1px 2px rgba(0, 145, 255, 0.07), 0 2px 4px rgba(0, 145, 255, 0.07),
     0 4px 8px rgba(0, 145, 255, 0.07), 0 8px 16px rgba(0, 145, 255, 0.07),
     0 16px 32px rgba(0, 145, 255, 0.07), 0 32px 64px rgba(0, 145, 255, 0.07);
@@ -1279,7 +1278,7 @@ button.toggle {
   border-radius: 20px;
   display: flex;
   height: 50px;
-  width: 50px;
+  min-width: 50px;
   align-items: center;
   justify-content: center;
   margin: 0px;
@@ -1291,6 +1290,10 @@ button.toggle {
   margin: 0px;
 }
 
+
+.header-button ofty[back] {
+  position: relative;
+}
 
 
 @media (max-width: 782px) {
@@ -1312,18 +1315,25 @@ button.toggle {
     margin-left:auto;
     margin-right:auto;
     margin-top: 30px;
-    width: 1280px;
+    max-width: 1000px;
+    border-radius: 20px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-navigation-wrapper{
+    width: 782px;
+    display: block;
     border-radius: 20px;
     padding: 15px 15px 13px 15px;
-
+    background: #fff;
+    height: 55px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.07),
+    0 4px 16px rgba(0, 0, 0, 0.07), 0 8px 32px rgba(0, 0, 0, 0.07),
+    0 16px 64px rgba(0, 0, 0, 0.07), 0 32px 128px rgba(0, 0, 0, 0.07);
   }
-  .header-top-wrapper{
-    display: block;
-    position: fixed;
-    right: 20px;
-    margin-top: -20px;
-
-  }
+  
 
   .header-title{
     padding: 0px;
@@ -1337,12 +1347,13 @@ button.toggle {
 
   .header-button{
     height: 55px;
-    width: 55px;
+    min-width: 55px;
   }
 
 
-
 }
+
+
 
 
 
@@ -2589,7 +2600,7 @@ of .pagination-single hr:last-child {
 /* Block: Button ----------------------------- */
 
 .is-style-outline {
-  color: inherit;
+  color: #0091ff;
   background: #fff;
 }
 
