@@ -51,11 +51,7 @@
             <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" /> 
         </button>
         <!-- back button (ultimately this will be a function)  -->
-<<<<<<< HEAD
         <button class="<?php echo $menu_active_back; ?>" onclick="history.go(-1);">Back </button> 
-=======
-        <button onclick="history.go(-1);">Zurück</button> 
->>>>>>> d143672a204df9ab7471cde8c7731c7c42f2debd
 
         </div>
 

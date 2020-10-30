@@ -11,15 +11,14 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - nachrichten kachel: nachrichten am arrenberg -> Link
 - (archieve) page: nachrichten
 - archieve: vergangene veranstaltungen
-- feedback formular
 - test pictures (image sizes)
-- veranstaltung seite template (with gutenberg blocks) <br> <br>
+- veranstaltung seite template (with gutenberg blocks) 
 
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
 - energie ampel seite
 - page: neue plattform für den arrenberg (erklärung + feedback)
-- seo beschreibung <br><br>
+- seo beschreibung 
 
 #### DONE
 - energie ampel (uhrzeit, current phase) (ap1 fallback?)
@@ -70,11 +69,11 @@ Functions => `functions.php` <br>
 
 ### Code Snippets
 
-Path to Theme files
+#### Path to Theme files
 ```php
 <?php echo get_template_directory_uri(); ?>
 ```
-Home URL
+#### Home URL
 ```php
 <?php echo get_site_url(); ?>
 ```
@@ -86,7 +85,6 @@ Home URL
 
 
 ### Image Sizes (Ratio)
-
 
 |           | S       | M       | L       |
 |-----------|---------|---------|---------|
