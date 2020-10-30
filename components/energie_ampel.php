@@ -123,7 +123,7 @@ $timeline = ("
 SELECT
     ampel_status.color,
     ampel_status.name,
-    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS TIME,
+    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
