@@ -4737,6 +4737,7 @@ a.to-the-top > * {
   h1,
   .heading-size-1 {
     font-size: 6.4rem;
+    line-height: 6.6rem;
   }
 
   /* Helper Classes ------------------------ */
@@ -5351,6 +5352,24 @@ a.to-the-top > * {
     margin: 100px auto;
     max-width: 1000px;
     overflow: visible;
+  }
+
+  .single{
+    margin-top: 15px;
+  }
+
+  .single-header h1{
+    max-width: 800px;
+  }
+
+  .single-content{
+    margin: 25px 0px 50px 50px;
+    max-width: 700px;
+  }
+
+  p{
+    font-size: 2rem;
+    line-height: 2.6rem;
   }
 
   .landscape,

@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="single" role="main">
 
     <?php
 
@@ -32,15 +32,29 @@ get_header();
 
 			?>
 
-    <!-- post title -->
-    <h1><?php the_title(); ?></h1>
-
-    <!-- maybe slogan here -->
-    <p><?php the_field('kurzbeschreibung'); ?></p>
 
 
-    <!-- Bild -->
-    <img src="<?php echo esc_url( $image_url ) ?>" />
+
+    <div class="single-header">
+        <!-- post title -->
+        <h1><?php the_title(); ?></h1>
+        <h4>Projekt/ Name/ Akteur <span class="date">Datum, Uhrzeit</span> </h4>
+
+        <!-- projekt / akteur -->
+        <!-- not ready yet -->
+
+        <!-- datum -->
+
+        <!-- Bild -->
+
+        <p><?php the_field('kurzbeschreibung'); ?></p>
+
+
+
+        <!-- Bild -->
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+    </div>
 
     <!-- ACF test -->
     <p><?php the_field('begin'); ?></p>
@@ -48,8 +62,7 @@ get_header();
 
 
     <!-- Projektbeschreibung -->
-    <div>
-        <h3>Über das Projekt</h3>
+    <div class="single-content">
         <p>Das Projekt der Arrenberg-Farm, eine moderne, kreislaufbasierte Lebensmittelproduktionsanlage mitten in
             Wuppertal zu realisieren, soll in der Zukunft ein Stück dazu beitragen, die Ressource Wasser zu sparen und
             gleichzeitig die Talbewohner mit frischen und gesunden Lebensmitteln zu versorgen. Ganz nach dem Motto
@@ -57,7 +70,6 @@ get_header();
             um so effizient und schonend wie möglich mit kostbaren Ressourcen umzugehen.
         </p>
     </div>
-
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
 
@@ -68,13 +80,18 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Gutenberg Editor Content -->
-    <?php
-        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-            the_excerpt();
-        } else {
-            the_content( __( 'Continue reading', 'twentytwenty' ) );
-        }
-    ?>
+
+    <!-- Gutenberg Editor Content -->
+    <div class="gutenberg-content">
+        <?php
+            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                the_excerpt();
+            } else {
+                the_content( __( 'Continue reading', 'twentytwenty' ) );
+            }
+        ?>
+
+    </div>
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->
