@@ -14,7 +14,7 @@ date_default_timezone_set('Europe/Berlin');
 $now = date('Y-m-d H');
 $datetime = date('Y-m-d H:i');
 
-// echo $datetime;
+echo $datetime;
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
 $connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");
@@ -28,7 +28,7 @@ if (mysqli_connect_errno()) {
 <div class="energie-ampel">
     <div class="energie-ampel-titles">
         <div>
-            <h2>Energie Ampel</h2>
+            <h2>Energie Ampel Fall Back </h2>
 
             <h3 class="green">grüne Phase</h3>
         </div>
@@ -120,9 +120,20 @@ $phase_gramm = $wpdb_b->get_var( "
 " );
 
 $timeline = ("
-SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
-Join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` >= '".$datetime."' - INTERVAL 24 Hour AND `timestamp` < '".$datetime."' + INTERVAL 24 Hour
+SELECT
+    ampel_status.color,
+    ampel_status.name,
+    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
+    Ampel.timestamp AS DATE
+FROM
+    Ampel
+JOIN ampel_status ON Ampel.status = ampel_status.id
+WHERE
+    `timestamp` BETWEEN ('".$now.":00' - INTERVAL 1 HOUR) AND(
+        '".$now.":00' + INTERVAL 48 HOUR
+    )
+order by Ampel.timestamp asc
+LIMIT 0, 60
 ");
 
 // echo $timeline;

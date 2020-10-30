@@ -10,14 +10,24 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - calendar download error (server)
 - nachrichten kachel: nachrichten am arrenberg -> Link
 - (archieve) page: nachrichten
-- page: neue plattform für den arrenberg (erklärung + feedback)
 - archieve: vergangene veranstaltungen
-- energie ampel (uhrzeit, current phase)
 - feedback formular
+- test pictures (image sizes)
+- veranstaltung seite template (with gutenberg blocks)
+<br>
 - first release Funktionsumfang + (name)
 - db conversion timeline (features)
-- go back button (header)
-- test pictures (image sizes)
+- energie ampel seite
+- page: neue plattform für den arrenberg (erklärung + feedback)
+- seo beschreibung
+<br>
+- [function link projekt card]
+
+#### DONE
+- energie ampel (uhrzeit, current phase) (ap1 fallback?)
+- go back button (header) if subpage
+
+
 
 ## 📦 Requirements 
 
@@ -135,9 +145,24 @@ Limit 0,1
 ```mysql
 SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
 Join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
+WHERE `timestamp` >= '2020-10-30 13:08' - INTERVAL 24 Hour AND `timestamp` < '2020-10-30 13:08' + INTERVAL 24 Hour
 ```
-
+```mysql
+SELECT
+    ampel_status.color,
+    ampel_status.name,
+    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
+    Ampel.timestamp AS DATE
+FROM
+    Ampel
+JOIN ampel_status ON Ampel.status = ampel_status.id
+WHERE
+    `timestamp` BETWEEN ('2020-10-30 13:00' - INTERVAL 1 HOUR) AND(
+        '2020-10-30 13:00' + INTERVAL 48 HOUR
+    )
+order by Ampel.timestamp asc
+LIMIT 0, 100
+```
 
 ### CSS Tricks
 
@@ -160,8 +185,8 @@ rifi2k.format-html-in-php
 3. Allow Comment on Post-Type (Post type list Buld action) Projekte
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
-6. Delete Calendar Files (created in local host)
-7. Set Menu & Page Templates
+6. Delete Calendar Files (created in local host) + (create path to files)
+7. Set Menu (⚠️name/slug: "menu") & Page Templates
 
 ## 🧫 Fundamental
 
