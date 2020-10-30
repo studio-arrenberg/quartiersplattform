@@ -775,6 +775,14 @@ input[type="submit"]:hover {
   
 }
 
+.button-has-icon{
+  padding: 17px !important;
+
+}
+.button-icon{
+  display: inline ;
+  margin-right: 5px;
+}
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -1198,15 +1206,16 @@ button.toggle {
   display: flex;
   justify-content: space-between;
 }
-
+/* 
+.single #site-header{
+  opacity: 0;
+} */
 /* Header Titles ----------------------------- */
 
 .header-title {
   text-align: left;
-  padding: 10px 10px 5px 0px;
+  padding: 13px 10px 5px 0px;
   flex-grow: 2;
-
-
 }
 
 
@@ -1258,16 +1267,31 @@ button.toggle {
 }
 
 
+.header-button{
+  border-radius: 20px;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+
+
+
+.header-button .button-icon{
+  margin: 0px;
+}
+
+
 
 @media (max-width: 782px) {
   .header-button{
     right: 15px;
     top: 0px;
-    padding: 10px 15px 7px 15px;
-    font-family: 'OfficinaSansITCStd-Book';
-    margin-left: 10px;
-    word-break: keep-all;
+   
   }
+
  
 }
 
@@ -1303,11 +1327,12 @@ button.toggle {
   }
 
 
+  .header-button{
+    height: 55px;
+    width: 55px;
+  }
 
-.header-button{
-  border-radius: 20px;
-  padding: 21px 30px 18px 30px;
-}
+
 
 }
 

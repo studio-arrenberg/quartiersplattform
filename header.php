@@ -34,12 +34,14 @@
 		wp_body_open();
 		?>
 
-    <header id="site-header" role="banner">
+    <header id="site-header" class="shadow" role="banner">
         <div class="header-top-wrapper">
             <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
-        <button class="header-button is-style-outline" href="">Login</button>
+        <button class="header-button button-has-icon is-style-outline" href="">
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" /> 
+        </button>
         <!-- <button class="header-button is-style-outline" href="">Backend</button> -->
 
         </div>
