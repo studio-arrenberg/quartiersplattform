@@ -122,23 +122,23 @@ Limit 0,1
 ```mysql
 SELECT ampel_status.color, ampel_status.name,  DATE_FORMAT( Ampel.timestamp,'%H:%i') as time FROM Ampel 
 Join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` >= '$datetime' - INTERVAL 24 Hour AND `timestamp` < '$datetime' + INTERVAL 24 Hour
+WHERE `timestamp` >= '2020-10-30 13:08' - INTERVAL 24 Hour AND `timestamp` < '2020-10-30 13:08' + INTERVAL 24 Hour
 ```
 ```mysql
 SELECT
     ampel_status.color,
     ampel_status.name,
-    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS TIME,
+    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
     Ampel.timestamp AS DATE
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
 WHERE
-    `timestamp` BETWEEN '2020-10-30 13:08' AND(
-        '2020-10-30 13:08' + INTERVAL 48 HOUR
+    `timestamp` BETWEEN ('2020-10-30 13:00' - INTERVAL 1 HOUR) AND(
+        '2020-10-30 13:00' + INTERVAL 48 HOUR
     )
 order by Ampel.timestamp asc
-LIMIT 0, 60
+LIMIT 0, 100
 ```
 
 ### CSS Tricks
