@@ -21,8 +21,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - page: neue plattform für den arrenberg (erklärung + feedback)
 - seo beschreibung <br><br>
 
-- [function link projekt card]
-
 #### DONE
 - energie ampel (uhrzeit, current phase) (ap1 fallback?)
 - go back button (header) if subpage
@@ -48,6 +46,7 @@ Disable Rest API <br>
 #### Optional (Development)
 Custom Post Type UI
 [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
+[Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
 
 ## 🔗 Set up
 1. Setup local Wordpress 

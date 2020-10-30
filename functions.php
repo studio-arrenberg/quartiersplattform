@@ -1159,3 +1159,18 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
     return in_array( (int) $object_id, $menu_items );
 
 }
+
+// custom image sizes/ratios 
+// https://developer.wordpress.org/reference/functions/add_image_size/
+// square (1:1)
+add_image_size( 'square-s', 50, 50, array( 'center', 'center' ) );
+add_image_size( 'square-m', 180, 180, array( 'center', 'center' ) );
+add_image_size( 'square-l', 300, 300, array( 'center', 'center' ) );
+// preview (4:3)
+add_image_size( 'preview-s', 160, 120, array( 'center', 'center' ) );
+add_image_size( 'preview-m', 200, 150, array( 'center', 'center' ) );
+add_image_size( 'preview-l', 800, 600, array( 'center', 'center' ) );
+// landscape (2:1)
+add_image_size( 'landscape-s', 200, 100, array( 'center', 'center' ) );
+add_image_size( 'landscape-m', 400, 200, array( 'center', 'center' ) );
+add_image_size( 'landscape-l', 970, 485, array( 'center', 'center' ) );

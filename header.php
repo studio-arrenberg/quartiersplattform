@@ -32,11 +32,12 @@
 
     <?php
         wp_body_open();
-
-
+        // check if menu is needed
         $menu_active = 'off';
+        $menu_active_back = 'on';
         if( cms_is_in_menu( 'menu' ) ) {
             $menu_active = 'on';
+            $menu_active_back = 'off';
         }
 	?>
 
@@ -49,7 +50,7 @@
         <button class="header-button is-style-outline" href="">Backend</button>
 
         <!-- back button (ultimately this will be a function)  -->
-        <button onclick="history.go(-1);">Back </button> 
+        <button class="<?php echo $menu_active_back; ?>" onclick="history.go(-1);">Back </button> 
 
         </div>
 
