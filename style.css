@@ -1214,6 +1214,7 @@ button.toggle {
 
 .off{
   opacity: 0;
+  display: none;
 }
 
 
