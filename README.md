@@ -11,9 +11,7 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - nachrichten kachel: nachrichten am arrenberg -> Link
 - (archieve) page: nachrichten
 - archieve: vergangene veranstaltungen
-- energie ampel (uhrzeit, current phase) (ap1 fallback?)
 - feedback formular
-- go back button (header) if subpage
 - test pictures (image sizes)
 - veranstaltung seite template (with gutenberg blocks)
 <br>
@@ -21,8 +19,15 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 - db conversion timeline (features)
 - energie ampel seite
 - page: neue plattform für den arrenberg (erklärung + feedback)
+- seo beschreibung
 <br>
 - [function link projekt card]
+
+#### DONE
+- energie ampel (uhrzeit, current phase) (ap1 fallback?)
+- go back button (header) if subpage
+
+
 
 ## 📦 Requirements 
 
@@ -163,7 +168,7 @@ rifi2k.format-html-in-php
 4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
 5. Update Parmalinks
 6. Delete Calendar Files (created in local host) + (create path to files)
-7. Set Menu & Page Templates
+7. Set Menu (⚠️name/slug: "menu") & Page Templates
 
 ## 🧫 Fundamental
 

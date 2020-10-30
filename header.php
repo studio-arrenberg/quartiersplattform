@@ -31,22 +31,32 @@
 <body <?php body_class(); ?>>
 
     <?php
-		wp_body_open();
-		?>
+        wp_body_open();
 
-    <header id="site-header" role="banner">
+        $menu_active = 'off';
+        if( cms_is_in_menu( 'menu' ) ) {
+            $menu_active = 'on';
+        }
+	?>
+
+    <header id="site-header" class="<?php echo $menu_active; ?>" role="banner">
         <div class="header-top-wrapper">
             <div class="header-title">
                 <?php twentytwenty_site_logo(); ?>
             </div>
         <button class="header-button is-style-outline" href="">Login</button>
-        <!-- <button class="header-button is-style-outline" href="">Backend</button> -->
+        <button class="header-button is-style-outline" href="">Backend</button>
+
+        <!-- back button (ultimately this will be a function)  -->
+        <button onclick="history.go(-1);">Back </button> 
 
         </div>
 
         <div class="header-navigation-wrapper">
             <?php
 				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+
+
 					?>
             <nav class="menu-container" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
                 role="navigation">
