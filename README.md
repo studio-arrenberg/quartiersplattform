@@ -184,3 +184,8 @@ rifi2k.format-html-in-php
 - [x] Veranstaltungen
 - [x] Energie Ampel
 - [ ] Feedback
+- [x] Menu
+- [ ] Footer
+- [ ] Login/Registrieren
+- [ ] Email templates
+- [ ] Profil bearbeiten
