@@ -105,32 +105,6 @@ calendar_download($post);
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
-#### 🚦 Energie Ampel
-##### Phase:
-```mysql
-SELECT Ampel.status,  ampel_status.color, FLOOR( RAND() * (( ampel_status.carbon_factor + 20) - (ampel_status.carbon_factor - 20)) + (ampel_status.carbon_factor - 20)) as gramm, FLOOR(ampel_status.carbon_factor) FROM `Ampel` 
-join ampel_status on Ampel.status = ampel_status.id
-WHERE `timestamp` = '2020-10-28 15:00' 
-Limit 0,1
-```
-##### Timeline:
-```mysql
-SELECT
-    ampel_status.color,
-    ampel_status.name,
-    DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
-    Ampel.timestamp AS DATE
-FROM
-    Ampel
-JOIN ampel_status ON Ampel.status = ampel_status.id
-WHERE
-    `timestamp` BETWEEN ('2020-10-30 13:00' - INTERVAL 1 HOUR) AND(
-        '2020-10-30 13:00' + INTERVAL 48 HOUR
-    )
-order by Ampel.timestamp asc
-LIMIT 0, 100
-```
-
 ### CSS Tricks
 
 https://css-tricks.com/snippets/css/complete-guide-grid/ <br>
