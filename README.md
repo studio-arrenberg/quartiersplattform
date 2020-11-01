@@ -163,3 +163,4 @@ rifi2k.format-html-in-php
 - [ ] Login/Registrieren
 - [ ] Email templates
 - [ ] Profil bearbeiten
+- [ ] Remove Eneregie ampel when not enough data
