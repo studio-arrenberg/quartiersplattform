@@ -61,7 +61,7 @@ get_header();
 
 	<!-- veranstaltung erstellen -->
 	<!-- not ready yet -->
-	<h3>Veranstaltung Erstellen</h3>
+	<!-- <h3>Veranstaltung Erstellen</h3> -->
 
 	<!-- mehr veranstaltungen (offset) -->
 	<?php 
@@ -87,7 +87,7 @@ get_header();
 	?>
 
 	<!-- archive veranstltungen -->
-	<a href="<?php echo get_post_type_archive_link( 'veranstaltungen' ); ?>">Archiv</a>
+	<a class="button" href="<?php echo get_post_type_archive_link( 'veranstaltungen' ); ?>">Archiv</a>
 
 </main><!-- #site-content -->
 

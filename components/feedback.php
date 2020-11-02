@@ -15,4 +15,4 @@
 <?php acf_form('feedback-form'); ?>
 
 <!-- for testing -->
-<a href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>
+<a class="button" href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>
