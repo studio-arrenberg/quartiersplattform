@@ -1189,18 +1189,20 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 
 // custom image sizes/ratios 
 // https://developer.wordpress.org/reference/functions/add_image_size/
+// add_theme_support( 'square-s');
+// with array( 'center', 'center' ) = (cropped to fit)
 // square (1:1)
-add_image_size( 'square-s', 50, 50, array( 'center', 'center' ) );
-add_image_size( 'square-m', 180, 180, array( 'center', 'center' ) );
-add_image_size( 'square-l', 300, 300, array( 'center', 'center' ) );
+add_image_size( 'square-s', 50, 50);
+add_image_size( 'square-m', 180, 180);
+add_image_size( 'square-l', 300, 300);
 // preview (4:3)
-add_image_size( 'preview-s', 160, 120, array( 'center', 'center' ) );
-add_image_size( 'preview-m', 200, 150, array( 'center', 'center' ) );
-add_image_size( 'preview-l', 800, 600, array( 'center', 'center' ) );
+add_image_size( 'preview-s', 160, 120);
+add_image_size( 'preview-m', 200, 150);
+add_image_size( 'preview-l', 800, 600);
 // landscape (2:1)
-add_image_size( 'landscape-s', 200, 100, array( 'center', 'center' ) );
-add_image_size( 'landscape-m', 400, 200, array( 'center', 'center' ) );
-add_image_size( 'landscape-l', 970, 485, array( 'center', 'center' ) );
+add_image_size( 'landscape-s', 200, 100);
+add_image_size( 'landscape-m', 400, 200);
+add_image_size( 'landscape-l', 970, 485);
 
 
 // user feedback form 
@@ -1217,7 +1219,8 @@ function my_acf_form_init() {
 				'html_before_fields' => '',
 				'html_after_fields' => '',
 				'label_placement'=> '',
-				'updated_message' => __("Post updated", 'acf'),
+				//'updated_message' => __("Post updated", 'acf'),
+				//'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
 				'post_id'=>'new_post',
 				'new_post'=>array(
 					'post_type' => 'anmerkungen',
@@ -1242,8 +1245,20 @@ function my_post_title_updater( $post_id ) {
 	if ( get_post_type($post_id) == 'anmerkungen' ) {
 		$my_post = array();
 		$my_post['ID'] = $post_id;
-		$name = substr(get_field( 'text', $post_id ), 0, 30) . '...';
-		$my_post['post_title'] = $name;
+		//$name = substr(get_field( 'text', $post_id ), 0, 30) . '...';
+		$text = get_field( 'text', $post_id );
+
+		// shorten
+		$chars_limit = 50; // Character length
+		$chars_text = strlen($text);
+		$text = $text." ";
+		$text = substr($text,0,$chars_limit);
+		$text = substr($text,0,strrpos($text,' '));
+	  
+		if ($chars_text > $chars_limit)
+		   { $text = $text."..."; } // Ellipsis
+
+		$my_post['post_title'] = $text;
 		// Update the post into the database
 		wp_update_post( $my_post );
 	}

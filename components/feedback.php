@@ -10,15 +10,9 @@
 ?>
 
 <h4>Was wünschst du dir von der Quartiersplattform?</h4>
-<!-- <form>
-    <input placeholder="Was können wir besser machen?" type="text" />
-    <submit value="Feedback senden" />
-</form>
-
-<form action="" method="post">
-    <input type="text">
-    <button type="submit">Feedback senden</button>
-</form> -->
 
 <?php acf_form_head(); ?>
 <?php acf_form('feedback-form'); ?>
+
+<!-- for testing -->
+<a href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>

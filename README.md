@@ -173,9 +173,9 @@ rifi2k.format-html-in-php
     - Ort
     - Kontakt
 10. ACFs Setting 'has archive' => True (veranstaltungen, nachrichten) + archiv slug! ({post-type-slug}-archive)
-11. CPT Anmerkung (anmerkung)
-12. ACF Anmerkung (Post-type = Anmerkung) Text (text) Area / Status (status) True/False
-
+11. CPT Anmerkung (anmerkungen)
+12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False
+13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
 
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
