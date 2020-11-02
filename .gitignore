@@ -24,4 +24,5 @@ node_modules/
 
 # calendar files
 assets/generated/calendar-files/*
+*.ics
 #!assets/generated/calendar-files/
