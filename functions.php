@@ -1193,17 +1193,17 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 add_theme_support( 'post-thumbnails' );
 // with array( 'center', 'center' ) = (cropped to fit)
 // square (1:1)
-add_image_size( 'square_s', 50, 50);
-add_image_size( 'square_m', 180, 180);
-add_image_size( 'square_l', 300, 300);
+// add_image_size( 'square_s', 50, 50);
+// add_image_size( 'square_m', 180, 180);
+// add_image_size( 'square_l', 300, 300);
 // preview (4:3)
-add_image_size( 'preview_s', 160, 120);
+// add_image_size( 'preview_s', 160, 120);
 add_image_size( 'preview_m', 200, 150);
-add_image_size( 'preview_l', 800, 600);
+// add_image_size( 'preview_l', 800, 600);
 // landscape (2:1)
-add_image_size( 'landscape_s', 200, 100);
-add_image_size( 'landscape_m', 400, 200);
-add_image_size( 'landscape_l', 970, 485);
+// add_image_size( 'landscape_s', 200, 100);
+// add_image_size( 'landscape_m', 400, 200);
+// add_image_size( 'landscape_l', 970, 485);
 
 
 // user feedback form 

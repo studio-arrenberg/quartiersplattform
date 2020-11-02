@@ -36,7 +36,7 @@ get_header();
     <div class="single-header">
         <!-- post title -->
         <h1><?php the_title(); ?></h1>
-        <h4>Projekt/ Name/ Akteur <span class="date">Datum, Uhrzeit</span> </h4>
+        <h4>Projekt/ Name/ Akteur <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h4>
 
         <!-- projekt / akteur -->
         <!-- not ready yet -->
