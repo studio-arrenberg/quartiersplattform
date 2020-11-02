@@ -19,9 +19,10 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 ### Plugins
 
 [Advanced Custom Fields PRO](https://github.com/AdvancedCustomFields/acf) <br>
-[Favorites](https://github.com/kylephillips/favorites) <br>
+Custom Post Types<br>
 #### Later
 [PWA for WP](https://github.com/ahmedkaludi/pwa-for-wp) <br>
+[Favorites](https://github.com/kylephillips/favorites) <br>
 Disable Rest API <br>
 (Buddy Press)<br>
 (WP Forms)<br>
@@ -61,6 +62,18 @@ Functions => `functions.php` <br>
 ```php
 <?php echo get_site_url(); ?>
 ```
+#### Date Function
+[PHP Date Format](https://www.php.net/manual/de/datetime.format.php)
+```php
+$date = "2020-03-27 12:23:22";
+echo wp_date('F d, Y g:i a', strtotime($date)); 
+```
+`F j, G:i` November 28, 21:00 <br>
+`F j, Y G:i` November 28, 2020 21:00 <br>
+`j. M um G:i` 28. Nov um 21:00
+
+
+[More](......................................................................)
 
 ### Recources 
 
@@ -82,9 +95,9 @@ Functions => `functions.php` <br>
 ```php
 link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen');
 ```
-#### Card List
+#### List Card
 ```php 
-card_list($query, $link); 
+list_card($args3, get_site_url().'/veranstaltungen');
 ```
 #### Slider
 ```php
@@ -98,6 +111,10 @@ get_excerpt($text, $count = '55'); // für den fließtext
 #### Calendar Download
 ```php
 calendar_download($post);
+```
+#### Card List
+```php
+card_list($query);
 ```
 
 ### Notes
@@ -137,10 +154,12 @@ rifi2k.format-html-in-php
 9. ACFs Projekte
     - Ort
     - Kontakt
+10. ACFs Setting 'has archive' => True (veranstaltungen, nachrichten) + archiv slug! ({post-type-slug}-archive)
+11. CPT Anmerkung (anmerkung)
+12. ACF Anmerkung (Post-type = Anmerkung) Text (text) Area / Status (status) True/False
 
 
-## 🧫 Fundamental
-
+## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
 

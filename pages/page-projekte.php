@@ -9,46 +9,30 @@
  */
 
 get_header();
-
-
-
-$args = array(
-	'post_type'=>'projekte', 
-	'post_status'=>'publish', 
-	'posts_per_page'=> -1
-);
-query_posts( $args );
-
 ?>
 
 <main id="site-content" role="main">
 
-	<!-- featured projekte -->
 	<?php
+	// featured projekte
 	$args3 = array(
 		'post_type'=>'projekte', 
 		'post_status'=>'publish', 
-		'posts_per_page'=> 4
+		'posts_per_page'=> 4,
+		'orderby' => 'rand'
 	);
 
 	slider($args3,'square_card', '2','true'); 
 	?>
 
-	<?php
-
-	if ( have_posts() ) {
-
-		while ( have_posts() ) {
-			the_post();
-
-			// get_template_part( 'elements/card' );
-
-			get_template_part( 'elements/card', 'projekte' );
-
-			// get_template_part( 'template-parts/content-cover' );
-		}
-	}
-
+	<?php 
+	// veranstaltung list
+	$args4 = array(
+		'post_type'=>'projekte', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> -1
+	);
+	card_list($args4);
 	?>
 
 </main><!-- #site-content -->

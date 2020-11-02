@@ -87,7 +87,8 @@ get_header();
 			}
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			// get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'elements/card', get_post_type() );
 
 		}
 	} elseif ( is_search() ) {

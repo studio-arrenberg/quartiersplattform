@@ -940,12 +940,12 @@ function link_card($title, $text, $bg, $link){
 }
 
 // list card
-function card_list($args, $link = '') {
+function list_card($args, $link = '') {
 
 	?>
-	<div class='card list shadow'>
-		<?php if ($link) echo "<a href='".get_site_url().$link."'>"; ?>
-	<?php
+<div class='card list shadow'>
+    <?php if ($link) echo "<a href='".$link."'>"; ?>
+    <?php
 	$query2 = new WP_Query( $args);
 	// The Loop
 	while ( $query2->have_posts() ) {
@@ -956,9 +956,23 @@ function card_list($args, $link = '') {
 	wp_reset_postdata();
 	echo "</div>";
 	?>
-		</a>
-	</div>
-	<?php
+    </a>
+</div>
+<?php
+
+}
+
+// card list (diplay a list of cards)
+function card_list($args) {
+
+	$query2 = new WP_Query( $args);
+	// The Loop
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+		get_template_part('elements/card', get_post_type());
+	}
+	// Restore original Post Data
+	wp_reset_postdata();
 
 }
 
@@ -1011,31 +1025,33 @@ var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth |
 var draggable_state = true;
 
 if (vw > 768) {
-	slides_num = slides_num * 2;
-	draggable_state = false;
+    slides_num = slides_num * 2;
+    draggable_state = false;
 }
 
 var options = {
     dragFree: <?php echo $dragfree; ?>,
-	slidesToScroll: slides_num, // viewport > 768px 4
-	draggable: draggable_state
+    slidesToScroll: slides_num, // viewport > 768px 4
+    draggable: draggable_state
 }
 var embla = EmblaCarousel(emblaNode, options)
 
 embla.on('resize', () => {
-	var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-	slidesToScroll = '<?php echo $slides; ?>';
-	// console.log(vw);
-	if (vw > 768) {
-		slidesToScroll = slidesToScroll * 2;
-		draggable = false;
-	}
-	else {
-		slidesToScroll = slides_num;
-		draggable = true;
-	}
+    var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    slidesToScroll = '<?php echo $slides; ?>';
+    // console.log(vw);
+    if (vw > 768) {
+        slidesToScroll = slidesToScroll * 2;
+        draggable = false;
+    } else {
+        slidesToScroll = slides_num;
+        draggable = true;
+    }
 
-	embla.reInit({ slidesToScroll, draggable });
+    embla.reInit({
+        slidesToScroll,
+        draggable
+    });
 });
 </script>
 <?php
@@ -1139,9 +1155,11 @@ function calendar_download($post) {
     
     ?>
 
-    <a class="button" href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"  target="_self">Termin im Kalender speichern</a>
-    
-    <?php
+<a class="button"
+    href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"
+    target="_self">Termin im Kalender speichern</a>
+
+<?php
     
 }
 
@@ -1183,3 +1201,53 @@ add_image_size( 'preview-l', 800, 600, array( 'center', 'center' ) );
 add_image_size( 'landscape-s', 200, 100, array( 'center', 'center' ) );
 add_image_size( 'landscape-m', 400, 200, array( 'center', 'center' ) );
 add_image_size( 'landscape-l', 970, 485, array( 'center', 'center' ) );
+
+
+// feedback form 
+add_action('acf/init', 'my_acf_form_init');
+function my_acf_form_init() {
+
+	// Check function exists.
+	if( function_exists('acf_register_form')) {
+
+		// Register form.
+		acf_register_form(
+			array(
+				'id' => 'feedback-form',
+				'html_before_fields' => '',
+				'html_after_fields' => '',
+				'label_placement'=>'top',
+				'updated_message' => __("Post updated", 'acf'),
+				'post_id'=>'new_post',
+				'new_post'=>array(
+					'post_type' => 'anmerkung',
+					'post_status' => 'publish'
+				),
+				'field_el' => 'div',
+				'post_content' => false,
+				'post_title' => false,
+				'return' => '',
+				'fields' => array(
+					'text',
+				),
+				'submit_value'=>'Feedback senden',
+			)
+		);
+	}
+}
+
+add_action('acf/save_post', 'my_post_title_updater', 20);
+function my_post_title_updater( $post_id ) {
+
+	if ( get_post_type($post_id) == 'feedb' ) {
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$name = substr(get_field( 'Feedback', $post_id ), 0, 30) . '...';
+		$my_post['post_title'] = $name;
+		// Update the post into the database
+		wp_update_post( $my_post );
+		// echo 'test';
+		// wp_redirect( 'http://www.website.com/' . $value );
+	}
+
+}

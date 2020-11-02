@@ -59,6 +59,15 @@
             <span class="button-has-icon-label">Zurück</span>
         </button>
 
+        <?php 
+        //  backend login button for admins
+        if(is_admin()) {
+            ?>
+            <a href="<?php echo get_site_url(); ?>/wp-admin">Admin</a>
+            <?php 
+        }
+        ?>
+
         <div class="header-navigation-wrapper <?php echo $menu_active; ?>">
             <?php
 				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {

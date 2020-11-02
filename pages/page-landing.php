@@ -13,12 +13,31 @@ get_header();
 
 <main id="site-content" role="main">
 
-    <!-- neuste meldung (list_card + carousel query + function) -->
+    <!-- neuste meldung (card + carousel query + function) -->
     <?php
 	$args2 = array(
 		'post_type'=>'veranstaltungen', 
 		'post_status'=>'publish', 
 		'posts_per_page'=> 4
+	);
+
+	$args2 = array(
+		'post_type'=>'veranstaltungen', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4, 
+		'meta_key' => 'zeitpunkt',
+		//'orderby' => 'meta_value',
+		'orderby' => 'rand',
+		'order' => 'ASC',
+		'offset' => '0', 
+		'meta_query' => array(
+			array(
+				'key' => 'zeitpunkt', 
+				'value' => date("Y-m-d"),
+				'compare' => '>=', 
+				'type' => 'DATE'
+			)
+		)
 	);
 
 	slider($args2,'card', '1','false'); 
@@ -37,7 +56,8 @@ get_header();
 	$args3 = array(
 		'post_type'=>'projekte', 
 		'post_status'=>'publish', 
-		'posts_per_page'=> 4
+		'posts_per_page'=> 4,
+		'orderby' => 'rand'
 	);
 
 	slider($args3,'square_card', '2','true'); 
@@ -53,7 +73,7 @@ get_header();
 		'post_status'=>'publish', 
 		'posts_per_page'=> 3
 	);
-	card_list($args2);
+	list_card($args2, get_post_type_archive_link( 'nachrichten' ));
 	?>
 
 	<!-- veranstaltungen -->
@@ -63,7 +83,7 @@ get_header();
 		'post_status'=>'publish', 
 		'posts_per_page'=> 3
 	);
-	card_list($args3, '/veranstaltungen');
+	list_card($args3, get_site_url().'/veranstaltungen');
 	?>
 
     <!-- zur karte (call map) -->
@@ -75,15 +95,13 @@ get_header();
     <!-- energie ampel -->
     <?php get_template_part('components/energie_ampel'); ?>
 
-
-
     <!-- Aufbruch am Arrenberg link card -->
     <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/400x200.png', '/aufbruch-am-arrenberg'); ?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
 
-    <!-- feedback (acf?) -->
+    <!-- feedback (acf) -->
     <!-- not ready yet -->
 	<?php get_template_part('components/feedback'); ?>
 
