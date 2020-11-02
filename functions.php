@@ -1198,7 +1198,7 @@ add_theme_support( 'post-thumbnails' );
 // add_image_size( 'square_l', 300, 300);
 // preview (4:3)
 // add_image_size( 'preview_s', 160, 120);
-add_image_size( 'preview_m', 200, 150, array( 'center', 'center' ));
+add_image_size( 'preview_m', 200, 150,  true);
 // add_image_size( 'preview_l', 800, 600);
 // landscape (2:1)
 // add_image_size( 'landscape_s', 200, 100);
