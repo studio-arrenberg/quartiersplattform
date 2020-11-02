@@ -1203,7 +1203,7 @@ add_image_size( 'landscape-m', 400, 200, array( 'center', 'center' ) );
 add_image_size( 'landscape-l', 970, 485, array( 'center', 'center' ) );
 
 
-// feedback form 
+// user feedback form 
 add_action('acf/init', 'my_acf_form_init');
 function my_acf_form_init() {
 
@@ -1216,11 +1216,11 @@ function my_acf_form_init() {
 				'id' => 'feedback-form',
 				'html_before_fields' => '',
 				'html_after_fields' => '',
-				'label_placement'=>'top',
+				'label_placement'=> '',
 				'updated_message' => __("Post updated", 'acf'),
 				'post_id'=>'new_post',
 				'new_post'=>array(
-					'post_type' => 'anmerkung',
+					'post_type' => 'anmerkungen',
 					'post_status' => 'publish'
 				),
 				'field_el' => 'div',
@@ -1239,15 +1239,13 @@ function my_acf_form_init() {
 add_action('acf/save_post', 'my_post_title_updater', 20);
 function my_post_title_updater( $post_id ) {
 
-	if ( get_post_type($post_id) == 'feedb' ) {
+	if ( get_post_type($post_id) == 'anmerkungen' ) {
 		$my_post = array();
 		$my_post['ID'] = $post_id;
-		$name = substr(get_field( 'Feedback', $post_id ), 0, 30) . '...';
+		$name = substr(get_field( 'text', $post_id ), 0, 30) . '...';
 		$my_post['post_title'] = $name;
 		// Update the post into the database
 		wp_update_post( $my_post );
-		// echo 'test';
-		// wp_redirect( 'http://www.website.com/' . $value );
 	}
 
 }

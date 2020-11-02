@@ -70,10 +70,10 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 ```
 `F j, G:i` November 28, 21:00 <br>
 `F j, Y G:i` November 28, 2020 21:00 <br>
-`j. M um G:i` 28. Nov um 21:00
+`j. M G:i` 28. Nov 21:00
 
 
-[More](......................................................................)
+[More](https://github.com/studio-arrenberg/quartiersplattform/blob/main/wordpress.md)
 
 ### Recources 
 
