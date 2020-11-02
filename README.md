@@ -89,6 +89,24 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 | 4:3       | 160x120 | 200x150 | 800x600 |
 | Landscape | 200x100 | 400x200 | 970x485 |
 
+
+### Image Sizes (Ratio)
+
+1. Descriptions<br>
+Description Atribut = Bierdeckeltext
+2. Page Title 
+3. URL <br>
+arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
+3. Robots.txt!! Crawlbare seiten indexieren
+4. H1 H2 H3 P
+5. Prüfen von Rich markup möglichkeiten<br>
+https://search.google.com/test/rich-results
+6. Data Highlighter verwenden
+7. Veraltete Navigationsseite mit fehlerhaften Links<br>
+Alte Links weiterleiten!
+8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
+
+
 ### Functions
 
 #### Link Card
