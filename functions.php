@@ -1190,6 +1190,7 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 // custom image sizes/ratios 
 // https://developer.wordpress.org/reference/functions/add_image_size/
 // add_theme_support( 'square-s');
+add_theme_support( 'post-thumbnails' );
 // with array( 'center', 'center' ) = (cropped to fit)
 // square (1:1)
 add_image_size( 'square-s', 50, 50);
