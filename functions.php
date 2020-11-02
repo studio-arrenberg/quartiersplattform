@@ -1191,14 +1191,15 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 // https://developer.wordpress.org/reference/functions/add_image_size/
 // add_theme_support( 'square-s');
 add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 200, 150, true);
 // with array( 'center', 'center' ) = (cropped to fit)
 // square (1:1)
 // add_image_size( 'square_s', 50, 50);
-// add_image_size( 'square_m', 180, 180);
-// add_image_size( 'square_l', 300, 300);
+ add_image_size( 'square_m', 180, 180, array( 'center', 'center' ));
+  add_image_size( 'square_l', 300, 300, array( 'center', 'center' ));
 // preview (4:3)
 // add_image_size( 'preview_s', 160, 120);
-add_image_size( 'preview_m', 200, 150);
+add_image_size( 'preview_m', 200, 150, array( 'center', 'center' ));
 // add_image_size( 'preview_l', 800, 600);
 // landscape (2:1)
 // add_image_size( 'landscape_s', 200, 100);

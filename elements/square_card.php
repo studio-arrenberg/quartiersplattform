@@ -26,6 +26,6 @@
                 <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
+        <?php the_post_thumbnail( 'square_l' ); ?>
     </a>
 </div>
