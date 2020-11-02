@@ -79,27 +79,18 @@ Functions => `functions.php` <br>
 
 ### Image Sizes (Ratio)
 
-1. Descriptions
+1. Descriptions<br>
 Description Atribut = Bierdeckeltext
-
 2. Page Title 
-
-3. URL
+3. URL <br>
 arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
-
 3. Robots.txt!! Crawlbare seiten indexieren
-
 4. H1 H2 H3 P
-
-5. Prüfen von Rich markup möglichkeiten
+5. Prüfen von Rich markup möglichkeiten<br>
 https://search.google.com/test/rich-results
-
 6. Data Highlighter verwenden
-
-7. Veraltete Navigationsseite mit fehlerhaften Links
-
+7. Veraltete Navigationsseite mit fehlerhaften Links<br>
 Alte Links weiterleiten!
-
 8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
 
 
