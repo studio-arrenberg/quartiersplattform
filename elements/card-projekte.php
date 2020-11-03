@@ -24,7 +24,7 @@ $img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'cover-size' );
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
-            <h3 class="card-title"> Ha..
+            <h3 class="card-title"> Ho..
                 <?php shorten_title(get_the_title(), '60'); ?>
             </h3>
             <p class="preview-text">
