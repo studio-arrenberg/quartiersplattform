@@ -9,12 +9,14 @@
 
 ?>
 
-<h4>Was wünschst du dir von der Quartiersplattform?</h4>
+<div class="feedback">
+    <h4>Was wünschst du dir von der Quartiersplattform?</h4>
 
-<?php acf_form_head(); ?>
-<?php acf_form('feedback-form'); ?>
+    <?php acf_form_head(); ?>
+    <?php acf_form('feedback-form'); ?>
 
-<!-- for testing -->
-<br>
-<p>Schau dir den Entwicklungsprozess an</p>
-<a class="button" href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>
+    <!-- for testing -->
+    <br>
+    <p>Schau dir den Entwicklungsprozess an</p>
+    <a class="button" href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>
+</div>

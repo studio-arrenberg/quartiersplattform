@@ -630,19 +630,6 @@ input[type="checkbox"]:checked::before {
   width: 1.75rem;
 }
 
-input,
-textarea,
-button,
-.button,
-.faux-button,
-.wp-block-button__link,
-.wp-block-file__button {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
-  
-}
-
-@supports (font-variation-settings: normal) {
   input,
   textarea,
   button,
@@ -650,6 +637,8 @@ button,
   .faux-button,
   .faux-button.more-link,
   .wp-block-button__link,
+  .pagination .next,
+  .pagination .prev,
   .wp-block-file__button {
     font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
@@ -733,6 +722,8 @@ button,
 .button,
 .button-link,
 .faux-button,
+.pagination .next,
+.pagination .prev,
 .wp-block-file .wp-block-file__button,
 input[type="button"],
 input[type="reset"],
@@ -761,6 +752,10 @@ button:hover,
 .button:hover,
 .faux-button:focus,
 .faux-button:hover,
+.pagination .next:focus,
+.pagination .next:hover,
+.pagination .prev:focus,
+.pagination .prev:hover,
 .wp-block-button .wp-block-button__link:focus,
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-file .wp-block-file__button:focus,
@@ -917,8 +912,6 @@ section {
 .section-inner {
   margin-left: auto;
   margin-right: auto;
-  max-width: 120rem;
-  width: calc(100% - 4rem);
 }
 
 .section-inner.max-percentage {
@@ -1447,469 +1440,15 @@ button.toggle {
 
 /* -------------------------------------------------------------------------- */
 
-/*	7c. Template: Full Width
-/* -------------------------------------------------------------------------- */
-
-body.template-full-width
-  .entry-content
-  > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide),
-body.template-full-width
-  [class*="__inner-container"]
-  > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-  max-width: 120rem;
-}
-
-body.template-full-width .entry-content .alignleft,
-body.template-full-width .entry-content .alignright {
-  position: static;
-}
-
-body.template-full-width .entry-content .alignleft,
-body.template-full-width
-  [class*="wp-block"].alignwide
-  [class*="__inner-container"]
-  > .alignleft,
-body.template-full-width
-  [class*="wp-block"].alignwide
-  [class*="__inner-container"]
-  > p
-  .alignleft,
-body.template-full-width
-  [class*="wp-block"].alignwide
-  [class*="__inner-container"]
-  > .wp-block-image
-  .alignleft {
-  /*rtl:ignore*/
-  margin-left: 0;
-  position: static;
-}
-
-body.template-full-width .entry-content > .alignleft,
-body.template-full-width
-  [class*="wp-block"].alignfull:not(.has-background)
-  [class*="__inner-container"]
-  > .alignleft,
-body.template-full-width
-  [class*="wp-block"].alignfull:not(.has-background)
-  [class*="__inner-container"]
-  > p
-  .alignleft,
-body.template-full-width
-  [class*="wp-block"].alignfull:not(.has-background)
-  [class*="__inner-container"]
-  > .wp-block-image
-  .alignleft {
-  /*rtl:ignore*/
-  margin-left: 2rem;
-  position: static;
-}
-
-body.template-full-width .entry-content .alignright,
-body.template-full-width
-  [class*="wp-block"].alignwide
-  [class*="__inner-container"]
-  > .alignright,
-body.template-full-width
-  [class*="wp-block"].alignwide
-  [class*="__inner-container"]
-  > p
-  .alignright,
-body.template-full-width
-  [class*="wp-block"].alignwide
-  [class*="__inner-container"]
-  > .wp-block-image
-  .alignright {
-  /*rtl:ignore*/
-  margin-right: 0;
-  position: static;
-}
-
-body.template-full-width .entry-content > .alignright,
-body.template-full-width
-  [class*="wp-block"].alignfull:not(.has-background)
-  [class*="__inner-container"]
-  > .alignright,
-body.template-full-width
-  [class*="wp-block"].alignfull:not(.has-background)
-  [class*="__inner-container"]
-  > p
-  .alignright,
-body.template-full-width
-  [class*="wp-block"].alignfull:not(.has-background)
-  [class*="__inner-container"]
-  > .wp-block-image
-  .alignright {
-  /*rtl:ignore*/
-  margin-right: 2rem;
-  position: static;
-}
-
-/* -------------------------------------------------------------------------- */
-
 /*	8. Post: Archive
 /* -------------------------------------------------------------------------- */
 
 /* Archive Header ---------------------------- */
 
 .archive-header {
-  background-color: #fff;
-  padding: 4rem 0;
+  margin-bottom: 40px;
 }
 
-.reduced-spacing .archive-header {
-  padding-bottom: 2rem;
-}
-
-.archive-title {
-  font-size: 2.4rem;
-  font-weight: 500;
-  letter-spacing: -0.026666667em;
-  margin: 0;
-}
-
-.archive-subtitle p:last-child {
-  margin-bottom: 0;
-}
-
-/* Posts ------------------------------------- */
-
-body:not(.singular) main > article:first-of-type {
-  padding: 4rem 0 0;
-}
-
-/* Search Results ---------------------------- */
-
-.no-search-results-form {
-  padding-top: 5rem;
-}
-
-/* -------------------------------------------------------------------------- */
-
-/*	9. Post: Single
-/* -------------------------------------------------------------------------- */
-
-/* Post Header ------------------------------- */
-
-.singular .entry-header {
-  background-color: #fff;
-  padding: 4rem 0;
-}
-
-.entry-categories {
-  line-height: 1.25;
-  margin-bottom: 2rem;
-}
-
-.entry-categories-inner {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  margin: -0.5rem 0 0 -1rem;
-}
-
-.entry-categories a {
-  border-bottom: 0.15rem solid currentColor;
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 0.036666667em;
-  margin: 0.5rem 0 0 1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.entry-categories a:focus,
-.entry-categories a:hover {
-  border-bottom-color: transparent;
-}
-
-h1.entry-title,
-h2.entry-title {
-  margin: 0;
-}
-
-.entry-title a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.entry-title a:focus,
-.entry-title a:hover {
-  text-decoration: underline;
-}
-
-.intro-text {
-  margin-top: 2rem;
-}
-
-.singular .intro-text {
-  font-size: 2rem;
-  letter-spacing: -0.0315em;
-  line-height: 1.4;
-}
-
-/* POST META */
-
-.post-meta-single-top .post-meta {
-  justify-content: center;
-}
-
-.post-meta-wrapper {
-  margin-top: 2rem;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 58rem;
-  width: 100%;
-}
-
-.post-meta {
-  color: #6d6d6d;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.5rem;
-  font-weight: 500;
-  list-style: none;
-  margin: -1rem 0 0 -2rem;
-}
-
-.post-meta li {
-  flex-shrink: 0;
-  letter-spacing: -0.016875em;
-  margin: 1rem 0 0 2rem;
-  max-width: calc(100% - 2rem);
-}
-
-.post-meta a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.post-meta a:focus,
-.post-meta a:hover {
-  text-decoration: underline;
-}
-
-.post-meta .meta-wrapper {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.post-meta .meta-icon {
-  flex-shrink: 0;
-  margin-right: 1rem;
-}
-
-.sticky .post-sticky {
-  color: inherit;
-}
-
-.post-meta .post-author .meta-icon svg {
-  width: 1.6rem;
-  height: 1.8rem;
-}
-
-.post-meta .post-categories .meta-icon svg {
-  width: 1.8rem;
-  height: 1.7rem;
-}
-
-.post-meta .post-comment-link .meta-icon svg {
-  width: 1.8rem;
-  height: 1.8rem;
-}
-
-.post-meta .post-date .meta-icon svg {
-  width: 1.7rem;
-  height: 1.8rem;
-}
-
-.post-meta .post-edit .meta-icon svg {
-  width: 1.8rem;
-  height: 1.8rem;
-}
-
-.post-meta .post-sticky .meta-icon svg {
-  width: 1.5rem;
-  height: 1.8rem;
-}
-
-.post-meta .post-tags .meta-icon svg {
-  width: 1.8rem;
-  height: 1.8rem;
-}
-
-.post-meta svg * {
-  fill: currentColor;
-}
-
-/* Featured Media ---------------------------- */
-
-.featured-media {
-  margin-top: 5rem;
-  position: relative;
-}
-
-.singular .featured-media {
-  margin-top: 0;
-}
-
-.singular .featured-media-inner {
-  position: relative;
-  left: calc(50% - 50vw);
-  width: 100vw;
-}
-
-.singular .featured-media::before {
-  background: #fff;
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 50%;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-
-.featured-media img {
-  margin: 0 auto;
-}
-
-.featured-media figcaption {
-  margin: 1.5rem auto 0 auto;
-  text-align: center;
-  width: calc(100% - 5rem);
-}
-
-.post-inner {
-  padding-top: 5rem;
-}
-
-.reduced-spacing.missing-post-thumbnail .post-inner {
-  padding-top: 0;
-}
-
-/* Post Footer ------------------------------- */
-
-/* POST NAV LINKS */
-
-.post-nav-links {
-  border-radius: 0.4rem;
-  display: flex;
-  font-size: 0.9em;
-  font-weight: 500;
-  line-height: 1;
-  margin: 3em auto 0 auto;
-  padding: 0;
-  width: calc(100% - 4rem);
-  max-width: 58rem;
-}
-
-.post-nav-links > span.label {
-  padding: 1em 0;
-}
-
-.post-nav-links > * {
-  padding: 1em 0.75em;
-}
-
-/* POST META BOTTOM */
-
-.post-meta-wrapper.post-meta-single-bottom {
-  margin-top: 3rem;
-}
-
-/* Author Bio -------------------------------- */
-
-.author-bio {
-  margin-top: 4rem;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 58rem;
-  width: 100%;
-}
-
-.hide-avatars .author-bio {
-  padding-left: 0;
-}
-
-.author-bio .author-title-wrapper {
-  align-items: center;
-  display: flex;
-  margin: 0 0 1rem 0;
-}
-
-.author-bio .avatar {
-  border-radius: 50%;
-  margin-right: 1.5rem;
-  height: 5rem;
-  width: 5rem;
-}
-
-.hide-avatars img.avatar {
-  display: none;
-}
-
-.author-bio p:last-child {
-  margin-bottom: 0;
-}
-
-.author-bio .author-title {
-  margin: 0;
-}
-
-.author-bio .author-link {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin-top: 1em;
-  text-decoration: none;
-}
-
-.author-bio .author-link:focus,
-.author-bio .author-link:hover {
-  text-decoration: underline;
-}
-
-/* Single Pagination ------------------------- */
-
-.pagination-single {
-  font-size: 1.8rem;
-  margin-top: 5rem;
-}
-
-.pagination-single-inner {
-  display: flex;
-  flex-direction: column;
-}
-
-.pagination-single hr:first-child {
-  margin: 0 0 2.8rem 0;
-}
-of .pagination-single hr:last-child {
-  margin: 2.8rem 0 0.8rem 0;
-}
-
-.pagination-single a {
-  align-items: baseline;
-  display: flex;
-  font-weight: 500;
-  letter-spacing: -0.0275em;
-  text-decoration: none;
-  flex: 1;
-}
-
-.pagination-single a + a {
-  margin-top: 1rem;
-}
-
-.pagination-single a .arrow {
-  margin-right: 1rem;
-}
-
-.pagination-single a:focus .title,
-.pagination-single a:hover .title {
-  text-decoration: underline;
-}
 
 /* -------------------------------------------------------------------------- */
 
@@ -3195,41 +2734,28 @@ div.comment:first-of-type {
 /*	13. Site Pagination
 /* -------------------------------------------------------------------------- */
 
+.page-numbers{
+  display: none;
+}
+.pagination-wrapper{
+  margin: 50px 0px;
+}
+
 .pagination .nav-links {
   align-items: baseline;
   display: flex;
-  flex-wrap: wrap;
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin: -1.5rem 0 0 -2.5rem;
-  width: calc(100% + 2.5rem);
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .pagination-separator {
   margin: 5rem 0;
 }
 
-.nav-links > * {
-  margin: 1.5rem 0 0 2.5rem;
-}
 
 .nav-links .placeholder {
   display: none;
   visibility: hidden;
-}
-
-.pagination a {
-  text-decoration: none;
-}
-
-.pagination a:focus,
-.pagination a:hover {
-  text-decoration: underline;
-}
-
-.pagination .dots {
-  transform: translateY(-0.3em);
-  color: #6d6d6d;
 }
 
 .nav-short {
@@ -3237,7 +2763,6 @@ div.comment:first-of-type {
 }
 
 /* -------------------------------------------------------------------------- */
-
 /*	14. Error 404
 /* -------------------------------------------------------------------------- */
 
@@ -5048,6 +4573,7 @@ div.comment:first-of-type {
 }
 
 
+
 /* CARDS */
 
 .card {
@@ -5067,10 +4593,13 @@ div.comment:first-of-type {
   justify-content: space-between;
   color: #000;
   text-decoration: none !important;
+  min-height: 100px;
+
 }
 
 .card .content {
   padding: 0px 10px;
+  flex-grow: 1;
 }
 .card img {
   min-width: 120px;
@@ -5281,6 +4810,25 @@ div.comment:first-of-type {
   }
 }
 
+
+
+.anmerkung .pre-title{
+  margin-bottom: 5px;
+}
+.anmerkung .card-title{
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+}
+
+
+.card .card-title
+/* Energie  Ampel */
+
+
+
+
+
+
 .energie-ampel {
   margin-top: 40px;
   margin-bottom: 20px;
@@ -5357,4 +4905,17 @@ div.comment:first-of-type {
 .green {
   color: #40b82e;
 }
+
+
+
+
+/* ------ */
+
+
+/* feedback */
+
+
+.feedback{
+  margin: 50px 0px;
+
 }
