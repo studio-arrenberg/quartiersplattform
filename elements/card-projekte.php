@@ -17,13 +17,14 @@
 <?php
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "preview_m" );
 $thumbnail = wp_get_attachment_image_src('preview_m');
+$img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'cover-size' );
 ?>
 
 <div class="card shadow projekt">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
-            <h3 class="card-title"> Hi..
+            <h3 class="card-title"> Ha..
                 <?php shorten_title(get_the_title(), '60'); ?>
             </h3>
             <p class="preview-text">
@@ -32,6 +33,7 @@ $thumbnail = wp_get_attachment_image_src('preview_m');
         </div>
         <?php // the_post_thumbnail( 'preview_m' ); ?>
         <?php // echo the_post_thumbnail($post->ID, "preview_m", false);?>
-        <img src="<?php echo $thumbnail[0]; ?>"/>
+        <!-- <img src="<?php echo $thumbnail[0]; ?>"/> -->
+        <?php echo get_the_post_thumbnail( $page->ID, 'preview_m' ); ?>
     </a>
 </div>
