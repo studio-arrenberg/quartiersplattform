@@ -102,7 +102,6 @@ get_header();
     <!-- not ready yet -->
 
     <!-- feedback (acf) -->
-    <!-- not ready yet -->
 	<?php get_template_part('components/feedback'); ?>
 
 </main><!-- #site-content -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Projekt [Default]
+ * Template Name: Veranstaltung [Default]
  * Template Post Type: projekte
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

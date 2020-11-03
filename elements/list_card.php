@@ -15,7 +15,7 @@
 ?>
 
 <div class="list-item">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+    <?php the_post_thumbnail( 'preview_m' ); ?>
     <div class="content">
         <h3 class="card-title">
             <?php shorten_title(get_the_title(), '30'); ?>

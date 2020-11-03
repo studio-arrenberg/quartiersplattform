@@ -176,6 +176,7 @@ rifi2k.format-html-in-php
 11. CPT Anmerkung (anmerkungen)
 12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False
 13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
+14. [last] Regenerate Images
 
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch

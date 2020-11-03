@@ -14,7 +14,6 @@
 
 ?>
 
-
 <div class="card square shadow">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
 

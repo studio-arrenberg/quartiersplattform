@@ -15,4 +15,6 @@
 <?php acf_form('feedback-form'); ?>
 
 <!-- for testing -->
+<br>
+<p>Schau dir den Entwicklungsprozess an</p>
 <a class="button" href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>
