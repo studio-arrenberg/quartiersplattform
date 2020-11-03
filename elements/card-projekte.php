@@ -33,6 +33,6 @@
         </div>
         <?php // the_post_thumbnail( 'preview_m' ); ?>
         <?php // echo the_post_thumbnail($post->ID, "preview_m", false);?>
-        <?php echo get_the_post_thumbnail( $page->ID, 'preview_m' ); ?>
+        <?php echo get_the_post_thumbnail( $post->ID, 'preview_m' ); ?>
     </a>
 </div>
