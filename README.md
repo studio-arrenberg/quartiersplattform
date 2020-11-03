@@ -69,6 +69,7 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 `F j, Y G:i` November 28, 2020 21:00 <br>
 `j. M G:i` 28. Nov 21:00
 
+[Get Term Archive](https://wordpress.stackexchange.com/questions/48435/get-term-archive-url-link)
 
 [More](https://github.com/studio-arrenberg/quartiersplattform/blob/main/wordpress.md)
 

@@ -34,6 +34,8 @@ get_header();
 
     </div>
 
+    <!-- author -->
+
      <?php edit_post_link(); ?>
 
     <!-- Gutenberg Editor Content -->
