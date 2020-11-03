@@ -33,7 +33,6 @@ $img_srcset = wp_get_attachment_image_srcset( $attachment_id, 'cover-size' );
         </div>
         <?php // the_post_thumbnail( 'preview_m' ); ?>
         <?php // echo the_post_thumbnail($post->ID, "preview_m", false);?>
-        <!-- <img src="<?php echo $thumbnail[0]; ?>"/> -->
         <?php echo get_the_post_thumbnail( $page->ID, 'preview_m' ); ?>
     </a>
 </div>
