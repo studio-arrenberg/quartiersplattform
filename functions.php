@@ -1266,3 +1266,12 @@ function my_post_title_updater( $post_id ) {
 	}
 
 }
+
+function my_acf_admin_head() {
+    ?>
+    <style type="text/css">
+        .acf-field-5fa01d66b0f2f > .acf-label {display: none;}
+    </style>
+    <?php
+}
+add_action('acf/input/admin_head', 'my_acf_admin_head');
