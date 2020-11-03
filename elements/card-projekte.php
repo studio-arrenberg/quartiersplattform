@@ -16,6 +16,7 @@
 
 <?php
 $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "preview_m" );
+$thumbnail = wp_get_attachment_image_src('preview_m');
 ?>
 
 <div class="card shadow projekt">
