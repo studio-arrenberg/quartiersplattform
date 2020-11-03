@@ -7,9 +7,6 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 
-- [ ] Bilder einbetten
-- [ ] Archieve (Nachrichten, Veranstaltungen)
-
 ## 📦 Requirements 
 
 ### Server
@@ -189,16 +186,9 @@ rifi2k.format-html-in-php
 - Projekte
 - Veranstaltungen
 - Energie Ampel
-- Feedback
-
-- [x] Startseite
-- [x] Projekte
-- [x] Veranstaltungen
-- [x] Energie Ampel
-- [ ] Feedback
-- [x] Menu
-- [ ] Footer
-- [ ] Login/Registrieren
-- [ ] Email templates
-- [ ] Profil bearbeiten
-- [ ] Remove Eneregie ampel when not enough data
+- Feedback (Anmerkungen)
+- Footer
+- Login/Registrieren
+- Email templates
+- Profil bearbeiten
+- Remove Eneregie ampel when not enough data
