@@ -13,44 +13,22 @@
 
 ?>
 <footer id="site-footer" role="contentinfo" class="header-footer-group">
+    <div class="sponsoren">
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/wsw.svg" alt="WSW"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/buw.svg" alt="Universität Wuppertal"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/studio-arrenberg.svg" alt="Studio Arrenberg"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/efre.svg" alt="Studio Arrenberg"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/eu.svg" alt="Studio Arrenberg"> 
+    </div>
 
-    <div class="section-inner">
+    <div class="footer">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
 
-        <div class="footer-credits">
+        <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Kontakt</a>
+        <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Impressum</a>
 
-            <p class="footer-copyright">&copy;
-                <?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/date */
-								_x( 'Y', 'copyright date format', 'twentytwenty' )
-							);
-							?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-            </p><!-- .footer-copyright -->
-
-            <p class="powered-by-wordpress">
-                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-                    <?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-                </a>
-            </p><!-- .powered-by-wordpress -->
-
-        </div><!-- .footer-credits -->
-
-        <a class="to-the-top" href="#site-header">
-            <span class="to-the-top-long">
-                <?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-            </span><!-- .to-the-top-long -->
-            <span class="to-the-top-short">
-                <?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-            </span><!-- .to-the-top-short -->
-        </a><!-- .to-the-top -->
-
+       
     </div><!-- .section-inner -->
 
 </footer><!-- #site-footer -->
