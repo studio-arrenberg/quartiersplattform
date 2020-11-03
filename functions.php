@@ -70,7 +70,7 @@ function twentytwenty_theme_support() {
 	// set_post_thumbnail_size( 200, 150, true);
 	// with array( 'center', 'center' ) = (cropped to fit)
 
-	function add_custom_sizes() {
+	// function add_custom_sizes() {
 		// square (1:1)
 		// add_image_size( 'square_s', 50, 50);
 		add_image_size( 'square_m', 180, 180, array( 'center', 'center' ));
@@ -80,11 +80,11 @@ function twentytwenty_theme_support() {
 		add_image_size( 'preview_m', 200, 150, array( 'center', 'center' ));
 		// add_image_size( 'preview_l', 800, 600);
 		// landscape (2:1)
-		// add_image_size( 'landscape_s', 200, 100);
+		// add_image_size( 'landscape_s', 200, 100); 
 		// add_image_size( 'landscape_m', 400, 200);
 		// add_image_size( 'landscape_l', 970, 485);
-	}
-	add_action('after_setup_theme','add_custom_sizes');
+	// }
+	// add_action('after_setup_theme','add_custom_sizes');
 
 	// Custom logo.
 	$logo_width  = 120;
