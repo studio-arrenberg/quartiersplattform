@@ -3542,156 +3542,48 @@ div.comment:first-of-type {
 /*	16. Site Footer
 /* -------------------------------------------------------------------------- */
 
-.footer-nav-widgets-wrapper,
+
 #site-footer {
-  background-color: #fff;
-  border-color: #dedfdf;
-  border-style: solid;
-  border-width: 0;
+  margin: 20px auto 0px auto;
+  max-width: 1000px;
+  padding: 20px 15px 20px 15px;
+  text-align: center;
 }
 
-.footer-top-visible .footer-nav-widgets-wrapper,
-.footer-top-hidden #site-footer {
-  margin-top: 5rem;
-}
-
-.reduced-spacing.footer-top-visible .footer-nav-widgets-wrapper,
-.reduced-spacing.footer-top-hidden #site-footer {
-  border-top-width: 0.1rem;
-}
-
-.footer-top,
-.footer-widgets-outer-wrapper,
-#site-footer {
-  padding: 3rem 0;
-}
-
-/* Footer Top -------------------------------- */
-
-.footer-top {
+.sponsoren{
   display: flex;
-  border-bottom: 0.1rem solid #dedfdf;
+  flex-wrap: wrap;
   justify-content: space-between;
+
 }
 
-/* FOOTER MENU */
-
-.footer-menu {
-  font-size: 1.8rem;
-  font-weight: 500;
-  letter-spacing: -0.0277em;
+.sponsoren-logo{
+  height: 28px;
+  margin-top: 5px;
 }
 
-.footer-menu li {
-  line-height: 1.25;
-  margin: 0.25em 0 0 0;
+.footer img{
+  max-width: 250px;
+  margin: 75px auto 50px ;
 }
-
-.footer-menu a {
-  text-decoration: none;
-  word-break: normal;
-  word-wrap: normal;
-}
-
-.footer-menu a:hover,
-.footer-menu a:focus {
-  text-decoration: underline;
-}
-
-/* FOOTER SOCIAL */
-
-.footer-social-wrapper {
-  margin: 0;
-  width: 100%;
-}
-
-.has-footer-menu .footer-social-wrapper {
-  flex-shrink: 0;
-  margin-left: 1rem;
-  width: 50%;
-}
-
-ul.footer-social {
-  margin: -0.5rem 0 0 -0.5rem;
-}
-
-.has-footer-menu .footer-social {
-  justify-content: flex-end;
-}
-
-ul.footer-social li {
-  margin: 0.5rem 0 0 0.5rem;
-}
-
-.footer-social a {
-  background-color: #0091ff;
-  height: 3.6rem;
-  width: 3.6rem;
-}
-
-.footer-social a::before {
-  font-size: 1.8rem;
-}
-
-/* Footer Widgets ---------------------------- */
-
-.footer-widgets-outer-wrapper {
-  border-bottom: 0.1rem solid #dedfdf;
-}
-
-.footer-widgets + .footer-widgets {
-  margin-top: 3rem;
-}
-
-/* Footer Bottom ----------------------------- */
-
-#site-footer {
-  font-size: 1.8rem;
-}
-
-#site-footer .section-inner {
-  align-items: baseline;
-  display: flex;
-  justify-content: space-between;
-}
-
-#site-footer a {
-  text-decoration: none;
-}
-
-#site-footer a:focus,
-#site-footer a:hover {
-  text-decoration: underline;
-}
-
-.footer-copyright a,
-.powered-by-wordpress a {
-  color: inherit;
-}
-
-.powered-by-wordpress,
-.to-the-top {
+.footer-link{
+  font-size: 1.6rem;
   color: #6d6d6d;
+  text-decoration: none;
+  padding: 10px 25px;
 }
 
-a.to-the-top > * {
-  pointer-events: none;
+.footer-link:hover, .footer-link:active{
+  color: #0091ff;
 }
 
-.footer-copyright {
-  font-weight: 500;
-  margin: 0;
-}
 
-.powered-by-wordpress {
-  display: none;
-  margin: 0 0 0 2.4rem;
+@media (min-width: 782px) {
+  .sponsoren-logo{
+    height: 30px;
+    margin-top: 5px;
+  }
 }
-
-.to-the-top-long {
-  display: none;
-}
-
 /* -------------------------------------------------------------------------- */
 
 /*	17. Media Queries
