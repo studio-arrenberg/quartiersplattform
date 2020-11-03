@@ -14,6 +14,10 @@
 
 ?>
 
+<?php
+$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "preview_m" );
+?>
+
 <div class="card shadow projekt">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
@@ -25,6 +29,8 @@
                 <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <?php the_post_thumbnail( 'preview_m' ); ?>
+        <?php // the_post_thumbnail( 'preview_m' ); ?>
+        <?php // echo the_post_thumbnail($post->ID, "preview_m", false);?>
+        <img src="<?php echo $thumbnail[0]; ?>"/>
     </a>
 </div>
