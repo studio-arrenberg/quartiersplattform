@@ -73,7 +73,7 @@ function twentytwenty_theme_support() {
 	// function add_custom_sizes() {
 		// square (1:1)
 		// add_image_size( 'square_s', 50, 50);
-		// add_image_size( 'square_m', 180, 180, array( 'center', 'center' )); // this
+		add_image_size( 'square_m', 180, 180, array( 'center', 'center' )); // this
 		add_image_size( 'square_l', 300, 300, array( 'center', 'center' )); // this
 		// preview (4:3)
 		// add_image_size( 'preview_s', 160, 120);
