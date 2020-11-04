@@ -1,10 +1,8 @@
 # Wordpress Snippets
 
-## Table of Contents 
+## Query
 
-### Query
-
-#### Loop Posts (list)
+### Loop Posts (list)
 
 ```php
 $args = array(
@@ -30,18 +28,18 @@ if ( have_posts() ) {
 echo get_post_modified_time('F d, Y g:i a', true, null, true); // "März 21, 2017 7:02 pm"
 ```
 
-### WP_CLI
+## WP_CLI
 [Documentation](https://developer.wordpress.org/cli/commands/)
 
-#### Plesk WP Tookit
+### Plesk WP Tookit
 
 ```ssh
 plesk ext wp-toolkit --wp-cli -instance-id 1 -- media regenerate --yes
 plesk ext wp-toolkit --list
 ```
-#### WP-CLI Install
+### WP-CLI Install
 
-##### install needed dependencies 
+#### install needed dependencies 
 
 ```ssh
 # check php version
@@ -57,12 +55,12 @@ yum install gd gd-devel php-gd
 service httpd restart
 ```
 
-##### install WP-Cli
+#### install WP-Cli
 
 See [WP-CLI](https://wp-cli.org) for instructions
 
 
-#### WP-CLI Regenerate Thumbnails
+### WP-CLI Regenerate Thumbnails
 [Source](https://developer.wordpress.org/cli/commands/media/regenerate/)
 ```ssh
 # path to wp dir

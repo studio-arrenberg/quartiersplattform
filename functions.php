@@ -65,27 +65,21 @@ function twentytwenty_theme_support() {
 
 	// custom image sizes/ratios 
 	// https://developer.wordpress.org/reference/functions/add_image_size/
-	// add_theme_support( 'square-s');
-	// add_theme_support( 'post-thumbnails' );
-	// set_post_thumbnail_size( 200, 150, true);
 	// with array( 'center', 'center' ) = (cropped to fit)
 
-	// function add_custom_sizes() {
-		// add_theme_support( 'post-thumbnails' );
-		// square (1:1)
-		add_image_size( 'square_s', 80, 80, array( 'center', 'center' ));
-		add_image_size( 'square_m', 180, 180, array( 'center', 'center' )); // this
-		add_image_size( 'square_l', 300, 300, array( 'center', 'center' )); // this
-		// preview (4:3)
-		// add_image_size( 'preview_s', 160, 120);
-		add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); // this
-		add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
-		// landscape (2:1)
-		// add_image_size( 'landscape_s', 200, 100); 
-		// add_image_size( 'landscape_m', 400, 200);
-		// add_image_size( 'landscape_l', 970, 485);
-	// }
-	// add_action('after_setup_theme','add_custom_sizes');
+	// square (1:1)
+	add_image_size( 'square_s', 80, 80, array( 'center', 'center' ));
+	add_image_size( 'square_m', 180, 180, array( 'center', 'center' ));
+	add_image_size( 'square_l', 300, 300, array( 'center', 'center' ));
+	// preview (4:3)
+	add_image_size( 'preview_s', 160, 120, array( 'center', 'center' ));
+	add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); 
+	add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
+	// landscape (2:1)
+	// add_image_size( 'landscape_s', 200, 100); 
+	// add_image_size( 'landscape_m', 400, 200);
+	// add_image_size( 'landscape_l', 970, 485);
+
 
 	// Custom logo.
 	$logo_width  = 120;
