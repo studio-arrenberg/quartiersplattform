@@ -4765,14 +4765,14 @@ div.comment:first-of-type {
 
   .landscape,
   .square {
-    max-width: 100% !important;
-    max-height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .landscape img,
   .square img {
-    max-width: 100% !important;
-    max-height: 100% !important;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .square .preview-text {
@@ -4788,8 +4788,21 @@ div.comment:first-of-type {
     margin-top: 20px;
   }
   
-  .card-container .card{ margin: 10px 0px;}
+  .card-container .landscape {
+    max-width: calc( 50% - 10px);
+
+  }
+
+
+  
+
+  .shrink-desk{
+    float: left;
+  }
+ 
 }
+
+
 
 .anmerkung .pre-title {
   margin-bottom: 5px;
@@ -4899,3 +4912,42 @@ div.comment:first-of-type {
 .feedback {
   margin: 50px 0px;
 }
+
+.lang img{
+  left: 0px;
+
+}
+
+.lang img:nth-of-type(2){
+  position: absolute;
+  animation: out 0.5s ease-in 16s 1 forwards;
+}
+
+.lang img:nth-of-type(3){
+  position: absolute;
+  animation: out 0.5s ease-in 12s 1 forwards;
+}
+
+.lang img:nth-of-type(4){
+  position: absolute;
+  animation: out 0.5s ease-in 8s 1 forwards;
+}
+
+.lang img:nth-of-type(5){
+  position: absolute;
+  animation: out 0.5s ease-in 4s 1 forwards;
+}
+
+
+/* .lang img:nth-of-type(2){
+  animation-name inout;
+  animation-duration: 4s;
+  animation-delay: 4s;
+} */
+
+@keyframes out{
+  0% {opacity:1;}
+  100% {opacity:0;}
+}
+
+
