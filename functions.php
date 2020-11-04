@@ -885,7 +885,7 @@ function link_card($title, $text, $bg, $link){
 function list_card($args, $link = '') {
 
 	?>
-<div class='card list shadow'>
+<div class='card list-card shadow'>
     <?php if ($link) echo "<a href='".$link."'>"; ?>
     <?php
 	$query2 = new WP_Query( $args);
@@ -896,9 +896,8 @@ function list_card($args, $link = '') {
 	}
 	// Restore original Post Data
 	wp_reset_postdata();
-	echo "</div>";
 	?>
-    </a>
+	</a>
 </div>
 <?php
 

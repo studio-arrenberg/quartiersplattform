@@ -14,7 +14,7 @@
 
 ?>
 
-<div class="card square shadow">
+<div class="card square shadow gardient">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
 
         <div class="content">

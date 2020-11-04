@@ -4571,7 +4571,6 @@ div.comment:first-of-type {
 }
 
 
-
 /* CARDS */
 
 .card {
@@ -4579,7 +4578,7 @@ div.comment:first-of-type {
   width: 100%;
   max-width: 400px;
   background-color: #fff;
-  margin: 15px auto;
+  margin: 5px auto;
   padding: 5px 5px 5px 5px;
 
   transition: all ease-in-out 0.2s; /* Animation */
@@ -4617,6 +4616,7 @@ div.comment:first-of-type {
 
 .date {
   color: #000;
+  font-size: 1.4rem;
   font-family: "OfficinaSansITCStd-Book";
 }
 
@@ -4631,7 +4631,7 @@ div.comment:first-of-type {
   line-height: 1.5rem;
 }
 
-.list a {
+.list-card a {
   flex-wrap: wrap;
   flex-grow: 4;
 }
@@ -4764,6 +4764,14 @@ div.comment:first-of-type {
     max-width: 100%;
     margin: 0px;
   }
+
+
+  .card{
+    margin: 5px 0px;
+    max-width: 480px;
+  }
+
+  
 }
 
 @media (min-width: 782px) {
@@ -4818,8 +4826,23 @@ div.comment:first-of-type {
   line-height: 2.8rem;
 }
 
+.card-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
 
-.card .card-title
+
+
+
+.list-cards{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
 /* Energie  Ampel */
 
 

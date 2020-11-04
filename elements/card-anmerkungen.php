@@ -19,7 +19,7 @@
         <div class="content">
             <div class="pre-title">Ausstehend <span class="date">vor 30 Minuten<span></div>
             <h3 class="card-title">
-                <?php shorten_title(get_the_title(), '60'); ?>
+                <?php  shorten_title(get_field('text'), '100'); ?>
             </h3>
         </div>
         <?php the_post_thumbnail( 'preview_m' ); ?>

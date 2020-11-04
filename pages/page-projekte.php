@@ -13,7 +13,7 @@ get_header();
 
 <main id="site-content" role="main">
 
-	<?php
+    <?php
 	// featured projekte
 	$args3 = array(
 		'post_type'=>'projekte', 
@@ -25,18 +25,20 @@ get_header();
 	slider($args3,'square_card', '2','true'); 
 	?>
 
-	<?php 
+	
+    <?php 
 	// veranstaltung list
 	$args4 = array(
 		'post_type'=>'projekte', 
 		'post_status'=>'publish', 
 		'posts_per_page'=> -1
 	);
-	card_list($args4);
 	?>
-
+	
+	<div class="card-list">
+	<?php card_list($args4);
+	?>
+</div>
 </main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php get_footer(); ?>

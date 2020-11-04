@@ -43,7 +43,7 @@ get_header();
 	slider($args2,'card', '1','false'); 
 	?>
     <!-- link card -->
-    <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/400x200.png', '/das-quartier'); ?>
+    <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/Entdecke-den-Arrenberg-Wupptertal.jpg', '/das-quartier'); ?>
 
     <!-- call to register -->
     <?php get_template_part( 'components/call', 'register' ); ?>
@@ -66,26 +66,29 @@ get_header();
     <!-- *zahlen und fakten* -->
     <!-- not ready yet -->
 
-    <!-- projekt updates (list_card query function) -->
-    <?php
-	$args2 = array(
-		'post_type'=>'nachrichten', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 3
-	);
-	list_card($args2, get_post_type_archive_link( 'nachrichten' ));
-	?>
+	<div class="list-cards"> <!-- Eventuell auch als Slider -->
+		
+		<!-- projekt updates (list_card query function) -->
+		<?php
+		$args2 = array(
+			'post_type'=>'nachrichten', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 3
+		);
+		list_card($args2, get_post_type_archive_link( 'nachrichten' ));
+		?>
 
-	<!-- veranstaltungen -->
-	<?php
-	$args3 = array(
-		'post_type'=>'veranstaltungen', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 3
-	);
-	list_card($args3, get_site_url().'/veranstaltungen');
-	?>
+		<!-- veranstaltungen -->
+		<?php
+		$args3 = array(
+			'post_type'=>'veranstaltungen', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 3
+		);
+		list_card($args3, get_site_url().'/veranstaltungen');
+		?>
 
+	</div>
     <!-- zur karte (call map) -->
     <!-- not ready yet -->
 
@@ -96,7 +99,7 @@ get_header();
     <?php get_template_part('components/energie_ampel'); ?>
 
     <!-- Aufbruch am Arrenberg link card -->
-    <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/400x200.png', '/aufbruch-am-arrenberg'); ?>
+    <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/Aufbruch-am-Arrenberg.jpg', '/aufbruch-am-arrenberg'); ?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
