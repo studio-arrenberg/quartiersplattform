@@ -41,7 +41,7 @@ plesk ext wp-toolkit --list
 
 #### install needed dependencies 
 
-```ssh
+```bash
 # check php version
 php -v 
 # in root dir
