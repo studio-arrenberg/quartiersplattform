@@ -33,7 +33,7 @@ echo get_post_modified_time('F d, Y g:i a', true, null, true); // "März 21, 201
 
 ### Plesk WP Tookit
 
-```ssh
+```bash
 plesk ext wp-toolkit --wp-cli -instance-id 1 -- media regenerate --yes
 plesk ext wp-toolkit --list
 ```
@@ -41,7 +41,7 @@ plesk ext wp-toolkit --list
 
 #### install needed dependencies 
 
-```ssh
+```bash
 # check php version
 php -v 
 # in root dir
@@ -62,7 +62,7 @@ See [WP-CLI](https://wp-cli.org) for instructions
 
 ### WP-CLI Regenerate Thumbnails
 [Source](https://developer.wordpress.org/cli/commands/media/regenerate/)
-```ssh
+```bash
 # path to wp dir
 cd var/www/vhosts/arrenberg.studio/ap1.arrenberg.studio/ 
 # in wp dir
