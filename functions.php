@@ -55,10 +55,10 @@ function twentytwenty_theme_support() {
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
-	// add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// Set post thumbnail size.
-	// set_post_thumbnail_size( 1200, 9999 ); // this
+	set_post_thumbnail_size( 1200, 9999 ); // this
 
 	// Add custom image size used in Cover Template.
 	// add_image_size( 'twentytwenty-fullscreen', 1980, 9999 );
@@ -71,15 +71,15 @@ function twentytwenty_theme_support() {
 	// with array( 'center', 'center' ) = (cropped to fit)
 
 	// function add_custom_sizes() {
-		add_theme_support( 'post-thumbnails' );
+		// add_theme_support( 'post-thumbnails' );
 		// square (1:1)
-		// add_image_size( 'square_s', 50, 50);
-		add_image_size( 'square_m', 180, 180, true); // this
-		add_image_size( 'square_l', 310, 310, array( 'center', 'center' )); // this
+		add_image_size( 'square_s', 80, 80, array( 'center', 'center' ));
+		add_image_size( 'square_m', 180, 180, array( 'center', 'center' )); // this
+		add_image_size( 'square_l', 300, 300, array( 'center', 'center' )); // this
 		// preview (4:3)
 		// add_image_size( 'preview_s', 160, 120);
 		add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); // this
-		// add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
+		add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
 		// landscape (2:1)
 		// add_image_size( 'landscape_s', 200, 100); 
 		// add_image_size( 'landscape_m', 400, 200);

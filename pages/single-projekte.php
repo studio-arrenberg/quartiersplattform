@@ -23,7 +23,7 @@ get_header();
 			the_post();
 
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'twentytwenty-fullscreen' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -31,8 +31,6 @@ get_header();
 			}
 
 			?>
-
-
 
 
     <div class="single-header">
