@@ -37,7 +37,7 @@ get_header();
 	slider($args3,'square_card', '2','true'); 
 	?>
 
-	<div class="card-list">
+	<div class="card-container">
 
     <?php 
 	// veranstaltung list

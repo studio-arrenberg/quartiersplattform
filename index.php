@@ -55,13 +55,16 @@ get_header();
 	}
 
 	if ( $archive_title || $archive_subtitle ) {
-		?>
-
-
-		<?php
+		
 	}
 
 	if ( have_posts() ) {
+
+		?>
+			<div class="card-container">
+			
+
+		<?php
 
 		$i = 0;
 
@@ -76,6 +79,13 @@ get_header();
 			get_template_part( 'elements/card', get_post_type() );
 
 		}
+		?>
+
+		</div>
+
+		<?php
+
+
 	} elseif ( is_search() ) {
 		?>
 
