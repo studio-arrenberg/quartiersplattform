@@ -46,8 +46,12 @@ get_header();
     <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/Entdecke-den-Arrenberg-Wupptertal.jpg', '/das-quartier'); ?>
 
     <!-- call to register -->
-    <?php get_template_part( 'components/call', 'register' ); ?>
-
+	<!-- <?php get_template_part( 'components/call', 'register' ); ?> -->
+	
+	<div class="card-container">
+    <?php get_template_part( 'components/call', 'update' ); ?>
+    <?php get_template_part( 'components/call', 'update' ); ?>
+</div>
     <!-- *urbane transformation* -->
     <!-- not ready yet -->
 
