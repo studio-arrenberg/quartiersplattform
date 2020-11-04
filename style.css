@@ -882,6 +882,10 @@ th {
   min-height: calc(100vh - 32px);
 }
 
+.add-margin{
+  margin: 20px 0px;
+}
+
 @media (max-width: 782px) {
   .admin-bar .screen-height {
     min-height: calc(100vh - 46px);
@@ -1299,6 +1303,7 @@ button.toggle {
   #site-header.page-header {
     background: transparent;
   }
+  
   .page-header .header-top-wrapper,
   .page-header .header-navigation-wrapper {
     position: none;
@@ -1360,6 +1365,10 @@ button.toggle {
     justify-content: space-around;
   }
 
+  .menu-container li > a{
+    margin: 10px;
+  }
+
   .header-button {
     height: 55px;
     min-width: 55px;
@@ -1367,6 +1376,7 @@ button.toggle {
 
   .header-button.off {
     display: flex;
+    max-width: 55px;
   }
 }
 
@@ -1375,10 +1385,12 @@ button.toggle {
 .single {
   margin-top: -30px;
 }
+
 .single-header {
   display: flex;
   overflow: hidden;
   flex-direction: column;
+  align-content: center;
 }
 .single-header .heading-size-1,
 .single-header h1 {
@@ -1393,7 +1405,8 @@ button.toggle {
 
 .single-header-image {
   border-radius: 20px;
-  margin: 20px 0px;
+  margin: 20px auto;
+  /* object-fit: contain; */
 }
 
 .single-content {
@@ -1406,6 +1419,40 @@ button.toggle {
 
 .gutenberg-content > p {
   margin-bottom: 5px;
+}
+
+@media (min-width: 782px) {
+
+.single-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  min-height: 400px;
+  margin-left: -200px;
+  margin-right: -200px;
+
+
+}
+
+.single-header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 2;
+  max-width: 300px;
+
+}
+
+.single-header-image {
+  flex-basis: auto;
+  height: auto;
+  max-width: 600px;
+  margin: 0px;
+  margin-right: 20px
+  /* object-fit: contain; */
+}
+
 }
 
 /* -------------------------------------------------------------------------- */
@@ -3040,6 +3087,7 @@ div.comment:first-of-type {
   max-width: 1000px;
   padding: 20px 15px 20px 15px;
   text-align: center;
+  clear: both;
 }
 
 .sponsoren {
@@ -3760,31 +3808,6 @@ div.comment:first-of-type {
 
   /* Site Footer --------------------------- */
 
-  .footer-top-visible .footer-nav-widgets-wrapper,
-  .footer-top-hidden #site-footer {
-    margin-top: 8rem;
-  }
-
-  /* FOOTER TOP */
-
-  .footer-top {
-    padding: 3.7rem 0;
-  }
-
-  .footer-menu {
-    font-size: 2.4rem;
-    margin: -0.8rem 0 0 -1.6rem;
-  }
-
-  .footer-menu li {
-    margin: 0.8rem 0 0 1.6rem;
-  }
-
-  .has-footer-menu .footer-social-wrapper {
-    flex: 1;
-    margin-left: 4rem;
-    width: auto;
-  }
 }
 
 @media (min-width: 782px) {
@@ -4730,20 +4753,35 @@ div.comment:first-of-type {
   }
   .embla .card {
     max-width: 100%;
-    margin: 0px;
+    margin: 10px 0px;
   }
   .card {
-    margin: 20px 0px;
-    max-width:  calc( 50% - 10px); 
+    margin: 10px 0px;
+    max-width:  calc( 50% - 5px); 
   }
-}
 
-@media (min-width: 782px) {
   #site-content {
     margin: 100px auto;
     max-width: 1000px;
     overflow: visible;
   }
+
+
+.card .pre-title {
+  font-size: 1.7rem;
+}
+
+.date {
+  font-size: 1.7rem;
+}
+
+.card .preview-text{
+  margin-top: 5px;
+  font-size: 1.7rem;
+  line-height: 1.9rem;
+}
+
+
 
   .single {
     margin-top: 15px;
@@ -4785,21 +4823,26 @@ div.comment:first-of-type {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  
-  .card-container .landscape {
-    max-width: calc( 50% - 10px);
-
+    margin: 10px 0px;
+    position: relative;
   }
 
-
-  
-
-  .shrink-desk{
-    float: left;
+   /* Can align a landscape Card center */
+  .card-container__center{
+    justify-content: center;
   }
+
  
+  .card-container .card{
+    margin: 5px 0px;
+  }
+  .card-container .landscape {
+    max-width: calc( 50% - 5px);
+    margin: 10px 0px 0px 0px;
+  }
+
+
+
 }
 
 
