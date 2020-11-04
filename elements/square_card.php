@@ -25,7 +25,7 @@
                 <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <?php  the_post_thumbnail( 'medium' ); ?>
+        <?php  the_post_thumbnail( 'square_l' ); ?>
         <?php // the_post_thumbnail( array(180, 180) ); ?>
     </a>
 </div>
