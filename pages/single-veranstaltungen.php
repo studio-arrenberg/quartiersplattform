@@ -11,6 +11,12 @@
  */
 
 get_header();
+
+if ( !extension_loaded('gd') || !function_exists('gd_info') ) {
+    echo 'GD Library Not Installed';
+} else {
+    echo 'GD Library Available';
+}
 ?>
 
 <main id="site-content" class="single" role="main">
