@@ -126,7 +126,7 @@ get_excerpt($text, $count = '55'); // für den fließtext
 ```
 #### Calendar Download
 ```php
-calendar_download($post);
+calendar_download($post); // nur für veranstaltungen
 ```
 #### Card List
 ```php
@@ -174,7 +174,9 @@ rifi2k.format-html-in-php
 11. CPT Anmerkung (anmerkungen)
 12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False
 13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
-14. [last] Regenerate Images
+14. Feedback formular hide lable by id
+
+ [last] Regenerate Images
 
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
