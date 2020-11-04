@@ -87,25 +87,6 @@ function twentytwenty_theme_support() {
 	// }
 	// add_action('after_setup_theme','add_custom_sizes');
 
-	// assuming you've registered a custom size named my-custom-size elsewhere
-
-	add_action('admin_init', function() {
-		$list_of_sizes['preview_m'] = 'preview m';
-		add_filter(
-			'image_size_names_choose',
-			function( $sizes ) use ( $list_of_sizes ) {
-				return array_merge( $sizes, $list_of_sizes );
-			}
-		);
-	});
-
-	function wpse_setup_theme() {
-		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'small-thumb', 60, 60, true );
-	 }
-	 
-	 add_action( 'after_setup_theme', 'wpse_setup_theme' );
-
 	// Custom logo.
 	$logo_width  = 120;
 	$logo_height = 90;
