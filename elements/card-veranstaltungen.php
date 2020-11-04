@@ -16,8 +16,8 @@
 
 <div class="card shadow">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
-        <?php the_post_thumbnail( 'preview_l' ); ?>
-        <?php //the_post_thumbnail( array(180, 180) ); ?>
+        <?php //the_post_thumbnail( 'preview_l' ); ?>
+        <?php the_post_thumbnail( array(800, 600) ); ?>
         <div class="content">
             <div class="pre-title">Pre-Title <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?><span></div>
             <h3 class="card-title">
