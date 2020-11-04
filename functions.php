@@ -84,7 +84,7 @@ function twentytwenty_theme_support() {
 		// add_image_size( 'landscape_s', 200, 100); 
 		// add_image_size( 'landscape_m', 400, 200);
 		// add_image_size( 'landscape_l', 970, 485);
-	// }
+	}
 	add_action('after_setup_theme','add_custom_sizes');
 
 	function wpse_setup_theme() {
@@ -1194,12 +1194,10 @@ add_action('acf/input/admin_head', 'my_acf_admin_head');
 
 // ACF Forms deregister CSS Styles
 // disable acf css on front-end acf forms
-add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
- 
 function my_deregister_styles() {
   wp_deregister_style( 'acf' );
   wp_deregister_style( 'acf-field-group' );
   wp_deregister_style( 'acf-global' );
   wp_deregister_style( 'acf-input' );
   wp_deregister_style( 'acf-datepicker' );
-}
+} add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
