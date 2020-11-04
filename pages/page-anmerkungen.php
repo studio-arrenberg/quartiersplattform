@@ -13,7 +13,7 @@ get_header();
 
 <main id="site-content" role="main">
 
-<div class="card-list">
+<div class="card-container">
 	<?php 
 	// veranstaltung list
 	$args4 = array(

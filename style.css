@@ -272,7 +272,7 @@ h3,
 
 h4,
 .heading-size-4 {
-  font-size: 1rem;
+  font-size: 1.8rem;
   color: #0091ff;
 }
 
@@ -3802,7 +3802,7 @@ div.comment:first-of-type {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1000px) {}
   /* Document Setup ------------------------ */
 
   /* Helper Classes ------------------------ */
@@ -4714,7 +4714,7 @@ div.comment:first-of-type {
 }
 
 /* Tablet - 2 slides in viewport */
-@media (min-width: 768px) {
+@media (min-width: 782px) {
   .embla-one .embrela-slide {
     flex: 0 0 50%;
     display: none;
@@ -4732,35 +4732,9 @@ div.comment:first-of-type {
     max-width: 100%;
     margin: 0px;
   }
-
   .card {
-    margin: 5px 0px;
-    max-width: 480px;
-  }
-}
-
-@media (max-width: 768px) {
-  .embla-one .embrela-slide {
-    flex: 0 0 50%;
-    display: none;
-  }
-
-  .embla-one .embrela-slide:first-of-type,
-  .embla-one .embrela-slide:nth-of-type(2) {
-    display: block;
-  }
-
-  .embla-two .embrela-slide {
-    flex: 0 0 25%;
-  }
-  .embla .card {
-    max-width: 100%;
-    margin: 0px;
-  }
-
-  .card {
-    margin: 5px 0px;
-    max-width: 480px;
+    margin: 20px 0px;
+    max-width:  calc( 50% - 10px); 
   }
 }
 
@@ -4804,6 +4778,17 @@ div.comment:first-of-type {
   .square .preview-text {
     display: block;
   }
+
+  /* Zwei Spallten layout am Desktop */
+
+  .card-container { 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .card-container .card{ margin: 10px 0px;}
 }
 
 .anmerkung .pre-title {
@@ -4818,18 +4803,15 @@ div.comment:first-of-type {
   padding: 10px 10px;
 }
 
-.card-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+/*card-container F.E. ON ARCHIVE PAGE */
+
 
 .list-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 
 /* Energie  Ampel */
 
