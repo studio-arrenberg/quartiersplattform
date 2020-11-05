@@ -57,10 +57,10 @@
         if (!$_SERVER['HTTP_REFERER']) {
             // display home button
             ?>
-            <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Home</span>
-            </button>
+                <span class="button-has-icon-label">Überblick</span>
+            </a>
             <?php
         }
         else {
