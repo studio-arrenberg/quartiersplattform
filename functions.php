@@ -65,46 +65,21 @@ function twentytwenty_theme_support() {
 
 	// custom image sizes/ratios 
 	// https://developer.wordpress.org/reference/functions/add_image_size/
-	// add_theme_support( 'square-s');
-	// add_theme_support( 'post-thumbnails' );
-	// set_post_thumbnail_size( 200, 150, true);
 	// with array( 'center', 'center' ) = (cropped to fit)
 
-	// function add_custom_sizes() {
-		// add_theme_support( 'post-thumbnails' );
-		// square (1:1)
-		add_image_size( 'square_s', 80, 80, array( 'center', 'center' ));
-		add_image_size( 'square_m', 180, 180, array( 'center', 'center' )); // this
-		add_image_size( 'square_l', 300, 300, array( 'center', 'center' )); // this
-		// preview (4:3)
-		// add_image_size( 'preview_s', 160, 120);
-		add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); // this
-		add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
-		// landscape (2:1)
-		// add_image_size( 'landscape_s', 200, 100); 
-		// add_image_size( 'landscape_m', 400, 200);
-		// add_image_size( 'landscape_l', 970, 485);
-	// }
-	// add_action('after_setup_theme','add_custom_sizes');
+	// square (1:1)
+	add_image_size( 'square_s', 80, 80, array( 'center', 'center' ));
+	add_image_size( 'square_m', 180, 180, array( 'center', 'center' ));
+	add_image_size( 'square_l', 300, 300, array( 'center', 'center' ));
+	// preview (4:3)
+	add_image_size( 'preview_s', 160, 120, array( 'center', 'center' ));
+	add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); 
+	add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
+	// landscape (2:1)
+	// add_image_size( 'landscape_s', 200, 100); 
+	// add_image_size( 'landscape_m', 400, 200);
+	// add_image_size( 'landscape_l', 970, 485);
 
-	// assuming you've registered a custom size named my-custom-size elsewhere
-
-	add_action('admin_init', function() {
-		$list_of_sizes['preview_m'] = 'preview m';
-		add_filter(
-			'image_size_names_choose',
-			function( $sizes ) use ( $list_of_sizes ) {
-				return array_merge( $sizes, $list_of_sizes );
-			}
-		);
-	});
-
-	function wpse_setup_theme() {
-		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'small-thumb', 60, 60, true );
-	 }
-	 
-	 add_action( 'after_setup_theme', 'wpse_setup_theme' );
 
 	// Custom logo.
 	$logo_width  = 120;

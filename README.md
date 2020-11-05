@@ -83,8 +83,8 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 
 |           | S       | M       | L       |
 |-----------|---------|---------|---------|
-| Square    | 50x50   | 180x180 | 300x300 |
-| Preview   | 160x120 | 200x150 | 800x600 |
+| Square    | 80x80   | 180x180 | 300x300 |
+| 4:3       | 160x120 | 200x150 | 800x600 |
 | Landscape | 200x100 | 400x200 | 970x485 |
 
 
@@ -172,7 +172,7 @@ rifi2k.format-html-in-php
     - Kontakt
 10. ACFs Setting 'has archive' => True (veranstaltungen, nachrichten) + archiv slug! ({post-type-slug}-archiv)
 11. CPT Anmerkung (anmerkungen)
-12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False
+12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False []
 13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
 14. Feedback formular hide lable by id
 
