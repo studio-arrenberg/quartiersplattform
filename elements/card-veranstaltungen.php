@@ -14,11 +14,15 @@
 
 ?>
 
+<?php 
+$user = get_the_author_meta( 'display_name' );
+?>
+
 <div class="card shadow">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <?php the_post_thumbnail( 'preview_m' ); ?>
         <div class="content">
-            <div class="pre-title">Pre-Title <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?><span></div>
+            <div class="pre-title"><?php echo $user; ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?><span></div>
             <h3 class="card-title">
                 <?php shorten_title(get_the_title(), '30'); ?>
             </h3>

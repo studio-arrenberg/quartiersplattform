@@ -88,20 +88,16 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 | Landscape | 200x100 | 400x200 | 970x485 |
 
 
-SEO
+### SEO
 
-1. Descriptions<br>
-Description Atribut = Bierdeckeltext
+1. Descriptions: Description Atribut = Bierdeckeltext
 2. Page Title 
-3. URL <br>
-arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
+3. URL: arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
 3. Robots.txt!! Crawlbare seiten indexieren
 4. H1 H2 H3 P
-5. Prüfen von Rich markup möglichkeiten<br>
-https://search.google.com/test/rich-results
+5. [Prüfen](https://search.google.com/test/rich-results) von Rich markup möglichkeiten
 6. Data Highlighter verwenden
-7. Veraltete Navigationsseite mit fehlerhaften Links<br>
-Alte Links weiterleiten!
+7. Veraltete Navigationsseite mit fehlerhaften Links (Alte Links weiterleiten!)
 8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
 
 
@@ -137,6 +133,11 @@ card_list($query);
 
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
+
+Get Rid of all untracked changes
+```bash
+git clean -f -d
+```
 
 ### CSS Tricks
 
