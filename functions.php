@@ -1129,7 +1129,7 @@ function my_acf_form_init() {
 				//'updated_message' => __("Post updated", 'acf'),
 				// 'updated_message' => __("Post updated", 'acf'),
 				// 'html_updated_message'  => '<div id="message" class="updated"><p>Hello World</p></div>',
-				'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
+				'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
 				'post_id'=>'new_post',
 				'new_post'=>array(
 					'post_type' => 'anmerkungen',
