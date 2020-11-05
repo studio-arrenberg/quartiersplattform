@@ -817,8 +817,9 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 // Disable Lasy Load
+// add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
-add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+
 
 
 
