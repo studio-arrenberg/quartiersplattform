@@ -4822,19 +4822,19 @@ div.comment:first-of-type {
   }
 
 
-.card .pre-title {
-  font-size: 1.7rem;
-}
+  .card .pre-title {
+    font-size: 1.7rem;
+  }
 
-.card .date {
-  font-size: 1.7rem;
-}
+  .card .date {
+    font-size: 1.7rem;
+  }
 
-.card .preview-text{
-  margin-top: 5px;
-  font-size: 1.7rem;
-  line-height: 1.9rem;
-}
+  .card .preview-text{
+    margin-top: 5px;
+    font-size: 1.7rem;
+    line-height: 1.9rem;
+  }
 
 
 
@@ -4871,6 +4871,18 @@ div.comment:first-of-type {
 
   .square .preview-text {
     display: block;
+  }
+
+  .landscape .card-title{
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
+  .landscape .preview-text{
+    font-size: 2rem;
+  }
+
+  .landscape a .content{
+    padding: 20px;
   }
 
   /* Zwei Spallten layout am Desktop */
