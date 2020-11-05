@@ -88,7 +88,7 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 | Landscape | 200x100 | 400x200 | 970x485 |
 
 
-### ???
+SEO
 
 1. Descriptions<br>
 Description Atribut = Bierdeckeltext

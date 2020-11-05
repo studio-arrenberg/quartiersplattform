@@ -23,7 +23,7 @@ get_header();
 			the_post();
 
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'medium_large' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_m' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -33,7 +33,7 @@ get_header();
 			?>
 
 
-    <div class="single-header">
+    <div class="center-header">
         <!-- post title -->
         <h1><?php the_title(); ?></h1>
         <h4>Projekt/ Name/ Akteur</h4>
@@ -48,7 +48,7 @@ get_header();
 
 
         <!-- Bild -->
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+        <img class="center-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
     </div>
 

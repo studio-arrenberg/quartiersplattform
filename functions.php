@@ -881,6 +881,8 @@ function list_card($args, $link = '') {
 
 	?>
 <div class='card list-card shadow'>
+<!-- <h3>Nachrichten</h3> -->
+
     <?php if ($link) echo "<a href='".$link."'>"; ?>
     <?php
 	$query2 = new WP_Query( $args);
