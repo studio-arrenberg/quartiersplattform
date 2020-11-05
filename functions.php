@@ -903,7 +903,7 @@ function list_card($args, $link = '') {
 // card list (diplay a list of cards)
 function card_list($args) {
 
-	$query2 = new WP_Query( $args);
+	$query2 = new WP_Query($args);
 	// The Loop
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
@@ -1112,10 +1112,10 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 }
 
 // acf form head befor wp header
-add_action( 'init', 'brandpage_form_head' );
-function brandpage_form_head(){
-	acf_form_head();
-}
+// add_action( 'init', 'brandpage_form_head' );
+// function brandpage_form_head(){
+// 	acf_form_head();
+// }
 
 // on save ACF function
 add_action('acf/save_post', 'my_post_title_updater', 20);
@@ -1138,6 +1138,12 @@ function my_post_title_updater( $post_id ) {
 
 		$my_post['post_title'] = $text;
 		wp_update_post( $my_post ); // Update the post into the database
+		// update taxonomy
+		wp_set_object_terms( $post_id, 'v1', 'version', true ); // change to status!
+
+		// FURTHER READING
+		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
+
 	}
 
 }

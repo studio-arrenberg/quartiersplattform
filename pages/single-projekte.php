@@ -36,7 +36,7 @@ get_header();
     <div class="center-header">
         <!-- post title -->
         <h1><?php the_title(); ?></h1>
-        <h4>Projekt/ Name/ Akteur</h4>
+        <h4><?php echo get_the_author(); ?></h4>
 
         <!-- projekt / akteur -->
         <!-- not ready yet -->
@@ -44,8 +44,6 @@ get_header();
         <!-- Bild -->
 
         <p><?php the_field('kurzbeschreibung'); ?></p>
-
-
 
         <!-- Bild -->
         <img class="center-header-image" src="<?php echo esc_url( $image_url ) ?>" />

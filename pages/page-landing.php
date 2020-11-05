@@ -7,7 +7,7 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
-
+acf_form_head(); // before wp header !important!
 get_header();
 ?>
 

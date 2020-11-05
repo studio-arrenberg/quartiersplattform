@@ -52,19 +52,25 @@
             </div>
         </div>
 
-        <!-- back button (ultimately this will be a function)  -->
-    
-        <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
-            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-            <span class="button-has-icon-label">Zurück</span>
-        </button>
-
+        <!-- back button -->
         <?php 
-        //  backend login button for admins
-        if(is_admin()) {
+        if (!$_SERVER['HTTP_REFERER']) {
+            // display home button
             ?>
-            <a href="<?php echo get_site_url(); ?>/wp-admin">Admin</a>
-            <?php 
+            <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Home</span>
+            </button>
+            <?php
+        }
+        else {
+            // display back button
+            ?>
+            <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Zurück</span>
+            </button>
+            <?php
         }
         ?>
 
@@ -110,12 +116,18 @@
             <?php } ?>
         </div><!-- .header-navigation-wrapper -->
 
-
-        <button class="header-button login button-has-icon is-style-outline" href="">
-            <a href="<?php echo get_site_url(); ?>/wp-admin">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-            </a>
-        </button>
+        <?php 
+        // backend login button for admins
+        if(is_admin()) {
+            ?>
+            <button class="header-button login button-has-icon is-style-outline" href="">
+                <a href="<?php echo get_site_url(); ?>/wp-admin">
+                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                </a>
+            </button>
+            <?php 
+        }
+        ?>
 
 
     </header><!-- #site-header -->

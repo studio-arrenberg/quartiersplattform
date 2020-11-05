@@ -37,7 +37,8 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
         <h1><?php the_title(); ?></h1>
-        <h4> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h4>
+        <h4><?php echo get_the_author_meta( 'display_name', $author_id ) ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h4>
+
         </div>
         <!-- projekt / akteur -->
         <!-- not ready yet -->

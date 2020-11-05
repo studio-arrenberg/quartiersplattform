@@ -14,10 +14,21 @@
 
 ?>
 
+<?php
+
+$terms_status = get_the_terms( $post->ID, 'status_anmerkungen' );
+$terms_version = "";
+
+if ($terms_status) {
+    $terms_version = get_the_terms( $post->ID, 'version' );
+}
+
+?>
+
 <div class="card shadow anmerkung">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
-            <div class="pre-title">Ausstehend <span class="date">vor 30 Minuten<span></div>
+            <div class="pre-title"><?php // echo $terms_status[0]->name; ?><spane class="version"><?php // echo $terms_version[0]->name; ?></span> <span class="date"><?php echo get_the_date('j. F G:i'); ?><span></div>
             <h3 class="card-title">
                 <?php  shorten_title(get_field('text'), '100'); ?>
             </h3>
