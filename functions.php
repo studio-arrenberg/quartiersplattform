@@ -805,6 +805,12 @@ function remove_default_WP_widgets( ){
 	
 } add_action( 'widgets_init', 'remove_default_WP_widgets' );
 
+// Disable twenty twenty inline styles
+
+add_action( 'wp_enqueue_scripts', function() {
+	$styles = wp_styles();
+	$styles->add_data( 'twentytwenty-style', 'after', array() );
+}, 20 );
 
 // custom excerpt lenght
 function get_excerpt($text, $count = '55') {

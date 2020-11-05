@@ -257,7 +257,7 @@ h6,
 h1,
 .heading-size-1 {
   font-size: 2.8rem;
-  line-height: 3rem;
+  line-height: 3.1rem;
   font-family: "OfficinaSansITCStd-Book";
 }
 
@@ -270,6 +270,8 @@ h3,
 .heading-size-3 {
   font-size: 1.8rem;
   line-height: 2rem;
+  font-family: "OfficinaSansITCStd-Book";
+
 }
 
 h4,
@@ -783,6 +785,7 @@ input[type="submit"]:hover {
   margin-bottom: -2px;
   margin-left: 15px;
   margin-right: 15px;
+  word-break: normal;
 }
 
 button a {
@@ -1399,11 +1402,12 @@ button.toggle {
   margin-bottom: 5px;
 }
 
-.single h4 {
+.single-header h4 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
+
 
 .single-header-image {
   border-radius: 20px;
@@ -1423,18 +1427,48 @@ button.toggle {
   margin-bottom: 5px;
 }
 
+.single .button {
+  margin-right: 10px;
+}
+
+
 @media (min-width: 782px) {
+
+  
+  .single-header-image {
+    max-width: 700px;
+    margin: 20px 0px;
+    /* object-fit: contain; */
+  }
+  
+  .single-header-content h3{
+    margin-top: 5px;
+  }
+
+
+  h3, .heading-size-1 {
+    font-size: 3.2rem;
+    line-height: 3.4rem;
+  }
+
+  h3, .heading-size-3{
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+  
+  
+  }
+
+
+
+@media (min-width: 1000px) {
 
 .single-header {
   display: flex;
-  justify-content: center;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   min-height: 400px;
-  margin-left: -200px;
-  margin-right: -200px;
-
-
 }
 
 .single-header-content {
@@ -1442,18 +1476,34 @@ button.toggle {
   flex-direction: column;
   justify-content: center;
   order: 2;
-  max-width: 300px;
-
+  min-width: 350px;
+  max-width: 400px;
 }
 
 .single-header-image {
   flex-basis: auto;
   height: auto;
   max-width: 600px;
+  max-height: 550px;
   margin: 0px;
-  margin-right: 20px
+  margin-right: 20px;
+
   /* object-fit: contain; */
 }
+
+
+}
+
+
+
+.center-header{
+  text-align: center;
+}
+
+.center-header-image{
+  margin: 0 auto 30px auto;
+  max-width: 400px;
+  border-radius: 20px;
 
 }
 
@@ -4141,11 +4191,7 @@ div.comment:first-of-type {
 
   /* TITLES */
 
-  h1,
-  .heading-size-1 {
-    font-size: 6.4rem;
-    line-height: 6.6rem;
-  }
+
 
   /* Helper Classes ------------------------ */
 
@@ -4606,13 +4652,15 @@ div.comment:first-of-type {
   justify-content: space-between;
 }
 
-.date {
+.card .date {
   color: #000;
   font-size: 1.4rem;
   font-family: "OfficinaSansITCStd-Book";
 }
 
 .card .card-title {
+  font-family: "OfficinaSansITCStd-Bold";
+
   font-size: 1.8rem;
   line-height: 2rem;
   margin: 0px;
@@ -4773,7 +4821,7 @@ div.comment:first-of-type {
   font-size: 1.7rem;
 }
 
-.date {
+.card .date {
   font-size: 1.7rem;
 }
 
@@ -4789,15 +4837,16 @@ div.comment:first-of-type {
     margin-top: 15px;
   }
 
-  .single-header h1 {
-    max-width: 800px;
-  }
+ 
 
-  .single-content {
-    margin: 25px 0px 50px 50px;
+  .single-content, .gutenberg-content {
+    margin: 50px 0px 50px 0px;
     max-width: 700px;
   }
-
+  
+  .gutenberg-content p{
+    margin-bottom: 10px;
+  }
   p {
     font-size: 2rem;
     line-height: 2.6rem;

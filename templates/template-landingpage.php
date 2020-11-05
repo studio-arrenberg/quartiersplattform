@@ -127,13 +127,6 @@ var embla = EmblaCarousel(emblaNode, options)
 
 
 
-
-
-
-
-
-
-
     <div class="card list shadow">
         <?php get_template_part('elements/list_card'); ?>
         <?php get_template_part('elements/list_card'); ?>

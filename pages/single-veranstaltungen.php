@@ -23,7 +23,7 @@ get_header();
 			the_post();
 			
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -37,7 +37,8 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
         <h1><?php the_title(); ?></h1>
-        <h4> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h4>
+        <h3> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
+
         </div>
         <!-- projekt / akteur -->
         <!-- not ready yet -->
@@ -72,17 +73,10 @@ get_header();
     </div>
 
 
-
-    <button class="button-has-icon is-style-outline back">
-            <img class="button-icon" src="<?php echo get_template_directory_uri(); ?>/assets/icons/edit.svg">
-            <span class="button-has-icon-label">Bearbeiten</span>
-        </button>
-
-     <?php edit_post_link(); ?>
-
     <!-- calendar download -->
     <!-- not ready yet -->
     <?php calendar_download($post); ?>
+    <?php edit_post_link(); ?>
 
     <!-- card: projekt / akteur -->
     <!-- not ready yet -->
