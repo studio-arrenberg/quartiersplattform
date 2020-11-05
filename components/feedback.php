@@ -15,6 +15,7 @@
     <?php acf_form_head(); ?>
     <?php // acf_form('feedback-form'); ?>
 
+    <?php $hierarchical_tax = array( 1 ); ?>
     <?php acf_form(
 			array(
 				'id' => 'feedback-form',
@@ -25,14 +26,18 @@
 				// 'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
 				'post_id'=>'new_post',
 				'new_post'=>array(
-					'post_type' => 'anmerkungen',
-					'post_status' => 'publish'
+                    'post_type' => 'anmerkungen',
+                    // 'tax_input' => array (
+                    //     'version' => array( 2 )
+                    // ),
+                    'post_status' => 'publish',
+                    
 				),
 				'field_el' => 'div',
 				'post_content' => false,
 				'post_title' => false,
                 // 'return' => '?updated=true',
-                'return' => get_site_url().'/anmerkungen',
+                'return' => get_site_url().'/anmerkungen', // post gets dublicated
 				'fields' => array(
 					'text',
 				),
