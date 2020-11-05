@@ -138,6 +138,11 @@ card_list($query);
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
+Get Rid of all untracked changes
+```bash
+git clean -f -d
+```
+
 ### CSS Tricks
 
 https://css-tricks.com/snippets/css/complete-guide-grid/ <br>

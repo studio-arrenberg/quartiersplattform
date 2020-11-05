@@ -1125,7 +1125,9 @@ function my_acf_form_init() {
 				'html_after_fields' => '',
 				'label_placement'=> '',
 				//'updated_message' => __("Post updated", 'acf'),
-				//'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
+				// 'updated_message' => __("Post updated", 'acf'),
+				// 'html_updated_message'  => '<div id="message" class="updated"><p>Hello World</p></div>',
+				'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
 				'post_id'=>'new_post',
 				'new_post'=>array(
 					'post_type' => 'anmerkungen',
@@ -1134,7 +1136,7 @@ function my_acf_form_init() {
 				'field_el' => 'div',
 				'post_content' => false,
 				'post_title' => false,
-				'return' => '',
+				'return' => '?updated=true',
 				'fields' => array(
 					'text',
 				),
