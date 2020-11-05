@@ -100,6 +100,7 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 7. Veraltete Navigationsseite mit fehlerhaften Links (Alte Links weiterleiten!)
 8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
 
+[Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
 
 ### Functions
 

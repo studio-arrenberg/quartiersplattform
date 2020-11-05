@@ -271,7 +271,6 @@ h3,
   font-size: 1.8rem;
   line-height: 2rem;
   font-family: "OfficinaSansITCStd-Book";
-
 }
 
 h4,
@@ -1396,16 +1395,21 @@ button.toggle {
   overflow: hidden;
   flex-direction: column;
   align-content: center;
+  margin-bottom: 20px;
 }
 .single-header .heading-size-1,
 .single-header h1 {
   margin-bottom: 5px;
 }
 
-.single-header h4 {
+.single-header h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.single-header h3{
+  color: #0091ff;
 }
 
 
@@ -1502,7 +1506,7 @@ button.toggle {
 
 .center-header-image{
   margin: 0 auto 30px auto;
-  max-width: 400px;
+  max-width: 500px;
   border-radius: 20px;
 
 }
@@ -4653,9 +4657,10 @@ div.comment:first-of-type {
 }
 
 .card .date {
-  color: #000;
+  color: #0091ff;
   font-size: 1.4rem;
   font-family: "OfficinaSansITCStd-Book";
+  margin-bottom: 3px;
 }
 
 .card .card-title {
@@ -4931,6 +4936,7 @@ div.comment:first-of-type {
 .energie-ampel-titles h3 {
   margin: 0px;
   font-size: 2rem;
+
 }
 
 .energie-ampel-titles {

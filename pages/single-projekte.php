@@ -33,25 +33,31 @@ get_header();
 			?>
 
 
-    <div class="center-header">
+    <div class="single-header">
 
 
         <!-- Bild -->
-        <img class="center-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
         <!-- post title -->
+        <div class="single-header-content">
         <h1><?php the_title(); ?></h1>
         <h4><?php echo get_the_author(); ?></h4>
+        
+        <p><?php the_field('kurzbeschreibung'); ?></p>
+
+        </div>
 
         <!-- projekt / akteur -->
         <!-- not ready yet -->
 
         <!-- Bild -->
 
-        <p><?php the_field('kurzbeschreibung'); ?></p>
 
 
     </div>
+
+
 
     <!-- ACF test -->
     <p><?php the_field('begin'); ?></p>
