@@ -107,6 +107,8 @@ blockquote::after {
 
 /* -------------------------------------------------------------------------- */
 
+
+
 /*	1. Document Setup
 /* -------------------------------------------------------------------------- */
 
@@ -4993,4 +4995,42 @@ div.comment:first-of-type {
   100% {opacity:0;}
 }
 
+/* 
+:root {
+  --background-color: #222;
+  --secondary-color: #fbfefb;
+  --text-dark: #101010;
+  --text: #fff;
+  --text-light: #7b7b85;
+  --text-lighter: #ababab;
+  --blue: #3498db;
+  --green: #27ae60;
+  --yellow: #feca57;
+  --red: #c0392b;
+  --white: #ffffff;
+}
 
+.card{
+  background: #111;
+  color: #fff;
+}
+
+.card a{
+  color: #ddd;
+
+}
+
+
+.list{
+  background: #2222;
+
+}
+/* Sample css for an element */
+/* body {
+  background: var(--background-color);
+  color: var(--text);
+}
+
+.shadow{
+  box-shadow: 0px 10px 20px #000;
+} */ 
