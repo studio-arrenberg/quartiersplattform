@@ -1111,41 +1111,10 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 
 }
 
-
-// user feedback form 
-add_action('acf/init', 'my_acf_form_init');
-function my_acf_form_init() {
-
-	// Check function exists.
-	if( function_exists('acf_register_form')) {
-
-		// Register form.
-		acf_register_form(
-			array(
-				'id' => 'feedback-form',
-				'html_before_fields' => '',
-				'html_after_fields' => '',
-				'label_placement'=> '',
-				//'updated_message' => __("Post updated", 'acf'),
-				// 'updated_message' => __("Post updated", 'acf'),
-				// 'html_updated_message'  => '<div id="message" class="updated"><p>Hello World</p></div>',
-				'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
-				'post_id'=>'new_post',
-				'new_post'=>array(
-					'post_type' => 'anmerkungen',
-					'post_status' => 'publish'
-				),
-				'field_el' => 'div',
-				'post_content' => false,
-				'post_title' => false,
-				'return' => '?updated=true',
-				'fields' => array(
-					'text',
-				),
-				'submit_value'=>'Feedback senden',
-			)
-		);
-	}
+// acf form head befor wp header
+add_action( 'init', 'brandpage_form_head' );
+function brandpage_form_head(){
+	acf_form_head();
 }
 
 // on save ACF function
