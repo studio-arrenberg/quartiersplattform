@@ -815,6 +815,13 @@ add_action( 'wp_enqueue_scripts', function() {
 	$styles->add_data( 'twentytwenty-style', 'after', array() );
 }, 20 );
 
+
+// Disable Lasy Load
+
+add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+
+
+
 // custom excerpt lenght
 function get_excerpt($text, $count = '55') {
 	// $permalink = get_permalink($post->ID);
