@@ -893,26 +893,34 @@ function link_card($title, $text, $bg, $link){
 
 }
 
+
+function card_header($card_header_title, $card_header_subtitle){
+	set_query_var( 'card_header_title', $card_header_title );
+	set_query_var( 'card_header_subtitle', $card_header_subtitle );
+}
+
 // list card
 function list_card($args, $link = '') {
 
 	?>
-<div class='card list-card shadow'>
-<!-- <h3>Nachrichten</h3> -->
-
-    <?php if ($link) echo "<a href='".$link."'>"; ?>
-    <?php
-	$query2 = new WP_Query( $args);
-	// The Loop
-	while ( $query2->have_posts() ) {
-		$query2->the_post();
-		get_template_part('elements/list_card');
-	}
-	// Restore original Post Data
-	wp_reset_postdata();
-	?>
+	<div class='card list-card shadow'>
+		<div class='card-header'>
+			<h2><?php echo get_query_var('card_header_title'); ?></h2>
+			<h3><?php echo get_query_var('card_header_subtitle'); ?></h3>
+		</div
+		<?php if ($link) echo "<a href='".$link."'>"; ?>
+		<?php
+		$query2 = new WP_Query( $args);
+		// The Loop
+		while ( $query2->have_posts() ) {
+			$query2->the_post();
+			get_template_part('elements/list_card');
+		}
+		// Restore original Post Data
+		wp_reset_postdata();
+		?>
 	</a>
-</div>
+	</div>
 <?php
 
 }

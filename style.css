@@ -4697,6 +4697,10 @@ div.comment:first-of-type {
   max-width: 135px;
 }
 
+.card-header{
+  padding: 7px;
+  display: block;
+}
 /* LANDSCAPE CARD */
 
 .square {

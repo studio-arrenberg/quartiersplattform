@@ -72,11 +72,13 @@ get_header();
 		
 		<!-- projekt updates (list_card query function) -->
 		<?php
+
 		$args2 = array(
 			'post_type'=>'nachrichten', 
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
+		card_header('Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten'); //  Made by Moritz. Schau mal pb das so richtig ist
 		list_card($args2, get_post_type_archive_link( 'nachrichten' ));
 		?>
 
@@ -87,6 +89,8 @@ get_header();
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
+		card_header('Verantaltungen','Updates Projekte'); //  Made by Moritz. Schau mal pb das so richtig ist
+
 		list_card($args3, get_site_url().'/veranstaltungen');
 		?>
 
