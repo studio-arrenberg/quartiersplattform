@@ -18,11 +18,13 @@
 
 	<?php
 
-	$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
+	if (has_post_thumbnail()) {
+		$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
 
-	if ( $image_url ) {
-		$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
-		$cover_header_classes = ' bg-image';
+		if ( $image_url ) {
+			$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
+			$cover_header_classes = ' bg-image';
+		}
 	}
 
 	?>
@@ -30,19 +32,19 @@
 
     <div class="single-header">
         <!-- Bild -->
+		<?php if (has_post_thumbnail()) { ?>
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+		<?php } ?>
 
-        <!-- post title -->
-        <div class="single-header-content">
-        <h1><?php the_title(); ?></h1>
-        <h4><?php echo get_the_author(); ?></h4>
-        
-        <p><?php the_field('kurzbeschreibung'); ?></p>
+        <!-- Post title -->
+        <div class="single-header-content <?php if (has_post_thumbnail()) echo "text-only"; ?>">
+			<h1><?php the_title(); ?></h1>
+			<h4><?php echo get_the_author(); ?></h4>
+			<p><?php the_field('kurzbeschreibung'); ?></p>
         </div>
 
 	</div>
 	
-
     
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
