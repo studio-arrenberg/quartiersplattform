@@ -72,7 +72,7 @@ get_header();
 		
 		<!-- projekt updates (list_card query function) -->
 		<?php
-
+		
 		$args2 = array(
 			'post_type'=>'nachrichten', 
 			'post_status'=>'publish', 
@@ -89,7 +89,7 @@ get_header();
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
-		card_header('Verantaltungen','Updates Projekte'); //  Made by Moritz. Schau mal pb das so richtig ist
+		card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
 
 		list_card($args3, get_site_url().'/veranstaltungen');
 		?>

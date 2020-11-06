@@ -5028,8 +5028,32 @@ div.comment:first-of-type {
 /* feedback */
 
 .feedback {
-  margin: 50px 0px;
+  margin: 30px auto;
+  max-width: 750px;
 }
+
+.feedback textarea{
+  margin-bottom: 20px;
+}
+.feedback input[type="submit"]{
+float: left;
+margin-right: 2px;
+}
+
+@media (min-width: 782px) {
+  .feedback {
+    margin: 50px auto;
+  }
+
+  .feedback input[type="submit"]{
+    float: left;
+    margin-right: 10px;
+    }
+}
+
+
+
+
 
 .lang img{
   left: 0px;

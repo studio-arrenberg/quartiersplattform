@@ -10,7 +10,7 @@
 ?>
 
 <div class="feedback">
-    <h4>Was wünschst du dir von der Quartiersplattform?</h4>
+    <h3>Was wünschst du dir von der Quartiersplattform?</h3>
 
     <?php acf_form_head(); ?>
     <?php // acf_form('feedback-form'); ?>
@@ -46,7 +46,6 @@
     ); ?>
 
     <!-- for testing -->
-    <br>
-    <p>Schau dir den Entwicklungsprozess an</p>
-    <a class="button" href="<?php echo get_site_url(); ?>/anmerkungen">Feedback Liste</a>
+    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen">Zur Wunschliste</p>
+</a>
 </div>

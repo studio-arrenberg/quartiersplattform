@@ -904,11 +904,12 @@ function list_card($args, $link = '') {
 
 	?>
 	<div class='card list-card shadow'>
+	<?php if ($link) echo "<a href='".$link."'>"; ?>
+
 		<div class='card-header'>
 			<h2><?php echo get_query_var('card_header_title'); ?></h2>
 			<h3><?php echo get_query_var('card_header_subtitle'); ?></h3>
-		</div
-		<?php if ($link) echo "<a href='".$link."'>"; ?>
+		</div>
 		<?php
 		$query2 = new WP_Query( $args);
 		// The Loop
@@ -920,7 +921,7 @@ function list_card($args, $link = '') {
 		wp_reset_postdata();
 		?>
 	</a>
-	</div>
+</div>
 <?php
 
 }
