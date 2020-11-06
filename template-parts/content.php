@@ -16,7 +16,6 @@
 <section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 
-
 	<?php
 
 	$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
@@ -27,8 +26,6 @@
 	}
 
 	?>
-
-
 
 
     <div class="single-header">
