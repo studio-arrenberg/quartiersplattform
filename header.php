@@ -147,7 +147,7 @@
         if (is_user_logged_in()) {
             ?>
                 <!-- mein profil -->
-                <a  class="button header-button login button-has-icon is-style-outline gravatar" href="<?php echo get_site_url(); ?>/wp-admin">
+                <a  class="button header-button login button-has-icon is-style-outline gravatar" href="<?php echo get_site_url(); ?>/my-profil">
                     <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/images/avatar.jpeg" />
                 </a>
             <?php 
