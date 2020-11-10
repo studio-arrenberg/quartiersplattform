@@ -716,6 +716,7 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
+
 button,
 .button,
 .button-link,
@@ -772,7 +773,7 @@ input[type="submit"]:hover {
 }
 
 .header-button {
-  padding: 17px !important;
+  padding: 17px;
 }
 
 .button-has-icon {
@@ -1155,6 +1156,15 @@ button.toggle {
 
 .header-button .button-icon {
   margin: 0px;
+}
+
+.gravatar {
+  padding: 0px;
+  width: 55px;
+}
+
+.gravatar img {
+  border-radius: 20px;
 }
 
 @media (max-width: 782px) {
@@ -3740,7 +3750,7 @@ div.comment:first-of-type {
   }
 }
 
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) {
   /* Document Setup ------------------------ */
 
   /* Helper Classes ------------------------ */

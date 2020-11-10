@@ -138,30 +138,24 @@
         // backend login button for admins
         if(is_admin()) {
             ?>
-            <button class="header-button login button-has-icon is-style-outline" href="">
-                <a href="<?php echo get_site_url(); ?>/wp-admin">
-                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                <a class="button header-button login button-has-icon is-style-outline " href="<?php echo get_site_url(); ?>/wp-admin">
+                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 </a>
-            </button>
             <?php 
         }
         if (is_user_logged_in()) {
             ?>
-            <button class="header-button login button-has-icon is-style-outline" href="">
                 <!-- mein profil -->
-                <a href="<?php echo get_site_url(); ?>/profil"> 
-                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                <a  class="button header-button login button-has-icon is-style-outline gravatar" href="<?php echo get_site_url(); ?>/wp-admin">
+                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/images/avatar.jpeg" />
                 </a>
-            </button>
             <?php 
         }
         else {
             ?>
-            <button class="header-button login button-has-icon is-style-outline" href="">
-                <a href="<?php echo get_site_url(); ?>/wp-admin">
+                <a  class="button header-button login button-has-icon is-style-outline" href="<?php echo get_site_url(); ?>/wp-admin">
                     <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 </a>
-            </button>
             <?php 
         }
         ?>
