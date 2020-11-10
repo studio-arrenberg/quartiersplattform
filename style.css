@@ -772,7 +772,7 @@ input[type="submit"]:hover {
 }
 
 .header-button {
-  padding: 17px !important;
+  padding: 17px;
 }
 
 .button-has-icon {
@@ -1155,6 +1155,15 @@ button.toggle {
 
 .header-button .button-icon {
   margin: 0px;
+}
+
+.gravatar {
+  padding: 0px;
+  width: 55px;
+}
+
+.gravatar img {
+  border-radius: 20px;
 }
 
 @media (max-width: 782px) {
