@@ -19,6 +19,7 @@ get_header();
 // Get status + Version
 // color ???
 
+// get Terms
 $terms_status = get_the_terms( $post->ID, 'status_anmerkungen' );
 $terms_version = "";
 
