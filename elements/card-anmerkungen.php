@@ -25,7 +25,7 @@ if ($terms_status) {
 
 ?>
 
-<?
+<?php
 // echo $terms_status[0]->name;
 // echo $terms_version[0]->name;
 
