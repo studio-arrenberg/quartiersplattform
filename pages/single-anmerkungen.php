@@ -13,6 +13,21 @@
 get_header();
 ?>
 
+<?php
+// Todo
+// Display Text if needed
+// Get status + Version
+// color ???
+
+$terms_status = get_the_terms( $post->ID, 'status_anmerkungen' );
+$terms_version = "";
+
+if ($terms_status) {
+    $terms_version = get_the_terms( $post->ID, 'version_anmerkungen' );
+}
+
+?>
+
 <main id="site-content" class="single" role="main">
 
     <?php
@@ -28,11 +43,13 @@ get_header();
     <div class="single-header">
         <!-- post title -->
         <h1><?php the_title(); ?></h1>
-        <h4>Status <i>Release</i></h4>
+        <h4><?php echo $terms_status[0]->name; ?> <i><?php echo $terms_version[0]->name; ?></i></h4>
 
-        <p><?php the_field('text'); ?></p>
+        
 
     </div>
+
+    <p><?php the_field('text'); ?></p>
 
     <!-- author -->
 
