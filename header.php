@@ -134,11 +134,12 @@
             <?php } ?>
         </div><!-- .header-navigation-wrapper -->
 
+        
         <?php 
         // backend login button for admins
         if(is_admin()) {
             ?>
-                <a class="button header-button login button-has-icon is-style-outline " href="<?php echo get_site_url(); ?>/wp-admin">
+                <a class="button header-button login button-has-icon is-style-outline " href="<?php echo get_site_url(); ?>/my-account">
                     <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 </a>
             <?php 
@@ -146,7 +147,7 @@
         if (is_user_logged_in()) {
             ?>
                 <!-- mein profil -->
-                <a  class="button header-button login button-has-icon is-style-outline gravatar" href="<?php echo get_site_url(); ?>/wp-admin">
+                <a  class="button header-button login button-has-icon is-style-outline gravatar" href="<?php echo get_site_url(); ?>/my-account">
                     <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/images/avatar.jpeg" />
                 </a>
             <?php 
