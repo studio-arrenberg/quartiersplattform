@@ -16,9 +16,10 @@
     <div class="sponsoren">
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/wsw.svg" alt="WSW"> 
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/buw.svg" alt="Universität Wuppertal"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/wuppertal-institut.svg" alt="Wuppertal Institt"> 
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/studio-arrenberg.svg" alt="Studio Arrenberg"> 
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/efre.svg" alt="Studio Arrenberg"> 
+        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/dbu.svg" alt="Studio Arrenberg"> 
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/eu.svg" alt="Studio Arrenberg"> 
     </div>
 

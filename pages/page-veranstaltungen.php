@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" role="main" >
 
 
     <?php
@@ -37,7 +37,7 @@ get_header();
 	slider($args3,'square_card', '2','true'); 
 	?>
 
-	<div class="card-list">
+	<div class="card-container add-margin">
 
     <?php 
 	// veranstaltung list
@@ -87,7 +87,7 @@ get_header();
 	);
 	card_list($args5);
 	?>
-	<div>
+	</div>
 
 	<!-- archive veranstltungen -->
 	<a class="button" href="<?php echo get_post_type_archive_link( 'veranstaltungen' ); ?>">Archiv</a>

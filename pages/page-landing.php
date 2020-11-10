@@ -7,7 +7,7 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
-
+acf_form_head(); // before wp header !important!
 get_header();
 ?>
 
@@ -43,11 +43,13 @@ get_header();
 	slider($args2,'card', '1','false'); 
 	?>
     <!-- link card -->
-    <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/Entdecke-den-Arrenberg-Wupptertal.jpg', '/das-quartier'); ?>
+    <?php link_card('Entdecke das Quartier','Alles über den Arrenberrg','/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
 
     <!-- call to register -->
-    <?php get_template_part( 'components/call', 'register' ); ?>
-
+	
+	<div class="card-container card-container__center">
+		<?php get_template_part( 'components/call', 'update' ); ?>
+	</div>
     <!-- *urbane transformation* -->
     <!-- not ready yet -->
 
@@ -70,11 +72,13 @@ get_header();
 		
 		<!-- projekt updates (list_card query function) -->
 		<?php
+		
 		$args2 = array(
 			'post_type'=>'nachrichten', 
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
+		card_header('Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten'); //  Made by Moritz. Schau mal pb das so richtig ist
 		list_card($args2, get_post_type_archive_link( 'nachrichten' ));
 		?>
 
@@ -85,6 +89,8 @@ get_header();
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
+		card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
+
 		list_card($args3, get_site_url().'/veranstaltungen');
 		?>
 
@@ -99,7 +105,7 @@ get_header();
     <?php get_template_part('components/energie_ampel'); ?>
 
     <!-- Aufbruch am Arrenberg link card -->
-    <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/Aufbruch-am-Arrenberg.jpg', '/aufbruch-am-arrenberg'); ?>
+    <?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','','/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
@@ -108,7 +114,5 @@ get_header();
 	<?php get_template_part('components/feedback'); ?>
 
 </main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php get_footer(); ?>

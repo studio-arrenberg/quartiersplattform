@@ -23,7 +23,7 @@ get_header();
 			the_post();
 
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'twentytwenty-fullscreen' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -33,26 +33,31 @@ get_header();
 			?>
 
 
-
-
     <div class="single-header">
+
+
+        <!-- Bild -->
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
         <!-- post title -->
+        <div class="single-header-content">
         <h1><?php the_title(); ?></h1>
-        <h4>Projekt/ Name/ Akteur</h4>
+        <h4><?php echo get_the_author(); ?></h4>
+        
+        <p><?php the_field('kurzbeschreibung'); ?></p>
+
+        </div>
 
         <!-- projekt / akteur -->
         <!-- not ready yet -->
 
         <!-- Bild -->
 
-        <p><?php the_field('kurzbeschreibung'); ?></p>
 
-
-
-        <!-- Bild -->
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
     </div>
+
+
 
     <!-- ACF test -->
     <p><?php the_field('begin'); ?></p>
@@ -68,9 +73,6 @@ get_header();
             um so effizient und schonend wie möglich mit kostbaren Ressourcen umzugehen.
         </p>
     </div>
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
-
     <!-- Anstehende Veranstaltungen -->
     <!-- not ready yet -->
 
@@ -90,6 +92,12 @@ get_header();
         ?>
 
     </div>
+
+
+
+    <!-- Backend edit link -->
+    <?php edit_post_link(); ?>
+
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->

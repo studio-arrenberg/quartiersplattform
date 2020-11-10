@@ -13,7 +13,7 @@ get_header();
 
 <main id="site-content" role="main">
 
-
+<div class="card-container">
 	<?php 
 	// veranstaltung list
 	$args4 = array(
@@ -24,7 +24,7 @@ get_header();
 	);
 	card_list($args4);
 	?>
-
+</div>
 </main><!-- #site-content -->
 
 <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>

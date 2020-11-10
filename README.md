@@ -83,27 +83,24 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 
 |           | S       | M       | L       |
 |-----------|---------|---------|---------|
-| Square    | 50x50   | 180x180 | 300x300 |
+| Square    | 80x80   | 180x180 | 300x300 |
 | 4:3       | 160x120 | 200x150 | 800x600 |
 | Landscape | 200x100 | 400x200 | 970x485 |
 
 
-### ???
+### SEO
 
-1. Descriptions<br>
-Description Atribut = Bierdeckeltext
+1. Descriptions: Description Atribut = Bierdeckeltext
 2. Page Title 
-3. URL <br>
-arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
+3. URL: arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
 3. Robots.txt!! Crawlbare seiten indexieren
 4. H1 H2 H3 P
-5. Prüfen von Rich markup möglichkeiten<br>
-https://search.google.com/test/rich-results
+5. [Prüfen](https://search.google.com/test/rich-results) von Rich markup möglichkeiten
 6. Data Highlighter verwenden
-7. Veraltete Navigationsseite mit fehlerhaften Links<br>
-Alte Links weiterleiten!
+7. Veraltete Navigationsseite mit fehlerhaften Links (Alte Links weiterleiten!)
 8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
 
+[Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
 
 ### Functions
 
@@ -126,7 +123,7 @@ get_excerpt($text, $count = '55'); // für den fließtext
 ```
 #### Calendar Download
 ```php
-calendar_download($post);
+calendar_download($post); // nur für veranstaltungen
 ```
 #### Card List
 ```php
@@ -137,6 +134,11 @@ card_list($query);
 
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
+
+Get Rid of all untracked changes
+```bash
+git clean -f -d
+```
 
 ### CSS Tricks
 
@@ -172,9 +174,11 @@ rifi2k.format-html-in-php
     - Kontakt
 10. ACFs Setting 'has archive' => True (veranstaltungen, nachrichten) + archiv slug! ({post-type-slug}-archiv)
 11. CPT Anmerkung (anmerkungen)
-12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False
+12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False []
 13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
-14. [last] Regenerate Images
+14. Feedback formular hide lable by id
+
+ [last] Regenerate Images
 
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch

@@ -25,6 +25,6 @@
                 <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <?php echo get_the_post_thumbnail( $post->ID, 'preview_m' ); ?>
+        <?php the_post_thumbnail( 'preview_m' ); ?>
     </a>
 </div>

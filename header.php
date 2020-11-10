@@ -23,7 +23,25 @@
     <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
 
     <?php wp_head(); ?>
-    <script src="https://unpkg.com/embla-carousel@latest/embla-carousel.umd.js"> </script>
+    <script src="<?php echo get_template_directory_uri()?>/assets/embla-carousel-master/embla-carousel.umd.js"> </script>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo get_template_directory_uri()?>/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?php echo get_template_directory_uri()?>/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
 
 </head>
@@ -52,19 +70,25 @@
             </div>
         </div>
 
-        <!-- back button (ultimately this will be a function)  -->
-    
-        <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
-            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-            <span class="button-has-icon-label">Zurück</span>
-        </button>
-
+        <!-- back button -->
         <?php 
-        //  backend login button for admins
-        if(is_admin()) {
+        if (!$_SERVER['HTTP_REFERER']) {
+            // display home button
             ?>
-            <a href="<?php echo get_site_url(); ?>/wp-admin">Admin</a>
-            <?php 
+            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Überblick</span>
+            </a>
+            <?php
+        }
+        else {
+            // display back button
+            ?>
+            <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Zurück</span>
+            </button>
+            <?php
         }
         ?>
 
@@ -110,12 +134,37 @@
             <?php } ?>
         </div><!-- .header-navigation-wrapper -->
 
-
-        <button class="header-button login button-has-icon is-style-outline" href="">
-            <a href="<?php echo get_site_url(); ?>/konto">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-            </a>
-        </button>
+        <?php 
+        // backend login button for admins
+        if(is_admin()) {
+            ?>
+            <button class="header-button login button-has-icon is-style-outline" href="">
+                <a href="<?php echo get_site_url(); ?>/wp-admin">
+                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                </a>
+            </button>
+            <?php 
+        }
+        if (is_user_logged_in()) {
+            ?>
+            <button class="header-button login button-has-icon is-style-outline" href="">
+                <!-- mein profil -->
+                <a href="<?php echo get_site_url(); ?>/profil"> 
+                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                </a>
+            </button>
+            <?php 
+        }
+        else {
+            ?>
+            <button class="header-button login button-has-icon is-style-outline" href="">
+                <a href="<?php echo get_site_url(); ?>/wp-admin">
+                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                </a>
+            </button>
+            <?php 
+        }
+        ?>
 
 
     </header><!-- #site-header -->
