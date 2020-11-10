@@ -1195,6 +1195,17 @@ function my_deregister_styles() {
 } add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
+//rem ove dashicons in frontend to non-admin  
+function wpdocs_dequeue_dashicon() {
+	if (current_user_can( 'update_core' )) {
+		return;
+	}
+	wp_deregister_style('dashicons');
+}
+add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
+
+
+
 
 // dropdown button taxonomy
 // CTP anmerkungen TAX version
