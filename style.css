@@ -716,6 +716,7 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
+
 button,
 .button,
 .button-link,
@@ -3749,7 +3750,7 @@ div.comment:first-of-type {
   }
 }
 
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) {
   /* Document Setup ------------------------ */
 
   /* Helper Classes ------------------------ */
