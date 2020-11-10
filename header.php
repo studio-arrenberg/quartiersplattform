@@ -134,6 +134,7 @@
             <?php } ?>
         </div><!-- .header-navigation-wrapper -->
 
+        
         <?php 
         // backend login button for admins
         if(is_admin()) {
