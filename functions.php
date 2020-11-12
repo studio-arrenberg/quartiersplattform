@@ -1304,3 +1304,25 @@ function um_remove_scripts_and_styles_widget( $widget ) {
 		$GLOBALS['um_load_assets'] = TRUE;
 	}
 }
+
+
+function um_deregister_styles() {
+
+	wp_deregister_style( 'select2');
+	wp_deregister_style( 'um_datetime');
+	wp_deregister_style( 'um_datetime_date');
+	wp_deregister_style( 'um_datetime_time');
+
+	wp_deregister_style( 'um_scrollbar');
+	wp_deregister_style( 'um_crop');
+	wp_deregister_style( 'um_tipsy');
+	wp_deregister_style( 'um_responsive');
+	wp_deregister_style( 'um_modal');
+	wp_deregister_style( 'um_styles');
+	wp_deregister_style( 'um_members');
+	wp_deregister_style( 'um_profile');
+	wp_deregister_style( 'um_account');
+	wp_deregister_style( 'um_misc');
+	wp_deregister_style( 'um_default_css');
+
+  } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
