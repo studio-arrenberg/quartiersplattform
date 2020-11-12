@@ -21,7 +21,7 @@ Custom Post Types<br>
 [PWA for WP](https://github.com/ahmedkaludi/pwa-for-wp) <br>
 [Favorites](https://github.com/kylephillips/favorites) <br>
 Disable Rest API <br>
-(Buddy Press)<br>
+Ulimate Member<br>
 (WP Forms)<br>
 
 #### Optional (Development)
@@ -76,7 +76,8 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 ### Recources 
 
 [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) <br>
-[Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
+[Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)<br>
+[Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)
 
 
 ### Image Sizes (Ratio)
