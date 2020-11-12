@@ -156,7 +156,7 @@
         }
         else {
             ?>
-                <a  class="button header-button login button-has-icon is-style-outline" href="<?php echo get_site_url(); ?>/login">
+                <a  class="button header-button login button-has-icon is-style-outline" href="<?php echo get_site_url(); ?>/anmelden">
                     <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 </a>
             <?php 
