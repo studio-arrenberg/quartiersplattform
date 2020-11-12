@@ -1206,15 +1206,6 @@ function wpdocs_dequeue_dashicon() {
 add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 
 // ultimate member remove styles
-
-/*
-  Plugin Name: Ultimate Member - Maybe load assets
-  Description: Remove CSS and JS on non UM pages
-  Version: 1.0.2
-  Author: Ultimate Member
-  Author URI: http://ultimatemember.com/
- */
-
 add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
 add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );
 add_action( 'wp_print_styles', 'um_remove_scripts_and_styles', 9 );
