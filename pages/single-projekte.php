@@ -65,14 +65,11 @@ get_header();
 
 
     <!-- Projektbeschreibung -->
+    <!-- not ready yet -->
     <div class="single-content">
-        <p>Das Projekt der Arrenberg-Farm, eine moderne, kreislaufbasierte Lebensmittelproduktionsanlage mitten in
-            Wuppertal zu realisieren, soll in der Zukunft ein Stück dazu beitragen, die Ressource Wasser zu sparen und
-            gleichzeitig die Talbewohner mit frischen und gesunden Lebensmitteln zu versorgen. Ganz nach dem Motto
-            „close the loop – new urban food“ wird ein kreislaufbasiertes Modell der Lebensmittelproduktion angestrebt,
-            um so effizient und schonend wie möglich mit kostbaren Ressourcen umzugehen.
-        </p>
+        <p></p>
     </div>
+    
     <!-- Anstehende Veranstaltungen -->
     <!-- not ready yet -->
 
