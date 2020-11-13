@@ -1229,6 +1229,7 @@ function um_remove_scripts_and_styles() {
 	$um_urls = array(
 		'/account/',
 		'/activity/',
+		'/profil/',
 		'/groups/',
 		'/login/',
 		'/logout/',
@@ -1303,7 +1304,10 @@ function um_deregister_styles() {
 	wp_deregister_style( 'um_datetime');
 	wp_deregister_style( 'um_datetime_date');
 	wp_deregister_style( 'um_datetime_time');
-
+	wp_deregister_style( 'um_fileupload');
+	wp_deregister_style( 'um_raty');
+	wp_deregister_style( 'um_fonticons_ii');
+	wp_deregister_style( 'um_fonticons_fa');
 	wp_deregister_style( 'um_scrollbar');
 	wp_deregister_style( 'um_crop');
 	wp_deregister_style( 'um_tipsy');

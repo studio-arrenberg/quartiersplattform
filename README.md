@@ -24,6 +24,15 @@ Disable Rest API <br>
 Ulimate Member<br>
 (WP Forms)<br>
 
+### For Ultimate member
+File needs to be replaced:
+class-fields
+```php function add_hidden_field( $field ) {
+//echo '<div style="display: none !important;">'; -- custom to enable profil picture replacement
+echo '<div>';
+```   
+
+
 #### Optional (Development)
 Custom Post Type UI
 [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
