@@ -5096,6 +5096,19 @@ input[type="file"]{
   opacity: 1 !important ;
   margin-top: 20px;
   padding: 0px !important;
+  background: transparent;
+  border-radius: 20px;
+  width: 145px !important;
+  padding-top: 5px !important;
+  height: 50px !important;
+
+}
+
+.um-modal input[type="file"]::-webkit-file-upload-button {
+  width: 145px;
+  height: 44px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
 .um-modal-header{
@@ -5103,11 +5116,11 @@ input[type="file"]{
   font-family: "OfficinaSansITCStd-Bold";
   margin-bottom: 10px;
   position: absolute;
-  top:80px;
+  top:60px;
   width: calc( 100% - 30px );
 }
 .upload {
-  height: 50px;
+  height: 100px;
   max-width: 145px;
   margin: 0 auto;
   cursor: pointer !important;
