@@ -4982,15 +4982,13 @@ margin-right: 2px;
 
 .um ul li{
 padding: 0px;  margin: 0px;
+text-align: left;
 }
 
 .um-account-meta, .um-single-image-preview, .um-account-side, .um-profile-edit, .um-profile-photo-img, .um-dropdown-arr, .um-dropdown-hide, .um-profile-meta, .um-modal-hidden-content, .um-account-nav{
   display: none;
 }
 
-.um-dropdown-arr li {
-  text-align: left;
-}
 
 .um-account-heading, .um-field-image label{
   font-size: 2rem;
