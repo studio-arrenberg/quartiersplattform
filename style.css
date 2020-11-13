@@ -4988,6 +4988,10 @@ padding: 0px;  margin: 0px;
   display: none;
 }
 
+.um-dropdown-arr li {
+  text-align: left;
+}
+
 .um-account-heading, .um-field-image label{
   font-size: 2rem;
   font-family: "OfficinaSansITCStd-Bold";
