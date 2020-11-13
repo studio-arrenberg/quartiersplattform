@@ -1,4 +1,4 @@
-/*
+/* 
 Theme Name: Quartiersplattform
 Text Domain: quartiersplattform
 Version: 0.1
@@ -631,6 +631,9 @@ input[type="checkbox"]:checked::before {
 input,
 textarea,
 button,
+.um-button,
+.um-modal-btn,
+.um-manual-trigger,
 .button,
 .faux-button,
 .faux-button.more-link,
@@ -719,6 +722,9 @@ input[type="search"]::-webkit-search-results-decoration {
 
 button,
 .button,
+.um-button,
+.um-modal-btn,
+.um-manual-trigger,
 .button-link,
 .faux-button,
 .pagination .next,
@@ -726,7 +732,8 @@ button,
 .wp-block-file .wp-block-file__button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+input:matches([type="button"], [type="submit"], [type="reset"]), input[type="file"]::-webkit-file-upload-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   background: rgb(0, 145, 255);
@@ -750,6 +757,12 @@ button:focus,
 button:hover,
 .button:focus,
 .button:hover,
+.um-button:hover,
+.um-button:focus,
+.um-modal-btn:hover,
+.um-modal-btn:focus,
+.um-manual-trigger:hover,
+.um-manual-trigger:focus,
 .faux-button:focus,
 .faux-button:hover,
 .pagination .next:focus,
@@ -760,6 +773,7 @@ button:hover,
 .wp-block-button .wp-block-button__link:hover,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover,
+
 input[type="button"]:focus,
 input[type="button"]:hover,
 input[type="reset"]:focus,
@@ -1161,6 +1175,8 @@ button.toggle {
 .gravatar {
   padding: 0px;
   width: 55px;
+  border-radius: 20px;
+
 }
 
 .gravatar img {
@@ -4955,42 +4971,172 @@ margin-right: 2px;
   100% {opacity:0;}
 }
 
-/* 
-:root {
-  --background-color: #222;
-  --secondary-color: #fbfefb;
-  --text-dark: #101010;
-  --text: #fff;
-  --text-light: #7b7b85;
-  --text-lighter: #ababab;
-  --blue: #3498db;
-  --green: #27ae60;
-  --yellow: #feca57;
-  --red: #c0392b;
-  --white: #ffffff;
+.um-profile {
+  margin-bottom: 20px;
 }
-
-.card{
-  background: #111;
-  color: #fff;
-}
-
-.card a{
-  color: #ddd;
-
+.um ul{
+  list-style-type: none;
+  margin: 0px;
 }
 
 
-.list{
-  background: #2222;
-
-}
-/* Sample css for an element */
-/* body {
-  background: var(--background-color);
-  color: var(--text);
+.um ul li{
+padding: 0px;  margin: 0px;
+text-align: left;
 }
 
-.shadow{
-  box-shadow: 0px 10px 20px #000;
-} */ 
+.um-account-meta, .um-single-image-preview, .um-account-side, .um-profile-edit, .um-profile-photo-img, .um-dropdown-arr, .um-dropdown-hide, .um-profile-meta, .um-modal-hidden-content, .um-account-nav{
+  display: none;
+}
+
+
+.um-account-heading, .um-field-image label{
+  font-size: 2rem;
+  font-family: "OfficinaSansITCStd-Bold";
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.um-field-label{
+  margin-top: 12px;
+  margin-bottom: -3px;
+}
+.um-modal-overlay{
+  /* filter: blur(4px); */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(241, 241, 241, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 20000;
+}
+.um-modal{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 22000;
+
+  width: 100%;
+  height: 100%;
+  display: flex;
+  /* background:  #f1f1f1; */
+  align-items: center;
+  justify-content: center;
+  transition: all 2s ease-in-out;
+
+
+}
+
+#um_upload_single{
+  max-width: 1000px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+}
+
+.um-modal .icon, .str{
+  display: block;
+  display: none !important;
+}
+
+
+.um-modal-body{
+  max-width: 600px;
+}
+.cropper-container{
+  display: none;
+}
+
+.um-field-area{
+  text-align: left !important;
+}
+
+.um-account-tab{
+  margin-top: 20px;
+}
+
+.um-avatar{
+  position: absolute;
+  top: 125px;
+  width: 200px;
+}
+
+
+.um-single-image-preview {
+  position: absolute;
+  top: 125px;
+  width: 100%;
+  margin: 0 auto;
+  left: 0px;
+}
+
+
+.um-single-image-preview img{
+  width: 200px;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.profil{
+  justify-content: center;
+  align-items: center;
+
+}
+
+.page-template-profil #site-content{
+  margin-top: 270px;
+
+}
+
+input[type="file"]{
+  opacity: 1 !important ;
+  margin-top: 20px;
+  padding: 0px !important;
+  background: transparent;
+  border-radius: 20px;
+  width: 145px !important;
+  padding-top: 5px !important;
+  height: 50px !important;
+
+}
+
+.um-modal input[type="file"]::-webkit-file-upload-button {
+  width: 145px;
+  height: 44px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.um-modal-header{
+  font-size: 2.4rem;
+  font-family: "OfficinaSansITCStd-Bold";
+  margin-bottom: 10px;
+  position: absolute;
+  top:60px;
+  width: calc( 100% - 30px );
+}
+.upload {
+  height: 100px;
+  max-width: 145px;
+  margin: 0 auto;
+  cursor: pointer !important;
+  /* padding-top: 20px; */
+}
+
+.um-modal-footer{
+  margin-top: 200px;
+}
+
+.um-modal-footer a{
+  max-width: 200px;
+  width: calc( 50% - 10px);
+
+}
+
+.um-modal-footer a:first-of-type{
+  margin-right: 10px;
+}
