@@ -42,9 +42,9 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
         <h1><?php the_title(); ?></h1>
-        <h4><?php echo get_the_author(); ?></h4>
+        <h4><?php if (is_admin()) echo get_the_author(); ?></h4> 
         
-        <p><?php the_field('kurzbeschreibung'); ?></p>
+        <p><?php // the_field('kurzbeschreibung'); ?></p>
 
         </div>
 
@@ -69,7 +69,7 @@ get_header();
     <div class="single-content">
         <p></p>
     </div>
-    
+
     <!-- Anstehende Veranstaltungen -->
     <!-- not ready yet -->
 

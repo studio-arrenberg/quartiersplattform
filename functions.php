@@ -1296,7 +1296,7 @@ function um_remove_scripts_and_styles_widget( $widget ) {
 	}
 }
 
-
+// deregiter UM Styles
 function um_deregister_styles() {
 
 	wp_deregister_style( 'select2');

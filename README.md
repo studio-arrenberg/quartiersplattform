@@ -6,6 +6,13 @@ Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
 ## 🧯 Wichtig 
+- Temporäres Favicon
+- (CSS Layout Anmelden/Registrieren/Profil auf dem Desktop)
+- Logout Button auf die Profil Seite
+- Email Templates auf deutsch
+- Naming festlegen (Nicht Arrenberg App)
+- Einleitungseite erstellen/schreiben
+- Matomo Tracking Codes/Strategy
 
 ## 📦 Requirements 
 
@@ -138,7 +145,7 @@ Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 
 Get Rid of all untracked changes
 ```bash
-git clean -f -d
+git stash
 ```
 
 ### CSS Tricks
@@ -178,7 +185,9 @@ rifi2k.format-html-in-php
 13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
 14. Feedback formular hide lable by id
 15. Kommentare für alle aktivieren
-
+16. Setup UM (Pages + Shortcodes)
+    - Profile Picture Sizes (100 x 300)
+    - Logout Button
 [last] Regenerate Images
 
 ## 🧫 Fundamental (notes)
