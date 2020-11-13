@@ -31,13 +31,21 @@ Disable Rest API <br>
 Ulimate Member<br>
 (WP Forms)<br>
 
-### For Ultimate member
-File needs to be replaced:
-class-fields
-```php function add_hidden_field( $field ) {
+### Ultimate member
+
+### Setup
+
+- Profil Page should have `Profil` temlate
+
+#### Fixes
+File needs to be replaced: 
+class-fields (?) .php 
+```php 
+function add_hidden_field( $field ) {
 //echo '<div style="display: none !important;">'; -- custom to enable profil picture replacement
 echo '<div>';
 ```   
+`könnte auch in javascript im theme gamcht werden...`
 
 
 #### Optional (Development)
@@ -53,6 +61,7 @@ git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```
 3. Sync Database with [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) <br>
 4. Copy `wp-content` manually
+5. Install Plugins
 
 ## ⚙️ Development
 
