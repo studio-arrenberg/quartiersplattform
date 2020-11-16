@@ -1,7 +1,6 @@
 <div class="mail" style="text-align: center; vertical-align: center; background-color: #f7f7f7; padding: 10% 20%;">
 <div class="content" style="padding: 5%; text-align: center; vertical-align: center; position: relative; color: #666666; font-family: 'Open Sans', Helvetica,Arial; font-size: 16px; background-color: white; display: inline-block; border-radius: 50px;">
-<div><img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="200" height="200" /></div>
-<div> </div>
+<div><img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/registrieren.png" alt="Arrenberg Logo" width="300" height="auto" /></div>
 <div><span style="font-size: 26px; font-weight: 600; color: #62b2f0; font-family: 'Open Sans', Helvetica, Arial;">Hallo, {first_name} </span></div>
 <div> </div>
 <div>

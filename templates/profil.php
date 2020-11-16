@@ -41,6 +41,11 @@ get_header();
 
     <!-- <h2>Profil bearbeiten</h2> -->
     <?php echo do_shortcode("[ultimatemember_account]"); ?>
+    
+    <?php if (is_user_logged_in()) : ?>
+        <a class="button" href="<?php echo wp_logout_url(get_permalink()); ?>">Logout</a>
+    <?php endif;?>
+    
 
    
 </main><!-- #site-content -->
