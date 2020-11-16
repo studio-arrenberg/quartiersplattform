@@ -26,7 +26,7 @@
       <p></p>
       <div class="table" style="margin-top: 50px;display: flex;justify-content: center;flex-wrap: wrap;padding: 0%;">
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" style="max-width: 200px;">
+          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/nachrichten.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Nachrichten</h1>
           <p>
             Sieh dir Angebote und Nachrichten von deinen Nachbar*innen an! Teile
@@ -34,7 +34,7 @@
           </p>
         </div>
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" style="max-width: 200px;">
+          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/projekte.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Projekte</h1>
           <p>
             Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem
@@ -42,7 +42,7 @@
           </p>
         </div>
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" style="max-width: 200px;">
+          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/veranstaltungen.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Veranstaltungen</h1>
           <p>
             Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier
