@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The default template for displaying content
+ * Card => Projekte
  *
  * Used for both singular and index.
  *

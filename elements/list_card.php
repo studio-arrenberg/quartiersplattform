@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The default template for displaying content
+ * Default List Card
  *
  * Used for both singular and index.
  *
