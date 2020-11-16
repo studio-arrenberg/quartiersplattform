@@ -103,6 +103,8 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) <br>
 [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)<br>
 [Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)
+[Mail Template Inline Styles Converter](https://templates.mailchimp.com/resources/inline-css/)
+
 
 
 ### Image Sizes (Ratio)
