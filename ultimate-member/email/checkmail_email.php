@@ -5,7 +5,7 @@
   <div class="content" style="padding: 5%;text-align: center;vertical-align: center;position: relative;color: #666666;font-family: &quot;Open Sans&quot;, Helvetica,
 Arial;font-size: 16px;background-color: white;display: inline-block;border-radius: 50px;">
     <div>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="200" height="200">
+      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/registrieren.png" alt="Arrenberg Logo" width="300" height="auto">
     </div>
     <div>
       <span style="
