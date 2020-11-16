@@ -6,11 +6,9 @@ Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
 ## 🧯 Wichtig 
-- Temporäres Favicon
 - (CSS Layout Anmelden/Registrieren/Profil auf dem Desktop)
 - Logout Button auf die Profil Seite
-- Email Templates auf deutsch
-- Naming festlegen (Nicht Arrenberg App)
+- Naming festlegen
 - Einleitungseite erstellen/schreiben
 - Matomo Tracking Codes/Strategy
 
@@ -39,19 +37,20 @@ Ulimate Member<br>
 
 #### Fixes
 File needs to be replaced: 
-class-fields (?) .php 
+ultimate-member > includes > core > class-fields.php (line 107)
 ```php 
 function add_hidden_field( $field ) {
-//echo '<div style="display: none !important;">'; -- custom to enable profil picture replacement
+echo '<div style="display: none !important;">'; -- custom to enable profil picture replacement
+// zu: (remove styles)
 echo '<div>';
 ```   
-`könnte auch in javascript im theme gamcht werden...`
 
 
 #### Optional (Development)
-Custom Post Type UI
+Custom Post Type UI<br>
 [WP Sync DB](https://github.com/wp-sync-db/wp-sync-db) Get Data from [AP1](http://ap1.arrenberg.studio/wp-admin/) <br>
-[Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
+[Regenerate Thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)<br>
+[Maintenance Redirect](https://wordpress.org/plugins/jf3-maintenance-mode/)
 
 ## 🔗 Set up
 1. Setup local Wordpress 
@@ -181,6 +180,7 @@ rifi2k.format-html-in-php
 
 ## 🏛 Database Migration
 
+0. WP Cli installieren
 0. Last Push to [vpp](https://vpp.arrenberg.studio)
 1. Update (Optimise) through Wordpress
 2. Comment Setting (WP Settings) 
@@ -206,6 +206,8 @@ rifi2k.format-html-in-php
 16. Setup UM (Pages + Shortcodes)
     - Profile Picture Sizes (100 x 300)
     - Logout Button
+17. Set up matomo
+
 [last] Regenerate Images
 
 ## 🧫 Fundamental (notes)
