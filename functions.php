@@ -881,6 +881,17 @@ function tpl_anmerkungen( $single_template ) {
 }
 add_filter( 'single_template', 'tpl_anmerkungen' );
 
+function tpl_nachrichten( $single_template ) {
+    global $post;
+ 
+    if ( 'nachrichten' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-nachrichten.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_nachrichten' );
+
 // function template part test
 function link_card($title, $text, $bg, $link){
 
