@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Nachrichten [Default]
- * Template Post Type: projekte
+ * Template Post Type: Nachrichten
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

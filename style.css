@@ -290,6 +290,7 @@ h6,
 
 p {
   font-size: 1.8rem;
+  font-size: 1.8rem;
   line-height: 2.1rem;
   font-weight: 500;
 }
@@ -647,10 +648,9 @@ button,
   border: none;
   border-radius: 15px;
   text-decoration: none;
-
 }
 
-.button p{
+.button p {
   display: inline;
 }
 
@@ -1076,6 +1076,20 @@ button.toggle {
   transition: all ease-in-out 1s;
 }
 
+
+/*  BLURRY HEADER */
+
+@media (max-width: 782px) {
+  @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+    #site-header {
+      background-color: rgba(255, 255, 255, .7);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+  }
+}
+
+
 .admin-bar #site-header {
   top: 32px;
 }
@@ -1258,6 +1272,9 @@ button.toggle {
     max-width: 55px;
   }
 }
+
+
+
 
 /*	7a. Template: Single Template
 /* -------------------------------------------------------------------------- */
@@ -4815,6 +4832,7 @@ div.comment:first-of-type {
 /* Energie  Ampel */
 
 .energie-ampel {
+  overflow-y: hidden;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -4830,7 +4848,9 @@ div.comment:first-of-type {
   justify-content: space-between;
   margin-bottom: -20px;
 }
-
+.energie-ampel-titles div:last-of-type {
+  text-align: right;
+}
 .strom_array-container {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -4906,7 +4926,6 @@ div.comment:first-of-type {
 }
 .feedback input[type="submit"] {
   margin-right: 2px;
-
 }
 
 @media (min-width: 782px) {
@@ -4981,7 +5000,8 @@ div.comment:first-of-type {
 .um-dropdown-hide,
 .um-profile-meta,
 .um-modal-hidden-content,
-.um-account-nav {
+.um-account-nav,
+#um_field_general_user_login {
   display: none;
 }
 
@@ -4997,18 +5017,28 @@ div.comment:first-of-type {
   margin-top: 12px;
   margin-bottom: -3px;
 }
+
+/* slightly transparent fallback */
 .um-modal-overlay {
-  /* filter: blur(4px); */
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(241, 241, 241, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, .9);
   z-index: 20000;
+
 }
+
+/* if backdrop support: very transparent and blurred */
+@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .um-modal-overlay {
+    background-color: rgba(255, 255, 255, .5);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
+}
+
 .um-modal {
   position: fixed;
   top: 0px;
@@ -5080,6 +5110,9 @@ div.comment:first-of-type {
   min-height: auto;
 }
 
+.profil .single-header-content {
+  text-align: center;
+}
 .page-template-profil #site-content {
   margin-top: 290px;
 }
