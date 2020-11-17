@@ -1336,7 +1336,7 @@ function um_deregister_styles() {
   // Activate WordPress Maintenance Mode
 function wp_maintenance_mode() {
 if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-	wp_redirect('https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/maintenance.html');
+	wp_redirect('https://ap1.arrenberg.studio/maintenance.html');
 }
 }
 add_action('get_header', 'wp_maintenance_mode');
