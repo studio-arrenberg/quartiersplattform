@@ -4875,6 +4875,7 @@ div.comment:first-of-type {
   position: absolute;
   top: 70px;
   font-size: 1.8rem;
+  word-break: keep-all;
 }
 
 .red .time:first-of-type {
