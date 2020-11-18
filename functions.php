@@ -1333,6 +1333,7 @@ function um_deregister_styles() {
 
   } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
+<<<<<<< HEAD
 // Activate WordPress Maintenance Mode
 function wp_maintenance_mode() {
 if (!current_user_can('edit_themes') || !is_user_logged_in()) {
@@ -1340,3 +1341,12 @@ if (!current_user_can('edit_themes') || !is_user_logged_in()) {
 }
 }
 add_action('get_header', 'wp_maintenance_mode');
+=======
+// // Activate WordPress Maintenance Mode
+// function wp_maintenance_mode() {
+// if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+// 	wp_redirect('https://ap1.arrenberg.studio/maintenance.html');
+// }
+// }
+// add_action('get_header', 'wp_maintenance_mode');
+>>>>>>> c1921a879edd06c3f3659ef2337052c6c359aede
