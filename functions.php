@@ -1191,7 +1191,7 @@ function my_acf_admin_head() {
     ?>
     <style type="text/css">
         .acf-field-5fa01d66b0f2f > .acf-label {display: none;} /* ap1 */
-		.field_5fb50c8a3e93d > .acf-label {display: none;} /* app */
+		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
     </style>
     <?php
 }
