@@ -6,8 +6,6 @@ Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
 ## 🧯 Wichtig 
-- (CSS Layout Anmelden/Registrieren/Profil auf dem Desktop)
-- Logout Button auf die Profil Seite
 - Naming festlegen
 - Einleitungseite erstellen/schreiben
 - Matomo Tracking Codes/Strategy
