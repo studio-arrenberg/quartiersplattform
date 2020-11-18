@@ -6,8 +6,6 @@ Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
 ## 🧯 Wichtig 
-- (CSS Layout Anmelden/Registrieren/Profil auf dem Desktop)
-- Logout Button auf die Profil Seite
 - Naming festlegen
 - Einleitungseite erstellen/schreiben
 - Matomo Tracking Codes/Strategy
@@ -182,15 +180,28 @@ rifi2k.format-html-in-php
 
 ## 🏛 Database Migration
 
+0. Seiten mit templates verknüpfen
+0. Regenerate Images
 0. WP Cli installieren
 0. Last Push to [vpp](https://vpp.arrenberg.studio)
 1. Update (Optimise) through Wordpress
 2. Comment Setting (WP Settings) 
 3. Allow Comment on Post-Type (Post type list Buld action) Projekte
-4. Custom Post Type enable Comments (Support) -> Projekte, Veranstaltungen
+4. Custom Post Type enable Comments (Support) -> Projekte
 5. Update Parmalinks
 6. Delete Calendar Files (created in local host) + (create path to files)
-7. Set Menu (⚠️name/slug: "menu") & Page Templates
+7. Set Menu (name/slug: "menu") & Page Templates
+10. ACFs Setting 'has archive' => True (veranstaltungen, nachrichten) + archiv slug! ({post-type-slug}-archiv)
+11. CPT Anmerkung (anmerkungen)
+12. ACF Anmerkung (Post-type == Anmerkung) Text (text)
+12. TAX Anmerkung Version (version_anmerkungen) und Status (status_anmerkungen)
+13. Seite für Anmerkungen erstellen und tempate festlegen = Anmerkungen
+14. Feedback formular hide lable by id
+16. Setup UM (Pages + Shortcodes)
+    - Profile Picture Sizes (100 x 300)
+17. Set up matomo
+
+### --- Later
 8. ACFs Veranstaltungen
     - Website
     - Livestream
@@ -199,18 +210,6 @@ rifi2k.format-html-in-php
 9. ACFs Projekte
     - Ort
     - Kontakt
-10. ACFs Setting 'has archive' => True (veranstaltungen, nachrichten) + archiv slug! ({post-type-slug}-archiv)
-11. CPT Anmerkung (anmerkungen)
-12. ACF Anmerkung (Post-type == Anmerkung) Text (text) Area / Status (status) True/False []
-13. Seite für Anmkerungen erstellen und tempate festlegen = Anmerkungen
-14. Feedback formular hide lable by id
-15. Kommentare für alle aktivieren
-16. Setup UM (Pages + Shortcodes)
-    - Profile Picture Sizes (100 x 300)
-    - Logout Button
-17. Set up matomo
-
-[last] Regenerate Images
 
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch

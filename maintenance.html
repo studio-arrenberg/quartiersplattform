@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Titel</title>
+	  <link rel="icon" type="image/png" sizes="32x32" href="https://arrenberg.app/wp-content/themes/3.4/includes/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://arrenberg.app/wp-content/themes/3.4/includes/favicons/favicon-16x16.png">
+    <title>Arrenberg Update</title>
 
     <style>
       @font-face {
         font-family: "OfficinaSansITCStd-Book";
-        src: url("assets/fonts/officina/3901E8_0_0.woff2") format("woff2"),
-          url("assets/fonts/officina/3901E8_0_0.woff") format("woff");
+        src: url("assets/fonts/3901E8_0_0.woff2") format("woff2"),
+          url("assets/fonts/3901E8_0_0.woff") format("woff");
         font-display: swap;
       }
 
       @font-face {
         font-family: "OfficinaSansITCStd-Bold";
-        src: url("assets/fonts/officina/3901E8_1_0.woff2") format("woff2"),
-          url("assets/fonts/officina/3901E8_1_0.woff") format("woff");
+        src: url("assets/fonts/3901E8_1_0.woff2") format("woff2"),
+          url("assets/fonts/3901E8_1_0.woff") format("woff");
         font-display: swap;
       }
 
@@ -31,7 +33,14 @@
         overflow: hidden;
         font-family: "OfficinaSansITCStd-Book", sans-serif;
         font-weight: 500;
+		overflow: hidden;
       }
+		
+	#confetti {
+		height: 100%;
+        overflow: hidden;
+		
+		}
 
       h1,
       h2 {
@@ -336,10 +345,10 @@
     </div>
 
     <div class="white-background content">
-      <h2>Deine Quatiersplattform wird aktualisiert</h2>
+      <h2>Deine Quartiersplattform wird aktualisiert</h2>
       <p>
-        Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein
-        Quatier mit zugestalten.
+        Freue dich auf spannende neue Funktionen die du nutzen kannst um dein
+        Quartier mit zugestalten.
       </p>
       <p>Wir sind bald wieder online.</p>
     </div>
@@ -395,8 +404,8 @@
       ],
       clock: "0",
       rotate: false,
-      width: "1792",
-      height: "1040",
+	    width: window.innerWidth,
+      height: window.innerHeight,
       start_from_edge: false,
       respawn: true,
     };

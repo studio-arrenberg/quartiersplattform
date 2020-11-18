@@ -1190,7 +1190,8 @@ function my_post_title_updater( $post_id ) {
 function my_acf_admin_head() {
     ?>
     <style type="text/css">
-        .acf-field-5fa01d66b0f2f > .acf-label {display: none;}
+        .acf-field-5fa01d66b0f2f > .acf-label {display: none;} /* ap1 */
+		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
     </style>
     <?php
 }
@@ -1333,10 +1334,11 @@ function um_deregister_styles() {
 
   } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
-// // Activate WordPress Maintenance Mode
-// function wp_maintenance_mode() {
-// if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-// 	wp_redirect('https://ap1.arrenberg.studio/maintenance.html');
-// }
-// }
-// add_action('get_header', 'wp_maintenance_mode');
+
+// Activate WordPress Maintenance Mode
+function wp_maintenance_mode() {
+if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+	wp_redirect( get_site_url().'/maintenance.html');
+}
+}
+add_action('get_header', 'wp_maintenance_mode');
