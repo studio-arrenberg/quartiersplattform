@@ -1333,7 +1333,7 @@ function um_deregister_styles() {
 
   } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
-  // Activate WordPress Maintenance Mode
+// Activate WordPress Maintenance Mode
 function wp_maintenance_mode() {
 if (!current_user_can('edit_themes') || !is_user_logged_in()) {
 	wp_redirect('https://ap1.arrenberg.studio/maintenance.html');
