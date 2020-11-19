@@ -27,22 +27,14 @@ $author = get_the_author();
         <div class="content">
             <div class="pre-title">
                 
-            <!-- <?php echo $author; ?> 
-                 -->
-                <span class="date">
-                
-                <?php echo wp_date('j. F', strtotime(get_field('zeitpunkt'))); ?> 
-                
-                <span>
-
+                <?php // echo $author; ?> 
+                 
+                <span class="date"><?php echo wp_date('j. F', strtotime(get_field('zeitpunkt'))); ?> <span>
 
                 </div>
-            <h3 class="card-title">
-                <?php shorten_title(get_the_title(), '30'); ?>
-            </h3>
-            <p class="preview-text">
-                <?php  get_excerpt(get_the_content(), '55'); ?>
-            </p>
+                    <h3 class="card-title"><?php shorten_title(get_the_title(), '30'); ?></h3>
+                    <p class="preview-text"><?php  get_excerpt(get_the_content(), '55'); ?>
+                </p>
         </div>
     </a>
 </div>
