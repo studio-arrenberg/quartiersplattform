@@ -37,9 +37,9 @@ if ($terms_status) {
 <div class="card shadow anmerkung">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
-            <div class="pre-title"><?php echo $terms_status[0]->name; ?> <span class="version"><?php echo $terms_version[0]->name; ?></span> <span class="date"><?php echo get_the_date('j. F G:i'); ?><span></div>
+            <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>
             <h3 class="card-title">
-                <?php  shorten_title(get_field('text'), '100'); ?>
+                <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
         </div>
         <?php the_post_thumbnail( 'preview_m' ); ?>

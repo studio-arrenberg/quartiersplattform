@@ -1294,13 +1294,13 @@ button.toggle {
   margin-bottom: 5px;
 }
 
-.single-header h3 {
+.single-header h3, .large-header h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.single-header h3 {
+.single-header h3, .large-header h3 {
   color: #0091ff;
 }
 
@@ -1412,6 +1412,25 @@ button.toggle {
   .center-header-content h1 {
     font-size: 3.4rem;
   }
+}
+
+.anmerkungen{
+}
+
+
+.large-header{
+  min-height: 60vh;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  max-width: 800px;
+
+}
+
+.large-header h1 {
+  font-size: 4rem;
+  line-height: 4.3rem;
+  margin-top: 10px;
 }
 /* -------------------------------------------------------------------------- */
 
@@ -4225,9 +4244,9 @@ div.comment:first-of-type {
   /* Comments ------------------------------ */
 
   .comment-reply-title {
-    font-size: 5.6rem;
-    line-height: 1.2;
-    margin-bottom: 6rem;
+    font-size: 3.6rem;
+    line-height: 4rem;
+    margin-bottom: 40px;
   }
 
   .comment-respond p.comment-notes,

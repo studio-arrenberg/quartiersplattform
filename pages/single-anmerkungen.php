@@ -29,65 +29,72 @@ if ($terms_status) {
 
 ?>
 
-<main id="site-content" class="single" role="main">
+
+
+
+<main id="site-content" class="anmerkungen" role="main">
+
 
     <?php
 
-	if ( have_posts() ) {
+if ( have_posts() ) {
 
-		while ( have_posts() ) {
-			the_post();
+    while ( have_posts() ) {
+        the_post();
 
-	    ?>
+    ?>
 
 
-    <div class="single-header">
+    <div class="large-header">
         <!-- post title -->
-        <h1><?php the_title(); ?></h1>
-        <h4><?php echo $terms_status[0]->name; ?> <i><?php echo $terms_version[0]->name; ?></i></h4>
+        <h3><?php echo $terms_status[0]->name; ?>  <span class="date">    <?php echo $terms_version[0]->name; ?> </date></h3>
 
-        
+        <h1><?php  shorten_title(get_field('text'), '200'); ?> </h1>
+
 
     </div>
 
-    <p><?php the_field('text'); ?></p>
+    <!-- <p><?php the_field('text'); ?></p> -->
 
     <!-- author -->
 
-     <?php edit_post_link(); ?>
+    <?php edit_post_link(); ?>
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
-    <?php
-        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-            the_excerpt();
-        } else {
-            the_content( __( 'Continue reading', 'twentytwenty' ) );
-        }
-    ?>
+        <?php
+    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+        the_excerpt();
+    } else {
+        the_content( __( 'Continue reading', 'twentytwenty' ) );
+    }
+?>
+    </div>
 
         <!-- kommentare -->
         <?php			
-		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-	?>
+    if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+?>
 
-    <div class="comments-wrapper section-inner">
+        <div class="comments-wrapper section-inner">
 
-        <?php comments_template('', true); ?>
+            <?php comments_template('', true); ?>
 
-    </div><!-- .comments-wrapper -->
+        </div><!-- .comments-wrapper -->
 
     </div>
     <?php			
-            }
+        }
 
-		}
-	}
+    }
+}
 
-	?>
+?>
+
 
 </main><!-- #site-content -->
 
+<!-- das kann raus: -->
 <?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php get_footer(); ?>
