@@ -1176,7 +1176,7 @@ function my_post_title_updater( $post_id ) {
 		$my_post['post_title'] = $text;
 		wp_update_post( $my_post ); // Update the post into the database
 		// update taxonomy
-		wp_set_object_terms( $post_id, 'nuetzenberg', 'version_anmerkungen', false ); // change to status!
+		wp_set_object_terms( $post_id, 'arrenberg-update', 'version_anmerkungen', false ); // change to status!
 		wp_set_object_terms( $post_id, 'vorschlag', 'status_anmerkungen', false );
 
 		// FURTHER READING
