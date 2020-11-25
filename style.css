@@ -125,7 +125,8 @@ body {
   background: #f7f7f7;
   box-sizing: border-box;
   color: #000;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   font-size: 1.8rem;
   text-align: left;
 }
@@ -240,7 +241,8 @@ h6,
 .faux-heading {
   font-feature-settings: "lnum";
   font-variant-numeric: lining-nums;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
   font-weight: 500;
 }
 
@@ -248,7 +250,8 @@ h1,
 .heading-size-1 {
   font-size: 2.8rem;
   line-height: 3.1rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
 
 h2,
@@ -260,7 +263,8 @@ h3,
 .heading-size-3 {
   font-size: 1.8rem;
   line-height: 2rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
 
 h4,
@@ -300,7 +304,8 @@ i em,
 i i,
 cite em,
 cite i {
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
 
 big {
@@ -314,7 +319,8 @@ small {
 b,
 strong {
   font-weight: 500;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
 
 ins {
@@ -632,7 +638,8 @@ button,
 .pagination .next,
 .pagination .prev,
 .wp-block-file__button {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   padding: 15px 30px 13px 30px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -673,7 +680,7 @@ textarea {
   font-size: 1.8rem;
   max-width: 100%;
   width: 100%;
-  padding: 15px 30px 13px 30px;
+  padding: 15px 15px 13px 20px;
 }
 
 textarea {
@@ -1066,23 +1073,23 @@ button.toggle {
   margin: 0 auto;
   transition: all ease-in-out 1s;
 }
-.post-header{
+.post-header {
   background: #fff;
 }
-
 
 /*  BLURRY HEADER */
 
 @media (max-width: 782px) {
-  @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  @supports (
+    (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
+  ) {
     .post-header {
-      background-color: rgba(255, 255, 255, .7);
+      background-color: rgba(255, 255, 255, 0.7);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
     }
   }
 }
-
 
 .admin-bar #site-header {
   top: 32px;
@@ -1154,7 +1161,8 @@ button.toggle {
 
 .menu-container .current-menu-item > a {
   color: #0091ff;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
 
 .header-button {
@@ -1267,9 +1275,6 @@ button.toggle {
   }
 }
 
-
-
-
 /*	7a. Template: Single Template
 /* -------------------------------------------------------------------------- */
 .single {
@@ -1288,13 +1293,15 @@ button.toggle {
   margin-bottom: 5px;
 }
 
-.single-header h3, .large-header h3 {
+.single-header h3,
+.large-header h3 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.single-header h3, .large-header h3 {
+.single-header h3,
+.large-header h3 {
   color: #0091ff;
 }
 
@@ -1408,17 +1415,15 @@ button.toggle {
   }
 }
 
-.anmerkungen{
+.anmerkungen {
 }
 
-
-.large-header{
+.large-header {
   min-height: 60vh;
   display: flex;
   /* justify-content: center; */
   flex-direction: column;
   max-width: 800px;
-
 }
 
 .large-header h1 {
@@ -1512,7 +1517,8 @@ button.toggle {
 
 .has-drop-cap:not(:focus)::first-letter {
   color: #0091ff;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   font-size: 5.1em;
   font-weight: 500;
   margin: 0.05em 0.1em 0 0;
@@ -1539,9 +1545,9 @@ button.toggle {
 .entry-content .wp-block-pullquote,
 .entry-content .wp-block-quote.is-large,
 .entry-content .wp-block-quote.is-style-large {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
-
 
 /* Block Font Sizes -------------------------- */
 
@@ -2225,7 +2231,8 @@ figure.wp-block-table.is-style-stripes {
 /* Font Families ----------------------------- */
 
 .entry-content {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   letter-spacing: normal;
 }
 
@@ -2241,9 +2248,9 @@ figure.wp-block-table.is-style-stripes {
 .entry-content address,
 .entry-content .wp-caption-text,
 .entry-content .wp-block-file {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
-
 
 /* Alignment Classes ------------------------- */
 
@@ -2375,18 +2382,25 @@ figure.wp-block-table.is-style-stripes {
 
 /*	12. Comments
 /* -------------------------------------------------------------------------- */
-.comment{
+.comments-wrapper, .comment-respond {
+  max-width: 600px;
+  margin: 15px auto;
+}
+.comment-respond{
+  margin-top: 30px;
+}
+.comment {
   margin-top: 5px;
   margin-bottom: 5px;
 }
-.comment-body{
+.comment-body {
   background: #fff;
   border-radius: 20px;
   padding: 5px 15px 10px 5px;
   display: flex;
 }
-.comment-content{
- flex-grow: 1;
+.comment-content {
+  flex-grow: 1;
 }
 
 .comment-body img {
@@ -2398,34 +2412,54 @@ figure.wp-block-table.is-style-stripes {
   width: 55px;
 }
 
-.comment-author{
+.comment-author {
   display: inline;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
-
 
 .comment-body p {
   display: inline;
-
 }
 
-.comment-metadata{
+.comment-metadata {
   font-size: 1.4rem;
   display: flex;
   justify-content: space-between;
 }
-.depth-2{
+.depth-1 {
+margin-top: 10px;
+}
+.depth-2 {
   max-width: 90%;
   margin-left: 10%;
 }
 
-
-.depth-3{
+.depth-3 {
   max-width: 95%;
-  margin-left: 15%; 
+  margin-left: 15%;
 }
-.comment-reply-title, #email-notes{
+#email-notes {
   display: none;
+}
+
+.comment-reply-title{
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comment-reply-title small{
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+@media (min-width: 782px) {
+  .comment-reply-title{
+    font-size: 1.9rem;
+  }
 }
 /* -------------------------------------------------------------------------- */
 
@@ -2543,16 +2577,17 @@ figure.wp-block-table.is-style-stripes {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   letter-spacing: normal;
 }
 
 .widget-content cite,
 .widget-content figcaption,
 .widget-content .wp-caption-text {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
-
 
 /* Base List Widget -------------------------- */
 
@@ -3349,7 +3384,6 @@ figure.wp-block-table.is-style-stripes {
     width: calc(100% - 8rem);
   }
 
-
   /* Site Pagination ----------------------- */
 
   .pagination-separator {
@@ -3655,7 +3689,6 @@ figure.wp-block-table.is-style-stripes {
 
   /* Comments ------------------------------ */
 
-
   /* Site Pagination ----------------------- */
 
   .pagination .nav-links {
@@ -3835,7 +3868,6 @@ figure.wp-block-table.is-style-stripes {
   }
 
   /* Comments ------------------------------ */
-
 
   /* Site Pagination ----------------------- */
 
@@ -4144,7 +4176,8 @@ figure.wp-block-table.is-style-stripes {
 .card .pre-title {
   color: #0091ff;
   font-size: 1.5rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
   display: flex;
   justify-content: space-between;
 }
@@ -4152,12 +4185,14 @@ figure.wp-block-table.is-style-stripes {
 .card .date {
   color: #0091ff;
   font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   margin-bottom: 3px;
 }
 
 .card .card-title {
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
   font-size: 1.8rem;
   line-height: 2rem;
   margin: 0px;
@@ -4400,12 +4435,11 @@ figure.wp-block-table.is-style-stripes {
     margin: 10px 0px 0px 0px;
   }
 
-  .card-container__large .card{ 
+  .card-container__large .card {
     transform: scale(1.8);
-margin: 100px 0px;
+    margin: 100px 0px;
   }
 }
-
 
 .anmerkung .pre-title {
   margin-bottom: 5px;
@@ -4606,7 +4640,8 @@ margin: 100px 0px;
 .um-account-heading,
 .um-field-image label {
   font-size: 2rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
   margin-top: 25px;
   margin-bottom: 5px;
 }
@@ -4623,15 +4658,16 @@ margin: 100px 0px;
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(255, 255, 255, 0.9);
   z-index: 20000;
-
 }
 
 /* if backdrop support: very transparent and blurred */
-@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+@supports (
+  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
+) {
   .um-modal-overlay {
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, 0.5);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
   }
@@ -4725,7 +4761,8 @@ input[type="file"] {
   padding-top: 5px !important;
   height: 50px !important;
 
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   font-size: 1.7rem;
 }
 
@@ -4733,7 +4770,8 @@ input[type="file"] {
   width: 145px;
   height: 44px;
   padding-top: 5px !important;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+    sans-serif;
   font-size: 1.7rem;
   padding-bottom: 5px !important;
 }
@@ -4750,7 +4788,8 @@ input[type="file"] {
   width: calc(100% - 30px);
   max-width: 1000px;
   font-size: 2.4rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
   margin-bottom: 10px;
 }
 .upload {
@@ -4786,19 +4825,15 @@ input[type="file"] {
   margin-top: 25px;
 }
 
-.um-field-c{
+.um-field-c {
   width: 100%;
   max-width: 250px;
-
 }
 
 @media (max-width: 782px) {
-
-  .um-field-c{
+  .um-field-c {
     margin-bottom: 20px;
-  
   }
-
 }
 
 .um-left {

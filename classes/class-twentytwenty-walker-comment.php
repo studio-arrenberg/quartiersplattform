@@ -53,9 +53,9 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 
 	?>
 
-		<div class="comment-content">
+        <div class="comment-content">
 
-        <?php
+            <?php
 							printf(
 								'<span class="comment-author">%1$s</span>',
 								esc_html( $comment_author ),
@@ -68,36 +68,35 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 							?>
 
 
-        <?php
+            <?php
 
 						comment_text();
 
 						if ( '0' === $comment->comment_approved ) {
 							?>
-						<p class="comment-awaiting-moderation">
-							<?php _e( 'Your comment is awaiting moderation.', 'twentytwenty' ); ?></p>
-						<?php
+            <p class="comment-awaiting-moderation">
+                <?php _e( 'Your comment is awaiting moderation.', 'twentytwenty' ); ?></p>
+            <?php
 						}
 
 						?>
 
 
-        <div class="comment-metadata">
+            <div class="comment-metadata">
                 <?php
-								/* translators: 1: Comment date, 2: Comment time. */
-								$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentytwenty' ), get_comment_date( '', $comment ), get_comment_time() );
-								?>
+					/* translators: 1: Comment date, 2: Comment time. */
+					$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentytwenty' ), get_comment_date( '', $comment ), get_comment_time() );
+					?>
                 <time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo esc_attr( $comment_timestamp ); ?>">
                     <?php echo esc_html( $comment_timestamp ); ?>
                 </time>
-            <?php
-							if ( get_edit_comment_link() ) {
-								echo ' <span aria-hidden="true">&bull;</span> <a class="comment-edit-link" href="' . esc_url( get_edit_comment_link() ) . '">' . __( 'Edit', 'twentytwenty' ) . '</a>';
-							}
-							?>
+                <?php
+					if ( get_edit_comment_link() ) {
+						echo ' <span aria-hidden="true"></span> <a class="comment-edit-link" href="' . esc_url( get_edit_comment_link() ) . '">' . __( 'Edit', 'twentytwenty' ) . '</a>';
+						}
+				?>
 
-        <?php
-
+                <?php
 					$comment_reply_link = get_comment_reply_link(
 						array_merge(
 							$args,
@@ -117,7 +116,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 						?>
 
 
-            <?php
+                <?php
 				if ( $comment_reply_link ) {
 					echo $comment_reply_link; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Link is escaped in https://developer.wordpress.org/reference/functions/get_comment_reply_link/
 				}
@@ -125,18 +124,18 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 					//echo ' <span class="by-post-author">' . __( 'By Post Author', 'twentytwenty' ) . '</span>';
 				//}
 			?>
-			        </div><!-- .comment-metadata -->
-			        </div><!-- .comment-metadata -->
+            </div><!-- .comment-metadata -->
+        </div><!-- .comment-metadata -->
 
-					</div>
+    </div>
 
-        <?php
+    <?php
 					}
 					?>
 
-				</div><!-- .comment-body -->
+    </div><!-- .comment-body -->
 
-        <?php
+    <?php
 		}
 	}
 }
