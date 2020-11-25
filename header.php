@@ -23,7 +23,6 @@
     <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
 
     <?php wp_head(); ?>
-    <script src="<?php echo get_template_directory_uri()?>/assets/embla-carousel-master/embla-carousel.umd.js"> </script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-60x60.png">

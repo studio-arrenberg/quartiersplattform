@@ -131,7 +131,8 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 
 #### Link Card
 ```php
-link_card('Hallo Welt','Text....','/assets/images/400x200.png', '/veranstaltungen');
+link_card('Hallo Welt','Text....',get_template_directory_uri().'/assets/images/400x200.png', '/veranstaltungen');
+link_card('Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/veranstaltungen');
 ```
 #### List Card
 ```php 
