@@ -1342,3 +1342,45 @@ function um_deregister_styles() {
 // }
 // }
 // add_action('get_header', 'wp_maintenance_mode');
+
+// jQuery Update
+/** * Install latest jQuery version 3.5.1. */
+// if (!is_admin()) {
+// 	wp_deregister_script('jquery');
+// 	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false);
+// 	wp_enqueue_script('jquery');
+// }
+
+// jQuery deregister + min
+function my_init() {
+    if (!is_admin()) {
+
+		// jQuery min
+		wp_deregister_script('jquery-ui-draggable');
+		wp_deregister_script('jquery-ui-mouse');
+		wp_deregister_script('jquery-ui-resizable');
+		wp_deregister_script('jquery-ui-sortable');
+		wp_deregister_script('jquery-ui-widget');
+		wp_deregister_script('jquery-ui-selectable');
+		wp_deregister_script('jquery-ui-core');
+
+		// jQuery
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', false);
+    }
+}
+add_action('init', 'my_init');
+
+
+
+// register embla carousel script
+add_action("wp_enqueue_scripts", "embla_carousel");
+function embla_carousel() { 
+    wp_register_script('embla-carousel', 
+		get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js',   //
+        // array ('jquery', 'jquery-ui'),                  //depends on these, however, they are registered by core already, so no need to enqueue them.
+        false, false);
+    wp_enqueue_script('embla-carousel');
+      
+}
+

@@ -25,6 +25,7 @@
                 <?php echo get_query_var('link_card_text'); ?>
             </p>
         </div>
-        <img src="<?php echo get_template_directory_uri(); echo get_query_var('link_card_bg'); ?>" alt="" />
+        <!-- <img src="<?php echo get_template_directory_uri(); echo get_query_var('link_card_bg'); ?>" alt="" /> -->
+        <img src="<?php echo get_query_var('link_card_bg'); ?>" alt="" />
     </a>
 </div>
