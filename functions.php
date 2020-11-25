@@ -1176,9 +1176,12 @@ function my_post_title_updater( $post_id ) {
 		$my_post['post_title'] = $text;
 		wp_update_post( $my_post ); // Update the post into the database
 		// update taxonomy
-		wp_set_object_terms( $post_id, 'arrenberg-update', 'version_anmerkungen', false ); // change to status!
-		wp_set_object_terms( $post_id, 'vorschlag', 'status_anmerkungen', false );
-
+		if(!has_term('', 'anmerkungen_status') ){
+			// do something
+			wp_set_object_terms( $post_id, 'arrenberg-update', 'anmerkungen_version', false ); // change to status!
+			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
+		}
+		
 		// FURTHER READING
 		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
 
@@ -1372,15 +1375,20 @@ function my_init() {
 add_action('init', 'my_init');
 
 
-
 // register embla carousel script
 add_action("wp_enqueue_scripts", "embla_carousel");
 function embla_carousel() { 
     wp_register_script('embla-carousel', 
-		get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js',   //
-        // array ('jquery', 'jquery-ui'),                  //depends on these, however, they are registered by core already, so no need to enqueue them.
-        false, false);
+		get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
       
 }
 
+// veranstaltungen archive custom order
+add_action( 'pre_get_posts', function ( $query ) {
+    if ( is_post_type_archive( 'veranstaltungen' ) && $query->is_main_query() ) {
+        $query->set( 'orderby', 'meta_value' );
+        $query->set( 'order', 'DESC' );
+        $query->set( 'meta_key', 'zeitpunkt' );
+    }
+} );

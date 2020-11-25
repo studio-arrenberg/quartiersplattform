@@ -102,7 +102,7 @@ get_header();
 	<?php // link_card('Menschen und Geschichten am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); ?>
 	
 	<!-- arrenberg farm link card -->
-    <?php link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+    <?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
 
     <!-- energie ampel -->
     <?php get_template_part('components/energie_ampel'); ?>
