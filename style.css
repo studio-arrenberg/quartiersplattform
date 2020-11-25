@@ -2398,6 +2398,7 @@ figure.wp-block-table.is-style-stripes {
   border-radius: 20px;
   padding: 5px 15px 10px 5px;
   display: flex;
+  align-items: center;
 }
 .comment-content {
   flex-grow: 1;
@@ -2407,9 +2408,10 @@ figure.wp-block-table.is-style-stripes {
   display: block;
   float: left;
   height: 100%;
-  margin-right: 5px;
+  margin-right: 10px;
   border-radius: 15px;
   width: 55px;
+  align-self: flex-start;
 }
 
 .comment-author {
@@ -2439,7 +2441,7 @@ margin-top: 10px;
   max-width: 95%;
   margin-left: 15%;
 }
-#email-notes {
+#email-notes, .logged-in-as {
   display: none;
 }
 
@@ -2457,8 +2459,18 @@ margin-top: 10px;
 }
 
 @media (min-width: 782px) {
-  .comment-reply-title{
+  .comment-body img{
+    width: 70px;
+  }
+  .comment-author{
+    font-size: 2rem;
+  }
+  .comment-reply-title, .comment-reply-title small{
     font-size: 1.9rem;
+  }
+  .comment-metadata{
+    font-size: 1.6rem;
+
   }
 }
 /* -------------------------------------------------------------------------- */
@@ -4322,6 +4334,10 @@ margin-top: 10px;
   padding-left: 10px;
 }
 
+.comment-count{
+  margin-top: 3px;
+  margin-bottom: -6px;
+}
 /* Tablet - 2 slides in viewport */
 @media (min-width: 782px) {
   .embla-one .embrela-slide {
@@ -4452,6 +4468,15 @@ margin-top: 10px;
 .anmerkung .content {
   padding: 10px 10px;
 }
+
+.in-bearbeitung .pre-title, .in-bearbeitung .date{
+color: red !important;
+}
+
+
+.umgesetzt .pre-title, .umgesetzt .date{
+  color: green !important;
+  }
 
 /*card-container F.E. ON ARCHIVE PAGE */
 
