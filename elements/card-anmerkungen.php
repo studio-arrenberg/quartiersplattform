@@ -15,34 +15,14 @@
 ?>
 
 <?php
-
 $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
-// $terms_status_2 = get_the_terms($post->ID, 'feedback_status' );
 $terms_version = "";
-
 if ($terms_status) {
     $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
 }
-
 ?>
 
-<?php // echo $terms_status[0]->name; ?>
-<?php // echo $terms_version[0]->name; ?>
-
-<?php
-// Status = Vorschlag => In Bearbeitung => Umgesetzt
-// Version = *Release Nützenbeerg* oder *V1.2 Nützenberg* oder *Release V1.2*
-
-// print_r($terms_status);
-// echo "<br>";
-// print_r($terms_version);
-// echo "<br>";
-// print_r($terms_status_2);
-
-?>
-
-
-<div class="card shadow anmerkung">
+<div class="card shadow anmerkung <?php echo $terms_status[0]->name; ?>">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>

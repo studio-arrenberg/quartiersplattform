@@ -14,23 +14,12 @@ get_header();
 ?>
 
 <?php
-// Todo
-// Display Text if needed
-// Get status + Version
-// color ???
-
-// get Terms
-$terms_status = get_the_terms( $post->ID, 'status_anmerkungen' );
+$terms_status = get_the_terms( $post->ID, 'anmerkungen_status' );
 $terms_version = "";
-
 if ($terms_status) {
-    $terms_version = get_the_terms( $post->ID, 'version_anmerkungen' );
+    $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
 }
-
 ?>
-
-
-
 
 <main id="site-content" class="anmerkungen" role="main">
 
