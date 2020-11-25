@@ -44,8 +44,6 @@ get_header();
         <!-- projekt / akteur -->
         <!-- not ready yet -->
 
-        <!-- datum -->
-
         <!-- Bild -->
         <img class="single-header-image"src="<?php echo esc_url( $image_url ) ?>" />
 
