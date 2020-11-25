@@ -13,14 +13,6 @@
 get_header();
 ?>
 
-<?php
-$terms_status = get_the_terms( $post->ID, 'anmerkungen_status' );
-$terms_version = "";
-if ($terms_status) {
-    $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
-}
-?>
-
 <main id="site-content" class="anmerkungen" role="main">
 
 
@@ -35,17 +27,7 @@ if ( have_posts() ) {
 
 <div class="card-container  card-container__center card-container__large ">
     
-    <div class="card  anmerkung">
-            <div class="content">
-                <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>
-                <h3 class="card-title">
-                    <?php  shorten_title(get_field('text'), '200'); ?>
-                </h3>
-            </div>
-    </div>
-    </div>
-
-    <!-- <p><?php the_field('text'); ?></p> -->
+    <?php get_template_part('elements/card', get_post_type()); ?>
 
     <!-- author -->
 

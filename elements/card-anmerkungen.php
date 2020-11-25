@@ -20,6 +20,7 @@ $terms_version = "";
 if ($terms_status) {
     $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
 }
+$comment_count = get_comment_count($post->ID)['approved'];
 ?>
 
 <div class="card shadow anmerkung <?php echo $terms_status[0]->name; ?>">
@@ -30,6 +31,9 @@ if ($terms_status) {
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
         </div>
-        <?php the_post_thumbnail( 'preview_m' ); ?>
+        <!-- bitte author anzeigen :::: -->
+        <p><?php get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></p>
+        <!-- bitte author anzeigen :::: -->
+        <p><?php if($comment_count > 0) echo $comment_count." Kommentare"; ?></p>
     </a>
 </div>
