@@ -23,7 +23,7 @@ if ($terms_status) {
 $comment_count = get_comment_count($post->ID)['approved'];
 ?>
 
-<div class="card shadow anmerkung <?php echo $terms_status[0]->name; ?>">
+<div class="card shadow anmerkung <?php echo $terms_status[0]->slug; ?>">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>
