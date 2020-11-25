@@ -44,14 +44,16 @@ if ( have_posts() ) {
 
     ?>
 
-
-    <div class="large-header">
-        <!-- post title -->
-        <h3><?php echo $terms_status[0]->name; ?>  <span class="date">    <?php echo $terms_version[0]->name; ?> </date></h3>
-
-        <h1><?php  shorten_title(get_field('text'), '200'); ?> </h1>
-
-
+<div class="card-container  card-container__center card-container__large ">
+    
+    <div class="card  anmerkung">
+            <div class="content">
+                <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>
+                <h3 class="card-title">
+                    <?php  shorten_title(get_field('text'), '200'); ?>
+                </h3>
+            </div>
+    </div>
     </div>
 
     <!-- <p><?php the_field('text'); ?></p> -->
@@ -94,7 +96,6 @@ if ( have_posts() ) {
 
 </main><!-- #site-content -->
 
-<!-- das kann raus: -->
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+
 
 <?php get_footer(); ?>

@@ -32,9 +32,8 @@ $settings = array(
 			<?php while ( have_posts() ) : the_post(); ?>
 				
 				<!-- <h1><?php the_title(); ?></h1> -->
-				
 				<!-- <?php the_content(); ?> -->
-				
+
 				<!-- <p>My custom field: <?php the_field('my_custom_field'); ?></p> -->
 				
 				<?php acf_form($settings); ?>

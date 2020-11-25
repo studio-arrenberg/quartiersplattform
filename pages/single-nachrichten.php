@@ -15,15 +15,15 @@ get_header();
 
 <main id="site-content" class="single" role="main">
 
-    <?php
+<?php
 
 	if ( have_posts() ) {
 
 		while ( have_posts() ) {
 			the_post();
-			
+
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -32,52 +32,40 @@ get_header();
 
 			?>
 
-
     <div class="single-header">
         <!-- post title -->
         <div class="single-header-content">
-        <h1><?php the_title(); ?></h1>
-        
-        <h3><?php if (is_admin()) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo get_the_date('j. F'); ?></span> </h3>
-
+            <h1><?php the_title(); ?></h1>
+            <h3><?php if (is_admin()) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo get_the_date('j. F'); ?></span> </h3>
         </div>
-        <!-- projekt / akteur -->
-        <!-- not ready yet -->
-
-        <!-- Bild -->
-        <img class="single-header-image"src="<?php echo esc_url( $image_url ) ?>" />
-
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
     </div>
-    <!-- Eventtext felder gibt es noch nicht -->
+    
+    <!-- ACF test -->
+    <p><?php the_field('begin'); ?></p>
+    <p><?php the_field('abschluss'); ?></p>
+
+
     <div class="single-content">
-        <!-- not ready yet -->
-    </div>
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
-    <?php
-        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-            the_excerpt();
-        } else {
-            the_content( __( 'Continue reading', 'twentytwenty' ) );
-        }
-    ?>
 
     </div>
 
+   <!-- Gutenberg Editor Content -->
+   <div class="gutenberg-content">
+        <?php
+            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                the_excerpt();
+            } else {
+                the_content( __( 'Continue reading', 'twentytwenty' ) );
+            }
+        ?>
 
-    <!-- calendar download -->
-    <!-- not ready yet -->
-    <?php calendar_download($post); ?>
+    </div>
+
+    <!-- Backend edit link -->
     <?php edit_post_link(); ?>
 
-    <!-- card: projekt / akteur -->
-    <!-- not ready yet -->
 
-    <!-- map: adresse -->
-    <!-- not ready yet -->
-
-    <!-- cards: weitere veranstaltungen -->
-    <!-- not ready yet -->
 
 
     <?php			
@@ -88,5 +76,6 @@ get_header();
 	?>
 
 </main><!-- #site-content -->
+
 
 <?php get_footer(); ?>

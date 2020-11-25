@@ -125,17 +125,9 @@ body {
   background: #f7f7f7;
   box-sizing: border-box;
   color: #000;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.8rem;
   text-align: left;
-}
-
-@supports (font-variation-settings: normal) {
-  body {
-    font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
-      "Helvetica Neue", Helvetica, sans-serif;
-  }
 }
 
 *,
@@ -248,7 +240,7 @@ h6,
 .faux-heading {
   font-feature-settings: "lnum";
   font-variant-numeric: lining-nums;
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 500;
 }
 
@@ -256,7 +248,7 @@ h1,
 .heading-size-1 {
   font-size: 2.8rem;
   line-height: 3.1rem;
-  font-family: "OfficinaSansITCStd-Book";
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 h2,
@@ -268,7 +260,7 @@ h3,
 .heading-size-3 {
   font-size: 1.8rem;
   line-height: 2rem;
-  font-family: "OfficinaSansITCStd-Book";
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 h4,
@@ -308,7 +300,7 @@ i em,
 i i,
 cite em,
 cite i {
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 big {
@@ -322,7 +314,7 @@ small {
 b,
 strong {
   font-weight: 500;
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 ins {
@@ -640,8 +632,7 @@ button,
 .pagination .next,
 .pagination .prev,
 .wp-block-file__button {
-  font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
-    "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   padding: 15px 30px 13px 30px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -720,6 +711,7 @@ button,
 .pagination .next,
 .pagination .prev,
 .wp-block-file .wp-block-file__button,
+.wp-block-button__link,
 input[type="button"],
 input[type="reset"],
 input[type="submit"],
@@ -1063,7 +1055,6 @@ button.toggle {
 /* -------------------------------------------------------------------------- */
 
 #site-header {
-  background: #fff;
   display: block;
   position: fixed;
   padding: 10px 15px 20px 15px;
@@ -1075,13 +1066,16 @@ button.toggle {
   margin: 0 auto;
   transition: all ease-in-out 1s;
 }
+.post-header{
+  background: #fff;
+}
 
 
 /*  BLURRY HEADER */
 
 @media (max-width: 782px) {
   @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
-    #site-header {
+    .post-header {
       background-color: rgba(255, 255, 255, .7);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
@@ -1160,7 +1154,7 @@ button.toggle {
 
 .menu-container .current-menu-item > a {
   color: #0091ff;
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .header-button {
@@ -1518,8 +1512,7 @@ button.toggle {
 
 .has-drop-cap:not(:focus)::first-letter {
   color: #0091ff;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 5.1em;
   font-weight: 500;
   margin: 0.05em 0.1em 0 0;
@@ -1546,22 +1539,9 @@ button.toggle {
 .entry-content .wp-block-pullquote,
 .entry-content .wp-block-quote.is-large,
 .entry-content .wp-block-quote.is-style-large {
-  font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
-    "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-@supports (font-variation-settings: normal) {
-  .has-drop-cap:not(:focus)::first-letter,
-  .entry-content .wp-block-archives,
-  .entry-content .wp-block-categories,
-  .entry-content .wp-block-latest-posts,
-  .entry-content .wp-block-latest-comments,
-  .entry-content .wp-block-cover-image p,
-  .entry-content .wp-block-pullquote {
-    font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
-      "Helvetica Neue", Helvetica, sans-serif;
-  }
-}
 
 /* Block Font Sizes -------------------------- */
 
@@ -2245,8 +2225,7 @@ figure.wp-block-table.is-style-stripes {
 /* Font Families ----------------------------- */
 
 .entry-content {
-  font-family: NonBreakingSpaceOverride, "OfficinaSansITCStd-Book", Garamond,
-    "Times New Roman", serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   letter-spacing: normal;
 }
 
@@ -2262,27 +2241,9 @@ figure.wp-block-table.is-style-stripes {
 .entry-content address,
 .entry-content .wp-caption-text,
 .entry-content .wp-block-file {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-@supports (font-variation-settings: normal) {
-  .entry-content h1,
-  .entry-content h2,
-  .entry-content h3,
-  .entry-content h4,
-  .entry-content h5,
-  .entry-content h6,
-  .entry-content cite,
-  .entry-content figcaption,
-  .entry-content table,
-  .entry-content address,
-  .entry-content .wp-caption-text,
-  .entry-content .wp-block-file {
-    font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
-      "Helvetica Neue", Helvetica, sans-serif;
-  }
-}
 
 /* Alignment Classes ------------------------- */
 
@@ -2414,315 +2375,58 @@ figure.wp-block-table.is-style-stripes {
 
 /*	12. Comments
 /* -------------------------------------------------------------------------- */
-
-/* Comment Headers ----------------------------- */
-
-.comments-wrapper {
-  margin-top: 5rem;
+.comment{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.comment-body{
+  background: #fff;
+  border-radius: 20px;
+  padding: 5px 15px 10px 5px;
+  display: flex;
+}
+.comment-content{
+ flex-grow: 1;
 }
 
-.comment-reply-title {
-  margin: 0 0 4rem 0;
-  text-align: center;
+.comment-body img {
+  display: block;
+  float: left;
+  height: 100%;
+  margin-right: 5px;
+  border-radius: 15px;
+  width: 55px;
 }
 
-/* Comment Item ----------------------------- */
-
-/* COMMENT HEADER */
-
-.comments .comment,
-.comments .pingback,
-.comments .trackback,
-.comments .review {
-  padding-top: 3.5rem;
+.comment-author{
+  display: inline;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-div.comment:first-of-type {
-  margin-top: 3.5rem;
-  padding-top: 0;
+
+.comment-body p {
+  display: inline;
+
 }
 
-.comments .comments-header + div {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.comment-body {
-  position: relative;
-}
-
-.comment .comment {
-  padding-left: 5%;
-}
-
-.comment-meta {
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  min-height: 5rem;
-  padding-left: 5rem;
-  position: relative;
-}
-
-.hide-avatars .comment-meta {
-  min-height: 0;
-  padding-left: 0;
-}
-
-.comment-meta a {
-  color: inherit;
-}
-
-.comment-author {
-  font-size: 1.8rem;
-  font-weight: 500;
-  letter-spacing: -0.027777778em;
-}
-
-.comment-author a {
-  text-decoration: underline;
-}
-
-.comment-author a:hover,
-.comment-author a:focus {
-  text-decoration: none;
-}
-
-.comment-meta .avatar {
-  height: 4rem;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4rem;
-}
-
-.comment-author .url {
-  text-decoration: underline;
-}
-
-.comment-metadata {
-  color: #6d6d6d;
+.comment-metadata{
   font-size: 1.4rem;
-  font-weight: 500;
-  margin-top: 0.6rem;
-}
-
-.comment-metadata a {
-  text-decoration: none;
-}
-
-.comment-metadata a:focus,
-.comment-metadata a:hover {
-  text-decoration: underline;
-}
-
-/* COMMENT CONTENT */
-
-.comment-content.entry-content
-  > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.is-style-wide) {
-  width: 100%;
-}
-
-.comment-content.entry-content .alignleft {
-  /*rtl:ignore*/
-  margin-left: 0;
-}
-
-.comment-content.entry-content .alignright {
-  /*rtl:ignore*/
-  margin-right: 0;
-}
-
-/* COMMENT FOOTER */
-
-.comment-footer-meta {
-  align-items: center;
   display: flex;
-  flex-wrap: wrap;
-  font-size: 1.2rem;
-  font-weight: 500;
-  justify-content: flex-start;
-  letter-spacing: 0.030833333em;
-  line-height: 1;
-  margin: 1.5rem 0 -1rem -1.5rem;
-  text-transform: uppercase;
-}
-
-.comment-footer-meta > * {
-  margin: 0 0 1rem 1.5rem;
-}
-
-.comment-reply-link {
-  background-color: #0091ff;
-  color: #fff;
-  display: block;
-  padding: 0.7rem;
-}
-
-.bypostauthor .comment-footer-meta .by-post-author {
-  display: block;
-}
-
-.comment-footer-meta a {
-  text-decoration: none;
-}
-
-.comment-footer-meta a:focus,
-.comment-footer-meta a:hover {
-  text-decoration: underline;
-}
-
-/* Pingbacks & Trackbacks ------------------------- */
-
-.pingback .comment-meta,
-.trackback .comment-meta {
-  padding-left: 0;
-}
-
-/* Comments Pagination ---------------------------- */
-
-.comments-pagination {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 6rem;
-  text-align: center;
+}
+.depth-2{
+  max-width: 90%;
+  margin-left: 10%;
 }
 
-.comments-pagination.only-next {
-  justify-content: flex-end;
-}
 
-.comments-pagination .page-numbers {
+.depth-3{
+  max-width: 95%;
+  margin-left: 15%; 
+}
+.comment-reply-title, #email-notes{
   display: none;
-  text-decoration: none;
 }
-
-.comments-pagination .page-numbers:focus,
-.comments-pagination .page-numbers:hover {
-  text-decoration: underline;
-}
-
-.comments-pagination .prev,
-.comments-pagination .next {
-  display: block;
-}
-
-.comments-pagination .prev {
-  left: 0;
-}
-
-.comments-pagination .next {
-  right: 0;
-  text-align: right;
-}
-
-/* Comment Respond ---------------------------- */
-
-.comment-respond::after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
-.comment-respond .comment-notes,
-.comment-respond .logged-in-as {
-  color: #6d6d6d;
-  font-size: 1.8rem;
-  line-height: 1.4;
-  margin: -3rem 0 4rem 0;
-  text-align: center;
-}
-
-.comment-respond .comment-notes a,
-.comment-respond .logged-in-as a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.comment-respond .comment-notes a:focus,
-.comment-respond .comment-notes a:hover,
-.comment-respond .logged-in-as a:focus,
-.comment-respond .logged-in-as a:hover {
-  text-decoration: underline;
-}
-
-.comment-respond p {
-  line-height: 1.1;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.comment-respond p:not(.comment-notes) {
-  max-width: 58rem;
-}
-
-.comment-form-cookies-consent {
-  align-items: baseline;
-  display: flex;
-}
-
-.comment-respond > p:last-of-type {
-  margin-bottom: 0;
-}
-
-.comment-respond label {
-  display: block;
-}
-
-.comment-respond input[type="checkbox"] + label {
-  font-size: 1.5rem;
-  line-height: 1.25;
-}
-
-.comment-respond input[type="text"],
-.comment-respond input[type="email"],
-.comment-respond textarea {
-  margin-bottom: 0;
-}
-
-.comment-respond textarea {
-  height: 15rem;
-}
-
-.comment-respond #submit {
-  display: block;
-}
-
-.comment-respond .comments-closed {
-  text-align: center;
-}
-
-/* Reply Respond ---------------------------- */
-
-.comments .comment-respond {
-  padding: 3rem 0 0;
-}
-
-.comments .comment-respond .comment-reply-title,
-.comments .comment-respond .comment-notes,
-.comments .comment-respond .logged-in-as {
-  text-align: left;
-}
-
-.comment-reply-title small {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: 500;
-  letter-spacing: -0.0277em;
-  margin: 0.5rem 0 0 0;
-  white-space: nowrap;
-}
-
-.comment-reply-title small a {
-  text-decoration: none;
-}
-
-.comment-reply-title small a:focus,
-.comment-reply-title small a:hover {
-  text-decoration: underline;
-}
-
 /* -------------------------------------------------------------------------- */
 
 /*	13. Site Pagination
@@ -2839,26 +2543,16 @@ div.comment:first-of-type {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-  font-family: NonBreakingSpaceOverride, "OfficinaSansITCStd-Book", Garamond,
-    "Times New Roman", serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   letter-spacing: normal;
 }
 
 .widget-content cite,
 .widget-content figcaption,
 .widget-content .wp-caption-text {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
 }
 
-@supports (font-variation-settings: normal) {
-  .widget-content cite,
-  .widget-content figcaption,
-  .widget-content .wp-caption-text {
-    font-family: "OfficinaSansITCStd-Book", -apple-system, BlinkMacSystemFont,
-      "Helvetica Neue", Helvetica, sans-serif;
-  }
-}
 
 /* Base List Widget -------------------------- */
 
@@ -3655,100 +3349,6 @@ div.comment:first-of-type {
     width: calc(100% - 8rem);
   }
 
-  /* Comments ------------------------------ */
-
-  .comments-wrapper {
-    margin-top: 8rem;
-  }
-
-  .comment-reply-title {
-    margin-bottom: 4.6rem;
-  }
-
-  .comment-respond p.comment-notes,
-  .comment-respond p.logged-in-as {
-    font-size: 1.8rem;
-    letter-spacing: -0.025em;
-    margin: -2.5rem 0 4.4rem 0;
-  }
-
-  .comments .comment,
-  .comments .pingback,
-  .comments .trackback,
-  .comments .review {
-    padding-top: 5rem;
-  }
-
-  div.comment:first-of-type {
-    margin-top: 5rem;
-  }
-
-  .comment-meta {
-    margin-bottom: 2rem;
-    min-height: 6rem;
-    padding: 0.3rem 0 0 7.5rem;
-  }
-
-  .comment-meta .avatar {
-    display: block;
-    height: 6rem;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 6rem;
-  }
-
-  .comment-author {
-    font-size: 2.4rem;
-  }
-
-  .comment-metadata {
-    font-size: 1.8rem;
-    margin-top: 0.8rem;
-  }
-
-  .comment-footer-meta {
-    margin-top: 2.5rem;
-  }
-
-  .comments-pagination {
-    margin-top: 8rem;
-  }
-
-  /* PINGBACKS & TRACKBACKS */
-
-  .pingback .comment-body {
-    padding: 0;
-  }
-
-  /* COMMENT RESPOND */
-
-  .comment-respond p {
-    margin-bottom: 2.5rem;
-  }
-
-  .comment-form p.logged-in-as {
-    margin: -2.5rem 0 4.4rem 0;
-  }
-
-  .comment-respond .comment-form-author,
-  .comment-respond .comment-form-email {
-    float: left;
-    width: calc(50% - 1rem);
-  }
-
-  .comment-respond .comment-form-email {
-    margin-left: 2rem;
-  }
-
-  .comments .comment-respond {
-    padding: 5rem 0 0;
-  }
-
-  .comment-reply-title small {
-    display: inline;
-    margin: 0 0 0 0.5rem;
-  }
 
   /* Site Pagination ----------------------- */
 
@@ -4055,13 +3655,6 @@ div.comment:first-of-type {
 
   /* Comments ------------------------------ */
 
-  .comment-meta {
-    padding-left: 0;
-  }
-
-  .comment-meta .avatar {
-    left: -8rem;
-  }
 
   /* Site Pagination ----------------------- */
 
@@ -4243,25 +3836,6 @@ div.comment:first-of-type {
 
   /* Comments ------------------------------ */
 
-  .comment-reply-title {
-    font-size: 3.6rem;
-    line-height: 4rem;
-    margin-bottom: 40px;
-  }
-
-  .comment-respond p.comment-notes,
-  .comment-respond p.logged-in-as {
-    margin: -4rem 0 6rem 0;
-  }
-
-  .comments .comment-respond .comment-reply-title {
-    font-size: 4.8rem;
-  }
-
-  .comments .comment-respond p.comment-notes,
-  .comments .comment-respond p.logged-in-as {
-    margin: -4.5rem 0 4rem 0;
-  }
 
   /* Site Pagination ----------------------- */
 
@@ -4570,7 +4144,7 @@ div.comment:first-of-type {
 .card .pre-title {
   color: #0091ff;
   font-size: 1.5rem;
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   display: flex;
   justify-content: space-between;
 }
@@ -4578,13 +4152,12 @@ div.comment:first-of-type {
 .card .date {
   color: #0091ff;
   font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Book";
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   margin-bottom: 3px;
 }
 
 .card .card-title {
-  font-family: "OfficinaSansITCStd-Bold";
-
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.8rem;
   line-height: 2rem;
   margin: 0px;
@@ -4826,7 +4399,13 @@ div.comment:first-of-type {
     max-width: calc(50% - 5px);
     margin: 10px 0px 0px 0px;
   }
+
+  .card-container__large .card{ 
+    transform: scale(1.8);
+margin: 100px 0px;
+  }
 }
+
 
 .anmerkung .pre-title {
   margin-bottom: 5px;
@@ -5027,7 +4606,7 @@ div.comment:first-of-type {
 .um-account-heading,
 .um-field-image label {
   font-size: 2rem;
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   margin-top: 25px;
   margin-bottom: 5px;
 }
@@ -5103,7 +4682,7 @@ div.comment:first-of-type {
   margin-top: 20px;
 }
 
-.um-avatar {
+.profil .um-avatar {
   position: absolute;
   top: 125px;
   width: 200px;
@@ -5146,7 +4725,7 @@ input[type="file"] {
   padding-top: 5px !important;
   height: 50px !important;
 
-  font-family: "OfficinaSansITCStd-Book";
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.7rem;
 }
 
@@ -5154,7 +4733,7 @@ input[type="file"] {
   width: 145px;
   height: 44px;
   padding-top: 5px !important;
-  font-family: "OfficinaSansITCStd-Book";
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.7rem;
   padding-bottom: 5px !important;
 }
@@ -5171,7 +4750,7 @@ input[type="file"] {
   width: calc(100% - 30px);
   max-width: 1000px;
   font-size: 2.4rem;
-  font-family: "OfficinaSansITCStd-Bold";
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   margin-bottom: 10px;
 }
 .upload {
@@ -5196,13 +4775,30 @@ input[type="file"] {
 }
 
 .um-col-alt {
-  margin-top: 10px;
+  margin-top: -1€0px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .um-col-alt-b {
   margin-top: 25px;
+}
+
+.um-field-c{
+  width: 100%;
+  max-width: 250px;
+
+}
+
+@media (max-width: 782px) {
+
+  .um-field-c{
+    margin-bottom: 20px;
+  
+  }
+
 }
 
 .um-left {
