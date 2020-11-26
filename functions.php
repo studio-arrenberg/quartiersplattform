@@ -621,7 +621,7 @@ function twentytwenty_customize_controls_enqueue_scripts() {
 // add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_controls_enqueue_scripts' );
 
 // no jquery if not admin
-if ( !is_admin() ) wp_deregister_script('jquery');
+// if ( !is_admin() ) wp_deregister_script('jquery');
 
 /**
  * Enqueue scripts for the customizer preview.

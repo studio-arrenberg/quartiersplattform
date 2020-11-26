@@ -28,7 +28,7 @@ if ( have_posts() ) {
 <div class="card-container  card-container__center card-container__large ">
     
     <?php get_template_part('elements/card', get_post_type()); ?>
-    </div>
+</div>
 
     <!-- author -->
 
