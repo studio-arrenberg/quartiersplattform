@@ -1,13 +1,10 @@
 # Quartiersplattform Arrenberg
 
-Repo für die Quartiersplattform am Arrenberg <br> <br>
+#### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app) <br>
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
-Plugins werden unter [AP01](https://ap01.arrenberg.studio) getestet<br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
 ## 🧯 Wichtig 
-- Naming festlegen
-- Einleitungseite erstellen/schreiben
 - Matomo Tracking Codes/Strategy
 
 ## 📦 Requirements 
@@ -29,10 +26,6 @@ Ulimate Member<br>
 
 ### Ultimate member
 
-### Setup
-
-- Profil Page should have `Profil` temlate
-
 #### Fixes
 File needs to be replaced: 
 ultimate-member > includes > core > class-fields.php (line 107)
@@ -42,7 +35,6 @@ echo '<div style="display: none !important;">'; -- custom to enable profil pictu
 // zu: (remove styles)
 echo '<div>';
 ```   
-
 
 #### Optional (Development)
 Custom Post Type UI<br>
@@ -101,7 +93,6 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)<br>
 [Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)<br>
 [Mail Template Inline Styles Converter](https://templates.mailchimp.com/resources/inline-css/)
-
 
 
 ### Image Sizes (Ratio)
