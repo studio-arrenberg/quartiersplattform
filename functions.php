@@ -1392,3 +1392,6 @@ add_action( 'pre_get_posts', function ( $query ) {
         $query->set( 'meta_key', 'zeitpunkt' );
     }
 } );
+
+// no jquery if not admin // from line 626 // creates error
+// if ( !is_admin() ) wp_deregister_script('jquery');

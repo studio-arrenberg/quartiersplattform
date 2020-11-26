@@ -35,6 +35,10 @@ $comment_count = get_comment_count($post->ID)['approved'];
             <!-- bitte author anzeigen :::: -->
             <div class="comment-count"><?php if($comment_count > 0) echo $comment_count." Kommentare"; ?></p></div>
         </div>
-  
+
+        <!-- bitte author anzeigen :::: -->
+        <p><?php get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></p>
+        <!-- bitte author anzeigen :::: -->
+        <p><?php if($comment_count > 0) echo $comment_count." Kommentare"; ?></p>
     </a>
 </div>
