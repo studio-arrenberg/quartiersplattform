@@ -15,26 +15,15 @@
 ?>
 
 <?php
-
-$terms_status = get_the_terms( $post->ID, 'status_anmerkungen' );
+$terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
 $terms_version = "";
-
 if ($terms_status) {
-    $terms_version = get_the_terms( $post->ID, 'version_anmerkungen' );
+    $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
 }
-
+$comment_count = get_comment_count($post->ID)['approved'];
 ?>
 
-<?php // echo $terms_status[0]->name; ?>
-<?php // echo $terms_version[0]->name; ?>
-
-<?php
-// Status = Vorschlag => In Bearbeitung => Umgesetzt
-// Version = *Release Nützenbeerg* oder *V1.2 Nützenberg* oder *Release V1.2*
-?>
-
-
-<div class="card shadow anmerkung">
+<div class="card shadow anmerkung <?php echo $terms_status[0]->slug; ?>">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>
@@ -42,6 +31,9 @@ if ($terms_status) {
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
         </div>
-        <?php the_post_thumbnail( 'preview_m' ); ?>
+        <!-- bitte author anzeigen :::: -->
+        <p><?php get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></p>
+        <!-- bitte author anzeigen :::: -->
+        <p><?php if($comment_count > 0) echo $comment_count." Kommentare"; ?></p>
     </a>
 </div>
