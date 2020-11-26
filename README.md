@@ -1,6 +1,7 @@
 # Quartiersplattform Arrenberg
 
-#### Repo für die Quartiersplattform am Arrenberg <br>
+
+#### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app) <br>
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
@@ -35,7 +36,6 @@ echo '<div style="display: none !important;">'; -- custom to enable profil pictu
 // zu: (remove styles)
 echo '<div>';
 ```   
-
 
 #### Optional (Development)
 Custom Post Type UI<br>
@@ -94,7 +94,6 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)<br>
 [Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)<br>
 [Mail Template Inline Styles Converter](https://templates.mailchimp.com/resources/inline-css/)
-
 
 
 ### Image Sizes (Ratio)
