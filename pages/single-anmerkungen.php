@@ -13,25 +13,6 @@
 get_header();
 ?>
 
-<?php
-// Todo
-// Display Text if needed
-// Get status + Version
-// color ???
-
-// get Terms
-$terms_status = get_the_terms( $post->ID, 'status_anmerkungen' );
-$terms_version = "";
-
-if ($terms_status) {
-    $terms_version = get_the_terms( $post->ID, 'version_anmerkungen' );
-}
-
-?>
-
-
-
-
 <main id="site-content" class="anmerkungen" role="main">
 
 
@@ -44,17 +25,9 @@ if ( have_posts() ) {
 
     ?>
 
-
-    <div class="large-header">
-        <!-- post title -->
-        <h3><?php echo $terms_status[0]->name; ?>  <span class="date">    <?php echo $terms_version[0]->name; ?> </date></h3>
-
-        <h1><?php  shorten_title(get_field('text'), '200'); ?> </h1>
-
-
-    </div>
-
-    <!-- <p><?php the_field('text'); ?></p> -->
+<div class="card-container  card-container__center card-container__large ">
+    
+    <?php get_template_part('elements/card', get_post_type()); ?>
 
     <!-- author -->
 
@@ -76,7 +49,7 @@ if ( have_posts() ) {
     if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 ?>
 
-        <div class="comments-wrapper section-inner">
+        <div class="comments-wrapper">
 
             <?php comments_template('', true); ?>
 
@@ -94,7 +67,6 @@ if ( have_posts() ) {
 
 </main><!-- #site-content -->
 
-<!-- das kann raus: -->
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+
 
 <?php get_footer(); ?>
