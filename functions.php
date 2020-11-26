@@ -621,7 +621,7 @@ function twentytwenty_customize_controls_enqueue_scripts() {
 // add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_controls_enqueue_scripts' );
 
 // no jquery if not admin
-if ( !is_admin() ) wp_deregister_script('jquery');
+// if ( !is_admin() ) wp_deregister_script('jquery');
 
 /**
  * Enqueue scripts for the customizer preview.
@@ -1342,3 +1342,6 @@ function um_deregister_styles() {
 // }
 // }
 // add_action('get_header', 'wp_maintenance_mode');
+
+// no jquery if not admin // from line 626 // creates error
+if ( !is_admin() ) wp_deregister_script('jquery');
