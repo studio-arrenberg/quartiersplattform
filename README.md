@@ -1,6 +1,10 @@
 # Quartiersplattform Arrenberg
 
+<<<<<<< HEAD
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app) <br>
+=======
+#### Repo für die Quartiersplattform am Arrenberg <br>
+>>>>>>> 1d87e80f3551f9bc2448efa135241f2a363fdcf4
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
@@ -152,10 +156,23 @@ card_list($query);
 Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
-Get Rid of all untracked changes
+#### Get Rid of all untracked changes
 ```bash
 git stash
 ```
+
+#### Update public branch from master
+```bash
+git fetch
+git checkout public
+git reset --hard main
+```
+
+#### Trash commits ahead
+```bash
+git push --force
+```
+
 
 ### CSS Tricks
 
