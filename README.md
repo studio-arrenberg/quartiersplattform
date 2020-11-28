@@ -1,10 +1,6 @@
 # Quartiersplattform Arrenberg
 
-<<<<<<< HEAD
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app) <br>
-=======
-#### Repo für die Quartiersplattform am Arrenberg <br>
->>>>>>> 1d87e80f3551f9bc2448efa135241f2a363fdcf4
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 
