@@ -87,6 +87,7 @@
 
         <!-- back button -->
         <?php 
+        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'")</script>';
         if (!isset($_SERVER['HTTP_REFERER'])) {
             // display home button
             ?>
