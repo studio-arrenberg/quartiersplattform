@@ -171,6 +171,11 @@ git reset --hard main
 git push --force
 ```
 
+#### Checkout any commit
+```bash
+git checkout <commit-id> . 
+```
+
 
 ### CSS Tricks
 
