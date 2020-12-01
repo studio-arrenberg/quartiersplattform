@@ -97,7 +97,7 @@
             <?php
         }
         // $PHP_URL_HOST = get_site_url();
-        elseif (!parse_url($_SERVER['HTTP_REFERER'], get_site_url())) {
+        elseif (parse_url($_SERVER['HTTP_REFERER'], get_site_url())) {
             // display home button
             ?>
             <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
