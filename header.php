@@ -89,32 +89,7 @@
         <!-- back button -->
         <?php 
 
-        $my_url = parse_url($_SERVER['HTTP_REFERER'])['scheme'].parse_url($_SERVER['HTTP_REFERER'])['host'];
         if (parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) {
-            // echo "already here";
-            echo '<script>console.log("'.get_site_url().' my: '.$my_url.'");</script>';
-            
-        }
-        else {
-            echo '<script>console.log("newbie");</script>';
-            echo '<script>console.log("'.get_site_url().' my: '.$my_url.'");</script>';
-        }
-
-        echo '<script>console.log("both a: '.parse_url(get_site_url())['host'].' b: '.parse_url($_SERVER['HTTP_REFERER'])['host'].'");</script>';
-
-        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'"); console.log("parsed: '.parse_url($_SERVER['HTTP_REFERER'])['host'].'");</script>';
-        // parse_url($_SERVER['HTTP_REFERER'], get_site_url())
-        // parse_url($_SERVER['HTTP_REFERER'])['host'] == 'someexample.com'
-        if (!$_SERVER['HTTP_REFERER']) {
-            // display home button
-            ?>
-            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Überblick</span>
-            </a>
-            <?php
-        }
-        else {
             // display back button
             ?>
             <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
@@ -122,6 +97,16 @@
                 <span class="button-has-icon-label">Zurück</span>
             </button>
             <?php
+        }
+        else {
+            // display home button
+            ?>
+            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Überblick</span>
+            </a>
+            <?php
+
         }
         ?>
 
