@@ -88,7 +88,16 @@
 
         <!-- back button -->
         <?php 
-        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'"); console.log("parsed: '.parse_url($_SERVER['HTTP_REFERER'])['host'].'");</script>';
+
+        if (parse_url($_SERVER['HTTP_REFERER'])['scheme']['host'] == get_site_url()) {
+            // echo "already here";
+            echo '<script>console.log("already here");</script>';
+        }
+        else {
+            echo '<script>console.log("newbie");</script>';
+        }
+
+        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'"); console.log("parsed: '.parse_url($_SERVER['HTTP_REFERER'])['scheme']['host'].'");</script>';
         // parse_url($_SERVER['HTTP_REFERER'], get_site_url())
         // parse_url($_SERVER['HTTP_REFERER'])['host'] == 'someexample.com'
         if (!$_SERVER['HTTP_REFERER']) {
