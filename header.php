@@ -88,7 +88,9 @@
 
         <!-- back button -->
         <?php 
-        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'");</script>';
+        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'"); console.log("parsed: '.parse_url($_SERVER['HTTP_REFERER'])['host'].'");</script>';
+        // parse_url($_SERVER['HTTP_REFERER'], get_site_url())
+        // parse_url($_SERVER['HTTP_REFERER'])['host'] == 'someexample.com'
         if (!$_SERVER['HTTP_REFERER']) {
             // display home button
             ?>
