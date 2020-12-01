@@ -90,14 +90,17 @@
         <?php 
 
         $my_url = parse_url($_SERVER['HTTP_REFERER'])['scheme'].parse_url($_SERVER['HTTP_REFERER'])['host'];
-        if (parse_url($_SERVER['HTTP_REFERER'])['scheme'].parse_url($_SERVER['HTTP_REFERER'])['host'] == get_site_url()) {
+        if (parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) {
             // echo "already here";
             echo '<script>console.log("'.get_site_url().' my: '.$my_url.'");</script>';
+            
         }
         else {
             echo '<script>console.log("newbie");</script>';
             echo '<script>console.log("'.get_site_url().' my: '.$my_url.'");</script>';
         }
+
+        echo '<script>console.log("both a: '.parse_url(get_site_url())['host'].' b: '.parse_url($_SERVER['HTTP_REFERER'])['host'].'");</script>';
 
         echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'"); console.log("parsed: '.parse_url($_SERVER['HTTP_REFERER'])['host'].'");</script>';
         // parse_url($_SERVER['HTTP_REFERER'], get_site_url())
