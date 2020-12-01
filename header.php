@@ -87,27 +87,8 @@
 
         <!-- back button -->
         <?php 
-        echo '<script>console.log("'.$_SERVER['HTTP_REFERER'].'")</script>';
-        if (!isset($_SERVER['HTTP_REFERER'])) {
-            // display home button
-            ?>
-            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Überblick</span>
-            </a>
-            <?php
-        }
-        // $PHP_URL_HOST = get_site_url();
-        elseif (parse_url($_SERVER['HTTP_REFERER'], get_site_url())) {
-            // display home button
-            ?>
-            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Überblick 2</span>
-            </a>
-            <?php
-        }
-        else {
+
+        if (parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) {
             // display back button
             ?>
             <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
@@ -116,7 +97,16 @@
             </button>
             <?php
         }
-        echo $_SERVER['HTTP_REFERER'];
+        else {
+            // display home button
+            ?>
+            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Überblick</span>
+            </a>
+            <?php
+
+        }
         ?>
 
         <div class="header-navigation-wrapper <?php echo $menu_active; ?>">
