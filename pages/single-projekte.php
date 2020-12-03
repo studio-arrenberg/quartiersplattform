@@ -41,25 +41,21 @@ get_header();
 
         <!-- post title -->
         <div class="single-header-content">
-        <h1><?php the_title(); ?></h1>
-        <h4><?php if (is_admin()) echo get_the_author(); ?></h4> 
-        
-        <p><?php // the_field('kurzbeschreibung'); ?></p>
-
+            <h1><?php the_title(); ?></h1>
+            <h4><?php if (is_admin()) echo get_the_author(); ?></h4>             
         </div>
 
-        <!-- projekt / akteur -->
+        <!-- slogan / emoji -->
+        <?php if ( is_admin() ) { // new feature only for admins ?>
+            <p><?php the_field('emoji'); ?></p>
+            <p><?php the_field('slogan'); ?></p>
+        <?php } ?>
+
+        <!-- akteur -->
         <!-- not ready yet -->
 
 
     </div>
-
-
-
-    <!-- ACF test -->
-    <p><?php the_field('begin'); ?></p>
-    <p><?php the_field('abschluss'); ?></p>
-
 
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
@@ -95,11 +91,13 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Team -->
-    <div class="team">
-    <div class="member">
-        <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-        <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
-    </div>
+    <?php if ( is_admin() ) { // new feature only for admins ?>
+        <div class="team">
+        <div class="member">
+            <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+        </div>
+    <?php } ?>
 
     <!-- Map -->
     <!-- not ready yet -->
