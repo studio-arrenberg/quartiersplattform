@@ -1397,3 +1397,10 @@ add_action( 'pre_get_posts', function ( $query ) {
 function debugToConsole($msg) { 
 	echo "<script>console.log(".json_encode($msg).")</script>";
 }
+
+// map api key
+function my_acf_google_map_api( $api ){
+	$api['key'] = 'AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz';
+	return $api;	
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

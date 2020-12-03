@@ -69,10 +69,33 @@ cd var/www/vhosts/arrenberg.studio/ap1.arrenberg.studio/
 wp media regenerate --allow-root 
 ```
 
+
+## Change Meta name
+[Link](https://support.advancedcustomfields.com/forums/topic/changing-field-name-question/)
+```mysql 
+UPDATE wp_postmeta
+SET meta_key='new_name'
+where meta_key='old_name';
+
+UPDATE wordpress.wp_postmeta
+SET meta_key='_new_name'
+where meta_key='_old_name';
+```
+[Other](https://support.advancedcustomfields.com/forums/topic/best-practice-for-changing-custom-fields/)
+```mysql 
+UPDATE wp_postmeta
+SET meta_key = 'new_field_name'
+WHERE meta_key = 'old_field_name';
+# and 
+UPDATE wp_postmeta
+SET meta_key = '_new_field_name'
+WHERE meta_key = '_old_field_name';
+```
+
+
 ## Post Taxonomy Drop Down
 
 ```php
-
 // dropdown button taxonomy
 // CTP anmerkungen TAX version
 function add_theme_box() {
