@@ -51,9 +51,6 @@ get_header();
         <!-- projekt / akteur -->
         <!-- not ready yet -->
 
-        <!-- Bild -->
-
-
 
     </div>
 
@@ -77,8 +74,6 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Gutenberg Editor Content -->
-
-    <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
         <?php
             if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
@@ -100,7 +95,11 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Team -->
-    <!-- not ready yet -->
+    <div class="team">
+    <div class="member">
+        <?php get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+        <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+    </div>
 
     <!-- Map -->
     <!-- not ready yet -->

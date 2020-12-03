@@ -30,11 +30,8 @@ $comment_count = get_comment_count($post->ID)['approved'];
             <h3 class="card-title">
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
-            <!-- bitte author anzeigen :::: -->
             <p><?php get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></p>
-            <!-- bitte author anzeigen :::: -->
             <div class="comment-count"><?php if($comment_count > 0) echo $comment_count." Kommentare"; ?></p></div>
         </div>
-  
     </a>
 </div>
