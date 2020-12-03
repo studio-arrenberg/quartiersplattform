@@ -13,7 +13,7 @@
 
 
 <div class="card landscape shadow">
-    <a href="">
+<a href="<?php echo get_site_url(); ?>/werde-mitglied-in-deinem-quartier/">
 		<div class="content">
 			<h3 class="card-title">
 				Werde Mitglied in deinem Quartier

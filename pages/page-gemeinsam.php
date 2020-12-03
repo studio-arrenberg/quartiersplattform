@@ -13,9 +13,9 @@ get_header();
 
 <main id="site-content" role="main">
 
-<div class="card-container ">
-		<?php get_template_part( 'components/call', 'update' ); ?>
-		<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
+<div class="card-container card-container__small">
+		<?php get_template_part( 'components/call', 'frage' ); ?>
+		<?php get_template_part( 'components/call', 'angebot' ); ?>
 	</div>
 
 <div class="card-container">
