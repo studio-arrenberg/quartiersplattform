@@ -101,6 +101,9 @@ get_header();
 
     <!-- Map -->
     <!-- not ready yet -->
+    <?php if ( is_admin() ) { // new feature only for admins ?>
+        <p><?php the_field('map'); ?></p>
+    <?php } ?>
 
     <!-- Kontakt -->
     <!-- not ready yet -->

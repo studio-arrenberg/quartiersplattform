@@ -36,11 +36,10 @@ get_header();
     <div class="single-header">
         <!-- post title -->
         <div class="single-header-content">
-        <h1><?php the_title(); ?></h1>
-
-        <h3><?php if (is_admin()) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
-
+            <h1><?php the_title(); ?></h1>
+            <h3><?php if (is_admin()) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
         </div>
+
         <!-- projekt / akteur -->
         <!-- not ready yet -->
 
@@ -51,12 +50,7 @@ get_header();
     </div>
     <!-- Eventtext felder gibt es noch nicht -->
     <div class="single-content">
-        <!-- <p>Das Projekt der Arrenberg-Farm, eine moderne, kreislaufbasierte Lebensmittelproduktionsanlage mitten in
-            Wuppertal zu realisieren, soll in der Zukunft ein Stück dazu beitragen, die Ressource Wasser zu sparen und
-            gleichzeitig die Talbewohner mit frischen und gesunden Lebensmitteln zu versorgen. Ganz nach dem Motto
-            „close the loop – new urban food“ wird ein kreislaufbasiertes Modell der Lebensmittelproduktion angestrebt,
-            um so effizient und schonend wie möglich mit kostbaren Ressourcen umzugehen.
-        </p> -->
+        <!-- not ready yet -->
     </div>
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
