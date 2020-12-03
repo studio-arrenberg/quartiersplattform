@@ -899,6 +899,10 @@ th {
   margin: 20px 0px;
 }
 
+.white-text{
+  color: #fff;
+}
+
 @media (max-width: 782px) {
   .admin-bar .screen-height {
     min-height: calc(100vh - 46px);
@@ -1113,7 +1117,7 @@ button.toggle {
 
 .header-title {
   text-align: left;
-  padding: 13px 10px 5px 0px;
+  padding: 20px 10px 10px 0px;
   flex-grow: 2;
 }
 
@@ -1151,12 +1155,17 @@ button.toggle {
 
 .menu-container ul {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .menu-container li > a {
   color: #000;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 5px;
+  font-size: 1.55rem;
+  word-wrap: none;
+  word-break: keep-all;
 }
 
 .menu-container .current-menu-item > a {
@@ -4449,7 +4458,7 @@ margin-top: 10px;
   .card-container .landscape {
     max-width: calc(50% - 5px);
     margin: 10px 0px 0px 0px;
-  }
+  } 
 
   .card-container__large .card {
     transform: scale(1.8);
