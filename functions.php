@@ -1186,6 +1186,34 @@ function my_post_title_updater( $post_id ) {
 		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
 
 	}
+	// Post Type Anmerkungen
+	if ( get_post_type($post_id) == 'gemeinsam' ) {
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$text = get_field( 'text', $post_id );
+		// shorten
+		$chars_limit = 50; // Character length
+		$chars_text = strlen($text);
+		$text = $text." ";
+		$text = substr($text,0,$chars_limit);
+		$text = substr($text,0,strrpos($text,' '));
+	  
+		if ($chars_text > $chars_limit)
+		   { $text = $text."..."; } // Ellipsis
+
+		$my_post['post_title'] = $text;
+		wp_update_post( $my_post ); // Update the post into the database
+		// update taxonomy
+		if(!has_term('', 'anmerkungen_status') ){
+			// do something
+			wp_set_object_terms( $post_id, 'arrenberg-update', 'anmerkungen_version', false ); // change to status!
+			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
+		}
+		
+		// FURTHER READING
+		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
+
+	}
 
 }
 
@@ -1195,6 +1223,9 @@ function my_acf_admin_head() {
     <style type="text/css">
         .acf-field-5fa01d66b0f2f > .acf-label {display: none;} /* ap1 */
 		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
+		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
+		.acf-field-5fc8fe8aa1786 > .acf-label {display: none;} /* Local */
+		
     </style>
     <?php
 }

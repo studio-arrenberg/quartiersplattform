@@ -9,6 +9,10 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
+if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+}
 
 get_header();
 ?>
@@ -45,6 +49,28 @@ if ( have_posts() ) {
 ?>
     </div>
 
+    <?php
+
+if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+    echo '<h3>Bearbeite deine Frage</h3>';
+    acf_form (
+        array(
+            'form' => true,
+            'return' => '%post_url%',
+            'submit_value' => 'Änderungen speichern',
+            'post_title' => false,
+            'post_content' => false,    
+            'fields' => array(
+                'text',                
+            )
+        )
+    );
+    
+}
+echo $post->post_author;
+?>
+
+
         <!-- kommentare -->
         <?php			
     if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
@@ -63,7 +89,10 @@ if ( have_posts() ) {
     }
 }
 
+
+
 ?>
+
 
 
 </main><!-- #site-content -->

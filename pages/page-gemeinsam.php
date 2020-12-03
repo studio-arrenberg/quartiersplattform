@@ -18,6 +18,9 @@ get_header();
 		<?php get_template_part( 'components/call', 'angebot' ); ?>
 	</div>
 
+<!-- Angebote (acf) -->
+<?php get_template_part('components/angebote'); ?>
+
 <div class="card-container">
 	<?php 
 	// veranstaltung list
