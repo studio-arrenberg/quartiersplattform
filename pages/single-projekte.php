@@ -97,7 +97,7 @@ get_header();
     <!-- Team -->
     <div class="team">
     <div class="member">
-        <?php get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+        <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
     </div>
 
