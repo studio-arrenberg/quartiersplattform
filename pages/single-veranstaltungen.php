@@ -30,7 +30,7 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3><?php if (is_admin()) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
+            <h3><?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
         </div>
 
         <!-- projekt / akteur -->
@@ -40,7 +40,7 @@ get_header();
         <img class="single-header-image"src="<?php echo esc_url( $image_url ) ?>" />
 
         <!-- slogan / emoji -->
-        <?php if ( is_admin() ) { // new feature only for admins ?>
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
             <p><?php the_field('website'); ?></p>
             <p><?php the_field('livestream'); ?></p>
             <p><?php the_field('ticket'); ?></p>

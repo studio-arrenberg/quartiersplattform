@@ -42,11 +42,11 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h4><?php if (is_admin()) echo get_the_author(); ?></h4>             
+            <h4><?php if (current_user_can('administrator')) echo get_the_author(); ?></h4>             
         </div>
 
         <!-- slogan / emoji -->
-        <?php if ( is_admin() ) { // new feature only for admins ?>
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
             <p><?php the_field('emoji'); ?></p>
             <p><?php the_field('slogan'); ?></p>
         <?php } ?>
@@ -112,7 +112,7 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Team -->
-    <?php if ( is_admin() ) { // new feature only for admins ?>
+    <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
         <div class="team">
         <div class="member">
             <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
@@ -122,7 +122,7 @@ get_header();
 
     <!-- Map -->
     <!-- not ready yet -->
-    <?php if ( is_admin() ) { // new feature only for admins ?>
+    <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
         <p><?php the_field('map'); ?></p>
     <?php } ?>
 

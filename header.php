@@ -154,7 +154,7 @@
         
         <?php 
         // backend login button for admins
-        if(is_admin()) {
+        if(current_user_can('administrator')) {
             ?>
                 <a class="button header-button login button-has-icon is-style-outline " href="<?php echo get_site_url(); ?>/wp-admin">
                     <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
