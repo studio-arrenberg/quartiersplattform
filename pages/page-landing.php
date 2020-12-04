@@ -12,6 +12,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
+	
 
     <!-- neuste meldung (card + carousel query + function) -->
     <?php
@@ -50,6 +51,7 @@ get_header();
 	<div class="card-container card-container__center">
 		<?php get_template_part( 'components/call', 'update' ); ?>
 	</div>
+
     <!-- *urbane transformation* -->
     <!-- not ready yet -->
 
