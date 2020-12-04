@@ -68,6 +68,29 @@ get_header();
 
     <!-- Projektverlauf -->
     <!-- not ready yet -->
+    <!-- test -->
+    <?php if (current_user_can('administrator') ) { // new feature only for admins ?>
+
+    <?php
+
+        $args_chronik = array(
+            'post_type' => array('veranstaltungen', 'nachrichten'), // it's default, you can skip it
+            'posts_per_page' => '4',
+            'order_by' => 'date',
+            'order' => 'DESC',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$post->post_name."
+                )
+            )
+        );
+		card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
+		list_card($args_chronik, '');
+
+    ?>    
+    <?php } ?>
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
@@ -80,8 +103,6 @@ get_header();
         ?>
 
     </div>
-
-
 
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
