@@ -2,12 +2,6 @@
 /**
  * Template Name: Veranstaltung [Default]
  * Template Post Type: projekte
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 get_header();
@@ -32,7 +26,6 @@ get_header();
 
 			?>
 
-
     <div class="single-header">
         <!-- post title -->
         <div class="single-header-content">
@@ -46,6 +39,12 @@ get_header();
         <!-- Bild -->
         <img class="single-header-image"src="<?php echo esc_url( $image_url ) ?>" />
 
+        <!-- slogan / emoji -->
+        <?php if ( is_admin() ) { // new feature only for admins ?>
+            <p><?php the_field('website'); ?></p>
+            <p><?php the_field('livestream'); ?></p>
+            <p><?php the_field('ticket'); ?></p>
+        <?php } ?>
 
     </div>
     <!-- Eventtext felder gibt es noch nicht -->
@@ -63,7 +62,6 @@ get_header();
     ?>
 
     </div>
-
 
     <!-- calendar download -->
     <!-- not ready yet -->
