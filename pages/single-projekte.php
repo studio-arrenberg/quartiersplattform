@@ -75,7 +75,7 @@ get_header();
 
         $args_chronik = array(
             'post_type' => array('veranstaltungen', 'nachrichten'), // it's default, you can skip it
-            'posts_per_page' => '4',
+            'posts_per_page' => '3',
             'order_by' => 'date',
             'order' => 'DESC',
             'tax_query' => array(
@@ -86,8 +86,8 @@ get_header();
                 )
             )
         );
-		card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
-		list_card($args_chronik, '');
+		// card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
+		list_card($args_chronik, '', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
 
     ?>    
     <?php } ?>

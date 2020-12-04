@@ -80,8 +80,8 @@ get_header();
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
-		card_header('Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten'); //  Made by Moritz. Schau mal pb das so richtig ist
-		list_card($args2, get_post_type_archive_link( 'nachrichten' ));
+		// card_header('Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten'); //  Made by Moritz. Schau mal pb das so richtig ist
+		list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten');
 		?>
 
 		<!-- veranstaltungen -->
@@ -91,9 +91,8 @@ get_header();
 			'post_status'=>'publish', 
 			'posts_per_page'=> 3
 		);
-		card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
-
-		list_card($args3, get_site_url().'/veranstaltungen');
+		// card_header('Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht'); //  Made by Moritz. Schau mal pb das so richtig ist
+		list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht');
 		?>
 
 	</div>
