@@ -904,22 +904,22 @@ function link_card($title, $text, $bg, $link){
 
 }
 
-
-function card_header($card_header_title, $card_header_subtitle){
-	set_query_var( 'card_header_title', $card_header_title );
-	set_query_var( 'card_header_subtitle', $card_header_subtitle );
-}
+// veraltet -> in list_card function aufgenommen
+// function card_header($card_header_title, $card_header_subtitle){
+// 	set_query_var( 'card_header_title', $card_header_title );
+// 	set_query_var( 'card_header_subtitle', $card_header_subtitle );
+// }
 
 // list card
-function list_card($args, $link = '') {
+function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 	?>
 	<div class='card list-card shadow'>
 	<?php if ($link) echo "<a href='".$link."'>"; ?>
 
 		<div class='card-header'>
-			<h2><?php echo get_query_var('card_header_title'); ?></h2>
-			<h3><?php echo get_query_var('card_header_subtitle'); ?></h3>
+			<h2><?php echo $card_title; ?></h2>
+			<h3><?php echo $card_subtitle; ?></h3>
 		</div>
 		<?php
 		$query2 = new WP_Query( $args);
