@@ -127,7 +127,7 @@ link_card('Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CT
 ```
 #### List Card
 ```php 
-list_card($args3, get_site_url().'/veranstaltungen');
+list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
 #### Slider
 ```php
@@ -211,30 +211,6 @@ rifi2k.format-html-in-php
     - Profile Picture Sizes (100 x 300)
 17. Set up matomo
 
-### --- Later
-8. ACFs Veranstaltungen
-    - Website
-    - Livestream
-    - start
-    - end
-9. ACFs Projekte
-    - Ort
-    - Kontakt
-
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
-
-## 🎉 Releases
-
-### development - v1
-- Startseite
-- Projekte
-- Veranstaltungen
-- Energie Ampel
-- Feedback (Anmerkungen)
-- Footer
-- Login/Registrieren
-- Email templates
-- Profil bearbeiten
-- Remove Eneregie ampel when not enough data
