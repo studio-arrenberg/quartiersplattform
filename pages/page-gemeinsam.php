@@ -24,7 +24,7 @@ get_header();
 	<?php 
 	// veranstaltung list
 	$args4 = array(
-		'post_type'=>'gemeinsam', 
+		'post_type'=> array('angebote', 'fragen'), 
 		'post_status'=>'publish', 
         'posts_per_page'=> -1
         // reihenfolge...?
