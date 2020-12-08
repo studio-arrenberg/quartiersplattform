@@ -147,6 +147,20 @@ get_header();
 
 	?>
 
+    <br><br><br>
+    <h2>Weitere Projekte</h2>
+    <!-- featured projects -->
+	<?php
+	$args3 = array(
+		'post_type'=>'projekte', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4,
+		'orderby' => 'rand'
+	);
+
+	slider($args3,'square_card', '2','true'); 
+	?>
+
 </main><!-- #site-content -->
 
 
