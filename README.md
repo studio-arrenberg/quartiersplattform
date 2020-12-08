@@ -96,11 +96,15 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 [Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)<br>
 [Mail Template Inline Styles Converter](https://templates.mailchimp.com/resources/inline-css/)
 
+#### Emoji Libraries
+* [jQuery Emoji Picker](https://github.com/wedgies/jquery-emoji-picker) [Demo](http://wedgies.github.io/jquery-emoji-picker/demo.html)
+* [EmojioneArea](https://github.com/mervick/emojionearea) [Demo](https://jsfiddle.net/mervick/1v03Lqnu/765/)
+
 
 ### Image Sizes (Ratio)
 
-|           | S       | M       | L       |
-|-----------|---------|---------|---------|
+| Name      | S       | M       | L       |
+| --------- | ------- | ------- | ------- |
 | Square    | 80x80   | 180x180 | 300x300 |
 | 4:3       | 160x120 | 200x150 | 800x600 |
 | Landscape | 200x100 | 400x200 | 970x485 |
