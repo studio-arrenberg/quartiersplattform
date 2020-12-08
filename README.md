@@ -155,7 +155,7 @@ comment_counter($post->ID);
 
 ### Notes
 
-Google Maps API Key `AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz` <br>
+Google Maps API Key `AIzaSyACLoR7TPeF5*fünf*Gds8HFR6YmX2HhGKORhz` <br>
 [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
 
 #### Get Rid of all untracked changes
