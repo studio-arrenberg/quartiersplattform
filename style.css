@@ -1286,9 +1286,9 @@ button.toggle {
 
 /*	7a. Template: Single Template
 /* -------------------------------------------------------------------------- */
-.single {
-  margin-top: -30px;
-}
+/* .single {
+  margin-top: 60px !important;
+} */
 
 .single-header {
   display: flex;
@@ -4154,6 +4154,15 @@ figure.wp-block-table.is-style-stripes {
   overflow: visible;
 }
 
+#single-content {
+  overflow: hidden;
+  padding: 20px 15px 20px 15px;
+  margin: 70px auto 0px auto;
+  max-width: 400px;
+  overflow: visible;
+}
+
+
 @media (min-width: 782px) {
   #site-content {
     margin: 0 auto;
@@ -4219,6 +4228,19 @@ figure.wp-block-table.is-style-stripes {
   font-size: 1.8rem;
   line-height: 2rem;
   margin: 0px;
+}
+
+.card .card-title-large {
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+}
+
+.card .preview-text-large {
+  margin-top: 5px;
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
 
 .card .preview-text {
@@ -4493,10 +4515,6 @@ figure.wp-block-table.is-style-stripes {
 .anmerkung .pre-title {
   margin-bottom: 5px;
 }
-.anmerkung .card-title {
-  font-size: 2.5rem;
-  line-height: 2.8rem;
-}
 
 .anmerkung .content {
   padding: 10px 10px;
@@ -4534,7 +4552,11 @@ figure.wp-block-table.is-style-stripes {
   margin-bottom: 4px;
 }
 
-.list-cards {
+.card-container__large .card {
+  padding: 20px 0px;
+}
+
+.card-container__large .card .list-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
