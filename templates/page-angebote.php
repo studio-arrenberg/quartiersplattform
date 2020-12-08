@@ -18,7 +18,6 @@ get_header();
                 <p class="preview-text-large">
                     Biete deine Hilfe an und unterstütze dein Viertel.
                 </p>
-                <button id="emoji-trigger">Emoji</button>
             </div>
         </div>
     </div>
