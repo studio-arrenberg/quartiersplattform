@@ -1391,7 +1391,15 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-    if (!is_admin() && strpos($url,'/profil/') !== false) {
+	// echo $REQUEST_URI;
+	// if (strpos($REQUEST_URI,'/profil/')) {
+	// 	echo "yes";
+	// }
+	// else {
+	// 	echo "no";
+	// }
+
+    if (!is_admin() && !strpos($REQUEST_URI,'/profil/')) {
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
@@ -1414,7 +1422,7 @@ add_action('init', 'my_init');
 add_action("wp_enqueue_scripts", "embla_carousel");
 function embla_carousel() { 
     wp_register_script('embla-carousel', 
-		get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
+	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
       
 }
@@ -1435,7 +1443,7 @@ function debugToConsole($msg) {
 
 // map api key
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz';
+	$api['key'] = 'AIzaSyCQWkVu95OT2C7xvYFJ3o6nPFGBK7EF14M';
 	return $api;	
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

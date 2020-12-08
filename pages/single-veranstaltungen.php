@@ -85,6 +85,32 @@ get_header();
 
 	?>
 
+    <br><br><br>
+    <h2>Weitere Veranstaltungen</h2>
+    <!-- weitere veranstaltungen -->
+    <?php
+	$args2 = array(
+		'post_type'=>'veranstaltungen', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4, 
+		'meta_key' => 'zeitpunkt',
+		//'orderby' => 'meta_value',
+		'orderby' => 'rand',
+		'order' => 'ASC',
+		'offset' => '0', 
+		'meta_query' => array(
+			array(
+				'key' => 'zeitpunkt', 
+				'value' => date("Y-m-d"),
+				'compare' => '>=', 
+				'type' => 'DATE'
+			)
+		)
+	);
+
+	slider($args2,'card', '1','false'); 
+	?>
+
 </main><!-- #site-content -->
 
 
