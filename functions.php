@@ -1435,7 +1435,7 @@ function debugToConsole($msg) {
 
 // map api key
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyACLoR7TPeF55Gds8HFR6YmX2HhGKORhz';
+	$api['key'] = 'AIzaSyCQWkVu95OT2C7xvYFJ3o6nPFGBK7EF14M';
 	return $api;	
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
