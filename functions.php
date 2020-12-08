@@ -1221,6 +1221,7 @@ function my_post_title_updater( $post_id ) {
 function my_acf_admin_head() {
     ?>
     <style type="text/css">
+		/* Anmerkungen Text lable */
         .acf-field-5fa01d66b0f2f > .acf-label {display: none;} /* ap1 */
 		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
 		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
@@ -1387,7 +1388,10 @@ function um_deregister_styles() {
 
 // jQuery deregister + min
 function my_init() {
-    if (!is_admin()) {
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+
+    if (!is_admin() && strpos($url,'/profil/') !== false) {
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
