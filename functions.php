@@ -1415,7 +1415,7 @@ function my_init() {
         wp_register_script('jquery', false);
     }
 }
-add_action('init', 'my_init');
+// add_action('init', 'my_init');
 
 
 // register embla carousel script
@@ -1443,7 +1443,7 @@ function debugToConsole($msg) {
 
 // map api key
 function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyCQWkVu95OT2C7xvYFJ3o6nPFGBK7EF14M';
+	$api['key'] = 'AIzaSyDPfffkf5pnMH5AmDLnVNb-3w1dNpdh-co';
 	return $api;	
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
