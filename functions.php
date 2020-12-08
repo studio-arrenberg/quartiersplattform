@@ -1485,3 +1485,20 @@ function update_veranstaltung_projekt($post_id) {
 }
 //run the update function whenever a post is created or edited
 add_action('save_post', 'update_veranstaltung_projekt');
+
+// comment count
+function comment_counter($id_post) {
+
+	$comment_count = get_comment_count($id_post)['approved'];
+
+	if($comment_count == 1) {
+		echo $comment_count." Kommentar";
+	}
+	elseif($comment_count > 1) {
+		echo $comment_count." Kommentare";
+	}
+	else {
+		return;
+	}
+
+}
