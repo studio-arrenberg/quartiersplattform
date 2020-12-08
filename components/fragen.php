@@ -10,15 +10,14 @@
 ?>
 
 <div class="feedback">
-    <h3>Erstelle dein eigenes Angebot</h3>
+    <h3>Stelle eine Frage an dein Quartier</h3>
 
     <?php acf_form_head(); ?>
-    <?php // acf_form('feedback-form'); ?>
 
     <?php $hierarchical_tax = array( 1 ); ?>
     <?php acf_form(
 			array(
-				'id' => 'angebote-form',
+				'id' => 'fragen-form',
 				'html_before_fields' => '',
 				'html_after_fields' => '',
 				'label_placement'=> '',
@@ -26,7 +25,7 @@
 				// 'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
 				'post_id'=>'new_post',
 				'new_post'=>array(
-                    'post_type' => 'angebote',
+                    'post_type' => 'fragen',
                     // 'tax_input' => array (
                     //     'version' => array( 2 )
                     // ),
@@ -40,10 +39,9 @@
 				'fields' => array(
                     'text',
                     'emoji',
-                    'zeitraum',
                     'map',
 				),
-				'submit_value'=>'Angebot senden',
+				'submit_value'=>'Frage veröffentlichen',
 			)
     ); 
 

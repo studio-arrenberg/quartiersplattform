@@ -13,7 +13,7 @@
 
 
 <div class="card  shadow bg_green">
-<a href="<?php echo get_site_url(); ?>/frage-dein-quatier/">
+<a href="<?php echo get_site_url(); ?>/frage-dein-quartier/">
 		<div class="content white-text">
 			<h3 class="card-title">
 				Frage dein Quatier
