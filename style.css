@@ -4554,6 +4554,7 @@ figure.wp-block-table.is-style-stripes {
 
 .card-container__large .card {
   padding: 20px 0px;
+  max-width: 1000px;
 }
 
 .card-container__large .card .list-cards {
