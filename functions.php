@@ -892,6 +892,28 @@ function tpl_nachrichten( $single_template ) {
 }
 add_filter( 'single_template', 'tpl_nachrichten' );
 
+function tpl_angebote( $single_template ) {
+    global $post;
+ 
+    if ( 'angebote' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-angebote.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_angebote' );
+
+function tpl_fragen( $single_template ) {
+    global $post;
+ 
+    if ( 'fragen' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_fragen' );
+
 // function template part test
 function link_card($title, $text, $bg, $link){
 

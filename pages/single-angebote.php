@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Gemeinsam [Default]
+ * Template Name: Angebote [Default]
  * Template Post Type: gemeinsam
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
