@@ -4162,10 +4162,15 @@ figure.wp-block-table.is-style-stripes {
   overflow: visible;
 }
 
-
 @media (min-width: 782px) {
   #site-content {
     margin: 0 auto;
+    max-width: 1000px;
+    overflow: visible;
+  }
+
+  #single-content {
+    margin: 75px auto;
     max-width: 1000px;
     overflow: visible;
   }
@@ -4241,6 +4246,7 @@ figure.wp-block-table.is-style-stripes {
   margin-top: 5px;
   font-size: 1.8rem;
   line-height: 2rem;
+}
 }
 
 .card .preview-text {
@@ -4505,11 +4511,6 @@ figure.wp-block-table.is-style-stripes {
     max-width: calc(50% - 5px);
     margin: 10px 0px 0px 0px;
   }
-
-  .card-container__large .card {
-    transform: scale(1.8);
-    margin: 100px 0px;
-  }
 }
 
 .anmerkung .pre-title {
@@ -4561,6 +4562,26 @@ figure.wp-block-table.is-style-stripes {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+@media (min-width: 782px) {
+  .card-container__large .card {
+    padding: 50px 20px;
+  }
+
+
+  .card .card-title-large {
+    font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+      sans-serif;
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+  
+
+  .card .preview-text-large {
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+  }
 }
 
 /* Energie  Ampel */
@@ -4964,4 +4985,18 @@ input[type="file"] {
     text-align: center;
     width: 100%;
   }
+}
+
+/* publish-form  */
+
+.publish-form {
+  margin-top: 25px;
+}
+
+.publish-form .acf-field {
+  margin-bottom: 20px;
+}
+
+.publish-form .canvas {
+  border-radius: 20px;
 }

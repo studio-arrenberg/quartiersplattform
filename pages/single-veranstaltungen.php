@@ -7,12 +7,10 @@
 get_header();
 ?>
 
-<main id="site-content" class="single" role="main">
+<main id="site-content" class="" role="main">
 
     <?php
-
 	if ( have_posts() ) {
-
 		while ( have_posts() ) {
 			the_post();
 			
@@ -30,20 +28,21 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3><?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
+            <h3><?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id );  ?>
+                <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
         </div>
 
         <!-- projekt / akteur -->
         <!-- not ready yet -->
 
         <!-- Bild -->
-        <img class="single-header-image"src="<?php echo esc_url( $image_url ) ?>" />
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
         <!-- slogan / emoji -->
         <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-            <p><?php the_field('website'); ?></p>
-            <p><?php the_field('livestream'); ?></p>
-            <p><?php the_field('ticket'); ?></p>
+        <p><?php the_field('website'); ?></p>
+        <p><?php the_field('livestream'); ?></p>
+        <p><?php the_field('ticket'); ?></p>
         <?php } ?>
 
     </div>
@@ -53,7 +52,7 @@ get_header();
     </div>
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
-    <?php
+        <?php
         if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
             the_excerpt();
         } else {
