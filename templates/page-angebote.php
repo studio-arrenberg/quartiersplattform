@@ -4,6 +4,7 @@
 * Template Name: Angebot erstellen
 *
 */
+acf_form_head();
 get_header();
 ?>
 

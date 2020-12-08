@@ -4,6 +4,7 @@
 * Template Name: Frage erstellen
 *
 */
+acf_form_head();
 get_header();
 ?>
 

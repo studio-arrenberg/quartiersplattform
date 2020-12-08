@@ -12,7 +12,7 @@
 <div class="feedback">
     <h3>Erstelle dein eigenes Angebot</h3>
 
-    <?php acf_form_head(); ?>
+    <?php // acf_form_head(); ?>
     <?php // acf_form('feedback-form'); ?>
 
     <?php $hierarchical_tax = array( 1 ); ?>
