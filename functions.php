@@ -1391,7 +1391,15 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-    if (!is_admin() && strpos($REQUEST_URI,'/profil/') !== false) {
+	// echo $REQUEST_URI;
+	// if (strpos($REQUEST_URI,'/profil/')) {
+	// 	echo "yes";
+	// }
+	// else {
+	// 	echo "no";
+	// }
+
+    if (!is_admin() && !strpos($REQUEST_URI,'/profil/')) {
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
