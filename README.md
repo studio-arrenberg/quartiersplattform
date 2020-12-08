@@ -146,6 +146,10 @@ calendar_download($post); // nur für veranstaltungen
 ```php
 card_list($query);
 ```
+#### Comment Counter
+```php
+comment_counter($post->ID);
+```
 
 ### Notes
 
