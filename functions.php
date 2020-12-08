@@ -1391,7 +1391,7 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-    if (!is_admin() && strpos($url,'/profil/') !== false) {
+    if (!is_admin() && strpos($REQUEST_URI,'/profil/') !== false) {
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
