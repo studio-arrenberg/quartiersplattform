@@ -18,6 +18,7 @@ get_header();
                 <p class="preview-text-large">
                     Biete deine Hilfe an und unterstütze dein Viertel.
                 </p>
+                <button id="emoji-trigger">Emoji</button>
             </div>
         </div>
     </div>
@@ -26,10 +27,10 @@ get_header();
 	if ( have_posts() ) {
 
 		while ( have_posts() ) {
-			the_post();
-
+            the_post();
+            
 			//Angebote (acf)
- get_template_part('components/angebote'); 
+            get_template_part('components/angebote'); 
 		}
 	}
 
