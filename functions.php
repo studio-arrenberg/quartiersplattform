@@ -1391,6 +1391,8 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
+	// auto check if acf_form_head was called
+
     if (
 		!is_admin() 
 		&& !strpos($REQUEST_URI,'/profil/')
