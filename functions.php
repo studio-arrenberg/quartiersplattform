@@ -1422,7 +1422,7 @@ add_action('init', 'my_init');
 add_action("wp_enqueue_scripts", "embla_carousel");
 function embla_carousel() { 
     wp_register_script('embla-carousel', 
-		get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
+	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
       
 }
