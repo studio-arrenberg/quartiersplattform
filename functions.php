@@ -1391,15 +1391,14 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	// echo $REQUEST_URI;
-	// if (strpos($REQUEST_URI,'/profil/')) {
-	// 	echo "yes";
-	// }
-	// else {
-	// 	echo "no";
-	// }
+	// auto check if acf_form_head was called
 
-    if (!is_admin() && !strpos($REQUEST_URI,'/profil/')) {
+    if (
+		!is_admin() 
+		&& !strpos($REQUEST_URI,'/profil/')
+		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
+		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
+	 ) {
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
