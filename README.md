@@ -6,6 +6,8 @@ Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br
 
 ## 🧯 Wichtig 
 - Matomo Tracking Codes/Strategy
+- File structure (template == component > one file)
+- Forms folder...
 
 ## 📦 Requirements 
 
