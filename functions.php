@@ -1020,18 +1020,16 @@ embla.on('resize', () => {
 
 // calendar download button
 function calendar_download($post) {
-    
+	
+	// needed variabels
     $title = get_the_title();
     $start = date('Ymd', strtotime(get_field( "zeitpunkt" ))) . "T" . date('His', strtotime(get_field( "zeitpunkt" )));
     $ende = date('Ymd', strtotime(get_field( "ende" ))) . "T" . date('His', strtotime(get_field( "ende" )));
 	$creation = date('Ymd') . "T" . date('His');
 
+	// directory
 	$links = get_template_directory_uri();
-
 	$destination_folder = $_SERVER['DOCUMENT_ROOT'];
-
-	// echo get_template();
-
 	$man_link = getcwd()."/wp-content/themes/".get_template();
 	// $man_link = getcwd()."/wp-content/uploads/calendar-files/";
 	
@@ -1050,19 +1048,8 @@ function calendar_download($post) {
         $ort = "";
     }
     
-    // $url = get_site_url(null, '/wp-content/themes/', 'https');
-    // $url = str_replace('https://', '', $url);
-    // $url = str_replace('/wp-content/themes/', '', $url);
-    
-//    echo $url;
-    
     $kurz = get_field( "kurzbeschreibung" );
-
     $file_name = $post->post_name;
-//    $file_name = $post->post_name . "_" . date('Y-m', strtotime(get_field( "zeitpunkt" )));
-
-    // $url = "/var/www/vhosts/".$url."/httpdocs/wp/wp-content/themes/";
-    
     $dir = "/assets/generated/calendar-files/";
     
     // frequency (wiederholung)
@@ -1082,8 +1069,8 @@ function calendar_download($post) {
     
     if($ende == '19700101T000000') {
         die(); 
-    }
-    
+	}
+	
 	// $kb_ical = fopen($url.$theme.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
 	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
 	// $kb_ical = fopen($man_link.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
@@ -1113,14 +1100,10 @@ function calendar_download($post) {
     // header('HTTP/1.0 200 OK', true, 200);
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
-    
-    ?>
 
-	<a class="button"
-    href="<?php echo bloginfo('template_url') . "/assets/generated/calendar-files/" . $kb_file_name; ?>.ics"
-    target="_self">Termin im Kalender speichern</a>
-
-<?php
+	echo '<a class="button"
+	href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics"
+	target="_self">Termin im Kalender speichern</a>';
     
 }
 
