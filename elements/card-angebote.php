@@ -31,8 +31,6 @@
             <h3 class="card-title-large">
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
-            <p><?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></p>
-
         </div>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
 
