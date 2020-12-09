@@ -1414,14 +1414,14 @@ function update_veranstaltung_projekt($post_id) {
     * Check if a corresponding term already exists by comparing 
     * the post ID to all existing term descriptions. 
     */
-    $existing_terms = get_terms('projekte', array(
+    $existing_terms = get_terms('projekt', array(
         'hide_empty' => false
         )
     );
     foreach($existing_terms as $term) {
         if ($term->description == $post_id) {
             //term already exists, so update it and we're done
-            wp_update_term($term->term_id, 'projekte', array(
+            wp_update_term($term->term_id, 'projekt', array(
                 'name' => $term_title,
                 'slug' => $term_slug
                 )
@@ -1433,7 +1433,7 @@ function update_veranstaltung_projekt($post_id) {
     * If we didn't find a match above, this is a new post, 
     * so create a new term.
     */
-    wp_insert_term($term_title, 'projekte', array(
+    wp_insert_term($term_title, 'projekt', array(
         'slug' => $term_slug,
         'description' => $post_id
         )
