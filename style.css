@@ -4179,28 +4179,42 @@ figure.wp-block-table.is-style-stripes {
 /* CARDS */
 
 .card {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
   border-radius: 20px;
   width: 100%;
   max-width: 400px;
   background-color: #fff;
   margin: 5px auto;
   padding: 5px 5px 5px 5px;
-
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
 .card a {
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
   color: #000;
   text-decoration: none !important;
-  min-height: 100px;
+  /* min-height: 100px; */
+
+}
+.card-centered a {
+  align-items: center !important;
 }
 
+.card-centered .content {
+  margin: 0px !important;
+}
 .card .content {
   padding: 0px 10px;
   flex-grow: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .card img {
   min-width: 120px;
@@ -4210,6 +4224,21 @@ figure.wp-block-table.is-style-stripes {
   align-self: start;
 }
 
+.card .avatar {
+  min-width: inherit;
+  max-width: inherit;
+  min-width: 80px;
+  width: 80px;
+  border-radius: 15px;
+  align-self: start;
+}
+
+.card .emoji{
+  position: absolute;
+  bottom: -10px;
+  right: 45px;
+  font-size: 50px;
+}
 .card .pre-title {
   color: #0091ff;
   font-size: 1.5rem;
@@ -4240,13 +4269,13 @@ figure.wp-block-table.is-style-stripes {
     sans-serif;
   font-size: 2.5rem;
   line-height: 2.8rem;
+  margin-top: 3px;
 }
 
 .card .preview-text-large {
   margin-top: 5px;
   font-size: 1.8rem;
   line-height: 2rem;
-}
 }
 
 .card .preview-text {
@@ -4528,9 +4557,12 @@ figure.wp-block-table.is-style-stripes {
 
 .umgesetzt .pre-title,
 .umgesetzt .date {
-  color: green !important;
+  color: rgb(12, 194, 171) !important;
 }
 
+.green-text {
+  color: rgb(12, 194, 171) !important;
+}
 /* .card-container__small -> call to action card small*/
 
 .card-container__small {
@@ -4554,7 +4586,7 @@ figure.wp-block-table.is-style-stripes {
 }
 
 .card-container__large .card {
-  padding: 20px 0px;
+  padding: 5px ;
   max-width: 1000px;
 }
 
@@ -4565,10 +4597,15 @@ figure.wp-block-table.is-style-stripes {
 }
 
 @media (min-width: 782px) {
-  .card-container__large .card {
+  .card-container__large .card .content {
     padding: 50px 20px;
+    margin: 0px;
   }
-
+  .card-container__large .card .avatar {
+    width: 225px;
+  }
+  
+  
 
   .card .card-title-large {
     font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
@@ -4576,7 +4613,6 @@ figure.wp-block-table.is-style-stripes {
     font-size: 3rem;
     line-height: 3.2rem;
   }
-  
 
   .card .preview-text-large {
     font-size: 2.2rem;
@@ -4629,7 +4665,6 @@ figure.wp-block-table.is-style-stripes {
   display: inline-block; /*Display inline and maintain block characteristics.*/
   vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
   white-space: normal; /*Prevents child elements from inheriting nowrap.*/
-
   height: 60px;
   width: 25px;
   border-radius: 20px;

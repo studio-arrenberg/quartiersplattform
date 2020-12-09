@@ -33,6 +33,9 @@
             </h3>
         </div>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
+        <div class="emoji">
+            <?php  shorten_title(get_field('emoji'), '200'); ?>
+        </div>
 
 
     </a>

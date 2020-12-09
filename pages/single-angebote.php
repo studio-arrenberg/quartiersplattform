@@ -17,8 +17,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
 get_header();
 ?>
 
-<main id="site-content" class="gemeinsam" role="main">
-
+<main id="single-content" role="main">
 
     <?php
 
@@ -29,10 +28,26 @@ if ( have_posts() ) {
 
     ?>
 
-<div class="card-container  card-container__center card-container__large ">
-    
-    <?php get_template_part('elements/card', get_post_type()); ?>
-</div>
+
+    <div class="card-container card-container__center card-container__large ">
+        <div class="card">
+            <div class="content">
+                <div class="pre-title">Solidarisches Angebot <span class="date"><?php echo get_the_date('j. F'); ?>
+                        <span>
+                </div>
+                <h3 class="card-title-large">
+                    <?php  shorten_title(get_field('text'), '200'); ?>
+                </h3>
+            </div>
+            <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
+            <div class="emoji">
+            <?php  shorten_title(get_field('emoji'), '200'); ?>
+        </div>
+
+        </div>
+    </div>
+
+
 
     <!-- author -->
 
@@ -71,16 +86,16 @@ echo $post->post_author;
 ?>
 
 
-        <!-- kommentare -->
-        <?php			
+    <!-- kommentare -->
+    <?php			
     if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 ?>
 
-        <div class="comments-wrapper">
+    <div class="comments-wrapper">
 
-            <?php comments_template('', true); ?>
+        <?php comments_template('', true); ?>
 
-        </div><!-- .comments-wrapper -->
+    </div><!-- .comments-wrapper -->
 
     </div>
     <?php			
