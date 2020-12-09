@@ -1,10 +1,54 @@
+<style>
+    .shadow { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
+    2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0,
+    0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    font-size: 16px; } .shadow:hover { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
+    2px 8px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 32px rgba(0,
+    0, 0, 0.15), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 126px rgba(0, 0, 0, 0.15);
+    } .text { width: 60%; display: inline-block; line-height: 24px; } h1 {
+    font-size: 16px; } .content { padding: 5%; text-align: center; vertical-align:
+    center; position: relative; color: #666666; font-family: "Open Sans", Helvetica,
+    Arial; font-size: 16px; background-color: white; display: inline-block;
+    border-radius: 50px; } .table:after { } .table { margin-top: 50px; display:
+    flex; justify-content: center; flex-wrap: wrap; padding: 0%; } 
+    .column { 
+      width: 100%; padding: 4%; font-size: 16px; line-height: 24px; } 
 
+    
+    .column img {max-width: 200px; }
 
-<div class="mail" style="text-align: center;vertical-align: center;background-color: #f7f7f7;padding: 10% 20%;">
+    .link{
+        font-size:12px;
+      }
+
+  @media (min-width: 750px) {
+     .column { width: 24%; }
+    .link a{
+          font-size: 16px;
+        }
+        .mail{
+          padding:10% 20%;;
+        }
+  } 
+  .mail
+  { 
+    text-align: center; 
+    vertical-align: center; 
+    background-color: #f7f7f7;
+    padding: 5% 5%; 
+  } 
+   .footer { text-align: center; margin-top: 5%; 
+   font-size:12px;
+   } a {
+    text-decoration: none; color: #62b2f0; font-family: "Open Sans", Helvetica,
+    Arial; margin-top:100px; } .footer_link{ padding:20% 2%; margin-top:100px;
+</style>
+
+<div class="mail" style="text-align: center;vertical-align: center;background-color: #f7f7f7;padding: 5% 5%;">
   <div class="content" style="padding: 5%;text-align: center;vertical-align: center;position: relative;color: #666666;font-family: &quot;Open Sans&quot;, Helvetica,
-  Arial;font-size: 16px;background-color: white;display: inline-block;border-radius: 50px;">
+    Arial;font-size: 16px;background-color: white;display: inline-block;border-radius: 50px;">
     <div>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/willkommen.png" alt="Arrenberg Logo" width="200" height="200">
+      <img src="https://arrenberg.app/wp-content/themes/quartiersplattform/assets/mail/registrieren.png" alt="Arrenberg Logo" width="200">
     </div>
     <br>
     <div>
@@ -26,24 +70,24 @@
       </span></div>
       <p></p>
       <div class="table" style="margin-top: 50px;display: flex;justify-content: center;flex-wrap: wrap;padding: 0%;">
-        <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/nachrichten.png" alt="Arrenberg Logo" style="max-width: 200px;">
+        <div class="column" style="width: 100%;padding: 4%;font-size: 16px;line-height: 24px;">
+          <img src="https://arrenberg.app/wp-content/themes/quartiersplattform/assets/mail/nachrichten.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Nachrichten</h1>
           <p>
             Sieh dir Angebote und Nachrichten von deinen Nachbar*innen an! Teile
             deine Ressourcen und erhalte Hilfe von anderen.
           </p>
         </div>
-        <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/projekte.png" alt="Arrenberg Logo" style="max-width: 200px;">
+        <div class="column" style="width: 100%;padding: 4%;font-size: 16px;line-height: 24px;">
+          <img src="https://arrenberg.app/wp-content/themes/quartiersplattform/assets/mail/projekte.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Projekte</h1>
           <p>
             Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem
             Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!
           </p>
         </div>
-        <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/veranstaltungen.png" alt="Arrenberg Logo" style="max-width: 200px;">
+        <div class="column" style="width: 100%;padding: 4%;font-size: 16px;line-height: 24px;">
+          <img src="https://arrenberg.app/wp-content/themes/quartiersplattform/assets/mail/veranstaltungen.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Veranstaltungen</h1>
           <p>
             Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier
@@ -56,11 +100,11 @@
 
     <div style="padding: 0 30px 30px 30px">
       <div> </div>
-      <div style="padding: 10px 0 50px 0; text-align: center">
-        <a class="shadow" style="background: #0091ff;color: #fff;padding: 20px 30px;text-decoration: none;border-radius: 20px;letter-spacing: 0.3px;font-family: &quot;Open Sans&quot;, Helvetica,
-  Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
-  2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0,
-  0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 16px;" href="{login_url}">Entdecke dein Quartier!
+      <div style="padding: 10px 0 50px 0;text-align: center;font-size: 12px;" class="link">
+        <a class="shadow link" style="background: #0091ff;color: #fff;padding: 20px 30px;text-decoration: none;border-radius: 20px;letter-spacing: 0.3px;font-family: &quot;Open Sans&quot;, Helvetica,
+    Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
+    2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0,
+    0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 12px;" href="{login_url}">Entdecke dein Quartier!
         </a>
       </div>
       <div style="padding: 20px">
@@ -73,15 +117,15 @@
       <div>Dein Arrenberg Team.</div>
     </div>
   </div>
-  <div class="footer" style="text-align: center;margin-top: 5%;">
+  <div class="footer" style="text-align: center;margin-top: 5%;font-size: 12px;">
     <p>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="200">
+      <img src="https://arrenberg.app/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="150">
     </p>
-    <p class="footer" style="text-align: center;margin-top: 5%;">
+    <p class="footer" style="text-align: center;margin-top: 5%;font-size: 12px;">
       <a class="footer_link" href="{login_url}" style="text-decoration: none;color: #62b2f0;font-family: &quot;Open Sans&quot;, Helvetica,
-  Arial;margin-top: 100px;padding: 20% 2%;">Impressum </a>
+    Arial;margin-top: 100px;padding: 20% 2%;">Impressum </a>
       <a class="footer_link" href="{login_url}" style="text-decoration: none;color: #62b2f0;font-family: &quot;Open Sans&quot;, Helvetica,
-  Arial;margin-top: 100px;padding: 20% 2%;">Datenschutz </a>
+    Arial;margin-top: 100px;padding: 20% 2%;">Datenschutz </a>
     </p>
   </div>
 </div>
