@@ -16,7 +16,7 @@
 <a href="<?php echo get_site_url(); ?>/frage-dein-quartier/">
 		<div class="content white-text">
 			<h3 class="card-title">
-				Frage dein Quatier
+				Frage dein Quartier
 			</h3>
 			<p class="preview-text">
 				Was wünscht du dir in deinem Viertel? 
