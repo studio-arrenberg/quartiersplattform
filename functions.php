@@ -1191,11 +1191,12 @@ function my_post_title_updater( $post_id ) {
 		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
 
 	}
-	// Post Type Anmerkungen
-	if ( get_post_type($post_id) == 'gemeinsam' ) {
+	// Post type fragen & angebote 
+	if ( get_post_type($post_id) == 'angebote' || get_post_type($post_id) == 'fragen' ) {
 		$my_post = array();
 		$my_post['ID'] = $post_id;
 		$text = get_field( 'text', $post_id );
+
 		// shorten
 		$chars_limit = 50; // Character length
 		$chars_text = strlen($text);
@@ -1208,16 +1209,6 @@ function my_post_title_updater( $post_id ) {
 
 		$my_post['post_title'] = $text;
 		wp_update_post( $my_post ); // Update the post into the database
-		// update taxonomy
-		if(!has_term('', 'anmerkungen_status') ){
-			// do something
-			wp_set_object_terms( $post_id, 'arrenberg-update', 'anmerkungen_version', false ); // change to status!
-			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
-		}
-		
-		// FURTHER READING
-		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
-
 	}
 
 }
