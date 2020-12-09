@@ -4180,14 +4180,13 @@ figure.wp-block-table.is-style-stripes {
 
 .card {
   position: relative;
-
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
   width: 100%;
   max-width: 400px;
   background-color: #fff;
-  margin: 5px auto;
+  margin: 10px auto;
   padding: 5px 5px 5px 5px;
   transition: all ease-in-out 0.2s; /* Animation */
 }
@@ -4201,7 +4200,6 @@ figure.wp-block-table.is-style-stripes {
   color: #000;
   text-decoration: none !important;
   /* min-height: 100px; */
-
 }
 .card-centered a {
   align-items: center !important;
@@ -4233,7 +4231,7 @@ figure.wp-block-table.is-style-stripes {
   align-self: start;
 }
 
-.card .emoji{
+.card .emoji {
   position: absolute;
   bottom: -10px;
   right: 45px;
@@ -4564,6 +4562,10 @@ figure.wp-block-table.is-style-stripes {
 .green-text {
   color: rgb(12, 194, 171) !important;
 }
+
+.red-text {
+  color: rgb(255, 82, 128) !important;
+}
 /* .card-container__small -> call to action card small*/
 
 .card-container__small {
@@ -4587,7 +4589,7 @@ figure.wp-block-table.is-style-stripes {
 }
 
 .card-container__large .card {
-  padding: 5px ;
+  padding: 5px;
   max-width: 1000px;
 }
 
@@ -4605,8 +4607,6 @@ figure.wp-block-table.is-style-stripes {
   .card-container__large .card .avatar {
     width: 225px;
   }
-  
-  
 
   .card .card-title-large {
     font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,

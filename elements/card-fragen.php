@@ -26,8 +26,7 @@
 <div class="card shadow frage ">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
-            <div class="pre-title green-text">Frage an das Quartier<span
-                    class="date  green-text"><?php echo get_the_date('j. F'); ?> <span>
+            <div class="pre-title green-text">Frage an das Quartier <span class="date  green-text"><?php echo get_the_date('j. F'); ?> <span>
             </div>
             <h3 class="card-title-large">
                 <?php  shorten_title(get_field('text'), '200'); ?>
