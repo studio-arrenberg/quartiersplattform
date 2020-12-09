@@ -42,8 +42,9 @@ get_header();
 
     <!-- call to register -->
 	
-	<div class="card-container card-container__center">
+	<div class="card-container ">
 		<?php get_template_part( 'components/call', 'update' ); ?>
+		<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
 	</div>
 
     <!-- *urbane transformation* -->
