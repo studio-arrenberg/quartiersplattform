@@ -67,10 +67,6 @@ get_header();
     <!-- not ready yet -->
 
     <!-- Projektverlauf -->
-    <!-- not ready yet -->
-    <!-- test -->
-    <?php if (current_user_can('administrator') ) { // new feature only for admins ?>
-
     <?php
 
         $args_chronik = array(
@@ -86,10 +82,14 @@ get_header();
                 )
             )
         );
-		list_card($args_chronik, get_site_url().'/projekt/'.$post->post_name.'/', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
 
+        $thePosts = query_posts($args_chronik);
+        global $wp_query; 
+
+        if ($wp_query->found_posts > 0) {
+            list_card($args_chronik, get_site_url().'/projekt/'.$post->post_name.'/', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
+        }
     ?>    
-    <?php } ?>
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
