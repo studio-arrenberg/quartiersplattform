@@ -4621,6 +4621,15 @@ figure.wp-block-table.is-style-stripes {
   }
 }
 
+
+
+.list-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
 /* Energie  Ampel */
 
 .energie-ampel {
