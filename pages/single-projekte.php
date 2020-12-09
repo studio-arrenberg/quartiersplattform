@@ -147,9 +147,10 @@ get_header();
 
 	?>
 
+    
     <br><br><br>
+    <!-- weitere projekte -->
     <h2>Weitere Projekte</h2>
-    <!-- featured projects -->
 	<?php
 	$args3 = array(
 		'post_type'=>'projekte', 

@@ -82,12 +82,14 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
     );
     
 }
-echo $post->post_author;
+// echo $post->post_author;
 ?>
 
 
     <!-- kommentare -->
     <?php			
+
+    echo "kommentare";
     if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 ?>
 
