@@ -29,7 +29,7 @@ get_header();
 			the_post();
 
 			//Angebote (acf)
- get_template_part('components/angebote'); 
+            get_template_part('components/fragen'); 
 		}
 	}
 

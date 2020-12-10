@@ -32,7 +32,7 @@ if ( have_posts() ) {
     <div class="card-container card-container__center card-container__large ">
         <div class="card">
             <div class="content">
-                <div class="pre-title">Solidarisches Angebot <span class="date"><?php echo get_the_date('j. F'); ?>
+                <div class="pre-title red-text">Solidarisches Angebot <span class="date red-text"><?php echo get_the_date('j. F'); ?>
                         <span>
                 </div>
                 <h3 class="card-title-large">
@@ -41,16 +41,14 @@ if ( have_posts() ) {
             </div>
             <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
             <div class="emoji">
-            <?php  shorten_title(get_field('emoji'), '200'); ?>
-        </div>
-
+                <?php  shorten_title(get_field('emoji'), '200'); ?>
+            </div>
         </div>
     </div>
 
 
 
     <!-- author -->
-
     <?php edit_post_link(); ?>
 
     <!-- Gutenberg Editor Content -->
@@ -61,7 +59,7 @@ if ( have_posts() ) {
     } else {
         the_content( __( 'Continue reading', 'twentytwenty' ) );
     }
-?>
+    ?>
     </div>
 
     <?php

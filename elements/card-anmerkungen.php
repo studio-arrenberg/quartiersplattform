@@ -25,12 +25,16 @@ if ($terms_status) {
 <div class="card shadow anmerkung <?php echo $terms_status[0]->slug; ?>">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
-            <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date"><?php echo $terms_status[0]->name; ?> <span></div>
-            <h3 class="card-title">
+            <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span
+                    class="date">
+                    <?php echo $terms_status[0]->name; ?> von
+                    <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <span></div>
+            <h3 class="card-title-large">
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
-            <p><?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></p>
-            <div class="comment-count"><?php comment_counter($post->ID); ?></p></div>
+            <div class="comment-count"><?php comment_counter($post->ID); ?></p>
+            </div>
         </div>
     </a>
 </div>

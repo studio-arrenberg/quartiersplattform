@@ -4600,12 +4600,26 @@ figure.wp-block-table.is-style-stripes {
 }
 
 @media (min-width: 782px) {
+  .card-container__large .card {
+    border-radius: 30px;
+  }
+
+  .card-container__large .card img {
+    border-radius: 25px;
+  }
+
   .card-container__large .card .content {
     padding: 50px 20px;
     margin: 0px;
   }
   .card-container__large .card .avatar {
     width: 225px;
+  }
+
+  .card-container__large .card .emoji {
+    bottom: 15px;
+    right: 200px;
+    font-size: 90px;
   }
 
   .card .card-title-large {
@@ -4615,20 +4629,17 @@ figure.wp-block-table.is-style-stripes {
     line-height: 3.2rem;
   }
 
-  .card .preview-text-large {
+  .card-container__large .card .pre-title, .card .preview-text-large {
     font-size: 2.2rem;
     line-height: 2.4rem;
   }
 }
-
-
 
 .list-cards {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
 
 /* Energie  Ampel */
 

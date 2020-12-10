@@ -19,16 +19,38 @@ get_header();
     <?php
 
 if ( have_posts() ) {
-
     while ( have_posts() ) {
         the_post();
 
     ?>
 
-<div class="card-container  card-container__center card-container__large ">
-    
-    <?php get_template_part('elements/card', get_post_type()); ?>
-</div>
+    <div class="card-container card-container__center card-container__large ">
+
+        <?php
+        $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
+        $terms_version = "";
+        if ($terms_status) {
+            $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
+        }
+        ?>
+
+        <div class="card anmerkung <?php echo $terms_status[0]->slug; ?>">
+            <a href="<?php echo esc_url( get_permalink() ); ?>">
+                <div class="content">
+                    <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span class="date">
+                            <?php echo $terms_status[0]->name; ?> von
+                            <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                            <span></div>
+                    <h3 class="card-title-large">
+                        <?php  shorten_title(get_field('text'), '200'); ?>
+                    </h3>
+                    <div class="comment-count"><?php comment_counter($post->ID); ?></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
 
     <!-- author -->
 
@@ -45,16 +67,16 @@ if ( have_posts() ) {
 ?>
     </div>
 
-        <!-- kommentare -->
-        <?php			
+    <!-- kommentare -->
+    <?php			
     if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 ?>
 
-        <div class="comments-wrapper">
+    <div class="comments-wrapper">
 
-            <?php comments_template('', true); ?>
+        <?php comments_template('', true); ?>
 
-        </div><!-- .comments-wrapper -->
+    </div><!-- .comments-wrapper -->
 
     </div>
     <?php			
