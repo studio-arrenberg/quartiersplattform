@@ -42,6 +42,16 @@
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Emoji Picker -->
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/emoji.css" rel="stylesheet">
+
+
+
+
+
     <!-- Matomo -->
     <script type="text/javascript">
     var _paq = window._paq = window._paq || [];
