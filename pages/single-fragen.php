@@ -56,10 +56,17 @@ if ( have_posts() ) {
     } else {
         the_content( __( 'Continue reading', 'twentytwenty' ) );
     }
+
+    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        ?>
+            <a href="<?php get_permalink(); ?>?action=edit">Bearbeiten ;)</a>
+        <?php
+    }
+
 ?>
     </div>
 
-    <a href="<?php get_permalink(); ?>?action=edit">Bearbeiten ;)</a>
+    
 
     <?php
     }
