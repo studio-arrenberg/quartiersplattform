@@ -26,7 +26,7 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
-        if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+        // if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
     ?>
 
 
@@ -62,10 +62,8 @@ if ( have_posts() ) {
     <a href="<?php get_permalink(); ?>?action=edit">Bearbeiten ;)</a>
 
     <?php
-    }
-// echo  get_permalink();
-// ( isset($_GET['action']) && $_GET['action'] == 'edit' )
-else {
+//     }
+// else {
     // Show the form
 
 
@@ -87,7 +85,7 @@ else {
         
     }
 
-}
+// }
 
 
 

@@ -1,8 +1,7 @@
 # Quartiersplattform Arrenberg
 
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app) <br>
-Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
-Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
+Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
 Unterstützt durch das Wuppertal Institut bei den Projekten [SolPlat](https://wupperinst.org/p/wi/p/s/pd/921/) und [UTL Arrenberg](https://wupperinst.org/p/wi/p/s/pd/905/) 
 
 
