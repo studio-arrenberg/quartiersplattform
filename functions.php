@@ -621,7 +621,7 @@ function twentytwenty_customize_controls_enqueue_scripts() {
 // add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_controls_enqueue_scripts' );
 
 // no jquery if not admin
-// if ( !is_admin() ) wp_deregister_script('jquery');
+if ( !is_admin() ) wp_deregister_script('jquery');
 
 /**
  * Enqueue scripts for the customizer preview.
@@ -1376,11 +1376,11 @@ function um_deregister_styles() {
 
 // jQuery Update
 /** * Install latest jQuery version 3.5.1. */
-// if (!is_admin()) {
-// 	wp_deregister_script('jquery');
-// 	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false);
-// 	wp_enqueue_script('jquery');
-// }
+if (!is_admin()) {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
+	wp_enqueue_script('jquery');
+}
 
 // jQuery deregister + min
 function my_init() {
@@ -1407,8 +1407,16 @@ function my_init() {
 
 		// jQuery
         wp_deregister_script('jquery');
-        wp_register_script('jquery', false);
-    }
+		wp_register_script('jquery', false, false, true);
+
+		// emoji picker
+		wp_deregister_script('emoji_picker-config');
+		wp_deregister_script('emoji_picker-util');
+		wp_deregister_script('emoji_picker-emojiarea');
+		wp_deregister_script('emoji_picker-picker');
+
+	}
+
 }
 // add_action('init', 'my_init');
 
@@ -1419,6 +1427,20 @@ function embla_carousel() {
     wp_register_script('embla-carousel', 
 	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
+      
+}
+
+// register emoji picker script
+add_action("wp_enqueue_scripts", "emoji_picker");
+function emoji_picker() { 
+	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
+	wp_enqueue_script('emoji_picker-config');
+	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
+	wp_enqueue_script('emoji_picker-util');
+	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
+	wp_enqueue_script('emoji_picker-emojiarea');
+	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
+	wp_enqueue_script('emoji_picker-picker');
       
 }
 

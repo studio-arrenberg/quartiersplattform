@@ -3,6 +3,8 @@
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app) <br>
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) <br>
 Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691) <br>
+Unterstützt durch das Wuppertal Institut bei den Projekten [SolPlat](https://wupperinst.org/p/wi/p/s/pd/921/) und [UTL Arrenberg](https://wupperinst.org/p/wi/p/s/pd/905/) 
+
 
 ## 🧯 Wichtig 
 - Matomo Tracking Codes/Strategy
@@ -94,9 +96,10 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html) <br>
 [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)<br>
 [Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)<br>
-[Mail Template Inline Styles Converter](https://templates.mailchimp.com/resources/inline-css/)
+[Mail Template Inline Styles Converter](https://templates.mailchimp.com/resources/inline-css/)<br>
+[Emoji Picker](https://github.com/OneSignal/emoji-picker)
 
-#### Emoji Libraries
+#### Other Emoji Libraries
 * [jQuery Emoji Picker](https://github.com/wedgies/jquery-emoji-picker) [Demo](http://wedgies.github.io/jquery-emoji-picker/demo.html)
 * [EmojioneArea](https://github.com/mervick/emojionearea) [Demo](https://jsfiddle.net/mervick/1v03Lqnu/765/)
 

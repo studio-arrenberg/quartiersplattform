@@ -48,33 +48,40 @@
 
     ?>
        
-        <p class="lead emoji-picker-container">
+        <!-- <div class="lead emoji-picker-container">
             <input id="emoji" type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true"
-                maxlength="1">
-        </p>
-
-
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-    <!-- Emoji Picker -->
-
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/config.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/util.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/jquery.emojiarea.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/emoji-picker.js"></script>
+                maxlength="9">
+        </div> -->
 
 
     <script>
 
         // picker for acf field
-        var el = $( "#acf-field_5fcf563d5b576" )
+        var el = $( "#acf-field_5fcf563d5b576" );
         el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
         el.attr("data-emojiable", "true");
-        el.text('weweew');
+        el.attr('maxlength', '2');
+
+        // test
+        // var el = $( "#emoji" );
+        // el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+        // el.attr("data-emojiable", "true");
+        // el.attr('maxlength', '2');
 
         // empty field
-        $( ".emoji-picker-container" ).click(function() {
-            $( this ).children('.emoji-wysiwyg-editor').text('');
+        // $( ".emoji-picker-container" ).click(function() {
+        //     $( this ).children('.emoji-wysiwyg-editor').text('');
+        // });
+
+        // on change empty
+        // $( ".emoji-picker-container > .emoji-wysiwyg-editor" ).change(function() {
+        //     // $( this ).children('.emoji-wysiwyg-editor').text('');
+        // });
+        
+        // remove previous emojies
+        $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
+            console.log('call');
+            $( this ).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
         });
 
 
