@@ -26,7 +26,7 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
-        // if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+        if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
     ?>
 
 
@@ -62,13 +62,13 @@ if ( have_posts() ) {
     <a href="<?php get_permalink(); ?>?action=edit">Bearbeiten ;)</a>
 
     <?php
-//     }
-// else {
+    }
+else {
     // Show the form
 
 
 
-    // if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         echo '<h3>Bearbeite deine Frage</h3>';
         acf_form (
             array(
@@ -83,9 +83,9 @@ if ( have_posts() ) {
             )
         );
         
-    // }
+    }
 
-// }
+}
 
 
 
