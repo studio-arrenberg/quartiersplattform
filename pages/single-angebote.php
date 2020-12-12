@@ -26,6 +26,7 @@ if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
 
+        if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
     ?>
 
 
@@ -46,11 +47,6 @@ if ( have_posts() ) {
         </div>
     </div>
 
-
-
-    <!-- author -->
-    <?php edit_post_link(); ?>
-
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
         <?php
@@ -62,8 +58,11 @@ if ( have_posts() ) {
     ?>
     </div>
 
-    <?php
+    <a href="<?php get_permalink(); ?>?action=edit">Bearbeiten ;)</a>
 
+    <?php
+        }
+else {
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
     echo '<h3>Bearbeite deine Frage</h3>';
     acf_form (
@@ -79,6 +78,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         )
     );
     
+}
 }
 // echo $post->post_author;
 ?>
