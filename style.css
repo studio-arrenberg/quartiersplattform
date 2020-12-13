@@ -5112,21 +5112,32 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 .acf-button-group label {
   flex-grow: 1;
   background-color: #fff;
   height: 50px;
-  padding: 5px 15px;
-  position: relative;
+  padding: 5px;
+}
 
+
+.acf-button-group label span {
+ position: absolute;
+ height: 50px;
+ display: flex;
+ padding-top: 10px;
+ margin-left: 10px;
 }
 
 input[type="radio"] {
-  width: calc( 100% + 20px );
-  height:  40px;
-  padding: 0px;
+  position: absolute;
+    width: 28%;
+
+  height: 40px;
   margin: 0px;
+  padding: 0px;
+
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -5134,10 +5145,13 @@ input[type="radio"] {
   border-radius: 0px;
   border: none;
 }
+
+
 input[type="radio"]:checked {
   background-color: #e8f5ff;
   border-radius: 15px;
 }
+
 
 .acf-button-group label:first-of-type {
   border-radius: 20px 0px 0px 20px;
@@ -5146,21 +5160,3 @@ input[type="radio"]:checked {
 .acf-button-group label:last-of-type {
   border-radius: 0px 20px 20px 0px;
 }
-
-/* 
-
-input[type="radio"] {
-  width: 100%;
-  height:  40px;
-  top: 5px;
-  left: 5px;
-  padding: 0px;
-  margin: 0px;
-  position: absolute;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  display: inline-block;
-  border-radius: 0px;
-  border: none;
-} */
