@@ -1424,9 +1424,6 @@ button.toggle {
   }
 }
 
-.anmerkung .card .content {
-  max-width: 100%;
-}
 
 .large-header {
   min-height: 60vh;
@@ -4437,6 +4434,11 @@ figure.wp-block-table.is-style-stripes {
   margin-top: 3px;
   margin-bottom: -6px;
 }
+
+
+.anmerkung .card .content {
+  max-width: 100%;
+}
 /* Tablet - 2 slides in viewport */
 @media (min-width: 782px) {
   .embla-one .embrela-slide {
@@ -4594,6 +4596,7 @@ figure.wp-block-table.is-style-stripes {
 
 .anmerkung .content {
   padding: 10px 10px;
+  max-width: 100%;
 }
 
 .in-bearbeitung .pre-title,
