@@ -83,10 +83,8 @@ get_header();
             )
         );
 
-        $thePosts = query_posts($args_chronik);
-        global $wp_query; 
-
-        if ($wp_query->found_posts > 0) {
+        $my_query = new WP_Query($args_chronik);
+        if ($my_query->post_count > 0) {
             list_card($args_chronik, get_site_url().'/projekt/'.$post->post_name.'/', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
         }
     ?>    
