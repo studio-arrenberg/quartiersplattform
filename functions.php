@@ -1454,7 +1454,7 @@ add_action( 'pre_get_posts', function ( $query ) {
     }
 } );
 
-// debug function 
+// debug function
 function debugToConsole($msg) { 
 	echo "<script>console.log(".json_encode($msg).")</script>";
 }
