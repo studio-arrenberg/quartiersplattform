@@ -39,7 +39,8 @@ get_header();
 		'post_type'=>'nachrichten', 
 		'post_status'=>'publish', 
 		'posts_per_page'=> 6,
-		'orderby' => 'rand'
+		// 'orderby' => 'rand',
+		'order' => 'DESC',
 	);
 
 	slider($args2,'card', '1','false'); 
