@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<main id="site-content" class="" role="main">
+<main id="single-content" role="main">
 
     <?php
 	if ( have_posts() ) {
