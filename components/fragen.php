@@ -39,7 +39,6 @@
 				'fields' => array(
                     'text',
                     'emoji',
-                    'map',
 				),
 				'submit_value'=>'Frage veröffentlichen',
 			)
