@@ -1379,6 +1379,7 @@ function um_deregister_styles() {
 if (!is_admin()) {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
+	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
 	wp_enqueue_script('jquery');
 }
 

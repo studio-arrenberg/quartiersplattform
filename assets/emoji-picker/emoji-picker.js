@@ -18,9 +18,9 @@
     EmojiPicker.prototype.discover = function() {
       var isiOS;
       isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-      if (isiOS) {
-        return;
-      }
+      // if (isiOS) {
+      //   return;
+      // }
       return $(this.options.emojiable_selector).emojiarea($.extend({
         emojiPopup: this,
         norealTime: true

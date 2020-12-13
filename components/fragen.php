@@ -15,7 +15,8 @@
     <?php // acf_form_head(); ?>
 
     <?php $hierarchical_tax = array( 1 ); ?>
-    <?php acf_form(
+    <?php 
+    acf_form(
 			array(
 				'id' => 'fragen-form',
 				'html_before_fields' => '',
@@ -48,14 +49,15 @@
 
     ?>
        
-        <!-- <div class="lead emoji-picker-container">
+        <div class="lead emoji-picker-container">
             <input id="emoji" type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true"
                 maxlength="9">
-        </div> -->
+        </div>
 
 
     <script>
 
+       
         // picker for acf field
         var el = $( "#acf-field_5fcf563d5b576" );
         el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
@@ -70,7 +72,7 @@
 
         // empty field
         // $( ".emoji-picker-container" ).click(function() {
-        //     $( this ).children('.emoji-wysiwyg-editor').text('');
+        //     $( this ).children('.emoji-wysiwyg-editor').text('hi');
         // });
 
         // on change empty
@@ -84,7 +86,6 @@
             $( this ).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
         });
 
-
         $(function() {
             // Initializes and creates emoji set from sprite sheet
             window.emojiPicker = new EmojiPicker({
@@ -97,6 +98,7 @@
             // It can be called as many times as necessary; previously converted input fields will not be converted again
             window.emojiPicker.discover();
         });
+    
 
     </script>
 
