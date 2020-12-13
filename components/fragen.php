@@ -48,10 +48,10 @@
 
     ?>
        
-        <div class="lead emoji-picker-container">
+        <!-- <div class="lead emoji-picker-container">
             <input id="emoji" type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true"
                 maxlength="9">
-        </div>
+        </div> -->
 
 
     <script>
