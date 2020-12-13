@@ -85,7 +85,8 @@ else {
                 'post_title' => false,
                 'post_content' => false,    
                 'fields' => array(
-                    'text',                
+                    'text',
+                    'emoji',
                 )
             )
         );

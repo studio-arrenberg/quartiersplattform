@@ -6,7 +6,6 @@
  * @subpackage Twenty_Twenty
  * @since Twenty Twenty 1.0
  */
-
 ?>
 
 <div class="publish-form">
@@ -79,7 +78,5 @@
 
     </script>
 
-    <!-- for testing -->
-    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen">Zur Wunschliste
 </a>
 </div>

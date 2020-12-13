@@ -21,7 +21,7 @@
             <p class="preview-text">
                 + Stell eine Frage an das Quartier <br>
                 + Veröffentliche ein Angebot oder biete Hilfe an <br>
-                + Werde aktiver teil deines Quatiers
+                + Werde aktiver teil deines Quartiers
             </p>
         </div>
 
