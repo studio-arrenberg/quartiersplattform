@@ -1454,7 +1454,6 @@ add_action( 'pre_get_posts', function ( $query ) {
     }
 } );
 
-<<<<<<< HEAD
 // debug function
 function debugToConsole($msg) { 
 	echo "<script>console.log(".json_encode($msg).")</script>";
@@ -1469,9 +1468,6 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 // create TAX projekt in veranstaltung & nachrichten
-=======
-// create projekt in veranstaltung -> ort tax
->>>>>>> fa2ce12db984c60f94de0bf5ce7bb12f373162ec
 function update_veranstaltung_projekt($post_id) {
 
     // only update terms if it's a post-type-B post
@@ -1518,7 +1514,6 @@ function update_veranstaltung_projekt($post_id) {
     );
 }
 //run the update function whenever a post is created or edited
-<<<<<<< HEAD
 add_action('save_post', 'update_veranstaltung_projekt');
 
 // comment count
@@ -1604,6 +1599,3 @@ function copywrite_beitragsbild() {
 
     }
 }
-=======
-add_action('save_post', 'update_veranstaltung_projekt');
->>>>>>> fa2ce12db984c60f94de0bf5ce7bb12f373162ec
