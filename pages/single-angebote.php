@@ -80,6 +80,8 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             'post_content' => false,    
             'fields' => array(
                 'text',                
+                'emoji',
+                'duration',                
             )
         )
     );

@@ -100,10 +100,5 @@
     
 
     </script>
-
-
-
-    <!-- for testing -->
-    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen">Zur Wunschliste
     </a>
 </div>

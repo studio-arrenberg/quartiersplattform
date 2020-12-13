@@ -50,8 +50,13 @@ get_header();
     <!-- call to register -->
 	
 	<div class="card-container ">
-		<?php get_template_part( 'components/call', 'update' ); ?>
+		<?php get_template_part( 'components/call', 'umfrage' ); ?>
 		<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
+		<?php get_template_part( 'components/call', 'update' ); ?>
+		
+		<!-- arrenberg farm link card -->
+		<?php link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+		
 	</div>
 
     <!-- *urbane transformation* -->
@@ -102,8 +107,7 @@ get_header();
     <!-- geschichten link card -->
 	<?php // link_card('Menschen und Geschichten am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); ?>
 	
-	<!-- arrenberg farm link card -->
-    <?php link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+	
 
     <!-- energie ampel -->
     <?php get_template_part('components/energie_ampel'); ?>
