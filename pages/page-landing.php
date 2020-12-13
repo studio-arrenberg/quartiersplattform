@@ -16,23 +16,30 @@ get_header();
 
     <!-- neuste meldung (card + carousel query + function) -->
     <?php
+	// $args2 = array(
+	// 	'post_type'=>'veranstaltungen', 
+	// 	'post_status'=>'publish', 
+	// 	'posts_per_page'=> 4, 
+	// 	'meta_key' => 'zeitpunkt',
+	// 	//'orderby' => 'meta_value',
+	// 	'orderby' => 'rand',
+	// 	'order' => 'ASC',
+	// 	'offset' => '0', 
+	// 	'meta_query' => array(
+	// 		array(
+	// 			'key' => 'zeitpunkt', 
+	// 			'value' => date("Y-m-d"),
+	// 			'compare' => '>=', 
+	// 			'type' => 'DATE'
+	// 		)
+	// 	)
+	// );
+
 	$args2 = array(
-		'post_type'=>'veranstaltungen', 
+		'post_type'=>'nachrichten', 
 		'post_status'=>'publish', 
-		'posts_per_page'=> 4, 
-		'meta_key' => 'zeitpunkt',
-		//'orderby' => 'meta_value',
-		'orderby' => 'rand',
-		'order' => 'ASC',
-		'offset' => '0', 
-		'meta_query' => array(
-			array(
-				'key' => 'zeitpunkt', 
-				'value' => date("Y-m-d"),
-				'compare' => '>=', 
-				'type' => 'DATE'
-			)
-		)
+		'posts_per_page'=> 6,
+		'orderby' => 'rand'
 	);
 
 	slider($args2,'card', '1','false'); 
