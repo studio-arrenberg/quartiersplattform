@@ -4213,6 +4213,7 @@ figure.wp-block-table.is-style-stripes {
   flex-grow: 1;
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: calc(100% - 90px);
 }
 .card img {
   min-width: 120px;
@@ -4230,6 +4231,9 @@ figure.wp-block-table.is-style-stripes {
   border-radius: 15px;
   align-self: start;
 }
+.card .avatar-default {
+  display: none;
+}
 
 .card .emoji {
   position: absolute;
@@ -4237,6 +4241,12 @@ figure.wp-block-table.is-style-stripes {
   right: 45px;
   font-size: 50px;
 }
+
+.card .emojis-top {
+  font-size: 4rem;
+  margin-bottom: 5px;
+}
+
 .card .pre-title {
   color: #0091ff;
   font-size: 1.5rem;
@@ -4330,6 +4340,7 @@ figure.wp-block-table.is-style-stripes {
   max-height: 200px;
   position: relative;
   padding: 0px;
+  min-height: 185px;
 }
 
 .landscape a .content,
@@ -4340,6 +4351,7 @@ figure.wp-block-table.is-style-stripes {
   top: 0px;
   padding: 10px;
   width: 100%;
+  max-width: 100%;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;
@@ -4397,6 +4409,7 @@ figure.wp-block-table.is-style-stripes {
     rgba(0, 0, 0, 0) 60%
   );
   margin: 0px;
+  max-width: 100%;
 }
 
 .embla {
@@ -4538,8 +4551,41 @@ figure.wp-block-table.is-style-stripes {
   .card-container .landscape {
     max-width: calc(50% - 5px);
     margin: 10px 0px 0px 0px;
+    max-height: 240px;
   }
 }
+
+@media (min-width: 782px) {
+  .card-container .landscape .card-title {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+
+  .card-container .landscape .preview-text {
+    font-size: 1.4rem;
+  }
+
+  .card-container .landscape a .content {
+    padding: 5px 15px;
+  }
+}
+
+/* 
+
+@media (min-width: 1000px) {
+  .card-container .landscape .card-title {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .card-container .landscape .preview-text {
+    font-size: 1.4rem;
+  }
+
+  .card-container .landscape a .content {
+    padding: 15px;
+  }
+} */
 
 .anmerkung .pre-title {
   margin-bottom: 5px;
@@ -4586,6 +4632,10 @@ figure.wp-block-table.is-style-stripes {
 }
 .card-container__small .card .card-title {
   margin-bottom: 4px;
+}
+
+.card-container__small .card .content {
+  max-width: 100%;
 }
 
 .card-container__large .card {
@@ -5070,7 +5120,6 @@ input[type="file"] {
   padding: 5px;
 }
 
-
 input[type="radio"] {
   width: 100%;
   height: 100%;
@@ -5085,16 +5134,14 @@ input[type="radio"] {
   border: none;
 }
 input[type="radio"]:checked {
-  background-color: #E8F5FF;
+  background-color: #e8f5ff;
   border-radius: 15px;
 }
 
-
-.acf-button-group label:first-of-type{
+.acf-button-group label:first-of-type {
   border-radius: 20px 0px 0px 20px;
 }
 
-
-.acf-button-group label:last-of-type{
+.acf-button-group label:last-of-type {
   border-radius: 0px 20px 20px 0px;
 }
