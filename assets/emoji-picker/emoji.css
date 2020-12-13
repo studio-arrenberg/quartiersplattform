@@ -53,6 +53,11 @@ img.emoji {
   margin-bottom: 15px;
 }
 
+.emoji-picker-container input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
 .emoji-wysiwyg-editor img {
   position: relative !important;
   z-index: 200;
@@ -67,6 +72,9 @@ img.emoji {
   z-index: 200 !important;
 }
 
+.emoji-wysiwyg-editor:focus {
+  outline: none;
+}
 .fa-smile-o:before {
   content: none;
 }
@@ -107,7 +115,6 @@ img.emoji {
   display: block;
   position: absolute;
   top: 2px;
-  left: 0px;
   width: 100%;
   height: 100%;
   font-size: 25px;
@@ -135,7 +142,9 @@ img.emoji {
   box-shadow: none;
   word-wrap: break-word;
   background: #fff;
-  pointer-events: none
+  pointer-events: none;
+
+
 }
 
 .emoji-wysiwyg-editor.parent-has-scroll {
@@ -154,13 +163,15 @@ img.emoji {
 
 .emoji-menu {
   position: absolute;
-  right: 0;
-  top: 35px;
+  left: 0;
+  top: 0px;
   z-index: 100 !important;
   width: 100%;
   overflow: hidden;
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 20px;
   overflow: hidden;
+  padding-top: 40px;
+
 }
 
 .emoji-items-wrap1 {

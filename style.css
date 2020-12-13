@@ -4629,7 +4629,8 @@ figure.wp-block-table.is-style-stripes {
     line-height: 3.2rem;
   }
 
-  .card-container__large .card .pre-title, .card .preview-text-large {
+  .card-container__large .card .pre-title,
+  .card .preview-text-large {
     font-size: 2.2rem;
     line-height: 2.4rem;
   }
@@ -5055,4 +5056,45 @@ input[type="file"] {
 
 .publish-form .canvas {
   border-radius: 20px;
+}
+
+.acf-button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acf-button-group label {
+  flex-grow: 1;
+  background-color: #fff;
+  height: 65px;
+  padding: 5px;
+}
+
+
+input[type="radio"] {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: -35px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  border-radius: 0px;
+  border: none;
+}
+input[type="radio"]:checked {
+  background-color: #E8F5FF;
+  border-radius: 15px;
+}
+
+
+.acf-button-group label:first-of-type{
+  border-radius: 20px 0px 0px 20px;
+}
+
+
+.acf-button-group label:last-of-type{
+  border-radius: 0px 20px 20px 0px;
 }
