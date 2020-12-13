@@ -4238,7 +4238,7 @@ figure.wp-block-table.is-style-stripes {
 .card .emoji {
   position: absolute;
   bottom: -10px;
-  right: 45px;
+  right: 55px;
   font-size: 50px;
 }
 
@@ -5112,20 +5112,32 @@ input[type="file"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
 .acf-button-group label {
   flex-grow: 1;
   background-color: #fff;
-  height: 65px;
+  height: 50px;
   padding: 5px;
 }
 
+
+.acf-button-group label span {
+ position: absolute;
+ height: 50px;
+ display: flex;
+ padding-top: 10px;
+ margin-left: 10px;
+}
+
 input[type="radio"] {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+    width: 28%;
+
+  height: 40px;
   margin: 0px;
   padding: 0px;
-  margin-bottom: -35px;
+
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -5133,10 +5145,13 @@ input[type="radio"] {
   border-radius: 0px;
   border: none;
 }
+
+
 input[type="radio"]:checked {
   background-color: #e8f5ff;
   border-radius: 15px;
 }
+
 
 .acf-button-group label:first-of-type {
   border-radius: 20px 0px 0px 20px;

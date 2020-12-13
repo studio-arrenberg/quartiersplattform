@@ -75,9 +75,4 @@
         window.emojiPicker.discover();
     });
     </script>
-    <div class="acf-button-group"><label class="selected"><input type="radio" name="acf[field_5fcf56935b578]"
-                value="Tag" checked="checked"> Tag</label><label><input type="radio" name="acf[field_5fcf56935b578]"
-                value="Woche"> Woche</label><label><input type="radio" name="acf[field_5fcf56935b578]" value="Monat">
-            Monat</label></div>
-    </a>
-</div>
+   

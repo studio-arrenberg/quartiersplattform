@@ -59,7 +59,7 @@ if ( have_posts() ) {
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
-            <a class="button" href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
+            <a class="button  " href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
         <?php
     }
 
