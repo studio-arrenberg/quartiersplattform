@@ -93,9 +93,12 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
     <!-- kommentare -->
     <?php			
 
-    echo "kommentare";
+    // echo "kommentare";
+
+    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
     if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-?>
+    
+    ?>
 
     <div class="comments-wrapper">
 
@@ -103,8 +106,10 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 
     </div><!-- .comments-wrapper -->
 
+    <?php } ?>
     </div>
-    <?php			
+    <?php		
+    	
         }
 
     }
