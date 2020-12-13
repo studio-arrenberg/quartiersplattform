@@ -1424,7 +1424,8 @@ button.toggle {
   }
 }
 
-.anmerkungen {
+.anmerkung .card .content {
+  max-width: 100%;
 }
 
 .large-header {
