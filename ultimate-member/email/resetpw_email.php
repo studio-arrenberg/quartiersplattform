@@ -16,7 +16,7 @@ Arial;font-size: 16px;background-color: white;display: inline-block;border-radiu
         ">Hallo, {first_name}
       </span>
     </div>
-    <div> </div>
+    <div> </div>
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;">
         <span>Schön das du da bist! Klicke auf den Link, um dein Passwort zu ändern.
@@ -26,7 +26,7 @@ Arial;font-size: 16px;background-color: white;display: inline-block;border-radiu
     </div>
 
     <div style="padding: 0 30px 30px 30px">
-      <div> </div>
+      <div> </div>
       <div style="padding: 10px 0 50px 0; text-align: center">
         <a class="shadow" style="background: #0091ff;color: #fff;padding: 20px 30px;text-decoration: none;border-radius: 20px;letter-spacing: 0.3px;font-family: &quot;Open Sans&quot;, Helvetica,
 Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
