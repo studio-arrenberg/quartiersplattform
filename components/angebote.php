@@ -40,8 +40,7 @@
 				'fields' => array(
                     'text',
                     'emoji',
-                    'zeitraum',
-                    'map',
+                    'duration',
 				),
 				'submit_value'=>'Angebot senden',
 			)
