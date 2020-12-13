@@ -13,10 +13,9 @@
 <div class="card  bg_green landscape shadow">
     <a href="<?php echo get_site_url(); ?>/nachrichten/umfrage-transformation-am-arrenberg/">
         <div class="content white-text">
-            <h1>🙋🏼‍♂️📑💭</h1>
+            <div class="emojis-top">🙋🏼‍♂️📑💭</div>
             <h3 class="card-title">
-
-                <br> Wir wollen wissen, <br> was euch beschäftigt!
+                Wir wollen wissen, <br> was euch beschäftigt!
             </h3>
             <p class="preview-text">
                 Eine Umfrage des Wuppertal Instituts <br>
