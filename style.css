@@ -1424,8 +1424,6 @@ button.toggle {
   }
 }
 
-.anmerkungen {
-}
 
 .large-header {
   min-height: 60vh;
@@ -4436,6 +4434,9 @@ figure.wp-block-table.is-style-stripes {
   margin-top: 3px;
   margin-bottom: -6px;
 }
+
+
+
 /* Tablet - 2 slides in viewport */
 @media (min-width: 782px) {
   .embla-one .embrela-slide {
@@ -4593,6 +4594,7 @@ figure.wp-block-table.is-style-stripes {
 
 .anmerkung .content {
   padding: 10px 10px;
+  max-width: 100%;
 }
 
 .in-bearbeitung .pre-title,
@@ -5132,8 +5134,7 @@ input[type="file"] {
 
 input[type="radio"] {
   position: absolute;
-    width: 28%;
-
+  width: 28%;
   height: 40px;
   margin: 0px;
   padding: 0px;
