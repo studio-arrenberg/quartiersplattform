@@ -32,6 +32,15 @@ get_header();
 	card_list($args4);
 	?>
 </div>
+
+
+<div class="card-container   card-container__large ">
+		<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
+		
+	</div>
+
+
+	
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
