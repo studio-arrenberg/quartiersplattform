@@ -6,7 +6,6 @@ Unterstützt durch das Wuppertal Institut bei den Projekten [SolPlat](https://wu
 
 
 ## 🧯 Wichtig 
-- Matomo Tracking Codes/Strategy
 - File structure (template == component > one file)
 - Forms folder...
 

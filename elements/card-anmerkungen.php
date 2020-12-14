@@ -27,8 +27,8 @@ if ($terms_status) {
         <div class="content">
             <div class="pre-title"><?php echo $terms_version[0]->name; ?> <span
                     class="date">
-                    <?php echo $terms_status[0]->name; ?> von
-                    <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo $terms_status[0]->name; ?> 
+                    <?php // echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                     <span></div>
             <h3 class="card-title-large">
                 <?php  shorten_title(get_field('text'), '200'); ?>
