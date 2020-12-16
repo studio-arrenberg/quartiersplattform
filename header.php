@@ -223,7 +223,7 @@
     window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+  if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
     document.getElementById("site-header").style.top = "-45px";
   } else {
     document.getElementById("site-header").style.top = "0px";

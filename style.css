@@ -1079,7 +1079,6 @@ button.toggle {
   justify-content: flex-end;
 
   transition: all ease-in-out 0.2s; /* Animation */
-
 }
 
 /*  BLURRY HEADER */
@@ -1100,7 +1099,7 @@ button.toggle {
   display: flex;
   margin: 5px;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
   height: 28px;
   font-size: 1.3rem;
   line-height: 1.3rem;
@@ -1108,7 +1107,7 @@ button.toggle {
   border-radius: 11px;
 }
 
-.header-button:last-of-type{
+.header-button:last-of-type {
   margin-right: 0px;
 }
 
@@ -1120,11 +1119,10 @@ button.toggle {
 
 .button-has-image {
   padding: 0px;
-  height: 28px;
-width: 28px;
+  width: 28px;
 }
 
-.button-image  {
+.button-image {
   border-radius: 11px;
 }
 
@@ -1151,7 +1149,6 @@ width: 28px;
   word-break: keep-all;
   padding: 20px 5px 15px 5px;
   display: block;
-
 }
 
 .menu .current-menu-item > a {
@@ -1160,12 +1157,7 @@ width: 28px;
 }
 
 @media (max-width: 782px) {
-  .off {
-    display: block;
-    opacity: 1;
-  }
-
-  #site-header.page-header {
+  /* #site-header.page-header {
     background: transparent;
   }
 
@@ -1173,38 +1165,42 @@ width: 28px;
   .page-header .header-navigation-wrapper {
     position: none;
     display: none !important;
-  }
-
-  .header-button.off {
-    display: none;
-  }
+  } */
 }
 
 @media (min-width: 782px) {
   #site-header {
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 30px;
+    left: 0px;
+    right: 0px;
+    top: 0px !important;
+    margin-top: 0px;
     max-width: 1000px;
-    border-radius: 20px;
     background: transparent;
-    display: flex;
-    justify-content: space-between;
+    
   }
 
-  .header-top-wrapper {
-    display: none;
-  }
-
-  .header-navigation-wrapper {
-    width: 782px;
-    display: block;
+  .header-button {
+    height: 45px;
+    min-width: 45px;
     border-radius: 20px;
-    padding: 15px 15px 13px 15px;
+    font-size: 1.6rem;
+  }
+
+  .button-has-image {
+    padding: 0px;
+  }
+
+  .button-image {
+    border-radius: 20px;
+  }
+
+  .menu {
+    border-radius: 20px;
+    max-width: 782px;
     background: #fff;
+    margin: 15px auto 0px auto;
+    padding: 0px 15px 0px 15px;
+    justify-content: space-around;
     height: 55px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.07),
       0 4px 16px rgba(0, 0, 0, 0.07), 0 8px 32px rgba(0, 0, 0, 0.07),
@@ -1220,26 +1216,45 @@ width: 28px;
     justify-content: space-around;
   }
 
-  .menu-container li > a {
-    margin: 10px;
+  .menu li > a {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .header-button .button-icon {
+    margin: 0px;
+    height: 25px;
+    display: block;
+  }
+}
+
+@media (min-width: 1500px) {
+  #site-header {
+    flex-wrap: nowrap;
+    max-width: 1500px;
+  }
+
+
+  .menu {
+    order: 2;
   }
 
   .header-button {
+    order: 3;
+    margin-top: 15px;
     height: 55px;
     min-width: 55px;
   }
 
-  .header-button.off {
-    display: flex;
-    max-width: 55px;
+  .pull-left {
+    order: 1;
   }
+
+  
 }
 
 /*	7a. Template: Single Template
 /* -------------------------------------------------------------------------- */
-/* .single {
-  margin-top: 60px !important;
-} */
 
 .single-header {
   display: flex;
@@ -1281,10 +1296,6 @@ width: 28px;
 
 .gutenberg-content > p {
   margin-bottom: 5px;
-}
-
-.single .button {
-  margin-right: 10px;
 }
 
 @media (min-width: 782px) {
@@ -4097,7 +4108,7 @@ figure.wp-block-table.is-style-stripes {
 #site-content {
   overflow: hidden;
   padding: 10px 15px 20px 15px;
-  margin: 85px auto 0px auto;
+  margin: 95px auto 0px auto;
   max-width: 400px;
   overflow: visible;
 }
@@ -4105,23 +4116,9 @@ figure.wp-block-table.is-style-stripes {
 #single-content {
   overflow: hidden;
   padding: 20px 15px 20px 15px;
-  margin: 85px auto 0px auto;
+  margin: 95px auto 0px auto;
   max-width: 400px;
   overflow: visible;
-}
-
-@media (min-width: 782px) {
-  #site-content {
-    margin: 0 auto;
-    max-width: 1000px;
-    overflow: visible;
-  }
-
-  #single-content {
-    margin: 75px auto;
-    max-width: 1000px;
-    overflow: visible;
-  }
 }
 
 /* CARDS */
@@ -4417,7 +4414,7 @@ figure.wp-block-table.is-style-stripes {
   }
 
   #site-content {
-    margin: 100px auto;
+    margin: 150px auto 100px auto;
     max-width: 1000px;
     overflow: visible;
   }
@@ -4438,10 +4435,6 @@ figure.wp-block-table.is-style-stripes {
 
   .card .list-item img {
     max-width: 135px;
-  }
-
-  .single {
-    margin-top: 15px;
   }
 
   .single-content,

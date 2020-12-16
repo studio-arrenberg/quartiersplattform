@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<main id="single-content" role="main">
+<main id="site-content" role="main">
 
     <?php
 	if ( have_posts() ) {
@@ -47,7 +47,7 @@ get_header();
 
     </div>
     <!-- Eventtext felder gibt es noch nicht -->
-    <div class="single-content">
+    <div class="site-content">
         <!-- not ready yet -->
     </div>
     <!-- Gutenberg Editor Content -->
