@@ -915,14 +915,30 @@ function tpl_fragen( $single_template ) {
 add_filter( 'single_template', 'tpl_fragen' );
 
 // function template part test
-function link_card($title, $text, $bg, $link){
+function link_card($title, $text, $bg, $link, $args = ''){
 
-	set_query_var( 'link_card_title', $title );
-	set_query_var( 'link_card_text', $text );
-	set_query_var( 'link_card_bg', $bg );
-	set_query_var( 'link_card_link', $link );
+	if ($args) {
 
-	get_template_part('components/landscape_card');
+		$query2 = new WP_Query($args);
+		// The Loop
+		while ( $query2->have_posts() ) {
+			$query2->the_post();
+			get_template_part('elements/landscape_card');
+		}
+		// Restore original Post Data
+		wp_reset_postdata();
+
+	}
+	else {
+		set_query_var( 'link_card_title', $title );
+		set_query_var( 'link_card_text', $text );
+		set_query_var( 'link_card_bg', $bg );
+		set_query_var( 'link_card_link', $link );
+	
+		get_template_part('components/landscape_card');
+	}
+
+	
 
 }
 

@@ -62,6 +62,22 @@ get_header();
 
     </div>
 
+    <!-- Projekt Kachel -->
+    <?php
+        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+        $the_slug = $term_list[0]->slug;
+
+        $args = array(
+            'name'        => $term_list[0]->slug,
+            'post_type'   => 'projekte',
+            'post_status' => 'publish',
+            'numberposts' => 1
+        );
+
+        link_card('','','','', $args);
+    ?>
+    
+
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
 
