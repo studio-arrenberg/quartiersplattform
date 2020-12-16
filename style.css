@@ -1073,7 +1073,7 @@ button.toggle {
   z-index: 2;
   max-width: 782px;
   margin: 0 auto;
-  background: rgba(233, 233, 233, 0.7);
+  background-color: rgba(255, 255, 250, 0.7);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -1086,7 +1086,7 @@ button.toggle {
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
     #site-header {
-      background-color: rgba(233, 233, 233, 0.7);
+      background-color: rgba(255, 255, 250, 0.7);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
     }
@@ -1099,8 +1099,8 @@ button.toggle {
   align-items: center;
   justify-items: center;
   height: 28px;
-  font-size: 1.35rem;
-  line-height: 1.35rem;
+  font-size: 1.3rem;
+  line-height: 1.3rem;
   padding: 10px;
   border-radius: 11px;
 }
@@ -1146,7 +1146,7 @@ width: 28px;
   line-height: 1.65rem;
   word-wrap: none;
   word-break: keep-all;
-  padding: 12px 5px 10px 5px;
+  padding: 20px 5px 15px 5px;
   display: block;
 }
 
