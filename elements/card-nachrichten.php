@@ -18,7 +18,7 @@ $the_slug = $term_list[0]->name;
                 <?php shorten_title(get_the_title(), '60'); ?>
             </h3>
             <p class="preview-text">
-                <?php  get_excerpt(get_the_content(), '55'); ?>
+                <?php  get_excerpt(get_the_content(), '100'); ?>
             </p>
         </div>
         <?php the_post_thumbnail( 'preview_m' ); ?>
