@@ -1102,6 +1102,7 @@ button.toggle {
   font-size: 1.4rem;
   line-height: 1.4rem;
   padding: 10px;
+  border-radius: 13px;
 }
 
 .header-button:last-of-type{
@@ -1145,7 +1146,7 @@ width: 30px;
   line-height: 1.6rem;
   word-wrap: none;
   word-break: keep-all;
-  padding: 18px 5px 10px 5px;
+  padding: 15px 5px 10px 5px;
   display: block;
 }
 
