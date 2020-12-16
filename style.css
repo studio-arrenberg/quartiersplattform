@@ -4928,10 +4928,11 @@ figure.wp-block-table.is-style-stripes {
   margin-top: 20px;
 }
 
-.profil .um-avatar {
+.single-header .um-avatar {
   position: absolute;
-  top: 90px;
-  width: 200px;
+  top: 120px;
+  width: 160px;
+  border-radius: 35px;
 }
 
 .um-single-image-preview {
