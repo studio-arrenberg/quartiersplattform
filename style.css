@@ -1098,7 +1098,7 @@ button.toggle {
   margin: 5px;
   align-items: center;
   justify-items: center;
-  height: 35px;
+  height: 30px;
   font-size: 1.4rem;
   line-height: 1.4rem;
   padding: 10px;
@@ -1116,8 +1116,8 @@ button.toggle {
 
 .button-has-image {
   padding: 0px;
-  height: 35px;
-width: 35px;
+  height: 30px;
+width: 30px;
 }
 
 .button-image  {
@@ -1141,8 +1141,8 @@ width: 35px;
 .menu li > a {
   color: rgb(27, 9, 9);
   text-decoration: none;
-  font-size: 1.55rem;
-  line-height: 1.55rem;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
   word-wrap: none;
   word-break: keep-all;
   padding: 18px 5px 10px 5px;
