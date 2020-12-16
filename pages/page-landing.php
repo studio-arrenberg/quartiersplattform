@@ -95,11 +95,23 @@ get_header();
 
 		<!-- veranstaltungen -->
 		<?php
-		$args3 = array(
-			'post_type'=>'veranstaltungen', 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 3
-		);
+			$args3 = array(
+				'post_type'=>'veranstaltungen', 
+				'post_status'=>'publish', 
+				'posts_per_page'=> 3,
+				'meta_key' => 'zeitpunkt',
+				'orderby' => 'rand',
+				'order' => 'ASC',
+				'offset' => '0', 
+				'meta_query' => array(
+					array(
+						'key' => 'zeitpunkt', 
+						'value' => date("Y-m-d"),
+						'compare' => '>=', 
+						'type' => 'DATE'
+					)
+				)
+			);
 		list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht');
 		?>
 
