@@ -1077,6 +1077,9 @@ button.toggle {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+
+  transition: all ease-in-out 0.2s; /* Animation */
+
 }
 
 /*  BLURRY HEADER */
@@ -1148,6 +1151,7 @@ width: 28px;
   word-break: keep-all;
   padding: 20px 5px 15px 5px;
   display: block;
+
 }
 
 .menu .current-menu-item > a {
