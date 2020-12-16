@@ -65,11 +65,19 @@ get_header();
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
 
-
-
-
+    <!-- kommentare -->
     <?php			
+		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+	?>
 
+    <div class="comments-wrapper">
+
+        <?php comments_template('', true); ?>
+
+    </div><!-- .comments-wrapper -->
+
+    <?php
+			}
 		}
 	}
 
