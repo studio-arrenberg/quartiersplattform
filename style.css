@@ -1097,7 +1097,7 @@ button.toggle {
   display: flex;
   margin: 5px;
   align-items: center;
-  justify-items: baseline;
+  justify-items: center;
   height: 35px;
   font-size: 1.4rem;
   line-height: 1.4rem;
