@@ -1374,6 +1374,29 @@ function um_deregister_styles() {
 // }
 // add_action('get_header', 'wp_maintenance_mode');
 
+// register embla carousel script
+add_action("wp_enqueue_scripts", "embla_carousel");
+function embla_carousel() { 
+    wp_register_script('embla-carousel', 
+	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
+    wp_enqueue_script('embla-carousel');
+      
+}
+
+// register emoji picker script
+add_action("wp_enqueue_scripts", "emoji_picker");
+function emoji_picker() { 
+	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
+	wp_enqueue_script('emoji_picker-config');
+	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
+	wp_enqueue_script('emoji_picker-util');
+	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
+	wp_enqueue_script('emoji_picker-emojiarea');
+	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
+	wp_enqueue_script('emoji_picker-picker');
+      
+}
+
 // jQuery Update
 /** * Install latest jQuery version 3.5.1. */
 if (!is_admin()) {
@@ -1395,6 +1418,7 @@ function my_init() {
 		&& !strpos($REQUEST_URI,'/profil/')
 		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
 		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
+		&& !isset($_GET['action']) && !$_GET['action'] == 'edit'
 	 ) {
 
 		// jQuery min
@@ -1421,29 +1445,6 @@ function my_init() {
 }
 // add_action('init', 'my_init');
 
-
-// register embla carousel script
-add_action("wp_enqueue_scripts", "embla_carousel");
-function embla_carousel() { 
-    wp_register_script('embla-carousel', 
-	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
-    wp_enqueue_script('embla-carousel');
-      
-}
-
-// register emoji picker script
-add_action("wp_enqueue_scripts", "emoji_picker");
-function emoji_picker() { 
-	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
-	wp_enqueue_script('emoji_picker-config');
-	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
-	wp_enqueue_script('emoji_picker-util');
-	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
-	wp_enqueue_script('emoji_picker-emojiarea');
-	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
-	wp_enqueue_script('emoji_picker-picker');
-      
-}
 
 // veranstaltungen archive custom order
 add_action( 'pre_get_posts', function ( $query ) {
