@@ -1106,7 +1106,8 @@ button.toggle {
 
 .header-button .button-icon {
   margin: 0px;
-  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .gravatar {
