@@ -21,3 +21,5 @@
         <img src="<?php echo get_query_var('link_card_bg'); ?>" alt="" />
     </a>
 </div>
+
+

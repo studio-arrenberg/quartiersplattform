@@ -67,15 +67,23 @@ get_header();
     <?php calendar_download($post); ?>
     <?php edit_post_link(); ?>
 
-    <!-- card: projekt / akteur -->
-    <!-- not ready yet -->
+    <!-- Projekt Kachel -->
+    <?php
+        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+        $the_slug = $term_list[0]->slug;
+        if ($the_slug) {
+            $args = array(
+                'name'        => $term_list[0]->slug,
+                'post_type'   => 'projekte',
+                'post_status' => 'publish',
+                'numberposts' => '1'
+            );
+            link_card('','','','', $args);
+        }   
+    ?>
 
     <!-- map: adresse -->
     <!-- not ready yet -->
-
-    <!-- cards: weitere veranstaltungen -->
-    <!-- not ready yet -->
-
 
     <?php			
 

@@ -127,12 +127,29 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 var el = $( "#acf-field_5fcf563d5b576" );
 el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
 el.attr("data-emojiable", "true");
-el.attr('maxlength', '2');
-
+el.attr('maxlength', '20');
+var alt;
 // remove previous emojies
 $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
-    console.log('call');
-    $( this ).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
+
+    console.log($(".emoji-wysiwyg-editor").children().length);
+
+    if ($(".emoji-wysiwyg-editor").children().length > 1) {
+        // console.log('remove childs ' + alt);
+        if (!alt) {
+            $('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
+        }
+        else if (alt) {
+            if (alt !==  $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
+                $('.emoji-wysiwyg-editor').children("img[alt='"+alt+"']").remove();
+            }
+            else {
+                $('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
+            }
+        }
+        alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
+    }
+    
 });
 
 $(function() {

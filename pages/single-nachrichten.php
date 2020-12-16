@@ -62,14 +62,39 @@ get_header();
 
     </div>
 
+    <!-- Projekt Kachel -->
+    <?php
+        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+        $the_slug = $term_list[0]->slug;
+        if ($the_slug) {
+            $args = array(
+                'name'        => $term_list[0]->slug,
+                'post_type'   => 'projekte',
+                'post_status' => 'publish',
+                'numberposts' => '1'
+            );
+
+            link_card('','','','', $args);
+        }
+    ?>
+    
+
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
 
-
-
-
+    <!-- kommentare -->
     <?php			
+		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+	?>
 
+    <div class="comments-wrapper">
+
+        <?php comments_template('', true); ?>
+
+    </div><!-- .comments-wrapper -->
+
+    <?php
+			}
 		}
 	}
 
