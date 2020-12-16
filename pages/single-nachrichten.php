@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="single-content" role="main">
+<main id="site-content" role="main">
 
 <?php
 
@@ -46,7 +46,7 @@ get_header();
     <p><?php the_field('abschluss'); ?></p>
 
 
-    <div class="single-content">
+    <div class="site-content">
 
     </div>
 

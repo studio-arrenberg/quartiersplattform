@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="single-content" role="main">
+<main id="site-content" role="main">
 
 
     <?php

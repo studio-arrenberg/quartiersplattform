@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="single-content" role="main">
+<main id="site-content" role="main">
 
     <?php
 
@@ -59,7 +59,7 @@ get_header();
 
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
-    <div class="single-content">
+    <div class="site-content">
         <p></p>
     </div>
 
