@@ -1081,6 +1081,16 @@ button.toggle {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
+
+#site-content {
+  overflow: hidden;
+  padding: 10px 15px 20px 15px;
+  margin: 95px auto 0px auto;
+  max-width: 400px;
+  overflow: visible;
+}
+
+
 /*  BLURRY HEADER */
 
 @media (max-width: 782px) {
@@ -1161,17 +1171,7 @@ button.toggle {
   border-bottom: 1px solid #0091ff;
 }
 
-@media (max-width: 782px) {
-  /* #site-header.page-header {
-    background: transparent;
-  }
 
-  .page-header .header-top-wrapper,
-  .page-header .header-navigation-wrapper {
-    position: none;
-    display: none !important;
-  } */
-}
 
 @media (min-width: 782px) {
   #site-header {
@@ -1184,6 +1184,11 @@ button.toggle {
     
   }
 
+  #site-content {
+    margin: 150px auto 100px auto;
+    max-width: 1000px;
+    overflow: visible;
+  }
   .header-button {
     height: 45px;
     min-width: 45px;
@@ -1235,8 +1240,9 @@ button.toggle {
 }
 
 @media (min-width: 1320px) {
- 
-
+  #site-content{
+   margin: 85px auto 100px auto;
+  }
 
   #site-header {
     flex-wrap: nowrap;
@@ -4130,13 +4136,6 @@ figure.wp-block-table.is-style-stripes {
 
 /* LAYOUT */
 
-#site-content {
-  overflow: hidden;
-  padding: 10px 15px 20px 15px;
-  margin: 95px auto 0px auto;
-  max-width: 400px;
-  overflow: visible;
-}
 
 #single-content {
   overflow: hidden;
@@ -4438,11 +4437,6 @@ figure.wp-block-table.is-style-stripes {
     max-width: calc(50% - 5px);
   }
 
-  #site-content {
-    margin: 150px auto 100px auto;
-    max-width: 1000px;
-    overflow: visible;
-  }
 
   .card .pre-title {
     font-size: 1.7rem;
