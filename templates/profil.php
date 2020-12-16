@@ -24,19 +24,30 @@ get_header();
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->user_login; ?></h1>
         </div>
 
-	</div>
-	
-	 <!-- Gutenberg Editor Content -->
-	 <div class="gutenberg-content">
+    </div>
+    
+    <!-- user posts -->
+    <h2>Deine Angebote und Fragen ans Quartier</h2>
+    <div class="card-container">
         <?php
-            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                the_excerpt();
-            } else {
-                the_content( __( 'Continue reading', 'twentytwenty' ) );
-            }
+            $args4 = array(
+                'post_type'=> array('angebote', 'fragen'), 
+                'post_status'=>'publish', 
+                'author' =>  $current_user->ID,
+                'posts_per_page'=> 10, 
+                'order' => 'ASC',
+                'offset' => '0', 
+            );
+            card_list($args4);
+            // get_template_part( 'components/call-gemeinsam' );
         ?>
+    </div>
 
+    <div class="card-container card-container__small">
+		<?php get_template_part( 'components/call', 'frage' ); ?>
+		<?php get_template_part( 'components/call', 'angebot' ); ?>
 	</div>
+
   
 
     <!-- <h2>Profil bearbeiten</h2> -->
