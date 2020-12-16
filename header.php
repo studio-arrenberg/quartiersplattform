@@ -148,9 +148,16 @@
             ?>
         <!-- mein profil -->
         <a class="button header-button button-has-icon is-style-outline" href="<?php echo get_site_url(); ?>/profil">
-            <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-            <!-- <img class="button-icon " src="<?php // echo get_template_directory_uri()?>/assets/images/avatar.jpeg" /> -->
+            <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" /> 
             <!-- append class gravatar to a tag -->
+        </a>
+
+
+                <!-- if User has profil picture-->
+
+        <a class="button header-button button-has-image is-style-outline" href="<?php echo get_site_url(); ?>/profil">
+        <img class="button-image" src="<?php echo get_template_directory_uri()?>/assets/images/avatar.jpeg" />
+
         </a>
         <?php 
         }

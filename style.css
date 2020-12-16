@@ -1110,14 +1110,14 @@ button.toggle {
   display: block;
 }
 
-.gravatar {
+.button-has-image {
   padding: 0px;
-  width: 55px;
-  border-radius: 20px;
+  height: 35px;
+width: 35px;
 }
 
-.gravatar img {
-  border-radius: 20px;
+.button-image  {
+  border-radius: 15px;
 }
 
 .pull-left {
