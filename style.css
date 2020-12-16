@@ -1067,7 +1067,7 @@ button.toggle {
 
 #site-header {
   position: fixed;
-  padding: 5px 5px 0px 5px;
+  padding: 5px 10px 0px 10px;
   top: 0px;
   width: 100%;
   z-index: 2;
@@ -1104,6 +1104,10 @@ button.toggle {
   padding: 10px;
 }
 
+.header-button:last-of-type{
+  margin-right: 0px;
+}
+
 .header-button .button-icon {
   margin: 0px;
   height: 20px;
@@ -1121,7 +1125,8 @@ width: 35px;
 }
 
 .pull-left {
-  margin-right: auto;
+  margin-right: auto !important;
+  margin-left: 0px;
 }
 
 /* Primary Menu ---------------------------- */
@@ -1140,12 +1145,13 @@ width: 35px;
   line-height: 1.55rem;
   word-wrap: none;
   word-break: keep-all;
-  padding: 15px 5px;
+  padding: 18px 5px 10px 5px;
   display: block;
 }
 
 .menu .current-menu-item > a {
   color: #0091ff;
+  border-bottom: 1px solid #0091ff;
 }
 
 @media (max-width: 782px) {
