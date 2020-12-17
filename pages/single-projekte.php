@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="single-content" role="main">
 
     <?php
 
@@ -59,7 +59,7 @@ get_header();
 
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
-    <div class="site-content">
+    <div class="single-content">
         <p></p>
     </div>
 
@@ -107,13 +107,22 @@ get_header();
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->
+    <?php if ( current_user_can('administrator') ) { // new feature only for admins 
+        $page_for_posts = get_option( 'page_for_posts' );
+        ?>
+        <div class="share">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
+            <a href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
+        </div>
+        
+    <?php } ?>
 
     <!-- Team -->
     <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
         <div class="team">
         <div class="member">
             <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-            <img class="button-image" src="<?php echo um_get_user_avatar_url(get_the_author_meta( 'ID' ), $size = '300' ) ?>" />
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
         </div>
     <?php } ?>
 
