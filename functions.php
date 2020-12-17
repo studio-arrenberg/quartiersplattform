@@ -1411,7 +1411,7 @@ function emoji_picker() {
 	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
 	wp_enqueue_script('emoji_picker-picker');
 	wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
-    wp_enqueue_style( 'my-plugin' );
+    wp_enqueue_style( 'emoji_picker-css' );
       
 }
 

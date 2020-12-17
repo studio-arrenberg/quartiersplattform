@@ -231,5 +231,5 @@ rifi2k.format-html-in-php
 ## Remember
 
 ```php
-parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']
+if(parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) // already on site :: else new user
 ```
