@@ -9,8 +9,8 @@
 $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
 $the_slug = $term_list[0]->name;
 
-// title vs text
-if (strlen(shorten_title) < 15 ) {
+// variable text length
+if (strlen(get_the_title()) < 15 ) {
     $char = 80;
 }
 else {
