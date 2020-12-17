@@ -25,6 +25,7 @@
                 <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <?php the_post_thumbnail( 'preview_m' ); ?>
+         <?php the_post_thumbnail( 'preview_m' ); ?>
+
     </a>
 </div>

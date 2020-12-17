@@ -76,7 +76,7 @@ img.emoji {
   outline: none;
 }
 .fa-smile-o:before {
-  content: none;
+  content: none !important;
 }
 
 .emoji-picker-icon {

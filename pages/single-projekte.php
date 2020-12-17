@@ -42,19 +42,19 @@ get_header();
         <!-- post title -->
         <div class="single-header-content center-mobile">
 
-        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+            <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
             <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
-        <?php } ?>
+            <?php } ?>
 
             <h1><?php the_title(); ?></h1>
 
-             <!-- slogan / emoji -->
-        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+            <!-- slogan / emoji -->
+            <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-        <?php } ?>
+            <?php } ?>
             <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
 
-       
+
         </div>
 
         <!-- akteur -->
@@ -93,7 +93,7 @@ get_header();
         if ($my_query->post_count > 0) {
             list_card($args_chronik, get_site_url().'/projekt/'.$post->post_name.'/', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
         }
-    ?>    
+    ?>
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
@@ -106,6 +106,17 @@ get_header();
         ?>
 
     </div>
+    <!-- Team -->
+    <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+    <div class="team">
+        <div class="team-member">
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+            <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+
+        </div>
+    </div>
+    <?php } ?>
+
 
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
@@ -116,26 +127,21 @@ get_header();
     <?php if ( current_user_can('administrator') ) { // new feature only for admins 
         $page_for_posts = get_option( 'page_for_posts' );
         ?>
-        <div class="share">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
-            <a href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
-        </div>
-        
+    <div class="share">
+        <a class="button is-style-outline"
+            href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
+        <a class="button is-style-outline"
+            href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
+    </div>
+
     <?php } ?>
 
-    <!-- Team -->
-    <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-        <div class="team">
-        <div class="member">
-            <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
-        </div>
-    <?php } ?>
+
 
     <!-- Map -->
     <!-- not ready yet -->
     <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-        <p><?php the_field('map'); ?></p>
+    <p><?php the_field('map'); ?></p>
     <?php } ?>
 
     <!-- Kontakt -->
@@ -160,11 +166,11 @@ get_header();
 
 	?>
 
-    
+
     <br><br><br>
     <!-- weitere projekte -->
     <h2>Weitere Projekte</h2>
-	<?php
+    <?php
 	$args3 = array(
 		'post_type'=>'projekte', 
 		'post_status'=>'publish', 
