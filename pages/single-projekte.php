@@ -41,15 +41,19 @@ get_header();
 
         <!-- post title -->
         <div class="single-header-content">
+
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+            <p><?php the_field('emoji'); ?></p>
+        <?php } ?>
+
             <h1><?php the_title(); ?></h1>
             <h4><?php if (current_user_can('administrator')) echo get_the_author(); ?></h4>             
-        </div>
 
         <!-- slogan / emoji -->
         <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-            <p><?php the_field('emoji'); ?></p>
             <p><?php the_field('slogan'); ?></p>
         <?php } ?>
+        </div>
 
         <!-- akteur -->
         <!-- not ready yet -->
