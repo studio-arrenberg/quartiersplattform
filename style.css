@@ -1317,6 +1317,14 @@ button.toggle {
   /* object-fit: contain; */
 }
 
+
+.single-header-emoji{
+  font-size: 5rem;
+}
+
+.single-header-slogan{
+  margin-bottom: 20px;
+}
 .single-content {
   margin-bottom: 20px;
 }
@@ -1350,6 +1358,12 @@ button.toggle {
   .heading-size-3 {
     font-size: 2rem;
     line-height: 2.4rem;
+  }
+}
+
+@media (max-width: 782px) {
+  .center-mobile{
+    text-align: center;
   }
 }
 

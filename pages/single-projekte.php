@@ -40,16 +40,22 @@ get_header();
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
         <!-- post title -->
-        <div class="single-header-content">
-            <h1><?php the_title(); ?></h1>
-            <h4><?php if (current_user_can('administrator')) echo get_the_author(); ?></h4>             
-        </div>
+        <div class="single-header-content center-mobile">
 
-        <!-- slogan / emoji -->
         <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-            <p><?php the_field('emoji'); ?></p>
-            <p><?php the_field('slogan'); ?></p>
+            <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
         <?php } ?>
+
+            <h1><?php the_title(); ?></h1>
+
+             <!-- slogan / emoji -->
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+            <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
+        <?php } ?>
+            <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
+
+       
+        </div>
 
         <!-- akteur -->
         <!-- not ready yet -->
