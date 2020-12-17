@@ -17,7 +17,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
 get_header();
 ?>
 
-<main id="page-content" role="main">
+<main id="site-content" role="main">
 
     <?php
 
