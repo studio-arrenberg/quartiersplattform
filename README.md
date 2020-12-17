@@ -227,3 +227,9 @@ rifi2k.format-html-in-php
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
+
+## Remember
+
+```php
+parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']
+```

@@ -57,14 +57,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Emoji Picker -->
-
-
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/emoji.css" rel="stylesheet">
-
-
-
-
 
     <!-- Matomo -->
     <script type="text/javascript">
@@ -101,35 +94,27 @@
         $menu = 'page-header';
         if( cms_is_in_menu( 'menu' ) ) {
             $menu = 'post-header';
-
         }
     ?>
 
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="pull-left">
-            <!-- back button -->
-            <?php 
 
-        if (parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) {
-            // display back button
-            ?>
-            <button class="<?php echo $menu_active_back; ?>button header-button button-has-icon is-style-outline "
+        <?php 
+        if ($menu == 'page-header') {
+        ?>
+            <!-- back button -->
+            <button class="button header-button button-has-icon is-style-outline"
                 onclick="history.go(-1);">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
                 <span class="button-has-icon-label">Zurück</span>
             </button>
-            <?php
-        }
+        <?php 
+        } 
         else {
-            // display home button
             ?>
-            <a href="<?php echo get_site_url(); ?>"
-                class="<?php echo $menu_active_back; ?>button header-button button-has-icon is-style-outline pull-left ">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Überblick</span>
-            </a>
-            <?php
-
+            <h1>Arrenberg App</h1>
+            <?php 
         }
         ?>
 
@@ -137,44 +122,36 @@
 
         <div class="push-right">
 
-
-            <?php 
-        // backend login button for admins
-        if(current_user_can('administrator')) {
-            ?>
-            <a class="button header-button  button-has-icon is-style-outline "
-                href="<?php echo get_site_url(); ?>/wp-admin">
-                <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
-                <span class="button-has-icon-label">Backend</span>
-            </a>
-            <?php 
-        }
+        <?php
+        // logged in user
         if (is_user_logged_in()) {
             ?>
-            <!-- mein profil -->
-            <a class="button header-button button-has-icon is-style-outline"
-                href="<?php echo get_site_url(); ?>/profil">
-                <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-                <!-- append class gravatar to a tag -->
-            </a>
 
+            <?php 
+            // backend login button for admins
+            if(current_user_can('administrator')) {
+                ?>
+                <a class="button header-button  button-has-icon is-style-outline "
+                    href="<?php echo get_site_url(); ?>/wp-admin">
+                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
+                    <span class="button-has-icon-label">Backend</span>
+                </a>
+                <?php 
+            }
+            ?>
 
-            <!-- if User has profil picture-->
-
-            <a class="button header-button button-has-image is-style-outline"
-                href="<?php echo get_site_url(); ?>/profil">
-                <img class="button-image" src="<?php echo get_template_directory_uri()?>/assets/images/avatar.jpeg" />
-
+            <!-- profil button -->
+            <a class="button header-button button-has-image is-style-outline" href="<?php echo get_site_url(); ?>/profil">
+                <img class="button-image" src="<?php echo um_get_user_avatar_url(get_the_author_meta( 'ID' ), $size = '300' ) ?>" />
             </a>
             <?php 
         }
+        // logged out user
         else {
             ?>
-            <a class="button header-button button-has-icon is-style-outline push-right"
-                href="<?php echo get_site_url(); ?>/anmelden">
+            <a class="button header-button button-has-icon is-style-outline push-right" href="<?php echo get_site_url(); ?>/anmelden">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 <span class="button-has-icon-label">Anmelden</span>
-
             </a>
             <?php 
         }
