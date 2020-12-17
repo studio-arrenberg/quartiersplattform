@@ -33,7 +33,7 @@ if ( have_posts() ) {
     <div class="card-container card-container__center card-container__large ">
         <div class="card">
             <div class="content">
-                <div class="pre-title green-text">Solidarisches Angebot <span class="date green-text"><?php echo get_the_date('j. F'); ?>
+                <div class="pre-title green-text">Frage ans Quartier <span class="date green-text"><?php echo get_the_date('j. F'); ?>
                         <span>
                 </div>
                 <h3 class="card-title-large">
