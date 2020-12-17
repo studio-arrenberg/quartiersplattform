@@ -1305,6 +1305,7 @@ button.toggle {
 
   .menu {
     grid-area: center;
+    max-width: 782px;
   }
 
   .push-right {
