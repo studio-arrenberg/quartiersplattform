@@ -113,7 +113,7 @@ get_header();
         <div class="team">
         <div class="member">
             <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+            <img class="button-image" src="<?php echo um_get_user_avatar_url(get_the_author_meta( 'ID' ), $size = '300' ) ?>" />
         </div>
     <?php } ?>
 
