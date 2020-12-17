@@ -100,20 +100,22 @@
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="pull-left">
 
-        <?php 
+            <?php 
         if ($menu == 'page-header') {
         ?>
             <!-- back button -->
-            <button class="button header-button button-has-icon is-style-outline"
-                onclick="history.go(-1);">
+            <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
                 <span class="button-has-icon-label">Zurück</span>
             </button>
-        <?php 
+            <?php 
         } 
         else {
             ?>
-            <h1>Arrenberg App</h1>
+            <div class="site-name">
+                <h1>Arrenberg </h1>
+                <h2>Deine Quartiersplattform </h2>
+            </div>
             <?php 
         }
         ?>
@@ -122,7 +124,7 @@
 
         <div class="push-right">
 
-        <?php
+            <?php
         // logged in user
         if (is_user_logged_in()) {
             ?>
@@ -131,25 +133,28 @@
             // backend login button for admins
             if(current_user_can('administrator')) {
                 ?>
-                <a class="button header-button  button-has-icon is-style-outline "
-                    href="<?php echo get_site_url(); ?>/wp-admin">
-                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
-                    <span class="button-has-icon-label">Backend</span>
-                </a>
-                <?php 
+            <a class="button header-button  button-has-icon is-style-outline "
+                href="<?php echo get_site_url(); ?>/wp-admin">
+                <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
+                <span class="button-has-icon-label">Backend</span>
+            </a>
+            <?php 
             }
             ?>
 
             <!-- profil button -->
-            <a class="button header-button button-has-image is-style-outline" href="<?php echo get_site_url(); ?>/profil">
-                <img class="button-image" src="<?php echo um_get_user_avatar_url(get_the_author_meta( 'ID' ), $size = '300' ) ?>" />
+            <a class="button header-button button-has-image is-style-outline"
+                href="<?php echo get_site_url(); ?>/profil">
+                <img class="button-image"
+                    src="<?php echo um_get_user_avatar_url(get_the_author_meta( 'ID' ), $size = '300' ) ?>" />
             </a>
             <?php 
         }
         // logged out user
         else {
             ?>
-            <a class="button header-button button-has-icon is-style-outline push-right" href="<?php echo get_site_url(); ?>/anmelden">
+            <a class="button header-button button-has-icon is-style-outline push-right"
+                href="<?php echo get_site_url(); ?>/anmelden">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 <span class="button-has-icon-label">Anmelden</span>
             </a>
