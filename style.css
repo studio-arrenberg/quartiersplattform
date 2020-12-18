@@ -4248,14 +4248,13 @@ figure.wp-block-table.is-style-stripes {
 .card .content {
   padding: 0px 10px;
   flex-grow: 1;
-  margin-top: 10px;
+  margin-top: 7px;
   margin-bottom: 10px;
   max-width: calc(100% - 90px);
 }
 .card img {
-  min-width: 120px;
-  max-width: 160px;
-  width: 100%;
+  width: 140px;
+  /* height: 105px; */
   border-radius: 15px;
   align-self: start;
 
@@ -4308,7 +4307,7 @@ figure.wp-block-table.is-style-stripes {
   font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
     sans-serif;
   font-size: 1.8rem;
-  line-height: 2rem;
+  line-height: 1.9rem;
   margin: 0px;
 }
 
@@ -4348,6 +4347,7 @@ figure.wp-block-table.is-style-stripes {
 
 .card .list-item img {
   max-width: 120px;
+  max-height: 90px;
 }
 
 .card-header {
@@ -4511,6 +4511,9 @@ figure.wp-block-table.is-style-stripes {
     margin: 10px 0px;
     max-width: calc(50% - 5px);
   }
+  .card .content {
+    margin-top: 10px;
+  }
 
   .card .pre-title {
     font-size: 1.7rem;
@@ -4526,8 +4529,16 @@ figure.wp-block-table.is-style-stripes {
     line-height: 1.9rem;
   }
 
+  .card img {
+    width: 100%;
+    min-width: 140px;
+    max-width: 150px;
+  }
+
   .card .list-item img {
+    min-width: 135px;
     max-width: 135px;
+    max-height: 101px;
   }
 
   .single-content,
@@ -4599,9 +4610,7 @@ figure.wp-block-table.is-style-stripes {
     margin: 10px 0px 0px 0px;
     max-height: 240px;
   }
-}
 
-@media (min-width: 782px) {
   .card-container .landscape .card-title {
     font-size: 1.8rem;
     line-height: 2rem;
