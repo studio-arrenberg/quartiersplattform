@@ -27,7 +27,7 @@
         <img src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
 
         <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Kontakt</a>
-        <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Impressum</a>
+        <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
 
        
     </div><!-- .section-inner -->
