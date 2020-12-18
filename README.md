@@ -9,6 +9,7 @@ Unterstützt durch das Wuppertal Institut bei den Projekten [SolPlat](https://wu
 - File structure (template == component > one file)
 - Forms folder...
 - Rename Link_card => Landscape_card
+- Tabelle => template part | function | 
 
 ## 📦 Requirements 
 
@@ -193,6 +194,10 @@ git checkout <commit-id> .
 https://css-tricks.com/snippets/css/complete-guide-grid/ <br>
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+### Field Name Issue
+acf differnet field groups with same name have same field id
+* [is it safe](https://support.advancedcustomfields.com/forums/topic/it-is-possible-to-use-the-same-field-name-in-different-field-groups/)
+* [update scf fields](https://support.advancedcustomfields.com/forums/topic/it-is-possible-to-use-the-same-field-name-in-different-field-groups/)
 
 ### VS Code Plugins
 extension.refreshBrowser <br>
