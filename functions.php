@@ -1229,7 +1229,7 @@ function my_post_title_updater( $post_id ) {
 
 }
 
-// feedback form (anmerkungen) remove lable
+// ACF Remove Label (Anmerkungen, Angebote, Fragen)
 function my_acf_admin_head() {
     ?>
     <style type="text/css">
@@ -1239,6 +1239,11 @@ function my_acf_admin_head() {
 		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
 		.acf-field-5fc8fe8aa1786 > .acf-label {display: none;} /* Local */
 		
+		/* Angebote Text Label */
+		.acf-field-5fcf55f35b575 > .acf-label {display: none;} /* ap1 */
+		
+		/* Fragen Text Label */
+		.acf-field-5fcf56cd9e317 > .acf-label {display: none;} /* ap1 */		
     </style>
     <?php
 }
