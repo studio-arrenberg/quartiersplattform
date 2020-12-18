@@ -8,7 +8,7 @@ acf_form_head();
 get_header();
 ?>
 
-<main id="single-content" role="main">
+<main id="site-content" role="main">
     <div class="card-container card-container__center card-container__large ">
         <div class="card bg_red">
             <div class="content white-text">

@@ -34,10 +34,8 @@
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => false,
-                // 'return' => '?updated=true',
-                'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'fields' => array(
-                    'text',
+                    'text_angebote',
                     'emoji',
                     'duration',
 				),

@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<main id="single-content" role="main">
+<main id="site-content" role="main">
 
 <?php
 
@@ -46,7 +46,7 @@ get_header();
     <p><?php the_field('abschluss'); ?></p>
 
 
-    <div class="single-content">
+    <div class="site-content">
 
     </div>
 
@@ -62,14 +62,53 @@ get_header();
 
     </div>
 
+    <!-- weitere Nachrichten -->
+    <h2>Weitere Nachrichten</h2>
+    <?php
+		$args2 = array(
+			'post_type'=>'nachrichten', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 6,
+            'order' => 'DESC',
+            'post__not_in' => array(get_the_ID())
+		);
+
+		slider($args2,'card', '1','false');
+	?>
+
+    <!-- Projekt Kachel -->
+    <?php
+        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+        $the_slug = $term_list[0]->slug;
+        if ($the_slug) {
+            $args = array(
+                'name'        => $term_list[0]->slug,
+                'post_type'   => 'projekte',
+                'post_status' => 'publish',
+                'numberposts' => '1'
+            );
+
+            link_card('','','','', $args);
+        }
+    ?>
+    
+
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>
 
-
-
-
+    <!-- kommentare -->
     <?php			
+		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+	?>
 
+    <div class="comments-wrapper">
+
+        <?php comments_template('', true); ?>
+
+    </div><!-- .comments-wrapper -->
+
+    <?php
+			}
 		}
 	}
 

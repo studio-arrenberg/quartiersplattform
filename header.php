@@ -24,33 +24,40 @@
 
     <?php wp_head(); ?>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="<?php echo get_template_directory_uri()?>/assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri()?>/assets/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage"
+        content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <!-- Emoji Picker -->
-
-
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/emoji.css" rel="stylesheet">
-
-
-
-
 
     <!-- Matomo -->
     <script type="text/javascript">
@@ -59,14 +66,21 @@
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
     (function() {
-        var u="//abdruck.arrenberg.studio/";
-        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        var u = "//abdruck.arrenberg.studio/";
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
         _paq.push(['setSiteId', '12']);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        var d = document,
+            g = d.createElement('script'),
+            s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
     })();
     </script>
-    <noscript><p><img src="//abdruck.arrenberg.studio/matomo.php?idsite=12&amp;rec=1" style="border:0;" alt="" /></p></noscript>
+    <noscript>
+        <p><img src="//abdruck.arrenberg.studio/matomo.php?idsite=12&amp;rec=1" style="border:0;" alt="" /></p>
+    </noscript>
     <!-- End Matomo Code -->
 
 
@@ -78,59 +92,90 @@
         wp_body_open();
         // check if menu is needed
         $menu = 'page-header';
-        $menu_active = 'off';
-        $menu_active_back = 'on';
         if( cms_is_in_menu( 'menu' ) ) {
-            $menu_active = 'on';
-            $menu_active_back = 'off';
             $menu = 'post-header';
-
         }
     ?>
-    
-    <header id="site-header" class="<?php echo $menu; ?>" >
-        <div class="header-top-wrapper">
-            <div class="header-title">
-                <?php twentytwenty_site_logo(); ?>
-            </div>
-        </div>
 
-        <!-- back button -->
-        <?php 
+    <header id="site-header" class="<?php echo $menu; ?>">
+        <div class="pull-left">
 
-        if (parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) {
-            // display back button
-            ?>
-            <button class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back" onclick="history.go(-1);">
+            <?php 
+        if ($menu == 'page-header') {
+        ?>
+            <!-- back button -->
+            <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
                 <span class="button-has-icon-label">Zurück</span>
             </button>
-            <?php
-        }
+            <?php 
+        } 
         else {
-            // display home button
             ?>
-            <a href="<?php echo get_site_url(); ?>" class="<?php echo $menu_active_back; ?> header-button button-has-icon is-style-outline back button" >
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Überblick</span>
-            </a>
-            <?php
-
+            <div class="site-name">
+                <h1>Arrenberg </h1>
+                <h2>Deine Quartiersplattform </h2>
+            </div>
+            <?php 
         }
         ?>
 
-        <div class="header-navigation-wrapper <?php echo $menu_active; ?>">
+        </div>
+
+        <div class="push-right">
+
             <?php
+        // logged in user
+        if (is_user_logged_in()) {
+            ?>
+
+            <?php 
+            // backend login button for admins
+            if(current_user_can('administrator')) {
+                ?>
+            <a class="button header-button  button-has-icon is-style-outline "
+                href="<?php echo get_site_url(); ?>/wp-admin">
+                <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
+                <span class="button-has-icon-label">Backend</span>
+            </a>
+            <?php 
+            }
+            ?>
+
+            <!-- profil button -->
+            <a class="button header-button button-has-image is-style-outline"
+                href="<?php echo get_site_url(); ?>/profil">
+                <img class="button-image"
+                    src="<?php echo um_get_user_avatar_url(get_the_author_meta( 'ID' ), $size = '300' ) ?>" />
+            </a>
+            <?php 
+        }
+        // logged out user
+        else {
+            ?>
+            <a class="button header-button button-has-icon is-style-outline push-right"
+                href="<?php echo get_site_url(); ?>/anmelden">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
+                <span class="button-has-icon-label">Anmelden</span>
+            </a>
+            <?php 
+        }
+        ?>
+
+        </div>
+
+
+
+        <?php
 				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
 
 
 					?>
-            <nav class="menu-container" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
-                role="navigation">
 
-                <ul class="menu reset-list-style">
+        <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
+            role="navigation">
 
-                    <?php
+            <?php
 								if ( has_nav_menu( 'primary' ) ) {
 
 									wp_nav_menu(
@@ -155,40 +200,26 @@
 								}
 								?>
 
-                </ul>
+        </ul>
 
-            </nav><!-- .primary-menu-wrapper -->
-            <?php } ?>
+        <?php } ?>
         </div><!-- .header-navigation-wrapper -->
 
-        
-        <?php 
-        // backend login button for admins
-        if(current_user_can('administrator')) {
-            ?>
-                <a class="button header-button login button-has-icon is-style-outline " href="<?php echo get_site_url(); ?>/wp-admin">
-                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
-                </a>
-            <?php 
-        }
-        if (is_user_logged_in()) {
-            ?>
-                <!-- mein profil -->
-                <a  class="button header-button login button-has-icon is-style-outline" href="<?php echo get_site_url(); ?>/profil">
-                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-                    <!-- <img class="button-icon " src="<?php // echo get_template_directory_uri()?>/assets/images/avatar.jpeg" /> -->
-                    <!-- append class gravatar to a tag -->
-                </a>
-            <?php 
-        }
-        else {
-            ?>
-                <a  class="button header-button login button-has-icon is-style-outline" href="<?php echo get_site_url(); ?>/anmelden">
-                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-                </a>
-            <?php 
-        }
-        ?>
+
+
 
 
     </header><!-- #site-header -->
+    <script>
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            document.getElementById("site-header").style.top = "-45px";
+        } else {
+            document.getElementById("site-header").style.top = "0px";
+        }
+    }
+    </script>

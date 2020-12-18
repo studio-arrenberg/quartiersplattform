@@ -8,6 +8,8 @@ Unterstützt durch das Wuppertal Institut bei den Projekten [SolPlat](https://wu
 ## 🧯 Wichtig 
 - File structure (template == component > one file)
 - Forms folder...
+- Rename Link_card => Landscape_card
+- Tabelle => template part | function | 
 
 ## 📦 Requirements 
 
@@ -131,6 +133,7 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 ```php
 link_card('Hallo Welt','Text....',get_template_directory_uri().'/assets/images/400x200.png', '/veranstaltungen');
 link_card('Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/veranstaltungen');
+link_card('','','','', $args); // query version
 ```
 #### List Card
 ```php 
@@ -191,6 +194,10 @@ git checkout <commit-id> .
 https://css-tricks.com/snippets/css/complete-guide-grid/ <br>
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
+### Field Name Issue
+acf differnet field groups with same name have same field id
+* [is it safe](https://support.advancedcustomfields.com/forums/topic/it-is-possible-to-use-the-same-field-name-in-different-field-groups/)
+* [update scf fields](https://support.advancedcustomfields.com/forums/topic/it-is-possible-to-use-the-same-field-name-in-different-field-groups/)
 
 ### VS Code Plugins
 extension.refreshBrowser <br>
@@ -225,3 +232,9 @@ rifi2k.format-html-in-php
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
+
+## Remember
+
+```php
+if(parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) // already on site :: else new user
+```

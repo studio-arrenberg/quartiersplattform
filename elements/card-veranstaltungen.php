@@ -3,19 +3,12 @@
 /**
  * Card => Veranstaltungen
  *
- * Used for both singular and index.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
-?>
-
-<?php 
-global $post;
+// get projekt
+$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+$the_slug = $term_list[0]->name;
+// get author
 $author_id = $post->post_author;
 $user = get_the_author_meta( 'display_name', $author_id );
 $author = get_the_author();
@@ -27,7 +20,7 @@ $author = get_the_author();
         <div class="content">
             <div class="pre-title">
                 
-                <?php // echo $author; ?> 
+                <?php  echo $the_slug; ?> 
                  
                 <span class="date"><?php echo wp_date('j. F', strtotime(get_field('zeitpunkt'))); ?><span>
 

@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Snapshot More
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ public ]
+#  pull_request:
+#    branches: [ public ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  
+  screenshot:
+    
+    name: Screenshot all
+    
+    strategy:
+      matrix:
+        # os: [ubuntu-latest, macos-latest, windows-latest]
+        page: [frage-dein-quartier, anmelden, anmerkungen, nachrichten-archive, quartiersplattform, neues-modul-im-kreislauf]
+        # page: ['',gemeinsam, projekte, veranstaltungen]
+        width: [1200, 420]
+    # runs-on: ubuntu-latest
+    runs-on: macos-latest
+    
+    
+    steps:
+
+    - name: Screenshot
+      uses: swinton/screenshot-website@v1.x
+      with:
+        # source: https://arrenberg.app
+        source: https://arrenberg.app/${{ matrix.page }}
+        #destination: screenshot-${{ matrix.os }}.png
+        destination: arrenberg.app-${{ matrix.page }}-${{ matrix.width }}.jpeg
+        type: 'jpeg'
+        scaleFactor: 1
+        # width: 1200
+        full-page: true
+        width: ${{ matrix.width }}
