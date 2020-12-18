@@ -28,7 +28,11 @@ get_header();
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
 				$cover_header_classes = ' bg-image';
-			}
+            }
+            
+            // get project by Term
+            $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+            $the_slug = $term_list[0]->slug;
 
 			?>
 
@@ -36,15 +40,10 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3><?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id );  ?> <span class="date"><?php echo get_the_date('j. F'); ?></span> </h3>
+            <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span> </h3>
         </div>
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
     </div>
-    
-    <!-- ACF test -->
-    <p><?php the_field('begin'); ?></p>
-    <p><?php the_field('abschluss'); ?></p>
-
 
     <div class="site-content">
 
@@ -70,7 +69,14 @@ get_header();
 			'post_status'=>'publish', 
 			'posts_per_page'=> 6,
             'order' => 'DESC',
-            'post__not_in' => array(get_the_ID())
+            'post__not_in' => array(get_the_ID()),
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$the_slug."
+                )
+            )
 		);
 
 		slider($args2,'card', '1','false');
