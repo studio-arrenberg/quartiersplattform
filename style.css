@@ -1356,6 +1356,10 @@ button.toggle {
   /* object-fit: contain; */
 }
 
+.single-header-content{
+  margin: 20px 0px;
+}
+
 .single-header-emoji {
   font-size: 5rem;
 }
