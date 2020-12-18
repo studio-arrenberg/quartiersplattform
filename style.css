@@ -1109,7 +1109,7 @@ button.toggle {
 }
 
 .site-name {
-  margin-top: 6px;
+  margin-top: 9px;
   margin-bottom: -2px;
   margin-left: 5px;
 }
@@ -1117,23 +1117,31 @@ button.toggle {
 .site-name h1 {
   font-size: 1.8rem;
   line-height: 1.9rem;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
 }
 
 .site-name h2 {
   font-size: 1.3rem;
   line-height: 1.3rem;
   color: #6d6d6d;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+  sans-serif;
 }
 .header-button {
   display: flex;
   margin: 5px;
   align-items: center;
   justify-content: center;
-  height: 28px;
+  height: 35px;
   font-size: 1.3rem;
   line-height: 1.3rem;
-  padding: 10px;
-  border-radius: 11px;
+  padding: 0px 15px;
+  border-radius: 13px;
+}
+
+.header-button.button-has-icon {
+  padding-left: 9px;
 }
 
 .header-button:last-of-type {
@@ -1149,11 +1157,11 @@ button.toggle {
 
 .button-has-image {
   padding: 0px;
-  width: 28px;
+  width: 35px;
 }
 
 .button-image {
-  border-radius: 11px;
+  border-radius: 13px;
 }
 
 .pull-left {
@@ -1178,17 +1186,20 @@ button.toggle {
 .menu li > a {
   color: rgb(27, 9, 9);
   text-decoration: none;
-  font-size: 1.65rem;
-  line-height: 1.65rem;
+  font-size: 1.60rem;
+  line-height: 1.60rem;
   word-wrap: none;
   word-break: keep-all;
-  padding: 20px 5px 15px 5px;
+  padding: 17px 5px 15px 5px;
   display: block;
 }
 
 .menu .current-menu-item > a {
   color: #0091ff;
-  border-bottom: 1px solid #0091ff;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  sans-serif;
+  
+  /* border-bottom: 1px solid #0091ff; */
 }
 
 @media (min-width: 782px) {
@@ -1219,6 +1230,7 @@ button.toggle {
     word-wrap: none;
     word-break: keep-all;
     white-space: nowrap;
+    font-family: ;
   }
 
   .site-name h2 {
@@ -1356,7 +1368,7 @@ button.toggle {
   /* object-fit: contain; */
 }
 
-.single-header-content{
+.single-header-content {
   margin: 20px 0px;
 }
 
