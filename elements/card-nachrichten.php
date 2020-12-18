@@ -19,9 +19,10 @@ else {
 
 // variable text length
 if (strlen($the_slug < 1 )) {
-    $char = 50;
+    $char = 55;
 }
 else {
+
 }
 
 ?>
