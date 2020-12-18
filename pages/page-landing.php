@@ -46,7 +46,7 @@ get_header();
 					'post_status'=>'publish', 
 					'posts_per_page'=> 3,
 					'meta_key' => 'zeitpunkt',
-					'orderby' => 'rand',
+					// 'orderby' => 'rand',
 					'order' => 'ASC',
 					'offset' => '0', 
 					'meta_query' => array(

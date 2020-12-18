@@ -783,8 +783,13 @@ input[type="submit"]:hover {
 }
 
 .button-has-icon {
-  padding: 15px 15px 13px 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 44px;
 }
+
 .button-icon {
   display: inline;
 }
@@ -1081,7 +1086,6 @@ button.toggle {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
-
 #site-content {
   overflow: hidden;
   padding: 10px 15px 20px 15px;
@@ -1089,7 +1093,6 @@ button.toggle {
   max-width: 400px;
   overflow: visible;
 }
-
 
 /*  BLURRY HEADER */
 
@@ -1105,16 +1108,40 @@ button.toggle {
   }
 }
 
+.site-name {
+  margin-top: 9px;
+  margin-bottom: -2px;
+  margin-left: 5px;
+}
+
+.site-name h1 {
+  font-size: 1.8rem;
+  line-height: 1.9rem;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+    sans-serif;
+}
+
+.site-name h2 {
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  color: #6d6d6d;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
+  sans-serif;
+}
 .header-button {
   display: flex;
   margin: 5px;
   align-items: center;
   justify-content: center;
-  height: 28px;
+  height: 35px;
   font-size: 1.3rem;
   line-height: 1.3rem;
-  padding: 10px;
-  border-radius: 11px;
+  padding: 0px 15px;
+  border-radius: 13px;
+}
+
+.header-button.button-has-icon {
+  padding-left: 9px;
 }
 
 .header-button:last-of-type {
@@ -1124,16 +1151,17 @@ button.toggle {
 .header-button .button-icon {
   margin: 0px;
   height: 20px;
+  width: 20px;
   display: block;
 }
 
 .button-has-image {
   padding: 0px;
-  width: 28px;
+  width: 35px;
 }
 
 .button-image {
-  border-radius: 11px;
+  border-radius: 13px;
 }
 
 .pull-left {
@@ -1141,7 +1169,7 @@ button.toggle {
   margin-left: 0px;
 }
 
-.push-right{
+.push-right {
   margin-left: auto;
   display: flex;
 }
@@ -1158,20 +1186,21 @@ button.toggle {
 .menu li > a {
   color: rgb(27, 9, 9);
   text-decoration: none;
-  font-size: 1.65rem;
-  line-height: 1.65rem;
+  font-size: 1.60rem;
+  line-height: 1.60rem;
   word-wrap: none;
   word-break: keep-all;
-  padding: 20px 5px 15px 5px;
+  padding: 17px 5px 15px 5px;
   display: block;
 }
 
 .menu .current-menu-item > a {
   color: #0091ff;
-  border-bottom: 1px solid #0091ff;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  sans-serif;
+  
+  /* border-bottom: 1px solid #0091ff; */
 }
-
-
 
 @media (min-width: 782px) {
   #site-header {
@@ -1181,7 +1210,6 @@ button.toggle {
     margin-top: 0px;
     max-width: 1000px;
     background: transparent;
-    
   }
 
   #site-content {
@@ -1189,6 +1217,31 @@ button.toggle {
     max-width: 1000px;
     overflow: visible;
   }
+
+  .site-name {
+    margin-top: 13px;
+    margin-bottom: -2px;
+    margin-left: 5px;
+  }
+
+  .site-name h1 {
+    font-size: 2.5rem;
+    line-height: 2.6rem;
+    word-wrap: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    font-family: ;
+  }
+
+  .site-name h2 {
+    font-size: 1.8rem;
+    line-height: 1.3rem;
+    color: #6d6d6d;
+    word-wrap: none;
+    word-break: keep-all;
+    white-space: nowrap;
+  }
+
   .header-button {
     height: 45px;
     min-width: 45px;
@@ -1206,7 +1259,7 @@ button.toggle {
 
   .menu {
     border-radius: 20px;
-    max-width: 782px;
+    max-width: 1000px;
     background: #fff;
     margin: 15px auto 0px auto;
     padding: 0px 15px 0px 15px;
@@ -1229,19 +1282,21 @@ button.toggle {
   .menu li > a {
     font-size: 1.7rem;
     line-height: 1.7rem;
-    padding: 20px 5px 17px 5px
+    padding: 20px 5px 17px 5px;
   }
 
   .header-button .button-icon {
     margin: 0px;
     height: 25px;
+    width: 25px;
+    min-width: 25px;
     display: block;
   }
 }
 
-@media (min-width: 1320px) {
-  #site-content{
-   margin: 85px auto 100px auto;
+@media (min-width: 1000px) {
+  #site-content {
+    margin: 85px auto 100px auto;
   }
 
   #site-header {
@@ -1250,38 +1305,34 @@ button.toggle {
     justify-content: unset;
     display: grid;
 
-
-    grid-template-columns: 1fr 782px 1fr;
+    grid-template-columns: 220px auto 220px;
     grid-template-rows: auto;
-
-
-    grid-template-areas: 
-    "left center right";
+    grid-template-areas: "left center right";
   }
 
-  .pull-left{
+  .site-name {
+    margin-top: 20px;
+    margin-right: 15px;
+  }
+
+  .pull-left {
     grid-area: left;
   }
-  
-  .menu{
+
+  .menu {
     grid-area: center;
+    max-width: 782px;
   }
 
-
-  .push-right{
+  .push-right {
     grid-area: right;
   }
-
-
 
   .header-button {
     margin-top: 15px;
     height: 55px;
     min-width: 55px;
   }
-
-
-  
 }
 
 /*	7a. Template: Single Template
@@ -1317,13 +1368,17 @@ button.toggle {
   /* object-fit: contain; */
 }
 
+.single-header-content {
+  margin: 20px 0px;
+}
 
-.single-header-emoji{
+.single-header-emoji {
   font-size: 5rem;
 }
 
-.single-header-slogan{
+.single-header-slogan {
   margin-bottom: 20px;
+  color: #0091ff;
 }
 .single-content {
   margin-bottom: 20px;
@@ -1335,6 +1390,22 @@ button.toggle {
 
 .gutenberg-content > p {
   margin-bottom: 5px;
+}
+
+.team {
+  margin: 30px 0px;
+}
+
+.team .avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.team-member {
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 782px) {
@@ -1362,7 +1433,7 @@ button.toggle {
 }
 
 @media (max-width: 782px) {
-  .center-mobile{
+  .center-mobile {
     text-align: center;
   }
 }
@@ -4150,7 +4221,6 @@ figure.wp-block-table.is-style-stripes {
 
 /* LAYOUT */
 
-
 #single-content {
   overflow: hidden;
   padding: 20px 15px 20px 15px;
@@ -4194,16 +4264,18 @@ figure.wp-block-table.is-style-stripes {
 .card .content {
   padding: 0px 10px;
   flex-grow: 1;
-  margin-top: 10px;
+  margin-top: 7px;
   margin-bottom: 10px;
   max-width: calc(100% - 90px);
 }
 .card img {
-  min-width: 120px;
-  max-width: 160px;
-  width: 100%;
+  width: 140px;
+  /* height: 105px; */
   border-radius: 15px;
   align-self: start;
+
+  background: #e7e7e7;
+  border: none;
 }
 
 .card .avatar {
@@ -4251,7 +4323,7 @@ figure.wp-block-table.is-style-stripes {
   font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
     sans-serif;
   font-size: 1.8rem;
-  line-height: 2rem;
+  line-height: 1.9rem;
   margin: 0px;
 }
 
@@ -4291,6 +4363,7 @@ figure.wp-block-table.is-style-stripes {
 
 .card .list-item img {
   max-width: 120px;
+  max-height: 90px;
 }
 
 .card-header {
@@ -4303,6 +4376,7 @@ figure.wp-block-table.is-style-stripes {
   max-width: 210px;
   max-height: 210px;
   margin-right: 15px;
+  height: calc((100vw - 40px) / 2);
 }
 
 .square .card-title {
@@ -4323,7 +4397,6 @@ figure.wp-block-table.is-style-stripes {
   max-height: 200px;
   position: relative;
   padding: 0px;
-  min-height: 185px;
 }
 
 .landscape a .content,
@@ -4391,6 +4464,10 @@ figure.wp-block-table.is-style-stripes {
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 126px rgba(0, 0, 0, 0.15);
 }
 
+.gardient {
+  background: #d1d1d1;
+}
+
 .gardient a .content {
   color: #fff;
   background: linear-gradient(
@@ -4450,7 +4527,9 @@ figure.wp-block-table.is-style-stripes {
     margin: 10px 0px;
     max-width: calc(50% - 5px);
   }
-
+  .card .content {
+    margin-top: 10px;
+  }
 
   .card .pre-title {
     font-size: 1.7rem;
@@ -4466,8 +4545,16 @@ figure.wp-block-table.is-style-stripes {
     line-height: 1.9rem;
   }
 
+  .card img {
+    width: 100%;
+    min-width: 140px;
+    max-width: 150px;
+  }
+
   .card .list-item img {
+    min-width: 135px;
     max-width: 135px;
+    max-height: 101px;
   }
 
   .single-content,
@@ -4494,6 +4581,10 @@ figure.wp-block-table.is-style-stripes {
   .square img {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  .square {
+    max-height: calc((100vw - 60px) / 4);
   }
 
   .square .preview-text {
@@ -4535,9 +4626,7 @@ figure.wp-block-table.is-style-stripes {
     margin: 10px 0px 0px 0px;
     max-height: 240px;
   }
-}
 
-@media (min-width: 782px) {
   .card-container .landscape .card-title {
     font-size: 1.8rem;
     line-height: 2rem;
@@ -4552,22 +4641,11 @@ figure.wp-block-table.is-style-stripes {
   }
 }
 
-/* 
-
 @media (min-width: 1000px) {
-  .card-container .landscape .card-title {
-    font-size: 2rem;
-    line-height: 2.4rem;
+  .square {
+    max-height: calc((1000px - 60px) / 4);
   }
-
-  .card-container .landscape .preview-text {
-    font-size: 1.4rem;
-  }
-
-  .card-container .landscape a .content {
-    padding: 15px;
-  }
-} */
+}
 
 .anmerkung .pre-title {
   margin-bottom: 5px;

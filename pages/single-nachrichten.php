@@ -62,6 +62,20 @@ get_header();
 
     </div>
 
+    <!-- weitere Nachrichten -->
+    <h2>Weitere Nachrichten</h2>
+    <?php
+		$args2 = array(
+			'post_type'=>'nachrichten', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 6,
+            'order' => 'DESC',
+            'post__not_in' => array(get_the_ID())
+		);
+
+		slider($args2,'card', '1','false');
+	?>
+
     <!-- Projekt Kachel -->
     <?php
         $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
