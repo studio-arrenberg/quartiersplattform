@@ -24,7 +24,7 @@
             <h3 class="card-title">
                 <?php shorten_title(get_the_title(), '60'); ?>
             </h3>
-            <div class="pre-title"> <span class="date"><?php echo the_field('slogan'); // echo get_the_date('j. F'); ?><span></div> 
+            <div class="pre-title"> <span class="date"><?php if ( current_user_can('administrator') ) echo the_field('slogan'); // echo get_the_date('j. F'); ?><span></div> 
 
             <p class="preview-text">
                 <?php  get_excerpt(get_the_content(), '55'); ?>
