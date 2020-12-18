@@ -21,15 +21,10 @@
 				'id' => 'fragen-form',
 				'html_before_fields' => '',
 				'html_after_fields' => '',
-				'label_placement'=> '',
-				// 'updated_message' => __("Post updated", 'acf'),
-				// 'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
+				'label_placement'=> '',                
 				'post_id'=>'new_post',
 				'new_post'=>array(
                     'post_type' => 'fragen',
-                    // 'tax_input' => array (
-                    //     'version' => array( 2 )
-                    // ),
                     'post_status' => 'publish',
 				),
 				'field_el' => 'div',
@@ -38,7 +33,7 @@
                 // 'return' => '?updated=true',
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'fields' => array(
-                    'text',
+                    'text_fragen',
                     'emoji',
 				),
 				'submit_value'=>'Frage veröffentlichen',
