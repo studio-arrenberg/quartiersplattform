@@ -42,5 +42,5 @@ jobs:
         # width: 1200
         full-page: true
         width: ${{ matrix.width }}
-        path: ./
+        # path: ./
         
