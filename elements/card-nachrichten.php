@@ -14,7 +14,7 @@ if (strlen(get_the_title()) < 35 ) {
     $char = 90;
 }
 else {
-    $char = 60;
+    $char = 56;
 }
 
 // variable text length
