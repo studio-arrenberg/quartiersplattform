@@ -10,7 +10,6 @@ on:
 #  pull_request:
 #    branches: [ public ]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -43,5 +42,5 @@ jobs:
         # width: 1200
         full-page: true
         width: ${{ matrix.width }}
-        path: .
+        path: ./
         
