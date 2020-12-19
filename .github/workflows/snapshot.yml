@@ -44,3 +44,15 @@ jobs:
         width: ${{ matrix.width }}
         # path: ./
         
+        
+    # Download path output    
+    - uses: actions/checkout@v2
+
+    - uses: actions/download-artifact@v2
+      id: download
+      with:
+          name: 'my-artifact'
+          path: path/to/artifacts
+  
+    - name: 'Echo download path'
+      run: echo ${{steps.download.outputs.download-path}}
