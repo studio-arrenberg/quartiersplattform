@@ -178,6 +178,13 @@ git checkout public
 git reset --hard main
 ```
 
+#### Go back in timelin
+```bash
+git fetch
+git reset --hard *hash*
+git push --force
+```
+
 #### Trash commits ahead
 ```bash
 git push --force
