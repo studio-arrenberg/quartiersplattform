@@ -35,7 +35,7 @@
 				'post_content' => false,
                 'post_title' => false,
 				'fields' => array(
-                    'text_angebote',
+                    'text',
                     'emoji',
                     'duration',
 				),
