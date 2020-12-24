@@ -1230,7 +1230,7 @@ button.toggle {
     word-wrap: none;
     word-break: keep-all;
     white-space: nowrap;
-    font-family: ;
+    /* font-family: ; */
   }
 
   .site-name h2 {
