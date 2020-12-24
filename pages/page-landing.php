@@ -65,7 +65,16 @@ get_header();
 		<!-- call to register -->
 		<div class="card-container ">
 			<!-- arrenberg farm link card -->
-			<?php link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+			<?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+			<?php 
+			$args_gesschichten = array(
+				'post_type'   => 'geschichten',
+				'post_status' => 'publish',
+				'orderby' => 'rand',
+				'posts_per_page'=> '1'
+			);
+			link_card('Geschichten & Menschen','', '', '/geschichten', $args_gesschichten); 
+			?>
 			<?php get_template_part( 'components/call', 'umfrage' ); ?>
 		</div>
 
@@ -116,7 +125,16 @@ get_header();
 			<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
 			<?php get_template_part( 'components/call', 'update' ); ?>
 			<!-- arrenberg farm link card -->
-			<?php link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+			<?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+			<?php 
+			$args_gesschichten = array(
+				'post_type'   => 'geschichten',
+				'post_status' => 'publish',
+				'orderby' => 'rand',
+				'posts_per_page'=> '1'
+			);
+			link_card('Geschichten & Menschen','', '', '/geschichten', $args_gesschichten); 
+			?>
 			<?php get_template_part( 'components/call', 'umfrage' ); ?>
 		</div>
 

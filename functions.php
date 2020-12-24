@@ -919,11 +919,16 @@ function link_card($title, $text, $bg, $link, $args = ''){
 
 	if ($args) {
 
+		set_query_var( 'link_card_title', $title );
+		set_query_var( 'link_card_text', $text );
+		set_query_var( 'link_card_bg', $bg );
+		set_query_var( 'link_card_link', $link );
+
 		$query2 = new WP_Query($args);
 		// The Loop
 		while ( $query2->have_posts() ) {
 			$query2->the_post();
-			get_template_part('elements/landscape_card');
+			get_template_part('components/landscape_card');
 		}
 		// Restore original Post Data
 		wp_reset_postdata();
