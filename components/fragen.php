@@ -32,7 +32,7 @@
                 'post_title' => false,
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'fields' => array(
-                    'text_fragen',
+                    'text',
                     'emoji',
 				),
 				'submit_value'=>'Frage veröffentlichen',

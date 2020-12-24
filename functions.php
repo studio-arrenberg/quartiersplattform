@@ -1241,7 +1241,6 @@ function my_acf_admin_head() {
 		/* Anmerkungen Text lable */
         .acf-field-5fa01d66b0f2f > .acf-label {display: none;} /* ap1 */
 		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
-		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
 		.acf-field-5fc8fe8aa1786 > .acf-label {display: none;} /* Local */
 		
 		/* Angebote Text Label */
