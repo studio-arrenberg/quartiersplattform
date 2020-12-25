@@ -10,7 +10,7 @@
 <?php 
 // // Clients public and private key provided by service provider
 $public_key = "7a9946078ddcaa966ab528c62fa4053bb93d9d39ad9743ae";
-$private_key = "${{ secrets.WETTERPRIVATKEY }}";
+$private_key = "95c7452c43169aa49410eb43310b8b0c8dcdc2926e164fd9";
 
 // Define the request parameter's
 $method = "GET";
