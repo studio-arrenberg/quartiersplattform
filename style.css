@@ -1230,7 +1230,7 @@ button.toggle {
     word-wrap: none;
     word-break: keep-all;
     white-space: nowrap;
-    font-family: ;
+    /* font-family: ; */
   }
 
   .site-name h2 {
@@ -4811,8 +4811,30 @@ figure.wp-block-table.is-style-stripes {
   white-space: normal; /*Prevents child elements from inheriting nowrap.*/
   height: 60px;
   width: 25px;
-  border-radius: 20px;
+  border-radius: 8px;
   margin-right: 2px;
+}
+
+.strom_array div:first-of-type {
+  width: 50px;
+  border-radius: 10px;
+  animation-name: stretch;
+  animation-duration: 1.2s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .strom_array .red {

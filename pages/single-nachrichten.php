@@ -62,7 +62,6 @@ get_header();
     </div>
 
     <!-- weitere Nachrichten -->
-    <h2>Weitere Nachrichten</h2>
     <?php
 		$args2 = array(
 			'post_type'=>'nachrichten', 
@@ -77,9 +76,16 @@ get_header();
                     'terms' => ".$the_slug."
                 )
             )
-		);
+        );
+        
+        $my_query = new WP_Query($args2);
+        if ($my_query->post_count > 0) {
+            ?>
+                <h2>Weitere Nachrichten</h2>
+            <?php
+            slider($args2,'card', '1','false');
+        }
 
-		slider($args2,'card', '1','false');
 	?>
 
     <!-- Projekt Kachel -->
