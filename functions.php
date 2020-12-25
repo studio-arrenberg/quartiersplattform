@@ -914,6 +914,17 @@ function tpl_fragen( $single_template ) {
 }
 add_filter( 'single_template', 'tpl_fragen' );
 
+function tpl_geschichten( $single_template ) {
+    global $post;
+ 
+    if ( 'geschichten' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_geschichten' );
+
 // function template part test
 function link_card($title, $text, $bg, $link, $args = ''){
 
