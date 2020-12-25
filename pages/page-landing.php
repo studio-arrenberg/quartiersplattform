@@ -98,6 +98,11 @@ get_header();
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
 
+		<!-- arrenberg farm wetter station -->
+		<?php if ( current_user_can('administrator') ) {
+			get_template_part('components/wetter');
+		} ?>
+
 		<!-- feedback (acf) -->
 		<?php get_template_part('components/feedback'); ?>
 	<?php
