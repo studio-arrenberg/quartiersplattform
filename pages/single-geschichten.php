@@ -73,7 +73,7 @@ get_header();
 		'orderby' => 'rand',
 	);
 
-	slider($args2,'square_card', '1','false'); 
+    slider($args2,'square_card', '2','true'); 
 	?>
 
 </main><!-- #site-content -->
