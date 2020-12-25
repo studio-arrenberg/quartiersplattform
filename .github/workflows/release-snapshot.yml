@@ -22,7 +22,7 @@ jobs:
     strategy:
       matrix:
         # os: [ubuntu-latest, macos-latest, windows-latest]
-        page: ['',gemeinsam, projekte, veranstaltungen, frage-dein-quartier, anmelden, anmerkungen, nachrichten-archive, quartiersplattform, neues-modul-im-kreislauf]
+        page: ['',gemeinsam, projekte, veranstaltungen, frage-dein-quartier, anmelden, anmerkungen, nachrichten-archive, quartiersplattform, neues-modul-im-kreislauf, geschichten]
         # page: [gemeinsam]
         # width: [1200, 420]
         width: [420, 1200]

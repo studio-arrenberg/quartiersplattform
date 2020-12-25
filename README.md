@@ -142,6 +142,7 @@ list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 #### Slider
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
+slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
 ```
 #### Shorten
 ```php 

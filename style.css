@@ -4776,6 +4776,7 @@ figure.wp-block-table.is-style-stripes {
 .energie-ampel-titles h3 {
   margin: 0px;
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .energie-ampel-titles {
