@@ -120,7 +120,7 @@ get_header();
 			'order' => 'DESC',
 		);
 
-		slider($args2,'landscape_card', '1','false'); 
+		slider($args2,'card', '1','false'); 
 		?>
 		<!-- link card -->
 		<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberrg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
@@ -209,6 +209,9 @@ get_header();
 
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
+
+		<!-- arrenberg farm wetter station -->
+		<?php get_template_part('components/wetter'); ?>
 
 		<!-- feedback (acf) -->
 		<?php get_template_part('components/feedback'); ?>

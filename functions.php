@@ -1414,16 +1414,26 @@ function embla_carousel() {
 // register emoji picker script
 add_action("wp_enqueue_scripts", "emoji_picker");
 function emoji_picker() { 
-	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
-	wp_enqueue_script('emoji_picker-config');
-	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
-	wp_enqueue_script('emoji_picker-util');
-	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
-	wp_enqueue_script('emoji_picker-emojiarea');
-	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
-	wp_enqueue_script('emoji_picker-picker');
-	wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
-    wp_enqueue_style( 'emoji_picker-css' );
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+    if (
+		// !is_admin() 
+		// strpos($REQUEST_URI,'/profil/')
+		strpos($REQUEST_URI,'/frage-dein-quartier/')
+		&& strpos($REQUEST_URI,'/angebot-erstellen/')
+		&& isset($_GET['action']) && !$_GET['action'] == 'edit'
+	 ) {
+		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
+		wp_enqueue_script('emoji_picker-config');
+		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
+		wp_enqueue_script('emoji_picker-util');
+		wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
+		wp_enqueue_script('emoji_picker-emojiarea');
+		wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
+		wp_enqueue_script('emoji_picker-picker');
+		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
+		wp_enqueue_style( 'emoji_picker-css' );
+	}
       
 }
 
