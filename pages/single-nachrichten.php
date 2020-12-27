@@ -100,7 +100,7 @@ get_header();
                 'numberposts' => '1'
             );
 
-            link_card('','','','', $args);
+            landscape_card($args);
         }
     ?>
     

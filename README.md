@@ -131,18 +131,21 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 
 #### Link Card
 ```php
-link_card('Hallo Welt','Text....',get_template_directory_uri().'/assets/images/400x200.png', '/veranstaltungen');
-link_card('Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/veranstaltungen');
-link_card('','','','', $args); // query version
+landscape_card($args); // iterate landscape card with wp query
+landscape_card(null, 'Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/veranstaltungen'); // without query
+landscape_card(null, 'Hallo Welt','Text....',get_template_directory_uri().'/assets/images/400x200.png', '/veranstaltungen'); // without query
+landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Query and Manual
 ```
 #### List Card
 ```php 
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
 #### Slider
+`slides` get multiplied by 2 for desktop
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
+slider($query,'landscape_card', '1','false'); 
 ```
 #### Shorten
 ```php 

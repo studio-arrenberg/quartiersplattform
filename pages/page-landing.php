@@ -73,7 +73,7 @@ get_header();
 				'orderby' => 'rand',
 				'posts_per_page'=> '1'
 			);
-			link_card('Geschichten & Menschen','', '', '/geschichten', $args_gesschichten); 
+			landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
 			?>
 			<?php get_template_part( 'components/call', 'umfrage' ); ?>
 		</div>
@@ -93,7 +93,7 @@ get_header();
 		<?php get_template_part('components/energie_ampel'); ?>
 
 		<!-- Aufbruch am Arrenberg link card -->
-		<?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+		<?php landscape_card(null,'Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
@@ -120,11 +120,11 @@ get_header();
 			'order' => 'DESC',
 		);
 
-		slider($args2,'card', '1','false'); 
+		slider($args2,'landscape_card', '1','false'); 
 		?>
 		<!-- link card -->
-		<?php link_card('Entdecke das Quartier','Alles über den Arrenberrg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
-
+		<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberrg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
+		
 		<!-- call to register -->
 		<div class="card-container ">
 			<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
@@ -138,7 +138,7 @@ get_header();
 				'orderby' => 'rand',
 				'posts_per_page'=> '1'
 			);
-			link_card('Geschichten & Menschen','', '', '/geschichten', $args_gesschichten); 
+			landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
 			?>
 			<?php get_template_part( 'components/call', 'umfrage' ); ?>
 		</div>
@@ -205,7 +205,7 @@ get_header();
 		<?php get_template_part('components/energie_ampel'); ?>
 
 		<!-- Aufbruch am Arrenberg link card -->
-		<?php link_card('Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+		<?php landscape_card(null, 'Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->

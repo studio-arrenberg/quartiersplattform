@@ -14,18 +14,6 @@ get_header();
 
 <main id="site-content" role="main">
 
-    <?php
-	// featured projekte
-	// $args3 = array(
-	// 	'post_type'=>'projekte', 
-	// 	'post_status'=>'publish', 
-	// 	'posts_per_page'=> 4,
-	// 	'orderby' => 'rand'
-	// );
-
-	// slider($args3,'square_card', '2','true'); 
-	?>
-
 	<!-- Projekt Kachel -->
 	<?php
 		$args = array(
@@ -35,7 +23,7 @@ get_header();
 			'posts_per_page'=> -1
 		);
 
-		link_card('','','','', $args);
+		landscape_card($args);
     ?>
 
 	

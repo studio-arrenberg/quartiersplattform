@@ -926,35 +926,28 @@ function tpl_geschichten( $single_template ) {
 add_filter( 'single_template', 'tpl_geschichten' );
 
 // function template part test
-function link_card($title, $text, $bg, $link, $args = ''){
+function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '')  {
+
+	set_query_var( 'link_card_title', $title );
+	set_query_var( 'link_card_text', $text );
+	set_query_var( 'link_card_bg', $bg );
+	set_query_var( 'link_card_link', $link );
 
 	if ($args) {
-
-		set_query_var( 'link_card_title', $title );
-		set_query_var( 'link_card_text', $text );
-		set_query_var( 'link_card_bg', $bg );
-		set_query_var( 'link_card_link', $link );
 
 		$query2 = new WP_Query($args);
 		// The Loop
 		while ( $query2->have_posts() ) {
 			$query2->the_post();
-			get_template_part('components/landscape_card');
+			get_template_part('elements/landscape_card');
 		}
 		// Restore original Post Data
 		wp_reset_postdata();
 
 	}
 	else {
-		set_query_var( 'link_card_title', $title );
-		set_query_var( 'link_card_text', $text );
-		set_query_var( 'link_card_bg', $bg );
-		set_query_var( 'link_card_link', $link );
-	
-		get_template_part('components/landscape_card');
+		get_template_part('elements/landscape_card');
 	}
-
-	
 
 }
 
@@ -1022,7 +1015,6 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
         <?php
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
-		// echo get_post_type();
 		echo "<div class='embrela-slide'>";
 		get_template_part('elements/'.$type.'', get_post_type());
 		echo "</div>";
@@ -1033,41 +1025,41 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 </div>
 
 <script>
-var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
+	var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
-var slides_num = <?php echo $slides; ?>;
-var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-var draggable_state = true;
+	var slides_num = <?php echo $slides; ?>;
+	var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+	var draggable_state = true;
 
-if (vw > 768) {
-    slides_num = slides_num * 2;
-    draggable_state = false;
-}
+	if (vw > 768) {
+		slides_num = slides_num * 2;
+		draggable_state = false;
+	}
 
-var options = {
-    dragFree: <?php echo $dragfree; ?>,
-    slidesToScroll: slides_num, // viewport > 768px 4
-    draggable: draggable_state
-}
-var embla = EmblaCarousel(emblaNode, options)
+	var options = {
+		dragFree: <?php echo $dragfree; ?>,
+		slidesToScroll: slides_num, // viewport > 768px 4
+		draggable: draggable_state
+	}
+	var embla = EmblaCarousel(emblaNode, options)
 
-embla.on('resize', () => {
-    var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    slidesToScroll = '<?php echo $slides; ?>';
-    // console.log(vw);
-    if (vw > 768) {
-        slidesToScroll = slidesToScroll * 2;
-        draggable = false;
-    } else {
-        slidesToScroll = slides_num;
-        draggable = true;
-    }
+	embla.on('resize', () => {
+		var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+		slidesToScroll = '<?php echo $slides; ?>';
+		// console.log(vw);
+		if (vw > 768) {
+			slidesToScroll = slidesToScroll * 2;
+			draggable = false;
+		} else {
+			slidesToScroll = slides_num;
+			draggable = true;
+		}
 
-    embla.reInit({
-        slidesToScroll,
-        draggable
-    });
-});
+		embla.reInit({
+			slidesToScroll,
+			draggable
+		});
+	});
 </script>
 <?php
 }
