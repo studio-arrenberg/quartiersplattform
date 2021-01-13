@@ -128,11 +128,32 @@ get_header();
         $page_for_posts = get_option( 'page_for_posts' );
         ?>
     <div class="share">
+        <div>
+            <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
+            <button onclick="copy()">Kopieren</button>
+        </div>
         <a class="button is-style-outline"
             href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
         <a class="button is-style-outline"
             href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
+        <a class="button is-style-outline" href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>" target="_blank" rel="nofollow">Share on Email</a>
     </div>
+
+    <script>
+        // const span = document.querySelector("span.copy");
+
+        // span.onclick = function() {
+        //     document.execCommand("<?php echo get_permalink(); ?>");
+        // }
+
+        function copy() {
+            var copyText = document.getElementById("myInput");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            // alert("Copied the text: " + copyText.value);
+        }
+    </script>
 
     <?php } ?>
 

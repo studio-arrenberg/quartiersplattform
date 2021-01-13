@@ -1232,6 +1232,16 @@ function my_post_title_updater( $post_id ) {
 		   { $text = $text."..."; } // Ellipsis
 
 		$my_post['post_title'] = $text;
+
+		// set expire meta field with timestamp
+		// $duration = (60*60*24); // default
+		if (get_field('duration', $post_id ) == 'Stunde') $duration = (60*60);
+		else if (get_field('duration', $post_id ) == 'Tag') $duration = (60*60*24);
+		else if (get_field('duration', $post_id ) == 'Woche') $duration = (60*60*24*7);
+		// set field
+		update_post_meta($post_id, 'expire_timestamp', current_time('timestamp') + get_field('duration', $post_id ));
+
+		// update post
 		wp_update_post( $my_post ); // Update the post into the database
 	}
 
@@ -1420,8 +1430,8 @@ function emoji_picker() {
 		// !is_admin() 
 		// strpos($REQUEST_URI,'/profil/')
 		strpos($REQUEST_URI,'/frage-dein-quartier/')
-		&& strpos($REQUEST_URI,'/angebot-erstellen/')
-		&& isset($_GET['action']) && !$_GET['action'] == 'edit'
+		|| strpos($REQUEST_URI,'/angebot-erstellen/')
+		|| isset($_GET['action']) || !$_GET['action'] == 'edit'
 	 ) {
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
 		wp_enqueue_script('emoji_picker-config');
@@ -1433,6 +1443,14 @@ function emoji_picker() {
 		wp_enqueue_script('emoji_picker-picker');
 		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
 		wp_enqueue_style( 'emoji_picker-css' );
+
+		wp_deregister_script('jquery-ui-draggable');
+		wp_deregister_script('jquery-ui-mouse');
+		wp_deregister_script('jquery-ui-resizable');
+		wp_deregister_script('jquery-ui-sortable');
+		wp_deregister_script('jquery-ui-widget');
+		wp_deregister_script('jquery-ui-selectable');
+		// wp_deregister_script('jquery-ui-core');
 	}
       
 }
@@ -1455,11 +1473,10 @@ function my_init() {
 
     if (
 		!is_admin() 
-		&& !strpos($REQUEST_URI,'/profil/')
-		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
-		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
-		&& !strpos($REQUEST_URI,'/projekt-erstellen/')
-		&& !isset($_GET['action']) && !$_GET['action'] == 'edit'
+		|| !strpos($REQUEST_URI,'/profil/')
+		|| !strpos($REQUEST_URI,'/frage-dein-quartier/')
+		|| !strpos($REQUEST_URI,'/angebot-erstellen/')
+		|| !isset($_GET['action']) || !$_GET['action'] == 'edit'
 	 ) {
 
 		// jQuery min
@@ -1484,7 +1501,7 @@ function my_init() {
 	}
 
 }
-add_action('init', 'my_init');
+// add_action('init', 'my_init');
 
 
 // veranstaltungen archive custom order

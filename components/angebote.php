@@ -55,7 +55,8 @@
 
     // remove previous emojies
     $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
-        console.log('call');
+        // this.selectionStart = this.selectionEnd = this.val().length;
+        // $(this).find('.emoji-wysiwyg-editor').selectionEnd;
         $(this).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
     });
 

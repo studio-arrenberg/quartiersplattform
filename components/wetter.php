@@ -64,18 +64,19 @@ else {
 
 <!-- display data -->
 
-<div class="card  landscape shadow">
+<div class="card landscape shadow bg_green">
     <a href="<?php echo get_site_url(); ?>/projekte/arrenberg-farm/">
         <div class="content white-text">
-            <div class="emojis-top"><?php echo $json_decoded->data[0]->values->avg[0]; ?>°</div>
+            <div class="emojis-top"><?php echo $json_decoded->data[0]->values->avg[0]; ?>°C</div>
             <h3 class="card-title">
-                <?php echo $niederschlag; ?><br><?php echo number_format($json_decoded->data[9]->values->avg[0], 0); ?>% Luftfeuchtigkeit
+            Das aktuelle Wetter von der Arrenberg Farm <?php // echo date('G:i',$json_decoded->dates[0]);  ?>
             </h3>
             <p class="preview-text">
-                Das aktuelle Wetter von der Arrenberg Farm <?php // echo date('G:i',$json_decoded->dates[0]);  ?>
+            <?php echo number_format($json_decoded->data[9]->values->avg[0], 0); ?>% Luftfeuchtigkeit & <?php echo $niederschlag; ?>
+                
             </p>
         </div>
 
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/gemeinsam.png" alt="" />
+        <!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/gemeinsam.png" alt="" /> -->
     </a>
 </div>
