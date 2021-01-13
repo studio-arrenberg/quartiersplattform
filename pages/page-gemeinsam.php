@@ -26,18 +26,28 @@ get_header();
 	$args4 = array(
 		'post_type'=> array('angebote', 'fragen'), 
 		'post_status'=>'publish', 
-        'posts_per_page'=> -1
-        // reihenfolge...?
+		'posts_per_page'=> -1,
+		'meta_query' => array(
+			array(
+				'key'     => 'expire_timestamp',
+				'value'   => current_time('timestamp'),
+				'compare' => '>',
+				'type' 	=> 'timestamp',       
+			),
+		),
+		'meta_key'          => 'expire_timestamp',
+		'orderby'           => 'expire_timestamp',
+		'order'             => 'ASC'
 	);
+
 	card_list($args4);
 	?>
 </div>
 
 
 <div class="card-container   card-container__large ">
-		<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
-		
-	</div>
+	<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
+</div>
 
 
 	

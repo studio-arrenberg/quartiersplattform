@@ -1232,6 +1232,16 @@ function my_post_title_updater( $post_id ) {
 		   { $text = $text."..."; } // Ellipsis
 
 		$my_post['post_title'] = $text;
+
+		// set expire meta field with timestamp
+		$duration = (60*60*24); // default
+		if (get_field('duration', $post_id ) == 'Stunde') $duration = (60*60);
+		else if (get_field('duration', $post_id ) == 'Tag') $duration = (60*60*24);
+		else if (get_field('duration', $post_id ) == 'Woche') $duration = (60*60*24*7);
+		// set field
+		update_post_meta($post_id, 'expire_timestamp', current_time('timestamp') + $duration);
+
+		// update post
 		wp_update_post( $my_post ); // Update the post into the database
 	}
 

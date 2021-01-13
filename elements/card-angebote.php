@@ -15,12 +15,17 @@
 ?>
 
 <?php
-// $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
-// $terms_version = "";
-// if ($terms_status) {
-//     $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
-// }
-// $comment_count = get_comment_count($post->ID)['approved'];
+
+// gone = now - (published + duration)
+$remaining = current_time('timestamp') - (get_post_time('U') + get_field('duration'));
+// echo get_field('duration');
+
+// echo "<br>".get_post_meta(get_the_ID(), 'expire_timestamp', true);
+
+if (current_time('timestamp') < get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
+    // echo "<br>".gmdate("H:i:s", abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)));
+}
+
 ?>
 
 <div class="card shadow ">
@@ -34,6 +39,8 @@
             <h3 class="card-title-large">
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
+            <?php echo "<br>".gmdate("H:i:s", abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))); ?>
+            Noch 3 Stunden erhältlich
         </div>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
         <div class="emoji">
