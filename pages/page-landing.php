@@ -210,8 +210,13 @@ get_header();
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
 
-		<!-- arrenberg farm wetter station -->
-		<?php get_template_part('components/wetter'); ?>
+		<div class="card-container   card-container__center">
+
+
+			<!-- arrenberg farm wetter station -->
+			<?php get_template_part('components/wetter'); ?>
+
+			</div>
 
 		<!-- feedback (acf) -->
 		<?php get_template_part('components/feedback'); ?>
