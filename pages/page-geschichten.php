@@ -13,6 +13,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
+<div class="card-container card-container__small">
 
 	<!-- Projekt Kachel -->
 	<?php
@@ -35,6 +36,8 @@ get_header();
 		'posts_per_page'=> -1
 	);
 	?>
+
+</div>
 	
 	<div class="card-container">
 	<?php // card_list($args4);

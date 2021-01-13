@@ -1100,7 +1100,7 @@ button.toggle {
   @supports (
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
-    #site-header {
+    #site-header, .overlay {
       background-color: rgba(255, 255, 250, 0.7);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
@@ -1172,6 +1172,27 @@ button.toggle {
 .push-right {
   margin-left: auto;
   display: flex;
+}
+
+.overlay{
+  position: fixed;
+  overflow-y: hidden;
+  top: -2000px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 200000;
+  background-color: rgba(255, 255, 250, 0.7);
+  padding: 15px;
+  transition: all ease-in-out 0.2s; /* Animation */
+}
+
+.hidden{
+  top: -100%;
+}
+
+.visible{
+  top: 0px;
 }
 
 /* Primary Menu ---------------------------- */
@@ -4479,6 +4500,12 @@ figure.wp-block-table.is-style-stripes {
   max-width: 100%;
 }
 
+
+.landscape.gardient a .content {
+  padding-bottom: 15px !important;
+}
+
+
 .embla {
   overflow: visible;
 }
@@ -4633,12 +4660,16 @@ figure.wp-block-table.is-style-stripes {
   }
 
   .card-container .landscape .preview-text {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
   }
 
   .card-container .landscape a .content {
     padding: 5px 15px;
   }
+/* 
+  .card-container .gardient a .content {
+    padding: 100px;
+  } */
 }
 
 @media (min-width: 1000px) {
@@ -4685,7 +4716,7 @@ figure.wp-block-table.is-style-stripes {
 
 .card-container__small .card {
   width: calc(50% - 5px);
-  margin: 0px;
+  /* margin: 0px; */
 }
 
 .card-container__small .card a {
@@ -4770,6 +4801,10 @@ figure.wp-block-table.is-style-stripes {
   overflow-y: hidden;
   margin-top: 40px;
   margin-bottom: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  /* padding: 15px; */
+
 }
 
 .energie-ampel-titles h2,
@@ -4783,6 +4818,8 @@ figure.wp-block-table.is-style-stripes {
   display: flex;
   justify-content: space-between;
   margin-bottom: -20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .energie-ampel-titles div:last-of-type {
   text-align: right;
@@ -4791,7 +4828,7 @@ figure.wp-block-table.is-style-stripes {
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
-  padding: 30px 0px;
+  padding: 30px 0px 30px  15px ;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
