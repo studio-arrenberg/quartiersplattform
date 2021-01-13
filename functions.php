@@ -1458,6 +1458,7 @@ function my_init() {
 		&& !strpos($REQUEST_URI,'/profil/')
 		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
 		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
+		&& !strpos($REQUEST_URI,'/projekt-erstellen/')
 		&& !isset($_GET['action']) && !$_GET['action'] == 'edit'
 	 ) {
 
@@ -1483,7 +1484,7 @@ function my_init() {
 	}
 
 }
-// add_action('init', 'my_init');
+add_action('init', 'my_init');
 
 
 // veranstaltungen archive custom order
