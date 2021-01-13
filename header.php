@@ -124,10 +124,10 @@
 
         <div class="push-right">
 
-        <a class="button header-button push-right" onclick="show()">
+            <a class="button header-button push-right" onclick="show()">
 
                 <span class="button-has-icon-label">Energie Ampel</span>
-    </a>
+            </a>
 
             <?php
         // logged in user
@@ -232,31 +232,31 @@
 
 
     <div id="overlay" class="overlay hidden " onclick="hide()">
-    <button class="button header-button button-has-icon is-style-outline" onclick="hide()">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Zurück</span>
-            </button>
-    
+        <button class="button header-button button-has-icon is-style-outline" onclick="hide()">
+            <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+            <span class="button-has-icon-label">Zurück</span>
+        </button>
+
 
         <?php get_template_part('components/energie_ampel'); ?>
-		<?php landscape_card(null, 'Virtual Power Plant','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
+        <?php landscape_card(null, 'Virtual Power Plant','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
 
-    </div>  
+    </div>
 
 
     <script>
-            function show() {
-            var element = document.getElementById("overlay");
-            element.classList.remove("hidden");
+    function show() {
+        var element = document.getElementById("overlay");
+        element.classList.remove("hidden");
 
-            element.classList.add("visible");
-            }
+        element.classList.add("visible");
+    }
 
 
-            function hide() {
-            var element = document.getElementById("overlay");
-            element.classList.remove("visible");
+    function hide() {
+        var element = document.getElementById("overlay");
+        element.classList.remove("visible");
 
-            element.classList.add("hidden");
-            }
-        </script>
+        element.classList.add("hidden");
+    }
+    </script>
