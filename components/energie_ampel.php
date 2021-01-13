@@ -178,7 +178,6 @@ LIMIT 0, 60
         </div>
     </div>
 </div>
-</div>
 <?php
 }
 ?>
