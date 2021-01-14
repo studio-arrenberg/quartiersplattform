@@ -8,14 +8,16 @@
  * @since Twenty Twenty 1.0
  */
 
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
-    acf_form_head();
-    wp_deregister_style( 'wp-admin' );
-}
+// if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+//     acf_form_head();
+//     wp_deregister_style( 'wp-admin' );
+// }
+
 acf_form_head(); // before wp header !important!
 get_header();
 ?>
 
+<main id="site-content" role="main">
 
 <div class="feedback">
     <h3>Erstelle dein Projekt</h3>
@@ -49,12 +51,9 @@ get_header();
 			)
     ); 
 
-
     ?>
-       
-        <!-- <div class="lead emoji-picker-container">
-            <input id="emoji" type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true"
-                maxlength="9">
-        </div> -->
-    </a>
-</div>
+	
+
+</main><!-- #site-content -->
+
+<?php get_footer(); ?>

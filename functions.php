@@ -1283,8 +1283,7 @@ function wpdocs_dequeue_dashicon() {
 		return;
 	}
 	wp_deregister_style('dashicons');
-}
-add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
+} add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 
 // ultimate member remove styles
 add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
@@ -1401,7 +1400,7 @@ function um_deregister_styles() {
 	wp_deregister_style( 'um_misc');
 	wp_deregister_style( 'um_default_css');
 
-  } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
+} add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
 
 // // Activate WordPress Maintenance Mode
@@ -1413,16 +1412,13 @@ function um_deregister_styles() {
 // add_action('get_header', 'wp_maintenance_mode');
 
 // register embla carousel script
-add_action("wp_enqueue_scripts", "embla_carousel");
 function embla_carousel() { 
     wp_register_script('embla-carousel', 
 	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
-      
-}
+} add_action("wp_enqueue_scripts", "embla_carousel");
 
 // register emoji picker script
-add_action("wp_enqueue_scripts", "emoji_picker");
 function emoji_picker() { 
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
@@ -1430,9 +1426,14 @@ function emoji_picker() {
 		// !is_admin() 
 		// strpos($REQUEST_URI,'/profil/')
 		strpos($REQUEST_URI,'/frage-dein-quartier/')
-		|| strpos($REQUEST_URI,'/angebot-erstellen/')
-		|| isset($_GET['action']) || !$_GET['action'] == 'edit'
+		|| strpos($REQUEST_URI,'/angebot-erstellen/') /* '/angebot-erstellen/' */
+		|| strpos($REQUEST_URI,'/projekt-erstellen/')
+		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
 	 ) {
+
+		// echo "<script>console.log('".$REQUEST_URI."')</script>";
+		echo "<script>console.log('add emoji picker & remove jquery libs')</script>";
+		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
 		wp_enqueue_script('emoji_picker-config');
 		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
@@ -1444,16 +1445,21 @@ function emoji_picker() {
 		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
 		wp_enqueue_style( 'emoji_picker-css' );
 
-		wp_deregister_script('jquery-ui-draggable');
-		wp_deregister_script('jquery-ui-mouse');
-		wp_deregister_script('jquery-ui-resizable');
-		wp_deregister_script('jquery-ui-sortable');
-		wp_deregister_script('jquery-ui-widget');
-		wp_deregister_script('jquery-ui-selectable');
+		// wp_deregister_script('jquery-ui-draggable');
+		// wp_deregister_script('jquery-ui-mouse');
+		// wp_deregister_script('jquery-ui-resizable');
+		// wp_deregister_script('jquery-ui-sortable');
+		// wp_deregister_script('jquery-ui-widget');
+		// wp_deregister_script('jquery-ui-selectable');
+
 		// wp_deregister_script('jquery-ui-core');
 	}
       
 }
+add_action("wp_enqueue_scripts", "emoji_picker");
+
+
+
 
 // jQuery Update
 /** * Install latest jQuery version 3.5.1. */
@@ -1473,11 +1479,16 @@ function my_init() {
 
     if (
 		!is_admin() 
-		|| !strpos($REQUEST_URI,'/profil/')
-		|| !strpos($REQUEST_URI,'/frage-dein-quartier/')
-		|| !strpos($REQUEST_URI,'/angebot-erstellen/')
-		|| !isset($_GET['action']) || !$_GET['action'] == 'edit'
+		// || strpos($REQUEST_URI,'/gemeinsam/')
+		&& !strpos($REQUEST_URI,'/profil/')
+		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
+		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
+		&& !strpos($REQUEST_URI,'/projekt-erstellen/')
+		&& !$_GET['action'] == 'edit'
 	 ) {
+
+		echo "<script>console.log('".$REQUEST_URI."')</script>";
+		echo "<script>console.log('remove jquery libs')</script>";
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
@@ -1501,7 +1512,7 @@ function my_init() {
 	}
 
 }
-// add_action('init', 'my_init');
+add_action('init', 'my_init');
 
 
 // veranstaltungen archive custom order
@@ -1522,8 +1533,7 @@ function debugToConsole($msg) {
 function my_acf_google_map_api( $api ){
 	$api['key'] = 'AIzaSyDPfffkf5pnMH5AmDLnVNb-3w1dNpdh-co';
 	return $api;	
-}
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+} add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 // create TAX projekt in veranstaltung & nachrichten
