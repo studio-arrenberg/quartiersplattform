@@ -239,7 +239,7 @@
 
 
         <?php get_template_part('components/energie_ampel'); ?>
-        <?php landscape_card(null, 'Virtual Power Plant','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
+        <?php // landscape_card(null, 'Virtual Power Plant','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
 
     </div>
 

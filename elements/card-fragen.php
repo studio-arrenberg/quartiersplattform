@@ -34,13 +34,12 @@ if (current_time('timestamp') < get_post_meta(get_the_ID(), 'expire_timestamp', 
         <div class="content">
             <div class="pre-title green-text">Frage von
                 <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-                <span class="date green-text"><?php echo get_the_date('j. F'); ?> <span>
+                <span class="date green-text">ich bin in 2 minuten weg<span>
             </div>
             <h3 class="card-title-large">
                 <?php  shorten_title(get_field('text'), '200'); ?>
             </h3>
             <?php echo "<br>".gmdate("H:i:s", abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))); ?>
-            <?php echo wp_date('F d, Y g:i a', abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)));  ?>
         </div>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
         <div class="emoji">
