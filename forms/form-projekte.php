@@ -45,7 +45,6 @@ get_header();
                     'target',
                     'description',
                     'pictures',
-
 				),
 				'submit_value'=>'Projekt veröffentlichen',
 			)
