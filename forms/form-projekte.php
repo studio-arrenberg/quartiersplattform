@@ -21,6 +21,7 @@ get_header();
 
 <div class="feedback">
     <h3>Erstelle dein Projekt</h3>
+    <br>
 
     <?php // acf_form_head(); ?>
 
@@ -43,8 +44,9 @@ get_header();
                 'return' => get_site_url().'/projekte', // post gets dublicated
 				'fields' => array(
                     'target',
-                    'description',
-                    'pictures',
+                    'emoji',
+                    'text',
+                    '_thumbnail_id',
 				),
 				'submit_value'=>'Projekt veröffentlichen',
 			)

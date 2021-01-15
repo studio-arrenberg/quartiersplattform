@@ -1512,7 +1512,7 @@ function my_init() {
 	}
 
 }
-add_action('init', 'my_init');
+//add_action('init', 'my_init');
 
 
 // veranstaltungen archive custom order
@@ -1668,3 +1668,12 @@ function copywrite_beitragsbild() {
 
     }
 }
+
+// ACF Rename Post Title Label
+function my_acf_prepare_field( $field ) {
+	$field['label'] = "Titel";
+	$field['placeholder'] = "Gib deinem Projekt einen Titel.";
+    return $field;
+    
+}
+add_filter('acf/prepare_field/name=_post_title', 'my_acf_prepare_field');
