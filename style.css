@@ -779,7 +779,7 @@ input[type="submit"]:hover {
 }
 
 .header-button {
-  padding: 17px;
+  padding: 10px;
 }
 
 .button-has-icon {
@@ -1100,7 +1100,7 @@ button.toggle {
   @supports (
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
-    #site-header, .overlay {
+    #site-header {
       background-color: rgba(255, 255, 250, 0.7);
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
@@ -1130,13 +1130,13 @@ button.toggle {
 }
 .header-button {
   display: flex;
-  margin: 5px;
+  margin: 5px 3px;
   align-items: center;
   justify-content: center;
   height: 35px;
   font-size: 1.3rem;
   line-height: 1.3rem;
-  padding: 0px 15px;
+  padding: 0px 10px;
   border-radius: 13px;
 }
 
@@ -1176,40 +1176,77 @@ button.toggle {
 
 .overlay{
   position: fixed;
-  top: 0px;
+  top: -100%;
   opacity: 0;
   left: 0px;
   width: 100%;
-  height: 50%;
+  height: 100%;
   z-index: 200000;
   background-color: rgba(255, 255, 250, 0.7);
   padding: 15px;
   transition: all ease-in-out 0.2s; /* Animation */
+  overflow: scroll;
+  /* display: none; */
+  background-color: rgba(255, 255, 250, 0.7);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
-
+/* 
 .overlay.visible::after{
   content: ' ';
   position: fixed;
   bottom: 0px;
   left: 0px;
   width: 100%;
-  height: 70%;
+  height: 50%;
   z-index: -1;
   background-color: rgba(135, 135, 135, 0.7);
   padding: 15px;
+  transition: all ease-in-out 0.2s; 
+} */
+
+
+@media (min-width: 782px) {
+  .overlay-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+ .energie-ampel{
+   margin-top: 75px;
+   margin-bottom: 50px;
+ }
+ 
+ .vpp-animation img{
+  
+  margin: 20px auto;
+
+ }
+}
+
+
+@media (max-width: 374px) {
+ .site-name{
+   display: none;
+ }
+}
+
+.hidden{
+  /* display: none; */
+  opacity: 0;
   transition: all ease-in-out 0.2s; /* Animation */
 
 }
 
-
-.hidden{
-  opacity: 0;
-
+.visible{
+  top: 0%;
+  opacity: 1;
+  transition: all ease-in-out 0.2s; /* Animation */
 }
 
-.visible{
-  top: 1;
+.no-scroll{
+  overflow: hidden;
 }
 
 /* Primary Menu ---------------------------- */
@@ -1343,7 +1380,7 @@ button.toggle {
     justify-content: unset;
     display: grid;
 
-    grid-template-columns: 220px auto 220px;
+    grid-template-columns: 1fr minmax(500px, 800px) 1fr;
     grid-template-rows: auto;
     grid-template-areas: "left center right";
   }
@@ -4747,6 +4784,12 @@ figure.wp-block-table.is-style-stripes {
   max-width: 100%;
 }
 
+.card-container__long .card a {
+  min-height: 80px;
+
+
+}
+
 .card-container__large .card {
   padding: 5px;
   max-width: 1000px;
@@ -4816,7 +4859,7 @@ figure.wp-block-table.is-style-stripes {
 
 .energie-ampel {
   overflow-y: hidden;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
   margin-left: -15px;
   margin-right: -15px;

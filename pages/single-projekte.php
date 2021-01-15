@@ -48,17 +48,16 @@ get_header();
 
         <!-- post title -->
         <div class="single-header-content center-mobile">
-
-            <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+            <!-- emoji -->
             <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
-            <?php } ?>
+
+          
 
             <h1><?php the_title(); ?></h1>
 
-            <!-- slogan / emoji -->
-            <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+            <!-- slogan -->
+
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-            <?php } ?>
             <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
 
 
