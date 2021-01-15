@@ -10,6 +10,11 @@
  * @since Twenty Twenty 1.0
  */
 
+if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+}
+
 get_header();
 ?>
 
@@ -20,7 +25,9 @@ get_header();
 	if ( have_posts() ) {
 
 		while ( have_posts() ) {
-			the_post();
+            the_post();
+            
+            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
 
 			// prep image url
 			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
@@ -103,6 +110,12 @@ get_header();
             } else {
                 the_content( __( 'Continue reading', 'twentytwenty' ) );
             }
+
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                ?>
+                    <a class="button  " href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
+                <?php
+            }
         ?>
 
     </div>
@@ -157,7 +170,36 @@ get_header();
 
     <?php } ?>
 
+    <?php
+            }
+else {
+    // Show the form
 
+
+
+    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        echo '<h3>Bearbeite dein Projekt</h3>';
+        acf_form (
+            array(
+                'form' => true,
+                'return' => '%post_url%',
+                'submit_value' => 'Änderungen speichern',
+                'post_title' => false,
+                'post_content' => false,    
+                'fields' => array(
+                    'target',
+                    'emoji',
+                    'text',
+                    '_thumbnail_id',
+                )
+            )
+        );
+        
+    }
+
+}
+
+?>
 
     <!-- Map -->
     <!-- not ready yet -->
@@ -170,6 +212,7 @@ get_header();
 
     <!-- kommentare -->
     <?php			
+        if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
 		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 	?>
 
@@ -183,10 +226,15 @@ get_header();
 			}
 
 		}
-	}
+    }
+}
 
 	?>
 
+    <?php 
+    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
+
+    ?>
 
     <br><br><br>
     <!-- weitere projekte -->
@@ -199,7 +247,9 @@ get_header();
 		'orderby' => 'rand'
 	);
 
-	slider($args3,'square_card', '2','true'); 
+    slider($args3,'square_card', '2','true'); 
+    
+}
 	?>
 
 </main><!-- #site-content -->
