@@ -23,14 +23,15 @@
 				'label_placement'=> '',
 				// 'updated_message' => __("Post updated", 'acf'),
 				// 'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
-				'post_id'=>'new_post',
+                'post_id'=>'new_post',
 				'new_post'=>array(
                     'post_type' => 'angebote',
                     // 'tax_input' => array (
                     //     'version' => array( 2 )
                     // ),
                     'post_status' => 'publish',
-				),
+                ),
+                'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => false,
@@ -38,6 +39,7 @@
                     'text',
                     'emoji',
                     'duration',
+                    'picture',
 				),
 				'submit_value'=>'Angebot senden',
 			)
@@ -74,4 +76,3 @@
         window.emojiPicker.discover();
     });
     </script>
-   
