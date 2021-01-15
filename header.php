@@ -125,7 +125,6 @@
         <div class="push-right">
 
             <a class="button header-button push-right" onclick="show()">
-
                 <span class="button-has-icon-label">Energie Ampel</span>
             </a>
 
@@ -231,6 +230,7 @@
 
 
 
+    <!-- energie ampel -->
     <div id="overlay" class="overlay hidden " onclick="hide()">
 
         <div class="overlay-content">
@@ -239,45 +239,8 @@
                 <span class="button-has-icon-label">Zurück</span>
             </button>
 
-
-            <?php get_template_part('components/energie_ampel'); ?>
-
-
-            <div class="vpp-animation">
-                <img class="vpp-animation grün"
-                    src="<?php echo get_template_directory_uri()?>/assets/vpp-animation/VPP_Stromampel_Animation_green.svg" />
-            </div>
-
-            <div class="card-container   card-container__center">
-
-                <?php landscape_card(null, 'Virtual Power Plant','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
-
-            </div>
+            <?php get_template_part('components/energie_ampel-menu'); ?>
+            
         </div>
 
     </div>
-
-
-    <script>
-    function show() {
-        var element = document.getElementById("overlay");
-        element.classList.remove("hidden");
-        element.classList.add("visible");
-
-
-        var htmlElement = document.getElementsByTagName("html")[0];
-        htmlElement.classList.add("no-scroll");
-    }
-
-
-    function hide() {
-        var element = document.getElementById("overlay");
-        element.classList.remove("visible");
-
-        element.classList.add("hidden");
-
-
-        var htmlElement = document.getElementsByTagName("html")[0];
-        htmlElement.classList.remove("no-scroll");
-    }
-    </script>

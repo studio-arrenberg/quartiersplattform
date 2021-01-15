@@ -90,7 +90,7 @@ get_header();
 		?>
 
 		<!-- energie ampel -->
-		<?php get_template_part('components/energie_ampel'); ?>
+		<?php // get_template_part('components/energie_ampel'); ?>
 
 		<!-- Aufbruch am Arrenberg link card -->
 		<?php landscape_card(null,'Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
@@ -99,9 +99,7 @@ get_header();
 		<!-- not ready yet -->
 
 		<!-- arrenberg farm wetter station -->
-		<?php if ( current_user_can('administrator') ) {
-			get_template_part('components/wetter');
-		} ?>
+		<?php get_template_part('components/wetter'); ?>
 
 		<!-- feedback (acf) -->
 		<?php get_template_part('components/feedback'); ?>
@@ -202,7 +200,7 @@ get_header();
 		<?php // link_card('Menschen und Geschichten am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); ?>
 		
 		<!-- energie ampel -->
-		<?php get_template_part('components/energie_ampel'); ?>
+		<?php // get_template_part('components/energie_ampel'); ?>
 
 		<!-- Aufbruch am Arrenberg link card -->
 		<?php landscape_card(null, 'Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
@@ -210,13 +208,8 @@ get_header();
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
 
-		<div class="card-container   card-container__center">
-
-
-			<!-- arrenberg farm wetter station -->
-			<?php get_template_part('components/wetter'); ?>
-
-			</div>
+		<!-- arrenberg farm wetter station -->
+		<?php get_template_part('components/wetter'); ?>
 
 		<!-- feedback (acf) -->
 		<?php get_template_part('components/feedback'); ?>

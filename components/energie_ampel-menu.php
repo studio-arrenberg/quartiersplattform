@@ -181,4 +181,45 @@ LIMIT 0, 60
 </div>
 <?php
 }
+
+if (empty($phase_color)) {
+    $phase_color = 'green';
+}
 ?>
+
+
+<div class="vpp-animation">
+    <img class="vpp-animation <?php echo $phase_color; ?>" src="<?php echo get_template_directory_uri()?>/assets/vpp-animation/VPP_Stromampel_Animation_<?php echo $phase_color; ?>.svg" />
+</div>
+
+
+<div class="card-container card-container__center">
+
+    <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
+
+</div>
+
+
+
+<script>
+function show() {
+    var element = document.getElementById("overlay");
+    element.classList.remove("hidden");
+    element.classList.add("visible");
+
+    _paq.push(['trackEvent', 'Energie Ampel', 'Show', 'Overlay']);
+
+    var htmlElement = document.getElementsByTagName("html")[0];
+    htmlElement.classList.add("no-scroll");
+}
+
+
+function hide() {
+    var element = document.getElementById("overlay");
+    element.classList.remove("visible");
+    element.classList.add("hidden");
+
+    var htmlElement = document.getElementsByTagName("html")[0];
+    htmlElement.classList.remove("no-scroll");
+}
+</script>
