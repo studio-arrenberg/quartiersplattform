@@ -1423,9 +1423,9 @@ function emoji_picker() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
     if (
-		strpos($REQUEST_URI,'/frage-dein-quartier/') !== true
-		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== true /* '/angebot-erstellen/' */
-		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== true
+		strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
+		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false /* '/angebot-erstellen/' */
+		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
 	 ) {
 
@@ -1456,18 +1456,6 @@ function emoji_picker() {
 }
 add_action("wp_enqueue_scripts", "emoji_picker");
 
-
-
-
-// jQuery Update
-/** * Install latest jQuery version 3.5.1. */
-if (!is_admin()) {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
-	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
-	wp_enqueue_script('jquery');
-}
-
 // jQuery deregister + min
 function my_init() {
 
@@ -1475,14 +1463,14 @@ function my_init() {
 
     if (
 		!is_admin() 
-		&& strpos($REQUEST_URI,'/profil/') !== false
-		&& strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
-		&& strpos($REQUEST_URI,'/angebot-erstellen/') !== false
-		&& strpos($REQUEST_URI,'/projekt-erstellen/') !== false
+		&& strpos($REQUEST_URI,'/profil/') === false
+		&& strpos($REQUEST_URI,'/frage-dein-quartier/') === false
+		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
+		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
 
-		echo "<script>console.log('".$REQUEST_URI."')</script>";
+		// echo "<script>console.log('".$REQUEST_URI."')</script>";
 		echo "<script>console.log('remove jquery libs')</script>";
 
 		// jQuery min
@@ -1508,6 +1496,16 @@ function my_init() {
 
 }
 add_action('init', 'my_init');
+
+
+// jQuery Update
+/** * Install latest jQuery version 3.5.1. */
+if (!is_admin()) {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
+	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
+	wp_enqueue_script('jquery');
+}
 
 
 // veranstaltungen archive custom order
