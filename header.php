@@ -83,6 +83,10 @@
     </noscript>
     <!-- End Matomo Code -->
 
+    <!-- Matomo Addition -->
+    <script>
+        _paq.push(['trackVisibleContentImpressions']);
+    </script>
 
 </head>
 

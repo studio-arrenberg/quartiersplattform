@@ -129,13 +129,31 @@ date('Ymd', strtotime(get_field( "zeitpunkt" )));
 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
 
 ### Matomo Event Tracking
+[Basics](https://matomo.org/docs/event-tracking/)
+[In Depth](https://developer.matomo.org/guides/tracking-javascript-guide)
 
 ```js
 _paq.push(['trackEvent', 'Categories', 'Action', 'Name/Page URL', 1000]);
 ```
-#### Categories
+#### Tracked
 * Share (social media buttons)
 * Interaction (Energie Ampel, Slider)
+
+#### Track Content
+
+```js
+_paq.push(['trackVisibleContentImpressions']);
+```
+```html 
+<div data-track-content>
+    <div data-content-piece="arrenberg wetter" >
+    </div>
+</div>
+```
+#### Tracked
+* Arrenberg Wetter
+* List Card
+* Footer
 
 
 ### Functions

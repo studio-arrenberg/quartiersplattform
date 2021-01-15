@@ -7,7 +7,7 @@ acf_form_head(); // before wp header !important!
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" role="main" data-track-content>
 	
 	<?php 
 	// ---------------------------------- Logged in ----------------------------------

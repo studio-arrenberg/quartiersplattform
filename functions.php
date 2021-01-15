@@ -961,7 +961,7 @@ function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '
 function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 	?>
-	<div class='card list-card shadow'>
+	<div class='card list-card shadow' data-content-piece="<?php echo $card_title; ?>">
 	<?php if ($link) echo "<a href='".$link."'>"; ?>
 
 		<div class='card-header'>
