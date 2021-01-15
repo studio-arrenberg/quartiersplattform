@@ -56,8 +56,9 @@ $json_decoded = json_decode($output);
 if ($json_decoded->data[4]->values->sum[0] == 0) {
     $niederschlag = "Kein Niederschlag";
 
-    if ($json_decoded->data[3]->values->sum[0] > 3) {
-        $niederschlag = "Solarstrahlung ". round(($json_decoded->data[3]->values->sum[0] / 240) * 100, 0);
+    if ($json_decoded->data[3]->values->sum[0] > 0) {
+        // $niederschlag = "Solarstrahlung ". round(($json_decoded->data[3]->values->sum[0] / 240) * 100, 0);
+        $niederschlag = "Solarstrahlung ". $json_decoded->data[3]->values->sum[0]." Wh/m&sup2;";
         // Wh/m^2
 
     }
