@@ -60,9 +60,14 @@ get_header();
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
             <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
 
+            <?php
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
+                <a class="button  " href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+            <?php
+            }
 
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
+            ?>
 
         </div>
 
@@ -113,11 +118,7 @@ get_header();
                 the_content( __( 'Continue reading', 'twentytwenty' ) );
             }
 
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                ?>
-        <a class="button  " href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
-        <?php
-            }
+            
         ?>
 
     </div>
@@ -259,11 +260,11 @@ else {
     <!-- Map -->
     <!-- not ready yet -->
     <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-    <p><?php the_field('map'); ?></p>
+        <p><?php the_field('map'); ?></p>
     <?php } ?>
 
-    <!-- Kontakt -->
-    <!-- not ready yet -->
+    <!-- Backend edit link -->
+    <?php edit_post_link(); ?>
 
     <!-- kommentare -->
     <?php			
