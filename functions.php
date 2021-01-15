@@ -1473,14 +1473,12 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	// auto check if acf_form_head was called
-
     if (
 		!is_admin() 
 		&& strpos($REQUEST_URI,'/profil/') !== false
-		&& strpos($REQUEST_URI,'/frage-dein-quartier/') !== true
-		&& strpos($REQUEST_URI,'/angebot-erstellen/') !== true
-		&& strpos($REQUEST_URI,'/projekt-erstellen/') !== true
+		&& strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
+		&& strpos($REQUEST_URI,'/angebot-erstellen/') !== false
+		&& strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		&& !$_GET['action'] == 'edit'
 	 ) {
 

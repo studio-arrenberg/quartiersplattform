@@ -27,7 +27,6 @@ if (current_time('timestamp') < get_post_meta(get_the_ID(), 'expire_timestamp', 
 }
 
 // calc time remaining
-$time_remaining;
 // minuten
 if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 3600 ) {
     $time_remaining = round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0)." Minuten";
@@ -39,6 +38,10 @@ else if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_tim
 // today
 else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
     $time_remaining = "bis um ".wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+}
+// tomorrow
+else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
+    $time_remaining = "bis Morgen verfügbar ";    
 }
 // other
 else {
