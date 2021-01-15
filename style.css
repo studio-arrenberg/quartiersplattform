@@ -646,6 +646,9 @@ button,
   border: none;
   border-radius: 15px;
   text-decoration: none;
+
+  word-wrap: none;
+  word-break: keep-all;
 }
 
 .button p {
@@ -1454,6 +1457,12 @@ button.toggle {
 .single-header-slogan {
   margin-bottom: 20px;
   color: #0091ff;
+  font-size: 2rem;
+}
+
+.single-header-content .button{
+  width: auto;
+
 }
 .single-content {
   margin-bottom: 20px;
@@ -1469,6 +1478,7 @@ button.toggle {
 
 .team {
   margin: 30px 0px;
+  /* float: left; */
 }
 
 .team .avatar {
@@ -1479,10 +1489,44 @@ button.toggle {
 }
 
 .team-member {
+  margin: 15px 0px;
+
   display: flex;
   align-items: center;
 }
 
+.share{
+  margin: 50px 0px;
+}
+
+.copy-url{
+  margin: 10px 0px;
+  display: flex;
+}
+
+.copy-url button{
+  margin-left: 5px;
+}
+
+
+
+.share-button{
+  display: flex;
+}
+
+.share-button a{
+  flex: 1;
+}
+
+
+.share-button a{
+  margin-left: 10px;
+}
+
+
+.share-button a:first-of-type{
+  margin-left: 0px;
+}
 @media (min-width: 782px) {
   .single-header-image {
     max-width: 700px;
@@ -1507,9 +1551,11 @@ button.toggle {
   }
 }
 
-@media (max-width: 782px) {
+@media (max-width: 1000px) {
   .center-mobile {
     text-align: center;
+    align-items: center;
+
   }
 }
 
@@ -1526,6 +1572,7 @@ button.toggle {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     order: 2;
     min-width: 350px;
     max-width: 400px;
@@ -3293,6 +3340,7 @@ figure.wp-block-table.is-style-stripes {
   input[type="reset"],
   input[type="submit"] {
     font-size: 1.8rem;
+    word-wrap: keep-all:   word-break: keep-all;
   }
 
   /* MEDIA */

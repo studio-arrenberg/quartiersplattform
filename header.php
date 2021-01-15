@@ -239,9 +239,7 @@
                 <span class="button-has-icon-label">Zurück</span>
             </button>
 
-
             <?php get_template_part('components/energie_ampel'); ?>
-
 
             <div class="vpp-animation">
                 <img class="vpp-animation grün"
@@ -256,7 +254,6 @@
         </div>
 
     </div>
-
 
     <script>
     function show() {

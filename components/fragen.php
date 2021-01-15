@@ -9,7 +9,6 @@
 
 ?>
 
-<div class="feedback">
     <h3>Stelle eine Frage an dein Quartier</h3>
 
     <?php // acf_form_head(); ?>
@@ -96,4 +95,3 @@
 
     </script>
     </a>
-</div>
