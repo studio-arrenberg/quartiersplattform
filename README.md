@@ -82,6 +82,7 @@ Functions => `functions.php` <br>
 ```php
 $date = "2020-03-27 12:23:22";
 echo wp_date('F d, Y g:i a', strtotime($date)); 
+date('Ymd', strtotime(get_field( "zeitpunkt" )));
 ```
 `F j, G:i` November 28, 21:00 <br>
 `F j, Y G:i` November 28, 2020 21:00 <br>

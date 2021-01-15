@@ -1423,16 +1423,14 @@ function emoji_picker() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
     if (
-		// !is_admin() 
-		// strpos($REQUEST_URI,'/profil/')
-		strpos($REQUEST_URI,'/frage-dein-quartier/')
-		|| strpos($REQUEST_URI,'/angebot-erstellen/') /* '/angebot-erstellen/' */
-		|| strpos($REQUEST_URI,'/projekt-erstellen/')
+		strpos($REQUEST_URI,'/frage-dein-quartier/') !== true
+		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== true /* '/angebot-erstellen/' */
+		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== true
 		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
 	 ) {
 
 		// echo "<script>console.log('".$REQUEST_URI."')</script>";
-		echo "<script>console.log('add emoji picker & remove jquery libs')</script>";
+		echo "<script>console.log('add emoji picker')</script>";
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
 		wp_enqueue_script('emoji_picker-config');
@@ -1475,15 +1473,12 @@ function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	// auto check if acf_form_head was called
-
     if (
 		!is_admin() 
-		// || strpos($REQUEST_URI,'/gemeinsam/')
-		&& !strpos($REQUEST_URI,'/profil/')
-		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
-		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
-		&& !strpos($REQUEST_URI,'/projekt-erstellen/')
+		&& strpos($REQUEST_URI,'/profil/') !== false
+		&& strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
+		&& strpos($REQUEST_URI,'/angebot-erstellen/') !== false
+		&& strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		&& !$_GET['action'] == 'edit'
 	 ) {
 
