@@ -51,7 +51,7 @@ get_header();
             <!-- emoji -->
             <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
 
-          
+
 
             <h1><?php the_title(); ?></h1>
 
@@ -60,6 +60,9 @@ get_header();
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
             <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
 
+
+    <!-- Backend edit link -->
+    <?php edit_post_link(); ?>
 
         </div>
 
@@ -112,37 +115,49 @@ get_header();
 
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                 ?>
-                    <a class="button  " href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
-                <?php
+        <a class="button  " href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+        <?php
             }
         ?>
 
     </div>
     <!-- Team -->
-    <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
     <div class="team">
+        <h2> Hutträger </h2>
+
         <div class="team-member">
             <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
             <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
 
         </div>
     </div>
-    <?php } ?>
 
-
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
 
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->
-    <?php if ( current_user_can('administrator') ) { // new feature only for admins 
+    <?php  // new feature only for admins 
         $page_for_posts = get_option( 'page_for_posts' );
         ?>
     <div class="share">
-        <div>
+        <h2> Projekt teilen </h2>
+        <div class="copy-url">
             <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
-            <button onclick="copy()">Kopieren</button>
+            <button class="copy" onclick="copy()">Kopieren</button>
+
+        </div>
+
+        <div class="share-button">
+
+
+            <a class="button is-style-outline "
+                href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
+            <a class="button is-style-outline"
+                href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
+            <a class="button is-style-outline"
+                href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>" target="_blank"
+                rel="nofollow">Email</a>
+
         </div>
         <a class="button is-style-outline" onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
             href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
@@ -166,9 +181,9 @@ get_header();
             document.execCommand("copy");
             // alert("Copied the text: " + copyText.value);
         }
+
     </script>
 
-    <?php } ?>
 
     <?php
             }
@@ -199,52 +214,47 @@ else {
 
     ?>
 
-<script>
+    <script>
+    // picker for acf field
+    var el = $("#acf-field_5fcf563d5b576");
+    el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+    el.attr("data-emojiable", "true");
+    el.attr('maxlength', '20');
+    var alt;
+    // remove previous emojies
+    $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
 
-// picker for acf field
-var el = $( "#acf-field_5fcf563d5b576" );
-el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
-el.attr("data-emojiable", "true");
-el.attr('maxlength', '20');
-var alt;
-// remove previous emojies
-$('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
+        console.log($(".emoji-wysiwyg-editor").children().length);
 
-    console.log($(".emoji-wysiwyg-editor").children().length);
-
-    if ($(".emoji-wysiwyg-editor").children().length > 1) {
-        // console.log('remove childs ' + alt);
-        if (!alt) {
-            $('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
-        }
-        else if (alt) {
-            if (alt !==  $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
-                $('.emoji-wysiwyg-editor').children("img[alt='"+alt+"']").remove();
+        if ($(".emoji-wysiwyg-editor").children().length > 1) {
+            // console.log('remove childs ' + alt);
+            if (!alt) {
+                $('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
+            } else if (alt) {
+                if (alt !== $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
+                    $('.emoji-wysiwyg-editor').children("img[alt='" + alt + "']").remove();
+                } else {
+                    $('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
+                }
             }
-            else {
-                $('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
-            }
+            alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
         }
-        alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
-    }
-    
-});
 
-$(function() {
-    // Initializes and creates emoji set from sprite sheet
-    window.emojiPicker = new EmojiPicker({
-        emojiable_selector: '[data-emojiable=true]',
-        assetsPath: '<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/img/',
-        popupButtonClasses: 'fa fa-smile-o'
     });
-    // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-    // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-    // It can be called as many times as necessary; previously converted input fields will not be converted again
-    window.emojiPicker.discover();
-});
 
-
-</script>
+    $(function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data-emojiable=true]',
+            assetsPath: '<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/img/',
+            popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
+    });
+    </script>
 
     <?php
 
