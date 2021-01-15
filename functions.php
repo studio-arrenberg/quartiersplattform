@@ -1264,7 +1264,7 @@ function my_acf_admin_head() {
     </style>
     <?php
 }
-add_action('acf/input/admin_head', 'my_acf_admin_head');
+// add_action('acf/input/admin_head', 'my_acf_admin_head');
 
 // ACF Forms deregister CSS Styles
 // disable acf css on front-end acf forms

@@ -39,7 +39,6 @@
                     'text',
                     'emoji',
                     'duration',
-                    'picture',
 				),
 				'submit_value'=>'Angebot senden',
 			)
