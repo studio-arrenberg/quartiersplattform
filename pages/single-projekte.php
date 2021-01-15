@@ -144,9 +144,9 @@ get_header();
             <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
             <button onclick="copy()">Kopieren</button>
         </div>
-        <a class="button is-style-outline"
+        <a class="button is-style-outline" onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
             href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
-        <a class="button is-style-outline"
+        <a class="button is-style-outline" onclick="_paq.push(['trackEvent', 'Share', 'Twitter', '<?php the_title(); ?>']);"
             href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
         <a class="button is-style-outline" href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>" target="_blank" rel="nofollow">Email</a>
     </div>
@@ -159,6 +159,7 @@ get_header();
         // }
 
         function copy() {
+            _paq.push(['trackEvent', 'Share', 'Copy Link', '<?php the_title(); ?>']);
             var copyText = document.getElementById("myInput");
             copyText.select();
             copyText.setSelectionRange(0, 99999)

@@ -128,6 +128,16 @@ date('Ymd', strtotime(get_field( "zeitpunkt" )));
 
 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
 
+### Matomo Event Tracking
+
+```js
+_paq.push(['trackEvent', 'Categories', 'Action', 'Name/Page URL', 1000]);
+```
+#### Categories
+* Share (social media buttons)
+* Interaction (Energie Ampel, Slider)
+
+
 ### Functions
 
 #### Link Card

@@ -1043,6 +1043,11 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 	}
 	var embla = EmblaCarousel(emblaNode, options)
 
+	embla.on('settle', (eventName) => {
+		// console.log(`Embla just triggered ${eventName}!`)
+		_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
+	})
+
 	embla.on('resize', () => {
 		var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 		slidesToScroll = '<?php echo $slides; ?>';

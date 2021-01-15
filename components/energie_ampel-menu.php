@@ -207,7 +207,7 @@ function show() {
     element.classList.remove("hidden");
     element.classList.add("visible");
 
-    _paq.push(['trackEvent', 'Energie Ampel', 'Show', 'Overlay']);
+    _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
 
     var htmlElement = document.getElementsByTagName("html")[0];
     htmlElement.classList.add("no-scroll");
