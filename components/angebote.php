@@ -9,7 +9,8 @@
 ?>
 
 <div class="publish-form">
-    <h3>Erstelle dein eigenes Angebot</h3>
+    <h2>Erstelle dein eigenes Angebot</h2>
+    <br>
 
     <?php // acf_form_head(); ?>
     <?php // acf_form('feedback-form'); ?>

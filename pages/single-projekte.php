@@ -63,7 +63,7 @@ get_header();
             <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
-                <a class="button  " href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
             <?php
             }
 
@@ -80,7 +80,13 @@ get_header();
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
     <div class="single-content">
-        <p></p>
+        <h2>Text</h2>
+        <p><?php the_field('text'); ?></p>
+    </div>
+
+    <div class="single-content">
+        <h2>Beschreibung</h2>
+        <p><?php the_field('description'); ?></p>
     </div>
 
     <!-- Anstehende Veranstaltungen -->
@@ -188,7 +194,7 @@ else {
 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        echo '<h3>Bearbeite dein Projekt</h3>';
+        echo '<h2>Bearbeite dein Projekt</h2><br>';
         acf_form (
             array(
                 'form' => true,
@@ -197,10 +203,12 @@ else {
                 'post_title' => false,
                 'post_content' => false,    
                 'fields' => array(
+                    // fehlt: titel, beschreibung
                     'target',
                     'emoji',
                     'text',
-                    '_thumbnail_id',
+                    'slogan',
+                    '_thumbnail_id', // Naming Bild ≠ Bilder
                 )
             )
         );
@@ -211,7 +219,9 @@ else {
 
     <script>
     // picker for acf field
-    var el = $("#acf-field_5fcf563d5b576");
+    // var el = $("#acf-field_5fcf563d5b576");
+    var el = $("#acf-field_5fc64834f0bf2");
+    
     el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el.attr("data-emojiable", "true");
     el.attr('maxlength', '20');
@@ -264,7 +274,11 @@ else {
     <?php } ?>
 
     <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
+    <?php 
+    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
+        edit_post_link(); 
+    }
+    ?>
 
     <!-- kommentare -->
     <?php			
