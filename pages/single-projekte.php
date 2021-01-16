@@ -51,12 +51,9 @@ get_header();
             <!-- emoji -->
             <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
 
-
-
             <h1><?php the_title(); ?></h1>
 
             <!-- slogan -->
-
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
             <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
 
@@ -79,15 +76,19 @@ get_header();
 
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
+    <?php if (the_field('text')) { ?>
     <div class="single-content">
         <h2>Text</h2>
         <p><?php the_field('text'); ?></p>
     </div>
+    <?php } ?>
 
+    <?php if (the_field('description')) { ?>
     <div class="single-content">
         <h2>Beschreibung</h2>
         <p><?php the_field('description'); ?></p>
     </div>
+    <?php } ?>
 
     <!-- Anstehende Veranstaltungen -->
     <!-- not ready yet -->
@@ -143,7 +144,7 @@ get_header();
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->
-    <?php  // new feature only for admins 
+    <?php  
         $page_for_posts = get_option( 'page_for_posts' );
         ?>
     <div class="share">
@@ -221,11 +222,17 @@ else {
     // picker for acf field
     // var el = $("#acf-field_5fcf563d5b576");
     var el = $("#acf-field_5fc64834f0bf2");
-    
     el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el.attr("data-emojiable", "true");
     el.attr('maxlength', '20');
     var alt;
+
+    var el2 = $("#acf-field_5fcf563d5b576");
+    el2.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+    el2.attr("data-emojiable", "true");
+    el2.attr('maxlength', '20');
+    
+
     // remove previous emojies
     $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
 
