@@ -76,14 +76,14 @@ get_header();
 
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
-    <?php if (the_field('text')) { ?>
+    <?php if (get_field('text')) { ?>
     <div class="single-content">
         <h2>Text</h2>
         <p><?php the_field('text'); ?></p>
     </div>
     <?php } ?>
 
-    <?php if (the_field('description')) { ?>
+    <?php if (get_field('description')) { ?>
     <div class="single-content">
         <h2>Beschreibung</h2>
         <p><?php the_field('description'); ?></p>

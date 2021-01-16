@@ -1435,7 +1435,7 @@ function emoji_picker() {
 	 ) {
 
 		// echo "<script>console.log('".$REQUEST_URI."')</script>";
-		echo "<script>console.log('add emoji picker')</script>";
+		// echo "<script>console.log('add emoji picker')</script>";
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
 		wp_enqueue_script('emoji_picker-config');
@@ -1476,7 +1476,7 @@ function my_init() {
 	 ) {
 
 		// echo "<script>console.log('".$REQUEST_URI."')</script>";
-		echo "<script>console.log('remove jquery libs')</script>";
+		// echo "<script>console.log('remove jquery libs')</script>";
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
