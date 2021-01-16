@@ -40,7 +40,7 @@ get_header();
 			?>
 
 
-    <div class="single-header">
+    <div class="single-header  "> <!-- no-single-header-image -->
 
 
         <!-- Bild -->

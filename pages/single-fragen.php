@@ -33,9 +33,18 @@ if ( have_posts() ) {
             // ich habe hier mal die orginale datei geladen
             // ich denke das macht sinn, wenn die beiden ansichten so ähnlich sind
             // eventuell kann ich das je nach ansicht anpassen bzw eine classe geben...
-            get_template_part('elements/card', get_post_type());
 
 
+            // Okey wäre auf jeden fall gut wenn du dann die anpasst. vorallem muss der link weg und die klasse shadow
+
+            ?>
+            <div class="card-container card-container__center card-container__large ">
+
+            <?php get_template_part('elements/card', get_post_type()); ?>
+
+            </div>
+
+            <?php 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
