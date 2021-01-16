@@ -1448,12 +1448,12 @@ function emoji_picker() {
 		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
 		wp_enqueue_style( 'emoji_picker-css' );
 
-		wp_deregister_script('jquery-ui-draggable');
-		wp_deregister_script('jquery-ui-mouse');
-		wp_deregister_script('jquery-ui-resizable');
-		wp_deregister_script('jquery-ui-sortable');
-		wp_deregister_script('jquery-ui-widget');
-		wp_deregister_script('jquery-ui-selectable');
+		// wp_deregister_script('jquery-ui-draggable');
+		// wp_deregister_script('jquery-ui-mouse');
+		// wp_deregister_script('jquery-ui-resizable');
+		// wp_deregister_script('jquery-ui-sortable');
+		// wp_deregister_script('jquery-ui-widget');
+		// wp_deregister_script('jquery-ui-selectable');
 
 		// wp_deregister_script('jquery-ui-core');
 	}

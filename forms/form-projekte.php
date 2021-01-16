@@ -45,6 +45,7 @@ get_header();
 				'fields' => array(
                     'target',
                     'emoji',
+                    'slogan',
                     'text',
                     '_thumbnail_id',
 				),
