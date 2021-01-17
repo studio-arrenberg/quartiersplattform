@@ -70,7 +70,7 @@ if ( have_posts() ) {
         }
 else {
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-    echo '<h3>Bearbeite dein Angebot</h3>';
+    echo '<h2>Bearbeite dein Angebot</h2><br>';
     acf_form (
         array(
             'form' => true,

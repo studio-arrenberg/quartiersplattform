@@ -12,6 +12,18 @@ $the_slug = $term_list[0]->name;
 $author_id = $post->post_author;
 $user = get_the_author_meta( 'display_name', $author_id );
 $author = get_the_author();
+
+
+
+// variable text length
+if (strlen(get_the_title()) < 20 ) {
+    $char = 75;
+}
+else {
+    $char = 40;
+}
+
+
 ?>
 
 <div class="card shadow">
@@ -26,7 +38,8 @@ $author = get_the_author();
 
                 </div>
                     <h3 class="card-title"><?php shorten_title(get_the_title(), '30'); ?></h3>
-                    <p class="preview-text"><?php  get_excerpt(get_the_content(), '55'); ?>
+                    <p class="preview-text"> <?php  get_excerpt(get_the_content(), $char); echo $char?> 
+
                 </p>
         </div>
     </a>

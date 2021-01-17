@@ -1081,7 +1081,7 @@ button.toggle {
   z-index: 2;
   max-width: 782px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 250, 0.7);
+  background-color: rgba(255, 255, 250, 1);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -1185,14 +1185,23 @@ button.toggle {
   width: 100%;
   height: 100%;
   z-index: 200000;
-  background-color: rgba(255, 255, 250, 0.7);
   padding: 15px;
   transition: all ease-in-out 0.2s; /* Animation */
   overflow: scroll;
   /* display: none; */
-  background-color: rgba(255, 255, 250, 0.7);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 250, 1);
+}
+
+
+/* if backdrop support: very transparent and blurred */
+@supports (
+  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
+) {
+  .overlay {
+    background-color: rgba(255, 255, 250, 0.7);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+  }
 }
 
 /* 
@@ -1229,11 +1238,6 @@ button.toggle {
 }
 
 
-@media (max-width: 374px) {
- .site-name{
-   display: none;
- }
-}
 
 .hidden{
   /* display: none; */
@@ -1268,7 +1272,7 @@ button.toggle {
   line-height: 1.60rem;
   word-wrap: none;
   word-break: keep-all;
-  padding: 17px 5px 15px 5px;
+  padding: 15px 5px 15px 5px;
   display: block;
 }
 
@@ -1413,6 +1417,63 @@ button.toggle {
   }
 }
 
+
+@media (max-width: 374px) {
+  .site-name{
+    margin-top: 15px;
+  }
+
+  .site-name h2{
+    display: none;
+  }
+
+  .header-button{
+    height: 30px;
+    
+  }
+
+  .button-has-image{
+    width: 30px;
+  }
+}
+
+
+@media (max-width: 340px) {
+  .site-name{
+    margin-top: 10px;
+  }
+
+
+  .site-name h1{
+    font-size: 1.5rem;
+  }
+
+
+  .site-name h2{
+    display: none;
+  }
+
+  .header-button{
+    height: 25px;
+    font-size: 1.2rem;
+    
+  }
+
+  .button-has-image{
+    width: 25px;
+  }
+
+  .header-button .button-has-icon-label{
+    margin-left: 0px;
+    margin-right: 0px;
+
+  }
+
+  .menu li > a{
+    font-size: 1.4rem;
+  }
+}
+
 /*	7a. Template: Single Template
 /* -------------------------------------------------------------------------- */
 
@@ -1440,6 +1501,9 @@ button.toggle {
   color: #0091ff;
 }
 
+.no-single-header-image .single-header-content{
+  align-items: center ;
+}
 .single-header-image {
   border-radius: 20px;
   margin: 0px auto 20px auto;
@@ -2614,7 +2678,7 @@ figure.wp-block-table.is-style-stripes {
 .comment-body img {
   display: block;
   float: left;
-  height: 100%;
+  /* height: 100%; */
   margin-right: 10px;
   border-radius: 15px;
   width: 55px;
@@ -4375,7 +4439,7 @@ figure.wp-block-table.is-style-stripes {
   flex-grow: 1;
   color: #000;
   text-decoration: none !important;
-  /* min-height: 100px; */
+  min-height: 100px;
 }
 .card-centered a {
   align-items: center !important;
@@ -4542,7 +4606,7 @@ figure.wp-block-table.is-style-stripes {
   width: 100%;
   min-width: inherit;
   max-width: inherit;
-  height: 100%;
+  /* height: 100%; */
   max-height: 200px;
   object-fit: cover;
   border-radius: 20px;
@@ -4813,12 +4877,15 @@ figure.wp-block-table.is-style-stripes {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 10px 0px;
+
+  /* margin: 0px 0px 10px 0px; */
   position: relative;
 }
 
 .card-container__small .card {
   width: calc(50% - 5px);
-  /* margin: 0px; */
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .card-container__small .card a {
@@ -4832,11 +4899,17 @@ figure.wp-block-table.is-style-stripes {
   max-width: 100%;
 }
 
+
+.card-container__long .card {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .card-container__long .card a {
   min-height: 80px;
 
-
 }
+
 
 .card-container__large .card {
   padding: 5px;

@@ -223,11 +223,23 @@
         scrollFunction()
     };
 
+    var currentScrollTop = 0;
+    var c = 0;
+
     function scrollFunction() {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-            document.getElementById("site-header").style.top = "-45px";
-        } else {
-            document.getElementById("site-header").style.top = "0px";
+        currentScrollTop = document.documentElement.scrollTop;
+
+        if (Math.abs(currentScrollTop - c) > 150) {
+            // console.log(currentScrollTop+ ' '+ c);
+            if (currentScrollTop > c) {
+                // console.log('down');
+                document.getElementById("site-header").style.top = "-45px";
+            }
+            else {
+                // console.log('up');
+                document.getElementById("site-header").style.top = "0px";
+            }
+            c = currentScrollTop;
         }
     }
     </script>

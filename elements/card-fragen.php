@@ -42,7 +42,7 @@ else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get
 }
 // tomorrow
 else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-    $time_remaining = "bis Morgen verfügbar ";
+    $time_remaining = "bis Morgen";
 }
 // other
 else {

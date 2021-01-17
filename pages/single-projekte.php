@@ -40,7 +40,7 @@ get_header();
 			?>
 
 
-    <div class="single-header">
+    <div class="single-header  "> <!-- no-single-header-image -->
 
 
         <!-- Bild -->
@@ -51,19 +51,16 @@ get_header();
             <!-- emoji -->
             <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
 
-
-
             <h1><?php the_title(); ?></h1>
 
             <!-- slogan -->
-
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
             <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
 
             <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
-                <a class="button  " href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
             <?php
             }
 
@@ -79,9 +76,19 @@ get_header();
 
     <!-- Projektbeschreibung -->
     <!-- not ready yet -->
+    <?php if (get_field('text')) { ?>
     <div class="single-content">
-        <p></p>
+        <h2>Text</h2>
+        <p><?php the_field('text'); ?></p>
     </div>
+    <?php } ?>
+
+    <?php if (get_field('description')) { ?>
+    <div class="single-content">
+        <h2>Beschreibung</h2>
+        <p><?php the_field('description'); ?></p>
+    </div>
+    <?php } ?>
 
     <!-- Anstehende Veranstaltungen -->
     <!-- not ready yet -->
@@ -137,7 +144,7 @@ get_header();
 
     <!-- Projekt Teilen -->
     <!-- not ready yet -->
-    <?php  // new feature only for admins 
+    <?php  
         $page_for_posts = get_option( 'page_for_posts' );
         ?>
     <div class="share">
@@ -188,19 +195,21 @@ else {
 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        echo '<h3>Bearbeite dein Projekt</h3> <br>';
+        echo '<h2>Bearbeite dein Projekt</h2><br>';
         acf_form (
             array(
                 'form' => true,
                 'return' => '%post_url%',
                 'submit_value' => 'Änderungen speichern',
-                'post_title' => true,
+                'post_title' => false,
                 'post_content' => false,    
                 'fields' => array(
+                    // fehlt: titel, beschreibung
                     'target',
                     'emoji',
-                    'description',
-                    '_thumbnail_id',
+                    'text',
+                    'slogan',
+                    '_thumbnail_id', // Naming Bild ≠ Bilder
                 )
             )
         );
@@ -211,11 +220,19 @@ else {
 
     <script>
     // picker for acf field
-    var el = $("#acf-field_5fcf563d5b576");
+    // var el = $("#acf-field_5fcf563d5b576");
+    var el = $("#acf-field_5fc64834f0bf2");
     el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el.attr("data-emojiable", "true");
     el.attr('maxlength', '20');
     var alt;
+
+    var el2 = $("#acf-field_5fcf563d5b576");
+    el2.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+    el2.attr("data-emojiable", "true");
+    el2.attr('maxlength', '20');
+    
+
     // remove previous emojies
     $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
 
@@ -264,7 +281,11 @@ else {
     <?php } ?>
 
     <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
+    <?php 
+    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
+        edit_post_link(); 
+    }
+    ?>
 
     <!-- kommentare -->
     <?php			

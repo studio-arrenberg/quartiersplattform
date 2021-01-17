@@ -17,9 +17,9 @@ get_header();
 		<!-- neuste meldung (card + carousel query + function) -->
 		<?php
 		$args2 = array(
-			'post_type'=>'nachrichten', 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 6,
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte'), 
+			'post_status'=> 'publish', 
+			'posts_per_page'=> 4,
 			'order' => 'DESC',
 		);
 
@@ -112,7 +112,7 @@ get_header();
 		<!-- neuste meldung (card + carousel query + function) -->
 		<?php
 		$args2 = array(
-			'post_type'=>'nachrichten', 
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte'), 
 			'post_status'=>'publish', 
 			'posts_per_page'=> 6,
 			'order' => 'DESC',
