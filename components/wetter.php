@@ -54,19 +54,16 @@ $json_decoded = json_decode($output);
 // niederschalg
 
 if ($json_decoded->data[4]->values->sum[0] == 0) {
-    $niederschlag = "Kein Niederschlag";
+    $secondary = "Kein Niederschlag";
 
-    if ($json_decoded->data[3]->values->sum[0] > 0) {
+    if ($json_decoded->data[1]->values->avg[0] > 0) {
         // $niederschlag = "Solarstrahlung ". round(($json_decoded->data[3]->values->sum[0] / 240) * 100, 0);
-        $niederschlag = "Solarstrahlung ". $json_decoded->data[3]->values->sum[0]." Wh/m&sup2;";
-        // Wh/m^2
-
+        $secondary = "Solarstrahlung ". $json_decoded->data[1]->values->avg[0]." ".$json_decoded->data[1]->unit;
     }
 }
 else {
-    $niederschlag = ($json_decoded->data[4]->values->sum[0] * 100)."% Niederschlag";
+    $secondary = ($json_decoded->data[4]->values->sum[0] * 100)."% Niederschlag";
 }
-
 ?>
 
 <!-- display data -->
@@ -78,7 +75,7 @@ else {
                 Das aktuelle Wetter von der Arrenberg Farm <?php // echo date('G:i',$json_decoded->dates[0]);  ?>
             </h3>
             <p class="preview-text">
-                <?php echo number_format($json_decoded->data[9]->values->avg[0], 0); ?>% Luftfeuchtigkeit & <?php echo $niederschlag; ?>  
+                <?php echo number_format($json_decoded->data[9]->values->avg[0], 0); ?>% Luftfeuchtigkeit & <?php echo $secondary; ?>  
             </p>
         </div>
 
