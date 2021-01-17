@@ -188,18 +188,18 @@ else {
 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        echo '<h3>Bearbeite dein Projekt</h3>';
+        echo '<h3>Bearbeite dein Projekt</h3> <br>';
         acf_form (
             array(
                 'form' => true,
                 'return' => '%post_url%',
                 'submit_value' => 'Änderungen speichern',
-                'post_title' => false,
+                'post_title' => true,
                 'post_content' => false,    
                 'fields' => array(
                     'target',
                     'emoji',
-                    'text',
+                    'description',
                     '_thumbnail_id',
                 )
             )
