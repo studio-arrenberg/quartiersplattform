@@ -27,34 +27,16 @@ if ( have_posts() ) {
         the_post();
 
         if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+
     ?>
 
-
     <div class="card-container card-container__center card-container__large ">
-        <div class="card">
-            <div class="content">
-                <div class="pre-title red-text">Solidarisches Angebot <span class="date red-text"><?php echo get_the_date('j. F'); ?>
-                        <span>
-                </div>
-                <h3 class="card-title-large">
-                    <?php  shorten_title(get_field('text'), '200'); ?>
-                </h3>
-            </div>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
-            <div class="emoji">
-                <?php  shorten_title(get_field('emoji'), '200'); ?>
-            </div>
-        </div>
+
+        <?php get_template_part('elements/card', get_post_type()); ?>
+
     </div>
 
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
-        <?php
-    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-        the_excerpt();
-    } else {
-        the_content( __( 'Continue reading', 'twentytwenty' ) );
-    }
+    <?php 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
