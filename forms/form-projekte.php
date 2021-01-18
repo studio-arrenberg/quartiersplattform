@@ -41,7 +41,7 @@ get_header();
                     'target',
                     'emoji',
                     'slogan',
-                    'text',
+                    'description',
                     '_thumbnail_id',
 				),
 				'submit_value'=>'Projekt veröffentlichen',

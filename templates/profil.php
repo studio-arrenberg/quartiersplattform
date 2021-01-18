@@ -90,7 +90,7 @@ if (!is_user_logged_in()){
     <?php echo do_shortcode("[ultimatemember_account]"); ?>
     
     <?php if (is_user_logged_in()) : ?>
-        <a class="button" href="<?php echo wp_logout_url(get_permalink()); ?>">Logout</a>
+        <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
     <?php endif;?>
     
 

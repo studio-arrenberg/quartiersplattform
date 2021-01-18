@@ -207,14 +207,14 @@ else {
                 'form' => true,
                 'return' => '%post_url%',
                 'submit_value' => 'Änderungen speichern',
-                'post_title' => false,
+                'post_title' => true,
                 'post_content' => false,    
                 'fields' => array(
                     // fehlt: titel, beschreibung
                     'target',
                     'emoji',
-                    'text',
                     'slogan',
+                    'description',
                     '_thumbnail_id', // Naming Bild ≠ Bilder
                 )
             )
