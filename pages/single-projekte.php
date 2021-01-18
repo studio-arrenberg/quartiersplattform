@@ -75,7 +75,6 @@ get_header();
     </div>
 
     <!-- Projektbeschreibung -->
-    <!-- not ready yet -->
     <?php if (get_field('text')) { ?>
     <div class="single-content">
         <h2>Text</h2>
@@ -87,6 +86,13 @@ get_header();
     <div class="single-content">
         <h2>Beschreibung</h2>
         <p><?php the_field('description'); ?></p>
+    </div>
+    <?php } ?>
+
+    <?php if (get_field('target')) { ?>
+    <div class="single-content">
+        <h2>Projektziel</h2>
+        <p><?php the_field('target'); ?></p>
     </div>
     <?php } ?>
 
