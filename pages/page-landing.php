@@ -14,8 +14,8 @@ get_header();
 	if (is_user_logged_in()) {
 	?>
 
-		<!-- neuste meldung (card + carousel query + function) -->
 		<?php
+		// neuste meldung (card + carousel query + function)
 		$args2 = array(
 			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte'), 
 			'post_status'=> 'publish', 
@@ -24,8 +24,30 @@ get_header();
 		);
 
 		slider($args2,'card', '1','false'); 
-
 		?>
+
+		<?php
+		$args4 = array(
+			'post_type'=> array('angebote', 'fragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 4,
+			'meta_query' => array(
+				array(
+					'key'     => 'expire_timestamp',
+					'value'   => current_time('timestamp'),
+					'compare' => '>',
+					'type' 	=> 'timestamp',       
+				),
+			),
+			'meta_key'          => 'expire_timestamp',
+			'orderby'           => 'expire_timestamp',
+			'order'             => 'ASC'
+		);
+
+		slider($args4,'card', '1','false'); 
+		?>
+
+
 
 		<div class="list-cards"> <!-- Eventuell auch als Slider -->
 			<!-- projekt updates (list_card query function) -->
@@ -126,7 +148,7 @@ get_header();
 		<!-- call to register -->
 		<div class="card-container ">
 			<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
-			<?php get_template_part( 'components/call', 'update' ); ?>
+			<?php // get_template_part( 'components/call', 'update' ); ?>
 			<!-- arrenberg farm link card -->
 			<?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
 			<?php 
@@ -138,7 +160,7 @@ get_header();
 			);
 			landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
 			?>
-			<?php get_template_part( 'components/call', 'umfrage' ); ?>
+			<?php // get_template_part( 'components/call', 'umfrage' ); ?>
 		</div>
 
 		<!-- *urbane transformation* -->
