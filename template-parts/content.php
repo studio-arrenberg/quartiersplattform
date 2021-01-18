@@ -37,10 +37,8 @@
 		<?php } ?>
 
         <!-- Post title -->
-        <div class="single-header-content <?php if (has_post_thumbnail()) echo "text-only"; ?>">
+        <div class="single-header-content <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>">
 			<h1><?php the_title(); ?></h1>
-			<h4><?php // echo get_the_author(); ?></h4>
-			<p><?php // the_field('kurzbeschreibung'); // veraltet ?></p>
         </div>
 
 	</div>
