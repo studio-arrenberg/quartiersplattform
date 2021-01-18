@@ -1,14 +1,8 @@
 <?php
 /**
  * Energie Ampel
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
-?>
 
-<?php
 
 date_default_timezone_set('Europe/Berlin');
 $now = date('Y-m-d H');
@@ -36,6 +30,7 @@ if (mysqli_connect_errno()) {
         <div>
             <h2>230g</h2>
             <h3>CO2 pro kWh</h3>
+            
         </div>
     </div>
 
@@ -125,7 +120,7 @@ SELECT
     ampel_status.color,
     ampel_status.name,
     DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
-    Ampel.timestamp AS DATE
+    date(Ampel.timestamp) AS DATE
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
@@ -159,23 +154,25 @@ LIMIT 0, 60
 
         <div class="strom_array">
             <?php
+            $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
+            while($row = mysqli_fetch_assoc($timeline_r)) {
 
+                $time = $row['time'];
+                $label = "<label>".$time."</label>";
+                $label_date = "";
 
-    $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
-    while($row = mysqli_fetch_assoc($timeline_r)) {
+                if ($row['color'] == $color) $label = "";
+                $date = date_create($row['DATE']);
+                if ($row['DATE'] != $date) $label_date = "<label class='date'>".date_format($date,"l")."</label>";
 
-        $time = $row['time'];
-        $lable = "<label>".$time."</label>";
+                ?>
+                    <div class="<?php echo $row['color']; ?>"><?php echo $label; ?></div>
+                <?php
 
-        if ($row['color'] == $color) $lable = "";
-
-        ?>
-            <div class="<?php echo $row['color']; ?>"><?php echo $lable ?></div>
-            <?php
-
-        $color = $row['color'];        
-    } 
-    ?>
+                $color = $row['color']; 
+                $date = $row['DATE'];       
+            } 
+            ?>
         </div>
     </div>
 </div>
