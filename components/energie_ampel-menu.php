@@ -120,7 +120,7 @@ SELECT
     ampel_status.color,
     ampel_status.name,
     DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
-    Ampel.timestamp AS DATE
+    unix_timestamp(Ampel.timestamp) AS DATE
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
