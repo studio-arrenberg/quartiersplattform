@@ -4654,7 +4654,8 @@ figure.wp-block-table.is-style-stripes {
 
 .bg_green {
   background: rgb(12, 194, 171);
-  background: linear-gradient(to top right, rgba(77, 201, 69, 1), rgba(0, 187, 92, 1));
+  /* background: linear-gradient(to top right, rgba(77, 201, 69, 1), rgba(0, 187, 92, 1)); */
+  background: linear-gradient(to top right, rgba(69, 199, 112, 1), rgba(68, 144, 105, 1));
 }
 
 .bg_orange {

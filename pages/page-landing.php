@@ -84,9 +84,10 @@ get_header();
 			?>
 		</div>
 
-		<br>
-		<h2>Deine Projekte</h2>
+		
+		
 		<?php
+			// deine Projekte
 			$args4 = array(
 				'post_type'=> 'projekte', 
 				'post_status'=> 'publish', 
@@ -95,7 +96,15 @@ get_header();
 				'order' => 'DESC',
 				'offset' => '0', 
 			);
-			slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+
+			$my_query = new WP_Query($args4);
+        	if ($my_query->post_count > 0) {
+				?>
+					<br>
+					<h2>Deine Projekte</h2>
+				<?php 
+				slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+        	}
 
 		?>
 
