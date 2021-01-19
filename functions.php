@@ -1472,6 +1472,7 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/frage-dein-quartier/') === false
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
+		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
 

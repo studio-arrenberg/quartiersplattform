@@ -75,12 +75,7 @@ get_header();
     </div>
 
     <!-- Projektbeschreibung -->
-    <?php if (get_field('text')) { ?>
-    <div class="single-content">
-        <h2>Text</h2>
-        <p><?php the_field('text'); ?></p>
-    </div>
-    <?php } ?>
+
 
     <?php if (get_field('description')) { ?>
     <div class="single-content">
@@ -89,21 +84,54 @@ get_header();
     </div>
     <?php } ?>
 
-    <?php if (get_field('target')) { ?>
+    <?php if (get_field('goal')) { ?>
     <div class="single-content">
         <h2>Projektziel</h2>
-        <p><?php the_field('target'); ?></p>
+        <p><?php the_field('goal'); ?></p>
     </div>
     <?php } ?>
 
     <!-- Anstehende Veranstaltungen -->
-    <!-- not ready yet -->
+    <?php
+        $args_chronik = array(
+            'post_type'=>'veranstaltungen', 
+            'post_status'=>'publish', 
+            'posts_per_page'=> 1,
+            'meta_key' => 'zeitpunkt',
+            'orderby' => 'rand',
+            'order' => 'ASC',
+            'offset' => '0', 
+            'meta_query' => array(
+                array(
+                    'key' => 'zeitpunkt', 
+                    'value' => date("Y-m-d"),
+                    'compare' => '>=', 
+                    'type' => 'DATE'
+                )
+            ),
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$post->post_name."
+                )
+            )
+
+        );
+
+        $my_query = new WP_Query($args_chronik);
+        if ($my_query->post_count > 0) {
+            ?>
+                <h2>Anstehende Veranstaltung</h2>
+            <?php 
+            slider($args_chronik,'card', '1','false'); 
+        }
+    ?>
 
     <!-- Projektverlauf -->
     <?php
-
         $args_chronik = array(
-            'post_type' => array('veranstaltungen', 'nachrichten'), // it's default, you can skip it
+            'post_type' => array('veranstaltungen', 'nachrichten'),
             'posts_per_page' => '3',
             'order_by' => 'date',
             'order' => 'DESC',
@@ -135,6 +163,7 @@ get_header();
         ?>
 
     </div>
+
     <!-- Team -->
     <div class="team">
         <h2> Hutträger </h2>
@@ -149,7 +178,6 @@ get_header();
 
 
     <!-- Projekt Teilen -->
-    <!-- not ready yet -->
     <?php  
         $page_for_posts = get_option( 'page_for_posts' );
         ?>
@@ -175,11 +203,6 @@ get_header();
     </div>
 
     <script>
-        // const span = document.querySelector("span.copy");
-
-        // span.onclick = function() {
-        //     document.execCommand("<?php echo get_permalink(); ?>");
-        // }
 
         function copy() {
             _paq.push(['trackEvent', 'Share', 'Copy Link', '<?php the_title(); ?>']);
@@ -192,14 +215,11 @@ get_header();
 
     </script>
 
-
     <?php
-            }
+
+}
 else {
-    // Show the form
-
-
-
+    
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         echo '<h2>Bearbeite dein Projekt</h2><br>';
         acf_form (
@@ -288,7 +308,7 @@ else {
 
     <!-- Backend edit link -->
     <?php 
-    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
+    if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
         edit_post_link(); 
     }
     ?>
@@ -316,23 +336,21 @@ else {
 
     <?php 
     if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
-
     ?>
 
-    <br><br><br>
-    <!-- weitere projekte -->
-    <h2>Weitere Projekte</h2>
-    <?php
-	$args3 = array(
-		'post_type'=>'projekte', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 4,
-		'orderby' => 'rand'
-	);
+        <br><br><br>
+        <h2>Weitere Projekte</h2>
+        <?php
+        $args3 = array(
+            'post_type'=>'projekte', 
+            'post_status'=>'publish', 
+            'posts_per_page'=> 4,
+            'orderby' => 'rand'
+        );
 
-    slider($args3,'square_card', '2','true'); 
+        slider($args3,'square_card', '2','true'); 
     
-}
+    }
 	?>
 
 </main><!-- #site-content -->

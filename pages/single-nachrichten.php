@@ -3,11 +3,6 @@
  * Template Name: Nachrichten [Default]
  * Template Post Type: Nachrichten
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 get_header();
@@ -64,7 +59,7 @@ get_header();
     <!-- weitere Nachrichten -->
     <?php
 		$args2 = array(
-			'post_type'=>'nachrichten', 
+			'post_type'=> array('nachrichten', 'veranstaltungen'), 
 			'post_status'=>'publish', 
 			'posts_per_page'=> 6,
             'order' => 'DESC',
@@ -81,7 +76,7 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
             ?>
-                <h2>Weitere Nachrichten</h2>
+                <h2>Weitere Nachrichten & Veranstaltungen</h2>
             <?php
             slider($args2,'card', '1','false');
         }

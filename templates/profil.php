@@ -32,6 +32,8 @@ if (!is_user_logged_in()){
 
     </div>
 
+    <?php // echo do_shortcode('[ultimatemember form_id="63"]'); ?>
+
     <!-- Gutenberg Editor Content -->
 	<div class="gutenberg-content">
         <?php

@@ -15,11 +15,11 @@ get_header();
 	?>
 
 		<?php
-		// neuste meldung (card + carousel query + function)
+		// Neuste Meldungen
 		$args2 = array(
 			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte'), 
 			'post_status'=> 'publish', 
-			'posts_per_page'=> 4,
+			'posts_per_page'=> 6,
 			'order' => 'DESC',
 		);
 
@@ -27,6 +27,7 @@ get_header();
 		?>
 
 		<?php
+		// Angebote und Fragen
 		$args4 = array(
 			'post_type'=> array('angebote', 'fragen'), 
 			'post_status'=>'publish', 
@@ -46,7 +47,6 @@ get_header();
 
 		slider($args4,'card', '1','false'); 
 		?>
-
 
 
 		<div class="list-cards"> <!-- Eventuell auch als Slider -->
@@ -83,6 +83,23 @@ get_header();
 			list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht');
 			?>
 		</div>
+
+		<br>
+		<h2>Deine Projekte</h2>
+		<?php
+			$args4 = array(
+				'post_type'=> 'projekte', 
+				'post_status'=> 'publish', 
+				'author' =>  $current_user->ID,
+				'posts_per_page'=> 10, 
+				'order' => 'DESC',
+				'offset' => '0', 
+			);
+			slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+
+		?>
+
+
 
 		<!-- call to register -->
 		<div class="card-container ">
@@ -131,8 +148,8 @@ get_header();
 	else {
 	?>
 
-		<!-- neuste meldung (card + carousel query + function) -->
 		<?php
+		// Neuste Meldungen
 		$args2 = array(
 			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte'), 
 			'post_status'=>'publish', 
@@ -142,6 +159,29 @@ get_header();
 
 		slider($args2,'card', '1','false'); 
 		?>
+
+		<?php
+		// Angebote und Fragen
+		$args4 = array(
+			'post_type'=> array('angebote', 'fragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 4,
+			'meta_query' => array(
+				array(
+					'key'     => 'expire_timestamp',
+					'value'   => current_time('timestamp'),
+					'compare' => '>',
+					'type' 	=> 'timestamp',       
+				),
+			),
+			'meta_key'          => 'expire_timestamp',
+			'orderby'           => 'expire_timestamp',
+			'order'             => 'ASC'
+		);
+
+		slider($args4,'card', '1','false'); 
+		?>
+
 		<!-- link card -->
 		<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberrg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
 		
