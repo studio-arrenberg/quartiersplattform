@@ -4509,6 +4509,9 @@ figure.wp-block-table.is-style-stripes {
 
 .card img.emoji {
   position: relative;
+  bottom: auto;
+  right: auto;
+  font-size: unset;
 }
 
 
