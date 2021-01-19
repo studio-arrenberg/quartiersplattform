@@ -60,7 +60,7 @@ else {
 
 ?>
 
-<div class="card landscape shadow bg_green" data-content-piece="Arrenberg Wetter">
+<div class="card landscape shadow bg_blue" data-content-piece="Arrenberg Wetter">
     <a href="<?php echo get_site_url(); ?>/projekte/arrenberg-farm/">
         <div class="content white-text">
             <div class="emojis-top"><?php echo preg_replace('/\./', ',',$json_decoded->data[0]->values->avg[0]); ?>°C</div>

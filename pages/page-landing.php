@@ -58,7 +58,7 @@ get_header();
 				'post_status'=>'publish', 
 				'posts_per_page'=> 3
 			);
-			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten');
+			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quartier','Updates aus spannenden Projekten');
 			?>
 
 			<!-- veranstaltungen -->
@@ -229,7 +229,7 @@ get_header();
 				'post_status'=>'publish', 
 				'posts_per_page'=> 3
 			);
-			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quatier','Updates aus spannenden Projekten');
+			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quartier','Updates aus spannenden Projekten');
 			?>
 
 			<!-- veranstaltungen -->
