@@ -120,7 +120,7 @@ SELECT
     ampel_status.color,
     ampel_status.name,
     DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
-    date(Ampel.timestamp) AS DATE
+    Ampel.timestamp AS DATE
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
@@ -162,8 +162,12 @@ LIMIT 0, 60
                 $label = "<label>".$time."</label>";
 
                 if ($row['color'] == $color) $label = "";
-                $date = date_create($row['DATE']);
-                if ($row['DATE'] != $date) $label = "<label class='midnight'>".date_format($date,"l")."</label>";
+                // $date = date_create($row['DATE']);
+
+                echo "date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date);
+                debugToConsole("date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date));
+
+                if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".date_format($date,"l")."</label>";
                 if ($c == 1) $label = "<label class='day'>Jetzt</label>";
 
                 ?>
