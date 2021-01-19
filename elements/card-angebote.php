@@ -4,27 +4,11 @@
  * Card => Gemeinsam
  *
  * Used for both singular and index.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 ?>
 
 <?php
-
-// gone = now - (published + duration)
-$remaining = current_time('timestamp') - (get_post_time('U') + get_field('duration'));
-// echo get_field('duration');
-
-// echo "<br>".get_post_meta(get_the_ID(), 'expire_timestamp', true);
-
-if (current_time('timestamp') < get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
-    // echo "<br>".gmdate("H:i:s", abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)));
-}
 
 // calc time remaining
 // minuten
@@ -41,18 +25,27 @@ else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get
 }
 // tomorrow
 else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-    $time_remaining = "bis Morgen";    
+    $time_remaining = "bis Morgen";
+}
+// no data
+else if (!get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
+    $time_remaining = "vom ".get_the_date('j. M');
+}
+else if (get_post_meta(get_the_ID(), 'expire_timestamp', true) < current_time('timestamp')) {
+    $time_remaining = "Abgelaufen am ".date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
 }
 // other
 else {
     $time_remaining = "bis zum ".wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
 }
 
-
 ?>
 
-<div class="card shadow ">
+
+<div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
+    <?php if(!is_single()) { ?>
     <a href="<?php echo esc_url( get_permalink() ); ?>">
+    <?php } ?>
         <div class="content">
             <div class="pre-title red-text ">Angebot von
                 <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
@@ -67,5 +60,7 @@ else {
         <div class="emoji">
             <?php  shorten_title(get_field('emoji'), '200'); ?>
         </div>
+    <?php if(!is_single()) { ?>
     </a>
+    <?php } ?>
 </div>

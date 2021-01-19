@@ -1,13 +1,6 @@
 <?php
+// get weather station data
 
-/**
- * Landscape Card
- */
-
-?>
-
-<!-- get weather station data -->
-<?php 
 // // Clients public and private key provided by service provider
 $public_key = "7a9946078ddcaa966ab528c62fa4053bb93d9d39ad9743ae";
 $private_key = "95c7452c43169aa49410eb43310b8b0c8dcdc2926e164fd9";
@@ -51,37 +44,32 @@ curl_close($ch);
 
 $json_decoded = json_decode($output);
 
-// niederschalg
-
+// niederschalg oder solarstrahlung
 if ($json_decoded->data[4]->values->sum[0] == 0) {
-    $niederschlag = "Kein Niederschlag";
+    $secondary = "Kein Niederschlag";
 
-    if ($json_decoded->data[3]->values->sum[0] > 0) {
+    if ($json_decoded->data[1]->values->avg[0] > 0) {
         // $niederschlag = "Solarstrahlung ". round(($json_decoded->data[3]->values->sum[0] / 240) * 100, 0);
-        $niederschlag = "Solarstrahlung ". $json_decoded->data[3]->values->sum[0]." Wh/m&sup2;";
-        // Wh/m^2
-
+        $secondary = $json_decoded->data[1]->values->avg[0]."W/m&sup2; Solarstrahlung";
     }
 }
 else {
-    $niederschlag = ($json_decoded->data[4]->values->sum[0] * 100)."% Niederschlag";
+    $amount = preg_replace('/\./', ',', $json_decoded->data[4]->values->sum[0]); 
+    $secondary = $amount."mm Niederschlag";
 }
 
 ?>
 
-<!-- display data -->
 <div class="card landscape shadow bg_green" data-content-piece="Arrenberg Wetter">
     <a href="<?php echo get_site_url(); ?>/projekte/arrenberg-farm/">
         <div class="content white-text">
-            <div class="emojis-top"><?php echo $json_decoded->data[0]->values->avg[0]; ?>°C</div>
+            <div class="emojis-top"><?php echo preg_replace('/\./', ',',$json_decoded->data[0]->values->avg[0]); ?>°C</div>
             <h3 class="card-title">
                 Das aktuelle Wetter von der Arrenberg Farm <?php // echo date('G:i',$json_decoded->dates[0]);  ?>
             </h3>
             <p class="preview-text">
-                <?php echo number_format($json_decoded->data[9]->values->avg[0], 0); ?>% Luftfeuchtigkeit & <?php echo $niederschlag; ?>  
+                <?php echo number_format($json_decoded->data[9]->values->avg[0], 0); ?>% Luftfeuchtigkeit & <?php echo $secondary; ?>  
             </p>
         </div>
-
-        <!-- <img src="<?php //echo get_template_directory_uri(); ?>/assets/images/gemeinsam.png" alt="" /> -->
     </a>
 </div>
