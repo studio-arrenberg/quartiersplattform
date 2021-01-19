@@ -38,10 +38,10 @@ get_header();
                 'post_title' => true,
                 'return' => get_site_url().'/projekte', // post gets dublicated
 				'fields' => array(
-                    'target',
-                    'emoji',
                     'slogan',
+                    'emoji',
                     'description',
+                    'target',
                     '_thumbnail_id',
 				),
 				'submit_value'=>'Projekt veröffentlichen',
