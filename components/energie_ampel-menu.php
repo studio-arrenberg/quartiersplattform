@@ -164,8 +164,8 @@ LIMIT 0, 60
                 if ($row['color'] == $color) $label = "";
                 // $date = date_create($row['DATE']);
 
-                echo "date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date);
-                debugToConsole("date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date));
+                // echo "date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date);
+                // debugToConsole("date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date));
 
                 if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".date_format($date,"l")."</label>";
                 if ($c == 1) $label = "<label class='day'>Jetzt</label>";
