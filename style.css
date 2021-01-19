@@ -4506,6 +4506,12 @@ figure.wp-block-table.is-style-stripes {
   font-size: 50px;
 }
 
+
+.card img.emoji {
+  position: relative;
+}
+
+
 .card .emojis-top {
   font-size: 4rem;
   margin-bottom: 5px;
