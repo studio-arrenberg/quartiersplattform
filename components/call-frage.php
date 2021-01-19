@@ -12,7 +12,7 @@
 
 
 
-<div class="card  card-centered shadow bg_green">
+<div class="card  card-centered shadow bg_blue">
     <a href="<?php echo get_site_url(); ?>/frage-dein-quartier/">
         <div class="content white-text">
             <h3 class="card-title">

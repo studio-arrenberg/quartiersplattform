@@ -13,7 +13,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-<div class="card-container card-container__small">
+<div class="card-container ">
 
 	<!-- Projekt Kachel -->
 	<?php

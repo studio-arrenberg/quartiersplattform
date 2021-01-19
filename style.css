@@ -1423,6 +1423,7 @@ button.toggle {
   }
 
   .push-right {
+    padding-left: 5px;
     grid-area: right;
   }
 
@@ -4628,13 +4629,23 @@ figure.wp-block-table.is-style-stripes {
   border-radius: 20px;
 }
 
-.bg_green {
+.bg_blue {
   background: rgb(12, 194, 171);
   background: linear-gradient(
     45deg,
     rgba(12, 194, 171, 1) 0%,
     rgba(12, 165, 194, 1) 100%
   );
+}
+
+.bg_green {
+  background: rgb(12, 194, 171);
+  background: linear-gradient(to top right, rgba(77, 201, 69, 1), rgba(0, 187, 92, 1));
+}
+
+.bg_orange {
+  background: rgb(12, 194, 171);
+  background: linear-gradient(to top right, rgba(255, 114, 0, 1), rgba(255, 154, 0, 1))
 }
 
 .bg_red {
@@ -4647,6 +4658,7 @@ figure.wp-block-table.is-style-stripes {
 }
 
 .bg_green a .content,
+.bg_blue  a .content,
 .bg_red a .content {
   position: relative;
 }

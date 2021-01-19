@@ -10,7 +10,7 @@
 ?>
 
 
-<div class="card  bg_green landscape shadow">
+<div class="card  bg_blue landscape shadow">
     <a href="<?php echo get_site_url(); ?>/gemeinsam/">
         <div class="content white-text">
             <div class="emojis-top">🛠 🎁 🚀</div>
