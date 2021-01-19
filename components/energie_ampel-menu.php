@@ -60,7 +60,7 @@ if (mysqli_connect_errno()) {
             <div class="green"><label>14:00</label></div>
             <div class="green"></div>
             <div class="green"></div>
-            <div class="green "><label class="day midnight">Dienstag</label></div>
+            <div class="green "><label class="midnight">Dienstag</label></div>
             <div class="yellow"><label>01:00</label></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
@@ -157,13 +157,14 @@ LIMIT 0, 60
             $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
             while($row = mysqli_fetch_assoc($timeline_r)) {
 
+                $c++;
                 $time = $row['time'];
                 $label = "<label>".$time."</label>";
-                $label_date = "";
 
                 if ($row['color'] == $color) $label = "";
                 $date = date_create($row['DATE']);
-                if ($row['DATE'] != $date) $label_date = "<label class='date'>".date_format($date,"l")."</label>";
+                if ($row['DATE'] != $date) $label = "<label class='midnight'>".date_format($date,"l")."</label>";
+                if ($c == 1) $label = "<label class='day'>Jetzt</label>";
 
                 ?>
                     <div class="<?php echo $row['color']; ?>"><?php echo $label; ?></div>

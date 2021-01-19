@@ -53,7 +53,10 @@ else {
                 <span class="date red-text"><?php echo $time_remaining; ?><span>
             </div>
             <h3 class="card-title-large">
-                <?php  shorten_title(get_field('text'), '200'); ?>
+                <?php  
+                    if (!is_single( )) shorten_title(get_field('text'), '50'); 
+                    else the_field('text'); 
+                ?>
             </h3>
         </div>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
