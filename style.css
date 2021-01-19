@@ -690,6 +690,10 @@ textarea {
   height: 12rem;
   line-height: 1.5;
   width: 100%;
+
+white-space: normal;
+word-wrap: normal;
+word-break: keep-all;
 }
 
 /* 
@@ -1496,7 +1500,7 @@ button.toggle {
 
 .single-header {
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   flex-direction: column;
   align-content: center;
   margin-bottom: 20px;
@@ -5167,6 +5171,7 @@ padding: 5px 10px 3px 10px;
 
 .feedback textarea {
   margin-bottom: 20px;
+
 }
 .feedback input[type="submit"] {
   margin-right: 2px;

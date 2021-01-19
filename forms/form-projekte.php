@@ -12,10 +12,23 @@ acf_form_head(); // before wp header !important!
 get_header();
 ?>
 
-<main id="site-content" role="main">
 
-<div class="feedback">
-    <h2>Erstelle dein Projekt</h2>
+<main id="site-content" role="main">
+<div class="card-container card-container__center card-container__large ">
+        <div class="card bg_green">
+            <div class="content white-text">
+                <h3 class="card-title-large">
+                    Veröffentliche dein Projekt auf der Quartiersplattform 
+                </h3>
+                <p class="preview-text-large">
+                    Profitiere von der Community! <br>
+                </p>
+            </div>
+        </div>
+	</div>
+	
+<div class="publish-form">
+    <h2>Erstelle dein eigenes Angebot</h2>
     <br>
 
     <?php // acf_form_head(); ?>
