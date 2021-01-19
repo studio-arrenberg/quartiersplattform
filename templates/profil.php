@@ -27,7 +27,7 @@ if (!is_user_logged_in()){
 
         <!-- user  name -->
         <div class="single-header-content">
-            <h1><?php $current_user = wp_get_current_user(); echo $current_user->user_login; ?></h1>
+            <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
         </div>
 
     </div>

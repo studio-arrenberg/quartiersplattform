@@ -1082,7 +1082,7 @@ button.toggle {
   padding: 5px 10px 0px 10px;
   top: 0px;
   width: 100%;
-  z-index: 2;
+  z-index: 101;
   max-width: 782px;
   margin: 0 auto;
   background-color: rgba(255, 255, 250, 1);
@@ -1200,6 +1200,7 @@ button.toggle {
 .overlay .header-button{
   position: fixed;
   top: 10px;
+  z-index: 1;
 }
 
 
@@ -5365,6 +5366,7 @@ padding: 5px 10px 3px 10px;
 
 .profil .single-header-content {
   text-align: center;
+  align-items: center;
 }
 .page-template-profil #site-content {
   margin-top: 290px;
