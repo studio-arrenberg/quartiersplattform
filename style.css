@@ -646,7 +646,7 @@ button,
   border: none;
   border-radius: 15px;
   text-decoration: none;
-
+white-space: nowrap;
   word-wrap: none;
   word-break: keep-all;
 }
@@ -1193,6 +1193,16 @@ button.toggle {
 }
 
 
+.overlay .header-button{
+  position: fixed;
+  top: 10px;
+}
+
+
+.overlay .energie-ampel{
+  margin-top: 60px;
+}
+
 /* if backdrop support: very transparent and blurred */
 @supports (
   (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
@@ -1235,6 +1245,12 @@ button.toggle {
   margin: 20px auto;
 
  }
+
+
+
+.overlay .energie-ampel{
+  margin-top: 100px;
+}
 }
 
 
@@ -5009,7 +5025,7 @@ figure.wp-block-table.is-style-stripes {
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
-  padding: 30px 0px 30px  15px ;
+  padding: 35px 0px 30px  15px ;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -5022,6 +5038,8 @@ figure.wp-block-table.is-style-stripes {
   position: relative;
   display: block;
   white-space: nowrap; /*Prevents Wrapping*/
+  /* overflow-y: hidden; */
+  height: 100px;
 }
 
 .strom_array div {
@@ -5056,6 +5074,7 @@ figure.wp-block-table.is-style-stripes {
   }
 }
 
+
 .strom_array .red {
   background: #ef6363;
 }
@@ -5068,10 +5087,48 @@ figure.wp-block-table.is-style-stripes {
 
 .strom_array label {
   position: absolute;
-  top: 70px;
-  font-size: 1.8rem;
+  top: 65px;
+  font-size: 1.6rem;
   word-break: keep-all;
+  word-wrap: normal;
+  white-space: nowrap;
+  background-color: rgba(255, 255, 250, 1);
+z-index: 1;
+border-radius: 10px;
+padding: 5px 10px 3px 10px;
 }
+
+
+.strom_array label.day {
+  z-index: 100;
+background-color: rgba(255, 255, 250, 1);
+border-radius: 10px;
+padding: 5px 10px 3px 10px;
+}
+
+.strom_array label.midnight{
+  top: 100px;
+  width: 80px;
+  margin-left: -30px;
+} 
+
+
+.strom_array label.midnight{
+  top: -35px;
+  width: 80px;
+  margin-left: -30px;
+} 
+
+/* .strom_array label.midnight::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  background: #fff;
+  left: 50%;
+  bottom: -10px;
+}  */
 
 .red .time:first-of-type {
   display: block;

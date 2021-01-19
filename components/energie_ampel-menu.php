@@ -41,8 +41,8 @@ if (mysqli_connect_errno()) {
 
     <div class="strom_array-container">
         <div class="strom_array">
-            <div class="red"><label>18:00</label></div>
-            <div class="red"></div>
+            <div class="red"><label class="day">Jetzt</label></div>
+            <div class="green"><label>14:00</label></div>
             <div class="red"></div>
             <div class="red"></div>
             <div class="red"></div>
@@ -62,14 +62,14 @@ if (mysqli_connect_errno()) {
             <div class="yellow"></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
+            <div class="green"><label>14:00</label></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green "><label class="day midnight">Dienstag</label></div>
+            <div class="yellow"><label>01:00</label></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
-            <div class="green"><label>00:00</label></div>
-            <div class="green"></div>
-            <div class="green"></div>
-            <div class="green"></div>
-            <div class="green"></div>
             <div class="green"></div>
             <div class="green"></div>
             <div class="green"></div>
@@ -189,7 +189,8 @@ if (empty($phase_color)) {
 
 
 <div class="vpp-animation">
-    <img class="vpp-animation <?php echo $phase_color; ?>" src="<?php echo get_template_directory_uri()?>/assets/vpp-animation/VPP_Stromampel_Animation_<?php echo $phase_color; ?>.svg" />
+    <img class="vpp-animation <?php echo $phase_color; ?>"
+        src="<?php echo get_template_directory_uri()?>/assets/vpp-animation/VPP_Stromampel_Animation_<?php echo $phase_color; ?>.svg" />
 </div>
 
 

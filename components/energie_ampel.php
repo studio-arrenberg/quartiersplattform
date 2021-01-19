@@ -41,7 +41,7 @@ if (mysqli_connect_errno()) {
 
     <div class="strom_array-container">
         <div class="strom_array">
-            <div class="red"><label>18:00</label></div>
+            <div class="red"><label>Dienstag, 18:00</label></div>
             <div class="red"></div>
             <div class="red"></div>
             <div class="red"></div>
