@@ -132,7 +132,7 @@ get_header();
 		<?php // get_template_part('components/energie_ampel'); ?>
 
 		<!-- Aufbruch am Arrenberg link card -->
-		<?php landscape_card(null,'Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+		<?php landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
@@ -265,7 +265,7 @@ get_header();
 		<?php // get_template_part('components/energie_ampel'); ?>
 
 		<!-- Aufbruch am Arrenberg link card -->
-		<?php landscape_card(null, 'Über den Verein und Initiator Aufbruch am Arrenberg','', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+		<?php landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
 		<!-- add website to homescreen -->
 		<!-- not ready yet -->
