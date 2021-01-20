@@ -291,6 +291,10 @@ p {
   font-weight: 500;
 }
 
+.highlight{
+  color: #0091ff;
+}
+
 em,
 i,
 q,
@@ -4564,7 +4568,7 @@ figure.wp-block-table.is-style-stripes {
   line-height: 1.5rem;
 }
 
-.list-card a {
+.list-card a{
   flex-wrap: wrap;
   flex-grow: 4;
 }
@@ -4573,6 +4577,7 @@ figure.wp-block-table.is-style-stripes {
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  width: 100%;
 }
 
 .list-item:last-of-type {
@@ -4588,6 +4593,28 @@ figure.wp-block-table.is-style-stripes {
   padding: 7px 7px 10px 7px;
   display: block;
 }
+
+.list-item a{
+  /* background: #f7f7f7; */
+  border-radius: 10px;
+}
+
+.list-item a:hover{
+  background: #f7f7f7;
+  border-radius: 10px;
+}
+
+.card .list-item a .content{
+  width: 100%;
+  max-width: none;
+}
+
+.card .list-item .emoji{
+  right: 10px;
+  top: 30px;
+}
+
+
 /* LANDSCAPE CARD */
 
 .square {
@@ -4738,6 +4765,53 @@ figure.wp-block-table.is-style-stripes {
 .comment-count {
   margin-top: 3px;
   margin-bottom: -6px;
+}
+
+
+
+/* smart-card */
+
+.smart-card{
+  flex-wrap: wrap;
+
+  flex-grow: 4;
+}
+
+.card-footer{
+  width: 100%;
+  display: flex;
+}
+
+.card .card-button{
+  width: 100%;
+  min-height: inherit !important;
+  flex-grow: 1;
+  color: #0091ff;
+  background: #E8F5FF;
+  display: block;
+  text-align: center;
+  display: block ;
+  box-shadow: none;
+  margin: 0px;
+}
+
+
+.card .card-button:hover{
+  width: 100%;
+  min-height: inherit !important;
+  flex-grow: 1;
+  color: #fff;
+  background: #0091ff;
+  display: block;
+  text-align: center;
+  display: block ;
+  box-shadow: none;
+  margin: 0px;
+}
+
+
+.card-footer a:last-of-type{
+  margin-left: 5px;
 }
 
 /* Tablet - 2 slides in viewport */
