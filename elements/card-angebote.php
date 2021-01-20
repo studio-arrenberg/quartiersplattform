@@ -48,7 +48,8 @@ else {
     <a href="<?php echo esc_url( get_permalink() ); ?>">
     <?php } ?>
         <div class="content">
-            <div class="pre-title red-text ">Angebot von
+            <div class="pre-title red-text ">Angebot 
+                <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
                 <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
 
                 <span class="date red-text"><?php echo $time_remaining; ?><span>
