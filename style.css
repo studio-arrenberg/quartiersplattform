@@ -1423,6 +1423,7 @@ button.toggle {
   }
 
   .pull-left {
+    padding-right: 5px;
     grid-area: left;
   }
 
@@ -5216,16 +5217,12 @@ border-radius: 10px;
 padding: 5px 10px 3px 10px;
 }
 
-.strom_array label.midnight{
-  top: 100px;
-  width: 80px;
-  margin-left: -30px;
-} 
 
 
 .strom_array label.midnight{
   top: -35px;
-  width: 80px;
+  min-width: 80px;
+  width: auto;
   margin-left: -30px;
 } 
 

@@ -10,7 +10,7 @@ get_header();
 
 <main id="site-content" role="main">
 
-<?php
+    <?php
 
 	if ( have_posts() ) {
 
@@ -44,8 +44,8 @@ get_header();
 
     </div>
 
-   <!-- Gutenberg Editor Content -->
-   <div class="gutenberg-content">
+    <!-- Gutenberg Editor Content -->
+    <div class="gutenberg-content">
         <?php
             if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
                 the_excerpt();
@@ -76,12 +76,13 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
             ?>
-                <h2>Weitere Nachrichten & Veranstaltungen</h2>
-            <?php
+    <h2>Weitere Nachrichten & Veranstaltungen</h2>
+    <?php
             slider($args2,'card', '1','false');
         }
 
-	?>
+    ?>
+    <br>
 
     <!-- Projekt Kachel -->
     <?php
@@ -95,10 +96,18 @@ get_header();
                 'numberposts' => '1'
             );
 
+
+            $my_query = new WP_Query($args);
+            if ($my_query->post_count > 0) {
+                ?>
+            <h2>Das Projekt</h2>
+
+            <?php
             landscape_card($args);
+            } 
         }
     ?>
-    
+
 
     <!-- Backend edit link -->
     <?php edit_post_link(); ?>

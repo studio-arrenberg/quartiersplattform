@@ -13,11 +13,11 @@
 // calc time remaining
 // minuten
 if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 3600 ) {
-    $time_remaining = round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0)." Minuten";
+    $time_remaining = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0)." Minuten";
 }
 // stunden
 else if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 10800 ) {
-    $time_remaining = round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/3600), 0)." Stunden";
+    $time_remaining = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/3600), 0)." Stunden";
 }
 // today
 else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
@@ -32,7 +32,7 @@ else if (!get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
     $time_remaining = "vom ".get_the_date('j. M');
 }
 else if (get_post_meta(get_the_ID(), 'expire_timestamp', true) < current_time('timestamp')) {
-    $time_remaining = "Abgelaufen am ".date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
+    $time_remaining = "vom ".date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
 }
 // other
 else {
@@ -40,6 +40,7 @@ else {
 }
 
 ?>
+
 
 
 <div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
