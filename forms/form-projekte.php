@@ -53,8 +53,8 @@ get_header();
 				'fields' => array(
                     'slogan',
                     'emoji',
-                    'description',
-                    'target',
+                    'text',
+                    'goal',
                     '_thumbnail_id',
 				),
 				'submit_value'=>'Projekt veröffentlichen',
