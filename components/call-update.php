@@ -22,10 +22,10 @@
 				+ Veranstaltungen teilen
 			</p> -->
 		</div>
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_DE.png" alt="Willkommen auf deiner Quatiersplattform"/>	
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_IT.png" alt="Willkommen auf deiner Quatiersplattform"/>	
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_AR.png" alt="Willkommen auf deiner Quatiersplattform"/>	
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_TU.png" alt="Willkommen auf deiner Quatiersplattform"/>	
-		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_DE.png" alt="Willkommen auf deiner Quatiersplattform"/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_DE.png" alt="Willkommen auf deiner Quartiersplattform"/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_IT.png" alt="Willkommen auf deiner Quartiersplattform"/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_AR.png" alt="Willkommen auf deiner Quartiersplattform"/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_TU.png" alt="Willkommen auf deiner Quartiersplattform"/>	
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/willkommen-am-arrenberg_DE.png" alt="Willkommen auf deiner Quartiersplattform"/>	
     </a>
 </div>

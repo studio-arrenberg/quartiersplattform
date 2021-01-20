@@ -12,7 +12,7 @@
  */
 
 ?>
-<footer id="site-footer" role="contentinfo" class="header-footer-group">
+<footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
     <div class="sponsoren">
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/wsw.svg" alt="WSW"> 
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/buw.svg" alt="Universität Wuppertal"> 

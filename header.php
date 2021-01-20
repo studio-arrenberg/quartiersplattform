@@ -83,6 +83,10 @@
     </noscript>
     <!-- End Matomo Code -->
 
+    <!-- Matomo Addition -->
+    <script>
+        _paq.push(['trackVisibleContentImpressions']);
+    </script>
 
 </head>
 
@@ -114,7 +118,7 @@
             ?>
             <div class="site-name">
                 <h1>Arrenberg </h1>
-                <h2>Deine Quartiersplattform </h2>
+                <h2>Quartiersplattform </h2>
             </div>
             <?php 
         }
@@ -123,6 +127,10 @@
         </div>
 
         <div class="push-right">
+
+            <a class="button header-button push-right" onclick="show()">
+                <span class="button-has-icon-label">Energie Ampel</span>
+            </a>
 
             <?php
         // logged in user
@@ -215,11 +223,40 @@
         scrollFunction()
     };
 
+    var currentScrollTop = 0;
+    var c = 0;
+
     function scrollFunction() {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-            document.getElementById("site-header").style.top = "-45px";
-        } else {
-            document.getElementById("site-header").style.top = "0px";
+        currentScrollTop = document.documentElement.scrollTop;
+
+        if (Math.abs(currentScrollTop - c) > 150) {
+            // console.log(currentScrollTop+ ' '+ c);
+            if (currentScrollTop > c) {
+                // console.log('down');
+                document.getElementById("site-header").style.top = "-45px";
+            }
+            else {
+                // console.log('up');
+                document.getElementById("site-header").style.top = "0px";
+            }
+            c = currentScrollTop;
         }
     }
     </script>
+
+
+
+    <!-- energie ampel -->
+    <div id="overlay" class="overlay hidden " onclick="hide()">
+
+        <div class="overlay-content">
+            <button class="button header-button button-has-icon is-style-outline" onclick="hide()">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Zurück</span>
+            </button>
+
+            <?php get_template_part('components/energie_ampel-menu'); ?>
+            
+        </div>
+
+    </div>

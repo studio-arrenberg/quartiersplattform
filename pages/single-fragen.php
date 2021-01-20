@@ -27,43 +27,24 @@ if ( have_posts() ) {
         the_post();
 
         if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
-    ?>
 
+            ?>
+            <div class="card-container card-container__center card-container__large ">
 
-    <div class="card-container card-container__center card-container__large ">
-        <div class="card">
-            <div class="content">
-                <div class="pre-title green-text">Frage ans Quartier <span class="date green-text"><?php echo get_the_date('j. F'); ?>
-                        <span>
-                </div>
-                <h3 class="card-title-large">
-                    <?php  shorten_title(get_field('text'), '200'); ?>
-                </h3>
+                <?php get_template_part('elements/card', get_post_type()); ?>
+
             </div>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
-            <div class="emoji">
-            <?php  shorten_title(get_field('emoji'), '200'); ?>
-        </div>
 
-        </div>
-    </div>
-
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
-        <?php
-    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-        the_excerpt();
-    } else {
-        the_content( __( 'Continue reading', 'twentytwenty' ) );
-    }
+            <?php 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
-            <a class="button  " href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
+            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
         <?php
     }
+    ?>
 
-?>
+
     </div>
 
     
@@ -76,7 +57,7 @@ else {
 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        echo '<h3>Bearbeite deine Frage</h3>';
+        echo '<h2>Bearbeite deine Frage</h2><br>';
         acf_form (
             array(
                 'form' => true,
@@ -84,10 +65,7 @@ else {
                 'submit_value' => 'Änderungen speichern',
                 'post_title' => false,
                 'post_content' => false,    
-                'fields' => array(
-                    'text',
-                    'emoji',
-                )
+                'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App
             )
         );
         
@@ -132,6 +110,13 @@ el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
 el.attr("data-emojiable", "true");
 el.attr('maxlength', '20');
 var alt;
+
+var el = $( "#acf-field_5fcf56cd9e356" );
+el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+el.attr("data-emojiable", "true");
+el.attr('maxlength', '20');
+
+
 // remove previous emojies
 $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
 
@@ -166,7 +151,10 @@ $(function() {
     // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
     // It can be called as many times as necessary; previously converted input fields will not be converted again
     window.emojiPicker.discover();
+
+    $('div.emoji-wysiwyg-editor').attr('tabindex', '-1');
 });
+
 
 
 </script>

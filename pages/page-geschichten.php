@@ -13,18 +13,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-
-    <?php
-	// featured projekte
-	// $args3 = array(
-	// 	'post_type'=>'projekte', 
-	// 	'post_status'=>'publish', 
-	// 	'posts_per_page'=> 4,
-	// 	'orderby' => 'rand'
-	// );
-
-	// slider($args3,'square_card', '2','true'); 
-	?>
+<div class="card-container ">
 
 	<!-- Projekt Kachel -->
 	<?php
@@ -35,7 +24,7 @@ get_header();
 			'posts_per_page'=> -1
 		);
 
-		link_card('','','','', $args);
+		landscape_card($args);
     ?>
 
 	
@@ -47,6 +36,8 @@ get_header();
 		'posts_per_page'=> -1
 	);
 	?>
+
+</div>
 	
 	<div class="card-container">
 	<?php // card_list($args4);

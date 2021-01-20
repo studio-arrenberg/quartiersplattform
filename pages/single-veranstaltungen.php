@@ -78,7 +78,7 @@ get_header();
                 'post_status' => 'publish',
                 'numberposts' => '1'
             );
-            link_card('','','','', $args);
+            landscape_card($args);
         }   
     ?>
 

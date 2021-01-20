@@ -9,8 +9,8 @@
 
 ?>
 
-<div class="feedback">
-    <h3>Stelle eine Frage an dein Quartier</h3>
+    <h2>Stelle eine Frage an dein Quartier</h2>
+    <br>
 
     <?php // acf_form_head(); ?>
 
@@ -18,6 +18,7 @@
     <?php 
     acf_form(
 			array(
+                'form' => true,
 				'id' => 'fragen-form',
 				'html_before_fields' => '',
 				'html_after_fields' => '',
@@ -30,12 +31,10 @@
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => false,
+                'submit_value'=>'Frage veröffentlichen',
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated
-				'fields' => array(
-                    'text',
-                    'emoji',
-				),
-				'submit_value'=>'Frage veröffentlichen',
+				'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App
+                
 			)
     ); 
 
@@ -57,22 +56,13 @@
         el.attr("data-emojiable", "true");
         el.attr('maxlength', '2');
 
-        // test
-        // var el = $( "#emoji" );
-        // el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
-        // el.attr("data-emojiable", "true");
-        // el.attr('maxlength', '2');
+        var el = $( "#acf-field_5fcf56cd9e356" );
+        el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+        el.attr("data-emojiable", "true");
+        el.attr('maxlength', '2');
 
-        // empty field
-        // $( ".emoji-picker-container" ).click(function() {
-        //     $( this ).children('.emoji-wysiwyg-editor').text('hi');
-        // });
-
-        // on change empty
-        // $( ".emoji-picker-container > .emoji-wysiwyg-editor" ).change(function() {
-        //     // $( this ).children('.emoji-wysiwyg-editor').text('');
-        // });
         
+
         // remove previous emojies
         $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
             console.log('call');
@@ -90,9 +80,10 @@
             // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
             // It can be called as many times as necessary; previously converted input fields will not be converted again
             window.emojiPicker.discover();
+
+            $('div.emoji-wysiwyg-editor').attr('tabindex', '-1');
         });
     
 
     </script>
-    </a>
-</div>
+    <!-- </a> -->

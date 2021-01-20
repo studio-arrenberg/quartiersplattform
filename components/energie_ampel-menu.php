@@ -1,14 +1,8 @@
 <?php
 /**
  * Energie Ampel
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
-?>
 
-<?php
 
 date_default_timezone_set('Europe/Berlin');
 $now = date('Y-m-d H');
@@ -36,13 +30,14 @@ if (mysqli_connect_errno()) {
         <div>
             <h2>230g</h2>
             <h3>CO2 pro kWh</h3>
+            
         </div>
     </div>
 
     <div class="strom_array-container">
         <div class="strom_array">
-            <div class="red"><label>Dienstag, 18:00</label></div>
-            <div class="red"></div>
+            <div class="red"><label class="day">Jetzt</label></div>
+            <div class="green"><label>14:00</label></div>
             <div class="red"></div>
             <div class="red"></div>
             <div class="red"></div>
@@ -62,14 +57,14 @@ if (mysqli_connect_errno()) {
             <div class="yellow"></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
+            <div class="green"><label>14:00</label></div>
+            <div class="green"></div>
+            <div class="green"></div>
+            <div class="green "><label class="midnight">Donnerstag</label></div>
+            <div class="yellow"><label>01:00</label></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
-            <div class="green"><label>00:00</label></div>
-            <div class="green"></div>
-            <div class="green"></div>
-            <div class="green"></div>
-            <div class="green"></div>
             <div class="green"></div>
             <div class="green"></div>
             <div class="green"></div>
@@ -125,7 +120,7 @@ SELECT
     ampel_status.color,
     ampel_status.name,
     DATE_FORMAT(Ampel.timestamp, '%H:%i') AS time,
-    Ampel.timestamp AS DATE
+    unix_timestamp(Ampel.timestamp) AS DATE
 FROM
     Ampel
 JOIN ampel_status ON Ampel.status = ampel_status.id
@@ -159,26 +154,75 @@ LIMIT 0, 60
 
         <div class="strom_array">
             <?php
+            $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
+            while($row = mysqli_fetch_assoc($timeline_r)) {
 
+                $c++;
+                $time = $row['time'];
+                $label = "<label>".$time."</label>";
 
-    $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
-    while($row = mysqli_fetch_assoc($timeline_r)) {
+                if ($row['color'] == $color) $label = "";
+                // $date = date_create($row['DATE']);
 
-        $time = $row['time'];
-        $lable = "<label>".$time."</label>";
+                // echo "date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date);
+                // debugToConsole("date: ".$row['DATE']." ".$date ." date: ".wp_date('l', $row['DATE']). " ".wp_date('l', $date));
 
-        if ($row['color'] == $color) $lable = "";
+                if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
+                if ($c == 1) $label = "<label class='day'>Jetzt</label>";
 
-        ?>
-            <div class="<?php echo $row['color']; ?>"><?php echo $lable ?></div>
-            <?php
+                ?>
+                    <div class="<?php echo $row['color']; ?>"><?php echo $label; ?></div>
+                <?php
 
-        $color = $row['color'];        
-    } 
-    ?>
+                $color = $row['color']; 
+                $date = $row['DATE'];       
+            } 
+            ?>
         </div>
     </div>
 </div>
 <?php
 }
+
+if (empty($phase_color)) {
+    $phase_color = 'green';
+}
 ?>
+
+
+<div class="vpp-animation">
+    <img class="vpp-animation <?php echo $phase_color; ?>"
+        src="<?php echo get_template_directory_uri()?>/assets/vpp-animation/VPP_Stromampel_Animation_<?php echo $phase_color; ?>.svg" />
+</div>
+
+
+<div class="card-container card-container__center">
+
+    <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
+
+</div>
+
+
+
+<script>
+function show() {
+    var element = document.getElementById("overlay");
+    element.classList.remove("hidden");
+    element.classList.add("visible");
+
+    _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
+
+    var htmlElement = document.getElementsByTagName("html")[0];
+    htmlElement.classList.add("no-scroll");
+}
+
+
+function hide() {
+    var element = document.getElementById("overlay");
+    element.classList.remove("visible");
+    element.classList.add("hidden");
+
+    var htmlElement = document.getElementsByTagName("html")[0];
+    htmlElement.classList.remove("no-scroll");
+}
+</script>

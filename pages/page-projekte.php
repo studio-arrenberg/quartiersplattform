@@ -13,6 +13,13 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
+<div class="card-container card-container__center card-container__long">
+	<?php 
+		if ( ( is_user_logged_in() ) ) {
+			get_template_part( 'components/call', 'projekt' ); 
+		}
+	?>
+</div>
 
     <?php
 	// featured projekte

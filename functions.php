@@ -926,35 +926,28 @@ function tpl_geschichten( $single_template ) {
 add_filter( 'single_template', 'tpl_geschichten' );
 
 // function template part test
-function link_card($title, $text, $bg, $link, $args = ''){
+function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '')  {
+
+	set_query_var( 'link_card_title', $title );
+	set_query_var( 'link_card_text', $text );
+	set_query_var( 'link_card_bg', $bg );
+	set_query_var( 'link_card_link', $link );
 
 	if ($args) {
-
-		set_query_var( 'link_card_title', $title );
-		set_query_var( 'link_card_text', $text );
-		set_query_var( 'link_card_bg', $bg );
-		set_query_var( 'link_card_link', $link );
 
 		$query2 = new WP_Query($args);
 		// The Loop
 		while ( $query2->have_posts() ) {
 			$query2->the_post();
-			get_template_part('components/landscape_card');
+			get_template_part('elements/landscape_card');
 		}
 		// Restore original Post Data
 		wp_reset_postdata();
 
 	}
 	else {
-		set_query_var( 'link_card_title', $title );
-		set_query_var( 'link_card_text', $text );
-		set_query_var( 'link_card_bg', $bg );
-		set_query_var( 'link_card_link', $link );
-	
-		get_template_part('components/landscape_card');
+		get_template_part('elements/landscape_card');
 	}
-
-	
 
 }
 
@@ -968,7 +961,7 @@ function link_card($title, $text, $bg, $link, $args = ''){
 function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 	?>
-	<div class='card list-card shadow'>
+	<div class='card list-card shadow' data-content-piece="<?php echo $card_title; ?>">
 	<?php if ($link) echo "<a href='".$link."'>"; ?>
 
 		<div class='card-header'>
@@ -990,6 +983,7 @@ function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 <?php
 
 }
+
 
 // card list (diplay a list of cards)
 function card_list($args) {
@@ -1022,7 +1016,6 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
         <?php
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
-		// echo get_post_type();
 		echo "<div class='embrela-slide'>";
 		get_template_part('elements/'.$type.'', get_post_type());
 		echo "</div>";
@@ -1033,41 +1026,46 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 </div>
 
 <script>
-var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
+	var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
-var slides_num = <?php echo $slides; ?>;
-var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-var draggable_state = true;
+	var slides_num = <?php echo $slides; ?>;
+	var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+	var draggable_state = true;
 
-if (vw > 768) {
-    slides_num = slides_num * 2;
-    draggable_state = false;
-}
+	if (vw > 768) {
+		slides_num = slides_num * 2;
+		draggable_state = false;
+	}
 
-var options = {
-    dragFree: <?php echo $dragfree; ?>,
-    slidesToScroll: slides_num, // viewport > 768px 4
-    draggable: draggable_state
-}
-var embla = EmblaCarousel(emblaNode, options)
+	var options = {
+		dragFree: <?php echo $dragfree; ?>,
+		slidesToScroll: slides_num, // viewport > 768px 4
+		draggable: draggable_state
+	}
+	var embla = EmblaCarousel(emblaNode, options)
 
-embla.on('resize', () => {
-    var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-    slidesToScroll = '<?php echo $slides; ?>';
-    // console.log(vw);
-    if (vw > 768) {
-        slidesToScroll = slidesToScroll * 2;
-        draggable = false;
-    } else {
-        slidesToScroll = slides_num;
-        draggable = true;
-    }
+	embla.on('settle', (eventName) => {
+		// console.log(`Embla just triggered ${eventName}!`)
+		_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
+	})
 
-    embla.reInit({
-        slidesToScroll,
-        draggable
-    });
-});
+	embla.on('resize', () => {
+		var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+		slidesToScroll = '<?php echo $slides; ?>';
+		// console.log(vw);
+		if (vw > 768) {
+			slidesToScroll = slidesToScroll * 2;
+			draggable = false;
+		} else {
+			slidesToScroll = slides_num;
+			draggable = true;
+		}
+
+		embla.reInit({
+			slidesToScroll,
+			draggable
+		});
+	});
 </script>
 <?php
 }
@@ -1240,6 +1238,16 @@ function my_post_title_updater( $post_id ) {
 		   { $text = $text."..."; } // Ellipsis
 
 		$my_post['post_title'] = $text;
+
+		// set expire meta field with timestamp
+		// $duration = (60*60*24); // default
+		if (get_field('duration', $post_id ) == 'Stunde') $duration = (60*60);
+		else if (get_field('duration', $post_id ) == 'Tag') $duration = (60*60*24);
+		else if (get_field('duration', $post_id ) == 'Woche') $duration = (60*60*24*7);
+		// set field
+		update_post_meta($post_id, 'expire_timestamp', current_time('timestamp') + get_field('duration', $post_id ));
+
+		// update post
 		wp_update_post( $my_post ); // Update the post into the database
 	}
 
@@ -1281,8 +1289,7 @@ function wpdocs_dequeue_dashicon() {
 		return;
 	}
 	wp_deregister_style('dashicons');
-}
-add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
+} add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 
 // ultimate member remove styles
 add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
@@ -1399,7 +1406,7 @@ function um_deregister_styles() {
 	wp_deregister_style( 'um_misc');
 	wp_deregister_style( 'um_default_css');
 
-  } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
+} add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
 
 // // Activate WordPress Maintenance Mode
@@ -1411,53 +1418,67 @@ function um_deregister_styles() {
 // add_action('get_header', 'wp_maintenance_mode');
 
 // register embla carousel script
-add_action("wp_enqueue_scripts", "embla_carousel");
 function embla_carousel() { 
     wp_register_script('embla-carousel', 
 	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
-      
-}
+} add_action("wp_enqueue_scripts", "embla_carousel");
 
 // register emoji picker script
-add_action("wp_enqueue_scripts", "emoji_picker");
 function emoji_picker() { 
-	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
-	wp_enqueue_script('emoji_picker-config');
-	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
-	wp_enqueue_script('emoji_picker-util');
-	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
-	wp_enqueue_script('emoji_picker-emojiarea');
-	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
-	wp_enqueue_script('emoji_picker-picker');
-	wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
-    wp_enqueue_style( 'emoji_picker-css' );
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+    if (
+		strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
+		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false /* '/angebot-erstellen/' */
+		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
+		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
+	 ) {
+
+		// echo "<script>console.log('".$REQUEST_URI."')</script>";
+		// echo "<script>console.log('add emoji picker')</script>";
+		
+		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
+		wp_enqueue_script('emoji_picker-config');
+		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
+		wp_enqueue_script('emoji_picker-util');
+		wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
+		wp_enqueue_script('emoji_picker-emojiarea');
+		wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
+		wp_enqueue_script('emoji_picker-picker');
+		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
+		wp_enqueue_style( 'emoji_picker-css' );
+
+		// wp_deregister_script('jquery-ui-draggable');
+		// wp_deregister_script('jquery-ui-mouse');
+		// wp_deregister_script('jquery-ui-resizable');
+		// wp_deregister_script('jquery-ui-sortable');
+		// wp_deregister_script('jquery-ui-widget');
+		// wp_deregister_script('jquery-ui-selectable');
+
+		// wp_deregister_script('jquery-ui-core');
+	}
       
 }
-
-// jQuery Update
-/** * Install latest jQuery version 3.5.1. */
-if (!is_admin()) {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
-	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
-	wp_enqueue_script('jquery');
-}
+add_action("wp_enqueue_scripts", "emoji_picker");
 
 // jQuery deregister + min
 function my_init() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	// auto check if acf_form_head was called
-
     if (
 		!is_admin() 
-		&& !strpos($REQUEST_URI,'/profil/')
-		&& !strpos($REQUEST_URI,'/frage-dein-quartier/')
-		&& !strpos($REQUEST_URI,'/angebot-erstellen/')
-		&& !isset($_GET['action']) && !$_GET['action'] == 'edit'
+		&& strpos($REQUEST_URI,'/profil/') === false
+		&& strpos($REQUEST_URI,'/frage-dein-quartier/') === false
+		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
+		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
+		&& strpos($REQUEST_URI,'/register/') === false
+		&& !$_GET['action'] == 'edit'
 	 ) {
+
+		// echo "<script>console.log('".$REQUEST_URI."')</script>";
+		// echo "<script>console.log('remove jquery libs')</script>";
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
@@ -1478,10 +1499,23 @@ function my_init() {
 		wp_deregister_script('emoji_picker-emojiarea');
 		wp_deregister_script('emoji_picker-picker');
 
+		// wp customize scripts
+		wp_deregister_script('twentytwenty-color-calculations');
+
 	}
 
 }
-// add_action('init', 'my_init');
+add_action('init', 'my_init');
+
+
+// jQuery Update
+/** * Install latest jQuery version 3.5.1. */
+if (!is_admin()) {
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
+	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
+	wp_enqueue_script('jquery');
+}
 
 
 // veranstaltungen archive custom order
@@ -1502,8 +1536,7 @@ function debugToConsole($msg) {
 function my_acf_google_map_api( $api ){
 	$api['key'] = 'AIzaSyDPfffkf5pnMH5AmDLnVNb-3w1dNpdh-co';
 	return $api;	
-}
-add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+} add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 // create TAX projekt in veranstaltung & nachrichten
@@ -1573,8 +1606,8 @@ function comment_counter($id_post) {
 }
 
 // remove wp emojis
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+//remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+//remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 
 
 // Media Copyright function
@@ -1638,3 +1671,11 @@ function copywrite_beitragsbild() {
 
     }
 }
+
+// ACF Rename Post Title Label
+function my_acf_prepare_field( $field ) {
+	$field['label'] = "Titel";
+    return $field;
+    
+}
+add_filter('acf/prepare_field/name=_post_title', 'my_acf_prepare_field');

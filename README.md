@@ -82,6 +82,7 @@ Functions => `functions.php` <br>
 ```php
 $date = "2020-03-27 12:23:22";
 echo wp_date('F d, Y g:i a', strtotime($date)); 
+date('Ymd', strtotime(get_field( "zeitpunkt" )));
 ```
 `F j, G:i` November 28, 21:00 <br>
 `F j, Y G:i` November 28, 2020 21:00 <br>
@@ -127,22 +128,53 @@ echo wp_date('F d, Y g:i a', strtotime($date));
 
 [Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
 
+### Matomo Event Tracking
+[Basics](https://matomo.org/docs/event-tracking/)
+[In Depth](https://developer.matomo.org/guides/tracking-javascript-guide)
+
+```js
+_paq.push(['trackEvent', 'Categories', 'Action', 'Name/Page URL', 1000]);
+```
+#### Tracked
+* Share (social media buttons)
+* Interaction (Energie Ampel, Slider)
+
+#### Track Content
+
+```js
+_paq.push(['trackVisibleContentImpressions']);
+```
+```html 
+<div data-track-content>
+    <div data-content-piece="arrenberg wetter" >
+    </div>
+</div>
+```
+#### Tracked
+* Arrenberg Wetter
+* List Card
+* Footer
+
+
 ### Functions
 
 #### Link Card
 ```php
-link_card('Hallo Welt','Text....',get_template_directory_uri().'/assets/images/400x200.png', '/veranstaltungen');
-link_card('Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/veranstaltungen');
-link_card('','','','', $args); // query version
+landscape_card($args); // iterate landscape card with wp query
+landscape_card(null, 'Hallo Welt','Text....',get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/veranstaltungen'); // without query
+landscape_card(null, 'Hallo Welt','Text....',get_template_directory_uri().'/assets/images/400x200.png', '/veranstaltungen'); // without query
+landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Query and Manual
 ```
 #### List Card
 ```php 
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
 #### Slider
+`slides` get multiplied by 2 for desktop
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
+slider($query,'landscape_card', '1','false'); 
 ```
 #### Shorten
 ```php 

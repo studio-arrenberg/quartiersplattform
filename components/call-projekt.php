@@ -1,6 +1,6 @@
 <?php
 /**
- * Call to post Sharing angebot
+ * Call to post project
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -9,17 +9,14 @@
 
 ?>
 
-
-
-
-<div class="card  card-centered shadow bg_blue">
-    <a href="<?php echo get_site_url(); ?>/frage-dein-quartier/">
+<div class="card  card-centered shadow bg_green">
+    <a href="<?php echo get_site_url(); ?>/projekt-erstellen/">
         <div class="content white-text">
             <h3 class="card-title">
-                Frage dein Quartier
+                Erstelle ein Projekt
             </h3>
             <p class="preview-text">
-                Was wünscht du dir in deinem Viertel?
+                Verändere dein Quartier und lege ein Projekt an.
             </p>
         </div>
     </a>

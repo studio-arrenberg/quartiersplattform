@@ -38,9 +38,8 @@
 				'post_title' => false,
                 // 'return' => '?updated=true',
                 'return' => get_site_url().'/anmerkungen', // post gets dublicated
-				'fields' => array(
-					'text',
-				),
+				'field_groups' => array('group_5fb50c8393d52'), //Arrenberg App
+				
 				'submit_value'=>'Feedback senden',
 			)
     ); ?>

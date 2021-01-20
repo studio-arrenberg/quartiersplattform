@@ -27,39 +27,35 @@ if ( have_posts() ) {
         the_post();
 
         if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+
     ?>
 
-
     <div class="card-container card-container__center card-container__large ">
-        <div class="card">
-            <div class="content">
-                <div class="pre-title red-text">Solidarisches Angebot <span class="date red-text"><?php echo get_the_date('j. F'); ?>
-                        <span>
-                </div>
-                <h3 class="card-title-large">
-                    <?php  shorten_title(get_field('text'), '200'); ?>
-                </h3>
-            </div>
-            <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
-            <div class="emoji">
-                <?php  shorten_title(get_field('emoji'), '200'); ?>
-            </div>
-        </div>
+
+        <?php get_template_part('elements/card', get_post_type()); ?>
+
     </div>
+    <br>
+    <h4>Kontakt</h4>
+    <!-- kontakt -->
+    <?php if (is_user_logged_in()) { ?>
+        <?php if (get_field('phone')) { ?>
+            <!-- <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a> -->
+            <br>
+            <p><?php the_field('phone'); ?></p>
+        <?php } ?>
+        <?php if (get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) )) { ?>
+            <a class="button is-style-outline" href="mailto:<?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?></a>
+        <?php } ?>
+    <?php } ?>
 
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
-        <?php
-    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-        the_excerpt();
-    } else {
-        the_content( __( 'Continue reading', 'twentytwenty' ) );
-    }
+        <br>
 
+    <?php
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
-            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
-        <?php
+        <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
+    <?php
     }
 
     ?>
@@ -70,7 +66,7 @@ if ( have_posts() ) {
         }
 else {
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-    echo '<h3>Bearbeite dein Angebot</h3>';
+    echo '<h2>Bearbeite dein Angebot</h2><br>';
     acf_form (
         array(
             'form' => true,
@@ -78,11 +74,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             'submit_value' => 'Änderungen speichern',
             'post_title' => false,
             'post_content' => false,    
-            'fields' => array(
-                'text',                
-                'emoji',
-                'duration',                
-            )
+            'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
         )
     );
     
@@ -121,52 +113,49 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 
 ?>
 
-<script>
+    <script>
+    // picker for acf field
+    var el = $("#acf-field_5fcf563d5b576");
+    el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+    el.attr("data-emojiable", "true");
+    el.attr('maxlength', '20');
+    var alt;
+    // remove previous emojies
+    $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
 
-// picker for acf field
-var el = $( "#acf-field_5fcf563d5b576" );
-el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
-el.attr("data-emojiable", "true");
-el.attr('maxlength', '20');
-var alt;
-// remove previous emojies
-$('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
+        console.log($(".emoji-wysiwyg-editor").children().length);
 
-    console.log($(".emoji-wysiwyg-editor").children().length);
-
-    if ($(".emoji-wysiwyg-editor").children().length > 1) {
-        // console.log('remove childs ' + alt);
-        if (!alt) {
-            $('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
-        }
-        else if (alt) {
-            if (alt !==  $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
-                $('.emoji-wysiwyg-editor').children("img[alt='"+alt+"']").remove();
+        if ($(".emoji-wysiwyg-editor").children().length > 1) {
+            // console.log('remove childs ' + alt);
+            if (!alt) {
+                $('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
+            } else if (alt) {
+                if (alt !== $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
+                    $('.emoji-wysiwyg-editor').children("img[alt='" + alt + "']").remove();
+                } else {
+                    $('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
+                }
             }
-            else {
-                $('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
-            }
+            alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
         }
-        alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
-    }
-    
-});
 
-$(function() {
-    // Initializes and creates emoji set from sprite sheet
-    window.emojiPicker = new EmojiPicker({
-        emojiable_selector: '[data-emojiable=true]',
-        assetsPath: '<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/img/',
-        popupButtonClasses: 'fa fa-smile-o'
     });
-    // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-    // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-    // It can be called as many times as necessary; previously converted input fields will not be converted again
-    window.emojiPicker.discover();
-});
 
+    $(function() {
+        // Initializes and creates emoji set from sprite sheet
+        window.emojiPicker = new EmojiPicker({
+            emojiable_selector: '[data-emojiable=true]',
+            assetsPath: '<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/img/',
+            popupButtonClasses: 'fa fa-smile-o'
+        });
+        // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
+        // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
+        // It can be called as many times as necessary; previously converted input fields will not be converted again
+        window.emojiPicker.discover();
 
-</script>
+        $('div.emoji-wysiwyg-editor').attr('tabindex', '-1');
+    });
+    </script>
 
 
 
