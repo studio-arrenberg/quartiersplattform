@@ -39,14 +39,22 @@ if ( have_posts() ) {
     <h4>Kontakt</h4>
     <!-- kontakt -->
     <?php if (is_user_logged_in()) { ?>
-    <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a>
-    <a class="button is-style-outline" href="mailto:<?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?></a>
+        <?php if (get_field('phone')) { ?>
+            <!-- <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a> -->
+            <br>
+            <p><?php the_field('phone'); ?></p>
+        <?php } ?>
+        <?php if (get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) )) { ?>
+            <a class="button is-style-outline" href="mailto:<?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?></a>
+        <?php } ?>
     <?php } ?>
+
+        <br>
 
     <?php
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
-    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
+        <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
     <?php
     }
 
