@@ -56,22 +56,13 @@
         el.attr("data-emojiable", "true");
         el.attr('maxlength', '2');
 
-        // test
-        // var el = $( "#emoji" );
-        // el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
-        // el.attr("data-emojiable", "true");
-        // el.attr('maxlength', '2');
+        var el = $( "#acf-field_5fcf56cd9e356" );
+        el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+        el.attr("data-emojiable", "true");
+        el.attr('maxlength', '2');
 
-        // empty field
-        // $( ".emoji-picker-container" ).click(function() {
-        //     $( this ).children('.emoji-wysiwyg-editor').text('hi');
-        // });
-
-        // on change empty
-        // $( ".emoji-picker-container > .emoji-wysiwyg-editor" ).change(function() {
-        //     // $( this ).children('.emoji-wysiwyg-editor').text('');
-        // });
         
+
         // remove previous emojies
         $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
             console.log('call');

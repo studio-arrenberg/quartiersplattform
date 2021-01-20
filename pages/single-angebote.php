@@ -36,8 +36,12 @@ if ( have_posts() ) {
 
     </div>
 
-    <?php 
+    <!-- kontakt -->
+    <?php if (is_user_logged_in()) { ?>
+        <p><?php the_field('phone'); ?></p>
+    <?php } ?>
 
+    <?php
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
             <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>

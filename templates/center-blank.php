@@ -22,7 +22,7 @@ if (has_post_thumbnail()) {
 ?>
 
 
-<main id="site-content" class="center-header-template" role="main">
+<main id="site-content" class="center-header-template <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>" role="main">
 
     <div class="center-header">
         <!-- Bild -->
@@ -31,10 +31,8 @@ if (has_post_thumbnail()) {
         <?php } ?>
 
         <!-- Post title -->
-        <div class="center-header-content <?php if (has_post_thumbnail()) echo "text-only"; ?>">
+        <div class="center-header-content <?php if (!has_post_thumbnail()) echo "text-only"; ?>">
             <h1><?php the_title(); ?></h1>
-            <h4><?php // echo get_the_author(); ?></h4>
-            <p><?php // the_field('kurzbeschreibung'); // veraltet ?></p>
         </div>
 
     </div>

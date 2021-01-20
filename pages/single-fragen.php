@@ -112,6 +112,13 @@ el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
 el.attr("data-emojiable", "true");
 el.attr('maxlength', '20');
 var alt;
+
+var el = $( "#acf-field_5fcf56cd9e356" );
+el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+el.attr("data-emojiable", "true");
+el.attr('maxlength', '20');
+
+
 // remove previous emojies
 $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){
 
