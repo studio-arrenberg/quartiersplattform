@@ -1528,9 +1528,8 @@ button.toggle {
   color: #0091ff;
 }
 
-.no-single-header-image .single-header-content{
-  align-items: center ;
-}
+
+
 .single-header-image {
   border-radius: 20px;
   margin: 0px auto 20px auto;
@@ -1618,6 +1617,9 @@ button.toggle {
 .share-button a:first-of-type{
   margin-left: 0px;
 }
+
+
+
 @media (min-width: 782px) {
   .single-header-image {
     max-width: 700px;
@@ -1679,6 +1681,20 @@ button.toggle {
 
     /* object-fit: contain; */
   }
+
+
+  .without-single-header-image{
+    min-height: unset;
+    align-items: center ;
+    margin: 50px 0px 90px 0px;
+    text-align: center;
+  }
+
+  .without-single-header-image .single-header-content{
+    align-items: center ;
+    margin: 0px;
+  }
+
 }
 
 /* TEMPLATE Center Header */
@@ -5072,6 +5088,13 @@ figure.wp-block-table.is-style-stripes {
     font-size: 90px;
   }
 
+
+  .card-container__large .card img.emoji {
+    bottom: unset;
+    right: 0px;
+    font-size: 59px;
+  }
+
   .card-container__large .card .card-title {
     font-size: 2.8rem;
     line-height: 3rem;
@@ -5222,7 +5245,7 @@ padding: 5px 10px 3px 10px;
 .strom_array label.midnight{
   top: -35px;
   min-width: 80px;
-  width: auto;
+  /* width: auto; */
   margin-left: -30px;
 } 
 
