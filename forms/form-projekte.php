@@ -28,7 +28,7 @@ get_header();
 	</div>
 	
 <div class="publish-form">
-    <h2>Erstelle dein eigenes Angebot</h2>
+    <h2>Erstelle dein eigenes Projekt</h2>
     <br>
 
     <?php // acf_form_head(); ?>
@@ -50,13 +50,16 @@ get_header();
 				'post_content' => false,
                 'post_title' => true,
                 'return' => get_site_url().'/projekte', // post gets dublicated
-				'fields' => array(
-                    'slogan',
-                    'emoji',
-                    'text',
-                    'goal',
-                    '_thumbnail_id',
-				),
+                // 'field_groups' => array(''),
+                'field_groups' => array('group_5fcf55e0af4db'),
+				// 'fields' => array(
+                //     'slogan',
+                //     'emoji',
+                //     // 'field_5fcf55f35b575',
+                //     'goal',
+                //     '_thumbnail_id',
+
+				// ),
 				'submit_value'=>'Projekt veröffentlichen',
 			)
     ); 

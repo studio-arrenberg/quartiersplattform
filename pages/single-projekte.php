@@ -229,14 +229,15 @@ else {
                 'submit_value' => 'Änderungen speichern',
                 'post_title' => true,
                 'post_content' => false,    
-                'fields' => array(
-                    // fehlt: titel, beschreibung
-                    'target',
-                    'emoji',
-                    'slogan',
-                    'description',
-                    '_thumbnail_id', // Naming Bild ≠ Bilder
-                )
+                'field_groups' => array('group_5fcf55e0af4db'),
+                // 'fields' => array(
+                //     // fehlt: titel, beschreibung
+                //     'target',
+                //     'emoji',
+                //     'slogan',
+                //     'description',
+                //     '_thumbnail_id', // Naming Bild ≠ Bilder
+                // )
             )
         );
         
