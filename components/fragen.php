@@ -18,6 +18,7 @@
     <?php 
     acf_form(
 			array(
+                'form' => true,
 				'id' => 'fragen-form',
 				'html_before_fields' => '',
 				'html_after_fields' => '',
@@ -30,10 +31,10 @@
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => false,
+                'submit_value'=>'Frage veröffentlichen',
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App
                 'field_groups' => array('group_5fca73c42d258'), //Local
-				'submit_value'=>'Frage veröffentlichen',
 			)
     ); 
 
