@@ -229,7 +229,10 @@ else {
                 'submit_value' => 'Änderungen speichern',
                 'post_title' => true,
                 'post_content' => false,    
-                'field_groups' => array('group_5fcf55e0af4db'),
+                'uploader' => 'basic',
+                'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                'field_groups' => array('group_5c5de08e4b57c'), //AP1
+                'field_groups' => array('group_5c5de08e4b57c'), //Local
                 // 'fields' => array(
                 //     // fehlt: titel, beschreibung
                 //     'target',

@@ -60,11 +60,10 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             'submit_value' => 'Änderungen speichern',
             'post_title' => false,
             'post_content' => false,    
-            'fields' => array(
-                'text',                
-                'emoji',
-                'duration',                
-            )
+
+            'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
+            'field_groups' => array('group_5fcf55e0af4db'), //AP1
+            'field_groups' => array('group_5fca73097717d'), //Local
         )
     );
     

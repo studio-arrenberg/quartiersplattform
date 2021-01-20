@@ -46,20 +46,15 @@ get_header();
                     'post_type' => 'projekte',
                     'post_status' => 'publish',
 				),
-				'field_el' => 'div',
+                'field_el' => 'div',
+                'uploader' => 'basic',
 				'post_content' => false,
                 'post_title' => true,
                 'return' => get_site_url().'/projekte', // post gets dublicated
-                // 'field_groups' => array(''),
-                'field_groups' => array('group_5fcf55e0af4db'),
-				// 'fields' => array(
-                //     'slogan',
-                //     'emoji',
-                //     // 'field_5fcf55f35b575',
-                //     'goal',
-                //     '_thumbnail_id',
-
-				// ),
+                
+                'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                'field_groups' => array('group_5c5de08e4b57c'), //AP1
+                'field_groups' => array('group_5c5de08e4b57c'), //Local
 				'submit_value'=>'Projekt veröffentlichen',
 			)
     ); 
