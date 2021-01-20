@@ -5658,3 +5658,21 @@ input[type="radio"]:checked {
 .acf-button-group label:last-of-type {
   border-radius: 0px 20px 20px 0px;
 }
+
+.acf-label label{
+font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+sans-serif;
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+  margin-bottom: 3px;
+
+}
+
+
+.acf-label p{
+
+  font-size: 1.6rem;
+  line-height: 2.3rem;
+  margin-bottom: 3px;
+
+}
