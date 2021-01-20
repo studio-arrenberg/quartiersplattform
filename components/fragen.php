@@ -32,7 +32,6 @@
                 'post_title' => false,
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App
-                'field_groups' => array('group_5fcf56cd99219'), //AP1
                 'field_groups' => array('group_5fca73c42d258'), //Local
 				'submit_value'=>'Frage veröffentlichen',
 			)
