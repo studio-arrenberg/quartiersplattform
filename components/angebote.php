@@ -12,7 +12,7 @@
     <h2>Erstelle dein eigenes Angebot</h2>
     <br>
 
-    <?php // acf_form_head(); ?>
+    <?php acf_form_head(); ?>
     <?php // acf_form('feedback-form'); ?>
 
     <?php $hierarchical_tax = array( 1 ); ?>
@@ -36,9 +36,9 @@
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => false,
-				'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
-                'field_groups' => array('group_5fcf55e0af4db'), //AP1
-                'field_groups' => array('group_5fca73097717d'), //Local
+                'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
+                
+                
 				'submit_value'=>'Angebot senden',
 			)
     ); 

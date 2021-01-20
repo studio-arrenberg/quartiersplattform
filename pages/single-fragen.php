@@ -66,8 +66,6 @@ else {
                 'post_title' => false,
                 'post_content' => false,    
                 'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App
-                'field_groups' => array('group_5fcf56cd99219'), //AP1
-                'field_groups' => array('group_5fca73c42d258'), //Local
             )
         );
         

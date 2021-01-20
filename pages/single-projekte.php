@@ -40,7 +40,7 @@ get_header();
 			?>
 
 
-    <div class="single-header  "> <!-- no-single-header-image -->
+    <div class="single-header  "> <!-- without-single-header-image -->
 
 
         <!-- Bild -->
@@ -231,8 +231,6 @@ else {
                 'post_content' => false,    
                 'uploader' => 'basic',
                 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
-                'field_groups' => array('group_5c5de08e4b57c'), //AP1
-                'field_groups' => array('group_5c5de08e4b57c'), //Local
                 // 'fields' => array(
                 //     // fehlt: titel, beschreibung
                 //     'target',

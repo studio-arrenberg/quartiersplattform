@@ -39,8 +39,7 @@
                 // 'return' => '?updated=true',
                 'return' => get_site_url().'/anmerkungen', // post gets dublicated
 				'field_groups' => array('group_5fb50c8393d52'), //Arrenberg App
-				'field_groups' => array('group_5fb50c8393d52'), //AP1
-				'field_groups' => array('group_5fa01d2c890c4'), //Local
+				
 				'submit_value'=>'Feedback senden',
 			)
     ); ?>
