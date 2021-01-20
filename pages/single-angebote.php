@@ -36,7 +36,7 @@ if ( have_posts() ) {
 
     </div>
     <br>
-    <h2>Johann kontaktieren </h2>
+    <h4>Kontakt</h4>
     <!-- kontakt -->
     <?php if (is_user_logged_in()) { ?>
     <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a>
