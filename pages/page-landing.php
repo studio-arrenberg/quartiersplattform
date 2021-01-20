@@ -111,6 +111,17 @@ get_header();
 
 
 
+
+    <?php 
+
+// Smart cards 
+		
+		if(current_user_can('administrator')) {
+			?>
+
+
+
+
     <div class="card smart-card shadow">
         <div class="card-header">
             <h2>Hallo Johann, </h2>
@@ -171,15 +182,6 @@ get_header();
     </div>
 
 
-	
-	<?php 
-
-	// Smart cards 
-            
-            if(current_user_can('administrator')) {
-                ?>
-            
-        
 
     <div class="card smart-card shadow">
         <div class="card-header">
@@ -214,7 +216,7 @@ get_header();
         </div>
     </div>
 
-	<?php 
+    <?php 
             }
             ?>
 

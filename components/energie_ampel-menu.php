@@ -60,7 +60,7 @@ if (mysqli_connect_errno()) {
             <div class="green"><label>14:00</label></div>
             <div class="green"></div>
             <div class="green"></div>
-            <div class="green "><label class="midnight">Dienstag</label></div>
+            <div class="green "><label class="midnight">Donnerstag</label></div>
             <div class="yellow"><label>01:00</label></div>
             <div class="yellow"></div>
             <div class="yellow"></div>
