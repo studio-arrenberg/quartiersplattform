@@ -14,8 +14,9 @@
     <a href="<?php echo get_site_url(); ?>/gemeinsam/">
         <div class="content white-text">
             <div class="emojis-top">🛠 🎁 🚀</div>
+         
             <h3 class="card-title">
-Dein Quartier wird zur <br> Sharing-Community
+                Dein Quartier wird zur <br> Sharing-Community
             </h3>
             <p class="preview-text">
                 + Stell eine Frage an das Quartier <br>

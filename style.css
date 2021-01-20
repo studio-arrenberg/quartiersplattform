@@ -4516,6 +4516,8 @@ figure.wp-block-table.is-style-stripes {
   bottom: auto;
   right: auto;
   font-size: unset;
+  max-width: unset;
+  min-width: unset;
 }
 
 
@@ -4622,6 +4624,13 @@ figure.wp-block-table.is-style-stripes {
   max-height: 210px;
   margin-right: 15px;
   height: calc((100vw - 40px) / 2);
+}
+
+
+@media (min-width: 400px) {
+  .square {
+    height: calc((400px - 40px) / 2);
+  }
 }
 
 .square .card-title {
@@ -4894,7 +4903,7 @@ figure.wp-block-table.is-style-stripes {
   }
 
   .square {
-    max-height: calc((100vw - 60px) / 4);
+   height: calc((100vw - 60px) / 4);
   }
 
   .square .preview-text {
