@@ -40,7 +40,7 @@ if ( have_posts() ) {
     <!-- kontakt -->
     <?php if (is_user_logged_in()) { ?>
     <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a>
-    <a class="button is-style-outline" href="mailto:hallo@arrenberg.studio">hallo@arrenberg.studio</a>
+    <a class="button is-style-outline" href="mailto:<?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?></a>
     <?php } ?>
 
     <?php
