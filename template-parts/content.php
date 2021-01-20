@@ -30,14 +30,14 @@
 	?>
 
 
-    <div class="single-header">
+    <div class="single-header <?php if (!has_post_thumbnail()) echo "without-single-header-image"; ?>" >
         <!-- Bild -->
 		<?php if (has_post_thumbnail()) { ?>
         	<img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 		<?php } ?>
 
         <!-- Post title -->
-        <div class="single-header-content <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>">
+        <div class="single-header-content">
 			<h1><?php the_title(); ?></h1>
         </div>
 
