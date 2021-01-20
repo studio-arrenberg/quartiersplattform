@@ -37,8 +37,6 @@
 				'post_content' => false,
                 'post_title' => false,
 				'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
-                'field_groups' => array('group_5fcf55e0af4db'), //AP1
-                'field_groups' => array('group_5fca73097717d'), //Local
 				'submit_value'=>'Angebot senden',
 			)
     ); 
