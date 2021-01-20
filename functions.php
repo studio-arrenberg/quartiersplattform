@@ -1675,7 +1675,6 @@ function copywrite_beitragsbild() {
 // ACF Rename Post Title Label
 function my_acf_prepare_field( $field ) {
 	$field['label'] = "Titel";
-	$field['placeholder'] = "Gib deinem Projekt einen Titel.";
     return $field;
     
 }
