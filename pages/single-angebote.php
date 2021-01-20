@@ -38,7 +38,7 @@ if ( have_posts() ) {
 
     <!-- kontakt -->
     <?php if (is_user_logged_in()) { ?>
-        <p><?php the_field('phone'); ?></p>
+        <a class="button" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></p>
     <?php } ?>
 
     <?php
