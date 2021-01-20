@@ -198,7 +198,7 @@ if (empty($phase_color)) {
 
 <div class="card-container card-container__center">
 
-    <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/virtual-power-plant'); ?>
+    <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vpp-projekt.jpg', '/wuppertal-spart-watt'); ?>
 
 </div>
 
