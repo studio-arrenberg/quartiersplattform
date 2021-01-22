@@ -74,6 +74,8 @@ function twentytwenty_theme_support() {
 	// preview (4:3)
 	add_image_size( 'preview_s', 160, 120, array( 'center', 'center' ));
 	add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); 
+	add_image_size( 'preview_m2', 400, 300, array( 'center', 'center' ));
+	add_image_size( 'preview_m3', 600, 450, array( 'center', 'center' )); 
 	add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
 	// landscape (2:1)
 	// add_image_size( 'landscape_s', 200, 100); 

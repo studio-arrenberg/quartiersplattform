@@ -113,6 +113,10 @@ date('Ymd', strtotime(get_field( "zeitpunkt" )));
 | 4:3       | 160x120 | 200x150 | 800x600 |
 | Landscape | 200x100 | 400x200 | 970x485 |
 
+#### new:
+add_image_size( 'preview_ml', 400, 300, array( 'center', 'center' )); 
+
+
 
 ### SEO
 
