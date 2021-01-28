@@ -75,7 +75,7 @@ function twentytwenty_theme_support() {
 	add_image_size( 'preview_s', 160, 120, array( 'center', 'center' ));
 	add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); 
 	add_image_size( 'preview_m2', 400, 300, array( 'center', 'center' ));
-	add_image_size( 'preview_m3', 600, 450, array( 'center', 'center' )); 
+	// add_image_size( 'preview_m3', 600, 450, array( 'center', 'center' )); 
 	add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
 	// landscape (2:1)
 	// add_image_size( 'landscape_s', 200, 100); 
@@ -1681,3 +1681,34 @@ function my_acf_prepare_field( $field ) {
     
 }
 add_filter('acf/prepare_field/name=_post_title', 'my_acf_prepare_field');
+
+// Veranstaltungen rebuild datetime field
+function veranstaltungen_field_zeitpunkt() {
+		
+	$args3 = array(
+		'post_type'=>'veranstaltungen', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> -1,
+		'meta_key' => 'event_date',
+		'meta_query' => array(
+			array(
+				'key'     => 'event_date',
+				'value'   => '',
+				'compare' => '='
+			)
+		)
+	);
+
+	$query2 = new WP_Query($args3);
+
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+
+		update_post_meta(get_the_id(), 'event_date', date("Y-m-d",strtotime(get_field('zeitpunkt'))));
+		update_post_meta(get_the_id(), 'event_time', date("H:i:s",strtotime(get_field('zeitpunkt'))));
+
+	}
+	wp_reset_postdata();
+
+}
+add_action( 'init', 'veranstaltungen_field_zeitpunkt' );

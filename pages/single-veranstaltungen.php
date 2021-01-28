@@ -20,7 +20,20 @@ get_header();
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
 				$cover_header_classes = ' bg-image';
-			}
+            }
+
+
+            echo date_default_timezone_get();
+            
+            $date = get_field('event_date');
+            $time = get_field('event_time');
+
+            the_field('event_date');
+            echo "<br>";
+            the_field('zeitpunkt');
+            echo "<br>";
+            echo $date;
+            echo "<br>".$time;
 
 			?>
 
@@ -29,7 +42,7 @@ get_header();
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
             <h3><?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id );  ?>
-                <span class="date"><?php echo wp_date('j. F G:i', strtotime(get_field('zeitpunkt'))); ?></span> </h3>
+                <span class="date"><?php echo wp_date('j. F G:i', strtotime("$date $time")); ?></span> </h3>
         </div>
 
         <!-- projekt / akteur -->
