@@ -34,12 +34,11 @@ else {
                 
                 <?php  echo $the_slug; ?> 
                  
-                <span class="date"><?php echo wp_date('j. F', strtotime(get_field('zeitpunkt'))); ?><span>
+                <span class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?><span>
 
                 </div>
                     <h3 class="card-title"><?php shorten_title(get_the_title(), '30'); ?></h3>
-                    <p class="preview-text"> <?php  get_excerpt(get_the_content(), $char); echo $char?> 
-
+                    <p class="preview-text"> <?php get_excerpt(get_the_content(), $char); ?> 
                 </p>
         </div>
     </a>
