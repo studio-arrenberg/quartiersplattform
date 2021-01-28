@@ -1075,10 +1075,15 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 // calendar download button
 function calendar_download($post) {
 	
+
+	$date = get_field('event_date');
+	$time = get_field('event_time');
+	$time_end = get_field('event_end');
+			
 	// needed variabels
     $title = get_the_title();
-    $start = date('Ymd', strtotime(get_field( "zeitpunkt" ))) . "T" . date('His', strtotime(get_field( "zeitpunkt" )));
-    $ende = date('Ymd', strtotime(get_field( "ende" ))) . "T" . date('His', strtotime(get_field( "ende" )));
+    $start = date('Ymd', strtotime(strtotime("$date $time"))) . "T" . date('His', strtotime(strtotime("$date $time")));
+    $ende = date('Ymd', strtotime(gstrtotime("$date $time"))) . "T" . date('His', strtotime(strtotime("$date $time_end")));
 	$creation = date('Ymd') . "T" . date('His');
 
 	// directory
