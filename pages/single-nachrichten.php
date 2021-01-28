@@ -35,7 +35,7 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span> </h3>
+            <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span></h3>
         </div>
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
     </div>

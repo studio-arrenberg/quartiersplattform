@@ -19,6 +19,7 @@ get_header();
 		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
 
 		<br><br>
+
 		<a class="button" href="<?php echo get_site_url(); ?>">Startseite</a>
 
 		<?php
