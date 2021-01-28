@@ -1719,7 +1719,8 @@ function veranstaltungen_field_zeitpunkt() {
 add_action( 'init', 'veranstaltungen_field_zeitpunkt' );
 
 // acf fields import
-if( function_exists('acf_add_local_field_group') ):
+add_action('acf/init', 'my_acf_add_local_field_groups');
+function my_acf_add_local_field_groups() {
 
 	acf_add_local_field_group(array(
 		'key' => 'group_5fcf55e0af4db',
@@ -2579,5 +2580,4 @@ if( function_exists('acf_add_local_field_group') ):
 		'active' => true,
 		'description' => '',
 	));
-	
-	endif;
+}
