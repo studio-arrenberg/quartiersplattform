@@ -13,6 +13,40 @@ get_header();
 
 <main id="site-content" role="main" >
 
+<?php
+// please remove ---------------------------- remove! ----------------------------
+$args3 = array(
+		'post_type'=>'veranstaltungen', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> -1,
+		'meta_query' => array(
+			'relation' => 'OR',
+			array(
+				'key' => 'event_date',
+				'value' => 'No',
+				'compare' => 'LIKE'
+			),
+			array(
+			   'key' => 'event_date',
+				'compare' => 'NOT EXISTS'
+			)
+			)
+	);
+
+	$query2 = new WP_Query($args3);
+
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+
+
+		echo get_the_title()." date: ".get_field('event_date')."<br>";
+		// update_post_meta(get_the_id(), 'event_date', date("Y-m-d",strtotime(get_field('zeitpunkt'))));
+		// update_post_meta(get_the_id(), 'event_time', date("H:i:s",strtotime(get_field('zeitpunkt'))));
+
+	}
+	wp_reset_postdata();
+	?>
+
     <?php
 	// featured veranstaltungen
 	$args3 = array(
