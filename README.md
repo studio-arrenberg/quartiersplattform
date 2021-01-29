@@ -90,8 +90,6 @@ date('Ymd', strtotime(get_field( "event_date" )));
 
 
 
-
-
 [Get Term Archive](https://wordpress.stackexchange.com/questions/48435/get-term-archive-url-link)
 
 [More](https://github.com/studio-arrenberg/quartiersplattform/blob/main/wordpress.md)
