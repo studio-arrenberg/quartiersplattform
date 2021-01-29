@@ -5,6 +5,11 @@
  *
  */
 
+if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+}
+
 get_header();
 ?>
 
@@ -15,7 +20,9 @@ get_header();
 	if ( have_posts() ) {
 
 		while ( have_posts() ) {
-			the_post();
+            the_post();
+            
+            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
 
 			// prep image url
 			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
@@ -36,11 +43,23 @@ get_header();
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
             <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span></h3>
+
+
+            <?php
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
+                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
+            <?php
+            }
+            ?>
+
         </div>
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
     </div>
 
     <div class="site-content">
+
+    <?php the_field('text'); ?>
 
     </div>
 
@@ -124,9 +143,44 @@ get_header();
     </div><!-- .comments-wrapper -->
 
     <?php
-			}
+            }
+            
+
+        }
+        else {
+            
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                echo '<h2>Bearbeite deine Nachricht</h2><br>';
+                acf_form (
+                    array(
+                        'form' => true,
+                        'return' => '%post_url%',
+                        'submit_value' => 'Änderungen speichern',
+                        'post_title' => true,
+                        'post_content' => false,    
+                        'uploader' => 'basic',
+                        'field_groups' => array('group_5c5de02092e76'), //Arrenberg App
+                        // 'fields' => array(
+                        //     // fehlt: titel, beschreibung
+                        //     'target',
+                        //     'emoji',
+                        //     'slogan',
+                        //     'description',
+                        //     '_thumbnail_id', // Naming Bild ≠ Bilder
+                        // )
+                    )
+                );
+                
+            }
+        
+
+
+
 		}
-	}
+    }
+}
+
+    
 
 	?>
 

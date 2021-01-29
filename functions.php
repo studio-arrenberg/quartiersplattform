@@ -1267,7 +1267,9 @@ function my_post_title_updater( $post_id ) {
 		// $my_post['post_content'] = "hellooooooo";
 		// wp_update_post( $my_post );
 		
-		wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+		if (!empty($tax)) {
+			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+		}
 
 		wp_redirect( get_post_permalink($post_id) ); exit;
 
