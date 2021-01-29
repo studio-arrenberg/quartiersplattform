@@ -1,15 +1,28 @@
-<?php
-/**
- * Angebote
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
-
+<?php 
+/* 
+*
+* Template Name: Frage erstellen
+*
+*/
+acf_form_head();
+get_header();
 ?>
 
-    <h2>Stelle eine Frage an dein Quartier</h2>
+<main id="site-content" role="main">
+    <div class="card-container card-container__center card-container__large ">
+        <div class="card bg_blue">
+            <div class="content white-text">
+                <h3 class="card-title-large">
+                    Stelle eine Frage an dein Quartier!
+                </h3>
+                <p class="preview-text-large">
+                    Was wünscht du dir in deinem Viertel? 
+                </p>
+            </div>
+        </div>
+    </div>
+
+<h2>Stelle eine Frage an dein Quartier</h2>
     <br>
 
     <?php // acf_form_head(); ?>
@@ -54,12 +67,12 @@
         var el = $( "#acf-field_5fcf563d5b576" );
         el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
         el.attr("data-emojiable", "true");
-        el.attr('maxlength', '2');
+        // el.attr('maxlength', '2');
 
         var el = $( "#acf-field_5fcf56cd9e356" );
         el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
         el.attr("data-emojiable", "true");
-        el.attr('maxlength', '2');
+        // el.attr('maxlength', '2');
 
         
 
@@ -86,4 +99,8 @@
     
 
     </script>
-    <!-- </a> -->
+
+    </div>
+</main><!-- #site-content -->
+
+<?php  get_footer(); ?>

@@ -118,7 +118,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
     var el = $("#acf-field_5fcf563d5b576");
     el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el.attr("data-emojiable", "true");
-    el.attr('maxlength', '20');
+    // el.attr('maxlength', '20');
     var alt;
     // remove previous emojies
     $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {

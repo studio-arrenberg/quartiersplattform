@@ -1,14 +1,30 @@
-<?php
-/**
- * Angebote
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
+<?php 
+/* 
+*
+* Template Name: Angebot erstellen
+*
+*/
+acf_form_head();
+get_header();
 ?>
 
-<div class="publish-form">
+<main id="site-content" role="main">
+    <div class="card-container card-container__center card-container__large ">
+        <div class="card bg_red">
+            <div class="content white-text">
+                <h3 class="card-title-large">
+                    Teile ein Angebot
+                </h3>
+                <p class="preview-text-large">
+                    Biete deine Hilfe an und unterstütze dein Viertel.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="publish-form">
     <h2>Erstelle dein eigenes Angebot</h2>
     <br>
 
@@ -51,7 +67,7 @@
     var el = $("#acf-field_5fcf563d5b576");
     el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el.attr("data-emojiable", "true");
-    el.attr('maxlength', '2');
+    // el.attr('maxlength', '2');
 
     // remove previous emojies
     $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
@@ -76,3 +92,9 @@
         $('div.emoji-wysiwyg-editor').attr('tabindex', '-1');
     });
     </script>
+
+
+    </div>
+</main><!-- #site-content -->
+
+<?php get_footer(); ?>

@@ -1723,3 +1723,64 @@ function veranstaltungen_field_zeitpunkt() {
 
 }
 add_action( 'init', 'veranstaltungen_field_zeitpunkt' );
+
+
+// assigne templates to pages
+add_filter( 'page_template', 'custom_page_template', 10, 2 );
+add_filter( 'display_post_states', 'custom_page_template', 1, 2);
+function custom_page_template( $page_template, $post_states ) {
+		global $post;
+
+		$post_states = [];
+		$prefix = "QP ";
+        
+			if ($post->post_title == "Überblick") {
+				$post_states[] = $prefix.'Überblick';
+				$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
+			}
+			else if ($post->post_title == "Veranstaltungen") {
+				$post_states[] = $prefix.'Veranstaltungen';
+				$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
+			}
+			else if ($post->post_title == "Projekte") {
+				$post_states[] = $prefix.'Projekte';
+				$page_template= get_stylesheet_directory() . '/pages/page-projekte.php';
+			}
+			else if ($post->post_title == "Projekt erstellen") {
+				$post_states[] = $prefix.'Projekt erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-projekte.php';
+			}
+			else if ($post->post_title == "Gemeinsam") {
+				$post_states[] = $prefix.'Gemeinsam';
+				$page_template= get_stylesheet_directory() . '/pages/page-gemeinsam.php';
+			}
+			else if ($post->post_title == "Frage erstellen") {
+				$post_states[] = $prefix.'Frage erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-fragen.php';
+			}
+			else if ($post->post_title == "Angebot erstellen") {
+				$post_states[] = $prefix.'Angebot erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
+			}
+			else if ($post->post_title == "Geschichten") {
+				$post_states[] = $prefix.'Geschichten page';
+				$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
+			}
+			else if ($post->post_title == "Anmerkungen") {
+				$post_states[] = $prefix.'Anmerkungen';
+				$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
+			}
+			else if ($post->post_title == "Profil") {
+				$post_states[] = $prefix.'Profil';
+				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
+			}
+
+		
+		if (doing_filter( 'page_template') && !empty($page_template)) {
+			return $page_template;
+		}
+		else if (doing_filter( 'display_post_states') && !empty($post_states)) {
+			return $post_states;
+		}
+		
+}

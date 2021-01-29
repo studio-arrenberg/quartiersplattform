@@ -66,12 +66,12 @@ get_header();
 var el = $( "#acf-field_5fcf563d5b576" );
 el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
 el.attr("data-emojiable", "true");
-el.attr('maxlength', '2');
+// el.attr('maxlength', '2');
 
 var el = $( "#acf-field_5fc64834f0bf2" );
 el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
 el.attr("data-emojiable", "true");
-el.attr('maxlength', '2');
+// el.attr('maxlength', '2');
 
 // remove previous emojies
 $('div.emoji-picker-container').bind('DOMSubtreeModified', function(){

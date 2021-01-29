@@ -251,13 +251,13 @@ else {
     var el = $("#acf-field_5fc64834f0bf2");
     el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el.attr("data-emojiable", "true");
-    el.attr('maxlength', '20');
+    // el.attr('maxlength', '20');
     var alt;
 
     var el2 = $("#acf-field_5fcf563d5b576");
     el2.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
     el2.attr("data-emojiable", "true");
-    el2.attr('maxlength', '20');
+    // el2.attr('maxlength', '20');
     
 
     // remove previous emojies
