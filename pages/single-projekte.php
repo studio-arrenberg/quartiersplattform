@@ -62,7 +62,6 @@ get_header();
                 <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
             <?php
             }
-
             ?>
 
         </div>
@@ -89,6 +88,17 @@ get_header();
         <p><?php the_field('goal'); ?></p>
     </div>
     <?php } ?>
+
+
+    <!-- Nachricht erstellen -->
+
+    <?php
+        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        ?>
+            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht bearbeiten</a>
+        <?php
+        }
+    ?>
 
     <!-- Anstehende Veranstaltungen -->
     <?php

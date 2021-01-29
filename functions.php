@@ -1258,6 +1258,21 @@ function my_post_title_updater( $post_id ) {
 		// update post
 		wp_update_post( $my_post ); // Update the post into the database
 	}
+	if ( get_post_type($post_id) == 'nachrichten' ) {
+
+		$tax = $_POST['project_tax'];
+
+		// $my_post = array();
+		// $my_post['ID'] = $post_id;
+		// $my_post['post_content'] = "hellooooooo";
+		// wp_update_post( $my_post );
+		
+		wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+
+		wp_redirect( get_post_permalink($post_id) ); exit;
+
+
+	}
 
 }
 
@@ -1481,6 +1496,7 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/frage-dein-quartier/') === false
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
+		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
@@ -1774,6 +1790,10 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Profil';
 				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
 			}
+			else if ($post->post_title == "Nachricht erstellen") {
+				$post_states[] = $prefix.'Nachricht erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-nachrichten.php';
+			}
 
 		
 		if (doing_filter( 'page_template') && !empty($page_template)) {
@@ -1784,3 +1804,31 @@ function custom_page_template( $page_template, $post_states ) {
 		}
 		
 }
+
+// add pages
+add_action( 'after_setup_theme', 'create_form_page' );
+function create_form_page(){
+
+    $title = 'Nachricht erstellen';
+    $slug = 'nachricht-erstellen';
+    $page_content = ''; // your page content here
+    $post_type = 'page';
+
+    $page_args = array(
+        'post_type' => $post_type,
+        'post_title' => $title,
+        'post_content' => $page_content,
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_slug' => $slug
+	);
+	
+	if ( ! function_exists( 'post_exists' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/post.php' );
+	}
+
+    if(post_exists($title) === 0){
+        $page_id = wp_insert_post($page_args);
+    }
+
+} 
