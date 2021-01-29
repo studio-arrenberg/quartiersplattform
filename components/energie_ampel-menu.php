@@ -4,11 +4,8 @@
  */
 
 
-date_default_timezone_set('Europe/Berlin');
-$now = date('Y-m-d H');
-$datetime = date('Y-m-d H:i');
-
-// echo $datetime;
+$now = wp_date('Y-m-d H');
+$datetime = wp_date('Y-m-d H:i');
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
 $connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");

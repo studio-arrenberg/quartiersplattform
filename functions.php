@@ -822,9 +822,6 @@ add_action( 'wp_enqueue_scripts', function() {
 // add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
 
-
-
-
 // custom excerpt lenght
 function get_excerpt($text, $count = '55') {
 	// $permalink = get_permalink($post->ID);
@@ -1075,16 +1072,20 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 // calendar download button
 function calendar_download($post) {
 	
-
-	$date = get_field('event_date');
-	$time = get_field('event_time');
-	$time_end = get_field('event_end');
-			
 	// needed variabels
+	$date = get_field('event_date', $post);
+	$time = get_field('event_time', $post);
+	$time_end = get_field('event_end', $post);
+			
     $title = get_the_title();
-    $start = date('Ymd', strtotime(strtotime("$date $time"))) . "T" . date('His', strtotime(strtotime("$date $time")));
-    $ende = date('Ymd', strtotime(gstrtotime("$date $time"))) . "T" . date('His', strtotime(strtotime("$date $time_end")));
-	$creation = date('Ymd') . "T" . date('His');
+    $start = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time"));
+    $ende = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time_end"));
+	// $creation = date('Ymd') . "T" . date('His');
+
+	// echo get_field('event_date', $post)."<br>";
+	// echo date('Ymd', strtotime($date))."<br>";
+	// echo $start." ".$ende."<br>";
+	// echo "hello world";
 
 	// directory
 	$links = get_template_directory_uri();
@@ -1530,7 +1531,7 @@ add_action( 'pre_get_posts', function ( $query ) {
     if ( is_post_type_archive( 'veranstaltungen' ) && $query->is_main_query() ) {
         $query->set( 'orderby', 'meta_value' );
         $query->set( 'order', 'DESC' );
-        $query->set( 'meta_key', 'zeitpunkt' );
+        $query->set( 'meta_key', 'event_date' );
     }
 } );
 
@@ -1715,6 +1716,7 @@ function veranstaltungen_field_zeitpunkt() {
 
 		update_post_meta(get_the_id(), 'event_date', date("Y-m-d",strtotime(get_field('zeitpunkt'))));
 		update_post_meta(get_the_id(), 'event_time', date("H:i:s",strtotime(get_field('zeitpunkt'))));
+		update_post_meta(get_the_id(), 'event_end_time', date("H:i:s",strtotime(get_field('ende'))));
 
 	}
 	wp_reset_postdata();
