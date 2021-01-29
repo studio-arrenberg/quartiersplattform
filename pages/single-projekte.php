@@ -96,13 +96,13 @@ get_header();
             'post_type'=>'veranstaltungen', 
             'post_status'=>'publish', 
             'posts_per_page'=> 1,
-            'meta_key' => 'zeitpunkt',
+            'meta_key' => 'event_date',
             'orderby' => 'rand',
             'order' => 'ASC',
             'offset' => '0', 
             'meta_query' => array(
                 array(
-                    'key' => 'zeitpunkt', 
+                    'key' => 'event_date', 
                     'value' => date("Y-m-d"),
                     'compare' => '>=', 
                     'type' => 'DATE'

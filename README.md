@@ -81,12 +81,16 @@ Functions => `functions.php` <br>
 [PHP Date Format](https://www.php.net/manual/de/datetime.format.php)
 ```php
 $date = "2020-03-27 12:23:22";
-echo wp_date('F d, Y g:i a', strtotime($date)); 
-date('Ymd', strtotime(get_field( "zeitpunkt" )));
+echo wp_date('F d, Y g:i a', strtotime($date)); // dont use php date() function!
+date('Ymd', strtotime(get_field( "event_date" )));
 ```
 `F j, G:i` November 28, 21:00 <br>
 `F j, Y G:i` November 28, 2020 21:00 <br>
 `j. M G:i` 28. Nov 21:00
+
+
+
+
 
 [Get Term Archive](https://wordpress.stackexchange.com/questions/48435/get-term-archive-url-link)
 
