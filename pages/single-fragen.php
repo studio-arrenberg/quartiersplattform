@@ -57,11 +57,13 @@ else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged
 
     wp_delete_post(get_the_ID());
 
+    wp_redirect( get_site_url()."/gemeinsam" );
+
     ?>
 
     <h2>Deine Frage wurde gelöscht.</h2>
     <br>
-    <a class="button" href="<?php echo get_site_url(); ?>">Startseite</a>
+    <a class="button" href="<?php echo get_site_url(); ?>/gemeinsam">Gemeinsam</a>
 
 
     <?php 

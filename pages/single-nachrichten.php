@@ -11,6 +11,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
 }
 
 get_header();
+
 ?>
 
 <main id="site-content" role="main">
@@ -35,8 +36,10 @@ get_header();
             // get project by Term
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
             $the_slug = $term_list[0]->slug;
+            $project_id = $term_list[0]->description;
 
 			?>
+
 
     <div class="single-header">
         <!-- post title -->
@@ -45,17 +48,24 @@ get_header();
             <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span></h3>
 
 
-            <?php
+        </div>
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+
+        <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
                 <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
+                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
             <?php
             }
-            ?>
+        ?>
 
-        </div>
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
     </div>
+
+
+
+
 
     <div class="site-content">
 
@@ -144,9 +154,27 @@ get_header();
 
     <?php
             }
+        }
+
+        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+
+            $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+            $the_slug = $term_list[0]->slug;
+            $project_id = $term_list[0]->description;
+
+            wp_delete_post(get_the_ID());
+            
+
+            if ($project_id) {
+                wp_redirect( get_permalink($project_id) );
+            }
+            else {
+                wp_redirect( get_site_url() );
+            }
             
 
         }
+
         else {
             
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
@@ -176,10 +204,10 @@ get_header();
 
 
 
-		}
+        }
+
     }
 }
-
     
 
 	?>

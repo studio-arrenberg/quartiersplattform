@@ -55,15 +55,33 @@ if ( have_posts() ) {
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
         <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
+        <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=delete">Angebot löschen</a>
     <?php
     }
 
     ?>
     </div>
-
-
     <?php
-        }
+
+}
+
+else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+
+    wp_delete_post(get_the_ID());
+
+    wp_redirect( get_site_url()."/gemeinsam" );
+
+    ?>
+
+    <h2>Deine Frage wurde gelöscht.</h2>
+    <br>
+    <a class="button" href="<?php echo get_site_url(); ?>/gemeinsam">Startseite</a>
+
+
+    <?php 
+}
+
+
 else {
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
     echo '<h2>Bearbeite dein Angebot</h2><br>';

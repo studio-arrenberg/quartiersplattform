@@ -36,7 +36,14 @@ else {
                 <?php //echo strlen(get_the_title()) ?>
             </h3>
             <p class="preview-text">
-                <?php  get_excerpt(get_the_content(), $char); ?>
+                <?php  
+                if (get_field('text')) {
+                    get_excerpt(get_field('text'), $char);
+                }
+                else {
+                    get_excerpt(get_the_content(), $char);
+                }
+                ?>
             </p>
         </div>
         <?php the_post_thumbnail( 'preview_m' ); ?>
