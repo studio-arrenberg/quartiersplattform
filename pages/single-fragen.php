@@ -40,7 +40,7 @@ if ( have_posts() ) {
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
         ?>
             <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
-            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=delete">Frage löschen</a>
+            <a class="button is-style-outline" onclick="return confirm('Frage permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Frage löschen</a>
         <?php
     }
     ?>
