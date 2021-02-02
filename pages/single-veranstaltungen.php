@@ -73,8 +73,8 @@ get_header();
     <?php calendar_download($post); ?>
     <?php edit_post_link(); ?>
 
-    <!-- Projekt Kachel -->
-    <?php
+  <!-- Projekt Kachel -->
+  <?php
         $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
         $the_slug = $term_list[0]->slug;
         if ($the_slug) {
@@ -84,10 +84,26 @@ get_header();
                 'post_status' => 'publish',
                 'numberposts' => '1'
             );
+
+
+            $my_query = new WP_Query($args);
+            if ($my_query->post_count > 0) {
+     ?>
+
+
+    <h2>Das Projekt</h2>
+
+    <div class="card-container ">
+
+        <?php
             landscape_card($args);
-        }   
+            } 
+
+            
+        }
     ?>
 
+    </div>
     <!-- map: adresse -->
     <!-- not ready yet -->
 

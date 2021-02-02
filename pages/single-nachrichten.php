@@ -125,7 +125,9 @@ get_header();
 
             $my_query = new WP_Query($args);
             if ($my_query->post_count > 0) {
-                ?>
+     ?>
+
+     
             <h2>Das Projekt</h2>
 
             <div class="card-container ">
