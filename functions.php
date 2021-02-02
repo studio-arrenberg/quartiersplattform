@@ -1289,23 +1289,26 @@ function my_post_title_updater( $post_id ) {
 	if ( get_post_type($post_id) == 'poll' ) {
 
 		$tax = $_POST['project_tax'];
-		$tax = 'quartiersplattform';
-
-		// $my_post = array();
-		// $my_post['ID'] = $post_id;
-		// $my_post['post_content'] = "hellooooooo";
-		// wp_update_post( $my_post );
+		// $tax = 'quartiersplattform';
 		
 		if (!empty($tax)) {
 			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
 		}
 
-		// $polling_array = array("Orange", "Banane");
+		$array;
+		$i = 0;
+		$rows = get_field('questions', $post_id);
+		if( $rows ) {
+			foreach( $rows as $row ) {
+				// $quest = $row['item'];
+				// $array[] = $i;
+				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
 
-		// add_post_meta($post_id, 'poll', $polling_array, true);
-		// add_post_meta($_POST['ID'], 'poll', array("Orange", "Banane"));
-		
+				$i++;
+			}
+		}
 
+		add_post_meta($post_id, 'polls', $array, true);	
 
 		wp_redirect( get_post_permalink($post_id) ); 
 		exit;
@@ -1536,6 +1539,7 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
 		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
+		&& strpos($REQUEST_URI,'/umfrage-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
@@ -1910,13 +1914,14 @@ function create_form_poll(){
 # [-] acf !has to be added manually
 # [x] form (build)
 # [x] display
-# [ ] save cpt: create array (iterate through questions) || if empty -> create
+# [x] save cpt: create array (iterate through questions) || if empty -> create
 # [x] vote: add to array
 # [x] display: jquery succes to html
-# [ ] get votes on load: php iterate array (if user > display results) 
+# [x] get votes on load: php iterate array (if user > display results) 
 # [ ] guest feature [later]
 # [-] not logged in issue (jquery core missing)
-# [ ] render submit button when logged in 
+# [x] render submit button when logged in 
+# ![ ] poll page 
 
 ## cpt
 
@@ -2007,47 +2012,24 @@ add_action('wp_ajax_polling','polling');
 function polling() {
 
 	# if no user input --> abort
-	// if (!is_user_logged_in() || !is_numeric($_POST['poll'])) exit;
-		
-	# create array if not exist
-	if (empty(get_post_meta($_POST['ID'], 'polls', true))) {
-
-		$array = array(
-			0 => array(
-				'field' => 'hello',
-				'user' => array(4223),
-				'count' => 1
-			),
-			1 => array(
-				'field' => 'world',
-				'user' => array(334),
-				'count' => 1
-			),
-			2 => array(
-				'field' => 'jupiter',
-				'user' => array(879),
-				'count' => 1
-			)
-		);
-
-		// if ( ! add_post_meta( $_POST['ID'], 'polls', $array, true ) ) { 
-		// 	update_post_meta ( $_POST['ID'], 'polls', $array );
-		// }
-
-		add_post_meta($_POST['ID'], 'polls', $array, true);
-		// update_post_meta($_POST['ID'], 'polls', $array);
-		
-	}
+	if (!is_user_logged_in() || !is_numeric($_POST['poll'])) exit;
 
 	# get meta field data (array)
 	$array = get_post_meta($_POST['ID'], 'polls', true);
 
 	# find user in meta field --> if true add || remove
 	for ($i = 0; $i < count($array); $i++) {
+		# delete user 
+		if (count($array[$i]['user']) > 1) {
+			unset($array[$i]['user'][ array_search(get_current_user_id(),$array[$i]['user']) ]);
+		}
+		else {
+			$array[$i]['user'] = array();
+		}
+		# add user
 		if ($i == $_POST['poll']) {
 			array_push($array[$i]['user'], get_current_user_id());
-			// $array[$i]['user'] = array(1,2,3,4);
-		}
+		} 
 		# count
 		$array[$i]['count'] = count($array[$i]['user']);
 	}

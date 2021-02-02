@@ -100,6 +100,14 @@ get_header();
         }
     ?>
 
+    <?php
+        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        ?>
+            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
+        <?php
+        }
+    ?>
+
     <!-- Last Polling -->
     <?php
         $args_chronik = array(

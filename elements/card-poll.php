@@ -35,17 +35,35 @@
             if( have_rows('questions') ):
 
                 $i = 0;
-                // $sub_value = get_sub_field('item');
-                // Loop through rows.
+
+                $array = get_post_meta(get_the_ID(), 'polls', true);
+
+                // print_r($array);
+
+                function find($needle, $haystack) {
+                    foreach($haystack as $key=>$value){
+                       if(is_array($value) && array_search($needle, $value) !== false) {
+                          return $key;
+                       }
+                    }
+                    return false;
+                }
+
                 while( have_rows('questions') ) : the_row();
 
                     $sub_value = get_sub_field('item');
 
                     ?>
                     
-                        <input type="radio" select="selected" id="poll<?php echo $i; ?>" name="poll" value="<?php echo $i; ?>">
+                        <input type="radio" <?php if(in_array(get_current_user_id(), $array[$i]['user'])) echo "checked='true'"; ?> id="poll<?php echo $i; ?>" name="poll" value="<?php echo $i; ?>">
                         <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>"><?php echo $sub_value; ?></label>
-                        <div id="poll<?php echo $i; ?>" ></div>
+                        <div id="poll<?php echo $i; ?>">
+                            <?php
+                                if (find(get_current_user_id(), $array)) {
+                                    echo $array[$i]['count']." Stimmmen";
+                                }
+                            ?>
+                        </div>
                         <br>
                     
                     <?php
@@ -53,17 +71,14 @@
                     $i++;
                 // End loop.
                 endwhile;
-
-            // No value.
             else :
-                // Do something...
             endif;
 
             
             ?>
             <input type="hidden" name="ID" value="<?php echo get_the_ID(); ?>" />
             <input type="hidden" name="action" value="polling" />
-            <input type="submit" value="SUBMIT" />
+            <input type="submit" value="Abstimmen" />
             </form>
 
             <script>
@@ -75,15 +90,15 @@
                             console.log(response);
 
                             $.each(response.data, function(k, v) {
-                                console.log(k+" : "+v['count']);
+                                console.log(k+" : "+v['user']);
                                 $('form div#poll' + k ).text(v['count']+' Stimmen');
+                                
                                 if (v['user'] == 'true') {
                                     $('form input#poll' + k).attr('checked',true);
                                 }
+
                             });
-
                             $('form input:submit').fadeOut('fast');
-
                         },
                         error: function(response){
                             console.log(response);
