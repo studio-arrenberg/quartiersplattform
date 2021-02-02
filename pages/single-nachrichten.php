@@ -128,11 +128,17 @@ get_header();
                 ?>
             <h2>Das Projekt</h2>
 
+            <div class="card-container ">
+
             <?php
             landscape_card($args);
             } 
+
+            
         }
     ?>
+
+</div>
 
 
     <!-- Backend edit link -->

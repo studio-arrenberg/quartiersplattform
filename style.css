@@ -2698,7 +2698,7 @@ figure.wp-block-table.is-style-stripes {
 .comments-wrapper,
 .comment-respond {
   max-width: 600px;
-  margin: 15px auto;
+  margin: 15px 0px;
 }
 .comment-respond {
   margin-top: 30px;
