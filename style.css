@@ -744,6 +744,7 @@ input[type="reset"],
 input[type="submit"],
 input[type="submit" i],
 /* input:matches([type="button"], [type="submit"], [type="reset"]), */
+input:matches([type="button"], [type="submit"], [type="reset"]), input[type="file"]::-webkit-file-upload-button,
 input[type="file"]::-webkit-file-upload-button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -4740,6 +4741,26 @@ figure.wp-block-table.is-style-stripes {
   position: relative;
 }
 
+.button-red{
+  color: rgba(194, 12, 61, 1);
+  box-shadow: 0 1px 2px rgba(194, 12, 61, 0.07),
+  0 2px 4px rgba(194, 12, 61, 0.07), 0 4px 8px rgba(194, 12, 61, 0.07),
+  0 8px 16px rgba(194, 12, 61, 0.07), 0 16px 32px rgba(194, 12, 61, 0.07),
+  0 32px 64px rgba(194, 12, 61, 0.07);
+}
+
+
+
+
+.button-red:hover{
+  color: rgba(194, 12, 61, 1);
+  box-shadow: 0 1px 2px rgba(194, 12, 61, 0.15),
+0 2px 4px rgba(194, 12, 61, 0.15), 0 4px 8px rgba(194, 12, 61, 0.15),
+0 8px 16px rgba(194, 12, 61, 0.15), 0 16px 32px rgba(194, 12, 61, 0.15),
+0 32px 64px rgba(194, 12, 61, 0.15);
+
+
+}
 /* Shadow */
 
 /* nur bei gardent */

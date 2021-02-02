@@ -51,7 +51,7 @@ get_header();
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
             <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
-            <a class="button is-style-outline" onclick="return confirm('Nachricht permanent löschen?')"
+            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
                 href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
             <?php
             }
