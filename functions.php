@@ -924,6 +924,17 @@ function tpl_geschichten( $single_template ) {
 }
 add_filter( 'single_template', 'tpl_geschichten' );
 
+function tpl_poll( $single_template ) {
+    global $post;
+ 
+    if ( 'poll' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_poll' );
+
 // function template part test
 function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '')  {
 
@@ -1275,6 +1286,32 @@ function my_post_title_updater( $post_id ) {
 
 
 	}
+	if ( get_post_type($post_id) == 'poll' ) {
+
+		$tax = $_POST['project_tax'];
+		$tax = 'quartiersplattform';
+
+		// $my_post = array();
+		// $my_post['ID'] = $post_id;
+		// $my_post['post_content'] = "hellooooooo";
+		// wp_update_post( $my_post );
+		
+		if (!empty($tax)) {
+			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+		}
+
+		// $polling_array = array("Orange", "Banane");
+
+		// add_post_meta($post_id, 'poll', $polling_array, true);
+		// add_post_meta($_POST['ID'], 'poll', array("Orange", "Banane"));
+		
+
+
+		wp_redirect( get_post_permalink($post_id) ); 
+		exit;
+
+
+	}
 
 }
 
@@ -1513,10 +1550,10 @@ function my_init() {
 		wp_deregister_script('jquery-ui-sortable');
 		wp_deregister_script('jquery-ui-widget');
 		wp_deregister_script('jquery-ui-selectable');
-		wp_deregister_script('jquery-ui-core');
+		// wp_deregister_script('jquery-ui-core');
 
 		// jQuery
-        wp_deregister_script('jquery');
+        // wp_deregister_script('jquery');
 		wp_register_script('jquery', false, false, true);
 
 		// emoji picker
@@ -1796,6 +1833,10 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Nachricht erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-nachrichten.php';
 			}
+			else if ($post->post_title == "Umfrage erstellen") {
+				$post_states[] = $prefix.'Umfrage erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-poll.php';
+			}
 
 		
 		if (doing_filter( 'page_template') && !empty($page_template)) {
@@ -1834,3 +1875,199 @@ function create_form_page(){
     }
 
 } 
+
+add_action( 'after_setup_theme', 'create_form_poll' );
+function create_form_poll(){
+
+    $title = 'Umfrage erstellen';
+    $slug = 'umfrage-erstellen';
+    $page_content = ''; // your page content here
+    $post_type = 'page';
+
+    $page_args = array(
+        'post_type' => $post_type,
+        'post_title' => $title,
+        'post_content' => $page_content,
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_slug' => $slug
+	);
+	
+	if ( ! function_exists( 'post_exists' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/post.php' );
+	}
+
+    if(post_exists($title) === 0){
+        $page_id = wp_insert_post($page_args);
+    }
+
+} 
+
+
+// polling init
+# [x] cpt 
+# [x] tax
+# [-] acf !has to be added manually
+# [x] form (build)
+# [x] display
+# [ ] save cpt: create array (iterate through questions) || if empty -> create
+# [x] vote: add to array
+# [x] display: jquery succes to html
+# [ ] get votes on load: php iterate array (if user > display results) 
+# [ ] guest feature [later]
+# [-] not logged in issue (jquery core missing)
+# [ ] render submit button when logged in 
+
+## cpt
+
+function cptui_register_my_cpts_poll() {
+
+	/**
+	 * Post Type: Nachrichten.
+	 */
+
+	$labels = [
+		"name" => __( "Poll", "quartiersplattform" ),
+		"singular_name" => __( "Poll", "quartiersplattform" ),
+	];
+
+	$args = [
+		"label" => __( "Poll", "quartiersplattform" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => "nachrichten-archive",
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "poll", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-format-aside",
+		"supports" => [ "title", "editor", "comments", "author" ],
+	];
+
+	register_post_type( "poll", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_poll' );
+
+## tax
+
+function cptui_register_my_taxes_projekt() {
+
+	/**
+	 * Taxonomy: Projekte.
+	 */
+
+	$labels = [
+		"name" => __( "Projekte", "quartiersplattform" ),
+		"singular_name" => __( "Projekt", "quartiersplattform" ),
+	];
+
+	$args = [
+		"label" => __( "Projekte", "quartiersplattform" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'projekt', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "projekt",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "projekt", [ "nachrichten", "veranstaltungen", "poll" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_projekt' );
+
+### ajax stuff
+
+add_action('wp_enqueue_scripts', 'enqueue_jquery_form');
+function enqueue_jquery_form() {
+	wp_enqueue_script( 'jquery-form' );
+
+	wp_enqueue_script( 'jquery-core' );
+}
+
+add_action('wp_ajax_polling','polling');
+function polling() {
+
+	# if no user input --> abort
+	// if (!is_user_logged_in() || !is_numeric($_POST['poll'])) exit;
+		
+	# create array if not exist
+	if (empty(get_post_meta($_POST['ID'], 'polls', true))) {
+
+		$array = array(
+			0 => array(
+				'field' => 'hello',
+				'user' => array(4223),
+				'count' => 1
+			),
+			1 => array(
+				'field' => 'world',
+				'user' => array(334),
+				'count' => 1
+			),
+			2 => array(
+				'field' => 'jupiter',
+				'user' => array(879),
+				'count' => 1
+			)
+		);
+
+		// if ( ! add_post_meta( $_POST['ID'], 'polls', $array, true ) ) { 
+		// 	update_post_meta ( $_POST['ID'], 'polls', $array );
+		// }
+
+		add_post_meta($_POST['ID'], 'polls', $array, true);
+		// update_post_meta($_POST['ID'], 'polls', $array);
+		
+	}
+
+	# get meta field data (array)
+	$array = get_post_meta($_POST['ID'], 'polls', true);
+
+	# find user in meta field --> if true add || remove
+	for ($i = 0; $i < count($array); $i++) {
+		if ($i == $_POST['poll']) {
+			array_push($array[$i]['user'], get_current_user_id());
+			// $array[$i]['user'] = array(1,2,3,4);
+		}
+		# count
+		$array[$i]['count'] = count($array[$i]['user']);
+	}
+
+	# update meta field
+	update_post_meta($_POST['ID'], 'polls', $array);
+
+	# prepare response (delete user and set choice)
+	for ($i = 0; $i < count($array); $i++) {
+		$array[$i]['user'] = array(false);
+		if ($i == $_POST['poll']) {
+			$array[$i]['user'] = array(true);
+		}
+	}
+
+	# send response
+	wp_send_json_success( $array );
+	// wp_send_json_success( $_POST );	
+
+	# just in case -> delete
+	// delete_post_meta($_POST['ID'], 'poll');
+
+}

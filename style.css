@@ -586,7 +586,7 @@ legend {
   padding: 0 1rem;
 }
 
-label {
+form:not(.poll) label {
   display: block;
   font-size: 1.8rem;
   font-weight: 500;
@@ -5632,7 +5632,7 @@ input[type="file"] {
   margin-top: -35px;
 }
 
-input[type="radio"] {
+.acf-form input[type="radio"] {
   width: 100%;
   height: 40px;
   margin: 0px;

@@ -100,6 +100,24 @@ get_header();
         }
     ?>
 
+    <!-- Last Polling -->
+    <?php
+        $args_chronik = array(
+            'post_type'=>'poll', 
+            'post_status'=>'publish', 
+            'posts_per_page'=> 1,
+
+        );
+
+        $my_query = new WP_Query($args_chronik);
+        if ($my_query->post_count > 0) {
+            ?>
+                <h2>Umfrage</h2>
+            <?php 
+            slider($args_chronik,'card', '1','false'); 
+        }
+    ?>
+
     <!-- Anstehende Veranstaltungen -->
     <?php
         $args_chronik = array(
