@@ -243,7 +243,6 @@ else {
         <h2>Bearbeite dein Projekt</h2>
         <br>
         <?php
-        echo '<h2>Bearbeite dein Projekt</h2><br>';
         acf_form (
             array(
                 'form' => true,
