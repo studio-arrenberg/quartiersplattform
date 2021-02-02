@@ -16,7 +16,7 @@
                 Erstelle ein Projekt
             </h3>
             <p class="preview-text">
-                Verändere dein Quartier und lege ein Projekt an.
+                Verändere dein Quartier! Lege ein Projekt an und profitiere von der Community.
             </p>
         </div>
     </a>

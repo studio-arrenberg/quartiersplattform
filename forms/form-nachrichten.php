@@ -17,7 +17,7 @@ get_header();
                 </h3>
                 <p class="preview-text-large">
                     Halte deine Community auf dem Laufdenden und teile deine Neuigkeiten. <br>
-                    So bleibt dein Projekt relevant und ist immer im Überblick sichtbar.
+                    <!-- So bleibt dein Projekt relevant und ist immer im Überblick sichtbar. -->
                     <?php // echo $_GET['project']; ?>
                 </p>
             </div>
