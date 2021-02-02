@@ -46,13 +46,7 @@ get_header();
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
             <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span></h3>
-
-
-        </div>
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-
-        <?php
+            <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
                 <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
@@ -60,6 +54,12 @@ get_header();
             <?php
             }
         ?>
+
+        </div>
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+
+      
 
     </div>
 

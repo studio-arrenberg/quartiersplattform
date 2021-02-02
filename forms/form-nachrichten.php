@@ -16,7 +16,9 @@ get_header();
                     Erstelle eine Nachricht
                 </h3>
                 <p class="preview-text-large">
-                    Teile deinem Quartier etwas mit. $$$ <?php echo $_GET['project']; ?>
+                    Halte deine Community auf dem Laufdenden und teile deine Neuigkeiten. 
+                    So bleibt dein Projekt relevant und ist immer im Überblick sichtbar.
+                    <?php // echo $_GET['project']; ?>
                 </p>
             </div>
         </div>
