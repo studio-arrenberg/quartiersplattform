@@ -72,6 +72,7 @@ get_header();
     <!-- not ready yet -->
     <?php calendar_download($post); ?>
     <?php edit_post_link(); ?>
+    <br>
 
   <!-- Projekt Kachel -->
   <?php
