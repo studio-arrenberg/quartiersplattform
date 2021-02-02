@@ -691,7 +691,7 @@ textarea {
 }
 
 textarea {
-  height: 12rem;
+  min-height: 12rem;
   line-height: 1.5;
   width: 100%;
 
