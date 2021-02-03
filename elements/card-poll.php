@@ -19,14 +19,19 @@
                 <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
                 <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
 
-                <span class="date red-text"><?php echo $time_remaining; ?><span>
             </div>
             <h3 class="card-title-large">
+                <?php  
+                    if (!is_single( )) shorten_title(get_the_title(), '50'); 
+                    else echo get_the_title(); 
+                ?>
+            </h3>
+            <p class="preview-text"> 
                 <?php  
                     if (!is_single( )) shorten_title(get_field('text'), '50'); 
                     else the_field('text'); 
                 ?>
-            </h3>
+            </p>
             <!-- <h4>Poll:</h4> -->
             <form class="poll" id="poll-form" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
             <?php
@@ -35,7 +40,6 @@
             if( have_rows('questions') ):
 
                 $i = 0;
-
                 $array = get_post_meta(get_the_ID(), 'polls', true);
 
                 // print_r($array);
@@ -84,19 +88,16 @@
             <script>
 
                 jQuery(document).ready(function($){
-                    console.log('ready');
+                    // console.log('ready');
                     jQuery('#poll-form').ajaxForm({
                         success: function(response){
-                            console.log(response);
-
+                            // console.log(response);
                             $.each(response.data, function(k, v) {
-                                console.log(k+" : "+v['user']);
+                                // console.log(k+" : "+v['user']);
                                 $('form div#poll' + k ).text(v['count']+' Stimmen');
-                                
                                 if (v['user'] == 'true') {
                                     $('form input#poll' + k).attr('checked',true);
                                 }
-
                             });
                             $('form input:submit').fadeOut('fast');
                         },
@@ -106,10 +107,7 @@
                         resetForm: true
                     })
                 });
-
-                console.log('hello');
-                
-
+                // console.log('hello');
             </script>
 
         </div>
