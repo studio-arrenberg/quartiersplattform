@@ -45,28 +45,30 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span></h3>
-
+            <h3 class="single-header-slogan"><?php echo $term_list[0]->name; ?> <span
+                    class="date"><?php echo get_the_date('j. F'); ?></span></h3>
+            <?php
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
+            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
+            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
+                href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
+            <?php
+            }
+        ?>
 
         </div>
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
 
-        <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-            ?>
-                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
-                <a class="button is-style-outline" onclick="return confirm('Nachricht permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
-            <?php
-            }
-        ?>
+
 
     </div>
 
 
     <div class="site-content">
 
-    <?php the_field('text'); ?>
+        <?php the_field('text'); ?>
 
     </div>
 
@@ -125,14 +127,22 @@ get_header();
 
             $my_query = new WP_Query($args);
             if ($my_query->post_count > 0) {
-                ?>
-            <h2>Das Projekt</h2>
+     ?>
 
-            <?php
+
+    <h2>Das Projekt</h2>
+
+    <div class="card-container ">
+
+        <?php
             landscape_card($args);
             } 
+
+            
         }
     ?>
+
+    </div>
 
 
     <!-- Backend edit link -->

@@ -16,16 +16,19 @@ get_header();
                     Stelle eine Frage an dein Quartier!
                 </h3>
                 <p class="preview-text-large">
-                    Was wünscht du dir in deinem Viertel? 
+                    Wie können wir dich unterstützen?
                 </p>
             </div>
         </div>
     </div>
 
-<h2>Stelle eine Frage an dein Quartier</h2>
-    <br>
-
     <?php // acf_form_head(); ?>
+
+
+    
+    <div class="publish-form">
+    <h2>Was möchtest du wissen?</h2>
+    <br>
 
     <?php $hierarchical_tax = array( 1 ); ?>
     <?php 
@@ -53,7 +56,7 @@ get_header();
 
 
     ?>
-       
+       </div>
         <!-- <div class="lead emoji-picker-container">
             <input id="emoji" type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true"
                 maxlength="9">
