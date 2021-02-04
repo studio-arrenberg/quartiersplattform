@@ -54,7 +54,7 @@ get_header();
 
             <!-- slogan -->
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-            <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
+            <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4> -->
 
             <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
@@ -131,7 +131,7 @@ get_header();
         $args_chronik = array(
             'post_type'=>'veranstaltungen', 
             'post_status'=>'publish', 
-            'posts_per_page'=> 1,
+            'posts_per_page'=> 2,
             'meta_key' => 'event_date',
             'orderby' => 'rand',
             'order' => 'ASC',
@@ -159,7 +159,8 @@ get_header();
             ?>
                 <h2>Anstehende Veranstaltung</h2>
             <?php 
-            slider($args_chronik,'card', '1','false'); 
+            // slider($args_chronik,'card', '1','false'); 
+            get_template_part('elements/card', get_post_type());
         }
     ?>
 

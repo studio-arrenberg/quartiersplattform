@@ -42,17 +42,6 @@
                 $i = 0;
                 $array = get_post_meta(get_the_ID(), 'polls', true);
 
-                // print_r($array);
-
-                function find($needle, $haystack) {
-                    foreach($haystack as $key=>$value){
-                       if(is_array($value) && array_search($needle, $value) !== false) {
-                          return $key;
-                       }
-                    }
-                    return false;
-                }
-
                 while( have_rows('questions') ) : the_row();
 
                     $sub_value = get_sub_field('item');
@@ -63,7 +52,7 @@
                         <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>"><?php echo $sub_value; ?></label>
                         <div id="poll<?php echo $i; ?>">
                             <?php
-                                if (find(get_current_user_id(), $array)) {
+                                if (find_in_array(get_current_user_id(), $array)) {
                                     echo $array[$i]['count']." Stimmmen";
                                 }
                             ?>
@@ -80,9 +69,16 @@
 
             
             ?>
-            <input type="hidden" name="ID" value="<?php echo get_the_ID(); ?>" />
-            <input type="hidden" name="action" value="polling" />
-            <input type="submit" value="Abstimmen" />
+            
+            <?php 
+            if (is_single( )) {
+                ?>
+                    <input type="hidden" name="ID" value="<?php echo get_the_ID(); ?>" />
+                    <input type="hidden" name="action" value="polling" />
+                    <input type="submit" value="Abstimmen" />
+                <?php
+            }
+            ?>
             </form>
 
             <script>

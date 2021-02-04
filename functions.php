@@ -2053,3 +2053,17 @@ function polling() {
 	// delete_post_meta($_POST['ID'], 'poll');
 
 }
+
+// reset rewrite rules
+// used to show poll post 
+// flush_rewrite_rules( false );
+
+function find_in_array($needle, $haystack) {
+	foreach($haystack as $key=>$value){
+	   if(is_array($value) && array_search($needle, $value) !== false) {
+		  return $key;
+	   }
+	}
+	return false;
+} 
+// add_action( 'find_in_array', 'find_array', 10, 2 );

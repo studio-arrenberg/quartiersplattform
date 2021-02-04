@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Angebote [Default]
- * Template Post Type: gemeinsam
+ * Template Name: Poll [Default]
+ * Template Post Type: poll
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
