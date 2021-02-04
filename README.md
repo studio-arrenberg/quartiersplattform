@@ -240,11 +240,12 @@ acf differnet field groups with same name have same field id
 - wordpresstoolbox.wordpress-toolbox
 - rifi2k.format-html-in-php
 
-## Issues before distribution
+# Issues before distribution
 - CPT naming (Deutsch vs Englisch)
 - Page Link naming (.app/veranstaltungen/...) (Deutsch vs Englisch) (Singular vs Plural)
 - ACF naming constitent 
 - UM `picture upload button` jQuery fix (updates should always work)
+- `text` feld oder Gutenberg Editor für text
 
 ## Auto Setup
 - Pages with Templates
@@ -253,7 +254,7 @@ acf differnet field groups with same name have same field id
 - Menu 
 - Landing Page with Gutenberg Block ..?
 - Pre Filled option Page
-- 
+  
 ## (new) ReadMe inhalt
 - Introduction
   - Mission
