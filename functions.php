@@ -1246,6 +1246,7 @@ function my_post_title_updater( $post_id ) {
 		   { $text = $text."..."; } // Ellipsis
 
 		$my_post['post_title'] = $text;
+		$my_post['post_name'] = wp_unique_post_slug( sanitize_title($my_post['post_title']), $my_post['ID'], $my_post['post_status'], $my_post['post_type'], $my_post['post_parent'] );
 
 		// set expire meta field with timestamp
 		// $duration = (60*60*24); // default
