@@ -161,3 +161,8 @@ function save_taxonomy_data($post_id) {
     return $theme;
 }
 ```
+
+### Remember
+```php
+if(parse_url($_SERVER['HTTP_REFERER'])['host'] == parse_url(get_site_url())['host']) // already on site :: else new user
+```
