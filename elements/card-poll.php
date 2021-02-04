@@ -41,6 +41,7 @@
 
                 $i = 0;
                 $array = get_post_meta(get_the_ID(), 'polls', true);
+                // print_r($array);
 
                 while( have_rows('questions') ) : the_row();
 

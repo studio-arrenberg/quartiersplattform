@@ -1308,7 +1308,28 @@ function my_post_title_updater( $post_id ) {
 			}
 		}
 
-		add_post_meta($post_id, 'polls', $array, true);	
+		// add_post_meta($post_id, 'polls', $array, true);	
+
+		if ( ! add_post_meta($post_id, 'polls', $array, true) ) { 
+
+			// $array_old = get_post_meta($_POST['ID'], 'polls', true);
+
+			// $i = 0;
+			// // $array = [];
+			// $rows = get_field('questions', $post_id);
+			// if( $rows ) {
+			// 	foreach( $rows as $row ) {
+
+			// 		if (!isset($array_old[$i])) { // not working :(
+			// 			$array_old[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
+			// 		}
+
+			// 		$i++;
+			// 	}
+			// }
+
+			update_post_meta ( $post_id, 'polls', $array );
+		 }
 
 		wp_redirect( get_post_permalink($post_id) ); 
 		exit;
