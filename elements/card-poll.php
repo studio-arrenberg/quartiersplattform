@@ -26,10 +26,10 @@
                     else echo get_the_title(); 
                 ?>
             </h3>
-            <!-- <p class="preview-text">
-                <?php // if (!is_single( )) shorten_title(get_field('text'), '50'); else the_field('text'); 
+            <p class="preview-text">
+                <?php if (!is_single( )) shorten_title(get_field('text'), '50'); else the_field('text'); 
                 ?>
-            </p> -->
+            </p>
             <!-- <h4>Poll:</h4> -->
 
             </div>

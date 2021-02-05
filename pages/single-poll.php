@@ -91,7 +91,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             'form' => true,
             'return' => '%post_url%',
             'submit_value' => 'Änderungen speichern',
-            'post_title' => false,
+            'post_title' => true,
             'post_content' => false,    
             'field_groups' => array('group_601855a265b19'), //Arrenberg App
         )
