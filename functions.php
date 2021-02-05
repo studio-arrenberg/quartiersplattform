@@ -2025,8 +2025,7 @@ add_action( 'init', 'cptui_register_my_taxes_projekt' );
 add_action('wp_enqueue_scripts', 'enqueue_jquery_form');
 function enqueue_jquery_form() {
 	wp_enqueue_script( 'jquery-form' );
-
-	wp_enqueue_script( 'jquery-core' );
+	// wp_enqueue_script( 'jquery-core' );
 }
 
 add_action('wp_ajax_polling','polling');

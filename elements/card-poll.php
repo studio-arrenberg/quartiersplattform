@@ -103,7 +103,7 @@
             // console.log('ready');
             jQuery('.poll').ajaxForm({
                 success: function(response) {
-                    // console.log(response);
+                    console.log(response);
                     $.each(response.data, function(k, v) {
                         // console.log(k+" : "+v['user']);
                         $('form div#poll' + k).text(v['count'] + ' Stimmen');
