@@ -1302,7 +1302,7 @@ function my_post_title_updater( $post_id ) {
 			foreach( $rows as $row ) {
 				// $quest = $row['item'];
 				// $array[] = $i;
-				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
+				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0, 'percentage' => 0);
 
 				$i++;
 			}
@@ -2038,6 +2038,12 @@ function polling() {
 	# get meta field data (array)
 	$array = get_post_meta($_POST['ID'], 'polls', true);
 
+	# count all votes
+	$total_voter = 0;
+	for ($i = 0; $i < count($array); $i++) {
+		$total_voter = $total_voter + count($array[$i]['user']);
+	}
+
 	# find user in meta field --> if true add || remove
 	for ($i = 0; $i < count($array); $i++) {
 		# delete user 
@@ -2053,6 +2059,8 @@ function polling() {
 		} 
 		# count
 		$array[$i]['count'] = count($array[$i]['user']);
+		# percentage
+		$array[$i]['percentage'] = (count($array[$i]['user']) / $total_voter)*100;
 	}
 
 	# update meta field
@@ -2079,6 +2087,7 @@ function polling() {
 // used to show poll post 
 // flush_rewrite_rules( false );
 
+// search array function
 function find_in_array($needle, $haystack) {
 	foreach($haystack as $key=>$value){
 	   if(is_array($value) && array_search($needle, $value) !== false) {
