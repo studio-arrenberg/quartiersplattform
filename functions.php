@@ -1835,3 +1835,37 @@ function create_form_page(){
     }
 
 } 
+
+// prolog loged in session to a year
+add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
+function wpdev_login_session( $expire ) { // Set login session limit in seconds
+    return YEAR_IN_SECONDS;
+}
+
+add_action('init', 'set_user_cookie_inc_guest');
+function set_user_cookie_inc_guest(){
+
+	# check if user is logged in
+	if(is_user_logged_in()) {
+		# set user cookie
+        wp_set_auth_cookie( get_current_user_id(), true, is_ssl() ); 
+	}
+	# check if cookie not set
+    else if (!isset($_COOKIE['guest'])) {
+		# get/increase or set guest counter
+		if (!get_option('guest_counter')) {
+			add_option('guest_counter', 1);
+		}
+		else {
+			$counter = get_option('guest_counter') + 1;
+			update_option('guest_counter', $counter);
+		}
+		# set guest cookie
+		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
+		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		$expiry = strtotime('+1 year');
+		setcookie('guest', $counter, $expiry, $path, $host);
+	
+    }  
+
+}
