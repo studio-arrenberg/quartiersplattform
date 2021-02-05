@@ -16,7 +16,7 @@ get_header();
                     Erstelle eine Umfrage
                 </h3>
                 <p class="preview-text-large">
-                    Teile deinem Quartier etwas mit. $$$ <?php echo $_GET['project']; ?>
+                   Stell eine Frage an dein Quartier.
                 </p>
             </div>
         </div>
@@ -25,7 +25,7 @@ get_header();
 
 
     <div class="publish-form">
-    <h2>Erstelle eine Nachricht</h2>
+    <!-- <h2>Stell eine Frage</h2> -->
     <br>
 
     <?php acf_form_head(); ?>

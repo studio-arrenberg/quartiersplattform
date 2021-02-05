@@ -13,9 +13,9 @@
 <div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
     <?php if(!is_single()) { ?>
     <a href="<?php echo esc_url( get_permalink() ); ?>">
-    <?php } ?>
+        <?php } ?>
         <div class="content">
-            <div class="pre-title red-text ">Umfrage 
+            <div class="pre-title red-text ">Umfrage
                 <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
                 <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
 
@@ -26,15 +26,18 @@
                     else echo get_the_title(); 
                 ?>
             </h3>
-            <p class="preview-text"> 
-                <?php  
-                    if (!is_single( )) shorten_title(get_field('text'), '50'); 
-                    else the_field('text'); 
+            <!-- <p class="preview-text">
+                <?php // if (!is_single( )) shorten_title(get_field('text'), '50'); else the_field('text'); 
                 ?>
-            </p>
+            </p> -->
             <!-- <h4>Poll:</h4> -->
+
+            </div>
+
             <form class="poll" id="poll-form" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
-            <?php
+
+            <div class="answers">
+                <?php
 
             // Check rows exists.
             if( have_rows('questions') ):
@@ -48,19 +51,22 @@
                     $sub_value = get_sub_field('item');
 
                     ?>
-                    
-                        <input type="radio" <?php if(in_array(get_current_user_id(), $array[$i]['user'])) echo "checked='true'"; ?> id="poll<?php echo $i; ?>" name="poll" value="<?php echo $i; ?>">
-                        <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>"><?php echo $sub_value; ?></label>
+
+                <button class="" type="submit"
+                    <?php if(in_array(get_current_user_id(), $array[$i]['user'])) echo "checked='true'"; ?>
+                    id="poll<?php echo $i; ?>" name="poll" value="<?php echo $i; ?>">
+                    <span class="scale" style="width: 43%"> </span>
+                    <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>"><?php echo $sub_value; ?></label>
                         <div id="poll<?php echo $i; ?>">
-                            <?php
-                                if (find_in_array(get_current_user_id(), $array)) {
-                                    echo $array[$i]['count']." Stimmmen";
-                                }
-                            ?>
-                        </div>
-                        <br>
-                    
-                    <?php
+                        <?php
+                                    if (find_in_array(get_current_user_id(), $array)) {
+                                        echo $array[$i]['count']." Stimmmen";
+                                    }
+                                ?>
+                    </div>
+                    </button>
+
+                <?php
                 
                     $i++;
                 // End loop.
@@ -70,46 +76,49 @@
 
             
             ?>
-            
-            <?php 
+       </div>
+
+        <?php 
             if (is_single( )) {
                 ?>
-                    <input type="hidden" name="ID" value="<?php echo get_the_ID(); ?>" />
-                    <input type="hidden" name="action" value="polling" />
-                    <input type="submit" value="Abstimmen" />
-                <?php
+
+        <div class="card-footer">
+            <input class="button card-button" type="hidden" name="ID" value="<?php echo get_the_ID(); ?>" />
+            <input class="button card-button" type="hidden" name="action" value="polling" />
+            <!-- <input class="button card-button" type="submit" value="Abstimmen" /> -->
+        </div>
+        </form>
+
+        <?php
             }
             ?>
-            </form>
 
-            <script>
+        <script>
+        jQuery(document).ready(function($) {
+            // console.log('ready');
+            jQuery('#poll-form').ajaxForm({
+                success: function(response) {
+                    // console.log(response);
+                    $.each(response.data, function(k, v) {
+                        // console.log(k+" : "+v['user']);
+                        $('form div#poll' + k).text(v['count'] + ' Stimmen');
+                        if (v['user'] == 'true') {
+                            $('form input#poll' + k).attr('checked', true);
+                        }
+                    });
+                    // $('form input:submit').fadeOut('fast');
+                },
+                error: function(response) {
+                    console.log(response);
+                },
+                resetForm: true
+            })
+        });
+        // console.log('hello');
+        </script>
 
-                jQuery(document).ready(function($){
-                    // console.log('ready');
-                    jQuery('#poll-form').ajaxForm({
-                        success: function(response){
-                            // console.log(response);
-                            $.each(response.data, function(k, v) {
-                                // console.log(k+" : "+v['user']);
-                                $('form div#poll' + k ).text(v['count']+' Stimmen');
-                                if (v['user'] == 'true') {
-                                    $('form input#poll' + k).attr('checked',true);
-                                }
-                            });
-                            $('form input:submit').fadeOut('fast');
-                        },
-                        error: function(response){
-                            console.log(response);
-                        },
-                        resetForm: true
-                    })
-                });
-                // console.log('hello');
-            </script>
 
-        </div>
-
-    <?php if(!is_single()) { ?>
+        <?php if(!is_single()) { ?>
     </a>
     <?php } ?>
 </div>
