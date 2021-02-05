@@ -1576,6 +1576,10 @@ function my_init() {
 		wp_deregister_script('jquery-ui-widget');
 		wp_deregister_script('jquery-ui-selectable');
 		// wp_deregister_script('jquery-ui-core');
+		// wp_deregister_script( 'jquery-core' );
+
+		// initially called for ajax
+		// wp_deregister_script( 'jquery-core' );
 
 		// jQuery
         // wp_deregister_script('jquery');
@@ -1590,10 +1594,14 @@ function my_init() {
 		// wp customize scripts
 		wp_deregister_script('twentytwenty-color-calculations');
 
-	}
+		// scripts for ajax
+		wp_enqueue_script( 'jquery-form' );
+		wp_enqueue_script( 'jquery-core' );
+
+	 }
 
 }
-add_action('init', 'my_init');
+add_action('init', 'my_init', 11);
 
 
 // jQuery Update
@@ -2022,10 +2030,11 @@ add_action( 'init', 'cptui_register_my_taxes_projekt' );
 
 ### ajax stuff
 
-add_action('wp_enqueue_scripts', 'enqueue_jquery_form');
+// add_action('wp_enqueue_scripts', 'enqueue_jquery_form', 2);
 function enqueue_jquery_form() {
-	wp_enqueue_script( 'jquery-form' );
+	// wp_enqueue_script( 'jquery-form' );
 	// wp_enqueue_script( 'jquery-core' );
+
 }
 
 add_action('wp_ajax_polling','polling');

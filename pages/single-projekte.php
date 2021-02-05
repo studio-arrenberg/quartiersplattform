@@ -116,6 +116,14 @@ get_header();
             'post_type'=>'poll', 
             'post_status'=>'publish', 
             'posts_per_page'=> 1,
+            'order' => 'DESC',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$post->post_name."
+                )
+            )
 
         );
 
