@@ -1864,7 +1864,7 @@ function set_user_cookie_inc_guest(){
 		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
-		setcookie('guest', $counter, $expiry, $path, $host);
+		setcookie('guest', md5($counter), $expiry, $path, $host);
 	
     }  
 
