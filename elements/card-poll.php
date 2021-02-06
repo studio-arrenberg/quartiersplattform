@@ -24,15 +24,27 @@
                 <?php  
                     if (!is_single( )) shorten_title(get_the_title(), '50'); 
                     else echo get_the_title(); 
+
+                    echo get_current_user_id();
                 ?>
             </h3>
             <p class="preview-text">
-                <?php if (!is_single( )) shorten_title(get_field('text'), '50'); else the_field('text'); 
-                ?>
+                <?php if (!is_single( )) shorten_title(get_field('text'), '50'); else the_field('text'); ?>
             </p>
             <!-- <h4>Poll:</h4> -->
 
             </div>
+
+            <?php
+            $array = get_post_meta(get_the_ID(), 'polls', true);
+            // print_r($array);
+
+            # set vote state 
+            for ($i = 0; $i < count($array); $i++) {
+                if(in_array(get_current_user_id(),$array[$i]['user'])) $vote_state = true;
+            }
+
+            ?>
 
             <form class="poll" id="poll-form" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
 
@@ -43,8 +55,7 @@
             if( have_rows('questions') ):
 
                 $i = 0;
-                $array = get_post_meta(get_the_ID(), 'polls', true);
-                // print_r($array);
+                
 
                 while( have_rows('questions') ) : the_row();
 
@@ -55,11 +66,11 @@
                 <button class="" type="submit"
                     <?php if(in_array(get_current_user_id(), $array[$i]['user'])) echo "checked='true'"; ?>
                     id="poll<?php echo $i; ?>" name="poll" value="<?php echo $i; ?>">
-                    <span class="scale" id="poll<?php echo $i; ?>" style="width: <?php if (find_in_array(get_current_user_id(), $array)) echo $array[$i]['percentage']; else echo '0'; ?>%"></span>
+                    <span class="scale" id="poll<?php echo $i; ?>" style="width: <?php if ($vote_state ) echo $array[$i]['percentage']; else echo '0'; ?>%"></span>
                     <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>"><?php echo $sub_value; ?></label>
                         <div id="poll<?php echo $i; ?>">
                         <?php
-                                    if (find_in_array(get_current_user_id(), $array)) {
+                                    if ($vote_state ) {
                                         echo $array[$i]['count']." Stimmen";
                                     }
                                 ?>

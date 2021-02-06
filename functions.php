@@ -1302,7 +1302,8 @@ function my_post_title_updater( $post_id ) {
 			foreach( $rows as $row ) {
 				// $quest = $row['item'];
 				// $array[] = $i;
-				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0, 'percentage' => 0);
+				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
+				// 'percentage' => 0
 
 				$i++;
 			}
@@ -2028,15 +2029,7 @@ function cptui_register_my_taxes_projekt() {
 }
 add_action( 'init', 'cptui_register_my_taxes_projekt' );
 
-### ajax stuff
-
-// add_action('wp_enqueue_scripts', 'enqueue_jquery_form', 2);
-function enqueue_jquery_form() {
-	// wp_enqueue_script( 'jquery-form' );
-	// wp_enqueue_script( 'jquery-core' );
-
-}
-
+# ajax polling function
 add_action('wp_ajax_polling','polling');
 function polling() {
 
@@ -2046,29 +2039,36 @@ function polling() {
 	# get meta field data (array)
 	$array = get_post_meta($_POST['ID'], 'polls', true);
 
+	# find user in meta field --> if true add || remove
+	for ($i = 0; $i < count($array); $i++) {
+
+		# when array has no user and should not -> nothing
+		# when array has user and should -> nothing
+		if (($i != $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user']))||($i == $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user']))) {
+			// nothing
+		}
+		# when array has user but should not -> unset id
+		else if ($i != $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user'])) {
+			unset($array[$i]['user'][ array_search(get_current_user_id(),$array[$i]['user']) ]);
+		}
+		# when array has no user and shouold -> push id
+		else if ($i == $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user'])) {
+			array_push($array[$i]['user'], get_current_user_id());
+		}
+	}
+
 	# count all votes
 	$total_voter = 0;
 	for ($i = 0; $i < count($array); $i++) {
 		$total_voter = $total_voter + count($array[$i]['user']);
 	}
 
-	# find user in meta field --> if true add || remove
+	# write into array
 	for ($i = 0; $i < count($array); $i++) {
-		# delete user 
-		if (count($array[$i]['user']) > 1) {
-			unset($array[$i]['user'][ array_search(get_current_user_id(),$array[$i]['user']) ]);
-		}
-		else {
-			$array[$i]['user'] = array();
-		}
-		# add user
-		if ($i == $_POST['poll']) {
-			array_push($array[$i]['user'], get_current_user_id());
-		} 
 		# count
 		$array[$i]['count'] = count($array[$i]['user']);
-		# percentage
-		$array[$i]['percentage'] = (count($array[$i]['user']) / $total_voter)*100;
+		$array[$i]['percentage'] = (count($array[$i]['user']) / $total_voter) * 100;
+		$array[$i]['total_voter'] = $total_voter;
 	}
 
 	# update meta field
@@ -2096,12 +2096,12 @@ function polling() {
 // flush_rewrite_rules( false );
 
 // search array function
-function find_in_array($needle, $haystack) {
-	foreach($haystack as $key=>$value){
-	   if(is_array($value) && array_search($needle, $value) !== false) {
-		  return $key;
-	   }
-	}
-	return false;
-} 
+// function find_in_array($needle, $haystack) {
+// 	foreach($haystack as $key=>$value){
+// 	   if(is_array($value) && array_search($needle, $value) !== false) {
+// 		  return $key;
+// 	   }
+// 	}
+// 	return false;
+// } 
 // add_action( 'find_in_array', 'find_array', 10, 2 );
