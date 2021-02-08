@@ -1848,7 +1848,11 @@ function set_user_cookie_inc_guest(){
 	# check if user is logged in
 	if(is_user_logged_in()) {
 		# set user cookie
-        wp_set_auth_cookie( get_current_user_id(), true, is_ssl() ); 
+        // wp_set_auth_cookie( get_current_user_id(), true, is_ssl() ); 
+		# different approche
+		if (wp_validate_auth_cookie()==FALSE) {
+			wp_set_auth_cookie( get_current_user_id() , true, is_ssl());
+		}
 	}
 	# check if cookie not set
     else if (!isset($_COOKIE['guest'])) {
