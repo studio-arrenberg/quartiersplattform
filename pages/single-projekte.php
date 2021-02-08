@@ -163,6 +163,17 @@ get_header();
         }
     ?>
 
+    <!-- Veranstaltung erstellen -->
+
+    <?php
+        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        ?>
+    <a class="button is-style-outline"
+        href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Neue Veranstaltung erstellen</a>
+    <?php
+        }
+    ?>
+
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">

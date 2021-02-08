@@ -12,49 +12,54 @@ get_header();
     <?php
 	if ( have_posts() ) {
 		while ( have_posts() ) {
-			the_post();
-			
+            the_post();
+            
+            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
 				$cover_header_classes = ' bg-image';
             }
-
-
-            $date = get_field('event_date');
-            $time = get_field('event_time');
-
+            
+            // get project by Term
+            $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+            $the_slug = $term_list[0]->slug;
+            $project_id = $term_list[0]->description;
 	?>
 
-    <div class="single-header">
+<div class="single-header">
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3>
-                <?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id ); ?>
-                <span class="date"><?php echo date('j. F G:i', strtotime("$date $time")); ?></span>
-            </h3>
-        </div>
+            <h3 class="single-header-slogan"><?php echo $term_list[0]->name; ?> <span
+                    class="date"><?php echo get_the_date('j. F'); ?></span></h3>
+            
 
-        <!-- projekt / akteur -->
-        <!-- not ready yet -->
+        <?php
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
+            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>
+            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
+                href="<?php get_permalink(); ?>?action=delete">Veranstaltung löschen</a>
+            <?php
+            }
+        ?>
+
+        </div>
 
         <!-- Bild -->
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
-        <!-- slogan / emoji -->
-        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-        <p><?php the_field('website'); ?></p>
-        <p><?php the_field('livestream'); ?></p>
-        <p><?php the_field('ticket'); ?></p>
-        <?php } ?>
-
     </div>
     <!-- Eventtext felder gibt es noch nicht -->
     <div class="site-content">
-        <!-- not ready yet -->
+        <!-- slogan / emoji -->
+        <p><?php the_field('website'); ?></p>
+        <p><?php the_field('livestream'); ?></p>
+        <p><?php the_field('ticket'); ?></p>
     </div>
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
@@ -71,7 +76,35 @@ get_header();
     <!-- calendar download -->
     <!-- not ready yet -->
     <?php calendar_download($post); ?>
-    <?php edit_post_link(); ?>
+    <br>
+    <br>
+
+<!-- weitere Nachrichten -->
+<?php
+		$args2 = array(
+			'post_type'=> array('nachrichten', 'veranstaltungen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 6,
+            'order' => 'DESC',
+            'post__not_in' => array(get_the_ID()),
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$the_slug."
+                )
+            )
+        );
+        
+        $my_query = new WP_Query($args2);
+        if ($my_query->post_count > 0) {
+            ?>
+    <h2>Weitere Nachrichten & Veranstaltungen</h2>
+    <?php
+            slider($args2,'card', '1','false');
+        }
+
+    ?>
     <br>
 
   <!-- Projekt Kachel -->
@@ -107,38 +140,70 @@ get_header();
     </div>
     <!-- map: adresse -->
     <!-- not ready yet -->
+    
+    <!-- Backend edit link -->
+    <?php edit_post_link(); ?>
 
+    <!-- kommentare -->
     <?php			
-
-		}
-	}
-
+		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 	?>
 
-    <br><br><br>
-    <h2>Weitere Veranstaltungen</h2>
-    <!-- weitere veranstaltungen -->
-    <?php
-	$args2 = array(
-		'post_type'=>'veranstaltungen', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 4, 
-		'meta_key' => 'event_date',
-		//'orderby' => 'meta_value',
-		'orderby' => 'rand',
-		'order' => 'ASC',
-		'offset' => '0', 
-		'meta_query' => array(
-			array(
-				'key' => 'event_date', 
-				'value' => date("Y-m-d"),
-				'compare' => '>=', 
-				'type' => 'DATE'
-			)
-		)
-	);
+    <div class="comments-wrapper">
 
-	slider($args2,'card', '1','false'); 
+        <?php comments_template('', true); ?>
+
+    </div><!-- .comments-wrapper -->
+
+    <?php
+            }
+        }
+
+        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+
+            $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+            $the_slug = $term_list[0]->slug;
+            $project_id = $term_list[0]->description;
+
+            wp_delete_post(get_the_ID());
+            
+
+            if ($project_id) {
+                wp_redirect( get_permalink($project_id) );
+            }
+            else {
+                wp_redirect( get_site_url() );
+            }
+            
+
+        }
+
+        else {
+            
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                echo '<h2>Bearbeite deine Veranstaltung</h2><br>';
+                acf_form (
+                    array(
+                        'id' => 'veranstaltungen-form',
+                        'return' => '%post_url%',
+                        'field_el' => 'div',
+                        'post_content' => false,
+                        'post_title' => true,
+                        'fields' => array(
+                            'field_5fc8d0b28edb0', //Text
+                            'field_5fc8d15b8765b', //Date
+                            'field_5fc8d1e0d15c9', //Livestream
+                            'field_601d9d8ac7c9b', //Bilder
+                        ),
+                        'submit_value'=>'Änderungen speichern',
+                    )
+                );       
+            }
+        }
+    }
+}
+    
+
 	?>
 
 </main><!-- #site-content -->
