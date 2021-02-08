@@ -1326,6 +1326,18 @@ function my_deregister_styles() {
 } add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
+//remove website field if user is not logged in  
+
+add_filter('comment_form_default_fields', 'unset_url_field');
+function unset_url_field($fields){
+    if(isset($fields['url']))
+       unset($fields['url']);
+       return $fields;
+}
+
+
+
+
 //remove dashicons in frontend to non-admin  
 function wpdocs_dequeue_dashicon() {
 	if (current_user_can( 'update_core' )) {
