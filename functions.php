@@ -1925,3 +1925,11 @@ function set_user_cookie_inc_guest(){
     }  
 
 }
+
+// UM show image upload 
+function um_show_hidden_field(){
+	// if( is_page_template( 'pages/page-profil.php' )){
+	if ( is_page( 'profil' ) ) {
+			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
+	}
+} add_action('wp_footer', 'um_show_hidden_field');
