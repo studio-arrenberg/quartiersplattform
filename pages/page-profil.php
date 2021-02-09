@@ -39,7 +39,6 @@ if (!is_user_logged_in()){
 
         <?php echo do_shortcode( '[ultimatemember form_id="63"]' ); ?>
         <?php // echo do_shortcode( '[ultimatemember_account ]' ); ?>
-        <?php echo do_shortcode( '[ultimatemember_wall]' ); ?>
 
 	</div>
 
