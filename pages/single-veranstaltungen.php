@@ -42,7 +42,7 @@ get_header();
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
             <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>
-            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
+            <a class="button is-style-outline button-red" onclick="return confirm('Diese Veranstaltung entgültig löschen?')"
                 href="<?php get_permalink(); ?>?action=delete">Veranstaltung löschen</a>
             <?php
             }
@@ -185,7 +185,7 @@ get_header();
                 acf_form (
                     array(
                         'id' => 'veranstaltungen-form',
-                        'return' => '%post_url%',
+                        'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
                         'field_el' => 'div',
                         'post_content' => false,
                         'post_title' => true,

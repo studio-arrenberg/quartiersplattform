@@ -59,6 +59,7 @@ get_header();
                 'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
 			)
     ); 
+    echo get_site_url().'/projekte'.'/'.$_GET['project'];
 
 
     ?>
