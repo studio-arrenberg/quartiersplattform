@@ -5734,7 +5734,6 @@ input[type="radio"]:checked {
   width: 100%;
 }
 
-
 .ui-datepicker a{
   text-decoration: none;
   padding-top: 3px;
@@ -5762,7 +5761,6 @@ input[type="radio"]:checked {
 .ui-datepicker-next{
   order: 3;
 }
-
 
 .ui-datepicker th{
   font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;

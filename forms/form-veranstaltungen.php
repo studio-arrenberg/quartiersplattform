@@ -29,8 +29,6 @@ get_header();
     <div class="publish-form">
     <br>
 
-    <?php acf_form_head(); ?>
-
     <?php $hierarchical_tax = array( 1 ); ?>
     <?php acf_form(
 			array(
@@ -38,17 +36,12 @@ get_header();
 				'html_before_fields' => '',
 				'html_after_fields' => '',
 				'label_placement'=> '',
-				// 'updated_message' => __("Post updated", 'acf'),
-				// 'html_updated_message'  => '<div id="message" class="updated"><h1>Hallo welt</h1></div>',
                 'post_id'=>'new_post',
 				'new_post'=>array(
                     'post_type' => 'veranstaltungen',
-                    // 'tax_input' => array (
-                    //     'version' => array( 2 )
-                    // ),
                     'post_status' => 'publish',
                 ),
-                'return' => '%post_url%',
+                'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => true,
@@ -57,6 +50,7 @@ get_header();
                     'field_5fc8d15b8765b', //Date
                     'field_5fc8d1e0d15c9', //Livestream
                     'field_601d9d8ac7c9b', //Bilder
+                    'field_60226dfd58a16', //Bilder AP1
                 ),
 
                 'submit_value'=>'Veranstaltung veröffentlichen',
@@ -64,6 +58,7 @@ get_header();
 			)
     ); 
     ?>
+    'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
 
 
     </div>
