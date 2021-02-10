@@ -44,6 +44,7 @@ with others.
 	15. Widgets
 	16. Site Footer
 	17. Media Queries
+  18. Ultimate Member
 
 ----------------------------------------------------------------------------- */
 
@@ -5733,7 +5734,6 @@ input[type="radio"]:checked {
   width: 100%;
 }
 
-
 .ui-datepicker a{
   text-decoration: none;
   padding-top: 3px;
@@ -5762,7 +5762,6 @@ input[type="radio"]:checked {
   order: 3;
 }
 
-
 .ui-datepicker th{
   font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   opacity: 0.7;
@@ -5780,3 +5779,4 @@ padding: 5px 0px;
   display: none;
 
 }
+

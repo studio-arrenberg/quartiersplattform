@@ -38,7 +38,7 @@ get_header();
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
             <h3 class="single-header-slogan"><?php echo $term_list[0]->name; ?> <span
-                    class="date"><?php echo get_the_date('j. F'); ?></span></h3>
+                    class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?></span></h3>
             
 
         <?php
