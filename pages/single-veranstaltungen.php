@@ -56,10 +56,24 @@ get_header();
     </div>
     <!-- Eventtext felder gibt es noch nicht -->
     <div class="site-content">
-        <!-- slogan / emoji -->
-        <p><?php the_field('website'); ?></p>
-        <p><?php the_field('livestream'); ?></p>
-        <p><?php the_field('ticket'); ?></p>
+    
+        <?php 
+        // text
+        the_field('text');
+
+        // temp fix
+        echo "<br><br>";
+
+        // livestream
+        if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livesstream</a>";
+
+        // Ticket
+        if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livesstream</a>";
+
+        // Website
+        if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livesstream</a>";
+        ?>
+
     </div>
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
@@ -69,13 +83,14 @@ get_header();
         } else {
             the_content( __( 'Continue reading', 'twentytwenty' ) );
         }
-    ?>
+        ?>
 
     </div>
 
     <!-- calendar download -->
-    <!-- not ready yet -->
     <?php calendar_download($post); ?>
+
+
     <br>
     <br>
 
@@ -98,13 +113,12 @@ get_header();
         
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
-            ?>
-    <h2>Weitere Nachrichten & Veranstaltungen</h2>
-    <?php
+        ?>
+            <h2>Weitere Nachrichten & Veranstaltungen</h2>
+        <?php
             slider($args2,'card', '1','false');
         }
-
-    ?>
+?>
     <br>
 
   <!-- Projekt Kachel -->

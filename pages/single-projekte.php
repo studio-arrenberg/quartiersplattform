@@ -76,10 +76,10 @@ get_header();
     <!-- Projektbeschreibung -->
 
 
-    <?php if (get_field('description')) { ?>
+    <?php if (get_field('text')) { ?>
     <div class="single-content">
         <h2>Beschreibung</h2>
-        <p><?php the_field('description'); ?></p>
+        <p><?php the_field('text'); ?></p>
     </div>
     <?php } ?>
 
@@ -174,7 +174,6 @@ get_header();
         }
     ?>
 
-
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
         <?php
@@ -183,8 +182,6 @@ get_header();
             } else {
                 the_content( __( 'Continue reading', 'twentytwenty' ) );
             }
-
-            
         ?>
 
     </div>
