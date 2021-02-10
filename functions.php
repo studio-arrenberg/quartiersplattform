@@ -1273,14 +1273,23 @@ function my_post_title_updater( $post_id ) {
 	if ( get_post_type($post_id) == 'nachrichten' ) {
 
 		$tax = $_POST['project_tax'];
-
-		// $my_post = array();
-		// $my_post['ID'] = $post_id;
-		// $my_post['post_content'] = "hellooooooo";
-		// wp_update_post( $my_post );
 		
 		if (!empty($tax)) {
-			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+			# set taxonomy 
+			wp_set_object_terms( $post_id, $tax, 'projekt', false);
+			# update project date
+			$parent_post = get_page_by_path($tax);
+			// if ($post) {
+			// 	return $parent_post->ID;
+			// } else {
+			// 	return null;
+			// }
+			$my_post = array();
+			$my_post['ID'] = $parent_post->ID;
+			$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
+			$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
+			# update post 
+			wp_update_post( $my_post );
 		}
 
 		wp_redirect( get_post_permalink($post_id) ); exit;
@@ -1292,8 +1301,8 @@ function my_post_title_updater( $post_id ) {
 		$tax = $_POST['project_tax'];
 		// $tax = 'quartiersplattform';
     
-    if (!empty($tax)) {
-			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+    	if (!empty($tax)) {
+			wp_set_object_terms( $post_id, $tax, 'projekt', false);
 		}
     
     $array;
@@ -2154,13 +2163,17 @@ function polling() {
 add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 function wpdev_login_session( $expire ) { // Set login session limit in seconds
     return YEAR_IN_SECONDS;
+	// return strtotime('+1 year');
+	// return PHP_INT_MAX;
 }
 
 add_action('init', 'set_user_cookie_inc_guest');
 function set_user_cookie_inc_guest(){
 
+	wp_signon();
+
 	# check if cookie not set
-    	if (!isset($_COOKIE['guest'])) {
+    if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
 		# get/increase or set guest counter
 		if (!get_option('guest_counter')) {
 			add_option('guest_counter', 1);
@@ -2174,9 +2187,19 @@ function set_user_cookie_inc_guest(){
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
 		setcookie('guest', md5($counter), $expiry, $path, $host);
-	
     }  
+	else if (is_user_logged_in()) {
+		// wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
+	}
 
+}
+
+add_action('wp_login', 'add_custom_cookie_admin');
+function add_custom_cookie_admin() {
+//   if(is_admin()) {
+//     setcookie('your_cookie_name', 'cookie value', time() + 86400, '/'); // expire in a day
+//   }
+	wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
 }
 
 // UM show image upload 
