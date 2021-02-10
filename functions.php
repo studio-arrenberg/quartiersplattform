@@ -1506,8 +1506,7 @@ function um_deregister_styles() {
 
 // register embla carousel script
 function embla_carousel() { 
-    wp_register_script('embla-carousel', 
-	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
+    wp_register_script('embla-carousel', get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
 } add_action("wp_enqueue_scripts", "embla_carousel");
 
@@ -1626,7 +1625,7 @@ add_action( 'pre_get_posts', function ( $query ) {
 
 // projekt archive custom order
 add_action( 'pre_get_posts', function ( $query ) {
-    if ( is_tax( 'projekt' ) && $query->is_main_query() ) {
+    if ( is_tax( 'projekt' ) && $query->is_main_query() && !current_user_can('administrator') ) {
         $query->set( 'post_type', array('veranstaltungen','nachrichten') );
     }
 } );
