@@ -5,6 +5,7 @@
 *
 */
 acf_form_head();
+
 get_header();
 ?>
 
@@ -45,6 +46,7 @@ get_header();
 				'field_el' => 'div',
 				'post_content' => false,
                 'post_title' => true,
+                'uploader' => 'basic',
                 'fields' => array(
                     'field_5fc8d0b28edb0', //Text
                     'field_5fc8d15b8765b', //Date
@@ -57,10 +59,9 @@ get_header();
                 'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
 			)
     ); 
+
     ?>
-    'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
-
-
+    
     </div>
 </main><!-- #site-content -->
 
