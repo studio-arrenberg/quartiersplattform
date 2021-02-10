@@ -30,7 +30,7 @@ else {
 <div class="card shadow nachricht">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
-            <div class="pre-title"> <span class="date"><?php echo $the_slug; // echo get_the_date('j. F'); ?><span></div> 
+            <div class="pre-title"> <?php echo $the_slug; ?><span class="date"><?php  echo get_the_date('j. F'); ?><span></div> 
             <h3 class="card-title">
                 <?php shorten_title(get_the_title(), '60'); ?>
                 <?php //echo strlen(get_the_title()) ?>

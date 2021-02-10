@@ -1257,6 +1257,7 @@ function my_post_title_updater( $post_id ) {
 		   { $text = $text."..."; } // Ellipsis
 
 		$my_post['post_title'] = $text;
+		$my_post['post_name'] = wp_unique_post_slug( sanitize_title($my_post['post_title']), $my_post['ID'], $my_post['post_status'], $my_post['post_type'], $my_post['post_parent'] );
 
 		// set expire meta field with timestamp
 		// $duration = (60*60*24); // default
@@ -1290,12 +1291,12 @@ function my_post_title_updater( $post_id ) {
 
 		$tax = $_POST['project_tax'];
 		// $tax = 'quartiersplattform';
-		
-		if (!empty($tax)) {
+    
+    if (!empty($tax)) {
 			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
 		}
-
-		$array;
+    
+    $array;
 		$i = 0;
 		$rows = get_field('questions', $post_id);
 		if( $rows ) {
@@ -1330,11 +1331,27 @@ function my_post_title_updater( $post_id ) {
 			// }
 
 			update_post_meta ( $post_id, 'polls', $array );
-		 }
+    }
 
 		wp_redirect( get_post_permalink($post_id) ); 
 		exit;
+    
+  }
 
+    if ( get_post_type($post_id) == 'veranstaltungen' ) {
+
+		$tax = $_POST['project_tax'];
+
+		// $my_post = array();
+		// $my_post['ID'] = $post_id;
+		// $my_post['post_content'] = "hellooooooo";
+		// wp_update_post( $my_post );
+		
+		if (!empty($tax)) {
+			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+		}
+
+		wp_redirect( get_post_permalink($post_id) ); exit;
 
 	}
 
@@ -1368,6 +1385,18 @@ function my_deregister_styles() {
   wp_deregister_style( 'acf-input' );
   wp_deregister_style( 'acf-datepicker' );
 } add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
+
+
+//remove website field if user is not logged in  
+
+add_filter('comment_form_default_fields', 'unset_url_field');
+function unset_url_field($fields){
+    if(isset($fields['url']))
+       unset($fields['url']);
+       return $fields;
+}
+
+
 
 
 //remove dashicons in frontend to non-admin  
@@ -1561,6 +1590,7 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
 		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
 		&& strpos($REQUEST_URI,'/umfrage-erstellen/') === false
+		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
@@ -1876,6 +1906,10 @@ function custom_page_template( $page_template, $post_states ) {
 			else if ($post->post_title == "Umfrage erstellen") {
 				$post_states[] = $prefix.'Umfrage erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-poll.php';
+      }
+			else if ($post->post_title == "Veranstaltung erstellen") {
+				$post_states[] = $prefix.'Veranstaltung erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
 			}
 
 		
@@ -1889,7 +1923,7 @@ function custom_page_template( $page_template, $post_states ) {
 }
 
 // add pages
-add_action( 'after_setup_theme', 'create_form_page' );
+add_action( 'after_setup_theme', 'create_form_page');
 function create_form_page(){
 
     $title = 'Nachricht erstellen';
@@ -1921,6 +1955,33 @@ function create_form_poll(){
 
     $title = 'Umfrage erstellen';
     $slug = 'umfrage-erstellen';
+    $page_content = ''; // your page content here
+    $post_type = 'page';
+
+    $page_args = array(
+        'post_type' => $post_type,
+        'post_title' => $title,
+        'post_content' => $page_content,
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_slug' => $slug
+	);
+	
+	if ( ! function_exists( 'post_exists' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/post.php' );
+	}
+
+    if(post_exists($title) === 0){
+        $page_id = wp_insert_post($page_args);
+    }
+
+}
+
+add_action( 'after_setup_theme', 'create_event_page' );
+function create_event_page(){
+
+    $title = 'Veranstaltung erstellen';
+    $slug = 'veranstaltung-erstellen';
     $page_content = ''; // your page content here
     $post_type = 'page';
 
@@ -2087,3 +2148,41 @@ function polling() {
 // reset rewrite rules
 // used to show poll post 
 // flush_rewrite_rules( false );
+
+
+// prolog loged in session to a year
+add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
+function wpdev_login_session( $expire ) { // Set login session limit in seconds
+    return YEAR_IN_SECONDS;
+}
+
+add_action('init', 'set_user_cookie_inc_guest');
+function set_user_cookie_inc_guest(){
+
+	# check if cookie not set
+    	if (!isset($_COOKIE['guest'])) {
+		# get/increase or set guest counter
+		if (!get_option('guest_counter')) {
+			add_option('guest_counter', 1);
+		}
+		else {
+			$counter = get_option('guest_counter') + 1;
+			update_option('guest_counter', $counter);
+		}
+		# set guest cookie
+		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
+		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		$expiry = strtotime('+1 year');
+		setcookie('guest', md5($counter), $expiry, $path, $host);
+	
+    }  
+
+}
+
+// UM show image upload 
+function um_show_hidden_field(){
+	// if( is_page_template( 'pages/page-profil.php' )){
+	if ( is_page( 'profil' ) ) {
+			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
+	}
+} add_action('wp_footer', 'um_show_hidden_field');

@@ -44,6 +44,7 @@ with others.
 	15. Widgets
 	16. Site Footer
 	17. Media Queries
+  18. Ultimate Member
 
 ----------------------------------------------------------------------------- */
 
@@ -691,7 +692,7 @@ textarea {
 }
 
 textarea {
-  height: 12rem;
+  min-height: 200px;
   line-height: 1.5;
   width: 100%;
 
@@ -700,6 +701,15 @@ word-wrap: normal;
 word-break: keep-all;
 }
 
+
+textarea span{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+}
 /* 
 input[type="submit" i] {
   color: #fff;
@@ -735,6 +745,7 @@ input[type="reset"],
 input[type="submit"],
 input[type="submit" i],
 /* input:matches([type="button"], [type="submit"], [type="reset"]), */
+/* input:matches([type="button"], [type="submit"], [type="reset"]), input[type="file"]::-webkit-file-upload-button */
 input[type="file"]::-webkit-file-upload-button {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2698,7 +2709,7 @@ figure.wp-block-table.is-style-stripes {
 .comments-wrapper,
 .comment-respond {
   max-width: 600px;
-  margin: 15px auto;
+  margin: 15px 0px;
 }
 .comment-respond {
   margin-top: 30px;
@@ -4536,6 +4547,7 @@ figure.wp-block-table.is-style-stripes {
   font-size: unset;
   max-width: unset;
   min-width: unset;
+  border-radius: 0px;
 }
 
 
@@ -4732,6 +4744,26 @@ figure.wp-block-table.is-style-stripes {
   position: relative;
 }
 
+.button-red{
+  color: rgba(194, 12, 61, 1);
+  box-shadow: 0 1px 2px rgba(194, 12, 61, 0.07),
+  0 2px 4px rgba(194, 12, 61, 0.07), 0 4px 8px rgba(194, 12, 61, 0.07),
+  0 8px 16px rgba(194, 12, 61, 0.07), 0 16px 32px rgba(194, 12, 61, 0.07),
+  0 32px 64px rgba(194, 12, 61, 0.07);
+}
+
+
+
+
+.button-red:hover{
+  color: rgba(194, 12, 61, 1);
+  box-shadow: 0 1px 2px rgba(194, 12, 61, 0.15),
+0 2px 4px rgba(194, 12, 61, 0.15), 0 4px 8px rgba(194, 12, 61, 0.15),
+0 8px 16px rgba(194, 12, 61, 0.15), 0 16px 32px rgba(194, 12, 61, 0.15),
+0 32px 64px rgba(194, 12, 61, 0.15);
+
+
+}
 /* Shadow */
 
 /* nur bei gardent */
@@ -5638,7 +5670,6 @@ input[type="file"] {
   height: 40px;
   margin: 0px;
   padding: 0px;
-
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -5661,11 +5692,9 @@ input[type="radio"]:checked {
 }
 
 .acf-label label{
-font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
-sans-serif;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   font-size: 1.6rem;
   line-height: 2.3rem;
-
 }
 
 .acf-table{
@@ -5767,13 +5796,30 @@ table.acf-table, table.acf-table th, table.acf-table td{
 }
 
 
-
-
 .acf-label p{
   font-size: 1.6rem;
   line-height: 2.3rem;
   margin-bottom: 2px;
+}
 
+
+/* Date Picker */ 
+
+.acf-date-picker input{
+  text-align: center;
+  color: #0091ff;
+}
+
+.ui-datepicker{
+  background: #fff;
+  border-radius:  20px;
+  padding: 5px;
+  width: 370px;
+  max-width: calc( 100vw - 30px);
+  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.07),
+    0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
+    0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
+    0 32px 64px rgba(0, 145, 255, 0.07);
 }
 
 .acf-clone, .acf-table thead{
@@ -5880,3 +5926,62 @@ form.poll .answers{
   border-radius: 15px;
   transition: width 1s ease-in-out ;
 }
+
+.ui-datepicker-calendar{
+  margin: 10px 0px 0px 0px;
+  border: none;
+  padding: 15px;
+  width: 100%;
+
+}
+
+.ui-datepicker-calendar tr{
+  width: 100%;
+}
+
+.ui-datepicker a{
+  text-decoration: none;
+  padding-top: 3px;
+  display: block;
+  border-radius: 5px;
+
+}
+
+.ui-datepicker a:hover, .ui-state-active{
+  background: #E8F5FF;
+}
+
+.ui-state-highlight{
+  color: #ef6363;
+}
+
+.ui-datepicker-header{
+  display: flex;
+  padding: 11px 15px 10px 15px;
+  justify-content: space-between;
+  background: #E8F5FF;
+  border-radius: 15px;
+}
+
+.ui-datepicker-next{
+  order: 3;
+}
+
+.ui-datepicker th{
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+.ui-datepicker th, .ui-datepicker td {
+text-align: center;
+border: none;
+padding: 5px 0px;
+}
+
+
+.ui-datepicker-buttonpane {
+  display: none;
+
+}
+

@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Nachrichten [Default]
- * Template Post Type: Nachrichten
+ * Template Post Type: Nachrichten<
  *
  */
 
@@ -17,9 +17,7 @@ get_header();
 <main id="site-content" role="main">
 
     <?php
-
 	if ( have_posts() ) {
-
 		while ( have_posts() ) {
             the_post();
             
@@ -45,28 +43,27 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3><?php echo $term_list[0]->name; ?> <span class="date"><?php echo get_the_date('j. F'); ?></span></h3>
-
-
-        </div>
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-
-        <?php
+            <h3 class="single-header-slogan"><?php echo $term_list[0]->name; ?> <span
+                    class="date"><?php echo get_the_date('j. F'); ?></span></h3>
+            <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
-                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
-                <a class="button is-style-outline" onclick="return confirm('Nachricht permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
+            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
+            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
+                href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
             <?php
             }
         ?>
+
+        </div>
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
     </div>
 
 
     <div class="site-content">
 
-    <?php the_field('text'); ?>
+        <?php the_field('text'); ?>
 
     </div>
 
@@ -125,14 +122,22 @@ get_header();
 
             $my_query = new WP_Query($args);
             if ($my_query->post_count > 0) {
-                ?>
-            <h2>Das Projekt</h2>
+     ?>
 
-            <?php
+
+    <h2>Das Projekt</h2>
+
+    <div class="card-container ">
+
+        <?php
             landscape_card($args);
             } 
+
+            
         }
     ?>
+
+    </div>
 
 
     <!-- Backend edit link -->
@@ -168,12 +173,9 @@ get_header();
             else {
                 wp_redirect( get_site_url() );
             }
-            
-
         }
 
         else {
-            
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                 echo '<h2>Bearbeite deine Nachricht</h2><br>';
                 acf_form (
@@ -185,28 +187,12 @@ get_header();
                         'post_content' => false,    
                         'uploader' => 'basic',
                         'field_groups' => array('group_5c5de02092e76'), //Arrenberg App
-                        // 'fields' => array(
-                        //     // fehlt: titel, beschreibung
-                        //     'target',
-                        //     'emoji',
-                        //     'slogan',
-                        //     'description',
-                        //     '_thumbnail_id', // Naming Bild ≠ Bilder
-                        // )
                     )
-                );
-                
+                );       
             }
-        
-
-
-
         }
-
     }
 }
-    
-
 	?>
 
 </main><!-- #site-content -->

@@ -31,14 +31,19 @@ else {
         <?php the_post_thumbnail( 'preview_m' ); ?>
         <div class="content">
             <div class="pre-title">
-                
-                <?php  echo $the_slug; ?> 
-                 
+                <?php echo $the_slug; ?> 
                 <span class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?><span>
-
-                </div>
-                    <h3 class="card-title"><?php shorten_title(get_the_title(), '30'); ?></h3>
-                    <p class="preview-text"> <?php get_excerpt(get_the_content(), $char); ?> 
+            </div>
+                <h3 class="card-title"><?php shorten_title(get_the_title(), '30'); ?></h3>
+                <p class="preview-text">
+                    <?php 
+                    if (get_field('text')) {
+                        get_excerpt(get_field('text'), $char);
+                    }
+                    else {
+                        get_excerpt(get_the_content(), $char);
+                    }
+                    ?> 
                 </p>
         </div>
     </a>

@@ -36,15 +36,13 @@ if (!is_user_logged_in()){
 
     <!-- Gutenberg Editor Content -->
 	<div class="gutenberg-content">
-        <?php
-            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                the_excerpt();
-            } else {
-                the_content( __( 'Continue reading', 'twentytwenty' ) );
-            }
-        ?>
+
+        <?php echo do_shortcode( '[ultimatemember form_id="63"]' ); ?>
+        <?php // echo do_shortcode( '[ultimatemember_account ]' ); ?>
 
 	</div>
+
+
     <br>
 
     <!-- user posts -->
