@@ -14,7 +14,6 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
-
 get_header();
 ?>
 

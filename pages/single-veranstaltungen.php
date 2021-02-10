@@ -3,7 +3,10 @@
  * Template Name: Veranstaltung [Default]
  * Template Post Type: projekte
  */
-
+if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+}
 get_header();
 ?>
 
@@ -185,10 +188,10 @@ get_header();
                 acf_form (
                     array(
                         'id' => 'veranstaltungen-form',
-                        'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
                         'field_el' => 'div',
                         'post_content' => false,
                         'post_title' => true,
+                        'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
                         'fields' => array(
                             'field_5fc8d0b28edb0', //Text
                             'field_5fc8d15b8765b', //Date
@@ -196,6 +199,7 @@ get_header();
                             'field_601d9d8ac7c9b', //Bilder
                         ),
                         'submit_value'=>'Änderungen speichern',
+                        
                     )
                 );       
             }
