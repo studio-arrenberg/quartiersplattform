@@ -924,6 +924,17 @@ function tpl_geschichten( $single_template ) {
 }
 add_filter( 'single_template', 'tpl_geschichten' );
 
+function tpl_poll( $single_template ) {
+    global $post;
+ 
+    if ( 'poll' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
+    }
+ 
+    return $single_template;
+}
+add_filter( 'single_template', 'tpl_poll' );
+
 // function template part test
 function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '')  {
 
@@ -1276,7 +1287,58 @@ function my_post_title_updater( $post_id ) {
 
 
 	}
-	if ( get_post_type($post_id) == 'veranstaltungen' ) {
+	if ( get_post_type($post_id) == 'poll' ) {
+
+		$tax = $_POST['project_tax'];
+		// $tax = 'quartiersplattform';
+    
+    if (!empty($tax)) {
+			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+		}
+    
+    $array;
+		$i = 0;
+		$rows = get_field('questions', $post_id);
+		if( $rows ) {
+			foreach( $rows as $row ) {
+				// $quest = $row['item'];
+				// $array[] = $i;
+				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
+				// 'percentage' => 0
+
+				$i++;
+			}
+		}
+
+		// add_post_meta($post_id, 'polls', $array, true);	
+
+		if ( ! add_post_meta($post_id, 'polls', $array, true) ) { 
+
+			// $array_old = get_post_meta($_POST['ID'], 'polls', true);
+
+			// $i = 0;
+			// // $array = [];
+			// $rows = get_field('questions', $post_id);
+			// if( $rows ) {
+			// 	foreach( $rows as $row ) {
+
+			// 		if (!isset($array_old[$i])) { // not working :(
+			// 			$array_old[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
+			// 		}
+
+			// 		$i++;
+			// 	}
+			// }
+
+			update_post_meta ( $post_id, 'polls', $array );
+    }
+
+		wp_redirect( get_post_permalink($post_id) ); 
+		exit;
+    
+  }
+
+    if ( get_post_type($post_id) == 'veranstaltungen' ) {
 
 		$tax = $_POST['project_tax'];
 
@@ -1290,7 +1352,6 @@ function my_post_title_updater( $post_id ) {
 		}
 
 		wp_redirect( get_post_permalink($post_id) ); exit;
-
 
 	}
 
@@ -1474,8 +1535,7 @@ function um_deregister_styles() {
 
 // register embla carousel script
 function embla_carousel() { 
-    wp_register_script('embla-carousel', 
-	get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
+    wp_register_script('embla-carousel', get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
 } add_action("wp_enqueue_scripts", "embla_carousel");
 
@@ -1529,6 +1589,7 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
 		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
+		&& strpos($REQUEST_URI,'/umfrage-erstellen/') === false
 		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
@@ -1544,10 +1605,14 @@ function my_init() {
 		wp_deregister_script('jquery-ui-sortable');
 		wp_deregister_script('jquery-ui-widget');
 		wp_deregister_script('jquery-ui-selectable');
-		wp_deregister_script('jquery-ui-core');
+		// wp_deregister_script('jquery-ui-core');
+		// wp_deregister_script( 'jquery-core' );
+
+		// initially called for ajax
+		// wp_deregister_script( 'jquery-core' );
 
 		// jQuery
-        wp_deregister_script('jquery');
+        // wp_deregister_script('jquery');
 		wp_register_script('jquery', false, false, true);
 
 		// emoji picker
@@ -1559,10 +1624,14 @@ function my_init() {
 		// wp customize scripts
 		wp_deregister_script('twentytwenty-color-calculations');
 
-	}
+		// scripts for ajax
+		wp_enqueue_script( 'jquery-form' );
+		wp_enqueue_script( 'jquery-core' );
+
+	 }
 
 }
-add_action('init', 'my_init');
+add_action('init', 'my_init', 11);
 
 
 // jQuery Update
@@ -1581,6 +1650,13 @@ add_action( 'pre_get_posts', function ( $query ) {
         $query->set( 'orderby', 'meta_value' );
         $query->set( 'order', 'DESC' );
         $query->set( 'meta_key', 'event_date' );
+    }
+} );
+
+// projekt archive custom order
+add_action( 'pre_get_posts', function ( $query ) {
+    if ( is_tax( 'projekt' ) && $query->is_main_query() && !current_user_can('administrator') ) {
+        $query->set( 'post_type', array('veranstaltungen','nachrichten') );
     }
 } );
 
@@ -1827,6 +1903,10 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Nachricht erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-nachrichten.php';
 			}
+			else if ($post->post_title == "Umfrage erstellen") {
+				$post_states[] = $prefix.'Umfrage erstellen';
+				$page_template= get_stylesheet_directory() . '/forms/form-poll.php';
+      }
 			else if ($post->post_title == "Veranstaltung erstellen") {
 				$post_states[] = $prefix.'Veranstaltung erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
@@ -1870,6 +1950,33 @@ function create_form_page(){
 
 } 
 
+add_action( 'after_setup_theme', 'create_form_poll' );
+function create_form_poll(){
+
+    $title = 'Umfrage erstellen';
+    $slug = 'umfrage-erstellen';
+    $page_content = ''; // your page content here
+    $post_type = 'page';
+
+    $page_args = array(
+        'post_type' => $post_type,
+        'post_title' => $title,
+        'post_content' => $page_content,
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_slug' => $slug
+	);
+	
+	if ( ! function_exists( 'post_exists' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/post.php' );
+	}
+
+    if(post_exists($title) === 0){
+        $page_id = wp_insert_post($page_args);
+    }
+
+}
+
 add_action( 'after_setup_theme', 'create_event_page' );
 function create_event_page(){
 
@@ -1896,6 +2003,152 @@ function create_event_page(){
     }
 
 } 
+
+
+// polling init
+# [x] cpt 
+# [x] tax
+# [-] acf !has to be added manually
+# [x] form (build)
+# [x] display
+# [x] save cpt: create array (iterate through questions) || if empty -> create
+# [x] vote: add to array
+# [x] display: jquery succes to html
+# [x] get votes on load: php iterate array (if user > display results) 
+# [ ] guest feature [later]
+# [x] not logged in issue (jquery core missing)
+# [x] render submit button when logged in 
+# ![ ] poll page 
+
+## CPT poll
+function cptui_register_my_cpts_poll() {
+
+	$labels = [
+		"name" => __( "Poll", "quartiersplattform" ),
+		"singular_name" => __( "Poll", "quartiersplattform" ),
+	];
+
+	$args = [
+		"label" => __( "Poll", "quartiersplattform" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => "nachrichten-archive",
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "poll", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => "dashicons-format-aside",
+		"supports" => [ "title", "editor", "comments", "author" ],
+	];
+
+	register_post_type( "poll", $args );
+}
+add_action( 'init', 'cptui_register_my_cpts_poll' );
+
+# Taxonomy: Projekte.
+function cptui_register_my_taxes_projekt() {
+
+	$labels = [
+		"name" => __( "Projekte", "quartiersplattform" ),
+		"singular_name" => __( "Projekt", "quartiersplattform" ),
+	];
+
+	$args = [
+		"label" => __( "Projekte", "quartiersplattform" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'projekt', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "projekt",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "projekt", [ "nachrichten", "veranstaltungen", "poll" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_projekt' );
+
+# ajax polling function
+add_action('wp_ajax_polling','polling');
+function polling() {
+
+	# if no user input --> abort
+	if (!is_user_logged_in() || !is_numeric($_POST['poll'])) exit;
+
+	# get meta field data (array)
+	$array = get_post_meta($_POST['ID'], 'polls', true);
+
+	# find user in meta field --> if true add || remove
+	for ($i = 0; $i < count($array); $i++) {
+
+		# when array has no user and should not -> nothing && when array has user and should -> nothing
+		if (($i != $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user']))||($i == $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user']))) {
+			// nothing
+		}
+		# when array has user but should not -> unset id
+		else if ($i != $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user'])) {
+			unset($array[$i]['user'][ array_search(get_current_user_id(),$array[$i]['user']) ]);
+		}
+		# when array has no user and shouold -> push id
+		else if ($i == $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user'])) {
+			array_push($array[$i]['user'], get_current_user_id());
+		}
+	}
+
+	# count all votes
+	$total_voter = 0;
+	for ($i = 0; $i < count($array); $i++) {
+		$total_voter = $total_voter + count($array[$i]['user']);
+	}
+
+	# write into array
+	for ($i = 0; $i < count($array); $i++) {
+		# count
+		$array[$i]['count'] = count($array[$i]['user']);
+		$array[$i]['percentage'] = (count($array[$i]['user']) / $total_voter) * 100;
+		$array[$i]['total_voter'] = $total_voter;
+	}
+
+	# update meta field
+	update_post_meta($_POST['ID'], 'polls', $array);
+
+	# prepare response (delete user and set choice)
+	for ($i = 0; $i < count($array); $i++) {
+		$array[$i]['user'] = array(false);
+		if ($i == $_POST['poll']) {
+			$array[$i]['user'] = array(true);
+		}
+	}
+
+	# send response
+	wp_send_json_success( $array );
+	// wp_send_json_success( $_POST );	
+
+	# just in case -> delete
+	// delete_post_meta($_POST['ID'], 'poll');
+}
+
+// reset rewrite rules
+// used to show poll post 
+// flush_rewrite_rules( false );
+
 
 // prolog loged in session to a year
 add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );

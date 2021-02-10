@@ -54,7 +54,7 @@ get_header();
 
             <!-- slogan -->
             <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-            <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4>              -->
+            <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4> -->
 
             <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
@@ -63,6 +63,25 @@ get_header();
             <?php
             }
             ?>
+
+
+    <!-- Nachricht erstellen -->
+
+    <?php
+        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        ?>
+            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
+        <?php
+        }
+    ?>
+
+    <?php
+        if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
+        ?>
+            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
+        <?php
+        }
+    ?>
 
         </div>
 
@@ -90,12 +109,42 @@ get_header();
     <?php } ?>
 
 
+
+    <!-- Last Polling -->
+    <?php
+        if (current_user_can('administrator')) {
+            $args_chronik = array(
+                'post_type'=>'poll', 
+                'post_status'=>'publish', 
+                'posts_per_page'=> 1,
+                'order' => 'DESC',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'projekt',
+                        'field' => 'slug',
+                        'terms' => ".$post->post_name."
+                    )
+                )
+
+            );
+
+            $my_query = new WP_Query($args_chronik);
+            if ($my_query->post_count > 0) {
+                ?>
+                    <h2>Umfrage</h2>
+                <?php 
+                slider($args_chronik,'card', '1','false'); 
+            }
+        }
+    ?>
+
+
     <!-- Anstehende Veranstaltungen -->
     <?php
         $args_chronik = array(
             'post_type'=>'veranstaltungen', 
             'post_status'=>'publish', 
-            'posts_per_page'=> 1,
+            'posts_per_page'=> 2,
             'meta_key' => 'event_date',
             'orderby' => 'rand',
             'order' => 'ASC',
@@ -121,9 +170,11 @@ get_header();
         $my_query = new WP_Query($args_chronik);
         if ($my_query->post_count > 0) {
             ?>
-    <h2>Anstehende Veranstaltung</h2>
-    <?php 
-            slider($args_chronik,'card', '1','false'); 
+                <h2>Anstehende Veranstaltung</h2>
+            <?php 
+            // slider($args_chronik,'card', '1','false'); 
+            get_template_part('elements/card', get_post_type());
+
         }
     ?>
 
