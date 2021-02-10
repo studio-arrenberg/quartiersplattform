@@ -1624,6 +1624,13 @@ add_action( 'pre_get_posts', function ( $query ) {
     }
 } );
 
+// projekt archive custom order
+add_action( 'pre_get_posts', function ( $query ) {
+    if ( is_tax( 'projekt' ) && $query->is_main_query() ) {
+        $query->set( 'post_type', array('veranstaltungen','nachrichten') );
+    }
+} );
+
 // debug function
 function debugToConsole($msg) { 
 	echo "<script>console.log(".json_encode($msg).")</script>";
@@ -1949,17 +1956,12 @@ function create_form_poll(){
 # [x] display: jquery succes to html
 # [x] get votes on load: php iterate array (if user > display results) 
 # [ ] guest feature [later]
-# [-] not logged in issue (jquery core missing)
+# [x] not logged in issue (jquery core missing)
 # [x] render submit button when logged in 
 # ![ ] poll page 
 
-## cpt
-
+## CPT poll
 function cptui_register_my_cpts_poll() {
-
-	/**
-	 * Post Type: Nachrichten.
-	 */
 
 	$labels = [
 		"name" => __( "Poll", "quartiersplattform" ),
@@ -1992,16 +1994,10 @@ function cptui_register_my_cpts_poll() {
 
 	register_post_type( "poll", $args );
 }
-
 add_action( 'init', 'cptui_register_my_cpts_poll' );
 
-## tax
-
+# Taxonomy: Projekte.
 function cptui_register_my_taxes_projekt() {
-
-	/**
-	 * Taxonomy: Projekte.
-	 */
 
 	$labels = [
 		"name" => __( "Projekte", "quartiersplattform" ),
@@ -2042,8 +2038,7 @@ function polling() {
 	# find user in meta field --> if true add || remove
 	for ($i = 0; $i < count($array); $i++) {
 
-		# when array has no user and should not -> nothing
-		# when array has user and should -> nothing
+		# when array has no user and should not -> nothing && when array has user and should -> nothing
 		if (($i != $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user']))||($i == $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user']))) {
 			// nothing
 		}
@@ -2088,20 +2083,8 @@ function polling() {
 
 	# just in case -> delete
 	// delete_post_meta($_POST['ID'], 'poll');
-
 }
 
 // reset rewrite rules
 // used to show poll post 
 // flush_rewrite_rules( false );
-
-// search array function
-// function find_in_array($needle, $haystack) {
-// 	foreach($haystack as $key=>$value){
-// 	   if(is_array($value) && array_search($needle, $value) !== false) {
-// 		  return $key;
-// 	   }
-// 	}
-// 	return false;
-// } 
-// add_action( 'find_in_array', 'find_array', 10, 2 );

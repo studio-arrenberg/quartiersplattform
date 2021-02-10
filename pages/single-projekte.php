@@ -76,7 +76,7 @@ get_header();
     ?>
 
     <?php
-        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
         ?>
             <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
         <?php
@@ -112,27 +112,29 @@ get_header();
 
     <!-- Last Polling -->
     <?php
-        $args_chronik = array(
-            'post_type'=>'poll', 
-            'post_status'=>'publish', 
-            'posts_per_page'=> 1,
-            'order' => 'DESC',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'projekt',
-                    'field' => 'slug',
-                    'terms' => ".$post->post_name."
+        if (current_user_can('administrator')) {
+            $args_chronik = array(
+                'post_type'=>'poll', 
+                'post_status'=>'publish', 
+                'posts_per_page'=> 1,
+                'order' => 'DESC',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'projekt',
+                        'field' => 'slug',
+                        'terms' => ".$post->post_name."
+                    )
                 )
-            )
 
-        );
+            );
 
-        $my_query = new WP_Query($args_chronik);
-        if ($my_query->post_count > 0) {
-            ?>
-                <h2>Umfrage</h2>
-            <?php 
-            slider($args_chronik,'card', '1','false'); 
+            $my_query = new WP_Query($args_chronik);
+            if ($my_query->post_count > 0) {
+                ?>
+                    <h2>Umfrage</h2>
+                <?php 
+                slider($args_chronik,'card', '1','false'); 
+            }
         }
     ?>
 

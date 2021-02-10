@@ -36,20 +36,6 @@ if ( have_posts() ) {
 
     </div>
     <br>
-    <h4>Kontakt</h4>
-    <!-- kontakt -->
-    <?php if (is_user_logged_in()) { ?>
-        <?php if (get_field('phone')) { ?>
-            <!-- <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a> -->
-            <br>
-            <p><?php the_field('phone'); ?></p>
-        <?php } ?>
-        <?php if (get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) )) { ?>
-            <a class="button is-style-outline" href="mailto:<?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'user_email', get_the_author_meta( 'ID' ) ); ?></a>
-        <?php } ?>
-    <?php } ?>
-
-        <br>
 
     <?php
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
@@ -84,22 +70,21 @@ else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged
 
 
 else {
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-    echo '<h2>Bearbeite deine Umfrage</h2><br>';
-    acf_form (
-        array(
-            'form' => true,
-            'return' => '%post_url%',
-            'submit_value' => 'Änderungen speichern',
-            'post_title' => true,
-            'post_content' => false,    
-            'field_groups' => array('group_601855a265b19'), //Arrenberg App
-        )
-    );
-    
+    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        echo '<h2>Bearbeite deine Umfrage</h2><br>';
+        acf_form (
+            array(
+                'form' => true,
+                'return' => '%post_url%',
+                'submit_value' => 'Änderungen speichern',
+                'post_title' => true,
+                'post_content' => false,    
+                'field_groups' => array('group_601855a265b19'), //Arrenberg App
+            )
+        );
+        
+    }
 }
-}
-// echo $post->post_author;
 ?>
 
 
