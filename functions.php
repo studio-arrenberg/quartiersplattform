@@ -1292,8 +1292,8 @@ function my_post_title_updater( $post_id ) {
 			wp_update_post( $my_post );
 		}
 
-		wp_redirect( get_post_permalink($post_id) ); exit;
-
+		wp_redirect( get_post_permalink($post_id) ); 
+		exit;
 
 	}
 	if ( get_post_type($post_id) == 'poll' ) {
@@ -1305,7 +1305,7 @@ function my_post_title_updater( $post_id ) {
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
 		}
     
-    $array;
+    	$array;
 		$i = 0;
 		$rows = get_field('questions', $post_id);
 		if( $rows ) {
@@ -1340,7 +1340,7 @@ function my_post_title_updater( $post_id ) {
 			// }
 
 			update_post_meta ( $post_id, 'polls', $array );
-    }
+    	}
 
 		wp_redirect( get_post_permalink($post_id) ); 
 		exit;
@@ -1360,7 +1360,8 @@ function my_post_title_updater( $post_id ) {
 			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
 		}
 
-		wp_redirect( get_post_permalink($post_id) ); exit;
+		wp_redirect( get_post_permalink($post_id) ); 
+		exit;
 
 	}
 
