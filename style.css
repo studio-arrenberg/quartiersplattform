@@ -4996,6 +4996,11 @@ figure.wp-block-table.is-style-stripes {
     max-height: 240px;
   }
 
+  .card-container .landscape a {
+
+    max-height: 240px;
+  }
+
   .card-container .landscape .card-title {
     font-size: 1.8rem;
     line-height: 2rem;
