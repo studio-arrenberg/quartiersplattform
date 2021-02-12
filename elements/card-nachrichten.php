@@ -30,7 +30,7 @@ if (strlen($the_slug < 1 )) {
             </h3>
             <p class="preview-text">
                 <?php  
-                if (get_field('text')) {
+                if (strlen(get_field('text')) > 2) {
                     get_excerpt(get_field('text'), $char);
                 }
                 else {
