@@ -5528,7 +5528,8 @@ input[type="file"] {
   padding: 0px !important;
   background: transparent;
   border-radius: 20px;
-  /* width: 145px !important; */
+  width: 150px !important;
+  
   padding-top: 5px !important;
   height: 50px !important;
 
@@ -6001,12 +6002,26 @@ input:placeholder-shown {
 }
  */
 
+ .acf-image-uploader{
+   margin: 15px 0px;
+   width: 100%;
+   height: 400px;
+   display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #0091ff;
+  border-radius: 20px;
+ }
+
 .acf-image-uploader input {
   color: transparent;
 }
+
 .acf-image-uploader input::-webkit-file-upload-button {
   visibility: hidden;
 }
+
 .acf-image-uploader input::before {
   content: 'Bild auswählen';
   color: black;
@@ -6014,7 +6029,6 @@ input:placeholder-shown {
   /* background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3); */
   /* border: 1px solid #999; */
   border-radius: 15px;
-
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
