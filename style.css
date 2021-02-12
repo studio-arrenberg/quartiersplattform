@@ -5880,7 +5880,7 @@ form.poll .answers{
   }
 
 
-.acf-icon.-minus:before{
+.ui-sortable .acf-icon.-minus:before{
   content: 'x';
   margin-top: -8px;
   position: absolute;
@@ -5890,7 +5890,7 @@ form.poll .answers{
 
 }
 
-.acf-icon{
+.ui-sortable .acf-icon{
   content: 'x';
   border: 1px solid red;
   color: red;
