@@ -5955,7 +5955,7 @@ form.poll .answers{
   color: #ef6363;
 }
 
-.ui-datepicker-header{
+.ui-datepicker-header, .ui-widget-header{
   display: flex;
   padding: 11px 15px 10px 15px;
   justify-content: space-between;
