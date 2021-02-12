@@ -27,7 +27,7 @@ else {
                 <h3 class="card-title"><?php shorten_title(get_the_title(), '30'); ?></h3>
                 <p class="preview-text">
                     <?php 
-                    if (get_field('text')) {
+                    if (strlen(get_field('text')) > 2) {
                         get_excerpt(get_field('text'), $char);
                     }
                     else {

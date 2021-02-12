@@ -79,7 +79,7 @@ function twentytwenty_theme_support() {
 	add_image_size( 'preview_m3', 600, 450, array( 'center', 'center' )); 
 	add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
 	// landscape (2:1)
-	add_image_size( 'landscape_s', 400, 100, array( 'center', 'center' ));
+	add_image_size( 'landscape_s', 400, 200, array( 'center', 'center' ));
 	add_image_size( 'landscape_m', 750, 375, array( 'center', 'center' ));
 	add_image_size( 'landscape_l', 970, 485, array( 'center', 'center' ));
 
