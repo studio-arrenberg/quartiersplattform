@@ -6015,13 +6015,18 @@ input:placeholder-shown {
  }
 
 
+ .acf-image-uploader img{
+   border-radius: 15px;
+
+}
+
+
+
 
  @media (max-width: 782px) {
  
   .acf-image-uploader{
-  
-    height: 200px;
-    
+    height: 350px;
   }
 }
 .acf-image-uploader input {
