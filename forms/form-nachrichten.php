@@ -53,6 +53,7 @@ get_header();
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated
 				'field_el' => 'div',
 				'post_content' => false,
+                'uploader' => 'basic',
                 'post_title' => true,
                 'field_groups' => array('group_5c5de02092e76'), //Arrenberg App
                 'submit_value'=>'Nachricht veröffentlichen',
