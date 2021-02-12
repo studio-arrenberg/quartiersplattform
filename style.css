@@ -5528,7 +5528,7 @@ input[type="file"] {
   padding: 0px !important;
   background: transparent;
   border-radius: 20px;
-  width: 145px !important;
+  /* width: 145px !important; */
   padding-top: 5px !important;
   height: 50px !important;
 
@@ -5988,4 +5988,61 @@ padding: 5px 0px;
   display: none;
 
 }
+
+/* 
+
+input:not(:placeholder-shown) {
+  color: green;
+  content: 'bild noch nicht da';
+}
+
+input:placeholder-shown {
+  border-color: red;
+}
+ */
+
+.acf-image-uploader input {
+  color: transparent;
+}
+.acf-image-uploader input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.acf-image-uploader input::before {
+  content: 'Bild auswählen';
+  color: black;
+  display: inline-block;
+  /* background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3); */
+  /* border: 1px solid #999; */
+  border-radius: 15px;
+
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: none;
+  font-weight: 700;
+  background-color: rgb(0, 145, 255);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 20px 13px 20px;
+  font-weight: 500;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+
+
+
 
