@@ -14,13 +14,10 @@
         <a href="<?php echo esc_url( get_permalink() ); ?>">
     <?php } ?>
         <div class="content">
-            <div class="pre-title red-text ">Umfrage
+            <div class="pre-title red-text ">
                 <?php 
-                    # get projekt
-                    $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-                    $the_slug = $term_list[0]->name;
-                    if ($the_slug) echo "von ".$the_slug;
-                    else if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) );                     
+                    # get projekt or owner
+                    if (get_cpt_term_owner($post->ID, 'projekt')) echo "Umfrage von ".get_cpt_term_owner($post->ID, 'projekt');
                 ?>
             </div>
                 <h3 class="card-title-large">

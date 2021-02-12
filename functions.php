@@ -623,7 +623,7 @@ function twentytwenty_customize_controls_enqueue_scripts() {
 // add_action( 'customize_controls_enqueue_scripts', 'twentytwenty_customize_controls_enqueue_scripts' );
 
 // no jquery if not admin
-if ( !is_admin() ) wp_deregister_script('jquery');
+// if ( !is_admin() ) wp_deregister_script('jquery');
 
 /**
  * Enqueue scripts for the customizer preview.
@@ -787,7 +787,6 @@ function twentytwenty_get_elements_array() {
 // custom functions
 // ------------------------------------------------------------
 
-
 // unregister Widgets
 function remove_default_WP_widgets( ){
 	unregister_widget('WP_Widget_Pages');
@@ -847,93 +846,45 @@ function shorten_title($text, $count = '55') {
 }
 
 // set template for custom post type  
-function tpl_projekte( $single_template ) {
-    global $post;
- 
-    if ( 'projekte' === $post->post_type ) {
+add_filter( 'single_template', 'single_template_hook' );
+function single_template_hook() {
+
+	global $post;
+
+	if ( 'poll' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
+    }
+	else if ( 'projekte' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-projekte.php';
     }
- 
-    return $single_template;
-}
-add_filter( 'single_template', 'tpl_projekte' );
-
-function tpl_veranstaltungen( $single_template ) {
-    global $post;
- 
-    if ( 'veranstaltungen' === $post->post_type ) {
+	else if ( 'poll' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
+    }
+	else if ( 'geschichten' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
+    }
+	else if ( 'fragen' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
+    }
+	else if ( 'angebote' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-angebote.php';
+    }
+	else if ( 'nachrichten' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-nachrichten.php';
+    }
+	else if ( 'anmerkungen' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-anmerkungen.php';
+    }
+	else if ( 'veranstaltungen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
  
     return $single_template;
-}
-add_filter( 'single_template', 'tpl_veranstaltungen' );
 
-function tpl_anmerkungen( $single_template ) {
-    global $post;
- 
-    if ( 'anmerkungen' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-anmerkungen.php';
-    }
- 
-    return $single_template;
 }
-add_filter( 'single_template', 'tpl_anmerkungen' );
 
-function tpl_nachrichten( $single_template ) {
-    global $post;
- 
-    if ( 'nachrichten' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-nachrichten.php';
-    }
- 
-    return $single_template;
-}
-add_filter( 'single_template', 'tpl_nachrichten' );
 
-function tpl_angebote( $single_template ) {
-    global $post;
- 
-    if ( 'angebote' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-angebote.php';
-    }
- 
-    return $single_template;
-}
-add_filter( 'single_template', 'tpl_angebote' );
 
-function tpl_fragen( $single_template ) {
-    global $post;
- 
-    if ( 'fragen' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
-    }
- 
-    return $single_template;
-}
-add_filter( 'single_template', 'tpl_fragen' );
-
-function tpl_geschichten( $single_template ) {
-    global $post;
- 
-    if ( 'geschichten' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
-    }
- 
-    return $single_template;
-}
-add_filter( 'single_template', 'tpl_geschichten' );
-
-function tpl_poll( $single_template ) {
-    global $post;
- 
-    if ( 'poll' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
-    }
- 
-    return $single_template;
-}
-add_filter( 'single_template', 'tpl_poll' );
 
 // function template part test
 function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '')  {
@@ -960,12 +911,6 @@ function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '
 	}
 
 }
-
-// veraltet -> in list_card function aufgenommen
-// function card_header($card_header_title, $card_header_subtitle){
-// 	set_query_var( 'card_header_title', $card_header_title );
-// 	set_query_var( 'card_header_subtitle', $card_header_subtitle );
-// }
 
 // list card
 function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
@@ -1091,22 +1036,11 @@ function calendar_download($post) {
     $title = get_the_title();
     $start = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time"));
     $ende = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time_end"));
-	// $creation = date('Ymd') . "T" . date('His');
-
-	// echo get_field('event_date', $post)."<br>";
-	// echo date('Ymd', strtotime($date))."<br>";
-	// echo $start." ".$ende."<br>";
-	// echo "hello world";
 
 	// directory
 	$links = get_template_directory_uri();
 	$destination_folder = $_SERVER['DOCUMENT_ROOT'];
 	$man_link = getcwd()."/wp-content/themes/".get_template();
-	// $man_link = getcwd()."/wp-content/uploads/calendar-files/";
-	
-	// echo "hello world<br>";
-	// echo "title ".$title."<br>start ".$start."<br>end ".$end."<br>creation ".$creation."<br>link".$links."<br>server".$destination_folder;
-	// echo "<br>";
     
     // get ort name
     $taxonomies = get_object_taxonomies( $post );
@@ -1124,7 +1058,6 @@ function calendar_download($post) {
     $dir = "/assets/generated/calendar-files/";
     
     // frequency (wiederholung)
-    // $kb_freq = get_field( "wiederholung" );
     // $kb_freq_end = date('Ymd', strtotime(get_field( "ende_der_widerholung" ))) . "T" . date('His', strtotime(get_field( "ende_der_widerholung" )));
 	
     $kb_start = $start;
@@ -1142,9 +1075,7 @@ function calendar_download($post) {
         die(); 
 	}
 	
-	// $kb_ical = fopen($url.$theme.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
 	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
-	// $kb_ical = fopen($man_link.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
         
     $eol = "\r\n";
     $kb_ics_content =
@@ -1172,9 +1103,7 @@ function calendar_download($post) {
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
 
-	echo '<a class="button"
-	href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics"
-	target="_self">Termin im Kalender speichern</a>';
+	echo '<a class="button" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">Termin im Kalender speichern</a>';
     
 }
 
@@ -1201,12 +1130,6 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
     return in_array( (int) $object_id, $menu_items );
 
 }
-
-// acf form head befor wp header
-// add_action( 'init', 'brandpage_form_head' );
-// function brandpage_form_head(){
-// 	acf_form_head();
-// }
 
 // on save ACF function
 add_action('acf/save_post', 'my_post_title_updater', 20);
@@ -1278,18 +1201,16 @@ function my_post_title_updater( $post_id ) {
 			# set taxonomy 
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
 			# update project date
-			$parent_post = get_page_by_path($tax);
-			// if ($post) {
-			// 	return $parent_post->ID;
-			// } else {
-			// 	return null;
-			// }
-			$my_post = array();
-			$my_post['ID'] = $parent_post->ID;
-			$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
-			$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
-			# update post 
-			wp_update_post( $my_post );
+			$page = get_page_by_path($tax, OBJECT, 'projekte');
+			if ($page) {
+				$my_post = array();
+				$my_post['ID'] = $page->ID;
+				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
+				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
+				# update post 
+				wp_update_post( $my_post );
+			}
+			
 		}
 
 		wp_redirect( get_post_permalink($post_id) ); 
@@ -1299,10 +1220,21 @@ function my_post_title_updater( $post_id ) {
 	if ( get_post_type($post_id) == 'poll' ) {
 
 		$tax = $_POST['project_tax'];
-		// $tax = 'quartiersplattform';
-    
-    	if (!empty($tax)) {
+
+		if (!empty($tax)) {
+			# set taxonomy 
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
+			# update project date
+			$page = get_page_by_path($tax, OBJECT, 'projekte');
+			if ($page) {
+				$my_post = array();
+				$my_post['ID'] = $page->ID;
+				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
+				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
+				# update post 
+				wp_update_post( $my_post );
+			}
+			
 		}
     
     	$array;
@@ -1310,35 +1242,12 @@ function my_post_title_updater( $post_id ) {
 		$rows = get_field('questions', $post_id);
 		if( $rows ) {
 			foreach( $rows as $row ) {
-				// $quest = $row['item'];
-				// $array[] = $i;
 				$array[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
-				// 'percentage' => 0
-
 				$i++;
 			}
 		}
 
-		// add_post_meta($post_id, 'polls', $array, true);	
-
 		if ( ! add_post_meta($post_id, 'polls', $array, true) ) { 
-
-			// $array_old = get_post_meta($_POST['ID'], 'polls', true);
-
-			// $i = 0;
-			// // $array = [];
-			// $rows = get_field('questions', $post_id);
-			// if( $rows ) {
-			// 	foreach( $rows as $row ) {
-
-			// 		if (!isset($array_old[$i])) { // not working :(
-			// 			$array_old[$i] = array('field' => $row['item'], 'user' => array(), 'count' => 0);
-			// 		}
-
-			// 		$i++;
-			// 	}
-			// }
-
 			update_post_meta ( $post_id, 'polls', $array );
     	}
 
@@ -1350,14 +1259,21 @@ function my_post_title_updater( $post_id ) {
     if ( get_post_type($post_id) == 'veranstaltungen' ) {
 
 		$tax = $_POST['project_tax'];
-
-		// $my_post = array();
-		// $my_post['ID'] = $post_id;
-		// $my_post['post_content'] = "hellooooooo";
-		// wp_update_post( $my_post );
 		
 		if (!empty($tax)) {
-			wp_set_object_terms( $post_id, $tax, 'projekt', false); // quartiersplattform
+			# set taxonomy 
+			wp_set_object_terms( $post_id, $tax, 'projekt', false);
+			# update project date
+			$page = get_page_by_path($tax, OBJECT, 'projekte');
+			if ($page) {
+				$my_post = array();
+				$my_post['ID'] = $page->ID;
+				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
+				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
+				# update post 
+				wp_update_post( $my_post );
+			}
+			
 		}
 
 		wp_redirect( get_post_permalink($post_id) ); 
@@ -1384,16 +1300,17 @@ function my_acf_admin_head() {
     </style>
     <?php
 }
-add_action('acf/input/admin_head', 'my_acf_admin_head');
+// add_action('acf/input/admin_head', 'my_acf_admin_head');
+
 
 // ACF Forms deregister CSS Styles
 // disable acf css on front-end acf forms
 function my_deregister_styles() {
-  wp_deregister_style( 'acf' );
-  wp_deregister_style( 'acf-field-group' );
-  wp_deregister_style( 'acf-global' );
-  wp_deregister_style( 'acf-input' );
-  wp_deregister_style( 'acf-datepicker' );
+	wp_deregister_style( 'acf' );
+	wp_deregister_style( 'acf-field-group' );
+  	wp_deregister_style( 'acf-global' );
+//   wp_deregister_style( 'acf-input' );
+  	wp_deregister_style( 'acf-datepicker' );
 } add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
@@ -1405,9 +1322,6 @@ function unset_url_field($fields){
        unset($fields['url']);
        return $fields;
 }
-
-
-
 
 //remove dashicons in frontend to non-admin  
 function wpdocs_dequeue_dashicon() {
@@ -1559,9 +1473,6 @@ function emoji_picker() {
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
 	 ) {
-
-		// echo "<script>console.log('".$REQUEST_URI."')</script>";
-		// echo "<script>console.log('add emoji picker')</script>";
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
 		wp_enqueue_script('emoji_picker-config');
@@ -1574,14 +1485,6 @@ function emoji_picker() {
 		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
 		wp_enqueue_style( 'emoji_picker-css' );
 
-		// wp_deregister_script('jquery-ui-draggable');
-		// wp_deregister_script('jquery-ui-mouse');
-		// wp_deregister_script('jquery-ui-resizable');
-		// wp_deregister_script('jquery-ui-sortable');
-		// wp_deregister_script('jquery-ui-widget');
-		// wp_deregister_script('jquery-ui-selectable');
-
-		// wp_deregister_script('jquery-ui-core');
 	}
       
 }
@@ -1604,9 +1507,6 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
-
-		// echo "<script>console.log('".$REQUEST_URI."')</script>";
-		// echo "<script>console.log('remove jquery libs')</script>";
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
@@ -1646,12 +1546,19 @@ add_action('init', 'my_init', 11);
 
 // jQuery Update
 /** * Install latest jQuery version 3.5.1. */
-if (!is_admin()) {
-	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
-	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
-	wp_enqueue_script('jquery');
+// if (!is_admin()) {
+// 	wp_deregister_script('jquery');
+// 	wp_register_script('jquery', ("https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"), false, false, true);
+// 	// wp_register_script('jquery', ("https://code.jquery.com/jquery-1.11.3.min.js"), false, false, true);
+// 	wp_enqueue_script('jquery');
+// }
+
+function replace_core_jquery_version() {
+    wp_deregister_script( 'jquery' );
+    // Change the URL if you want to load a local copy of jQuery from your own server.
+    wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 }
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
 
 // veranstaltungen archive custom order
@@ -1748,20 +1655,8 @@ function comment_counter($id_post) {
 
 }
 
-// remove wp emojis
-//remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-//remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
-
-
 // Media Copyright function
-/**
- * Adding a "Copyright" field to the media uploader $form_fields array
- *
- * @param array $form_fields
- * @param object $post
- *
- * @return array
- */
+// Adding a "Copyright" field to the media uploader $form_fields array
 function add_copyright_field_to_media_uploader( $form_fields, $post ) {
 	$form_fields['copyright_field'] = array(
 		'label' => __('Copyright'),
@@ -1773,14 +1668,7 @@ function add_copyright_field_to_media_uploader( $form_fields, $post ) {
 }
 add_filter( 'attachment_fields_to_edit', 'add_copyright_field_to_media_uploader', null, 2 );
 
-/**
- * Save our new "Copyright" field
- *
- * @param object $post
- * @param object $attachment
- *
- * @return array
- */
+// Save our new "Copyright" field
 function add_copyright_field_to_media_uploader_save( $post, $attachment ) {
 	if ( ! empty( $attachment['copyright_field'] ) ) 
 		update_post_meta( $post['ID'], '_custom_copyright', $attachment['copyright_field'] );
@@ -1791,27 +1679,16 @@ function add_copyright_field_to_media_uploader_save( $post, $attachment ) {
 }
 add_filter( 'attachment_fields_to_save', 'add_copyright_field_to_media_uploader_save', null, 2 );
 
-/**
- * Display our new "Copyright" field
- *
- * @param int $attachment_id
- *
- * @return array
- */
+// Display our new "Copyright" field
 function get_featured_image_copyright( $attachment_id = null ) {
 	$attachment_id = ( empty( $attachment_id ) ) ? get_post_thumbnail_id() : (int) $attachment_id;
 
 	if ( $attachment_id )
 		return get_post_meta( $attachment_id, '_custom_copyright', true );
 }
-
-
 function copywrite_beitragsbild() {
-    
     if (get_featured_image_copyright()) {
-        
         return "<p class='copyright'>© ".get_featured_image_copyright()."</p>";
-
     }
 }
 
@@ -1858,6 +1735,7 @@ function veranstaltungen_field_zeitpunkt() {
 
 }
 add_action( 'init', 'veranstaltungen_field_zeitpunkt' );
+
 
 
 // assigne templates to pages
@@ -2151,28 +2029,20 @@ function polling() {
 	wp_send_json_success( $array );
 	// wp_send_json_success( $_POST );	
 
-	# just in case -> delete
-	// delete_post_meta($_POST['ID'], 'poll');
 }
 
 // reset rewrite rules
 // used to show poll post 
 // flush_rewrite_rules( false );
-
+add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 // prolog loged in session to a year
-add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 function wpdev_login_session( $expire ) { // Set login session limit in seconds
     return YEAR_IN_SECONDS;
-	// return strtotime('+1 year');
-	// return PHP_INT_MAX;
-}
+} add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 
-add_action('init', 'set_user_cookie_inc_guest');
+// set guest cookie
 function set_user_cookie_inc_guest(){
-
-	wp_signon();
-
 	# check if cookie not set
     if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
 		# get/increase or set guest counter
@@ -2189,24 +2059,30 @@ function set_user_cookie_inc_guest(){
 		$expiry = strtotime('+1 year');
 		setcookie('guest', md5($counter), $expiry, $path, $host);
     }  
-	else if (is_user_logged_in()) {
-		// wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
-	}
 
-}
+} add_action('init', 'set_user_cookie_inc_guest');
 
-add_action('wp_login', 'add_custom_cookie_admin');
+// cookie for logged in users
 function add_custom_cookie_admin() {
-//   if(is_admin()) {
-//     setcookie('your_cookie_name', 'cookie value', time() + 86400, '/'); // expire in a day
-//   }
 	wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
-}
+} add_action('wp_login', 'add_custom_cookie_admin');
 
 // UM show image upload 
 function um_show_hidden_field(){
-	// if( is_page_template( 'pages/page-profil.php' )){
 	if ( is_page( 'profil' ) ) {
 			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
 	}
 } add_action('wp_footer', 'um_show_hidden_field');
+
+
+// display owner of CPT 
+function get_cpt_term_owner($post_ID, $term, $type = 'name') {
+
+	if (wp_get_post_terms( $post_ID, $term, array( 'fields' => 'all' ) )) {
+		return wp_get_post_terms( $post_ID, $term, array( 'fields' => 'all' ) )[0]->name;
+	}
+	else if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) {
+		return get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) );
+	}
+	                     
+}

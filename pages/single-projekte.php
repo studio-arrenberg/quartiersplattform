@@ -91,14 +91,6 @@ get_header();
 
     </div>
 
-    <!-- Projektbeschreibung -->
-
-    <?php 
-
-    print_r(get_post());
-
-    ?>
-
 
     <?php if (get_field('text')) { ?>
     <div class="single-content">

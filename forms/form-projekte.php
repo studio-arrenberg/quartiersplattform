@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Projekt erstellen Formular
- * Template Post Type: projekte, page
+ * Template Post Type: page
  *
  * @package WordPress
  * @subpackage Twenty_Twenty

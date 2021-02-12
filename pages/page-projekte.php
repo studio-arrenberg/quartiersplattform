@@ -39,7 +39,8 @@ get_header();
 	$args4 = array(
 		'post_type'=>'projekte', 
 		'post_status'=>'publish', 
-		'posts_per_page'=> -1
+		'posts_per_page'=> -1,
+		'orderby' => 'modified'
 	);
 	?>
 	
