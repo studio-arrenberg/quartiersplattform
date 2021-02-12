@@ -50,9 +50,12 @@ get_header();
                 'fields' => array(
                     'field_5fc8d0b28edb0', //Text
                     'field_5fc8d15b8765b', //Date
+                    'field_5fc8d16e8765c', //Start AP1
+                    'field_5fc8d18b8765d', //End AP1 
                     'field_5fc8d1e0d15c9', //Livestream
                     'field_601d9d8ac7c9b', //Bilder
                     'field_60226dfd58a16', //Bilder AP1
+                    
                 ),
 
                 'submit_value'=>'Veranstaltung veröffentlichen',
