@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Nachrichten [Default]
- * Template Post Type: Nachrichten
+ * Template Post Type: Nachrichten<
  *
  */
 
@@ -17,9 +17,7 @@ get_header();
 <main id="site-content" role="main">
 
     <?php
-
 	if ( have_posts() ) {
-
 		while ( have_posts() ) {
             the_post();
             
@@ -59,9 +57,6 @@ get_header();
 
         </div>
         <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-
-
 
     </div>
 
@@ -178,12 +173,9 @@ get_header();
             else {
                 wp_redirect( get_site_url() );
             }
-            
-
         }
 
         else {
-            
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                 echo '<h2>Bearbeite deine Nachricht</h2><br>';
                 acf_form (
@@ -195,28 +187,12 @@ get_header();
                         'post_content' => false,    
                         'uploader' => 'basic',
                         'field_groups' => array('group_5c5de02092e76'), //Arrenberg App
-                        // 'fields' => array(
-                        //     // fehlt: titel, beschreibung
-                        //     'target',
-                        //     'emoji',
-                        //     'slogan',
-                        //     'description',
-                        //     '_thumbnail_id', // Naming Bild ≠ Bilder
-                        // )
                     )
-                );
-                
+                );       
             }
-        
-
-
-
         }
-
     }
 }
-    
-
 	?>
 
 </main><!-- #site-content -->

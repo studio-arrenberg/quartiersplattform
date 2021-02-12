@@ -1,46 +1,71 @@
-<?php
-/**
- * Template Name: Event Form
- * Template Post Type: page
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
+<?php 
+/* 
+*
+* Template Name: Veranstaltung erstellen
+*
+*/
+acf_form_head();
 
-$settings = array(
-	'html_before_fields' => '<p>Hello</p>',
-	'html_after_fields' => '<p>World</p>',
-	'html_updated_message'  => '<h1 id="message" class="updated"><p>%s</p></h1>',
-	'uploader' => 'basic',
-	'field_el' => 'div',
-	'form' => true,
-	'post_content' => false,
-	'form_attributes' => array(),
-	'fields' => false,
-);
-
-
+get_header();
 ?>
-<?php acf_form_head(); ?>
-<?php get_header(); ?>
 
-	<div id="primary">
-		<div id="content" role="main">
+<main id="site-content" role="main">
+    <div class="card-container card-container__center card-container__large ">
+        <div class="card bg_red">
+            <div class="content white-text">
+                <h3 class="card-title-large">
+                    Erstelle eine Veranstaltung
+                </h3>
+                <p class="preview-text-large">
+                    Teile den Bewohnern in deinem Quartier mit, wann Veranstaltungen zu deinem Projekt stattfinden. <br>
+                    <!-- So bleibt dein Projekt relevant und ist immer im Überblick sichtbar. -->
+                    <?php // echo $_GET['project']; ?>
+                </p>
+            </div>
+        </div>
+    </div>
 
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				
-				<!-- <h1><?php the_title(); ?></h1> -->
-				<!-- <?php the_content(); ?> -->
 
-				<!-- <p>My custom field: <?php the_field('my_custom_field'); ?></p> -->
-				
-				<?php acf_form($settings); ?>
 
-			<?php endwhile; ?>
+    <div class="publish-form">
+    <br>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+    <?php $hierarchical_tax = array( 1 ); ?>
+    <?php acf_form(
+			array(
+				'id' => 'veranstaltungen-form',
+				'html_before_fields' => '',
+				'html_after_fields' => '',
+				'label_placement'=> '',
+                'post_id'=>'new_post',
+				'new_post'=>array(
+                    'post_type' => 'veranstaltungen',
+                    'post_status' => 'publish',
+                ),
+                'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
+				'field_el' => 'div',
+				'post_content' => false,
+                'post_title' => true,
+                'uploader' => 'basic',
+                'fields' => array(
+                    'field_5fc8d0b28edb0', //Text
+                    'field_5fc8d15b8765b', //Date
+                    'field_5fc8d16e8765c', //Start AP1
+                    'field_5fc8d18b8765d', //End AP1 
+                    'field_5fc8d1e0d15c9', //Livestream
+                    'field_601d9d8ac7c9b', //Bilder
+                    'field_60226dfd58a16', //Bilder AP1
+                    
+                ),
+
+                'submit_value'=>'Veranstaltung veröffentlichen',
+                'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
+			)
+    ); 
+
+    ?>
+    
+    </div>
+</main><!-- #site-content -->
 
 <?php get_footer(); ?>

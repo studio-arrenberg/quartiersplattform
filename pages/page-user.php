@@ -1,52 +1,50 @@
 <?php
 /**
- * Template Name: Profil
- *
- *
+ * Template Name: User
  */
 
 get_header();
-
-if (!is_user_logged_in()){
-    header("Location: ".get_site_url());
-    exit();
-}
-
 ?>
 
 <main id="site-content" role="main">
 
+<?php 
+
+print_r(get_userdata(get_query_var('author')));
+?>
+
     <div class="single-header profil">
         
         <?php 
+
+        # get user
+        $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+        $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+        $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $_GET['author_name']) : get_userdata($_GET['author']);
+        $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
+
+        print_r ($curauth);
+        echo get_author_template();
+        echo "sd ds sdds";
         // User Avatar
-        $current_user = wp_get_current_user();
+        $current_user = $_GET['author_name'];
         echo get_avatar( $current_user->user_email, 32 );
         ?>
 
 
         <!-- user  name -->
         <div class="single-header-content">
-            <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
+            <h1><?php echo $curauth->nickname; ?></h1>
         </div>
 
     </div>
 
-    <?php // echo do_shortcode('[ultimatemember form_id="63"]'); ?>
-
-    <!-- Gutenberg Editor Content -->
-	<div class="gutenberg-content">
-
-        <?php echo do_shortcode( '[ultimatemember form_id="63"]' ); ?>
-        <?php // echo do_shortcode( '[ultimatemember_account ]' ); ?>
-
-	</div>
-
+    <p>This is <?php echo $curauth->nickname; ?>'s page</p>
 
     <br>
 
     <!-- user posts -->
-    <h2>Deine Angebote und Fragen</h2>
+    <h2>Angebote und Fragen von ...</h2>
     <?php
         $args4 = array(
             'post_type'=> array('angebote', 'fragen'), 
@@ -65,7 +63,7 @@ if (!is_user_logged_in()){
     </div>
 
     <br>
-    <h2>Deine Projekte</h2>
+    <h2>Projekte von ...</h2>
     <?php
         $args4 = array(
             'post_type'=> 'projekte', 
@@ -82,17 +80,6 @@ if (!is_user_logged_in()){
     <div class="card-container card-container__center card-container__long">
         <?php get_template_part( 'components/call', 'projekt' ); ?>
     </div>
-
-
-    <br>
-    <br>
-    <h2>Profil bearbeiten</h2>
-    <?php echo do_shortcode("[ultimatemember_account]"); ?>
-    
-    <?php if (is_user_logged_in()) : ?>
-        <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
-    <?php endif;?>
-    
 
    
 </main><!-- #site-content -->

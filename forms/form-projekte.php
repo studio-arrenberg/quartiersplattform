@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Projekt erstellen Formular
- * Template Post Type: projekte, page
+ * Template Post Type: page
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -30,9 +30,6 @@ get_header();
 <div class="publish-form">
     <h2>Erstelle dein eigenes Projekt</h2>
     <br>
-
-    <?php // acf_form_head(); ?>
-
     <?php $hierarchical_tax = array( 1 ); ?>
     <?php 
     acf_form(
@@ -50,18 +47,15 @@ get_header();
                 'uploader' => 'basic',
 				'post_content' => false,
                 'post_title' => true,
-                'return' => get_site_url().'/projekte', // post gets dublicated
+                'return' => get_site_url().'/projekte',
                 
                 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
 				'submit_value'=>'Projekt veröffentlichen',
 			)
     ); 
-
     ?>
 
 <script>
-
-       
 // picker for acf field
 var el = $( "#acf-field_5fcf563d5b576" );
 el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');

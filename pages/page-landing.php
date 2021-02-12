@@ -304,7 +304,7 @@ get_header();
 		?>
 
     <!-- link card -->
-    <?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberrg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
+    <?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
 
     <!-- call to register -->
     <div class="card-container ">
