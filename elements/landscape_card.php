@@ -52,7 +52,7 @@
             <?php
         }
         else {
-            the_post_thumbnail( 'preview_m' );
+            the_post_thumbnail( 'landscape' );
         }
         ?>
     </a>
