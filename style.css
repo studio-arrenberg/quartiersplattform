@@ -6014,6 +6014,16 @@ input:placeholder-shown {
   border-radius: 20px;
  }
 
+
+
+ @media (max-width: 782px) {
+ 
+  .acf-image-uploader{
+  
+    height: 200px;
+    
+  }
+}
 .acf-image-uploader input {
   color: transparent;
 }
