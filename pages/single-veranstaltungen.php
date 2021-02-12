@@ -37,9 +37,10 @@ get_header();
         <!-- post title -->
         <div class="single-header-content">
             <h1><?php the_title(); ?></h1>
-            <h3 class="single-header-slogan"><?php echo $term_list[0]->name; ?> <span
-                    class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?></span></h3>
-            
+            <h3 class="single-header-slogan">
+                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
+                <span class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?></span>
+            </h3>
 
         <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {

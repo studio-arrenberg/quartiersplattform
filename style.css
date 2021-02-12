@@ -1134,6 +1134,16 @@ button.toggle {
   margin-left: 5px;
 }
 
+
+.site-name a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-name a:hover{
+  color:#0091ff;
+  text-decoration: none;
+}
 .site-name h1 {
   font-size: 1.8rem;
   line-height: 1.9rem;
