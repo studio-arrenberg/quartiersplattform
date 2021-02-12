@@ -102,14 +102,11 @@ date('Ymd', strtotime(get_field( "event_date" )));
 
 ### Image Sizes (Ratio)
 
-| Name      | S       | M       | M+      | L       |
-| --------- | ------- | ------- | ------- | ------- |
-| Square    | 80x80   | 180x180 | -       | 300x300 |
-| 4:3       | 160x120 | 200x150 | 400x300 | 800x600 |
-| Landscape | 200x100 | 400x200 | -       | 970x485 |
-
-#### new:
-add_image_size( 'preview_ml', 400, 300, array( 'center', 'center' )); 
+| Name          | S       | M       | M(2)    | M(3)    | L       |
+| ------------- | ------- | ------- | ------- | ------- | ------- |
+| Square 1:1    | 80x80   | 180x180 | 300x300 | -       | 400x400 |
+| Preview 4:3   | 160x120 | 200x150 | 400x300 | 600x450 | 800x600 |
+| Landscape 2:1 | 400x200 | 750x375 | -       | -       | 970x485 |
 
 ### SEO
 
