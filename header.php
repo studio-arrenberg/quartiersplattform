@@ -116,10 +116,14 @@
         } 
         else {
             ?>
+            
             <div class="site-name">
-                <h1>Arrenberg </h1>
-                <h2>Quartiersplattform </h2>
+                <a href="<?php echo get_site_url(); ?>">
+                    <h1>Arrenberg </h1>
+                    <h2>Quartiersplattform </h2>
+                </a>
             </div>
+        
             <?php 
         }
         ?>

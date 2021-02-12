@@ -10,7 +10,7 @@
 ?>
 
 <div class="feedback">
-    <h3>Was wünschst du dir von der Quartiersplattform?</h3>
+    <!-- <h3>Was wünschst du dir von der Quartiersplattform?</h3> -->
 
     <?php acf_form_head(); ?>
     <?php // acf_form('feedback-form'); ?>

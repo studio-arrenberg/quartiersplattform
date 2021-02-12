@@ -24,8 +24,6 @@
                     <?php  
                         if (!is_single( )) shorten_title(get_the_title(), '50'); 
                         else echo get_the_title(); 
-
-                        echo get_current_user_id();
                     ?>
                 </h3>
                 <p class="preview-text">
