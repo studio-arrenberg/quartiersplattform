@@ -1783,6 +1783,10 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Anmerkungen';
 				$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
 			}
+			else if ($post->post_title == "Benutzer") {
+				$post_states[] = $prefix.'Benutzer';
+				$page_template= get_stylesheet_directory() . '/pages/page-user.php';
+			}
 			else if ($post->post_title == "Profil") {
 				$post_states[] = $prefix.'Profil';
 				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
@@ -1794,7 +1798,7 @@ function custom_page_template( $page_template, $post_states ) {
 			else if ($post->post_title == "Umfrage erstellen") {
 				$post_states[] = $prefix.'Umfrage erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-poll.php';
-      }
+      		}
 			else if ($post->post_title == "Veranstaltung erstellen") {
 				$post_states[] = $prefix.'Veranstaltung erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
@@ -2067,13 +2071,30 @@ function add_custom_cookie_admin() {
 	wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
 } add_action('wp_login', 'add_custom_cookie_admin');
 
-// UM show image upload 
+// UM show profil image upload 
 function um_show_hidden_field(){
 	if ( is_page( 'profil' ) ) {
 			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
 	}
 } add_action('wp_footer', 'um_show_hidden_field');
 
+// ACF Form show image uploaded
+function acf_form_show_image_uploaded(){
+
+
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+
+    if (
+		strpos($REQUEST_URI,'/projekt-erstellen/') == true
+		|| strpos($REQUEST_URI,'/nachricht-erstellen/') === true
+		|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') === true
+		// && !$_GET['action'] == 'edit'
+	) {
+		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false);
+		wp_enqueue_script('image-upload-preview');
+	}
+} add_action('wp_footer', 'acf_form_show_image_uploaded');
 
 // display owner of CPT 
 function get_cpt_term_owner($post_ID, $term, $type = 'name') {
@@ -2086,3 +2107,4 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 	}
 	                     
 }
+

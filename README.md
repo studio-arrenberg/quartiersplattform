@@ -187,6 +187,11 @@ card_list($query);
 ```php
 comment_counter($post->ID);
 ```
+#### Get owner of Post
+Including projekts
+```php
+get_cpt_term_owner($post_ID, $term, $type = 'name');
+```
 
 ### Notes
 - Google Maps API Key `AIzaSyACLoR7TPeF5*fünf*Gds8HFR6YmX2HhGKORhz`
