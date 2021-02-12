@@ -4996,6 +4996,10 @@ figure.wp-block-table.is-style-stripes {
     max-height: 240px;
   }
 
+  .card-container .landscape a, .card-container .landscape img  {
+    max-height: 240px;
+  }
+
   .card-container .landscape .card-title {
     font-size: 1.8rem;
     line-height: 2rem;
@@ -5524,7 +5528,12 @@ input[type="file"] {
   padding: 0px !important;
   background: transparent;
   border-radius: 20px;
+<<<<<<< HEAD
   /* width: 145px !important; */
+=======
+  width: 150px !important;
+  
+>>>>>>> d954bbcac6c66658b0fac3fdc5b4f237dba52d4f
   padding-top: 5px !important;
   height: 50px !important;
 
@@ -5880,7 +5889,7 @@ form.poll .answers{
   }
 
 
-.acf-icon.-minus:before{
+.ui-sortable .acf-icon.-minus:before{
   content: 'x';
   margin-top: -8px;
   position: absolute;
@@ -5890,7 +5899,7 @@ form.poll .answers{
 
 }
 
-.acf-icon{
+.ui-sortable .acf-icon{
   content: 'x';
   border: 1px solid red;
   color: red;
@@ -5955,7 +5964,7 @@ form.poll .answers{
   color: #ef6363;
 }
 
-.ui-datepicker-header{
+.ui-datepicker-header, .ui-widget-header{
   display: flex;
   padding: 11px 15px 10px 15px;
   justify-content: space-between;
@@ -5984,3 +5993,83 @@ padding: 5px 0px;
   display: none;
 
 }
+
+/* 
+
+input:not(:placeholder-shown) {
+  color: green;
+  content: 'bild noch nicht da';
+}
+
+input:placeholder-shown {
+  border-color: red;
+}
+ */
+
+ .acf-image-uploader{
+   margin: 15px 0px;
+   width: 100%;
+   height: 400px;
+   display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #0091ff;
+  border-radius: 20px;
+ }
+
+
+
+ @media (max-width: 782px) {
+ 
+  .acf-image-uploader{
+  
+    height: 200px;
+    
+  }
+}
+.acf-image-uploader input {
+  color: transparent;
+}
+
+.acf-image-uploader input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.acf-image-uploader input::before {
+  content: 'Bild auswählen';
+  color: black;
+  display: inline-block;
+  /* background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3); */
+  /* border: 1px solid #999; */
+  border-radius: 15px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: none;
+  font-weight: 700;
+  background-color: rgb(0, 145, 255);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 15px 20px 13px 20px;
+  font-weight: 500;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+
+
+

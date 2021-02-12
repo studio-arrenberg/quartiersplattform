@@ -82,6 +82,16 @@ get_header();
         <?php
         }
     ?>
+    <!-- Veranstaltung erstellen -->
+
+    <?php
+        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        ?>
+    <a class="button is-style-outline"
+        href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
+    <?php
+        }
+    ?>
 
         </div>
 
@@ -199,28 +209,6 @@ get_header();
     ?>
 
 
-    <!-- Nachricht erstellen -->
-
-    <?php
-        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        ?>
-    <a class="button is-style-outline"
-        href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Neue Nachricht
-        veröffentlichen</a>
-    <?php
-        }
-    ?>
-
-    <!-- Veranstaltung erstellen -->
-
-    <?php
-        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        ?>
-    <a class="button is-style-outline"
-        href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Neue Veranstaltung erstellen</a>
-    <?php
-        }
-    ?>
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
