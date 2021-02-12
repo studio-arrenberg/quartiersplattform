@@ -2083,17 +2083,17 @@ function acf_form_show_image_uploaded(){
 
 
 
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+	// $REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-    if (
-		strpos($REQUEST_URI,'/projekt-erstellen/') == true
-		|| strpos($REQUEST_URI,'/nachricht-erstellen/') === true
-		|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') === true
-		// && !$_GET['action'] == 'edit'
-	) {
+    // if (
+	// 	strpos($REQUEST_URI,'/projekt-erstellen/') == true
+	// 	|| strpos($REQUEST_URI,'/nachricht-erstellen/') === true
+	// 	|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') === true
+	// 	// && !$_GET['action'] == 'edit'
+	// ) {
 		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false);
 		wp_enqueue_script('image-upload-preview');
-	}
+	// }
 } add_action('wp_footer', 'acf_form_show_image_uploaded');
 
 // display owner of CPT 
