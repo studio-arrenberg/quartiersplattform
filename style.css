@@ -6013,7 +6013,7 @@ input:placeholder-shown {
   align-items: center;
   border: 2px dashed #0091ff;
   border-radius: 20px;
-  transition: height 0.15s linear;
+  transition: all 0.3 ease-in-out;
  }
 
 
