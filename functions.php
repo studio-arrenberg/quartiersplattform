@@ -1464,13 +1464,17 @@ function um_deregister_styles() {
 } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
 
-// // Activate WordPress Maintenance Mode
-// function wp_maintenance_mode() {
-// if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-// 	wp_redirect( get_site_url().'/maintenance.html');
-// }
-// }
-// add_action('get_header', 'wp_maintenance_mode');
+// Activate WordPress Maintenance Mode
+function wp_maintenance_mode() {
+if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+	wp_redirect( get_template_directory_uri().'/maintenance.php');
+}
+}
+if(get_field('maintenance', 'option') == 1){
+	add_action('get_header', 'wp_maintenance_mode');
+}
+
+
 
 // register embla carousel script
 function embla_carousel() { 
@@ -1531,6 +1535,7 @@ function my_init() {
 		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
 		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
+		&& strpos($REQUEST_URI,'/maintenance.php/') === false
 		&& !$_GET['action'] == 'edit'
 	 ) {
 
@@ -1933,3 +1938,31 @@ function um_show_hidden_field(){
 			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
 	}
 } add_action('wp_footer', 'um_show_hidden_field');
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Einstellungen für die Quartiersplattform',
+		'menu_title'	=> 'Quartiersplattform',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+		'update_button' => __('Aktualisieren', 'acf'),
+		'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
+
+
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Wartungsmodus',
+		'menu_title'	=> 'Wartungsmodus',
+		'parent_slug'	=> 'theme-general-settings',
+		'update_button' => __('Aktualisieren', 'acf'),
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+		'update_button' => __('Aktualisieren', 'acf'),
+		'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
+	));
+	
+	
+}

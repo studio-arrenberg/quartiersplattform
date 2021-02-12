@@ -7,7 +7,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
-get_header();
+    get_header();
 ?>
 
 <main id="site-content" role="main">
@@ -81,6 +81,26 @@ get_header();
     <?php calendar_download($post); ?>
     <br>
     <br>
+
+    <!-- Options Page Test -->
+    <?php 
+    $image = get_field('logo', 'option');
+    if( !empty( $image ) ): ?>
+        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
+
+    <?php 
+$images = get_field('sponsors', 'option');
+if( $images ): ?>
+        <?php foreach( $images as $image ): ?>
+                <a href="<?php echo esc_url($image['url']); ?>">
+                     <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                </a>
+                <p><?php echo esc_html($image['caption']); ?></p>
+        <?php endforeach; ?>
+<?php endif; ?>
+    
+
 
 <!-- weitere Nachrichten -->
 <?php
