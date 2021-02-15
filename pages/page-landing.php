@@ -235,7 +235,7 @@ get_header();
 			);
 			landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
 			?>
-        <?php get_template_part( 'components/call', 'umfrage' ); ?>
+		<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
     </div>
 
     <!-- featured projects (square_card + carousel query + function) -->
@@ -303,16 +303,15 @@ get_header();
 		slider($args4,'card', '1','false'); 
 		?>
 
-    <!-- link card -->
-    <?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
-
     <!-- call to register -->
     <div class="card-container ">
-        <?php get_template_part( 'components/call', 'gemeinsam' ); ?>
-        <?php // get_template_part( 'components/call', 'update' ); ?>
+    	<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
+
         <!-- arrenberg farm link card -->
         <?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
-        <?php 
+       
+	    <?php 
+			// Geschichten
 			$args_gesschichten = array(
 				'post_type'   => 'geschichten',
 				'post_status' => 'publish',
