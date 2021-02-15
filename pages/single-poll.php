@@ -56,6 +56,40 @@ if ( have_posts() ) {
 
     ?>
     </div>
+    <br><br>
+    <!-- Projekt Kachel --> 
+    <?php
+        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+        $the_slug = $term_list[0]->slug;
+        if ($the_slug) {
+            $args = array(
+                'name'        => $term_list[0]->slug,
+                'post_type'   => 'projekte',
+                'post_status' => 'publish',
+                'numberposts' => '1'
+            );
+
+
+            $my_query = new WP_Query($args);
+            if ($my_query->post_count > 0) {
+     ?>
+
+
+    <h2>Das Projekt</h2>
+
+    <div class="card-container ">
+
+        <?php
+            landscape_card($args);
+            } 
+
+            
+        }
+    ?>
+
+    </div>
+
+
     <?php
 
 }
