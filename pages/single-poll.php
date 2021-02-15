@@ -39,8 +39,17 @@ if ( have_posts() ) {
 
     <?php
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+
+        $array = get_post_meta(get_the_ID(), 'polls', true);
+	    $array[$i]['total_voter'];
+
+        if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
+            ?>
+                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Umfrage bearbeiten</a>
+            <?php
+        }
         ?>
-        <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Umfrage bearbeiten</a>
+        
         <a class="button is-style-outline" onclick="return confirm('Umfrage permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Umfrage löschen</a>
     <?php
     }

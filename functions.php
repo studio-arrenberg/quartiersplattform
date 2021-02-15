@@ -1234,7 +1234,6 @@ function my_post_title_updater( $post_id ) {
 				# update post 
 				wp_update_post( $my_post );
 			}
-			
 		}
     
     	$array;
@@ -1247,7 +1246,9 @@ function my_post_title_updater( $post_id ) {
 			}
 		}
 
-		if ( ! add_post_meta($post_id, 'polls', $array, true) ) { 
+		$array_prev = get_post_meta(get_the_ID(), 'polls', true);
+
+		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
 			update_post_meta ( $post_id, 'polls', $array );
     	}
 
