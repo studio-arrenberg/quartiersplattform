@@ -89,7 +89,7 @@
                     <input class="button card-button" type="hidden" name="action" value="polling" />
                     <!-- <input class="button card-button" type="submit" value="Abstimmen" /> -->
                 </div>
-                </form>
+                
 
         <?php
             }
@@ -100,7 +100,8 @@
             }
         ?>
 
-
+    </form>
+    
         <script>
         jQuery(document).ready(function($) {
             // console.log('ready');
