@@ -229,7 +229,8 @@ get_header();
         <div class="team-member">
             <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
             <?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
-
+            <?php the_author_link(); ?>
+            <?php the_author_posts_link(); ?>
         </div>
     </div>
 

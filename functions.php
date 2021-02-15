@@ -1784,10 +1784,10 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Anmerkungen';
 				$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
 			}
-			else if ($post->post_title == "Benutzer") {
-				$post_states[] = $prefix.'Benutzer';
-				$page_template= get_stylesheet_directory() . '/pages/page-user.php';
-			}
+			// else if ($post->post_title == "Benutzer") {
+			// 	$post_states[] = $prefix.'Benutzer';
+			// 	$page_template= get_stylesheet_directory() . '/pages/page-user.php';
+			// }
 			else if ($post->post_title == "Profil") {
 				$post_states[] = $prefix.'Profil';
 				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
