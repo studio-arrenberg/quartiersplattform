@@ -1,4 +1,7 @@
 <?php
+
+    // frage !!! wie lang soll die liste insgesamt werden
+    // ---- das sind nur die aktuellen angebite/fragen ist das okay?
     $args4 = array(
         'post_type'=> array('angebote', 'fragen'), 
         'post_status'=>'publish', 
@@ -19,16 +22,12 @@
     $my_query = new WP_Query($args4);
     if ($my_query->post_count > 0) {
 
-
-        echo "<h2>Frage und Angebote von $curauth->display_name</h2>";
-
-
         ?>
 
             <div class="card smart-card shadow">
                 <div class="card-header">
-                    <h2>Hallo Johann, </h2>
-                    <h3>Du hast <span class="highlight">ein Sharingangebot </span> erstellt und <span class="highlight">eine
+                    <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
+                    <h3>Du hast folgene <span class="highlight">Sharingangebote </span> und <span class="highlight">
                             Fragen</span> gepostet.</h3>
                 </div>
 
@@ -45,6 +44,13 @@
 
 
         ?>
+
+                <div class="card-footer">
+                    <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-dein-quartier//">Frage an die
+                        Community</a>
+                    <a class="button card-button" href="<?php echo get_site_url(); ?>/angebot-erstellen/">Angebot teilen</a>
+                </div>
+
             </div>
         <?php
 
@@ -55,13 +61,13 @@
     }
 ?>
 
-
+<!-- !!! muss später in the if else schleife -->
 <div class="card smart-card shadow">
     <div class="card-header">
         <h2>Hallo Johann, </h2>
         <h3>Du hast leider noch <span class="highlight">kein Sharingangebot </span> erstellt und noch <span
                 class="highlight">keine
-                Fragen</span> gepostet.</h3>
+                Frage</span> gepostet.</h3>
     </div>
 
     <div class="card-footer">
@@ -72,7 +78,7 @@
 </div>
 
 
-
+<!-- altes template -->
 <div class="card smart-card shadow">
     <div class="card-header">
         <h2>Hallo Johann, </h2>
