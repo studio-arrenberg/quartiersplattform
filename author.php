@@ -28,7 +28,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
     
 
-        <!-- Angebote und Fragen -->
+        <!-- Projekte -->
         <?php
             $args4 = array(
                 'post_type'=> array('projekte'), 

@@ -2,12 +2,6 @@
 /**
  * Template Name: Anmerkung [Default]
  * Template Post Type: projekte
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 get_header();
@@ -44,7 +38,9 @@ if ( have_posts() ) {
                     <h3 class="card-title-large">
                         <?php  shorten_title(get_field('text'), '200'); ?>
                     </h3>
-                    <div class="comment-count"><?php comment_counter($post->ID); ?></p>
+                    <div class="comment-count">
+                        <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
+                    </div>
                     </div>
                 </div>
             </a>

@@ -1648,12 +1648,14 @@ add_action('save_post', 'update_veranstaltung_projekt');
 // comment count
 function comment_counter($id_post) {
 
+	// have_comments()
+
 	$comment_count = get_comment_count($id_post)['approved'];
 
 	if($comment_count == 1) {
 		echo $comment_count." Kommentar";
 	}
-	elseif($comment_count > 1) {
+	else if($comment_count > 1) {
 		echo $comment_count." Kommentare";
 	}
 	else {

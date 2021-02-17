@@ -60,6 +60,11 @@ else {
                     else the_field('text'); 
                 ?>
             </h3>
+            
+            <div class="kommentare">
+                <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
+            </div>
+
         </div>
         <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
         <div class="emoji">
