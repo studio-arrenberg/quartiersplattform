@@ -1646,23 +1646,23 @@ function update_veranstaltung_projekt($post_id) {
 add_action('save_post', 'update_veranstaltung_projekt');
 
 // comment count
-function comment_counter($id_post) {
+// function comment_counter($id_post) {
 
-	// have_comments()
+// 	// have_comments()
 
-	$comment_count = get_comment_count($id_post)['approved'];
+// 	$comment_count = get_comment_count($id_post)['approved'];
 
-	if($comment_count == 1) {
-		echo $comment_count." Kommentar";
-	}
-	else if($comment_count > 1) {
-		echo $comment_count." Kommentare";
-	}
-	else {
-		return;
-	}
+// 	if($comment_count == 1) {
+// 		echo $comment_count." Kommentar";
+// 	}
+// 	else if($comment_count > 1) {
+// 		echo $comment_count." Kommentare";
+// 	}
+// 	else {
+// 		return;
+// 	}
 
-}
+// }
 
 // Media Copyright function
 // Adding a "Copyright" field to the media uploader $form_fields array
@@ -2121,8 +2121,10 @@ function get_author() {
         <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
 
 		<div class="team-member">	
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
-            <?php the_author_posts_link();?>
+			<a href="<?php echo get_site_url()."/author/".get_the_author_meta( 'user_login' ); ?>">
+         	   <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+				<?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
+			</a>
         </div>
 
 	<?php 

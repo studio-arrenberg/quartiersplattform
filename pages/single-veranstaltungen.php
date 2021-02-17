@@ -91,6 +91,8 @@ get_header();
 
     </div>
 
+    <?php get_author(); ?>
+
     <!-- calendar download -->
     <?php calendar_download($post); ?>
 
