@@ -2117,6 +2117,9 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 
 function get_author() {
 
+
+	if (get_the_author_meta( 'ID' )) {
+
 	?>
         <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
 
@@ -2128,5 +2131,7 @@ function get_author() {
         </div>
 
 	<?php 
+
+	}
 
 }
