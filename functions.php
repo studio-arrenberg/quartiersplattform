@@ -878,6 +878,9 @@ function single_template_hook() {
 	else if ( 'veranstaltungen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
+	else if ( 'user' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/template-parts/author.php';
+    }
  
     return $single_template;
 
@@ -1364,7 +1367,7 @@ function um_remove_scripts_and_styles() {
 		'/my-groups/',
 		'/password-reset/',
 		'/register/',
-		'/user/',
+		// '/user/',
 	);
 
 	if ( is_admin() || is_ultimatemember() ) {
@@ -2110,3 +2113,16 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 	                     
 }
 
+function get_author() {
+
+	?>
+        <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
+
+		<div class="team-member">	
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+            <?php the_author_posts_link();?>
+        </div>
+
+	<?php 
+
+}
