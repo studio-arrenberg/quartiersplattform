@@ -372,9 +372,14 @@ else {
 
         <!-- Map -->
         <!-- not ready yet -->
-        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-        <p><?php the_field('map'); ?></p>
-        <?php } ?>
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins 
+            
+            // the_field('map');
+            if (get_field('map')) {
+                get_template_part('components/map-card');
+            }
+
+        } ?>
 
         <!-- Backend edit link -->
         <?php 

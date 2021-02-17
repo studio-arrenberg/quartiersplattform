@@ -46,8 +46,7 @@
         ?>
 
                 <div class="card-footer">
-                    <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-dein-quartier//">Frage an die
-                        Community</a>
+                    <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-dein-quartier//">Frage an die Community</a>
                     <a class="button card-button" href="<?php echo get_site_url(); ?>/angebot-erstellen/">Angebot teilen</a>
                 </div>
 
