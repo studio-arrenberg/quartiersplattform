@@ -8,11 +8,11 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 <main id="site-content" role="main">
 
-<?php print_r($curauth); ?>
+<?php // print_r($curauth); ?>
 
     <div class="single-header  ">
 
-        <img class="single-header-image" src="<?php echo get_avatar_url( $current_user->ID ) ?>" />
+        <img class="single-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
 
         <div class="single-header-content center-mobile">
 
@@ -33,7 +33,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $args4 = array(
                 'post_type'=> array('projekte'), 
                 'post_status'=>'publish', 
-                'author' =>  $current_user->ID,
+                'author' =>  $curauth->ID,
                 'posts_per_page'=> -1, 
                 'order' => 'DESC',
                 'offset' => '0', 
@@ -52,7 +52,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $args4 = array(
                 'post_type'=> array('angebote', 'fragen'), 
                 'post_status'=>'publish', 
-                'author' =>  $current_user->ID,
+                'author' =>  $curauth->ID,
                 'posts_per_page'=> -1, 
                 'order' => 'DESC',
                 'offset' => '0', 
