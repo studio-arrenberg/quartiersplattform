@@ -1605,6 +1605,19 @@ button.toggle {
   align-items: center;
 }
 
+.team-member a{
+  color: #000;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.team-member a:hover{
+  color: #0091ff;
+  text-decoration: none;
+}
 .share{
   margin: 50px 0px;
 }
