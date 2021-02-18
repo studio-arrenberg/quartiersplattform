@@ -2122,14 +2122,14 @@ function get_author() {
 
 	?>
         <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
-
+	<div class="team">		
 		<div class="team-member">	
 			<a href="<?php echo get_site_url()."/author/".get_the_author_meta( 'user_login' ); ?>">
          	   <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
 				<?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
 			</a>
         </div>
-
+	</div>
 	<?php 
 
 	}

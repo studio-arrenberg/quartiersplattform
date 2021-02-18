@@ -45,19 +45,57 @@ if ( have_posts() ) {
 
         if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
             ?>
-                <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Umfrage bearbeiten</a>
-            <?php
+    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Umfrage bearbeiten</a>
+    <?php
         }
         ?>
-        
-        <a class="button is-style-outline" onclick="return confirm('Umfrage permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Umfrage löschen</a>
+
+    <a class="button is-style-outline" onclick="return confirm('Umfrage permanent löschen?')"
+        href="<?php get_permalink(); ?>?action=delete">Umfrage löschen</a>
     <?php
     }
 
     ?>
+
+    <!-- Projekt Teilen -->
+    <?php  
+        $page_for_posts = get_option( 'page_for_posts' );
+        ?>
+    <div class="share">
+        <h2>Umfrage teilen </h2>
+        <div class="copy-url">
+            <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
+            <button class="copy" onclick="copy()">Kopieren</button>
+
+        </div>
+
+        <div class="share-button">
+            <a class="button is-style-outline " target="blank"
+                onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
+                href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
+            <a class="button is-style-outline" target="blank"
+                onclick="_paq.push(['trackEvent', 'Share', 'Twitter', '<?php the_title(); ?>']);"
+                href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
+            <a class="button is-style-outline" target="blank"
+                onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
+                href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>" target="_blank"
+                rel="nofollow">Email</a>
+
+        </div>
     </div>
+
+    <script>
+    function copy() {
+        _paq.push(['trackEvent', 'Share', 'Copy Link', '<?php the_title(); ?>']);
+        var copyText = document.getElementById("myInput");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        // alert("Copied the text: " + copyText.value);
+    }
+    </script>
     <br><br>
-    <!-- Projekt Kachel --> 
+    <!-- Projekt Kachel -->
     <?php
         $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
         $the_slug = $term_list[0]->slug;
