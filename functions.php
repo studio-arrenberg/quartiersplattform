@@ -2135,3 +2135,5 @@ function get_author() {
 	}
 
 }
+
+require_once dirname( __FILE__ ) .'/setup.php';
