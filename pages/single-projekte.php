@@ -60,6 +60,7 @@ get_header();
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
             <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
             <?php
             }
             ?>
@@ -275,6 +276,14 @@ get_header();
     </script>
 
     <?php
+
+}
+else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+
+
+    wp_delete_post(get_the_ID());
+
+    wp_redirect( get_site_url() );
 
 }
 else {
