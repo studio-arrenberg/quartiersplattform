@@ -251,7 +251,7 @@ get_header();
                     'posts_per_page'=> -1,
                     'name'=> $tax->slug 
                 );
-                
+
                 $args = new WP_Query($args);
                 while ( $args->have_posts() ) {
                     $args->the_post();
@@ -424,7 +424,7 @@ else {
             
             // the_field('map');
             if (get_field('map')) {
-                get_template_part('components/map-card');
+                get_template_part('elements/map-card');
             }
 
         } ?>
