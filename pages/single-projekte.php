@@ -222,6 +222,40 @@ get_header();
 
     </div>
 
+
+    <!-- Ziele für nachhaltige Etwicklung -->
+    <!-- not ready yet -->
+    <?php if ( current_user_can('administrator') ) { 
+
+        ?>
+            <h2>Ziele für nachhaltige Etwicklung</h2>
+        <?php
+            
+        $term = get_field('sdg');
+        if( $term ): ?>
+            <h2><?php echo esc_html( $term->name ); ?></h2>
+            <p><?php echo esc_html( $term->description ); ?></p>
+        <?php endif; ?>
+
+
+        <?php 
+        $terms = get_field('sdg');
+        if( $terms ): ?>
+            <ul>
+            <?php foreach( $terms as $term ): ?>
+                <h2><?php echo esc_html( $term->name ); ?></h2>
+                <p><?php echo esc_html( $term->description ); ?></p>
+                <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">View all '<?php echo esc_html( $term->name ); ?>' posts</a>
+            <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+            
+            
+    <?php
+    } 
+    ?>
+
+
     <!-- Team -->
     <div class="team">
         <h2> Hutträger </h2>
