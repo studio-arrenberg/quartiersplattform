@@ -1,7 +1,5 @@
 <?php
 
-    // frage !!! wie lang soll die liste insgesamt werden
-    // ---- das sind nur die aktuellen angebite/fragen ist das okay?
     $args4 = array(
         'post_type'=> array('angebote', 'fragen'), 
         'post_status'=>'publish', 
@@ -36,9 +34,8 @@
             $args4 = new WP_Query($args4);
             while ( $args4->have_posts() ) {
                 $args4->the_post();
-                // echo "<div class='embrela-slide'>";
+                
                 get_template_part('elements/card', get_post_type());
-                // echo "</div>";
             }
             wp_reset_postdata();
 

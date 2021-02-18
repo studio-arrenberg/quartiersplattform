@@ -63,7 +63,14 @@
                     <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>">
 
                     <?php echo $sub_value; ?>
-                    <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/star.svg" />
+                    <?php 
+                        if (in_array(get_current_user_id(), $array[$i]['user'])) {
+                            ?>
+                                <img class="button-icon hide" src="<?php echo get_template_directory_uri()?>/assets/icons/star.svg" />
+                            <?php
+                        }
+                        ?>
+                    
                     <!-- <img class="button-icon " src="<?php  //echo get_template_directory_uri()?>/assets/icons/check.svg" /> -->
 
 
