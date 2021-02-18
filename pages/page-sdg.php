@@ -34,7 +34,7 @@ get_header();
 						<?php shorten_title(get_the_title(), '60'); ?>
 					</h3>
 					<p class="preview-text">
-						<?php  get_excerpt(get_the_content(), '55'); ?>
+						<?php echo get_the_content(); ?>
 					</p>
 				</div>
 				<div class="projects">

@@ -230,28 +230,42 @@ get_header();
         ?>
             <h2>Ziele für nachhaltige Etwicklung</h2>
         <?php
-            
-        $term = get_field('sdg');
-        if( $term ): ?>
-            <h2><?php echo esc_html( $term->name ); ?></h2>
-            <p><?php echo esc_html( $term->description ); ?></p>
-        <?php endif; ?>
 
-
-        <?php 
         $terms = get_field('sdg');
         if( $terms ): ?>
-            <ul>
-            <?php foreach( $terms as $term ): ?>
-                <h2><?php echo esc_html( $term->name ); ?></h2>
-                <p><?php echo esc_html( $term->description ); ?></p>
-                <a href="<?php echo esc_url( get_term_link( $term ) ); ?>">View all '<?php echo esc_html( $term->name ); ?>' posts</a>
-            <?php endforeach; ?>
-            </ul>
-        <?php endif; ?>
+
+            <?php 
             
+            // print_r($terms); 
+
+            foreach( $terms as $term ): 
+
+                $tax = get_term( $term, 'sdg' );
+                $slug = $tax->slug;
+
+                // echo $slug;
+
+                $args = array(
+                    'post_type'=>'sdg', 
+                    'post_status'=>'publish', 
+                    'posts_per_page'=> -1,
+                    'name'=> $tax->slug 
+                );
+                
+                $args = new WP_Query($args);
+                while ( $args->have_posts() ) {
+                    $args->the_post();
+                    ?>
+                    <div>
+                        <h4><?php echo get_the_title(); ?></h4>
+                    </div>
+                    <?php
+                }
+                wp_reset_postdata();
+
+            endforeach;
+        endif;
             
-    <?php
     } 
     ?>
 
