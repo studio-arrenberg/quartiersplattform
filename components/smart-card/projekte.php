@@ -26,6 +26,7 @@
             <?php
 
             $args4->the_post();
+            set_query_var( 'list-item', true );
             get_template_part('elements/card', get_post_type());
 
             ?>

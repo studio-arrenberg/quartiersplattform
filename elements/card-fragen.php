@@ -41,7 +41,7 @@ else {
 
 ?>
 
-<div class="card frage <?php if (!is_single()) echo 'shadow'; ?> ">
+<div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
     <?php if(!is_single()) { ?>
     <a href="<?php echo esc_url( get_permalink() ); ?>">
     <?php } ?>
@@ -63,7 +63,7 @@ else {
             </div>
             
         </div>
-        <?php echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
+        <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
         <div class="emoji">
             <?php  shorten_title(get_field('emoji'), '200'); ?>
         </div>

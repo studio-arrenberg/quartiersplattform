@@ -13,7 +13,7 @@ get_header();
         <div class="card bg_red">
             <div class="content white-text">
                 <h3 class="card-title-large">
-                    Erstelle eine Umfrage
+                    Erstelle eine Umfrage <?php if ($_GET['project']) echo "für ".get_page_by_path( $_GET['project'], OBJECT, 'projekte' )->post_title; ?>
                 </h3>
                 <p class="preview-text-large">
                    Stell eine Frage an dein Quartier.

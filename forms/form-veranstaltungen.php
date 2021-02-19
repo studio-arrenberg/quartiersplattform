@@ -14,7 +14,7 @@ get_header();
         <div class="card bg_red">
             <div class="content white-text">
                 <h3 class="card-title-large">
-                    Erstelle eine Veranstaltung
+                    Erstelle eine Veranstaltung <?php if ($_GET['project']) echo "für ".get_page_by_path( $_GET['project'], OBJECT, 'projekte' )->post_title; ?>
                 </h3>
                 <p class="preview-text-large">
                     Teile den Bewohnern in deinem Quartier mit, wann Veranstaltungen zu deinem Projekt stattfinden. <br>

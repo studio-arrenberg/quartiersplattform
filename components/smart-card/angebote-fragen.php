@@ -34,7 +34,7 @@
             $args4 = new WP_Query($args4);
             while ( $args4->have_posts() ) {
                 $args4->the_post();
-                
+                set_query_var( 'list-item', true );
                 get_template_part('elements/card', get_post_type());
             }
             wp_reset_postdata();
