@@ -1792,10 +1792,6 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Anmerkungen';
 				$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
 			}
-			// else if ($post->post_title == "Benutzer") {
-			// 	$post_states[] = $prefix.'Benutzer';
-			// 	$page_template= get_stylesheet_directory() . '/pages/page-user.php';
-			// }
 			else if ($post->post_title == "Profil") {
 				$post_states[] = $prefix.'Profil';
 				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
@@ -1811,6 +1807,10 @@ function custom_page_template( $page_template, $post_states ) {
 			else if ($post->post_title == "Veranstaltung erstellen") {
 				$post_states[] = $prefix.'Veranstaltung erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
+			}
+			else if ($post->post_title == "SDGs") {
+				$post_states[] = $prefix.'SDGs';
+				$page_template= get_stylesheet_directory() . '/pages/page-sdg.php';
 			}
 
 		
@@ -2135,3 +2135,10 @@ function get_author() {
 	}
 
 }
+
+add_action('acf/init', function() {
+	# setup file
+	require_once dirname( __FILE__ ) .'/setup.php';
+	# field setup file
+	require_once dirname( __FILE__ ) .'/fields.php';
+});
