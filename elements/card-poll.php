@@ -62,27 +62,19 @@
                     <span class="scale" id="poll<?php echo $i; ?>"style="width: <?php if ($vote_state ) echo $array[$i]['percentage']; else echo '0'; ?>%"></span>
                     <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>">
 
-                    <?php echo $sub_value; ?>
-                    <?php 
-                        if (in_array(get_current_user_id(), $array[$i]['user'])) {
-                            ?>
-                                <img class="button-icon hide" src="<?php echo get_template_directory_uri()?>/assets/icons/star.svg" />
-                            <?php
-                        }
-                        ?>
-                    
-                    <!-- <img class="button-icon " src="<?php  //echo get_template_directory_uri()?>/assets/icons/check.svg" /> -->
+                        <?php echo $sub_value; ?>
 
+                        <img class="button-icon <?php if(!in_array(get_current_user_id(), $array[$i]['user'])) echo "hide"; ?>" src="<?php echo get_template_directory_uri()?>/assets/icons/star.svg" />
 
-                    <!-- <img class="avatar" src="<?php //echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" /> -->
+                        <!-- <img class="button-icon " src="<?php  //echo get_template_directory_uri()?>/assets/icons/check.svg" /> -->
+                        <!-- <img class="avatar" src="<?php //echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" /> -->
 
-
-                </label>
+                    </label>
 
                     <div id="poll<?php echo $i; ?>">
                         <?php
-                                if ($vote_state ) echo $array[$i]['count']." Stimmen";
-                            ?>
+                            if ($vote_state ) echo $array[$i]['count']." Stimmen";
+                        ?>
                     </div>
                 </button>
 
@@ -135,9 +127,15 @@
                         // console.log(k+" : "+v['user']);
                         $('form div#poll' + k).text(v['count'] + ' Stimmen');
                         $('form.poll span#poll' + k).css('width', v['percentage'] + '%');
+                        
                         if (v['user'] == 'true') {
-                            $('form input#poll' + k).attr('checked', true);
+                            // $('form input#poll' + k).attr('checked', true);
+                            $('form label#poll' + k + ' img.button-icon').removeClass('hide');
                         }
+                        else {
+                            $('form label#poll' + k + ' img.button-icon').addClass('hide');
+                        }
+                        // console.log('form label#poll' + k + ' img');
                     });
                     // $('form input:submit').fadeOut('fast');
                 },
