@@ -6186,5 +6186,7 @@ input:placeholder-shown {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
 }
 
-
-
+img.button-icon.hide {
+  display: none !important;
+  opacity: 0;
+}
