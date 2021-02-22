@@ -1,5 +1,6 @@
 <?php
 $location = get_field('map');
+// print_r($location);
 $map_zoom = 15; 
 $width = 500;
 $height = 300;
@@ -10,9 +11,10 @@ $height = 300;
 
        <div class="content">
             <h3 class="card-title">
-                Senefelderstraße 34 a
+                <?php the_title(); ?>
             </h3>
             <p class="preview-text">
+                <?php echo $location['street_name']." ".$location['street_number'];  ?>
             </p>
             <div class="card-footer">
                 <!-- http://maps.apple.com/?address=1,Studio,,California -->

@@ -103,27 +103,27 @@ get_header();
         	if ($my_query->post_count > 0) {
 				?>
     <br>
-    <h2>Deine Projekte</h2>
+    <!-- <h2>Deine Projekte</h2> -->
     <?php 
-				slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+				// slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
         	}
 
 		?>
 
 
 
-
+<div class="card-container ">
     <?php 
 		// Smart cards 
-		if(current_user_can('administrator')) {
+		// if(current_user_can('administrator')) {
 
 			get_template_part('components/smart-card/angebote-fragen');
 
 			get_template_part('components/smart-card/projekte');
 
-		}
+		// }
 	?>
-
+</div>
 
 
     <!-- call to register -->
