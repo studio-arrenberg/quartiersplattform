@@ -11,7 +11,7 @@
 
 
 <div class="card landscape shadow lang">
-    <a href="<?php echo get_site_url(); ?>/projekte/quartiersplattform/">
+    <a class="card-link" href="<?php echo get_site_url(); ?>/projekte/quartiersplattform/">
 		<div class="content">
 			<!-- <h3 class="card-title">
 				Werde Mitglied in deinem Quartier

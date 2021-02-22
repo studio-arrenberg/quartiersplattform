@@ -21,7 +21,7 @@ if (strlen($the_slug < 1 )) {
 ?>
 
 <div class="card shadow nachricht">
-    <a href="<?php echo esc_url( get_permalink() ); ?>">
+    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content content_shrink">
             <div class="pre-title">
                 <span><?php echo get_cpt_term_owner($post->ID, 'projekt'); ?></span>

@@ -829,6 +829,8 @@ button a {
   width: 100%;
 }
 
+
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -4508,7 +4510,18 @@ figure.wp-block-table.is-style-stripes {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
-.card a {
+/* .card a {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  color: #000;
+  text-decoration: none !important;
+  min-height: 100px;
+} */
+
+.card a.card-link{
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -4740,8 +4753,8 @@ figure.wp-block-table.is-style-stripes {
   padding: 0px;
 }
 
-.landscape a .content,
-.square a .content {
+.landscape .content,
+.square .content {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -4841,7 +4854,7 @@ figure.wp-block-table.is-style-stripes {
   background: #d1d1d1;
 }
 
-.gardient a .content {
+.gardient .content {
   color: #fff;
   background: linear-gradient(
     0deg,
@@ -4951,6 +4964,8 @@ figure.wp-block-table.is-style-stripes {
   display: block ;
   box-shadow: none;
   margin: 0px;
+  font-size: 1.4rem;
+  padding: 13px 5px;
 }
 
 
@@ -4959,6 +4974,10 @@ figure.wp-block-table.is-style-stripes {
   background: #0091ff;
 }
 
+@media (min-width: 782px) {
+  .card .card-button{
+    font-size: 1.8rem;
+}
 
 .card-footer a:last-of-type{
   margin-left: 5px;
@@ -5930,7 +5949,7 @@ form.poll{
 }
 
 .card .content{
-  max-width: 100%;
+  width: 100%;
 }
 
 form.poll .answers{

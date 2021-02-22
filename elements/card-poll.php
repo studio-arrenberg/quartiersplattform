@@ -11,7 +11,7 @@
 
 <div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
     <?php if(!is_single()) { ?>
-    <a class="flex-col" href="<?php echo esc_url( get_permalink() ); ?>">
+    <a class="flex-col card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <?php } ?>
         <div class="content">
             <div class="pre-title red-text ">

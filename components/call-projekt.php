@@ -10,7 +10,7 @@
 ?>
 
 <div class="card  card-centered shadow bg_green">
-    <a href="<?php echo get_site_url(); ?>/projekt-erstellen/">
+    <a class="card-link" href="<?php echo get_site_url(); ?>/projekt-erstellen/">
         <div class="content white-text">
             <h3 class="card-title">
                 Erstelle ein Projekt

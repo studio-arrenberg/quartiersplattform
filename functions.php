@@ -920,7 +920,7 @@ function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 	?>
 	<div class='card list-card shadow' data-content-piece="<?php echo $card_title; ?>">
-	<?php if ($link) echo "<a href='".$link."'>"; ?>
+	<?php if ($link) echo "<a class='card-link' href='".$link."'>"; ?>
 
 		<div class='card-header'>
 			<h2><?php echo $card_title; ?></h2>
