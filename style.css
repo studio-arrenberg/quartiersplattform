@@ -4793,6 +4793,7 @@ a.card-link{
 .card .marker{
   width: 100px;
   height: 100px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4803,14 +4804,61 @@ a.card-link{
       0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
       0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
 
-  
+
+      
 }
-.card .marker img{
+
+.card .marker::before{
+  content: '';
+  z-index: 1;
+  position: absolute;
   width: 100px;
   height: 100px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.card .marker::after{
+  content: '';
+  margin-top:50px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+  0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+  0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07)
+}
+
+
+
+.card .marker img{
+  width: 100%;
+  height: 100%;
   min-width: inherit;
   background: #fff;
   border-radius: 20px;
+  z-index: 2;
+
+}
+
+.card .marker .emoji-marker{
+  z-index: 2;
+
+}
+
+@media (max-width: 782px) {
+  .card .marker{
+    width: 50px;
+    height: 50px;
+  }
+
+  .card .marker::after{
+    margin-top: 25px;
+    width: 10px;
+    height: 10px;
+  }
 }
 
 
