@@ -4,14 +4,22 @@ $location = get_field('map');
 $map_zoom = 15; 
 $width = 500;
 $height = 300;
+
+
 ?>
 
 
-<div class="card landscape shadow gardient ">
-
+<div class="card landscape gardient ">
        <div class="content">
+            <div class="pre-title">
+                <span>Projekt 
+                    <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
+                    <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                </span>
+            </div>
             <h3 class="card-title">
                 <?php the_title(); ?>
+                <!-- Senefelderstraße 34 a -->
             </h3>
             <p class="preview-text">
                 <?php echo $location['street_name']." ".$location['street_number'];  ?>
@@ -25,7 +33,21 @@ $height = 300;
                 <a class="button card-button" target="_blank" onclick="return map_confirm()" href="https://www.google.com/maps/dir/?api=1&origin=&destination=<?php echo $location['lat'].",".$location['lng']; ?>&travelmode=walking&basemap=roadmap">In Maps öffnen</a>
             </div>
         </div>
+
+        <div class="marker-container">
+            <div class="marker">
+                <?php
+                    if (empty(get_field('emoji'))) { 
+                        the_post_thumbnail( 'square_m' ); 
+                    } else { 
+                        the_field('emoji'); 
+                    } 
+                    ?>
+            </div>
+        </div>
         
+
+
         <!-- <img src="https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-87.0186,32.4055,14/500x300@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ" alt="hello world"> -->
          <img src="https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $location['lng'].",".$location['lat'].",".$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ" alt="Projekt Location">
 

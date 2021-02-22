@@ -19,13 +19,12 @@ else {
 if (strlen(get_field('slogan')) > 1 ) {
     $char = 50;
 }
-else {
+else { }
 
-}
+
 
 
 ?>
-
 
 
 <div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
@@ -37,8 +36,8 @@ else {
             </h3>
             <div class="pre-title"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div> 
 
-            <p class="preview-text">
-                <?php  if (!empty(get_the_content())) { get_excerpt(get_the_content(), $char); } else { get_excerpt(get_field('text'), '55'); }  //echo $char?>
+            <p class="preview-text <?php  if (strlen(get_field('slogan')) > 30 ) echo 'hidden'; ?> "> 
+                <?php  if (!empty(get_the_content())) { get_excerpt(get_the_content(), $char); } else { get_excerpt(get_field('text'),  $char); }  //echo $char?>
             
             </p>
         </div>
