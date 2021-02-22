@@ -29,7 +29,7 @@ $height = 300;
                 <!-- http://maps.apple.com/?ll=51.2492462,7.1303931,Infinite+Loop,Cupertino,California -->
                 <!-- http://maps.apple.com/?saddr=San+Jose&daddr=San+Francisco&dirflg=r
                 http://maps.apple.com/?daddr=51.2492462,7.1303931&dirflg=r -->
-                <a class="button card-button" href="http://maps.apple.com/?ll=<?php echo $location['lat'].",".$location['lng']."&dirflg=r";?>" target="_blank">In Karten öffenen</a>
+                <a class="button card-button" href="http://maps.apple.com/?daddr=<?php echo $location['lat'].",".$location['lng'];?>" target="_blank">In Karten öffenen</a>
                 <a class="button card-button" target="_blank" onclick="return map_confirm()" href="https://www.google.com/maps/dir/?api=1&origin=&destination=<?php echo $location['lat'].",".$location['lng']; ?>&travelmode=walking&basemap=roadmap">In Maps öffnen</a>
             </div>
         </div>
