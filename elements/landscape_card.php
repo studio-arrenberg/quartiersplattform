@@ -12,12 +12,12 @@
     <?php 
     if (get_query_var('link_card_link')) {
         ?>
-            <a href="<?php echo get_site_url(); echo get_query_var('link_card_link'); ?>">
+            <a class="card-link" href="<?php echo get_site_url(); echo get_query_var('link_card_link'); ?>">
         <?php
     }
     else {
         ?>
-            <a href="<?php echo esc_url( get_permalink() ); ?>">
+            <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <?php
     }
     ?>

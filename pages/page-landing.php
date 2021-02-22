@@ -102,7 +102,6 @@ get_header();
 			$my_query = new WP_Query($args4);
         	if ($my_query->post_count > 0) {
 				?>
-    <br>
     <!-- <h2>Deine Projekte</h2> -->
     <?php 
 				// slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');

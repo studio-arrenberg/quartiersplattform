@@ -23,14 +23,14 @@
                     <div class="card-header">
                         <h2>Dein Projekt</h2>
                     </div>
-            
-            <?php
+                    
+                    <?php
 
-            $args4->the_post();
-            set_query_var( 'list-item', true );
-            get_template_part('elements/card', get_post_type());
+                    $args4->the_post();
+                    set_query_var( 'list-item', true );
+                    get_template_part('elements/card', get_post_type());
 
-            ?>
+                    ?>
                     <div class="card-footer">
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Update veröffentlichen</a>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
@@ -45,4 +45,5 @@
 
         
     }
+
 ?>
