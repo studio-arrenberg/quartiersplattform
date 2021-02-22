@@ -41,7 +41,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
                 
-                echo "<h2>Projekte von $curauth->display_name</h2>";
+                echo "<h2>Projekte von $curauth->first_name</h2>";
                 slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
                 
             }
@@ -60,7 +60,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
   
-                echo "<h2>Frage und Angebote von $curauth->display_name</h2>";
+                echo "<h2>Frage und Angebote von $curauth->first_name</h2>";
                 slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
                 
             }

@@ -12,9 +12,8 @@ $height = 300;
 <div class="card landscape gardient ">
        <div class="content">
             <div class="pre-title">
-                <span>Projekt 
-                    <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
-                    <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                <span> 
+                    <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "Projekt von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                 </span>
             </div>
             <h3 class="card-title">
