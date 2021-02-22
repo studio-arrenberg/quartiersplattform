@@ -17,7 +17,7 @@ else {
 ?>
 
 <div class="card shadow">
-    <a href="<?php echo esc_url( get_permalink() ); ?>">
+    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <?php the_post_thumbnail( 'preview_m' ); ?>
         <div class="content">
             <div class="pre-title">

@@ -35,6 +35,8 @@ if ( have_posts() ) {
 
             </div>
 
+            <?php get_author(); ?>
+
             <?php 
 
     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {

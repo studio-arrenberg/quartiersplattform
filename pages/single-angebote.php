@@ -39,6 +39,9 @@ if ( have_posts() ) {
     <h4>Kontakt</h4>
     <!-- kontakt -->
     <?php if (is_user_logged_in()) { ?>
+
+        <?php get_author(); ?>
+
         <?php if (get_field('phone')) { ?>
             <!-- <a class="button is-style-outline" href="tel:<?php the_field('phone'); ?>"><?php the_field('phone'); ?></a> -->
             <br>

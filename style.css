@@ -827,6 +827,8 @@ button a {
   width: 100%;
 }
 
+
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -1284,7 +1286,7 @@ button.toggle {
 
 
 .hidden{
-  /* display: none; */
+  display: none;
   opacity: 0;
   transition: all ease-in-out 0.2s; /* Animation */
 
@@ -1599,11 +1601,23 @@ button.toggle {
 
 .team-member {
   margin: 15px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.team-member a{
+  color: #000;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
 }
 
+
+.team-member a:hover{
+  color: #0091ff;
+  text-decoration: none;
+}
 .share{
   margin: 50px 0px;
 }
@@ -3466,7 +3480,8 @@ figure.wp-block-table.is-style-stripes {
   input[type="reset"],
   input[type="submit"] {
     font-size: 1.8rem;
-    word-wrap: keep-all:   word-break: keep-all;
+    word-wrap: keep-all;
+    word-break: keep-all;
   }
 
   /* MEDIA */
@@ -4494,7 +4509,7 @@ figure.wp-block-table.is-style-stripes {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
-.card a {
+/* .card a {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -4503,6 +4518,21 @@ figure.wp-block-table.is-style-stripes {
   color: #000;
   text-decoration: none !important;
   min-height: 100px;
+} */
+
+a.card-link{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-grow: 1;
+  color: #000;
+  text-decoration: none !important;
+  min-height: 100px;
+}
+
+.card a.flex-col{
+  flex-direction: column;
 }
 .card-centered a {
   align-items: center !important;
@@ -4513,17 +4543,16 @@ figure.wp-block-table.is-style-stripes {
 }
 .card .content {
   padding: 0px 10px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   margin-top: 7px;
   margin-bottom: 10px;
-  max-width: calc(100% - 90px);
 }
 .card img {
   width: 140px;
-  /* height: 105px; */
+  height: 105px;
+  flex-grow: 1;
   border-radius: 15px;
   align-self: start;
-
   background: #e7e7e7;
   border: none;
 }
@@ -4539,6 +4568,12 @@ figure.wp-block-table.is-style-stripes {
 .card .avatar-default {
   display: none;
 }
+
+.card .button-icon{
+  height: auto;
+}
+
+
 
 .card .emoji {
   position: absolute;
@@ -4564,21 +4599,47 @@ figure.wp-block-table.is-style-stripes {
   margin-bottom: 5px;
 }
 
+
+
+.card .content.content_shrink {
+  width: calc( 100% - 140px );
+  /* max-width: 175px; */
+}
+
 .card .pre-title {
   color: #0091ff;
-  font-size: 1.5rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-size: 1.4rem;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
+
+  /* max-width: 175px; */
+
 }
+
+.card .pre-title span:first-of-type{
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  /* max-width: 70%; */
+  text-overflow: ellipsis;
+}
+
+
 
 .card .date {
   color: #0091ff;
   font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
   margin-bottom: 3px;
+  white-space: nowrap;
+ 
+}
+
+.date {
+   white-space: nowrap;
+ 
 }
 
 .card .card-title {
@@ -4676,7 +4737,7 @@ figure.wp-block-table.is-style-stripes {
   line-height: 1.8rem;
 }
 
-.square a {
+.square a.card-link {
   max-width: 100%;
 }
 
@@ -4691,8 +4752,8 @@ figure.wp-block-table.is-style-stripes {
   padding: 0px;
 }
 
-.landscape a .content,
-.square a .content {
+.landscape .content,
+.square .content {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -4711,11 +4772,50 @@ figure.wp-block-table.is-style-stripes {
   width: 100%;
   min-width: inherit;
   max-width: inherit;
-  /* height: 100%; */
+  height: 100%;
   max-height: 200px;
   object-fit: cover;
   border-radius: 20px;
 }
+
+
+.marker-container{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .marker{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+      0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+      0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+
+  
+}
+.card .marker img{
+  width: 100px;
+  height: 100px;
+  min-width: inherit;
+  background: #fff;
+  border-radius: 20px;
+}
+
+
+
+
+
+
 
 .bg_blue {
   background: rgb(12, 194, 171);
@@ -4792,7 +4892,7 @@ figure.wp-block-table.is-style-stripes {
   background: #d1d1d1;
 }
 
-.gardient a .content {
+.gardient .content {
   color: #fff;
   background: linear-gradient(
     0deg,
@@ -4835,12 +4935,54 @@ figure.wp-block-table.is-style-stripes {
 }
 
 
+/* login-wall */
+
+.login-wall{
+  position: absolute;
+  border-radius: 20px;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content:center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.login-wall p{
+ flex-grow: 1;
+ width: 100%;
+ text-align: center;
+ align-self: stretch;
+}
+
+.card .login-wall .card-button{
+  flex-grow: 0;
+  display: inline;
+  width: initial;
+  margin: 10px;
+}
+
+
+/* if backdrop support: very transparent and blurred */
+@supports (
+  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
+) {
+  .login-wall {
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+  }
+}
 
 /* smart-card */
 
 .smart-card{
   flex-wrap: wrap;
-
   flex-grow: 4;
 }
 
@@ -4860,22 +5002,21 @@ figure.wp-block-table.is-style-stripes {
   display: block ;
   box-shadow: none;
   margin: 0px;
+  font-size: 1.4rem;
+  padding: 13px 5px;
 }
 
 
 .card .card-button:hover{
-  width: 100%;
-  min-height: inherit !important;
-  flex-grow: 1;
   color: #fff;
   background: #0091ff;
-  display: block;
-  text-align: center;
-  display: block ;
-  box-shadow: none;
-  margin: 0px;
 }
 
+@media (min-width: 782px) {
+  .card .card-button{
+    font-size: 1.8rem;
+  }
+}
 
 .card-footer a:last-of-type{
   margin-left: 5px;
@@ -4968,6 +5109,10 @@ figure.wp-block-table.is-style-stripes {
     display: block;
   }
 
+
+  .landscape .pre-title {
+    color: #fff
+  }
   .landscape .card-title {
     font-size: 2.8rem;
     line-height: 3rem;
@@ -5020,10 +5165,6 @@ figure.wp-block-table.is-style-stripes {
   .card-container .landscape a .content {
     padding: 5px 15px;
   }
-/* 
-  .card-container .gardient a .content {
-    padding: 100px;
-  } */
 }
 
 @media (min-width: 1000px) {
@@ -5058,6 +5199,8 @@ figure.wp-block-table.is-style-stripes {
 .red-text {
   color: rgb(255, 82, 128) !important;
 }
+
+
 /* .card-container__small -> call to action card small*/
 
 .card-container__small {
@@ -5065,20 +5208,19 @@ figure.wp-block-table.is-style-stripes {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 10px 0px;
-
-  /* margin: 0px 0px 10px 0px; */
   position: relative;
 }
 
-.card-container__small .card {
+.card-container__small a.card-link {
   width: calc(50% - 5px);
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-.card-container__small .card a {
+.card-container__small a.card-link {
   min-height: 80px;
 }
+
 .card-container__small .card .card-title {
   margin-bottom: 4px;
 }
@@ -5093,7 +5235,7 @@ figure.wp-block-table.is-style-stripes {
   margin-bottom: 0px;
 }
 
-.card-container__long .card a {
+.card-container__long a.card-link {
   min-height: 80px;
 
 }
@@ -5164,6 +5306,7 @@ figure.wp-block-table.is-style-stripes {
     line-height: 2.4rem;
   }
 }
+
 
 .list-cards {
   display: flex;
@@ -5643,6 +5786,7 @@ input[type="file"] {
   }
 }
 
+
 /* publish-form  */
 
 .publish-form {
@@ -5847,7 +5991,7 @@ form.poll{
 }
 
 .card .content{
-  max-width: 100%;
+  width: 100%;
 }
 
 form.poll .answers{
@@ -5879,9 +6023,20 @@ form.poll .answers{
 
 .answers button label{
   position: absolute;
-  z-index: 1;
+  /* z-index: 1; */
   left: 20px;
   margin-top: -29px;
+}
+
+
+.answers button label img{
+  position: absolute;
+  width: 15px;
+  margin-left: 5px;
+  min-width: initial;
+  max-width: initial;
+  /* margin-top: -35px; */
+  background: transparent;
 }
 
 .answers button div{
@@ -5891,6 +6046,16 @@ form.poll .answers{
     margin-top: -29px;
     text-align: right;
   }
+
+  .card .poll .avatar {
+    min-width: unset;
+    display: inline;
+    width: 25px;
+    border-radius: 15px;
+    margin-bottom: -6px;
+    margin-left: 5px;
+  }
+  
 
 
 .ui-sortable .acf-icon.-minus:before{
@@ -5903,7 +6068,7 @@ form.poll .answers{
 
 }
 
-.ui-sortable .acf-icon{
+.ui-sortable .acf-icon.-minus{
   content: 'x';
   border: 1px solid red;
   color: red;
@@ -5932,11 +6097,11 @@ form.poll .answers{
 
 .scale{
   display: block;
-  margin-top: -22px;
-  margin-right: 22px;
-  height: 66px;
-  background: #E8F5FF;
-  border-radius: 15px;
+  margin-top: 0px;
+margin-right: 22px;
+height: 44px;
+background: #E8F5FF;
+border-radius: 15px;
   transition: width 1s ease-in-out ;
 }
 
@@ -6082,5 +6247,7 @@ input:placeholder-shown {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
 }
 
-
-
+img.button-icon.hide {
+  display: none !important;
+  opacity: 0;
+}

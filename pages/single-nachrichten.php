@@ -81,6 +81,8 @@ get_header();
 
     </div>
 
+    <?php get_author(); ?>
+
     <!-- weitere Nachrichten -->
     <?php
 		$args2 = array(

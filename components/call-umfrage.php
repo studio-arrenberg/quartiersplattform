@@ -11,7 +11,7 @@
 
 
 <div class="card  landscape shadow">
-    <a href="<?php echo get_site_url(); ?>/nachrichten/umfrage-transformation-am-arrenberg/">
+    <a class="card-link" href="<?php echo get_site_url(); ?>/nachrichten/umfrage-transformation-am-arrenberg/">
         <div class="content white-text">
             <div class="emojis-top">🙋🏼‍♂️📑💭</div>
             <h3 class="card-title">

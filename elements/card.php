@@ -16,7 +16,7 @@
 
 
 <div class="card shadow projekt">
-    <a href="<?php echo esc_url( get_permalink() ); ?>">
+    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
             <h3 class="card-title">

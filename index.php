@@ -64,22 +64,22 @@ get_header();
 			<div class="card-container">
 			
 
-		<?php
+			<?php
 
-		$i = 0;
+			$i = 0;
 
-		while ( have_posts() ) {
-			$i++;
-			if ( $i > 1 ) {
-				echo '';
+			while ( have_posts() ) {
+				$i++;
+				if ( $i > 1 ) {
+					echo '';
+				}
+				the_post();
+
+				// get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'elements/card', get_post_type() );
+
 			}
-			the_post();
-
-			// get_template_part( 'template-parts/content', get_post_type() );
-			get_template_part( 'elements/card', get_post_type() );
-
-		}
-		?>
+			?>
 
 		</div>
 

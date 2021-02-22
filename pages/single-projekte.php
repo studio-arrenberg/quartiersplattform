@@ -66,33 +66,33 @@ get_header();
             ?>
 
 
-    <!-- Nachricht erstellen -->
+        <!-- Nachricht erstellen -->
 
-    <?php
-        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-        ?>
-            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
         <?php
-        }
-    ?>
-
-    <?php
-        if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
+                <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
+            <?php
+            }
         ?>
-            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
+
         <?php
-        }
-    ?>
-    <!-- Veranstaltung erstellen -->
-
-    <?php
-        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
+            ?>
+                <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
+            <?php
+            }
         ?>
-    <a class="button is-style-outline"
-        href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
-    <?php
-        }
-    ?>
+        <!-- Veranstaltung erstellen -->
+
+        <?php
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
+        <a class="button is-style-outline"
+            href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
+        <?php
+            }
+        ?>
 
         </div>
 
@@ -223,15 +223,60 @@ get_header();
 
     </div>
 
+
+    <!-- Ziele für nachhaltige Etwicklung -->
+    <!-- not ready yet -->
+    <?php if ( current_user_can('administrator') ) { 
+
+        ?>
+            <h2>Ziele für nachhaltige Etwicklung</h2>
+        <?php
+
+        $terms = get_field('sdg');
+        if( $terms ): ?>
+
+            <?php 
+            
+            // print_r($terms); 
+
+            foreach( $terms as $term ): 
+
+                $tax = get_term( $term, 'sdg' );
+                $slug = $tax->slug;
+
+                // echo $slug;
+
+                $args = array(
+                    'post_type'=>'sdg', 
+                    'post_status'=>'publish', 
+                    'posts_per_page'=> -1,
+                    'name'=> $tax->slug 
+                );
+
+                $args = new WP_Query($args);
+                while ( $args->have_posts() ) {
+                    $args->the_post();
+                    ?>
+                    <div>
+                        <h4><?php echo get_the_title(); ?></h4>
+                    </div>
+                    <?php
+                }
+                wp_reset_postdata();
+
+            endforeach;
+        endif;
+            
+    } 
+    ?>
+
+
     <!-- Team -->
     <div class="team">
         <h2> Hutträger </h2>
 
-        <div class="team-member">
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
-            <?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
+        <?php get_author(); ?>
 
-        </div>
     </div>
 
 
@@ -384,9 +429,14 @@ else {
 
         <!-- Map -->
         <!-- not ready yet -->
-        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
-        <p><?php the_field('map'); ?></p>
-        <?php } ?>
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins 
+            
+            // the_field('map');
+            if (get_field('map')) {
+                get_template_part('elements/map-card');
+            }
+
+        } ?>
 
         <!-- Backend edit link -->
         <?php 

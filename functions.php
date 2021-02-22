@@ -878,6 +878,9 @@ function single_template_hook() {
 	else if ( 'veranstaltungen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
+	else if ( 'user' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/template-parts/author.php';
+    }
  
     return $single_template;
 
@@ -917,7 +920,7 @@ function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 	?>
 	<div class='card list-card shadow' data-content-piece="<?php echo $card_title; ?>">
-	<?php if ($link) echo "<a href='".$link."'>"; ?>
+	<?php if ($link) echo "<a class='card-link' href='".$link."'>"; ?>
 
 		<div class='card-header'>
 			<h2><?php echo $card_title; ?></h2>
@@ -1234,7 +1237,6 @@ function my_post_title_updater( $post_id ) {
 				# update post 
 				wp_update_post( $my_post );
 			}
-			
 		}
     
     	$array;
@@ -1247,7 +1249,9 @@ function my_post_title_updater( $post_id ) {
 			}
 		}
 
-		if ( ! add_post_meta($post_id, 'polls', $array, true) ) { 
+		$array_prev = get_post_meta(get_the_ID(), 'polls', true);
+
+		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
 			update_post_meta ( $post_id, 'polls', $array );
     	}
 
@@ -1363,7 +1367,7 @@ function um_remove_scripts_and_styles() {
 		'/my-groups/',
 		'/password-reset/',
 		'/register/',
-		'/user/',
+		// '/user/',
 	);
 
 	if ( is_admin() || is_ultimatemember() ) {
@@ -1474,16 +1478,19 @@ function emoji_picker() {
 		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
 	 ) {
 		
-		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js', false, false, true);
+		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
 		wp_enqueue_script('emoji_picker-config');
-		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js', false, false, true);
+		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js',  false, false, false);
 		wp_enqueue_script('emoji_picker-util');
-		wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js', false, false, true);
+		wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js',  false, false, true);
 		wp_enqueue_script('emoji_picker-emojiarea');
 		wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
 		wp_enqueue_script('emoji_picker-picker');
 		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
 		wp_enqueue_style( 'emoji_picker-css' );
+
+		// wp_register_script('emoji-picker-init', get_template_directory_uri() .'/assets/js/emoji-picker-init.js', array('jQuery', 'emoji_picker-config'), false, true);
+		// wp_enqueue_script('emoji-picker-init');
 
 	}
       
@@ -1639,21 +1646,23 @@ function update_veranstaltung_projekt($post_id) {
 add_action('save_post', 'update_veranstaltung_projekt');
 
 // comment count
-function comment_counter($id_post) {
+// function comment_counter($id_post) {
 
-	$comment_count = get_comment_count($id_post)['approved'];
+// 	// have_comments()
 
-	if($comment_count == 1) {
-		echo $comment_count." Kommentar";
-	}
-	elseif($comment_count > 1) {
-		echo $comment_count." Kommentare";
-	}
-	else {
-		return;
-	}
+// 	$comment_count = get_comment_count($id_post)['approved'];
 
-}
+// 	if($comment_count == 1) {
+// 		echo $comment_count." Kommentar";
+// 	}
+// 	else if($comment_count > 1) {
+// 		echo $comment_count." Kommentare";
+// 	}
+// 	else {
+// 		return;
+// 	}
+
+// }
 
 // Media Copyright function
 // Adding a "Copyright" field to the media uploader $form_fields array
@@ -1783,10 +1792,6 @@ function custom_page_template( $page_template, $post_states ) {
 				$post_states[] = $prefix.'Anmerkungen';
 				$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
 			}
-			else if ($post->post_title == "Benutzer") {
-				$post_states[] = $prefix.'Benutzer';
-				$page_template= get_stylesheet_directory() . '/pages/page-user.php';
-			}
 			else if ($post->post_title == "Profil") {
 				$post_states[] = $prefix.'Profil';
 				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
@@ -1802,6 +1807,10 @@ function custom_page_template( $page_template, $post_states ) {
 			else if ($post->post_title == "Veranstaltung erstellen") {
 				$post_states[] = $prefix.'Veranstaltung erstellen';
 				$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
+			}
+			else if ($post->post_title == "SDGs") {
+				$post_states[] = $prefix.'SDGs';
+				$page_template= get_stylesheet_directory() . '/pages/page-sdg.php';
 			}
 
 		
@@ -2081,19 +2090,17 @@ function um_show_hidden_field(){
 // ACF Form show image uploaded
 function acf_form_show_image_uploaded(){
 
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-
-	// $REQUEST_URI = $_SERVER['REQUEST_URI'];
-
-    // if (
-	// 	strpos($REQUEST_URI,'/projekt-erstellen/') == true
-	// 	|| strpos($REQUEST_URI,'/nachricht-erstellen/') === true
-	// 	|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') === true
-	// 	// && !$_GET['action'] == 'edit'
-	// ) {
-		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false);
+    if (
+		strpos($REQUEST_URI,'/nachricht-erstellen/') !== false /* '/angebot-erstellen/' */
+		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
+		|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') !== false
+		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
+	) {
+		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false, true);
 		wp_enqueue_script('image-upload-preview');
-	// }
+	}
 } add_action('wp_footer', 'acf_form_show_image_uploaded');
 
 // display owner of CPT 
@@ -2108,3 +2115,43 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 	                     
 }
 
+function get_author() {
+
+
+	if (get_the_author_meta( 'ID' )) {
+
+	?>
+        <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
+	<div class="team">		
+		<div class="team-member">	
+			<a href="<?php echo get_site_url()."/author/".get_the_author_meta( 'user_login' ); ?>">
+         	   <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+				<?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
+			</a>
+        </div>
+	</div>
+	<?php 
+
+	}
+
+}
+
+add_action('acf/init', function() {
+	# setup file
+	require_once dirname( __FILE__ ) .'/setup.php';
+	# field setup file
+	require_once dirname( __FILE__ ) .'/fields.php';
+});
+
+
+add_filter('allowed_block_types', function($block_types, $post) {
+	$allowed = [
+		'core/paragraph',
+		'core/heading',
+		'core/image'
+	];
+	if ($post->post_title == "Überblick") {
+		return $allowed;
+	}
+	return $block_types;
+}, 10, 2);

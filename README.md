@@ -192,10 +192,19 @@ Including projekts
 ```php
 get_cpt_term_owner($post_ID, $term, $type = 'name');
 ```
+#### Get Author of Post Type
+Should be used in the Wordpress Loop 
+```php
+get_author();
+```
 
 ### Notes
 - Google Maps API Key `AIzaSyACLoR7TPeF5*fünf*Gds8HFR6YmX2HhGKORhz`
 - [WP Sync DB Media Files](https://github.com/wp-sync-db/wp-sync-db-media-files)
+
+### MapBox
+* [Studio](https://studio.mapbox.com)
+* [Static Map](https://docs.mapbox.com/playground/static/)
 
 #### Get Rid of all untracked changes
 ```bash
@@ -203,7 +212,7 @@ git stash
 ```
 
 #### Update public branch from master
-```bash
+```s
 git fetch
 git checkout public
 git reset --hard main
