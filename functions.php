@@ -2155,9 +2155,3 @@ add_filter('allowed_block_types', function($block_types, $post) {
 	}
 	return $block_types;
 }, 10, 2);
-
-
-register_block_pattern_category(
-    'hero',
-    array( 'label' => __( 'Hero', 'my-plugin' ) )
-);
