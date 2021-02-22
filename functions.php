@@ -2144,14 +2144,14 @@ add_action('acf/init', function() {
 });
 
 
-add_filter('allowed_block_types', function($block_types, $post) {
-	$allowed = [
-		'core/paragraph',
-		'core/heading',
-		'core/image'
-	];
-	if ($post->post_title == "Überblick") {
-		return $allowed;
-	}
-	return $block_types;
-}, 10, 2);
+// add_filter('allowed_block_types', function($block_types, $post) {
+// 	$allowed = [
+// 		'core/paragraph',
+// 		'core/heading',
+// 		'core/image'
+// 	];
+// 	if ($post->post_title == "Überblick") {
+// 		return $allowed;
+// 	}
+// 	return $block_types;
+// }, 10, 2);
