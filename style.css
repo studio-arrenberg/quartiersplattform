@@ -4779,6 +4779,11 @@ a.card-link{
 }
 
 
+
+.landscape .pre-title {
+  color: #fff
+}
+
 .marker-container{
   position: absolute;
   height: 100%;
@@ -4801,10 +4806,8 @@ a.card-link{
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
       0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
       0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
-
-
-      
 }
+
 
 .card .marker::before{
   content: '';
@@ -4829,8 +4832,6 @@ a.card-link{
   0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07)
 }
 
-
-
 .card .marker img{
   width: 100%;
   height: 100%;
@@ -4847,9 +4848,17 @@ a.card-link{
 }
 
 @media (max-width: 782px) {
+
+  .card .marker::before{
+    width: 50px;
+    height: 50px;
+  }
+
   .card .marker{
     width: 50px;
     height: 50px;
+    font-size: 2.5rem;
+
   }
 
   .card .marker::after{
@@ -5035,8 +5044,10 @@ a.card-link{
 }
 
 .card-footer{
+  margin-top: 5px;
   width: 100%;
   display: flex;
+  z-index: 1;
 }
 
 .card .card-button{
@@ -5158,9 +5169,6 @@ a.card-link{
   }
 
 
-  .landscape .pre-title {
-    color: #fff
-  }
   .landscape .card-title {
     font-size: 2.8rem;
     line-height: 3rem;
