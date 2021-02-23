@@ -60,7 +60,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
   
-                echo "<h2>Frage und Angebote von $curauth->display_name</h2>";
+                echo "<h2>Fragen und Angebote von $curauth->display_name</h2>";
                 slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
                 
             }
@@ -68,7 +68,47 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
         <!-- Kontakt  -->
-        <!-- not ready yet -->
+        <h2>Bearbeite deine Kontaktinformationen</h2>
+        <?php 
+            $userid = "user_".$curauth->ID; 
+            $wpuserid = 'user_'.get_current_user_id();
+            if($userid == $wpuserid){
+                acf_form (
+                    array(
+                        'form' => true,
+                        'post_id' => $userid,
+                        'return' => '%post_url%',
+                        'submit_value' => 'Änderungen speichern',
+                        'post_title' => false,
+                        'post_content' => false,    
+                        'field_groups' => array('group_602e70c8d0a1b', 'group_6033daea4d4ac'), //Lokal
+                        
+                    )
+                );
+            
+
+
+            
+            }else{
+                ?>
+                <h1>Name</h1>
+                <p><?php the_field('name', $userid); ?></p>
+                <h1>Telefonnummer</h1>
+                <p><?php the_field('telefonnummer', $userid); ?></p>
+                <h1>E-Mail</h1>
+                <p><?php the_field('email', $userid); ?></p>
+                
+                <?php
+            }
+
+            ?>
+        
+        
+        
+
+        
+        
+
 
 
     </div>
