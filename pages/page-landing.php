@@ -164,6 +164,15 @@ get_header();
     <!-- arrenberg farm wetter station -->
     <?php get_template_part('components/wetter'); ?>
 
+	<!-- Gutenberg Editor Content -->
+	<?php
+		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+			the_excerpt();
+		} else {
+			the_content( __( 'Continue reading', 'twentytwenty' ) );
+		}
+	?>
+
     <!-- feedback (acf) -->
     <?php get_template_part('components/feedback'); ?>
     <?php
@@ -302,8 +311,18 @@ get_header();
     <!-- arrenberg farm wetter station -->
     <?php get_template_part('components/wetter'); ?>
 
-    <!-- feedback (acf) -->
-    <?php get_template_part('components/feedback'); ?>
+	<!-- Gutenberg Editor Content -->
+	<?php
+		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+			the_excerpt();
+		} else {
+			the_content( __( 'Continue reading', 'twentytwenty' ) );
+		}
+	?>
+
+	<!-- feedback (acf) -->
+	<?php get_template_part('components/feedback'); ?>
+
 
     <?php } ?>
 

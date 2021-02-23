@@ -46,7 +46,7 @@ get_header();
 
 
 <div class="card-container   card-container__large ">
-	<?php get_template_part( 'components/call', 'gemeinsam' ); ?>
+	<?php // get_template_part( 'components/call', 'gemeinsam' ); ?>
 </div>
 
 
