@@ -4,6 +4,10 @@
  *
  *
  */
+if ( ( is_user_logged_in() ) ) { // Execute code if user is logged in 
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+}
 
 get_header();
 
@@ -86,6 +90,24 @@ if (!is_user_logged_in()){
 
     <br>
     <br>
+        <h2>Bearbeite deine Kontaktinformationen</h2>
+        <?php
+        $userid = "user_".$current_user->ID; 
+        acf_form (
+            array(
+                'form' => true,
+                'post_id' => $userid,
+                'return' => get_site_url()."/profil"."/",
+                'submit_value' => 'Änderungen speichern',
+                'post_title' => false,
+                'post_content' => false,    
+                'field_groups' => array('group_602e70c8d0a1b', 'group_6033daea4d4ac'),
+            )
+        );
+            ?>
+    <br>
+    <br>
+
     <h2>Profil bearbeiten</h2>
     <?php echo do_shortcode("[ultimatemember_account]"); ?>
     

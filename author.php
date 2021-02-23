@@ -22,12 +22,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
     </div>
 
-
-
     <div class="single-content">
-
-    
-
         <!-- Projekte -->
         <?php
             $args4 = array(
@@ -68,49 +63,28 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
         <!-- Kontakt  -->
-        <h2>Bearbeite deine Kontaktinformationen</h2>
-        <?php 
-            $userid = "user_".$curauth->ID; 
-            $wpuserid = 'user_'.get_current_user_id();
-            if($userid == $wpuserid){
-                acf_form (
-                    array(
-                        'form' => true,
-                        'post_id' => $userid,
-                        'return' => '%post_url%',
-                        'submit_value' => 'Änderungen speichern',
-                        'post_title' => false,
-                        'post_content' => false,    
-                        'field_groups' => array('group_602e70c8d0a1b', 'group_6033daea4d4ac'), //Lokal
-                        
-                    )
-                );
-            
-
-
-            
-            }else{
-                ?>
-                <h1>Name</h1>
-                <p><?php the_field('name', $userid); ?></p>
-                <h1>Telefonnummer</h1>
-                <p><?php the_field('telefonnummer', $userid); ?></p>
-                <h1>E-Mail</h1>
-                <p><?php the_field('email', $userid); ?></p>
-                
-                <?php
-            }
-
+            <?php 
+                $userid = "user_".$curauth->ID; 
             ?>
-        
-        
-        
+            <h2>Nimm kontakt mit <?php echo $curauth->display_name;?> auf!</h2>
+            <div class="share-button">
+            <?php if( get_field('email', $userid) ){
+				?>
+				<a class="button is-style-outline" target="blank"
+                onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
+                href="mailto:<?php echo the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                rel="nofollow"><?php echo the_field('email', $userid);?></a>
+				
+				<?php
+				}?>
 
-        
-        
-
-
-
+				<?php if( get_field('phone', $userid) ){?>
+            		<a class="button is-style-outline" target="blank" href="tel:<?php echo the_field('phone', $userid);?>" >
+                <?php echo the_field('phone', $userid); ?>
+                </a>
+				<?php
+				}?>
+            </div>
     </div>
 
 
