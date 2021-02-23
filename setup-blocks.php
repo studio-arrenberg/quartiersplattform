@@ -7,10 +7,10 @@
  */
 
 
-add_action('init', 'my_acf_init');
-function my_acf_init() {
+// add_action('init', 'my_acf_init');
+// function my_acf_init() {
 	
-	// wetter block
+// 	// wetter block
 // 	if( function_exists('acf_register_block') ) {
 		
 // 		// register a testimonial block
