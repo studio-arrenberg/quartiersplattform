@@ -1851,32 +1851,7 @@ function create_form_page(){
 
 } 
 
-add_action( 'after_setup_theme', 'create_form_poll' );
-function create_form_poll(){
 
-    $title = 'Umfrage erstellen';
-    $slug = 'umfrage-erstellen';
-    $page_content = ''; // your page content here
-    $post_type = 'page';
-
-    $page_args = array(
-        'post_type' => $post_type,
-        'post_title' => $title,
-        'post_content' => $page_content,
-        'post_status' => 'publish',
-        'post_author' => 1,
-        'post_slug' => $slug
-	);
-	
-	if ( ! function_exists( 'post_exists' ) ) {
-		require_once( ABSPATH . 'wp-admin/includes/post.php' );
-	}
-
-    if(post_exists($title) === 0){
-        $page_id = wp_insert_post($page_args);
-    }
-
-}
 
 add_action( 'after_setup_theme', 'create_event_page' );
 function create_event_page(){
@@ -1921,41 +1896,7 @@ function create_event_page(){
 # [x] render submit button when logged in 
 # ![ ] poll page 
 
-## CPT poll
-function cptui_register_my_cpts_poll() {
 
-	$labels = [
-		"name" => __( "Poll", "quartiersplattform" ),
-		"singular_name" => __( "Poll", "quartiersplattform" ),
-	];
-
-	$args = [
-		"label" => __( "Poll", "quartiersplattform" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"rewrite" => [ "slug" => "poll", "with_front" => true ],
-		"query_var" => true,
-		"menu_icon" => "dashicons-format-aside",
-		"supports" => [ "title", "editor", "comments", "author" ],
-	];
-
-	register_post_type( "poll", $args );
-}
-add_action( 'init', 'cptui_register_my_cpts_poll' );
 
 # Taxonomy: Projekte.
 function cptui_register_my_taxes_projekt() {
@@ -2145,16 +2086,16 @@ function get_author($contact = false) {
 
 				<?php if( get_field('email', $userid) ){
 				?>
-				<a class="button is-style-outline" target="blank"
+				<a class="button is-style-outline" target="_blank"
                 onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
-                href="mailto:<?php echo the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                href="mailto:<?php echo the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"
                 rel="nofollow"><?php echo the_field('email', $userid);?></a>
 				
 				<?php
 				}?>
 
 				<?php if( get_field('phone', $userid) ){?>
-            		<a class="button is-style-outline" target="blank" href="tel:<?php echo the_field('phone', $userid);?>" >
+            		<a class="button is-style-outline" target="_blank" href="tel:<?php echo the_field('phone', $userid);?>" >
                 <?php echo the_field('phone', $userid); ?>
                 </a>
 				<?php
@@ -2170,12 +2111,17 @@ function get_author($contact = false) {
 }
 
 add_action('acf/init', function() {
-	# setup file
-	// require_once dirname( __FILE__ ) .'/setup/main.php';
-	# field setup file
-	// require_once dirname( __FILE__ ) .'/fields.php';
-	# field setup file
+	// General
+	require_once dirname( __FILE__ ) .'/setup/main.php';
+	// Setting Page
+	require_once dirname( __FILE__ ) .'/setup/settings.php';
+	
+	// Kontakt
+	require_once dirname( __FILE__ ) .'/setup/kontakt.php';
+	// Umfragen
 	require_once dirname( __FILE__ ) .'/setup/umfragen.php';
+    // SDG
+    require_once dirname( __FILE__ ) .'/setup/sdg.php';
 });
 
 

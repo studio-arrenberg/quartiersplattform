@@ -18,7 +18,10 @@
  *  --------------------------------------------------------
  */
 
-add_action('acf/init', function() {
-	// Umfragen
-	require_once dirname( __FILE__ ) .'/setup/umfragen.php';
-});
+// add_action('acf/init', function() {
+// 	// Umfragen
+// 	require_once dirname( __FILE__ ) .'/setup/umfragen.php';
+//     // SDG
+//     require_once dirname( __FILE__ ) .'/setup/sdg.php';
+
+// });

@@ -90,7 +90,7 @@ if (!is_user_logged_in()){
 
     <br>
     <br>
-        <h2>Bearbeite deine Kontaktinformationen</h2>
+    <h2>Bearbeite deine Kontaktinformationen</h2>
         <?php
         $userid = "user_".$current_user->ID; 
         acf_form (
@@ -101,10 +101,10 @@ if (!is_user_logged_in()){
                 'submit_value' => 'Änderungen speichern',
                 'post_title' => false,
                 'post_content' => false,    
-                'field_groups' => array('group_602e70c8d0a1b', 'group_6033daea4d4ac', 'group_6035178e24082'),
+                'field_groups' => array('group_6034e1d00f273'),
             )
         );
-            ?>
+        ?>
     <br>
     <br>
 
