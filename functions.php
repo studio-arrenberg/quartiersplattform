@@ -2138,9 +2138,9 @@ function get_author() {
 
 add_action('acf/init', function() {
 	# setup file
-	require_once dirname( __FILE__ ) .'/setup.php';
+	// require_once dirname( __FILE__ ) .'/setup.php';
 	# field setup file
-	require_once dirname( __FILE__ ) .'/fields.php';
+	// require_once dirname( __FILE__ ) .'/fields.php';
 });
 
 
