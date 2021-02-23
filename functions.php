@@ -2115,22 +2115,55 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 	                     
 }
 
-function get_author() {
-
-
+function get_author($contact = false) {
 	if (get_the_author_meta( 'ID' )) {
-
 	?>
         <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
 	<div class="team">		
 		<div class="team-member">	
-			<a href="<?php echo get_site_url()."/author/".get_the_author_meta( 'user_login' ); ?>">
+			<a href="<?php 
+				$userid = "user_".get_the_author_meta( 'ID' );
+				$wpuserid = 'user_'.get_current_user_id();
+				if($userid == $wpuserid){
+					echo get_site_url()."/profil/";
+				}
+				else{
+					echo get_site_url()."/author/".get_the_author_meta( 'user_login' ); 	
+				}				            	            	
+				?>">
          	   <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
 				<?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
 			</a>
         </div>
 	</div>
 	<?php 
+	// $contact entscheidet, ob die Kontaktcard angezeigt wird
+	if($contact == true){
+                $userid = "user_".get_the_author_meta( 'ID' ); 
+            ?>
+            <div class="share-button">
+
+				<?php if( get_field('email', $userid) ){
+				?>
+				<a class="button is-style-outline" target="blank"
+                onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
+                href="mailto:<?php echo the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                rel="nofollow"><?php echo the_field('email', $userid);?></a>
+				
+				<?php
+				}?>
+
+				<?php if( get_field('phone', $userid) ){?>
+            		<a class="button is-style-outline" target="blank" href="tel:<?php echo the_field('phone', $userid);?>" >
+                <?php echo the_field('phone', $userid); ?>
+                </a>
+				<?php
+				}?>
+
+            </div>
+			<?php
+		}
+	
 
 	}
 

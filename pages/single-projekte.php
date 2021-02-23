@@ -273,9 +273,10 @@ get_header();
 
     <!-- Team -->
     <div class="team">
-        <h2> Hutträger </h2>
-
-        <?php get_author(); ?>
+        <h2> Hutträger </h2>    
+        <?php 
+        $contact = true;
+        get_author($contact); ?>
 
     </div>
 
