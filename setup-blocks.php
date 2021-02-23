@@ -25,21 +25,21 @@
 // 		));
 // 	}
 
-// 	// link block
-// 	if( function_exists('acf_register_block') ) {
+	// link block
+	if( function_exists('acf_register_block') ) {
 		
-// 		// register a testimonial block
-// 		acf_register_block(array(
-// 			'name'				=> 'link',
-// 			'title'				=> __('Link Block'),
-// 			'description'		=> __('Link Card'),
-// 			'render_callback'	=> 'link_block_render_callback',
-// 			'category'			=> 'quartiersplattform',
-// 			'icon'				=> 'admin-links',
-// 			'keywords'			=> array( 'link', 'arreberg' ),
-// 		));
-// 	}
-// }
+		// register a testimonial block
+		acf_register_block(array(
+			'name'				=> 'link-card',
+			'title'				=> __('Link Block'),
+			'description'		=> __('Link Card'),
+			'render_callback'	=> 'link_block_render_callback',
+			'category'			=> 'quartiersplattform',
+			'icon'				=> 'admin-links',
+			'keywords'			=> array( 'link', 'arreberg' ),
+		));
+	}
+}
 
 
 // function wetter_block_render_callback( $block ) {
