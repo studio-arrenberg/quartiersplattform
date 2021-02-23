@@ -58,9 +58,7 @@
         <div class="card smart-card shadow">
             <div class="card-header">
             <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
-                <h3>Du hast leider noch <span class="highlight">kein Sharingangebot </span> erstellt und noch <span
-                        class="highlight">keine
-                        Frage</span> gepostet.</h3>
+                <h3>Du hast noch <span class="highlight">kein Sharingangebot </span> erstellt oder  <span class="highlight">Frage</span> gepostet.</h3>
             </div>
 
             <div class="card-footer">
