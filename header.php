@@ -119,9 +119,10 @@
             
             <div class="site-name">
                 <a href="<?php echo get_site_url(); ?>">
-                    <h1>Arrenberg </h1>
-                    <h2>Quartiersplattform </h2>
+                    <h1><?php the_field('quartiersplattform-name', 'option'); ?> </h1>
+                    <h2><?php the_field('quartiersplattform-description', 'option'); ?>  </h2>
                 </a>
+                
             </div>
         
             <?php 

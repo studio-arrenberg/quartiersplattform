@@ -24,7 +24,11 @@
     </div>
 
     <div class="footer">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
+    <?php 
+    $image = get_field('logo', 'option');
+    if( !empty( $image ) ): ?>
+        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
 
         <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Kontakt</a>
         <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
