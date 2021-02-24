@@ -123,7 +123,7 @@ get_header();
     <?php
         if (current_user_can('administrator')) {
             $args_chronik = array(
-                'post_type'=>'poll', 
+                'post_type'=>'umfragen', 
                 'post_status'=>'publish', 
                 'posts_per_page'=> 1,
                 'order' => 'DESC',

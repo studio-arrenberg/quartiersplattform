@@ -252,10 +252,10 @@ acf differnet field groups with same name have same field id
 - rifi2k.format-html-in-php
 
 # Issues before distribution
-- CPT naming (Deutsch vs Englisch)
-- Page Link naming (.app/veranstaltungen/...) (Deutsch vs Englisch) (Singular vs Plural)
+- CPT naming (Deutsch vs Englisch) ==> Deutsch
+- Page Link naming (.app/veranstaltungen/...) (Deutsch vs Englisch) (Singular vs Plural) ==> Deutsch
 - ACF naming constitent 
-- UM `picture upload button` jQuery fix (updates should always work)
+- UM `picture upload button` jQuery fix (updates should always work) ==> DONE
 - `text` feld oder Gutenberg Editor für text
 
 ## Auto Setup
@@ -288,6 +288,25 @@ acf differnet field groups with same name have same field id
 - code policy
   - html element
 
+### Custom Post Types
+* Projekte `projekte`
+* Nachrichten `nachrichten`
+* Veranstaltungen `veranstaltungen`
+* Umfragen `umfragen`
+* Anmerkungen `anmerkungen`
+* Fragen `fragen`
+* Angebote `angebote`
+
+#### Quartier Arrenberg: 
+* Geschichten `geschichten`
+* Team `team` ´´´Deprecated´´´
+
+### Taxonomys
+* Projekte `projekt` in `nachrichten`, `veranstaltungen`, `umfragen`
+* Status `anmerkungen_status` in `anmerkungen`
+* SDG `sdg` in `projekte`
+### Advanced custom fields 
+will soon be imported seperatly from the admin page into files in `setup/` folder.
 ## Code Snippets
 - Wordpress
   - Links

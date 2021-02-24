@@ -1,18 +1,27 @@
 <?php
 
 /**
- * 	Setup File
- * 	Fired on the initialization of WordPress
+ * 
+ * 	SDG Setup 
+ * 	
+ * 	1. Post Type
+ * 	2. Taxonomy
+ * 	3. Pages and Taxonomy for Projekte
+ * 	4. SDG Page
  * 
  * 
  * 
  */
 
 
-# CPT + TAX for SDGs 
-function cptui_register_my_cpts_SDG() {
+function register_sdg() {
 
-	# Add CPT
+	/**
+	 *  --------------------------------------------------------
+	 *  1. Post Type
+	 *  --------------------------------------------------------
+	 */
+
 	$labels = [
 		"name" => __( "SDGs", "quartiersplattform" ),
 		"singular_name" => __( "SDG", "quartiersplattform" ),
@@ -44,7 +53,12 @@ function cptui_register_my_cpts_SDG() {
 
 	register_post_type( "sdg", $args );
 
-	# Add TAX
+	/**
+	 *  --------------------------------------------------------
+	 *  2. Taxonomy
+	 *  --------------------------------------------------------
+	 */
+
     $labels = [
 		"name" => __( "SDGs", "quartiersplattform" ),
 		"singular_name" => __( "SDG", "quartiersplattform" ),
@@ -69,7 +83,12 @@ function cptui_register_my_cpts_SDG() {
 			];
 	register_taxonomy( "sdg", [ "projekte" ], $args );
 
-	# Add/Update Posts
+	/**
+	 *  --------------------------------------------------------
+	 *  3. Pages and Taxonomy for Projekte
+	 *  --------------------------------------------------------
+	 */
+
 	$sdgs = array(
 		0 => array('title' => 'Keine Armut', 'slogan' => 'Armut in all ihren Formen und überall beenden', 'content' => 'Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf der Welt zu beseitigen. Allerdings wird extreme Armut mit einem gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu niedrig.'), 
 		1 => array('title' => 'Keine Hungersnot', 'slogan' => 'Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern', 'content' => 'Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der kleinen Nahrungsmittelproduzenten verdoppelt werden.'),
@@ -123,35 +142,36 @@ function cptui_register_my_cpts_SDG() {
 		}
 	}
 
-	# Create SDG Page
-	// function create_sdg_page(){
+	/**
+	 *  --------------------------------------------------------
+	 *  4. SDG Page
+	 *  --------------------------------------------------------
+	 */
 
-		$title = 'SDGs';
-		$slug = 'sdg';
-		$page_content = ''; // your page content here
-		$post_type = 'page';
+	$title = 'SDGs';
+	$slug = 'sdg';
+	$page_content = ''; // your page content here
+	$post_type = 'page';
+
+	$page_args = array(
+		'post_type' => $post_type,
+		'post_title' => $title,
+		'post_content' => $page_content,
+		'post_status' => 'publish',
+		'post_author' => 1,
+		'post_slug' => $slug
+	);
 	
-		$page_args = array(
-			'post_type' => $post_type,
-			'post_title' => $title,
-			'post_content' => $page_content,
-			'post_status' => 'publish',
-			'post_author' => 1,
-			'post_slug' => $slug
-		);
-		
-		if ( ! function_exists( 'post_exists' ) ) {
-			require_once( ABSPATH . 'wp-admin/includes/post.php' );
-		}
-	
-		if(post_exists($title) === 0){
-			$page_id = wp_insert_post($page_args);
-		}
-	
-	// } 
-    
+	if ( ! function_exists( 'post_exists' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/post.php' );
+	}
+
+	if(post_exists($title) === 0){
+		$page_id = wp_insert_post($page_args);
+	}
+	    
 }
-add_action( 'init', 'cptui_register_my_cpts_SDG' );
+add_action( 'init', 'register_sdg' );
 
 
 ?>

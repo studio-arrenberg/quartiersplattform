@@ -17,8 +17,8 @@
  */
 
 
-add_action( 'after_setup_theme', 'create_form_poll' );
-function create_form_poll(){
+add_action( 'after_setup_theme', 'create_form_umfragen' );
+function create_form_umfragen(){
 
     $title = 'Umfrage erstellen';
     $slug = 'umfrage-erstellen';
@@ -51,15 +51,15 @@ function create_form_poll(){
  */
 
 
-function cptui_register_my_cpts_poll() {
+function cptui_register_my_cpts_umfragen() {
 
 	$labels = [
-		"name" => __( "Poll", "quartiersplattform" ),
-		"singular_name" => __( "Poll", "quartiersplattform" ),
+		"name" => __( "Umfragen", "quartiersplattform" ),
+		"singular_name" => __( "Umfrage", "quartiersplattform" ),
 	];
 
 	$args = [
-		"label" => __( "Poll", "quartiersplattform" ),
+		"label" => __( "Umfragen", "quartiersplattform" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -76,15 +76,15 @@ function cptui_register_my_cpts_poll() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => [ "slug" => "poll", "with_front" => true ],
+		"rewrite" => [ "slug" => "umfragen", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => "dashicons-format-aside",
 		"supports" => [ "title", "editor", "comments", "author" ],
 	];
 
-	register_post_type( "poll", $args );
+	register_post_type( "umfragen", $args );
 }
-add_action( 'init', 'cptui_register_my_cpts_poll' );
+add_action( 'init', 'cptui_register_my_cpts_umfragen' );
 
 
 /**
@@ -97,7 +97,7 @@ if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
         'key' => 'group_601855a265b19',
-        'title' => 'Poll',
+        'title' => 'Umfragen',
         'fields' => array(
             array(
                 'key' => 'field_601855a9aa4be',
@@ -164,7 +164,7 @@ if( function_exists('acf_add_local_field_group') ):
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'poll',
+                    'value' => 'umfragen',
                 ),
             ),
         ),

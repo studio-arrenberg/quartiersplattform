@@ -1,14 +1,5 @@
 <?php
-/**
- * Template Name: Poll [Default]
- * Template Post Type: poll
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
+
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
