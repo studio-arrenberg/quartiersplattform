@@ -40,7 +40,7 @@ get_header();
 				'label_placement'=> '',
                 'post_id'=>'new_post',
 				'new_post'=>array(
-                    'post_type' => 'poll',
+                    'post_type' => 'umfragen',
                     'post_status' => 'publish',
                 ),
                 'return' => get_site_url().'/gemeinsam', // post gets dublicated

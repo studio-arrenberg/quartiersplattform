@@ -851,15 +851,15 @@ function single_template_hook() {
 
 	global $post;
 
-	if ( 'poll' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
+	if ( 'umfragen' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-umfragen.php';
     }
 	else if ( 'projekte' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-projekte.php';
     }
-	else if ( 'poll' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
-    }
+	// else if ( 'poll' === $post->post_type ) {
+    //     $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
+    // }
 	else if ( 'geschichten' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
     }
@@ -1220,7 +1220,7 @@ function my_post_title_updater( $post_id ) {
 		exit;
 
 	}
-	if ( get_post_type($post_id) == 'poll' ) {
+	if ( get_post_type($post_id) == 'umfragen' ) {
 
 		$tax = $_POST['project_tax'];
 
@@ -1577,7 +1577,7 @@ add_action( 'pre_get_posts', function ( $query ) {
     }
 } );
 
-// projekt archive custom order
+// projekt archive custom post types
 add_action( 'pre_get_posts', function ( $query ) {
     if ( is_tax( 'projekt' ) && $query->is_main_query() && !current_user_can('administrator') ) {
         $query->set( 'post_type', array('veranstaltungen','nachrichten') );
@@ -1802,7 +1802,7 @@ function custom_page_template( $page_template, $post_states ) {
 			}
 			else if ($post->post_title == "Umfrage erstellen") {
 				$post_states[] = $prefix.'Umfrage erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-poll.php';
+				$page_template= get_stylesheet_directory() . '/forms/form-umfragen.php';
       		}
 			else if ($post->post_title == "Veranstaltung erstellen") {
 				$post_states[] = $prefix.'Veranstaltung erstellen';
@@ -1923,7 +1923,7 @@ function cptui_register_my_taxes_projekt() {
 		"rest_controller_class" => "WP_REST_Terms_Controller",
 		"show_in_quick_edit" => true,
 			];
-	register_taxonomy( "projekt", [ "nachrichten", "veranstaltungen", "poll" ], $args );
+	register_taxonomy( "projekt", [ "nachrichten", "veranstaltungen", "umfragen" ], $args );
 }
 add_action( 'init', 'cptui_register_my_taxes_projekt' );
 
@@ -2113,6 +2113,8 @@ function get_author($contact = false) {
 add_action('acf/init', function() {
 	// General
 	require_once dirname( __FILE__ ) .'/setup/main.php';
+	// Immigration
+	require_once dirname( __FILE__ ) .'/setup/immigration.php';
 	// Setting Page
 	require_once dirname( __FILE__ ) .'/setup/settings.php';
 	

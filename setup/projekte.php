@@ -1,5 +1,22 @@
 <?php
 
+/**
+ * 
+ *  Projekte Setup
+ *  
+ *  3. Pages (Pages, Forms)
+ *  2. ACF
+ *  4. Link Pages with Templates (Pages & Post types)
+ * 
+ */
+
+
+/**
+ *  --------------------------------------------------------
+ *  1. ACF
+ *  --------------------------------------------------------
+ */
+
 # ACF projekte
 if( function_exists('acf_add_local_field_group') ):
 
