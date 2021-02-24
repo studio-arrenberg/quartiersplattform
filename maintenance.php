@@ -1,5 +1,10 @@
 <?php
+# init wp files
 require_once("../../../wp-load.php");
+
+# redirect when maintenance is off
+if(!get_field('maintenance', 'option')) wp_redirect( get_site_url() );
+
 ?>
 
 <!DOCTYPE html>

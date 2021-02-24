@@ -1,6 +1,15 @@
 <?php 
 
 /**
+ * 
+ *  Blocks Setup
+ * 
+ *  1. Link Block (Card)
+ * 
+ */
+
+
+/**
  * ------------------------------------------------------------
  * 	Init Blocks
  * ------------------------------------------------------------
@@ -17,7 +26,7 @@ function my_acf_init() {
 		acf_register_block(array(
 			'name'				=> 'link-card',
 			'title'				=> __('Link Block'),
-			'description'		=> __('Link Card'),
+			'description'		=> __('Link Post and Pages'),
 			'render_callback'	=> 'link_block_render_callback',
 			'category'			=> 'quartiersplattform',
 			'icon'				=> 'admin-links',

@@ -2145,6 +2145,6 @@ function wp_maintenance_mode() {
 		wp_redirect( get_template_directory_uri().'/maintenance.php');
 	}
 }
-if(get_field('maintenance', 'option') == 1){
+if(get_field('maintenance', 'option') == true){
 	add_action('get_header', 'wp_maintenance_mode');
 }

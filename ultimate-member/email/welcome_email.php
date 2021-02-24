@@ -19,7 +19,7 @@
     <div> </div>
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;">
-        <span>Schön das du da bist! Auf der Arrenberg App findest du alle
+        <span>Schön das du da bist! Auf der Arrenberg <?php the_field('quartiersplattform-name', 'option'); ?> App findest du alle
           relevanten Informationen rund um dein Viertel. So kannst du neue
           Menschen kennen lernen und dein Quartier nachhaltig entwickeln und
           verbessern.
