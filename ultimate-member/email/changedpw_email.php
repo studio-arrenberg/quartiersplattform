@@ -1,6 +1,5 @@
 <div class="mail" style="text-align: center; vertical-align: center; background-color: #f7f7f7; padding: 10% 20%;">
 <div class="content" style="padding: 5%; text-align: center; vertical-align: center; position: relative; color: #666666; font-family: 'Open Sans', Helvetica,Arial; font-size: 16px; background-color: white; display: inline-block; border-radius: 50px;">
-<div><img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/registrieren.png" alt="Arrenberg Logo" width="300" height="auto" /></div>
 <div><span style="font-size: 26px; font-weight: 600; color: #62b2f0; font-family: 'Open Sans', Helvetica, Arial;">Hallo, {first_name} </span></div>
 <div> </div>
 <div>
@@ -14,11 +13,19 @@
 </div>
 <div style="padding: 20px 30px;">
 <div>Vielen Dank!</div>
-<div>Dein Arrenberg Team.</div>
+<div>Dein <?php the_field('quartiersplattform-description', 'option'); ?> Team.</div>
 </div>
 </div>
 <div class="footer" style="text-align: center; margin-top: 5%;">
-<p><img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="200" /></p>
-<p class="footer" style="text-align: center; margin-top: 5%;"><a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="{login_url}">Impressum </a> <a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="{login_url}">Datenschutz </a></p>
+
+<?php 
+    $image = get_field('logo', 'option');
+    if( !empty( $image ) ): ?>
+        <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
+
+<p class="footer" style="text-align: center; margin-top: 5%;">
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/">Impressum </a> 
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/">Datenschutz </a></p>
 </div>
 </div>
