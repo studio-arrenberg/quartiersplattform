@@ -299,7 +299,7 @@ acf differnet field groups with same name have same field id
 
 #### Quartier Arrenberg: 
 * Geschichten `geschichten`
-* Team `team` ´´´´Deprecated´´´´
+* Team `team` ´´´Deprecated´´´
 
 ### Taxonomys
 * Projekte `projekt` in `nachrichten`, `veranstaltungen`, `umfragen`
