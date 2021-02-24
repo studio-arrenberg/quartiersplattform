@@ -1158,7 +1158,7 @@ function my_post_title_updater( $post_id ) {
 		// update taxonomy
 		if(!has_term('', 'anmerkungen_status') ){
 			// do something
-			wp_set_object_terms( $post_id, 'arrenberg-update', 'anmerkungen_version', false ); // change to status!
+			// wp_set_object_terms( $post_id, 'arrenberg-update', 'anmerkungen_version', false ); // change to status!
 			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
 		}
 		
