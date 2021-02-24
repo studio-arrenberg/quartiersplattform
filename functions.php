@@ -2120,7 +2120,7 @@ add_action('acf/init', function() {
 	require_once dirname( __FILE__ ) .'/setup/main.php';
 	// Setting Page
 	require_once dirname( __FILE__ ) .'/setup/settings.php';
-	
+
 	// Kontakt
 	require_once dirname( __FILE__ ) .'/setup/kontakt.php';
 	// Umfragen

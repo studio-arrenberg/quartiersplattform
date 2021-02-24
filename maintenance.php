@@ -1,6 +1,5 @@
 <?php
 require_once("../../../wp-load.php");
-
 ?>
 
 <!DOCTYPE html>
