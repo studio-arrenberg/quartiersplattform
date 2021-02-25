@@ -88,7 +88,6 @@ date('Ymd', strtotime(get_field( "event_date" )));
 [More PHP Wordpress Snippets](https://github.com/studio-arrenberg/quartiersplattform/blob/main/wordpress.md)
 
 ### Recources 
-
 - [Ajax Comments](https://rudrastyh.com/wordpress/ajax-comments.html)
 - [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
 - [Ultimate Member Remove Recources](https://docs.ultimatemember.com/article/1490-how-to-remove-css-and-js-on-non-um-pages)
@@ -299,7 +298,8 @@ acf differnet field groups with same name have same field id
 
 #### Quartier Arrenberg: 
 * Geschichten `geschichten`
-* Team `team` ´´´´Deprecated´´´´
+* Team `team` **deprecated**
+
 
 ### Taxonomys
 * Projekte `projekt` in `nachrichten`, `veranstaltungen`, `umfragen`
@@ -342,3 +342,12 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
+
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
