@@ -97,7 +97,7 @@ if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
         'key' => 'group_601855a265b19',
-        'title' => 'Umfragen',
+        'title' => 'Poll',
         'fields' => array(
             array(
                 'key' => 'field_601855a9aa4be',
@@ -124,26 +124,26 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'questions',
                 'type' => 'repeater',
                 'instructions' => '',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
                     'class' => '',
                     'id' => '',
                 ),
-                'collapsed' => '',
-                'min' => 0,
+                'collapsed' => 'field_601855d3aa4c0',
+                'min' => 2,
                 'max' => 0,
                 'layout' => 'table',
                 'button_label' => '',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_601855d3aa4c0',
-                        'label' => 'item',
+                        'label' => 'Frage',
                         'name' => 'item',
                         'type' => 'text',
                         'instructions' => '',
-                        'required' => 0,
+                        'required' => 1,
                         'conditional_logic' => 0,
                         'wrapper' => array(
                             'width' => '',
@@ -164,7 +164,7 @@ if( function_exists('acf_add_local_field_group') ):
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'umfragen',
+                    'value' => 'post',
                 ),
             ),
         ),

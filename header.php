@@ -59,34 +59,8 @@
     <!-- Emoji Picker -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Matomo -->
-    <script type="text/javascript">
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u = "//abdruck.arrenberg.studio/";
-        _paq.push(['setTrackerUrl', u + 'matomo.php']);
-        _paq.push(['setSiteId', '12']);
-        var d = document,
-            g = d.createElement('script'),
-            s = d.getElementsByTagName('script')[0];
-        g.type = 'text/javascript';
-        g.async = true;
-        g.src = u + 'matomo.js';
-        s.parentNode.insertBefore(g, s);
-    })();
-    </script>
-    <noscript>
-        <p><img src="//abdruck.arrenberg.studio/matomo.php?idsite=12&amp;rec=1" style="border:0;" alt="" /></p>
-    </noscript>
-    <!-- End Matomo Code -->
-
-    <!-- Matomo Addition -->
-    <script>
-        _paq.push(['trackVisibleContentImpressions']);
-    </script>
+    <!-- Matomo Tracking API Key -->
+    <?php the_field('matomo_api', 'option'); ?>
 
 </head>
 

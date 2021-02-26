@@ -40,7 +40,16 @@ if( function_exists('acf_add_options_page') ) {
 		'update_button' => __('Aktualisieren', 'acf'),
 		'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
 	));
-
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'API-Schlüssel',
+		'menu_title'	=> 'API-Schlüssel',
+		'parent_slug'	=> 'theme-general-settings',
+		'update_button' => __('Aktualisieren', 'acf'),
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+		'update_button' => __('Aktualisieren', 'acf'),
+		'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
+	));
 }
 
 /**
@@ -100,7 +109,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_6024ef4c228a9',
-				'label' => 'Subheadline',
+				'label' => 'Beschreibung',
 				'name' => 'quartiersplattform-description',
 				'type' => 'text',
 				'instructions' => 'Gib deiner Quartiersplattform eine Beschreibung.',
@@ -111,7 +120,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'default_value' => '',
+				'default_value' => 'Quartiersplattform',
 				'placeholder' => 'Quartiersplattform',
 				'prepend' => '',
 				'append' => '',
@@ -217,91 +226,178 @@ if( function_exists('acf_add_local_field_group') ):
 		'description' => '',
 	));
     
-    acf_add_local_field_group(array(
-        'key' => 'group_60241960f114c',
-        'title' => 'Wartungsmodus',
-        'fields' => array(
-            array(
-                'key' => 'field_6024196b56d53',
-                'label' => 'Wartungsmodus',
-                'name' => 'maintenance',
-                'type' => 'radio',
-                'instructions' => 'Schalte hier den Wartungsmodus für die Quartiersseite ein.',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'choices' => array(
-                    1 => 'Einschalten',
-                    0 => 'Ausschalten',
-                ),
-                'allow_null' => 0,
-                'other_choice' => 0,
-                'default_value' => '',
-                'layout' => 'horizontal',
-                'return_format' => 'value',
-                'save_other_choice' => 0,
-            ),
-            array(
-                'key' => 'field_6024e6c4388e2',
-                'label' => 'Überschrift',
-                'name' => 'headline',
-                'type' => 'text',
-                'instructions' => 'Gib hier eine Überschrift für die Wartungsseite ein.',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => 'Deine Quatiersplattform wird aktualisiert.',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'maxlength' => '',
-            ),
-            array(
-                'key' => 'field_6024e751388e3',
-                'label' => 'Text',
-                'name' => 'text',
-                'type' => 'textarea',
-                'instructions' => 'Gib hier eine Beschreibung für den Wartungsmodus ein.',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'default_value' => 'Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten.
-    Wir sind bald wieder online.',
-                'placeholder' => '',
-                'maxlength' => '',
-                'rows' => '',
-                'new_lines' => '',
-            ),
-        ),
-        'location' => array(
-            array(
-                array(
-                    'param' => 'options_page',
-                    'operator' => '==',
-                    'value' => 'acf-options-wartungsmodus',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-    ));
+	acf_add_local_field_group(array(
+			'key' => 'group_60241960f114c',
+			'title' => 'Wartungsmodus',
+			'fields' => array(
+				array(
+					'key' => 'field_6024196b56d53',
+					'label' => 'Wartungsmodus',
+					'name' => 'maintenance',
+					'type' => 'radio',
+					'instructions' => 'Schalte hier den Wartungsmodus für die Quartiersseite ein.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						1 => 'Einschalten',
+						0 => 'Ausschalten',
+					),
+					'allow_null' => 0,
+					'other_choice' => 0,
+					'default_value' => '1 : Einschalten',
+					'layout' => 'horizontal',
+					'return_format' => 'value',
+					'save_other_choice' => 0,
+				),
+				array(
+					'key' => 'field_6024e6c4388e2',
+					'label' => 'Überschrift',
+					'name' => 'headline',
+					'type' => 'text',
+					'instructions' => 'Gib hier eine Überschrift für die Wartungsseite ein.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => 'Deine Quatiersplattform wird aktualisiert.',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_6024e751388e3',
+					'label' => 'Text',
+					'name' => 'text',
+					'type' => 'textarea',
+					'instructions' => 'Gib hier eine Beschreibung für den Wartungsmodus ein.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => 'Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten.
+		Wir sind bald wieder online.',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => '',
+					'new_lines' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options-wartungsmodus',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+	
     
     endif;
+
+	if( function_exists('acf_add_local_field_group') ):
+
+		acf_add_local_field_group(array(
+			'key' => 'group_6036d8ca6862b',
+			'title' => 'API-Schlüssel',
+			'fields' => array(
+				array(
+					'key' => 'field_603765b41a015',
+					'label' => 'Google Maps API Schlüssel',
+					'name' => 'google_maps_api',
+					'type' => 'text',
+					'instructions' => 'Trage hier deinen Google Maps API Schlüssel ein.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_6036d91042015',
+					'label' => 'Mapbox API Schlüssel',
+					'name' => 'mapbox_api',
+					'type' => 'text',
+					'instructions' => 'Trage hier deinen Mapbox API-Schlüssel ein.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_6036d8d042014',
+					'label' => 'Matomo API Schlüssel',
+					'name' => 'matomo_api',
+					'type' => 'textarea',
+					'instructions' => 'Trage hier deinen Matomo API-Schlüssel ein.',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => 22,
+					'new_lines' => '',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param' => 'options_page',
+						'operator' => '==',
+						'value' => 'acf-options-api-schluessel',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+		));
+		
+		endif;
+
