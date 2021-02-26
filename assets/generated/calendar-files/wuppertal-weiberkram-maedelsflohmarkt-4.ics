@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//kulturbanause//kulturbanause.de//DE
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTART:20201114T110000
+DTEND:20201114T170000
+LOCATION:codeks working people
+DTSTAMP:20201114T122948
+SUMMARY:Wuppertal | Weiberkram Mädelsflohmarkt
+URL;VALUE=URI:http://localhost:8888/quatiersplattform/veranstaltungen/wuppertal-weiberkram-maedelsflohmarkt-4/
+DESCRIPTION:
+UID:20201114T122948-20201114T110000-20201114T170000
+END:VEVENT
+END:VCALENDAR

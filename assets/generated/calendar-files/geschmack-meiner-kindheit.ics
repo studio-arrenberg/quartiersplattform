@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//kulturbanause//kulturbanause.de//DE
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTSTART:20190414T150000
+DTEND:20190414T000000
+LOCATION:Aufbruch am Arrenberg e.V.
+DTSTAMP:
+SUMMARY:Der Geschmack meiner Kindheit: Festtagsküche
+URL;VALUE=URI:http://localhost:8888/quatiersplattform/veranstaltungen/geschmack-meiner-kindheit/
+DESCRIPTION:
+UID:-20190414T150000-20190414T000000
+END:VEVENT
+END:VCALENDAR
