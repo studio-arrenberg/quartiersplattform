@@ -2142,11 +2142,50 @@ add_filter('allowed_block_types', function($block_types, $post) {
 }, 10, 2);
 
 
+
+// Maintenance Mode
 function wp_maintenance_mode() {
 	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
 		wp_redirect( get_template_directory_uri().'/maintenance.php');
 	}
 }
-if(get_field('maintenance', 'option') == true){
+if( !function_exists ( 'get_field' ) ){
+	add_action('get_header', 'wp_maintenance_mode');
+	// echo "hello";
+} else if (get_field('maintenance', 'option')) {
+	// echo "world";
 	add_action('get_header', 'wp_maintenance_mode');
 }
+
+
+
+// Check for required plugins
+add_action('admin_init', function() {
+	// ACF Pro
+	// if (is_admin() && current_user_can('activate_plugins') && !class_exists('acf_pro')) {
+	if (!class_exists('acf_pro')) {
+		add_action('admin_notices', function() {
+			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong>ACF PRO</strong> is installed and active.', 'quartiersplattform');
+			echo "<div class='error'><p>$notice</p></div>";
+		});
+		// switch_theme('twentytwenty');	
+	}
+	// Ultimate Memmber
+	if (!class_exists('UM')) {
+		add_action('admin_notices', function() {
+			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong>Ultimate Member</strong> is installed and active.', 'quartiersplattform');
+			echo "<div class='error'><p>$notice</p></div>";
+		});
+		// switch_theme('twentytwenty');	
+	}
+	// WP Mail SMTP
+	if (!function_exists( 'wp_mail_smtp' )) {
+		add_action('admin_notices', function() {
+			$notice = __('We recommend to installt and activate <strong>WP Mail SMTP</strong> to use Quartiersplattform.', 'quartiersplattform');
+			echo "<div class='notice'><p>$notice</p></div>";
+		});
+		// switch_theme('twentytwenty');	
+	}
+
+	
+});
