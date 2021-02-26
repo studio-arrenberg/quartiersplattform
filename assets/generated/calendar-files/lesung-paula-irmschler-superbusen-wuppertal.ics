@@ -6,10 +6,18 @@ BEGIN:VEVENT
 DTSTART:20201119T200000
 DTEND:20201119T230000
 LOCATION:
+<<<<<<< Updated upstream
 DTSTAMP:20201119T005027
 SUMMARY:Lesung: Paula Irmschler – Superbusen / Wuppertal
 URL;VALUE=URI:http://localhost:8888/quatiersplattform/veranstaltungen/lesung-paula-irmschler-superbusen-wuppertal/
 DESCRIPTION:
 UID:20201119T005027-20201119T200000-20201119T230000
+=======
+DTSTAMP:20201103T130451
+SUMMARY:Lesung: Paula Irmschler – Superbusen / Wuppertal
+URL;VALUE=URI:http://localhost:8888/quatiersplattform/veranstaltungen/lesung-paula-irmschler-superbusen-wuppertal/
+DESCRIPTION:
+UID:20201103T130451-20201119T200000-20201119T230000
+>>>>>>> Stashed changes
 END:VEVENT
 END:VCALENDAR

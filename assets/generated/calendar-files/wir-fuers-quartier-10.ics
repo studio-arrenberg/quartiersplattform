@@ -6,10 +6,18 @@ BEGIN:VEVENT
 DTSTART:20201216T130000
 DTEND:20201216T150000
 LOCATION:Aufbruch am Arrenberg e.V.
+<<<<<<< Updated upstream
 DTSTAMP:20201216T163619
 SUMMARY:Wir für`s Quartier
 URL;VALUE=URI:http://localhost:8888/quatiersplattform/veranstaltungen/wir-fuers-quartier-10/
 DESCRIPTION:
 UID:20201216T163619-20201216T130000-20201216T150000
+=======
+DTSTAMP:20201103T191440
+SUMMARY:Wir für`s Quartier
+URL;VALUE=URI:http://localhost:8888/quatiersplattform/veranstaltungen/wir-fuers-quartier-10/
+DESCRIPTION:
+UID:20201103T191440-20201216T130000-20201216T150000
+>>>>>>> Stashed changes
 END:VEVENT
 END:VCALENDAR
