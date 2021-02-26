@@ -40,7 +40,7 @@ Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
     </div>
     <div style="color: ; padding: 20px 30px">
       <div>Vielen Dank!</div>
-      <div>Dein <?php the_field('quartiersplattform-description', 'option'); ?>Team.</div>
+      <div>Dein <?php the_field('quartiersplattform-description', 'option'); ?> Team.</div>
     </div>
   </div>
   <div class="footer" style="text-align: center;margin-top: 5%;">
