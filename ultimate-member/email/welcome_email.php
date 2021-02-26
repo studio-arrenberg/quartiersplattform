@@ -3,9 +3,6 @@
 <div class="mail" style="text-align: center;vertical-align: center;background-color: #f7f7f7;padding: 10% 20%;">
   <div class="content" style="padding: 5%;text-align: center;vertical-align: center;position: relative;color: #666666;font-family: &quot;Open Sans&quot;, Helvetica,
   Arial;font-size: 16px;background-color: white;display: inline-block;border-radius: 50px;">
-    <div>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/willkommen.png" alt="Arrenberg Logo" width="200" height="200">
-    </div>
     <br>
     <div>
       <span style="
@@ -19,7 +16,7 @@
     <div> </div>
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;">
-        <span>Schön das du da bist! Auf der Arrenberg <?php the_field('quartiersplattform-name', 'option'); ?> App findest du alle
+        <span>Schön das du da bist! Auf der <?php the_field('quartiersplattform-description', 'option'); ?>  findest du alle
           relevanten Informationen rund um dein Viertel. So kannst du neue
           Menschen kennen lernen und dein Quartier nachhaltig entwickeln und
           verbessern.
@@ -27,7 +24,7 @@
       <p></p>
       <div class="table" style="margin-top: 50px;display: flex;justify-content: center;flex-wrap: wrap;padding: 0%;">
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/nachrichten.png" alt="Arrenberg Logo" style="max-width: 200px;">
+
           <h1 style="font-size: 16px;">Nachrichten</h1>
           <p>
             Sieh dir Angebote und Nachrichten von deinen Nachbar*innen an! Teile
@@ -35,7 +32,6 @@
           </p>
         </div>
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/projekte.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Projekte</h1>
           <p>
             Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem
@@ -43,7 +39,6 @@
           </p>
         </div>
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/veranstaltungen.png" alt="Arrenberg Logo" style="max-width: 200px;">
           <h1 style="font-size: 16px;">Veranstaltungen</h1>
           <p>
             Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier
@@ -69,18 +64,19 @@
     </div>
     <div style="color: ; padding: 20px 30px">
       <div>Vielen Dank!</div>
-      <div>Dein Arrenberg Team.</div>
+      <div>Dein <?php the_field('quartiersplattform-description', 'option'); ?> Team.</div>
     </div>
   </div>
   <div class="footer" style="text-align: center;margin-top: 5%;">
     <p>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="200">
+    <?php 
+    $image = get_field('logo', 'option');
+    if( !empty( $image ) ): ?>
+        <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
     </p>
-    <p class="footer" style="text-align: center;margin-top: 5%;">
-      <a class="footer_link" href="{login_url}" style="text-decoration: none;color: #62b2f0;font-family: &quot;Open Sans&quot;, Helvetica,
-  Arial;margin-top: 100px;padding: 20% 2%;">Impressum </a>
-      <a class="footer_link" href="{login_url}" style="text-decoration: none;color: #62b2f0;font-family: &quot;Open Sans&quot;, Helvetica,
-  Arial;margin-top: 100px;padding: 20% 2%;">Datenschutz </a>
-    </p>
+    <p class="footer" style="text-align: center; margin-top: 5%;">
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/">Impressum </a> 
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/">Datenschutz </a></p>
   </div>
 </div>

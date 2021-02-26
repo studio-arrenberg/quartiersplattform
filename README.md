@@ -298,8 +298,12 @@ acf differnet field groups with same name have same field id
 
 #### Quartier Arrenberg: 
 * Geschichten `geschichten`
+<<<<<<< HEAD
 * Team `team` **deprecated**
 
+=======
+* Team `team` ´´´Deprecated´´´
+>>>>>>> e9d302921e6ddbb490d0a17077d72b502ffc869b
 
 ### Taxonomys
 * Projekte `projekt` in `nachrichten`, `veranstaltungen`, `umfragen`
@@ -342,6 +346,7 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
+<<<<<<< HEAD
 
 
 ```diff
@@ -351,3 +356,5 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 # text in gray
 @@ text in purple (and bold)@@
 ```
+=======
+>>>>>>> e9d302921e6ddbb490d0a17077d72b502ffc869b
