@@ -21,7 +21,6 @@ function update_poll_naming() {
 
     global $wpdb;   
 	$table = $wpdb->prefix."posts";
-	# [ ] execute if posts table exists  
     $result = $wpdb->get_results( "UPDATE `$table` SET  `post_type` =  'umfragen' WHERE `post_type` = 'poll'");
 
 }
