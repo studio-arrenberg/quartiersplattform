@@ -26,49 +26,60 @@ get_header();
 		// get_template_part('elements/card', get_post_type());
 
 		?>
-			<div class="card shadow projekt">
-			<a href="<?php echo esc_url( get_permalink() ); ?>">
-				<div class="content">
-					<!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
-					<h3 class="card-title">
-						<?php shorten_title(get_the_title(), '60'); ?>
-					</h3>
-					<p class="preview-text">
-						<?php echo get_the_content(); ?>
-					</p>
-				</div>
-				<div class="projects">
+			<div id="sdg-card" class="card card-sgd shadow bg_red">
+                <a class="card-link"  onclick="myFunction()">
+                    <div class="content">    
+						<h3 class="card-title">
+                        	<?php echo get_the_title(); ?>
+                        </h3>
+                        <p class="preview-text">
+                        	<?php
+                        		if (strlen(get_field('text')) > 2) {
+                            		get_excerpt(get_field('text'), '55');
+                            	}
+                                else {
+                                get_excerpt(get_the_content(), '55');
+                                }
+                                ?>
+                        </p>
+                    </div>
+                </a>
+            </div>
 
-					<?php
-						# get projects
-						$slug = get_post_field( 'post_name', get_the_ID() );
-						$args3 = array(
-							'post_type'=>'projekte', 
-							'post_status'=>'publish', 
-							'posts_per_page'=> 4,
-							'orderby' => 'rand',
-							'tax_query' => array(
-								array(
-									'taxonomy' => 'sdg',
-									'field' => 'slug',
-									'terms' => $slug
-								)
-							)
 
-						);
-						slider($args3,'square_card', '2','true'); 
+			<!-- <div id="sdg-projekts" class="card-content-hidden"> -->
 
-					?>
+				<?php
+					$args4 = array(
+						'post_type'=> 'projekte', 
+						'post_status'=> 'publish', 
+						'author' =>  $current_user->ID,
+						'posts_per_page'=> 10, 
+						'order' => 'DESC',
+						'offset' => '0', 
+					);
+					slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+				?>
 
-				</div>
-			</a>
-			</div>
+			<!-- </div> -->
+
+
 		<?php
 
 	}
 	?>
 
+	<script>
+		function myFunction() {
+		var element = document.getElementById("sdg-projekts");
+		element.classList.add("card-content-visible");
 
+
+		var element = document.getElementById("sdg-card");
+		element.classList.remove("shadow");
+		}
+
+	</script>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
