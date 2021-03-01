@@ -126,7 +126,7 @@ function create_pages() {
 
         $my_post = [];
         $my_post = array(
-            'post_title'    => $pages[$i]['title'],
+            'post_title'    => wp_strip_all_tags($pages[$i]['title']),
             // 'post_content'  => $sdgs[$i]['content'],
             'post_status'   => 'publish',
             'post_author'   => 1,
@@ -175,33 +175,35 @@ function create_pages() {
     // } 
 
 
-    // // add pages
-    // add_action( 'after_setup_theme', 'create_form_page');
-    // function create_form_page(){
 
-    //     $title = 'Nachricht erstellen';
-    //     $slug = 'nachricht-erstellen';
-    //     $page_content = ''; // your page content here
-    //     $post_type = 'page';
-
-    //     $page_args = array(
-    //         'post_type' => $post_type,
-    //         'post_title' => $title,
-    //         'post_content' => $page_content,
-    //         'post_status' => 'publish',
-    //         'post_author' => 1,
-    //         'post_slug' => $slug
-    //     );
-        
-    //     if ( ! function_exists( 'post_exists' ) ) {
-    //         require_once( ABSPATH . 'wp-admin/includes/post.php' );
-    //     }
-
-    //     if(post_exists($title) === 0){
-    //         $page_id = wp_insert_post($page_args);
-    //     }
-
-    // } 
 
 }
 add_action( 'init', 'create_pages' );
+
+// add pages
+add_action( 'after_setup_theme', 'create_form_page');
+function create_form_page(){
+
+    $title = 'Überblick';
+    $slug = 'überblick';
+    $page_content = ''; // your page content here
+    $post_type = 'page';
+
+    $page_args = array(
+        'post_type' => $post_type,
+        'post_title' => $title,
+        'post_content' => $page_content,
+        'post_status' => 'publish',
+        'post_author' => 1,
+        'post_slug' => $slug
+    );
+    
+    if ( ! function_exists( 'post_exists' ) ) {
+        require_once( ABSPATH . 'wp-admin/includes/post.php' );
+    }
+
+    if(post_exists($title) === 0){
+        $page_id = wp_insert_post($page_args);
+    }
+
+} 
