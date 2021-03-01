@@ -138,12 +138,12 @@ function create_pages() {
             # create post
             wp_insert_post( $my_post );
         }
-        else {
-            $mypost_id = get_page_by_title( $pages[$i]['title'], '', 'page' );
-            $my_post['ID'] = $mypost_id->ID;
-            # update post
-            wp_update_post( $my_post );
-        }
+        // else {
+        //     $mypost_id = get_page_by_title( $pages[$i]['title'], OBJECT, 'page' );
+        //     $my_post['ID'] = $mypost_id->ID;
+        //     # update post
+        //     wp_update_post( $my_post );
+        // }
     }
 
 
