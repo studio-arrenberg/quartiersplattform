@@ -264,6 +264,9 @@ acf differnet field groups with same name have same field id
 - Menu 
 - Landing Page with Gutenberg Block ..?
 - Pre Filled option Page
+
+### Manually
+- Change Permalink setting to "beitragsname"
   
 ## (new) ReadMe inhalt
 - Introduction
