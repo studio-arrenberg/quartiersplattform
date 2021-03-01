@@ -5,7 +5,7 @@
 
 # redirect when maintenance is ON
 # or plugins not installed
-if((class_exists('acf_pro') || class_exists('UM')) && !get_field('maintenance', 'option')) {
+if((!class_exists('acf_pro') || !class_exists('UM')) && !get_field('maintenance', 'option')) {
     add_action('get_header', 'wp_maintenance_mode');
 }
 
