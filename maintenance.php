@@ -3,7 +3,7 @@
 require_once("../../../wp-load.php");
 
 # redirect when maintenance is off
-if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
+if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'option') == false) {
   wp_redirect( get_site_url() );
 }
 
@@ -142,7 +142,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
      */
 
 
-    if (class_exists('acf_pro')) {
+    if (class_exists('acf_pro') && class_exists('UM')) {
     ?>
 
       <div class="white-background ">
@@ -162,6 +162,10 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
 
     ?>
 
+    <?php
+      if (!class_exists('acf_pro')) {
+        ?>
+
       <div class="white-background  error">
         <h2>Plugin fehlt. Bitte Advanced Custom fields installieren</h2>
         <p>
@@ -170,6 +174,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
       </div>
 
     <?php
+      }
       if (!class_exists('UM')) {
         ?>
 

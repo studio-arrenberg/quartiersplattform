@@ -6,11 +6,11 @@
 # redirect when maintenance is ON
 # or plugins not installed
 if((!class_exists('acf_pro') || !class_exists('UM'))) {
-    add_action('get_header', 'wp_maintenance_mode');
+    // add_action('get_header', 'wp_maintenance_mode');
     wp_redirect( get_template_directory_uri().'/maintenance.php');
 }
-else if (!get_field('maintenance', 'option')) {
-    add_action('get_header', 'wp_maintenance_mode');
+else if (get_field('maintenance', 'option') == true) {
+    // add_action('get_header', 'wp_maintenance_mode');
     wp_redirect( get_template_directory_uri().'/maintenance.php');
 }
 

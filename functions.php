@@ -1934,11 +1934,11 @@ function wp_maintenance_mode() {
 		wp_redirect( get_template_directory_uri().'/maintenance.php');
 	}
 }
-if( !function_exists ( 'get_field' ) ){
+if( !class_exists('acf_pro') ){
 	add_action('get_header', 'wp_maintenance_mode');
 	// echo "hello";
 } 
-else if (get_field('maintenance', 'option')) {
+else if (get_field('maintenance', 'option') == true) {
 	// echo "world";
 	add_action('get_header', 'wp_maintenance_mode');
 }
