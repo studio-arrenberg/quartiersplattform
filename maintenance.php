@@ -3,7 +3,10 @@
 require_once("../../../wp-load.php");
 
 # redirect when maintenance is off
-if(!get_field('maintenance', 'option') && function_exists ( 'get_field' )) wp_redirect( get_site_url() );
+if(function_exists ( 'get_field' ) && !get_field('maintenance', 'option')) {
+  wp_redirect( get_site_url() );
+}
+
 
 ?>
 

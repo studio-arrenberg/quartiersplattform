@@ -346,7 +346,7 @@ function twentytwenty_get_custom_logo( $html ) {
 
 }
 
-add_filter( 'get_custom_logo', 'twentytwenty_get_custom_logo' );
+// add_filter( 'get_custom_logo', 'twentytwenty_get_custom_logo' );
 
 if ( ! function_exists( 'wp_body_open' ) ) {
 
@@ -365,7 +365,7 @@ function twentytwenty_skip_link() {
 	echo '<a class="skip-link screen-reader-text" href="#site-content">' . __( 'Skip to the content', 'twentytwenty' ) . '</a>';
 }
 
-add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
+// add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
 
 /**
  * Register widget areas.
@@ -408,7 +408,7 @@ function twentytwenty_sidebar_registration() {
 
 }
 
-add_action( 'widgets_init', 'twentytwenty_sidebar_registration' );
+// add_action( 'widgets_init', 'twentytwenty_sidebar_registration' );
 
 /**
  * Enqueue supplemental block editor styles.
@@ -649,7 +649,7 @@ function twentytwenty_customize_preview_init() {
 	);
 }
 
-add_action( 'customize_preview_init', 'twentytwenty_customize_preview_init' );
+// add_action( 'customize_preview_init', 'twentytwenty_customize_preview_init' );
 
 /**
  * Get accessible color for an area.
@@ -1287,35 +1287,6 @@ function my_post_title_updater( $post_id ) {
 
 }
 
-// ACF Remove Label (Anmerkungen, Angebote, Fragen)
-function my_acf_admin_head() {
-    ?>
-    <style type="text/css">
-		/* Anmerkungen Text lable */
-        .acf-field-5fa01d66b0f2f > .acf-label {display: none;} /* ap1 */
-		.acf-field-5fb50c8a3e93d > .acf-label {display: none;} /* app */
-		.acf-field-5fc8fe8aa1786 > .acf-label {display: none;} /* Local */
-		
-		/* Angebote Text Label */
-		.acf-field-5fcf55f35b575 > .acf-label {display: none;} /* ap1 */
-		
-		/* Fragen Text Label */
-		.acf-field-5fcf56cd9e317 > .acf-label {display: none;} /* ap1 */		
-    </style>
-    <?php
-}
-// add_action('acf/input/admin_head', 'my_acf_admin_head');
-
-
-// ACF Forms deregister CSS Styles
-// disable acf css on front-end acf forms
-function my_deregister_styles() {
-	wp_deregister_style( 'acf' );
-	wp_deregister_style( 'acf-field-group' );
-  	wp_deregister_style( 'acf-global' );
-//   wp_deregister_style( 'acf-input' );
-  	wp_deregister_style( 'acf-datepicker' );
-} add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 
 //remove website field if user is not logged in  
@@ -1335,122 +1306,6 @@ function wpdocs_dequeue_dashicon() {
 	wp_deregister_style('dashicons');
 } add_action( 'wp_enqueue_scripts', 'wpdocs_dequeue_dashicon' );
 
-// ultimate member remove styles
-add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
-add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );
-add_action( 'wp_print_styles', 'um_remove_scripts_and_styles', 9 );
-add_action( 'dynamic_sidebar', 'um_remove_scripts_and_styles_widget' );
-
-/**
- * Maybe remove Ultimate Member CSS and JS
- * @global WP_Post $post
- * @global bool $um_load_assets
- * @global WP_Scripts $wp_scripts
- * @global WP_Styles $wp_styles
- * @return NULL
- */
-function um_remove_scripts_and_styles() {
-	global $post, $um_load_assets, $wp_scripts, $wp_styles;
-
-	// Set here IDs of the pages, that use Ultimate Member scripts and styles
-	$um_posts = array(0);
-
-	// Set here URLs of the pages, that use Ultimate Member scripts and styles
-	$um_urls = array(
-		'/account/',
-		'/activity/',
-		'/profil/',
-		'/groups/',
-		'/login/',
-		'/logout/',
-		'/members/',
-		'/my-groups/',
-		'/password-reset/',
-		'/register/',
-		// '/user/',
-	);
-
-	if ( is_admin() || is_ultimatemember() ) {
-		return;
-	}
-	
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
-	if ( in_array( $REQUEST_URI, $um_urls ) ) {
-		return;
-	}
-	foreach ( $um_urls as $key => $um_url ) {
-		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
-			return;
-		}
-	}
-
-	if ( !empty( $um_load_assets ) ) {
-		return;
-	}
-	
-	if ( isset( $post ) && is_a( $post, 'WP_Post' ) ) {
-		if ( in_array( $post->ID, $um_posts ) ) {
-			return;
-		}
-		if ( strpos( $post->post_content, '[ultimatemember_' ) !== FALSE ) {
-			return;
-		}
-		if ( strpos( $post->post_content, '[ultimatemember form_id' ) !== FALSE ) {
-			return;
-		}
-	}
-
-	if ( empty( $wp_scripts->queue ) || empty( $wp_styles->queue ) ) {
-		return;
-	}
-
-	foreach ( $wp_scripts->queue as $key => $script ) {
-		if ( strpos( $script, 'um_' ) === 0 || strpos( $script, 'um-' ) === 0 || strpos( $wp_scripts->registered[$script]->src, '/ultimate-member/assets/' ) !== FALSE ) {
-			unset( $wp_scripts->queue[$key] );
-		}
-	}
-
-	foreach ( $wp_styles->queue as $key => $style ) {
-		if ( strpos( $style, 'um_' ) === 0 || strpos( $style, 'um-' ) === 0 || strpos( $wp_styles->registered[$style]->src, '/ultimate-member/assets/' ) !== FALSE ) {
-			unset( $wp_styles->queue[$key] );
-		}
-	}
-}
-
-/**
- * Check whether Ultimate Member widget was used
- * @param array $widget
- */
-function um_remove_scripts_and_styles_widget( $widget ) {
-	if ( strpos( $widget['id'], 'um_' ) === 0 || strpos( $widget['id'], 'um-' ) === 0 ) {
-		$GLOBALS['um_load_assets'] = TRUE;
-	}
-}
-
-// deregiter UM Styles
-function um_deregister_styles() {
-
-	wp_deregister_style( 'select2');
-	wp_deregister_style( 'um_datetime');
-	wp_deregister_style( 'um_datetime_date');
-	wp_deregister_style( 'um_datetime_time');
-	wp_deregister_style( 'um_fileupload');
-	wp_deregister_style( 'um_raty');
-	wp_deregister_style( 'um_fonticons_ii');
-	wp_deregister_style( 'um_fonticons_fa');
-	wp_deregister_style( 'um_scrollbar');
-	wp_deregister_style( 'um_crop');
-	wp_deregister_style( 'um_tipsy');
-	wp_deregister_style( 'um_responsive');
-	wp_deregister_style( 'um_modal');
-	wp_deregister_style( 'um_styles');
-	wp_deregister_style( 'um_members');
-	wp_deregister_style( 'um_profile');
-	wp_deregister_style( 'um_account');
-	wp_deregister_style( 'um_misc');
-	wp_deregister_style( 'um_default_css');
-
-} add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
 
 // // Activate WordPress Maintenance Mode
@@ -1589,11 +1444,6 @@ function debugToConsole($msg) {
 	echo "<script>console.log(".json_encode($msg).")</script>";
 }
 
-// map api key
-function my_acf_google_map_api( $api ){
-	$api['key'] = 'AIzaSyDPfffkf5pnMH5AmDLnVNb-3w1dNpdh-co';
-	return $api;	
-} add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 
 // create TAX projekt in veranstaltung & nachrichten
@@ -1700,52 +1550,6 @@ function copywrite_beitragsbild() {
         return "<p class='copyright'>© ".get_featured_image_copyright()."</p>";
     }
 }
-
-// ACF Rename Post Title Label
-function my_acf_prepare_field( $field ) {
-	$field['label'] = "Titel";
-    return $field;
-    
-}
-add_filter('acf/prepare_field/name=_post_title', 'my_acf_prepare_field');
-
-// Veranstaltungen rebuild datetime field
-function veranstaltungen_field_zeitpunkt() {
-		
-	$args3 = array(
-		'post_type'=>'veranstaltungen', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> -1,
-		'meta_query' => array(
-			'relation' => 'OR',
-			array(
-				'key' => 'event_date',
-				'value' => 'No',
-				'compare' => 'LIKE'
-			),
-			array(
-				'key' => 'event_date',
-				'compare' => 'NOT EXISTS'
-			)
-		)
-	);
-
-	$query2 = new WP_Query($args3);
-
-	while ( $query2->have_posts() ) {
-		$query2->the_post();
-
-		update_post_meta(get_the_id(), 'event_date', date("Y-m-d",strtotime(get_field('zeitpunkt'))));
-		update_post_meta(get_the_id(), 'event_time', date("H:i:s",strtotime(get_field('zeitpunkt'))));
-		update_post_meta(get_the_id(), 'event_end_time', date("H:i:s",strtotime(get_field('ende'))));
-
-	}
-	wp_reset_postdata();
-
-}
-add_action( 'init', 'veranstaltungen_field_zeitpunkt' );
-
-
 
 // assigne templates to pages
 add_filter( 'page_template', 'custom_page_template', 10, 2 );
@@ -1985,10 +1789,7 @@ function polling() {
 
 }
 
-// reset rewrite rules
-// used to show poll post 
-// flush_rewrite_rules( false );
-add_action( 'after_switch_theme', 'flush_rewrite_rules' );
+
 
 // prolog loged in session to a year
 function wpdev_login_session( $expire ) { // Set login session limit in seconds
@@ -2028,21 +1829,7 @@ function um_show_hidden_field(){
 	}
 } add_action('wp_footer', 'um_show_hidden_field');
 
-// ACF Form show image uploaded
-function acf_form_show_image_uploaded(){
 
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
-
-    if (
-		strpos($REQUEST_URI,'/nachricht-erstellen/') !== false /* '/angebot-erstellen/' */
-		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') !== false
-		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
-	) {
-		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false, true);
-		wp_enqueue_script('image-upload-preview');
-	}
-} add_action('wp_footer', 'acf_form_show_image_uploaded');
 
 // display owner of CPT 
 function get_cpt_term_owner($post_ID, $term, $type = 'name') {
@@ -2110,6 +1897,17 @@ function get_author($contact = false) {
 
 }
 
+/**
+ * 
+ * Todo :: 
+ * 	cleaner code
+ * 	seperate files or class..?
+ *	blocks (geschichen)
+ * 	ultimate member einstellungen (automatisch)
+ * 	structure functions
+ * 
+ */
+
 add_action('acf/init', function() {
 	// General
 	require_once dirname( __FILE__ ) .'/setup/main.php';
@@ -2126,6 +1924,16 @@ add_action('acf/init', function() {
     require_once dirname( __FILE__ ) .'/setup/sdg.php';
 });
 
+
+// require if plugin is exsistent
+// UM
+if (class_exists('UM')) {
+	require dirname( __FILE__ ) .'/functions/ultimate-member.php';
+}
+// ACF
+if (class_exists('acf_pro')) {
+	require dirname( __FILE__ ) .'/functions/advanced-custom-fields.php';
+}
 
 add_filter('allowed_block_types', function($block_types, $post) {
 	$allowed = [
@@ -2152,11 +1960,19 @@ function wp_maintenance_mode() {
 if( !function_exists ( 'get_field' ) ){
 	add_action('get_header', 'wp_maintenance_mode');
 	// echo "hello";
-} else if (get_field('maintenance', 'option')) {
+} 
+else if (get_field('maintenance', 'option')) {
 	// echo "world";
 	add_action('get_header', 'wp_maintenance_mode');
 }
 
+
+function qp_check_dependencies() {
+	if (class_exists('acf_pro') && class_exists('UM') && function_exists( 'wp_mail_smtp' )) {
+		return true;
+	}
+	return false;
+}
 
 
 // Check for required plugins
@@ -2165,7 +1981,7 @@ add_action('admin_init', function() {
 	// if (is_admin() && current_user_can('activate_plugins') && !class_exists('acf_pro')) {
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong>ACF PRO</strong> is installed and active.', 'quartiersplattform');
+			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong>Advaced Custom Fields</strong> is installed and active.', 'quartiersplattform');
 			echo "<div class='error'><p>$notice</p></div>";
 		});
 		// switch_theme('twentytwenty');	
@@ -2181,7 +1997,7 @@ add_action('admin_init', function() {
 	// WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
 		add_action('admin_notices', function() {
-			$notice = __('We recommend to installt and activate <strong>WP Mail SMTP</strong> to use Quartiersplattform.', 'quartiersplattform');
+			$notice = __('We recommend to installt and activate <strong><a href="http://arrenberg.studio">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
 			echo "<div class='notice'><p>$notice</p></div>";
 		});
 		// switch_theme('twentytwenty');	
@@ -2189,3 +2005,5 @@ add_action('admin_init', function() {
 
 	
 });
+
+
