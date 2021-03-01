@@ -1,13 +1,13 @@
 <?php
 /**
- * Header file for the Twenty Twenty WordPress default theme.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * Header file 
  */
+
+# redirect when maintenance is ON
+# or plugins not installed
+if((class_exists('acf_pro') || class_exists('UM')) && !get_field('maintenance', 'option')) {
+    add_action('get_header', 'wp_maintenance_mode');
+}
 
 ?>
 <!DOCTYPE html>
@@ -112,8 +112,8 @@
             </a>
 
             <?php
-        // logged in user
-        if (is_user_logged_in()) {
+            // logged in user
+            if (is_user_logged_in()) {
             ?>
 
             <?php 
@@ -152,38 +152,36 @@
 
 
         <?php
-				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-
-
-					?>
+			if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+        ?>
 
         <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
             role="navigation">
 
             <?php
-								if ( has_nav_menu( 'primary' ) ) {
+                if ( has_nav_menu( 'primary' ) ) {
 
-									wp_nav_menu(
-										array(
-											'container'  => '',
-											'items_wrap' => '%3$s',
-											'theme_location' => 'primary',
-										)
-									);
+                    wp_nav_menu(
+                        array(
+                            'container'  => '',
+                            'items_wrap' => '%3$s',
+                            'theme_location' => 'primary',
+                        )
+                    );
 
-								} elseif ( ! has_nav_menu( 'expanded' ) ) {
+                } elseif ( ! has_nav_menu( 'expanded' ) ) {
 
-									wp_list_pages(
-										array(
-											'match_menu_classes' => true,
-											'show_sub_menu_icons' => true,
-											'title_li' => false,
-											'walker'   => new TwentyTwenty_Walker_Page(),
-										)
-									);
+                    wp_list_pages(
+                        array(
+                            'match_menu_classes' => true,
+                            'show_sub_menu_icons' => true,
+                            'title_li' => false,
+                            'walker'   => new TwentyTwenty_Walker_Page(),
+                        )
+                    );
 
-								}
-								?>
+                }
+			?>
 
         </ul>
 

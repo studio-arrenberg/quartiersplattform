@@ -1685,23 +1685,6 @@ function create_event_page(){
 } 
 
 
-// polling init
-# [x] cpt 
-# [x] tax
-# [-] acf !has to be added manually
-# [x] form (build)
-# [x] display
-# [x] save cpt: create array (iterate through questions) || if empty -> create
-# [x] vote: add to array
-# [x] display: jquery succes to html
-# [x] get votes on load: php iterate array (if user > display results) 
-# [ ] guest feature [later]
-# [x] not logged in issue (jquery core missing)
-# [x] render submit button when logged in 
-# ![ ] poll page 
-
-
-
 # Taxonomy: Projekte.
 function cptui_register_my_taxes_projekt() {
 
@@ -1975,15 +1958,16 @@ add_action('admin_init', function() {
 	// if (is_admin() && current_user_can('activate_plugins') && !class_exists('acf_pro')) {
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong>Advaced Custom Fields</strong> is installed and active.', 'quartiersplattform');
-			echo "<div class='error'><p>$notice</p></div>";
+			$notice = __('Die Quartiersplattform braucht das Plugin <strong>Advaced Custom Fields</strong> um vollständig zu funktionieren.', 'quartiersplattform');
+			$link = '<strong>Advaced Custom Fields</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">installieren</a>';
+			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 		// switch_theme('twentytwenty');	
 	}
 	// Ultimate Memmber
 	if (!class_exists('UM')) {
 		add_action('admin_notices', function() {
-			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong>Ultimate Member</strong> is installed and active.', 'quartiersplattform');
+			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Ultimate Member</strong> is installed and active.', 'quartiersplattform');
 			echo "<div class='error'><p>$notice</p></div>";
 		});
 		// switch_theme('twentytwenty');	
@@ -1991,13 +1975,11 @@ add_action('admin_init', function() {
 	// WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
 		add_action('admin_notices', function() {
-			$notice = __('We recommend to installt and activate <strong><a href="http://arrenberg.studio">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
+			$notice = __('We recommend to installt and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
 			echo "<div class='notice'><p>$notice</p></div>";
 		});
 		// switch_theme('twentytwenty');	
 	}
-
-	
 });
 
 
