@@ -11,6 +11,37 @@
  */
 
 
+
+# Taxonomy: Projekte.
+function cptui_register_my_taxes_projekt() {
+
+	$labels = [
+		"name" => __( "Projekte", "quartiersplattform" ),
+		"singular_name" => __( "Projekt", "quartiersplattform" ),
+	];
+
+	$args = [
+		"label" => __( "Projekte", "quartiersplattform" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'projekt', 'with_front' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "projekt",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "projekt", [ "nachrichten", "veranstaltungen", "umfragen" ], $args );
+}
+add_action( 'init', 'cptui_register_my_taxes_projekt' );
+
+
 /**
  *  --------------------------------------------------------
  *  1. ACF
