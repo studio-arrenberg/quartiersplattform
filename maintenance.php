@@ -169,7 +169,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
       <div class="white-background  error">
         <h2>Plugin fehlt. Bitte Advanced Custom fields installieren</h2>
         <p>
-          Bitte installieren sie das Plugin ACF durch die Wordpress Plugin Seite. 
+          Bitte installieren Sie das Plugin ACF über die Wordpress Plugin Seite. 
         </p>
       </div>
 
@@ -181,7 +181,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
       <div class=" white-background  error">
         <h2>Plugin fehlt. Bitte Ultimate Member installieren</h2>
         <p>
-          Bitte installieren sie das Plugin Ultimate Member durch die Wordpress Plugin Seite. Und stellen sie folgende einstellungen ein. (Auf Github erklären)
+          Bitte installieren Sie das Plugin Ultimate Member über die Wordpress Plugin Seite. Stellen Sie die Einstellungen wie in der Dokumentation beschrieben ein.
         </p>
       </div>
 
@@ -193,7 +193,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
       <div class="warning white-background ">
         <h2>Bitte WP Mail SMTP installieren</h2>
         <p>
-          Bitte installieren sie das Plugin WP Mail SMTP durch die Wordpress Plugin Seite. Und legen sie ihre email einstellungen an. (Auf Github erklären)
+          Bitte installieren Sie das Plugin WP Mail SMTP über die Wordpress Plugin Seite. Stellen Sie die Einstellungen wie in der Dokumentation beschrieben ein.
         </p>
       </div>
 
@@ -204,7 +204,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
 
     <div class="white-background ">
       <h2>Quartiersplattform</h2>
-      <p>beschreibung ...</p>
+      <p>Beschreibung</p>
       <!-- kontakt  -->
       <!-- link github -->
     </div>
