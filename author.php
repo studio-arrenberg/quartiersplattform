@@ -22,6 +22,14 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
     </div>
 
+    <?php 
+        if ($curauth->ID == get_current_user_id()) {
+            ?>
+                <a class="button" href="<?php echo get_site_url(); ?>/profil">Mein Profil bearbeiten</a>
+            <?php 
+        }
+    ?>
+
     <div class="single-content">
         <!-- Projekte -->
         <?php
@@ -63,28 +71,31 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
         <!-- Kontakt  -->
-            <?php 
-                $userid = "user_".$curauth->ID; 
-            ?>
-            <h2>Nimm kontakt mit <?php echo $curauth->display_name;?> auf!</h2>
-            <div class="share-button">
-            <?php if( get_field('email', $userid) ){
-				?>
-				<a class="button is-style-outline" target="blank"
-                onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
-                href="mailto:<?php echo the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
-                rel="nofollow"><?php echo the_field('email', $userid);?></a>
-				
-				<?php
-				}?>
+        <?php $userid = "user_".$curauth->ID; ?>
 
-				<?php if( get_field('phone', $userid) ){?>
-            		<a class="button is-style-outline" target="blank" href="tel:<?php echo the_field('phone', $userid);?>" >
-                <?php echo the_field('phone', $userid); ?>
+        <?php if( get_field('phone', $userid) || get_field('email', $userid) ) { ?>
+            <h2>Nimm kontakt mit <?php echo $curauth->first_name;?> auf!</h2>
+            <div class="share-button">
+
+            <!-- phone -->
+            <?php if( get_field('email', $userid) ) { ?>    
+                    <a class="button is-style-outline" target="blank"
+                    href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                    rel="nofollow"><?php the_field('email', $userid);?></a>
+            <?php } ?>
+
+
+            <!-- mail -->
+            <?php if( get_field('phone', $userid) ) { ?>
+                <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
+                    <?php the_field('phone', $userid); ?>
                 </a>
-				<?php
-				}?>
+            <?php } ?>
+        
+
             </div>
+        <?php } ?>
+            
     </div>
 
 
