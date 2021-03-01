@@ -349,7 +349,6 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 ## 🧫 Fundamental (notes)
 - Moderiert (Quertier/Stadt) oder demokratisch
 - Text oder Bildsprache 
-<<<<<<< HEAD
 
 
 ```diff
@@ -359,5 +358,3 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 # text in gray
 @@ text in purple (and bold)@@
 ```
-=======
->>>>>>> e9d302921e6ddbb490d0a17077d72b502ffc869b

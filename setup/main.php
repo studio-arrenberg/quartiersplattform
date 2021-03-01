@@ -134,6 +134,10 @@ function create_pages() {
             'post_slug'     => $pages[$i]['slug']
         );
 
+        if ( ! function_exists( 'post_exists' ) ) {
+            require_once( ABSPATH . 'wp-admin/includes/post.php' );
+        }
+
         if(post_exists($pages[$i]['title']) === 0){
             # create post
             wp_insert_post( $my_post );
@@ -178,14 +182,14 @@ function create_pages() {
 
 
 }
-add_action( 'init', 'create_pages' );
+add_action( 'after_setup_theme', 'create_pages' );
 
 // add pages
 add_action( 'after_setup_theme', 'create_form_page');
 function create_form_page(){
 
-    $title = 'Überblick';
-    $slug = 'überblick';
+    $title = 'Überblicks';
+    $slug = 'überblicks';
     $page_content = ''; // your page content here
     $post_type = 'page';
 
