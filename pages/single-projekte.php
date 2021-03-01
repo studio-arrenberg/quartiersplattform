@@ -257,9 +257,30 @@ get_header();
                 while ( $args->have_posts() ) {
                     $args->the_post();
                     ?>
-                    <div>
-                        <h4><?php echo get_the_title(); ?></h4>
-                    </div>
+                        <div class="card card-sgd shadow bg_red">
+                            <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
+                                <div class="content">
+                                    <h3 class="card-title">
+                                        <?php echo get_the_title(); ?>
+                                    </h3>
+                                    <p class="preview-text">
+                                        <?php
+                                            if (strlen(get_field('text')) > 2) {
+                                                get_excerpt(get_field('text'), '55');
+                                            }
+                                            else {
+                                                get_excerpt(get_the_content(), '55');
+                                            }
+                                        ?>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+
+
                     <?php
                 }
                 wp_reset_postdata();
