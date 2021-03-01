@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * Template Name: SDG
+ * Template Name: colors
  * Template Post Type: page
  * 
  */

@@ -34,7 +34,6 @@ if (has_post_thumbnail()) {
         <div class="center-header-content <?php if (!has_post_thumbnail()) echo "text-only"; ?>">
             <h1><?php the_title(); ?></h1>
         </div>
-
     </div>
 
 

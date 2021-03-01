@@ -6,31 +6,52 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="center-header-template <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>" role="main">
+    <?php // print_r($curauth); ?>
 
-<?php // print_r($curauth); ?>
+    <div class="center-header">
 
-    <div class="single-header  ">
+        <img class="center-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
 
-        <img class="single-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
-
-        <div class="single-header-content center-mobile">
+        <div class="center-header-content center-mobile">
 
             <h1><?php echo $curauth->display_name; ?></h1>
+            <br>
+
+            <!-- Kontakt  -->
+            <?php $userid = "user_".$curauth->ID; ?>
+                <?php if( get_field('phone', $userid) || get_field('email', $userid) ) { ?>
+            
+                <!-- mail -->
+                <?php if( get_field('email', $userid) ) { ?>    
+                        <a class="button is-style-outline" target="blank" href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                        rel="nofollow"><?php the_field('email', $userid);?></a>
+                <?php } ?>
+
+
+                <!-- phone -->
+                <?php if( get_field('phone', $userid) ) { ?>
+                    <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
+                        <?php the_field('phone', $userid); ?>
+                    </a>
+                <?php } ?>
+
+                <?php if ($curauth->ID == get_current_user_id()) { ?>
+                    <a class="button" href="<?php echo get_site_url(); ?>/profil">Mein Profil bearbeiten</a>
+                    
+                <?php } ?>
+
+            <?php } ?>
+
 
         </div>
-
+    </div>
     </div>
 
-    <?php 
-        if ($curauth->ID == get_current_user_id()) {
-            ?>
-                <a class="button" href="<?php echo get_site_url(); ?>/profil">Mein Profil bearbeiten</a>
-            <?php 
-        }
-    ?>
 
-    <div class="single-content">
+
+
+    <div class="single-content-fullwith">
         <!-- Projekte -->
         <?php
             $args4 = array(
@@ -45,7 +66,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             if ($my_query->post_count > 0) {
                 
                 echo "<h2>Projekte von $curauth->first_name</h2>";
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');
                 
             }
         ?>
@@ -70,31 +91,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         ?>
 
 
-        <!-- Kontakt  -->
-        <?php $userid = "user_".$curauth->ID; ?>
-
-        <?php if( get_field('phone', $userid) || get_field('email', $userid) ) { ?>
-            <h2>Nimm kontakt mit <?php echo $curauth->first_name;?> auf!</h2>
-            <div class="share-button">
-
-            <!-- phone -->
-            <?php if( get_field('email', $userid) ) { ?>    
-                    <a class="button is-style-outline" target="blank"
-                    href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
-                    rel="nofollow"><?php the_field('email', $userid);?></a>
-            <?php } ?>
-
-
-            <!-- mail -->
-            <?php if( get_field('phone', $userid) ) { ?>
-                <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
-                    <?php the_field('phone', $userid); ?>
-                </a>
-            <?php } ?>
-        
-
-            </div>
-        <?php } ?>
+    
             
     </div>
 
