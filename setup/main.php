@@ -195,7 +195,7 @@ function create_form_page(){
         'post_content' => $page_content,
         'post_status' => 'publish',
         'post_author' => 1,
-        'post_slug' => $slug
+        // 'post_slug' => $slug
     );
     
     if ( ! function_exists( 'post_exists' ) ) {
