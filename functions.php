@@ -959,7 +959,7 @@ function card_list($args) {
 
 // slider
 // for card & square_card
-function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
+function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align = 'center') {
 
 	$slider_class = "q".uniqid();
 	$style_class = "embla-one";
@@ -969,10 +969,10 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 
 	$query2 = new WP_Query($args);
 	?>
-<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
+	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
     <div class="embla__container">
         <?php
-	while ( $query2->have_posts() ) {
+		while ( $query2->have_posts() ) {
 		$query2->the_post();
 		echo "<div class='embrela-slide'>";
 		get_template_part('elements/'.$type.'', get_post_type());
@@ -998,7 +998,8 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true') {
 	var options = {
 		dragFree: <?php echo $dragfree; ?>,
 		slidesToScroll: slides_num, // viewport > 768px 4
-		draggable: draggable_state
+		draggable: draggable_state,
+		align: <?php echo $align; ?>
 	}
 	var embla = EmblaCarousel(emblaNode, options)
 

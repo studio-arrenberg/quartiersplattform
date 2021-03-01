@@ -1579,6 +1579,15 @@ button.toggle {
   margin-bottom: 20px;
 }
 
+.single-content-fullwith{
+  width: 100%;
+  text-align: left;
+}
+
+.single-content-fullwith .embla{
+  margin-bottom: 30px ;
+}
+
 .gutenberg-content {
   margin-top: 20px;
 }
@@ -4857,7 +4866,11 @@ a.card-link{
   background: #fff;
   border-radius: 20px;
   z-index: 2;
+}
 
+.card .marker img.emoji{
+  
+  border-radius: 0px;
 }
 
 .card .marker .emoji-marker{
@@ -5238,6 +5251,8 @@ a.card-link{
     margin: 50px 0px 50px 0px;
     max-width: 700px;
   }
+
+
 
   .gutenberg-content p {
     margin-bottom: 10px;
@@ -5986,7 +6001,7 @@ input[type="file"] {
   -webkit-appearance: none;
   appearance: none;
   display: inline-block;
-  border-radius: 0px;
+  /* border-radius: 0px; */
   border: none;
 }
 
