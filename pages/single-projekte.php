@@ -289,7 +289,7 @@ get_header();
     <div class="share">
         <h2> Projekt teilen </h2>
         <div class="copy-url">
-            <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
+            <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
             <button class="copy" onclick="copy()">Kopieren</button>
 
         </div>

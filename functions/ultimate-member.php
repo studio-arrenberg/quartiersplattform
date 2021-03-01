@@ -7,6 +7,15 @@
  */
 
 
+// UM show profil image upload 
+function um_show_hidden_field(){
+	if ( is_page( 'profil' ) ) {
+			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
+	}
+} add_action('wp_footer', 'um_show_hidden_field');
+
+
+
  // ultimate member remove styles
 // if (qp_check_dependencies()) {
 	add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
@@ -14,6 +23,9 @@
 	add_action( 'wp_print_styles', 'um_remove_scripts_and_styles', 9 );
 	add_action( 'dynamic_sidebar', 'um_remove_scripts_and_styles_widget' );
 // }
+
+
+
 
 
 /**

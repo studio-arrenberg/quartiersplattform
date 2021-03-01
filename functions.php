@@ -1794,7 +1794,8 @@ function polling() {
 // prolog loged in session to a year
 function wpdev_login_session( $expire ) { // Set login session limit in seconds
     return YEAR_IN_SECONDS;
-} add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
+} 
+add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 
 // set guest cookie
 function set_user_cookie_inc_guest(){
@@ -1815,20 +1816,21 @@ function set_user_cookie_inc_guest(){
 		setcookie('guest', md5($counter), $expiry, $path, $host);
     }  
 
-} add_action('init', 'set_user_cookie_inc_guest');
+} 
+add_action('init', 'set_user_cookie_inc_guest');
 
 // cookie for logged in users
 function add_custom_cookie_admin() {
 	wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
-} add_action('wp_login', 'add_custom_cookie_admin');
-
-// UM show profil image upload 
-function um_show_hidden_field(){
-	if ( is_page( 'profil' ) ) {
-			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
-	}
-} add_action('wp_footer', 'um_show_hidden_field');
-
+} 
+// add_action('wp_login', 'add_custom_cookie_admin');
+// function add_cookie_admin() {
+// 	wp_set_current_user($user_id); 
+// 	if (wp_validate_auth_cookie()==FALSE)
+// 	{
+// 		wp_set_auth_cookie($user_id, true, false);
+// 	}
+// }
 
 
 // display owner of CPT 
@@ -1849,17 +1851,9 @@ function get_author($contact = false) {
         <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
 	<div class="team">		
 		<div class="team-member">	
-			<a href="<?php 
-				$userid = "user_".get_the_author_meta( 'ID' );
-				$wpuserid = 'user_'.get_current_user_id();
-				if($userid == $wpuserid){
-					echo get_site_url()."/profil/";
-				}
-				else{
-					echo get_site_url()."/author/".get_the_author_meta( 'user_login' ); 	
-				}				            	            	
-				?>">
-         	   <?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
+				<!-- <a href="<?php echo esc_url(get_site_url()."/author/".get_the_author_meta( 'nickname' )); ?>"> -->
+				<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
+         	   	<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
 				<?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
 			</a>
         </div>
@@ -1967,12 +1961,12 @@ else if (get_field('maintenance', 'option')) {
 }
 
 
-function qp_check_dependencies() {
-	if (class_exists('acf_pro') && class_exists('UM') && function_exists( 'wp_mail_smtp' )) {
-		return true;
-	}
-	return false;
-}
+// function qp_check_dependencies() {
+// 	if (class_exists('acf_pro') && class_exists('UM') && function_exists( 'wp_mail_smtp' )) {
+// 		return true;
+// 	}
+// 	return false;
+// }
 
 
 // Check for required plugins
