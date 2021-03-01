@@ -128,6 +128,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
   
     <canvas id="confetti"></canvas>
 
+    <div class="intro">
     
     <?php 
     /**
@@ -144,7 +145,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
     if (class_exists('acf_pro')) {
     ?>
 
-      <div class="white-background intro">
+      <div class="white-background ">
         <h1><?php the_field('quartiersplattform-name', 'option'); ?><span class="dark">update</span></h1>
       </div>
 
@@ -161,7 +162,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
 
     ?>
 
-      <div class="error">
+      <div class="white-background  error">
         <h2>Plugin fehlt. Bitte Advanced Custom fields installieren</h2>
         <p>
           Bitte installieren sie das Plugin ACF durch die Wordpress Plugin Seite. 
@@ -172,7 +173,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
       if (!class_exists('UM')) {
         ?>
 
-      <div class="error">
+      <div class=" white-background  error">
         <h2>Plugin fehlt. Bitte Ultimate Member installieren</h2>
         <p>
           Bitte installieren sie das Plugin Ultimate Member durch die Wordpress Plugin Seite. Und stellen sie folgende einstellungen ein. (Auf Github erklären)
@@ -184,7 +185,7 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
       if (!function_exists( 'wp_mail_smtp' )) {
         ?>
 
-      <div class="warning">
+      <div class="warning white-background ">
         <h2>Bitte WP Mail SMTP installieren</h2>
         <p>
           Bitte installieren sie das Plugin WP Mail SMTP durch die Wordpress Plugin Seite. Und legen sie ihre email einstellungen an. (Auf Github erklären)
@@ -196,12 +197,14 @@ if(class_exists('acf_pro') && !get_field('maintenance', 'option')) {
     }
     ?>
 
-    <div>
+    <div class="white-background ">
       <h2>Quartiersplattform</h2>
       <p>beschreibung ...</p>
       <!-- kontakt  -->
       <!-- link github -->
     </div>
+
+  </div>
 
 
     <div class="logo">
