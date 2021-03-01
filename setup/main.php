@@ -107,7 +107,7 @@ function create_pages() {
 
 
     $pages = array(
-        0 => array('title' => 'Überblick', 'slug' => 'überblick'),
+        0 => array('title' => 'Überblick', 'slug' => 'home'),
         1 => array('title' => 'Veranstaltungen', 'slug' => 'veranstaltungen'),
         2 => array('title' => 'Projekte', 'slug' => 'projekte'),
         3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
