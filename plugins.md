@@ -15,9 +15,8 @@
 8. Your done with setting up the SMTP Plugin
 
 ### Ultimate Member
-1. Download and install the Plugin
-[WP Mail SMTP](https://de.wordpress.org/plugins/wp-mail-smtp/) 
-2. Activate the Pluign
+1. Download and install the Plugin [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/) 
+2. Activate the Plugin
 3. 
 
 

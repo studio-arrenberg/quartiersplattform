@@ -1762,12 +1762,12 @@ function get_author($contact = false) {
             ?>
             <div class="share-button">
 
-				<?php if( get_field('email', $userid) ){
+				<?php if( get_field('mail', $userid) ){
 				?>
 				<a class="button is-style-outline" target="_blank"
                 onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
-                href="mailto:<?php echo the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"
-                rel="nofollow"><?php echo the_field('email', $userid);?></a>
+                href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"
+                rel="nofollow"><?php echo the_field('mail', $userid);?></a>
 				
 				<?php
 				}?>
