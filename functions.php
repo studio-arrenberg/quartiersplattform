@@ -1799,21 +1799,23 @@ function get_author($contact = false) {
  * 
  */
 
-add_action('acf/init', function() {
-	// General
-	require_once dirname( __FILE__ ) .'/setup/main.php';
-	// Immigration
-	require_once dirname( __FILE__ ) .'/setup/immigration.php';
-	// Setting Page
-	require_once dirname( __FILE__ ) .'/setup/settings.php';
-	
-	// Kontakt
-	require_once dirname( __FILE__ ) .'/setup/kontakt.php';
-	// Umfragen
-	require_once dirname( __FILE__ ) .'/setup/umfragen.php';
-    // SDG
-    require_once dirname( __FILE__ ) .'/setup/sdg.php';
-});
+// General
+require_once dirname( __FILE__ ) .'/setup/main.php';
+// Immigration
+require_once dirname( __FILE__ ) .'/setup/immigration.php';
+// Setting Page
+require_once dirname( __FILE__ ) .'/setup/settings.php';
+// Kontakt
+require_once dirname( __FILE__ ) .'/setup/kontakt.php';
+// Umfragen
+require_once dirname( __FILE__ ) .'/setup/umfragen.php';
+// SDG
+require_once dirname( __FILE__ ) .'/setup/sdg.php';
+
+// add_action('acf/init', function() {
+
+
+// });
 
 
 // require if plugin is exsistent

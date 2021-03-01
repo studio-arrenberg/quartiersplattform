@@ -107,7 +107,7 @@ function create_pages() {
 
 
     $pages = array(
-        0 => array('title' => 'Überblick', 'slug' => 'überblick'),
+        0 => array('title' => 'Überblick', 'slug' => 'home'),
         1 => array('title' => 'Veranstaltungen', 'slug' => 'veranstaltungen'),
         2 => array('title' => 'Projekte', 'slug' => 'projekte'),
         3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
@@ -133,6 +133,10 @@ function create_pages() {
             'post_type'		=> 'page',
             'post_slug'     => $pages[$i]['slug']
         );
+
+        if ( ! function_exists( 'post_exists' ) ) {
+            require_once( ABSPATH . 'wp-admin/includes/post.php' );
+        }
 
         if(post_exists($pages[$i]['title']) === 0){
             # create post
@@ -178,14 +182,14 @@ function create_pages() {
 
 
 }
-add_action( 'init', 'create_pages' );
+add_action( 'after_setup_theme', 'create_pages' );
 
 // add pages
 add_action( 'after_setup_theme', 'create_form_page');
 function create_form_page(){
 
-    $title = 'Überblick';
-    $slug = 'überblick';
+    $title = 'Überblicks';
+    $slug = 'überblicks';
     $page_content = ''; // your page content here
     $post_type = 'page';
 
