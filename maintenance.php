@@ -84,6 +84,13 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
         font-family: "OfficinaSansITCStd-Book", sans-serif;
       }
       
+      #confetti{
+        position: fixed;
+        height: 100%;
+        z-index: -1;
+
+      }
+      
       .pre-title {
         color: #0091ff
       }
@@ -102,7 +109,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
         margin-bottom: 50px;
       }
       .center-desktop {
-        margin: 200px auto 0px auto;
+        margin: 75px auto 0px auto;
         text-align: center;
         max-width: 900px
       }
@@ -123,7 +130,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
 
       .bg-logo{
         position: absolute;
-        z-index: -1;
+        z-index: -2;
         top: 15px;
         left: 15px
       }
@@ -139,13 +146,36 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
         margin: 20px 15px;
       }
 
+      .flex-row{
+        flex-direction: column;
+      }
+
       .card{
-        width: 50%;
+        width: 100%;
         border-radius:20px;
         border: 5px solid #fff;
-        padding: 30px 15px;
         background: #fff;
-        margin: 10px
+        margin: 10px;
+        background-position: center;
+        background-size: cover !important;
+      }
+
+      .white .card-link{
+        color: #fff;
+      }
+
+      .card-50{
+        width: 50%;
+        min-width;
+      }
+
+      .card-link{
+        text-decoration: none;
+        color: #000;
+        display: block;
+        
+        padding: 40px 15px;
+
       }
 
 
@@ -155,7 +185,93 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
       0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
       }
 
-      
+      .bg_red {
+        background: 
+        linear-gradient(to top right, rgba(255, 0, 0, 1), rgba(197, 0, 0, 1))}
+
+      .bg_red-dark {
+        background: 
+        linear-gradient(to top right, rgba(204, 0, 59, 1), rgba(143, 0, 32, 1))
+      }
+
+      .bg_orange-dark {
+        background: 
+        linear-gradient(to top right, rgba(255, 90, 0, 1), rgba(188, 72, 0, 1))
+      }
+
+      .bg_cyan{
+        background: 
+        linear-gradient(to top right, rgba(0, 231, 255, 1), rgba(0, 165, 196, 1))
+      }
+
+      .bg_blue-light {
+        background: 
+        linear-gradient( 45deg,rgba(12, 194, 171, 1),rgba(12, 165, 194, 1))
+      }
+
+      .bg_blue {
+        background: 
+        linear-gradient(to top right, rgba(0, 165, 255, 1), rgba(0, 138, 178, 1))
+      }
+
+      .bg_blue-dark {
+        background: 
+        linear-gradient(to top right, rgba(0, 76, 230, 1), rgba(0, 13, 174, 1))
+      }
+
+      .bg_yellow-light{
+        background: 
+        linear-gradient(to top right, rgba(255, 252, 0, 1), rgba(213, 204, 0, 1))
+      }
+
+      .bg_yellow{
+        background: 
+        linear-gradient(to top right, rgba(255, 230, 76, 1), rgba(248, 212, 37, 1))}
+
+
+      .bg_orange-light {
+        background: 
+        linear-gradient(to top right, rgba(255, 203, 0, 1), rgba(255, 155, 0, 1))}
+
+      .bg_orange {
+        background: 
+        linear-gradient(to top right, rgba(255, 114, 0, 1), rgba(255, 154, 0, 1))
+      }
+
+      .bg_brown {
+        background: 
+        linear-gradient(to top right, rgba(201, 84, 0, 1), rgba(169, 81, 0, 1))
+      }
+
+      .bg_pink {
+        background: 
+        linear-gradient(to top right, rgba(255, 0, 187, 1), rgba(199, 0, 89, 1))
+      }
+        
+      .bg_violett{
+        background: 
+        linear-gradient(to top right, rgba(220, 0, 119, 1), rgba(174, 0, 78, 1))
+      }
+
+      .bg_green {
+        background: 
+        linear-gradient(to top right, rgba(69, 199, 112, 1), rgba(68, 144, 105, 1));
+      }
+
+      .bg_green-light {
+        background: 
+        linear-gradient(to top right, rgba(0, 255, 10, 1), rgba(35, 191, 0, 1))
+      }
+
+      .bg_green-dark {
+        background: 
+        linear-gradient(to top right, rgba(0, 169, 7, 1), rgba(0, 116, 2, 1))
+      }
+
+      .bg_grey{
+        background: 
+        linear-gradient(to top right, rgba(145, 145, 145, 1), rgba(89, 89, 89, 1))
+      }
      
 
       @media (max-width: 900px) {
@@ -186,24 +302,9 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
   </head>
   <body>
   
-    <!-- <canvas id="confetti"></canvas> -->
+    <canvas id="confetti"></canvas>
 
-    
-    <?php 
-    /**
-     * 
-     * Inhalte
-     *  - ACF felder
-     *  - Errors (fehlende plugins)
-     *  - Schritte ..? (felder eintragen, plugin einstellungen vornehmen, projekte posten, ...)
-     *  - Quartiersplattform (projekt, dokumentation (github page), kontakt)
-     * 
-     */
-
-
-    if (class_exists('acf_pro') && class_exists('UM')) {
-    ?>
-
+  
     <div class="top-bar">
       <svg class="top-bar-logo" width="360px" hviewBox="0 0 231 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>Quartiersplattform</title>
@@ -231,8 +332,28 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
       </svg>
     </div>
 
+
+
   
-      <div class="center-desktop">
+    <div class="center-desktop">
+
+
+              
+      <?php 
+      /**
+       * 
+       * Inhalte
+       *  - ACF felder
+       *  - Errors (fehlende plugins)
+       *  - Schritte ..? (felder eintragen, plugin einstellungen vornehmen, projekte posten, ...)
+       *  - Quartiersplattform (projekt, dokumentation (github page), kontakt)
+       * 
+       */
+
+
+      if (class_exists('acf_pro') && class_exists('UM')) {
+      ?>
+
         <h2 class="pre-title">Gestalte dein Viertel</h2>
         <h1><?php //the_field('quartiersplattform-name', 'option'); ?>Hier entsteht <br>deine Quatiersplattform</h1>
         <?php //the_field('headline', 'option'); ?>
@@ -244,15 +365,36 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
         <h3>Die Quatiersplattform wird bereits in folgenden Viertel genutzt</h3>
 
         <div class="card-container">
-          <div class="card card-50 shadow">
-            <a class="card-link">
+
+          <?php
+            $latlong = "7.128,51.2485,";
+            $location = get_field('map');
+            $map_zoom = 15.48; 
+
+            $width = 500;
+            $height = 300;
+          ?>
+
+          <div class="card card-50 shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
+            <a class="card-link" href="https://arrenberg.app">
               <h4>Arrenberg</h4>
               <h5>Wuppertal</h5>
             </a>
           </div>
 
-          <div class="card card-50 shadow">
-            <a class="card-link">
+
+          
+          <?php
+            $latlong = "7.244365,51.274734,";
+            $location = get_field('map');
+            $map_zoom = 13.48; 
+
+            $width = 500;
+            $height = 300;
+          ?>
+
+          <div class="card card-50 shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
+            <a class="card-link" href="https://langerfeld.app">
               <h4>Langerfeld</h4>
               <h5>Wuppertal</h5>
             </a>
@@ -260,34 +402,48 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
 
 
         </div>
-      </div>
-    <?php 
-    }
-    else {
-
-    ?>
-
-    <?php
-      if (!class_exists('acf_pro')) {
-        ?>
-
-      <div class="white-background  error">
-        <h2>Plugin fehlt. Bitte Advanced Custom fields installieren</h2>
-        <p>
-          Bitte installieren sie das Plugin ACF durch die Wordpress Plugin Seite. 
-        </p>
-      </div>
-
-    <?php
+      <?php 
       }
-      if (!class_exists('UM')) {
+      else {
+
+      ?>
+      
+      <h2 class="pre-title">Erste Schritte</h2>
+        <h1><?php //the_field('quartiersplattform-name', 'option'); ?>Plugins installieren</h1>
+        <?php //the_field('headline', 'option'); ?>
+        <p class="big">
+          <?php //the_field('text', 'option'); ?>
+          Dein Viertel  bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
+        </p>
+
+        <h3>Du musst noch folgende Schritte durchführen:</h3>
+      <div class="card-container flex-row">
+      
+        <?php
+          if (!class_exists('acf_pro')) {
+          ?>
+
+          <div class="card bg_orange-light white">
+            <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
+              <h2>Bitte Advanced Custom fields installieren</h2>
+              <p>
+                Bitte installieren sie das Plugin ACF durch die Wordpress Plugin Seite. 
+              </p>
+            </a>
+          </div>
+
+      <?php
+        }
+        if (!class_exists('UM')) {
         ?>
 
-      <div class=" white-background  error">
-        <h2>Plugin fehlt. Bitte Ultimate Member installieren</h2>
-        <p>
-          Bitte installieren sie das Plugin Ultimate Member durch die Wordpress Plugin Seite. Und stellen sie folgende einstellungen ein. (Auf Github erklären)
-        </p>
+      <div class="card  bg_orange-light white">
+        <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
+          <h2>Bitte Ultimate Member installieren</h2>
+          <p>
+            Bitte installieren sie das Plugin Ultimate Member durch die Wordpress Plugin Seite. Und stellen sie folgende einstellungen ein. (Auf Github erklären)
+          </p>
+        </a>
       </div>
 
         <?php
@@ -295,11 +451,14 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
       if (!function_exists( 'wp_mail_smtp' )) {
         ?>
 
-      <div class="warning white-background ">
-        <h2>Bitte WP Mail SMTP installieren</h2>
-        <p>
-          Bitte installieren sie das Plugin WP Mail SMTP durch die Wordpress Plugin Seite. Und legen sie ihre email einstellungen an. (Auf Github erklären)
-        </p>
+      <div class="card bg_red white">
+        <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
+
+          <h2>Bitte WP Mail SMTP installieren</h2>
+          <p>
+            Bitte installieren sie das Plugin WP Mail SMTP durch die Wordpress Plugin Seite. Und legen sie ihre email einstellungen an. (Auf Github erklären)
+          </p>
+      </a>
       </div>
 
         <?php
@@ -310,8 +469,6 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
    
 
   </div>
-
-
     <div class="logo">
       <a href="https://www.arrenberg.studio">
         
