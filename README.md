@@ -194,7 +194,7 @@ get_cpt_term_owner($post_ID, $term, $type = 'name');
 #### Get Author of Post Type
 Should be used in the Wordpress Loop 
 ```php
-get_author();
+get_author(true); // true for further detail
 ```
 
 ### Notes
