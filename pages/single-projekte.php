@@ -1,13 +1,10 @@
 <?php
+
 /**
+ * 
  * Template Name: Projekt [Default]
  * Template Post Type: projekte
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
@@ -15,6 +12,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // E
     wp_deregister_style( 'wp-admin' );
 }
 get_header();
+
 ?>
 
 <main id="site-content" role="main">
@@ -38,84 +36,84 @@ get_header();
 
 			?>
 
-    <div class="single-header  ">
-        <!-- without-single-header-image -->
+            <div class="single-header  ">
+                <!-- without-single-header-image -->
 
 
-        <!-- Bild -->
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                <!-- Bild -->
+                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
-        <!-- post title -->
-        <div class="single-header-content center-mobile">
-            <!-- emoji -->
-            <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
+                <!-- post title -->
+                <div class="single-header-content center-mobile">
+                    <!-- emoji -->
+                    <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
 
-            <h1><?php the_title(); ?></h1>
+                    <h1><?php the_title(); ?></h1>
 
-            <!-- slogan -->
-            <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-            <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4> -->
+                    <!-- slogan -->
+                    <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
+                    <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4> -->
 
-            <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-            ?>
-            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
-            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
-            <?php
-            }
-            ?>
-
-
-        <!-- Nachricht erstellen -->
-
-        <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-            ?>
-                <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
-            <?php
-            }
-        ?>
-
-        <?php
-            if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
-            ?>
-                <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
-            <?php
-            }
-        ?>
-        <!-- Veranstaltung erstellen -->
-
-        <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-            ?>
-        <a class="button is-style-outline"
-            href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
-        <?php
-            }
-        ?>
-
-        </div>
-
-        <!-- akteur -->
-        <!-- not ready yet -->
+                    <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                    ?>
+                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
+                    <?php
+                    }
+                    ?>
 
 
-    </div>
+                <!-- Nachricht erstellen -->
+
+                <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                    ?>
+                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
+                    <?php
+                    }
+                ?>
+
+                <?php
+                    if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
+                    ?>
+                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
+                    <?php
+                    }
+                ?>
+                <!-- Veranstaltung erstellen -->
+
+                <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                    ?>
+                <a class="button is-style-outline"
+                    href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
+                <?php
+                    }
+                ?>
+
+                </div>
+
+                <!-- akteur -->
+                <!-- not ready yet -->
 
 
-    <?php if (get_field('text')) { ?>
-    <div class="single-content">
-        <h2>Beschreibung</h2>
-        <p><?php the_field('text'); ?></p>
-    </div>
-    <?php } ?>
+            </div>
 
-    <?php if (get_field('goal')) { ?>
-    <div class="single-content">
-        <h2>Projektziel</h2>
-        <p><?php the_field('goal'); ?></p>
-    </div>
-    <?php } ?>
+
+            <?php if (get_field('text')) { ?>
+            <div class="single-content">
+                <h2>Beschreibung</h2>
+                <p><?php the_field('text'); ?></p>
+            </div>
+            <?php } ?>
+
+            <?php if (get_field('goal')) { ?>
+            <div class="single-content">
+                <h2>Projektziel</h2>
+                <p><?php the_field('goal'); ?></p>
+            </div>
+            <?php } ?>
 
 
 

@@ -1,5 +1,7 @@
 <?php
+
 /**
+ *  
  * Template Name: Nachrichten [Default]
  * Template Post Type: Nachrichten<
  *
@@ -23,7 +25,6 @@ get_header();
             
             if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
 
-			// prep image url
 			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
 			if ( $image_url ) {
@@ -39,28 +40,32 @@ get_header();
 			?>
 
 
-    <div class="single-header">
-        <!-- post title -->
-        <div class="single-header-content">
-            <h1><?php the_title(); ?></h1>
-            <h3 class="single-header-slogan">
-                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
-                <span class="date"><?php echo get_the_date('j. F'); ?></span>
-            </h3>
-            <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+        <div class="single-header">
+            <!-- post title -->
+            <div class="single-header-content">
+
+                <h1><?php the_title(); ?></h1>
+
+                <h3 class="single-header-slogan">
+                    <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
+                    <span class="date"><?php echo get_the_date('j. F'); ?></span>
+                </h3>
+
+                <?php
+                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                ?>
+                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
+                        href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
+                <?php
+                }
             ?>
-            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
-            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
-                href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
-            <?php
-            }
-        ?>
+
+            </div>
+
+            <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
         </div>
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-    </div>
 
 
     <div class="site-content">
@@ -69,9 +74,10 @@ get_header();
 
     </div>
 
-    <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
+
         <?php
+            // Gutenberg Editor Content
             if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
                 the_excerpt();
             } else {
@@ -83,8 +89,8 @@ get_header();
 
     <?php get_author(); ?>
 
-    <!-- weitere Nachrichten -->
     <?php
+        // weitere Nachrichten
 		$args2 = array(
 			'post_type'=> array('nachrichten', 'veranstaltungen'), 
 			'post_status'=>'publish', 
@@ -102,17 +108,17 @@ get_header();
         
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
-            ?>
-    <h2>Weitere Nachrichten & Veranstaltungen</h2>
-    <?php
+        ?>
+            <h2>Weitere Nachrichten & Veranstaltungen</h2>
+        <?php
             slider($args2,'card', '1','false');
         }
 
     ?>
     <br>
 
-    <!-- Projekt Kachel -->
     <?php
+        // Projekt Kachel 
         $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
         $the_slug = $term_list[0]->slug;
         if ($the_slug) {
@@ -126,22 +132,20 @@ get_header();
 
             $my_query = new WP_Query($args);
             if ($my_query->post_count > 0) {
-     ?>
+            ?>
 
 
-    <h2>Das Projekt</h2>
+            <h2>Das Projekt</h2>
 
-    <div class="card-container ">
+            <div class="card-container ">
 
-        <?php
-            landscape_card($args);
-            } 
+            <?php
+                landscape_card($args);
+                } 
+            }
+            ?>
 
-            
-        }
-    ?>
-
-    </div>
+            </div>
 
 
     <!-- Backend edit link -->
@@ -153,15 +157,13 @@ get_header();
 	?>
 
     <div class="comments-wrapper">
-
         <?php comments_template('', true); ?>
-
     </div><!-- .comments-wrapper -->
 
     <?php
             }
         }
-
+        # Post löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
 
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
@@ -178,7 +180,7 @@ get_header();
                 wp_redirect( get_site_url() );
             }
         }
-
+        # Post bearbeiten
         else {
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                 echo '<h2>Bearbeite deine Nachricht</h2><br>';

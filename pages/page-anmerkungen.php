@@ -1,11 +1,10 @@
 <?php
+
 /**
+ * 
  * Template Name: Anmerkungen
  * Template Post Type: page
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 get_header();
@@ -24,7 +23,7 @@ get_header();
 	);
 	card_list($args4);
 	?>
-	
+
 </div>
 </main><!-- #site-content -->
 

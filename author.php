@@ -18,27 +18,23 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             <h1><?php echo $curauth->display_name; ?></h1>
             <br>
 
-            <!-- Hier auch Kontakt einbauen -->
-            <a class="button is-style-outline" target="blank" href="mailto:<?php the_field('email', $userid);?>?subject=Hallo" target="_blank"
-                        rel="nofollow"><?php the_field('email');?></a>
-                <!-- mail -->
-                <?php if( get_field('email', $userid) ) { ?>    
-                        <a class="button is-style-outline" target="blank" href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_field( 'display_name');?>" target="_blank"
-                        rel="nofollow"><?php the_field('email', $userid);?></a>
-                <?php } ?>
+            <!-- Kontakt  -->
+            <?php $userid = "user_".$curauth->ID; ?>
+
+            <!-- phone -->
+            <?php if( get_field('mail', $userid) ) { ?>    
+                    <a class="button is-style-outline" target="blank"
+                    href="mailto:<?php the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                    rel="nofollow"><?php the_field('mail', $userid);?></a>
+            <?php } ?>
 
 
-                <!-- phone -->
-                <?php if( get_field('phone', $userid) ) { ?>
-                    <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
-                        <?php the_field('phone', $userid); ?>
-                    </a>
-                <?php } ?>
-
-                <?php if ($curauth->ID == get_current_user_id()) { ?>
-                    <a class="button" href="<?php echo get_site_url(); ?>/profil">Mein Profil bearbeiten</a>
-                    
-                <?php } ?>
+            <!-- mail -->
+            <?php if( get_field('phone', $userid) ) { ?>
+                <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
+                    <?php the_field('phone', $userid); ?>
+                </a>
+            <?php } ?>
 
 
 
@@ -47,11 +43,10 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
     </div>
 
 
-
-
     <div class="single-content-fullwith">
-        <!-- Projekte -->
+
         <?php
+            // Projekte
             $args4 = array(
                 'post_type'=> array('projekte'), 
                 'post_status'=>'publish', 
@@ -69,8 +64,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             }
         ?>
 
-        <!-- Angebote und Fragen -->
         <?php
+            // Angebote und Fragen
             $args4 = array(
                 'post_type'=> array('angebote', 'fragen'), 
                 'post_status'=>'publish', 
@@ -88,36 +83,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             }
         ?>
 
-        <!-- Kontakt  -->
-        <?php $userid = "user_".$curauth->ID; ?>
-
-        <?php if( get_field('phone', $userid) || get_field('email', $userid) ) { ?>
-            <h2>Nimm kontakt mit <?php echo $curauth->first_name;?> auf!</h2>
-            <div class="share-button">
-
-            <!-- phone -->
-            <?php if( get_field('email', $userid) ) { ?>    
-                    <a class="button is-style-outline" target="blank"
-                    href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
-                    rel="nofollow"><?php the_field('email', $userid);?></a>
-            <?php } ?>
-
-
-            <!-- mail -->
-            <?php if( get_field('phone', $userid) ) { ?>
-                <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
-                    <?php the_field('phone', $userid); ?>
-                </a>
-            <?php } ?>
-        
-
-            </div>
-        <?php } ?>
-
-    
-            
     </div>
-
 
 
 </div>

@@ -1,32 +1,31 @@
 <?php
+
 /**
+ * 
  * Template Name: Angebote [Default]
  * Template Post Type: gemeinsam
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
+
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
 
 get_header();
+
 ?>
 
 <main id="site-content" role="main">
 
     <?php
 
-if ( have_posts() ) {
+    if ( have_posts() ) {
 
-    while ( have_posts() ) {
-        the_post();
+        while ( have_posts() ) {
+            the_post();
 
-        if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
 
     ?>
 
@@ -35,70 +34,65 @@ if ( have_posts() ) {
         <?php get_template_part('elements/card', get_post_type()); ?>
 
     </div>
-    <br>
-    <h4>Kontakt</h4>
-    <!-- kontakt -->
-    <?php 
-    if (is_user_logged_in()) { 
-        get_author(true); 
 
-    } else {
-        get_author(false);
-    }
-    ?>
+        <br>
 
+        <h4>Kontakt</h4>
 
-    <br>
+        <?php 
+            if (is_user_logged_in()) { 
+                get_author(true); 
 
-    <?php
-    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            } 
+            else {
+                get_author(false);
+            }
         ?>
-        <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
-        <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Angebot löschen</a>
+
+        <br>
+
+        <?php if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { ?>
+            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Angebot bearbeiten</a>
+            <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Angebot löschen</a>
+        <?php } ?>
+
+    </div>
+
     <?php
     }
+    # post löschen
+    else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
 
+        wp_delete_post(get_the_ID());
+
+        wp_redirect( get_site_url()."/gemeinsam" );
+
+        ?>
+
+        <h2>Deine Frage wurde gelöscht.</h2>
+        <br>
+        <a class="button" href="<?php echo get_site_url(); ?>/gemeinsam">Startseite</a>
+
+        <?php 
+    }
+    # Post bearbeiten
+    else {
+        if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            echo '<h2>Bearbeite dein Angebot</h2><br>';
+            acf_form (
+                array(
+                    'form' => true,
+                    'return' => '%post_url%',
+                    'submit_value' => 'Änderungen speichern',
+                    'post_title' => false,
+                    'post_content' => false,    
+                    'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
+                )
+            );
+            
+        }
+    }
     ?>
-    </div>
-    <?php
-
-}
-
-else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
-
-    wp_delete_post(get_the_ID());
-
-    wp_redirect( get_site_url()."/gemeinsam" );
-
-    ?>
-
-    <h2>Deine Frage wurde gelöscht.</h2>
-    <br>
-    <a class="button" href="<?php echo get_site_url(); ?>/gemeinsam">Startseite</a>
-
-
-    <?php 
-}
-
-
-else {
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-    echo '<h2>Bearbeite dein Angebot</h2><br>';
-    acf_form (
-        array(
-            'form' => true,
-            'return' => '%post_url%',
-            'submit_value' => 'Änderungen speichern',
-            'post_title' => false,
-            'post_content' => false,    
-            'field_groups' => array('group_5fcf55e0af4db'), //Arrenberg App
-        )
-    );
-    
-}
-}
-// echo $post->post_author;
-?>
 
 
     <!-- kommentare -->
@@ -129,7 +123,6 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 
 
 ?>
-
     <script>
     // picker for acf field
     var el = $("#acf-field_5fcf563d5b576");

@@ -1,7 +1,10 @@
 <?php
+
 /**
+ * 
  * Template Name: Landing Page
  * Template Post Type: page
+ * 
  */
 
 
@@ -62,57 +65,53 @@ get_header();
 		?>
 
 
-    <div class="list-cards">
-        <!-- Eventuell auch als Slider -->
-        <!-- projekt updates (list_card query function) -->
-        <?php
-			
+	<div class="list-cards">
+
+		<?php
+			// projekt updates (list_card query function)
 			$args2 = array(
 				'post_type'=>'nachrichten', 
 				'post_status'=>'publish', 
 				'posts_per_page'=> 3
 			);
 			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quartier','Updates aus spannenden Projekten');
-			?>
+		?>
 
-        <!-- veranstaltungen -->
-        <?php
-				$args3 = array(
-					'post_type'=>'veranstaltungen', 
-					'post_staus'=>'publish', 
-					'posts_per_page'=> 3,
-					'meta_key' => 'event_date',
-					// 'orderby' => 'rand',
-					'order' => 'ASC',
-					'offset' => '0', 
-					'meta_query' => array(
-						array(
-							'key' => 'event_date', 
-							'value' => date("Y-m-d"),
-							'compare' => '>=', 
-							'type' => 'DATE'
-						)
+		<?php
+			// veranstaltungen
+			$args3 = array(
+				'post_type'=>'veranstaltungen', 
+				'post_staus'=>'publish', 
+				'posts_per_page'=> 3,
+				'meta_key' => 'event_date',
+				// 'orderby' => 'rand',
+				'order' => 'ASC',
+				'offset' => '0', 
+				'meta_query' => array(
+					array(
+						'key' => 'event_date', 
+						'value' => date("Y-m-d"),
+						'compare' => '>=', 
+						'type' => 'DATE'
 					)
-				);
+				)
+			);
 			list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht');
 			?>
-    </div>
 
+	</div>
 
+	<div class="card-container ">
 
-
-<div class="card-container ">
-    <?php 
-		// Smart cards 
-		// if(current_user_can('administrator')) {
-
+		<?php 
+			// Smart cards 
+			// Angebote und fragen
 			get_template_part('components/smart-card/angebote-fragen');
-
+			// Projekte
 			get_template_part('components/smart-card/projekte');
+		?>
 
-		// }
-	?>
-</div>
+	</div>
 
 
     <!-- call to register -->
@@ -127,12 +126,13 @@ get_header();
 				'posts_per_page'=> '1'
 			);
 			// landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
-			?>
-		<?php // landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
+			
+			// landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); 
+		?>
     </div>
 
-    <!-- featured projects (square_card + carousel query + function) -->
     <?php
+		// featured projects (square_card + carousel query + function)
 		$args3 = array(
 			'post_type'=>'projekte', 
 			'post_status'=>'publish', 
@@ -142,20 +142,16 @@ get_header();
 		slider($args3,'square_card', '2','true'); 
 		?>
 
-    <!-- energie ampel -->
-    <?php // get_template_part('components/energie_ampel'); ?>
-
-    <!-- Aufbruch am Arrenberg link card -->
-    <?php // landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+    <?php 
+		// Aufbruch am Arrenberg link card
+		// landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); 
+	?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
 
-    <!-- arrenberg farm wetter station -->
-    <?php // get_template_part('components/wetter'); ?>
-
-	<!-- Gutenberg Editor Content -->
 	<?php
+		// Gutenberg Editor Content
 		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
 			the_excerpt();
 		} else {
@@ -163,13 +159,16 @@ get_header();
 		}
 	?>
 
-    <!-- feedback (acf) -->
-    <?php get_template_part('components/feedback'); ?>
-    <?php
-	}
-	// ---------------------------------- Logged out ----------------------------------
-	else {
+    <?php 
+		// feedback
+		get_template_part('components/feedback'); 
 	?>
+
+<?php
+}
+// ---------------------------------- Logged out ----------------------------------
+else {
+?>
 
     <?php
 		// Neuste Meldungen
@@ -205,12 +204,13 @@ get_header();
 		slider($args4,'card', '1','false'); 
 		?>
 
-    <!-- call to register -->
     <div class="card-container ">
-    	<?php // landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
 
-        <!-- arrenberg farm link card -->
-        <?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
+    	<?php 
+			// landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); 
+
+			// link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); 
+		?>
        
 	    <?php 
 			// Geschichten
@@ -221,15 +221,16 @@ get_header();
 				'posts_per_page'=> '1'
 			);
 			// landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
-			?>
-        <?php // get_template_part( 'components/call', 'umfrage' ); ?>
+			// get_template_part( 'components/call', 'umfrage' ); 
+		?>
+
     </div>
 
     <!-- *urbane transformation* -->
     <!-- not ready yet -->
 
-    <!-- featured projects (square_card + carousel query + function) -->
     <?php
+		// featured projects (square_card + carousel query + function)
 		$args3 = array(
 			'post_type'=>'projekte', 
 			'post_status'=>'publish', 
@@ -237,72 +238,70 @@ get_header();
 			'orderby' => 'rand'
 		);
 		slider($args3,'square_card', '2','true'); 
-		?>
+	?>
 
     <!-- *zahlen und fakten* -->
     <!-- not ready yet -->
 
     <div class="list-cards">
-        <!-- Eventuell auch als Slider -->
-        <!-- projekt updates (list_card query function) -->
+
         <?php
-			
+			// projekt updates (list_card query function)
 			$args2 = array(
 				'post_type'=>'nachrichten', 
 				'post_status'=>'publish', 
 				'posts_per_page'=> 3
 			);
 			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quartier','Updates aus spannenden Projekten');
-			?>
-
-
-
-        <!-- veranstaltungen -->
-        <?php
-				$args3 = array(
-					'post_type'=>'veranstaltungen', 
-					'post_status'=>'publish', 
-					'posts_per_page'=> 3,
-					'meta_key' => 'event_date',
-					'orderby' => 'rand',
-					'order' => 'ASC',
-					'offset' => '0', 
-					'meta_query' => array(
-						array(
-							'key' => 'event_date', 
-							'value' => date("Y-m-d"),
-							'compare' => '>=', 
-							'type' => 'DATE'
-						)
+			
+			// veranstaltungen
+			$args3 = array(
+				'post_type'=>'veranstaltungen', 
+				'post_status'=>'publish', 
+				'posts_per_page'=> 3,
+				'meta_key' => 'event_date',
+				'orderby' => 'rand',
+				'order' => 'ASC',
+				'offset' => '0', 
+				'meta_query' => array(
+					array(
+						'key' => 'event_date', 
+						'value' => date("Y-m-d"),
+						'compare' => '>=', 
+						'type' => 'DATE'
 					)
-				);
+				)
+			);
 			list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht');
 			?>
-
-
 
     </div>
 
     <!-- zur karte (call map) -->
     <!-- not ready yet -->
 
-    <!-- geschichten link card -->
-    <?php // link_card('Menschen und Geschichten am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); ?>
+    <?php 
+		// geschichten link card
+		// link_card('Menschen und Geschichten am Arrenberg','','/assets/images/400x200.png', '/veranstaltungen'); 
 
-    <!-- energie ampel -->
-    <?php // get_template_part('components/energie_ampel'); ?>
+		// energie ampel
+		// get_template_part('components/energie_ampel');
 
-    <!-- Aufbruch am Arrenberg link card -->
-    <?php // landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+		// Aufbruch am Arrenberg link card
+		// landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg');
+		
+	?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
 
-    <!-- arrenberg farm wetter station -->
-    <?php // get_template_part('components/wetter'); ?>
+    <?php 
+		// arrenberg farm wetter station
+		// get_template_part('components/wetter'); 
+	?>
 
-	<!-- Gutenberg Editor Content -->
 	<?php
+		// Gutenberg Editor Content
 		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
 			the_excerpt();
 		} else {
@@ -310,11 +309,13 @@ get_header();
 		}
 	?>
 
-	<!-- feedback (acf) -->
-	<?php get_template_part('components/feedback'); ?>
+	<?php 
+		// feedback
+		get_template_part('components/feedback'); 
+	?>
 
 
-    <?php } ?>
+<?php } ?>
 
 </main><!-- #site-content -->
 

@@ -1,10 +1,12 @@
 <?php
+
 /**
+ * 
  * Template Name: Profil
  *
- *
  */
-if ( ( is_user_logged_in() ) ) { // Execute code if user is logged in 
+
+if ( ( is_user_logged_in() ) ) {
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
@@ -34,10 +36,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         <!-- user  name -->
         <div class="single-header-content">
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
-            <br>
-          
-            <!-- Wie bekommt man die Kontaktlinks hier hin?  -->
-            
         </div>
 
     </div>
@@ -55,9 +53,9 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
     <br>
 
-    <!-- user posts -->
     <h2>Deine Angebote und Fragen</h2>
     <?php
+        // user posts
         $args4 = array(
             'post_type'=> array('angebote', 'fragen'), 
             'post_status'=>'publish', 
@@ -93,7 +91,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         <?php get_template_part( 'components/call', 'projekt' ); ?>
     </div>
 
-
     <br>
     <br>
     <h2>Bearbeite deine Kontaktinformationen</h2>
@@ -121,7 +118,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
     <?php endif;?>
     
-
    
 </main><!-- #site-content -->
 
