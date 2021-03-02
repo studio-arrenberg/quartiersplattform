@@ -172,6 +172,3 @@ function register_sdg() {
 	    
 }
 add_action( 'init', 'register_sdg' );
-
-
-?>

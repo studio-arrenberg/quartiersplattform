@@ -4,10 +4,11 @@
  * 
  *  Main Setup
  * 
- *  2. Menu 
+ *  1. Menu 
  *  2. reset rewrite rules
- *  3. Pages (Pages, Forms)
- *  4. Link Pages with Templates (Pages & Post types)
+ *  3. Permalink Structure
+ *  4. Set Home Page
+ *  5. Create Pages
  * 
  */
 
@@ -74,7 +75,7 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
 /**
  *  --------------------------------------------------------
- *  2. Permalink structure
+ *  3. Permalink structure
  *  --------------------------------------------------------
  */
 
@@ -92,7 +93,7 @@ $wp_rewrite->flush_rules( true );
 
 /**
  *  --------------------------------------------------------
- *  2. Set Home Page
+ *  4. Set Home Page
  *  --------------------------------------------------------
  */
 
@@ -115,40 +116,13 @@ add_action( 'after_setup_theme', 'themename_after_setup_theme' );
 
 /**
  *  --------------------------------------------------------
- *  3. Pages
+ *  5. Create Pages
  *  --------------------------------------------------------
  */
 
 
 add_action( 'after_setup_theme', 'create_pages' );
 function create_pages() {
-/**
- * 
- *  Seiten ::
- *  Angebot erstellen
- *  Anmerkung !
- *  Frage erstellen
- *  Gemeinsam !
- *  impressum !
- *  Profil !
- *  Projekt erstellen
- *  Projekte !
- *  Überblick !
- *  veranstaltungen !
- * 
- *  Done ::
- *  Veranstaltung erstellen
- *  Umfrage erstellen
- *  Nachricht erstellen
- * 
- *  SDGs
- * 
- * 
- *  Not Needed ::
- *  Geschichten
- * 
- */
-
 
     $pages = array(
         0 => array('title' => 'Überblick', 'slug' => 'ueberblick'),
@@ -188,42 +162,7 @@ function create_pages() {
         if(post_exists($pages[$i]['title'],'','','page') === 0){
             # create post
             wp_insert_post( $my_post, true );
-            // var_dump( $result );
-            // var_dump( $result );
         }
-        // else {
-        //     $mypost_id = get_page_by_title( $pages[$i]['title'], OBJECT, 'page' );
-        //     $my_post['ID'] = $mypost_id->ID;
-        //     # update post
-        //     wp_update_post( $my_post );
-        // }
     }
 
 }
-
-    // add_action( 'after_setup_theme', 'create_event_page' );
-    // function create_event_page(){
-
-    //     $title = 'Veranstaltung erstellen';
-    //     $slug = 'veranstaltung-erstellen';
-    //     $page_content = ''; // your page content here
-    //     $post_type = 'page';
-
-    //     $page_args = array(
-    //         'post_type' => $post_type,
-    //         'post_title' => $title,
-    //         'post_content' => $page_content,
-    //         'post_status' => 'publish',
-    //         'post_author' => 1,
-    //         'post_slug' => $slug
-    //     );
-        
-    //     if ( ! function_exists( 'post_exists' ) ) {
-    //         require_once( ABSPATH . 'wp-admin/includes/post.php' );
-    //     }
-
-    //     if(post_exists($title) === 0){
-    //         $page_id = wp_insert_post($page_args);
-    //     }
-
-    // } 

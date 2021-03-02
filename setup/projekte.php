@@ -4,9 +4,9 @@
  * 
  *  Projekte Setup
  *  
- *  3. Pages (Pages, Forms)
- *  2. ACF
- *  4. Link Pages with Templates (Pages & Post types)
+ * 	1. Register Post Type
+ * 	2. Register Taxonomy
+ * 	3. Register ACF
  * 
  */
 
@@ -59,7 +59,7 @@ add_action( 'init', 'cptui_register_my_cpts_projekte' );
 
 /**
  *  --------------------------------------------------------
- *  1. Register Taxonomy
+ *  2. Register Taxonomy
  *  --------------------------------------------------------
  */
 
@@ -95,7 +95,7 @@ add_action( 'init', 'cptui_register_my_taxes_projekt' );
 
 /**
  *  --------------------------------------------------------
- *  1. Register ACF
+ *  3. Register ACF
  *  --------------------------------------------------------
  */
 

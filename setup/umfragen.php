@@ -4,8 +4,9 @@
  * 
  *  Umfragen Setup
  * 
- *  1. Pages
- *  1. ACF
+ *  1. Page Umfragen Form
+ *  2. Umfragen Post type
+ *  3. ACF
  * 
  */
 
@@ -46,7 +47,7 @@ function create_form_umfragen(){
 
 /**
  *  --------------------------------------------------------
- *  1. Umfragen Post type
+ *  2. Umfragen Post type
  *  --------------------------------------------------------
  */
 
@@ -89,7 +90,7 @@ add_action( 'init', 'cptui_register_my_cpts_umfragen' );
 
 /**
  *  --------------------------------------------------------
- *  1. ACF
+ *  3. ACF
  *  --------------------------------------------------------
  */
 

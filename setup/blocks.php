@@ -2,16 +2,21 @@
 
 /**
  * 
- *  Blocks Setup
+ *  Blocks Setup (ACF)
  * 
- *  1. Link Block (Card)
+ *  1. Init Blocks
+ * 	2. Callback function
+ * 	3. Init ACF Fields
+ * 
+ * 	Blocks
+ *	- Link Card
  * 
  */
 
 
 /**
  * ------------------------------------------------------------
- * 	Init Blocks
+ * 	1. Init Blocks
  * ------------------------------------------------------------
  */
 
@@ -37,7 +42,7 @@ function my_acf_init() {
 
 /**
  * ------------------------------------------------------------
- * 	Callback function
+ * 	2. Callback function
  * ------------------------------------------------------------
  */
 
@@ -55,7 +60,7 @@ function link_block_render_callback( $block ) {
 
 /**
  * ------------------------------------------------------------
- * 	Init ACF Fields
+ * 	3. Init ACF Fields
  * ------------------------------------------------------------
  */
 

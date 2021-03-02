@@ -3,7 +3,8 @@
 /**
  * 
  *  Imigration Setup
- * 
+ *  
+ *  ~~ reverse order ~~
  * 	1. Veranstaltungen rebuild datetime field
  *  2. Poll -> Umfragen Post Type Naming
  * 

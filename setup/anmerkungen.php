@@ -5,6 +5,9 @@
  *  Anmerkungen Setup
  * 
  *  1. ACF fields
+ *  2. Register Post Type
+ *  3. Register Taxonomy
+ *  4. Create Taxonomies
  * 
  */
 
@@ -64,7 +67,7 @@ if( function_exists('acf_add_local_field_group') ):
 
 /**
  *  --------------------------------------------------------
- *  1. Register Post Type
+ *  2. Register Post Type
  *  --------------------------------------------------------
  */
 
@@ -110,7 +113,7 @@ add_action( 'init', 'cptui_register_my_cpts_anmerkungen' );
 
 /**
  *  --------------------------------------------------------
- *  1. Register Taxonomy
+ *  3. Register Taxonomy
  *  --------------------------------------------------------
  */
 
@@ -148,7 +151,7 @@ add_action( 'init', 'cptui_register_my_taxes_anmerkungen_status' );
 
 /**
  *  --------------------------------------------------------
- *  1. Create Taxonomies
+ *  4. Create Taxonomies
  *  --------------------------------------------------------
  */
 
