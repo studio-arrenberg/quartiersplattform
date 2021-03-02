@@ -459,6 +459,7 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
             Bitte installieren sie das Plugin WP Mail SMTP durch die Wordpress Plugin Seite. Und legen sie ihre email einstellungen an. (Auf Github erklären)
           </p>
       </a>
+
       </div>
 
         <?php
@@ -466,7 +467,6 @@ if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'op
     }
     ?>
 
-   
 
   </div>
     <div class="logo">
