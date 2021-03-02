@@ -35,7 +35,16 @@ if ( have_posts() ) {
 
             </div>
 
-            <?php get_author(); ?>
+            <h4>Kontakt</h4>
+            <!-- kontakt -->
+            <?php 
+            if (is_user_logged_in()) { 
+                get_author(true); 
+
+            } else {
+                get_author(false);
+            }
+            ?>
 
             <?php 
 

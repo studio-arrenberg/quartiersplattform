@@ -265,9 +265,10 @@ acf differnet field groups with same name have same field id
 - Landing Page with Gutenberg Block ..?
 - Pre Filled option Page
 
-### Manually
-- Change Permalink setting to "beitragsname"
-  
+# Ultimate Member einstellungen
+- Seiten einrichten
+- `Autorenseten automatischen zum profil weiterleiten` -> nein
+- `Mitgliederverzeichnis aktivieren` -> nein   
 ## (new) ReadMe inhalt
 - Introduction
   - Mission
@@ -301,12 +302,7 @@ acf differnet field groups with same name have same field id
 
 #### Quartier Arrenberg: 
 * Geschichten `geschichten`
-<<<<<<< HEAD
 * Team `team` **deprecated**
-
-=======
-* Team `team` ´´´Deprecated´´´
->>>>>>> e9d302921e6ddbb490d0a17077d72b502ffc869b
 
 ### Taxonomys
 * Projekte `projekt` in `nachrichten`, `veranstaltungen`, `umfragen`

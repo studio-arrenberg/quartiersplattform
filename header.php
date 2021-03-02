@@ -144,7 +144,7 @@ else if (get_field('maintenance', 'option') == true) {
         else {
             ?>
             <a class="button header-button button-has-icon is-style-outline push-right"
-                href="<?php echo get_site_url(); ?>/anmelden">
+                href="<?php echo get_site_url(); ?>/login">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 <span class="button-has-icon-label">Anmelden</span>
             </a>

@@ -5,19 +5,13 @@
  */
 
 
-
-// wp_redirect( get_template_directory_uri().'/maintenance.php');
 # redirect when maintenance is ON
 # or plugins not installed
 if((!class_exists('acf_pro') || !class_exists('UM'))) {
-    // add_action('get_header', 'wp_maintenance_mode');
-    // wp_redirect( get_template_directory_uri().'/maintenance.php');
 	header("Location: ".get_template_directory_uri().'/maintenance.php');
 	exit();
 }
 else if (get_field('maintenance', 'option') == true) {
-    // add_action('get_header', 'wp_maintenance_mode');
-    // wp_redirect( get_template_directory_uri().'/maintenance.php');
 	header("Location: ".get_template_directory_uri().'/maintenance.php');
 	exit();
 }
@@ -85,7 +79,7 @@ get_header();
         <?php
 				$args3 = array(
 					'post_type'=>'veranstaltungen', 
-					'post_status'=>'publish', 
+					'post_staus'=>'publish', 
 					'posts_per_page'=> 3,
 					'meta_key' => 'event_date',
 					// 'orderby' => 'rand',
@@ -104,29 +98,6 @@ get_header();
 			?>
     </div>
 
-
-
-
-    <?php
-			// deine Projekte
-			$args4 = array(
-				'post_type'=> 'projekte', 
-				'post_status'=> 'publish', 
-				'author' =>  $current_user->ID,
-				'posts_per_page'=> 10, 
-				'order' => 'DESC',
-				'offset' => '0', 
-			);
-
-			$my_query = new WP_Query($args4);
-        	if ($my_query->post_count > 0) {
-				?>
-    <!-- <h2>Deine Projekte</h2> -->
-    <?php 
-				// slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
-        	}
-
-		?>
 
 
 
@@ -155,9 +126,9 @@ get_header();
 				'orderby' => 'rand',
 				'posts_per_page'=> '1'
 			);
-			landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
+			// landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
 			?>
-		<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
+		<?php // landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
     </div>
 
     <!-- featured projects (square_card + carousel query + function) -->
@@ -175,13 +146,13 @@ get_header();
     <?php // get_template_part('components/energie_ampel'); ?>
 
     <!-- Aufbruch am Arrenberg link card -->
-    <?php landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+    <?php // landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
 
     <!-- arrenberg farm wetter station -->
-    <?php get_template_part('components/wetter'); ?>
+    <?php // get_template_part('components/wetter'); ?>
 
 	<!-- Gutenberg Editor Content -->
 	<?php
@@ -236,7 +207,7 @@ get_header();
 
     <!-- call to register -->
     <div class="card-container ">
-    	<?php landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
+    	<?php // landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); ?>
 
         <!-- arrenberg farm link card -->
         <?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
@@ -249,7 +220,7 @@ get_header();
 				'orderby' => 'rand',
 				'posts_per_page'=> '1'
 			);
-			landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
+			// landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
 			?>
         <?php // get_template_part( 'components/call', 'umfrage' ); ?>
     </div>
@@ -322,13 +293,13 @@ get_header();
     <?php // get_template_part('components/energie_ampel'); ?>
 
     <!-- Aufbruch am Arrenberg link card -->
-    <?php landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
+    <?php // landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); ?>
 
     <!-- add website to homescreen -->
     <!-- not ready yet -->
 
     <!-- arrenberg farm wetter station -->
-    <?php get_template_part('components/wetter'); ?>
+    <?php // get_template_part('components/wetter'); ?>
 
 	<!-- Gutenberg Editor Content -->
 	<?php

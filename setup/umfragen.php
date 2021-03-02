@@ -78,7 +78,7 @@ function cptui_register_my_cpts_umfragen() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "umfragen", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => "dashicons-format-aside",
+		"menu_icon" => "dashicons-chart-bar",
 		"supports" => [ "title", "editor", "comments", "author" ],
 	];
 

@@ -47,7 +47,7 @@ function register_sdg() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "sdg", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => "dashicons-format-aside",
+		"menu_icon" => "dashicons-admin-site-alt",
 		"supports" => [ "title", "editor" ],
 	];
 

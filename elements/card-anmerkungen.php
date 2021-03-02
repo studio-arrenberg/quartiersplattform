@@ -1,5 +1,6 @@
 <?php
 $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
+// if(is_array($terms_status) && array_key_exists('slug', $terms_status)) { 
 ?>
 
 <div class="card <?php if(!is_single( )) echo 'shadow'; ?> anmerkung <?php echo $terms_status[0]->slug; ?>">

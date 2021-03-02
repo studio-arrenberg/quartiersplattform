@@ -71,12 +71,56 @@ if( !$menu_exists){
 // flush_rewrite_rules( false );
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
 
+
+/**
+ *  --------------------------------------------------------
+ *  2. Permalink structure
+ *  --------------------------------------------------------
+ */
+
+
+global $wp_rewrite; 
+
+//Write the rule
+$wp_rewrite->set_permalink_structure('/%postname%/'); 
+
+//Set the option
+update_option( "rewrite_rules", FALSE ); 
+
+//Flush the rules and tell it to write htaccess
+$wp_rewrite->flush_rules( true );
+
+/**
+ *  --------------------------------------------------------
+ *  2. Set Home Page
+ *  --------------------------------------------------------
+ */
+
+
+function themename_after_setup_theme() {
+    $site_type = get_option('show_on_front');
+    $home = get_page_by_title( 'Überblick', OBJECT, 'page' );
+    // if($site_type == 'posts') {
+        update_option( 'show_on_front', 'page' );
+        // update_option( 'page_for_posts', $home->ID );
+        update_option( 'page_on_front', $home->ID );
+        
+    // }
+    // $site_type = get_option('page_for_posts');
+
+    // echo "<script>console.log(".json_encode($site_type).")</script>";
+}
+add_action( 'after_setup_theme', 'themename_after_setup_theme' );
+
+
 /**
  *  --------------------------------------------------------
  *  3. Pages
  *  --------------------------------------------------------
  */
 
+
+add_action( 'after_setup_theme', 'create_pages' );
 function create_pages() {
 /**
  * 
@@ -107,7 +151,7 @@ function create_pages() {
 
 
     $pages = array(
-        0 => array('title' => 'Überblick', 'slug' => 'home'),
+        0 => array('title' => 'Überblick', 'slug' => 'ueberblick'),
         1 => array('title' => 'Veranstaltungen', 'slug' => 'veranstaltungen'),
         2 => array('title' => 'Projekte', 'slug' => 'projekte'),
         3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
@@ -129,18 +173,23 @@ function create_pages() {
             'post_title'    => wp_strip_all_tags($pages[$i]['title']),
             // 'post_content'  => $sdgs[$i]['content'],
             'post_status'   => 'publish',
+            'post_content' => '',
             'post_author'   => 1,
             'post_type'		=> 'page',
-            'post_slug'     => $pages[$i]['slug']
+            // 'post_slug'     => $pages[$i]['slug']
         );
 
         if ( ! function_exists( 'post_exists' ) ) {
             require_once( ABSPATH . 'wp-admin/includes/post.php' );
         }
 
-        if(post_exists($pages[$i]['title']) === 0){
+        // wp_insert_post( $my_post, true );
+        // echo post_exists($pages[$i]['title'],'','','page');
+        if(post_exists($pages[$i]['title'],'','','page') === 0){
             # create post
-            wp_insert_post( $my_post );
+            wp_insert_post( $my_post, true );
+            // var_dump( $result );
+            // var_dump( $result );
         }
         // else {
         //     $mypost_id = get_page_by_title( $pages[$i]['title'], OBJECT, 'page' );
@@ -150,6 +199,7 @@ function create_pages() {
         // }
     }
 
+}
 
     // add_action( 'after_setup_theme', 'create_event_page' );
     // function create_event_page(){
@@ -177,37 +227,3 @@ function create_pages() {
     //     }
 
     // } 
-
-
-
-
-}
-add_action( 'after_setup_theme', 'create_pages' );
-
-// add pages
-add_action( 'after_setup_theme', 'create_form_page');
-function create_form_page(){
-
-    $title = 'Überblicks';
-    $slug = 'überblicks';
-    $page_content = ''; // your page content here
-    $post_type = 'page';
-
-    $page_args = array(
-        'post_type' => $post_type,
-        'post_title' => $title,
-        'post_content' => $page_content,
-        'post_status' => 'publish',
-        'post_author' => 1,
-        // 'post_slug' => $slug
-    );
-    
-    if ( ! function_exists( 'post_exists' ) ) {
-        require_once( ABSPATH . 'wp-admin/includes/post.php' );
-    }
-
-    if(post_exists($title) === 0){
-        $page_id = wp_insert_post($page_args);
-    }
-
-} 

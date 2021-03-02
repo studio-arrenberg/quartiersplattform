@@ -878,9 +878,9 @@ function single_template_hook() {
 	else if ( 'veranstaltungen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
-	else if ( 'user' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/template-parts/author.php';
-    }
+	// else if ( 'user' === $post->post_type ) {
+    //     $single_template = dirname( __FILE__ ) . '/template-parts/author.php';
+    // }
  
     return $single_template;
 
@@ -1329,6 +1329,7 @@ function emoji_picker() {
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
     if (
 		strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
+		|| strpos($REQUEST_URI,'/frage-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false /* '/angebot-erstellen/' */
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
@@ -1362,6 +1363,7 @@ function my_init() {
 		!is_admin() 
 		&& strpos($REQUEST_URI,'/profil/') === false
 		&& strpos($REQUEST_URI,'/frage-dein-quartier/') === false
+		&& strpos($REQUEST_URI,'/frage-erstellen/') === false
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
 		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
@@ -1748,6 +1750,7 @@ function get_author($contact = false) {
         <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
 	<div class="team">		
 		<div class="team-member">	
+			<!-- <?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?> -->
 				<!-- <a href="<?php echo esc_url(get_site_url()."/author/".get_the_author_meta( 'nickname' )); ?>"> -->
 				<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
          	   	<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
@@ -1811,11 +1814,47 @@ require_once dirname( __FILE__ ) .'/setup/kontakt.php';
 require_once dirname( __FILE__ ) .'/setup/umfragen.php';
 // SDG
 require_once dirname( __FILE__ ) .'/setup/sdg.php';
+// Anmerkungen
+require_once dirname( __FILE__ ) .'/setup/anmerkungen.php';
+// Projekte
+require_once dirname( __FILE__ ) .'/setup/projekte.php';
+// Nachrichten
+require_once dirname( __FILE__ ) .'/setup/nachrichten.php';
+// Veranstaltungen
+require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php';
+// Fragen
+require_once dirname( __FILE__ ) .'/setup/fragen.php';
+// Angebote
+require_once dirname( __FILE__ ) .'/setup/angebote.php';
+// Blocks
+require_once dirname( __FILE__ ) .'/setup/blocks.php';
+
+/**
+ * 
+ * 	TODO :: (fully setup and tested)
+ * 	[x] Anmerkungen
+ * 	[-]	SDGs --> tax issue
+ * 	[x] Projekte
+ * 	[x]	Nachrichten
+ * 	[-] Veranstaltungen --> Camilo todo
+ *  [x] Umfragen
+ *  [x] Fragen
+ *  [x] Angebote
+ * 
+ * 
+ */
 
 // add_action('acf/init', function() {
 
 
 // });
+
+function post_remove ()      //creating functions post_remove for removing menu item
+{ 
+   remove_menu_page('edit.php');
+}
+
+add_action('admin_menu', 'post_remove');   //adding action for triggering function call
 
 
 // require if plugin is exsistent
@@ -1883,15 +1922,79 @@ add_action('admin_init', function() {
 	// Ultimate Memmber
 	if (!class_exists('UM')) {
 		add_action('admin_notices', function() {
-			$notice = __('Sorry, but the theme Quartiersplattform requires that <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Ultimate Member</strong> is installed and active.', 'quartiersplattform');
-			echo "<div class='error'><p>$notice</p></div>";
+			// $notice = __('Sorry, but the theme Quartiersplattform requires that <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Ultimate Member</strong> is installed and active.', 'quartiersplattform');
+			$notice = __('Die Quartiersplattform braucht das Plugin <strong>Ultimate Member</strong> um vollständig zu funktionieren.', 'quartiersplattform');
+			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">installieren</a>';
+			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 		// switch_theme('twentytwenty');	
+	}
+	if (class_exists('acf_pro') && class_exists('UM')) {
+		add_action('admin_notices', function() {
+			$notice = "Gratulation die Quartiersplattform wurde erfolgreich aufgesetzt.";
+			echo '<div id="message" class="updated notice is-dismissible">
+			<p>'.$notice.'</p>
+			<button type="button" class="notice-dismiss">
+			  <span class="screen-reader-text">Diese Meldung ausblenden.</span>
+			</button>
+		  	</div>';
+		});
+	}
+	if (class_exists('UM')) {
+		add_action('admin_notices', function() {
+			$notice = "Anleitung zum einstellen des Ultimate Member Plugin.";
+			echo '<div
+			class="updated um-admin-notice notice is-dismissible"
+			data-key="wrong_pages">
+			<p>
+			  '.$notice.'
+			</p>
+		  
+			<p>
+			  <a
+				href="https://github.com/studio-arrenberg/quartiersplattform"
+				class="button button-primary"
+				>Anleitung öffnen</a
+			  >
+			</p>
+		  
+			<button type="button" class="notice-dismiss">
+			  <span class="screen-reader-text">Diese Meldung ausblenden.</span>
+			</button>
+		  </div>';
+		});
+	}
+	if (class_exists('wp_mail_smtp')) {
+		add_action('admin_notices', function() {
+			$notice = "Anleitung zum einstellen des WP Mail SMTP Plugin.";
+			echo '<div
+			class="updated um-admin-notice notice is-dismissible"
+			data-key="wrong_pages">
+			<p>
+			  '.$notice.'
+			</p>
+		  
+			<p>
+			  <a
+				href="https://github.com/studio-arrenberg/quartiersplattform"
+				class="button button-primary"
+				target="_blank"
+				>Anleitung für WP Mail SMTP</a
+			  >
+			</p>
+		  
+			<button type="button" class="notice-dismiss">
+			  <span class="screen-reader-text">Diese Meldung ausblenden.</span>
+			</button>
+		  </div>';
+		});
 	}
 	// WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
 		add_action('admin_notices', function() {
-			$notice = __('We recommend to installt and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
+			$notice = __('Wir empfehlen das Plugin <strong>WP Mail SMTP</strong> zu installieren um einen zuverlässigen Mail transfere zu garantieren.', 'quartiersplattform');
+			$link = '<strong>WP Mail SMTP</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">installieren</a>';
+			// $notice = __('We recommend to installt and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
 			echo "<div class='notice'><p>$notice</p></div>";
 		});
 		// switch_theme('twentytwenty');	

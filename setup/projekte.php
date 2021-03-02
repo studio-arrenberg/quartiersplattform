@@ -10,7 +10,58 @@
  * 
  */
 
+/**
+ *  --------------------------------------------------------
+ *  1. Register Post Type
+ *  --------------------------------------------------------
+ */
 
+
+function cptui_register_my_cpts_projekte() {
+
+	/**
+	 * Post Type: Projekte.
+	 */
+
+	$labels = [
+		"name" => __( "Projekte", "quartiersplattform" ),
+		"singular_name" => __( "Projekt", "quartiersplattform" ),
+	];
+
+	$args = [
+		"label" => __( "Projekte", "quartiersplattform" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => "projekte-archive",
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => true,
+		"rewrite" => [ "slug" => "projekte", "with_front" => true ],
+		"query_var" => true,
+		"supports" => [ "title", "editor", "thumbnail", "comments", "author" ],
+	];
+
+	register_post_type( "projekte", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_projekte' );
+
+
+/**
+ *  --------------------------------------------------------
+ *  1. Register Taxonomy
+ *  --------------------------------------------------------
+ */
 
 # Taxonomy: Projekte.
 function cptui_register_my_taxes_projekt() {
@@ -44,7 +95,7 @@ add_action( 'init', 'cptui_register_my_taxes_projekt' );
 
 /**
  *  --------------------------------------------------------
- *  1. ACF
+ *  1. Register ACF
  *  --------------------------------------------------------
  */
 
