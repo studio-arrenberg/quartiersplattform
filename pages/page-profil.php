@@ -16,6 +16,8 @@ if (!is_user_logged_in()){
     exit();
 }
 
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+
 ?>
 
 <main id="site-content" role="main">
@@ -32,6 +34,10 @@ if (!is_user_logged_in()){
         <!-- user  name -->
         <div class="single-header-content">
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
+            <br>
+          
+            <!-- Wie bekommt man die Kontaktlinks hier hin?  -->
+            
         </div>
 
     </div>

@@ -18,13 +18,12 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             <h1><?php echo $curauth->display_name; ?></h1>
             <br>
 
-            <!-- Kontakt  -->
-            <?php $userid = "user_".$curauth->ID; ?>
-                <?php if( get_field('phone', $userid) || get_field('email', $userid) ) { ?>
-            
+            <!-- Hier auch Kontakt einbauen -->
+            <a class="button is-style-outline" target="blank" href="mailto:<?php the_field('email', $userid);?>?subject=Hallo" target="_blank"
+                        rel="nofollow"><?php the_field('email');?></a>
                 <!-- mail -->
                 <?php if( get_field('email', $userid) ) { ?>    
-                        <a class="button is-style-outline" target="blank" href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                        <a class="button is-style-outline" target="blank" href="mailto:<?php the_field('email', $userid);?>?subject=Hallo <?php echo get_field( 'display_name');?>" target="_blank"
                         rel="nofollow"><?php the_field('email', $userid);?></a>
                 <?php } ?>
 
@@ -41,7 +40,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                     
                 <?php } ?>
 
-            <?php } ?>
 
 
         </div>
