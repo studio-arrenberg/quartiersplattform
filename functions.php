@@ -1852,7 +1852,7 @@ function get_author($contact = false) {
 	</div>
 	<?php 
 	// $contact entscheidet, ob die Kontaktcard angezeigt wird
-	if($contact == true){
+	if($contact == true && is_user_logged_in()){
                 $userid = "user_".get_the_author_meta( 'ID' ); 
             ?>
             <div class="share-button">
