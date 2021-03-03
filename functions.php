@@ -965,7 +965,7 @@ add_action('admin_init', function() {
 		  
 			<p>
 			  <a
-				href="https://github.com/studio-arrenberg/quartiersplattform"
+				href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md"
 				class="button button-primary"
 				>Anleitung öffnen</a
 			  >
@@ -989,7 +989,7 @@ add_action('admin_init', function() {
 		  
 			<p>
 			  <a
-				href="https://github.com/studio-arrenberg/quartiersplattform"
+				href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md"
 				class="button button-primary"
 				target="_blank"
 				>Anleitung für WP Mail SMTP</a
