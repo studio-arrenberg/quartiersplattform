@@ -20,7 +20,21 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zeit für ein Update!</title>
+    <title>
+      <?php 
+        if (class_exists('acf_pro')) {
+          if (get_field('quartiersplattform-name', 'option')) {
+              echo get_field('quartiersplattform-name', 'option')." Update";
+          }
+          else {
+              echo "Hier entsteht deine Quatiersplattform";
+          }
+        }
+        else {
+          echo "Hier entsteht deine Quatiersplattform";
+        }
+      ?>
+    </title>
 
     <style>
       @font-face {
@@ -414,10 +428,8 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
       ?>
       
       <h2 class="pre-title">Erste Schritte</h2>
-        <h1><?php //the_field('quartiersplattform-name', 'option'); ?>Plugins installieren</h1>
-        <?php //the_field('headline', 'option'); ?>
+        <h1>Plugins installieren</h1>
         <p class="big">
-          <?php //the_field('text', 'option'); ?>
           Dein Viertel  bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
         </p>
 
@@ -428,7 +440,7 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
           if (!class_exists('acf_pro')) {
           ?>
 
-          <div class="card bg_orange-light white">
+          <div class="card bg_red white">
             <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
               <h2>Bitte Advanced Custom fields installieren</h2>
               <p>
@@ -442,7 +454,7 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
         if (!class_exists('UM')) {
         ?>
 
-      <div class="card  bg_orange-light white">
+      <div class="card bg_red white">
         <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
           <h2>Bitte Ultimate Member installieren</h2>
           <p>
@@ -456,7 +468,7 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
       if (!function_exists( 'wp_mail_smtp' )) {
         ?>
 
-      <div class="card bg_red white">
+      <div class="card bg_orange-light white">
         <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
 
           <h2>Bitte WP Mail SMTP installieren</h2>
