@@ -7,17 +7,23 @@
  * 
  */
 
-
 # redirect when maintenance is ON
 # or plugins not installed
 if((!class_exists('acf_pro') || !class_exists('UM'))) {
+	// wp_maintenance_mode();
 	header("Location: ".get_template_directory_uri().'/maintenance.php');
 	exit();
 }
 else if (get_field('maintenance', 'option') == true) {
-	header("Location: ".get_template_directory_uri().'/maintenance.php');
-	exit();
+	// wp_maintenance_mode();
+	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+		header("Location: ".get_template_directory_uri().'/maintenance.php');
+		exit();
+	}
+	
 }
+
+debugToConsole(get_field('maintenance', 'option')); 
 
 acf_form_head(); // before wp header !important!
 get_header();
