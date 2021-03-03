@@ -105,10 +105,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d0b28edb0',
-                'label' => 'Text',
+                'label' => 'Beschreibung',
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => '',
+                'instructions' => 'Beschreibe deine Veranstaltung.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -124,10 +124,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d15b8765b',
-                'label' => 'Date',
+                'label' => 'Datum',
                 'name' => 'event_date',
                 'type' => 'date_picker',
-                'instructions' => '',
+                'instructions' => 'Wann wird deine Veranstaltung stattfinden?',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -141,10 +141,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d16e8765c',
-                'label' => 'Start',
+                'label' => 'Beginn',
                 'name' => 'event_time',
                 'type' => 'time_picker',
-                'instructions' => '',
+                'instructions' => 'Wann startet deine Veranstaltung?',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -157,10 +157,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d18b8765d',
-                'label' => 'End',
+                'label' => 'Ende',
                 'name' => 'event_end_time',
                 'type' => 'time_picker',
-                'instructions' => '',
+                'instructions' => 'Wann endet deine Veranstaltung?',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -192,7 +192,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Livestream',
                 'name' => 'livestream',
                 'type' => 'url',
-                'instructions' => '',
+                'instructions' => 'Gib einen Link an, um deine Veranstaltung Live verfolgen zu können.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -236,6 +236,30 @@ if( function_exists('acf_add_local_field_group') ):
                 'center_lng' => '',
                 'zoom' => '',
                 'height' => '',
+            ),
+            array(
+                'key' => 'field_603f4c75747e9',
+                'label' => 'Bild',
+                'name' => '_thumbnail_id',
+                'type' => 'image',
+                'instructions' => 'Füge deiner Veranstaltung ein Bild hinzu.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'medium',
+                'library' => 'uploadedTo',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
             ),
         ),
         'location' => array(
