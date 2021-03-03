@@ -1560,16 +1560,6 @@ function wp_maintenance_mode() {
 
 }
 
-// if( !class_exists('acf_pro') ){
-// 	add_action('get_header', 'wp_maintenance_mode');
-// 	// echo "hello";
-// } 
-// else if (get_field('maintenance', 'option') == true) {
-// 	// echo "world";
-// 	add_action('get_header', 'wp_maintenance_mode');
-// }
-
-
 
 /**
  *  --------------------------------------------------------

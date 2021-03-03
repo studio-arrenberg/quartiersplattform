@@ -20,7 +20,7 @@
  */
 
 // $menuname = 'qp_menu';
-$menuname = 'menu';
+$menuname = 'qp_menu';
 // $bpmenulocation = 'lblgbpmenu';
 // Does the menu exist already?
 $menu_exists = wp_get_nav_menu_object( $menuname );
@@ -30,29 +30,66 @@ if( !$menu_exists){
     $menu_id = wp_create_nav_menu($menuname);
 
     // Set up default BuddyPress links and add them to the menu.
+    // wp_update_nav_menu_item($menu_id, 0, array(
+    //     'menu-item-title' =>  __('Überblick'),
+    //     'menu-item-classes' => 'überblick',
+    //     'menu-item-url' => home_url( '/' ), 
+    //     'menu-item-status' => 'publish'));
+
+    // wp_update_nav_menu_item($menu_id, 0, array(
+    //     'menu-item-title' =>  __('Veranstaltungen'),
+    //     'menu-item-classes' => 'veranstaltungen',
+    //     'menu-item-url' => home_url( '/veranstaltungen/' ), 
+    //     'menu-item-status' => 'publish'));
+
+    // wp_update_nav_menu_item($menu_id, 0, array(
+    //     'menu-item-title' =>  __('Projekte'),
+    //     'menu-item-classes' => 'projekte',
+    //     'menu-item-url' => home_url( '/projekte/' ), 
+    //     'menu-item-status' => 'publish'));
+
+    // wp_update_nav_menu_item($menu_id, 0, array(
+    //     'menu-item-title' =>  __('Gemeinsam'),
+    //     'menu-item-classes' => 'gemeinsam',
+    //     'menu-item-url' => home_url( '/gemeinsam/' ), 
+    //     'menu-item-status' => 'publish'));
+
+
+
+
+
+    $überblick = get_page_by_title( 'Überblick', OBJECT, 'page' );
     wp_update_nav_menu_item($menu_id, 0, array(
         'menu-item-title' =>  __('Überblick'),
-        'menu-item-classes' => 'überblick',
-        'menu-item-url' => home_url( '/' ), 
+        'menu-item-object-id' => $überblick->ID,
+        'menu-item-object' => 'page',
+        'menu-item-type' => 'post_type',
         'menu-item-status' => 'publish'));
 
+    $veranstaltungen = get_page_by_title( 'Veranstaltungen', OBJECT, 'page' );
     wp_update_nav_menu_item($menu_id, 0, array(
         'menu-item-title' =>  __('Veranstaltungen'),
-        'menu-item-classes' => 'veranstaltungen',
-        'menu-item-url' => home_url( '/veranstaltungen/' ), 
+        'menu-item-object-id' => $veranstaltungen->ID,
+        'menu-item-object' => 'page',
+        'menu-item-type' => 'post_type',
         'menu-item-status' => 'publish'));
 
+    $projekte = get_page_by_title( 'Projekte', OBJECT, 'page' );
     wp_update_nav_menu_item($menu_id, 0, array(
         'menu-item-title' =>  __('Projekte'),
-        'menu-item-classes' => 'projekte',
-        'menu-item-url' => home_url( '/projekte/' ), 
+        'menu-item-object-id' => $projekte->ID,
+        'menu-item-object' => 'page',
+        'menu-item-type' => 'post_type',
         'menu-item-status' => 'publish'));
 
+    $gemeinsam = get_page_by_title( 'Gemeinsam', OBJECT, 'page' );
     wp_update_nav_menu_item($menu_id, 0, array(
         'menu-item-title' =>  __('Gemeinsam'),
-        'menu-item-classes' => 'gemeinsam',
-        'menu-item-url' => home_url( '/gemeinsam/' ), 
+        'menu-item-object-id' => $gemeinsam->ID,
+        'menu-item-object' => 'page',
+        'menu-item-type' => 'post_type',
         'menu-item-status' => 'publish'));
+
 
     // Grab the theme locations and assign our newly-created menu
     // to the BuddyPress menu location.

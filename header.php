@@ -67,7 +67,7 @@ wp_maintenance_mode();
         wp_body_open();
         // check if menu is needed
         $menu = 'page-header';
-        if( cms_is_in_menu( 'menu' ) ) {
+        if( cms_is_in_menu( 'qp_menu') ) {
             $menu = 'post-header';
         }
     ?>
