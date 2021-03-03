@@ -1546,18 +1546,28 @@ function cpt_save_worker( $post_id ) {
 
 // Maintenance Mode
 function wp_maintenance_mode() {
-	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-		wp_redirect( get_template_directory_uri().'/maintenance.php');
+
+	# if plugins not installed
+	if (!class_exists('acf_pro') || !class_exists('UM')) {
+		header("Location: ".get_template_directory_uri().'/maintenance.php');
+		exit();
 	}
+	# if maintenance mode on and not administrator
+	else if (get_field('maintenance', 'option') == true && !current_user_can('administrator')) {
+		header("Location: ".get_template_directory_uri().'/maintenance.php');
+		exit();
+	}
+
 }
-if( !class_exists('acf_pro') ){
-	add_action('get_header', 'wp_maintenance_mode');
-	// echo "hello";
-} 
-else if (get_field('maintenance', 'option') == true) {
-	// echo "world";
-	add_action('get_header', 'wp_maintenance_mode');
-}
+
+// if( !class_exists('acf_pro') ){
+// 	add_action('get_header', 'wp_maintenance_mode');
+// 	// echo "hello";
+// } 
+// else if (get_field('maintenance', 'option') == true) {
+// 	// echo "world";
+// 	add_action('get_header', 'wp_maintenance_mode');
+// }
 
 
 

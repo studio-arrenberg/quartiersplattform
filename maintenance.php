@@ -2,11 +2,16 @@
 # init wp files
 require_once("../../../wp-load.php");
 
-# redirect when maintenance is off
-if(class_exists('acf_pro') && class_exists('UM') && get_field('maintenance', 'option') == false) {
+# redirect if maintenence mode is off and plugins are installed
+if (class_exists('acf_pro') && class_exists('UM')) {
+  if (get_field('maintenance', 'option') == false) {
+    wp_redirect( get_site_url() );
+  }
+}
+# redirect if plugins are installed and user can visit
+if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administrator')) {
   wp_redirect( get_site_url() );
 }
-
 
 ?>
 
