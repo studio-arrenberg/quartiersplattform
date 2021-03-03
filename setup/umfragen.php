@@ -105,7 +105,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Beschreibung',
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => '',
+                'instructions' => 'Beschreibe, worum es in deiner Umfrage geht.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -124,7 +124,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Fragen',
                 'name' => 'questions',
                 'type' => 'repeater',
-                'instructions' => '',
+                'instructions' => 'Stelle die Auswahlmöglichkeiten für deine Umfrage ein.',
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
