@@ -1006,11 +1006,21 @@ add_action('admin_init', function() {
 	if (!get_privacy_policy_url() && class_exists('acf_pro') && class_exists('UM')) {
 		add_action('admin_notices', function() {
 			$notice = __('Die Quartiersplattform hat noch <strong>keine Datenschutzerklärung</strong>', 'quartiersplattform');
-			$link = '<a class="button button-primary" href='.get_site_url().'/wp-admin/options-privacy.php">Datenschutzerklärung erstellen</a>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">Datenschutzerklärung erstellen</a>';
 			echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
 		});
 	}
-	// WP Mail SMTP
+	# reminder for settings
+	if (class_exists('acf_pro') && class_exists('UM')) {
+		if (!get_field('quartiersplattform-name', 'option')) {
+			add_action('admin_notices', function() {
+				$notice = __('Gebe deiner Quartiersplattform einen Namen und Logo', 'quartiersplattform');
+				$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">Zu den Einstellungen</a>';
+				echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
+			});
+		}
+	}
+	# WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
 		add_action('admin_notices', function() {
 			$notice = __('Wir empfehlen das Plugin <strong>WP Mail SMTP</strong> zu installieren um einen zuverlässigen Mail transfere zu garantieren.', 'quartiersplattform');
@@ -1018,9 +1028,7 @@ add_action('admin_init', function() {
 			// $notice = __('We recommend to installt and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
 			echo "<div class='notice'><p>$notice</p></div>";
 		});
-		// switch_theme('twentytwenty');	
 	}
-	
 });
 
 /**
