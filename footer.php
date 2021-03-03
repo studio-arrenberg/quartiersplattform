@@ -32,6 +32,13 @@
 
         <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Kontakt</a>
         <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
+        <?php
+            if (get_privacy_policy_url()) {
+                ?> 
+                    <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>">Datenschutz</a>
+                <?php
+            } 
+        ?>
     </div><!-- .section-inner -->
 </footer><!-- #site-footer -->
 <?php wp_footer(); ?>

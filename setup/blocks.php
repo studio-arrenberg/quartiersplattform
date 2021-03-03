@@ -21,8 +21,8 @@
  */
 
 
-add_action('init', 'my_acf_init');
-function my_acf_init() {
+add_action('init', 'qp_acf_block_init');
+function qp_acf_block_init() {
 
 	// link block
 	if( function_exists('acf_register_block') ) {
