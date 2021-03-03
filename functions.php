@@ -1002,6 +1002,14 @@ add_action('admin_init', function() {
 		  </div>';
 		});
 	}
+	# Datenschutz reminder
+	if (!get_privacy_policy_url() && class_exists('acf_pro') && class_exists('UM')) {
+		add_action('admin_notices', function() {
+			$notice = __('Die Quartiersplattform hat noch <strong>keine Datenschutzerklärung</strong>', 'quartiersplattform');
+			$link = '<a class="button button-primary" href='.get_site_url().'/wp-admin/options-privacy.php">Datenschutzerklärung erstellen</a>';
+			echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
+		});
+	}
 	// WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
 		add_action('admin_notices', function() {
@@ -1012,6 +1020,7 @@ add_action('admin_init', function() {
 		});
 		// switch_theme('twentytwenty');	
 	}
+	
 });
 
 /**
