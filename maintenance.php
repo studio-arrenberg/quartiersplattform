@@ -355,14 +355,10 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
         }
 
         .logo{
-          position: relative;
           margin-top: 25px;
           width: 100%;
-          left: 0px;
-        }
-        
-
-     
+          justify-self: flex-end;
+        }     
       }
 
     </style>
