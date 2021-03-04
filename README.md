@@ -1,4 +1,4 @@
-![alt text](https://resources.arrenberg.studio/Github-Banner_01.jpg)
+![alt text](https://resources.arrenberg.studio/Github-Banner_02.jpg)
 
 # Quartiersplattform Arrenberg
 
@@ -359,5 +359,5 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 
 
 
-![alt text](https://resources.arrenberg.studio/Github-Banner_02.jpg)
+![alt text](https://resources.arrenberg.studio/Github-Banner_01.jpg)
 
