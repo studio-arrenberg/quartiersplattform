@@ -341,8 +341,6 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
         .center-desktop {
           text-align: left;
           padding: 0px 15px;
-          margin: 0px ;
-          justify-content: left;
           align-items: start;
           flex-direction: column;
         }
