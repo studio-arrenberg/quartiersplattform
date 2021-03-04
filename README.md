@@ -1,4 +1,3 @@
-![alt text](https://resources.arrenberg.studio/Github-Banner_02.jpg)
 
 # Quartiersplattform Arrenberg
 
