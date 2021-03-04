@@ -1,6 +1,7 @@
-# Quartiersplattform Arrenberg
 ![alt text](https://resources.arrenberg.studio/Github-Banner_02.jpg)
 
+
+# Quartiersplattform Arrenberg
 
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app)
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691).
