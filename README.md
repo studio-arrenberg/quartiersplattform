@@ -1,4 +1,6 @@
 # Quartiersplattform Arrenberg
+![alt text](https://cdn.dribbble.com/users/1612753/screenshots/9806815/media/fcea7ba7d016765761c314ac9b4bfb66.png?compress=1&resize=1600x1200)
+
 
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app)
 Globale Entwicklungsumgebung unter [AP1](https://ap1.arrenberg.studio) Mockup auf [Marvel](https://marvelapp.com/prototype/8gfhabd/screen/73095691).
