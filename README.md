@@ -1,6 +1,5 @@
 ![alt text](https://resources.arrenberg.studio/Github-Banner_02.jpg)
 
-
 # Quartiersplattform Arrenberg
 
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app)
