@@ -137,16 +137,8 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
         flex-direction: column
       }
 
-      .content {
-        position: absolute;
-        left: 15px;
-        top: 250px;
-        width: 400px;
-        max-width: calc(100% - 30px);
-      }
-
       .logo {
-        position: absolute;
+        position: fixed;
         left: 15px;
         bottom: 15px;
       }
@@ -369,7 +361,6 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
     <canvas id="confetti"></canvas>
     <div class="top-bar">
       <img class="top-bar-logo" src="<?php echo get_template_directory_uri()?>/assets/sponsoren/quartiersplattform.svg" alt=""/>
-      
     </div>
     <div class="bg-logo">
       <svg  width="50vw" viewBox="0 0 261 301" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

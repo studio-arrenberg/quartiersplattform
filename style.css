@@ -5100,7 +5100,6 @@ a.card-link{
   margin-bottom: -6px;
 }
 
-
 /* login-wall */
 
 .login-wall{
@@ -5132,7 +5131,6 @@ a.card-link{
   width: initial;
   margin: 10px;
 }
-
 
 /* if backdrop support: very transparent and blurred */
 @supports (
