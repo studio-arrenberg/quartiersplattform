@@ -2739,7 +2739,7 @@ figure.wp-block-table.is-style-stripes {
 /* -------------------------------------------------------------------------- */
 .comments-wrapper,
 .comment-respond {
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 15px 0px;
 }
 .comment-respond {

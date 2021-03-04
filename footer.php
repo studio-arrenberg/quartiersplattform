@@ -35,7 +35,7 @@
         <?php
             if (get_privacy_policy_url()) {
                 ?> 
-                    <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>">Datenschutz</a>
+            <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>">Datenschutzerklärung</a>
                 <?php
             } 
         ?>
