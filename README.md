@@ -1,3 +1,5 @@
+![alt text](https://resources.arrenberg.studio/Github-Banner_04.jpg)
+
 # Quartiersplattform Arrenberg
 
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app)
@@ -354,3 +356,8 @@ will soon be imported seperatly from the admin page into files in `setup/` folde
 # text in gray
 @@ text in purple (and bold)@@
 ```
+
+
+
+![alt text](https://resources.arrenberg.studio/Github-Banner_02.jpg)
+
