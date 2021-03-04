@@ -1,5 +1,5 @@
 # Quartiersplattform Arrenberg
-![alt text](https://cdn.dribbble.com/users/1612753/screenshots/9806815/media/fcea7ba7d016765761c314ac9b4bfb66.png?compress=1&resize=1600x1200)
+![alt text]()
 
 
 #### Repo für die [Quartiersplattform am Arrenberg](https://arrenberg.app)
