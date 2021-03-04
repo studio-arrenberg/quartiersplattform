@@ -130,7 +130,8 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
         margin: -83px auto 0px auto;
         text-align: center;
         max-width: 900px;
-        min-height: 100vh  ;
+        min-height: 100vh;
+        padding: 0px 15px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -144,12 +145,14 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
       }
 
       .bg-logo{
-        position: absolute;
+        position: fixed;
         z-index: -2;
-        top: 15px;
-        left: 15px;
+        top: 0px;
+        left: 0px;
+        width: 50vw;
         max-height: 100vh;
       }
+
       .top-bar{
         padding:15px;
         
@@ -362,17 +365,9 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
     <div class="top-bar">
       <img class="top-bar-logo" src="<?php echo get_template_directory_uri()?>/assets/sponsoren/quartiersplattform.svg" alt=""/>
     </div>
-    <div class="bg-logo">
-      <svg  width="50vw" viewBox="0 0 261 301" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <title>Shape Copy</title>
-          <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Desktop-HD" transform="translate(-49.000000, -151.000000)" fill="#fff" fill-rule="nonzero">
-                  <path d="M177.28623,411.611384 C106.309509,410.460605 49.1267956,352.565382 49.1267956,281.314421 C49.1267956,209.343754 107.470549,151 179.441217,151 C251.411885,151 309.755638,209.343754 309.755638,281.314421 C309.755638,316.275959 295.987845,348.021856 273.578227,371.426142 C275.1771,372.534081 276.777138,373.680718 278.378661,374.863186 L279.141766,375.428078 L280.626241,376.536324 C281.600115,377.267859 282.546136,377.98784 283.486489,378.714478 L285.146285,380.008752 L286.708768,381.248922 L288.306753,382.538737 L290.449036,384.299212 L292.471192,385.989317 L295.207119,388.310546 L297.916849,390.638516 L302.711939,394.80326 L308.262519,399.671426 C310.300898,401.459197 310.551113,404.527214 308.865338,406.61856 L308.723163,406.787361 L270.45202,450.289508 C268.615683,452.376841 265.435679,452.58231 263.345996,450.748648 L259.151142,447.067733 L254.951833,443.411525 L251.891494,440.773402 L249.431548,438.67951 L247.217729,436.825161 L245.584403,435.481401 L243.852798,434.084565 L242.740411,433.204111 L242.327019,432.880424 L241.300761,432.085098 L240.481591,431.458486 C239.661201,430.834476 238.834446,430.21602 237.976917,429.582872 C236.577391,428.549546 235.196863,427.567279 233.828076,426.634466 L232.803573,425.944104 L231.782793,425.272136 C216.835314,415.550764 202.869309,411.716099 180.224444,411.630318 L179.441217,411.628843 L177.28623,411.611384 Z M179.441217,219.01871 C145.036246,219.01871 117.145505,246.90945 117.145505,281.314421 C117.145505,315.719393 145.036246,343.610133 179.441217,343.610133 C213.846188,343.610133 241.736928,315.719393 241.736928,281.314421 C241.736928,246.90945 213.846188,219.01871 179.441217,219.01871 Z" id="Shape-Copy"></path>
-              </g>
-          </g>
-      </svg>
+      <img class="bg-logo" src="<?php echo get_template_directory_uri()?>/assets/sponsoren/q.svg" alt=""/>
 
-      </svg>
+
     </div>
 
 
@@ -417,7 +412,7 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
             $height = 300;
           ?>
 
-          <div class="card card-50 shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
+          <div class="card shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://arrenberg.app">
               <h4>Arrenberg</h4>
               <h5>Wuppertal</h5>
@@ -433,7 +428,7 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
             $height = 300;
           ?>
 
-          <div class="card card-50 shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
+          <div class="card  shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://langerfeld.app">
               <h4>Langerfeld</h4>
               <h5>Wuppertal</h5>
@@ -457,7 +452,7 @@ if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administr
         </p>
 
         <h3>Du musst noch folgende Schritte durchführen:</h3>
-      <div class="card-container flex-row">
+        <div class="flex">
       
         <?php
           if (!class_exists('acf_pro')) {
