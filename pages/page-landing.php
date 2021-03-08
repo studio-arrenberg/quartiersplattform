@@ -219,6 +219,15 @@ else {
 
     </div>
 
+	<?php
+		// Gutenberg Editor Content
+		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+			the_excerpt();
+		} else {
+			the_content( __( 'Continue reading', 'twentytwenty' ) );
+		}
+	?>
+
     <!-- *urbane transformation* -->
     <!-- not ready yet -->
 
@@ -291,15 +300,6 @@ else {
     <?php 
 		// arrenberg farm wetter station
 		// get_template_part('components/wetter'); 
-	?>
-
-	<?php
-		// Gutenberg Editor Content
-		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-			the_excerpt();
-		} else {
-			the_content( __( 'Continue reading', 'twentytwenty' ) );
-		}
 	?>
 
 	<?php 
