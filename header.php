@@ -73,8 +73,8 @@ wp_maintenance_mode();
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="pull-left">
 
-            <?php 
-        if ($menu == 'page-header') {
+        <?php 
+        if ($menu == 'page-header' && get_field('maintenance', 'option') == false || current_user_can('skip_maintenance')) {
         ?>
             <!-- back button -->
             <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
@@ -147,7 +147,9 @@ wp_maintenance_mode();
 
 
         <?php
-			if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+            # remove menu when in maintenance mode
+            if (get_field('maintenance', 'option') == false || current_user_can('skip_maintenance')) {
+			     if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
         ?>
 
         <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
@@ -180,14 +182,18 @@ wp_maintenance_mode();
 
         </ul>
 
-        <?php } ?>
+        <?php 
+                }   
+            }
+        ?>
         </div><!-- .header-navigation-wrapper -->
 
-
-
-
-
     </header><!-- #site-header -->
+
+    <?php 
+    
+    ?>
+
     <script>
         window.onscroll = function() {
             scrollFunction()

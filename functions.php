@@ -1555,13 +1555,15 @@ function cpt_save_worker( $post_id ) {
 // Maintenance Mode
 function wp_maintenance_mode() {
 
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+
 	# if plugins not installed
 	if (!class_exists('acf_pro') || !class_exists('UM')) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
 	}
 	# if maintenance mode on and not administrator
-	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance')) {
+	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance') && ( strpos($REQUEST_URI,'/register/') === false && strpos($REQUEST_URI,'/login/') === false && strpos($REQUEST_URI,'/password-reset/') === false )) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
 	}

@@ -64,6 +64,11 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
           Dein Viertel  bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
         </p>
 
+        <!-- neu -->
+        <p>Schon registieren oder anmelden...</p>
+        <a class="button" href="<?php echo get_site_url(); ?>/login/">Anmelden</a>
+        <a class="button" href="<?php echo get_site_url(); ?>/register/">Registrieren</a>
+
         <h3>Die Quatiersplattform wird bereits in folgenden Viertel genutzt</h3>
 
         <div class="flex">
@@ -113,6 +118,10 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
         </p>
 
         <h3>Du musst noch folgende Schritte durchführen:</h3>
+
+        <!-- neu -->
+        <a class="button" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md">Dokumentation Lesen</a>
+
         <div class="flex">
       
         <?php
