@@ -8,7 +8,7 @@ $now = wp_date('Y-m-d H');
 $datetime = wp_date('Y-m-d H:i');
 
 $wpdb_b = new wpdb( "vpp_user", "4oM1&3ge", "vpp", "localhost" );
-// $connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");
+$connection = mysqli_connect("localhost", "vpp_user", "4oM1&3ge", "vpp");
 
 # fall back 
 if (mysqli_connect_errno()) {
@@ -150,7 +150,7 @@ else {
 
                 <div class="strom_array">
                     <?php
-                    $timeline_r = mysqli_query($wpdb_b, $timeline) or die("could not perform query");
+                    $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
 
                         $c++;
