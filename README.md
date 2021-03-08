@@ -73,6 +73,12 @@ git clone https://github.com/studio-arrenberg/quartiersplattform.git
 ```php
 <?php echo get_site_url(); ?>
 ```
+
+#### Stylesheets URL
+```php
+<?php echo get_stylesheet_directory(); ?>
+```
+
 #### Date Function
 [PHP Date Format](https://www.php.net/manual/de/datetime.format.php)
 ```php

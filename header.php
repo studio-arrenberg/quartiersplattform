@@ -90,8 +90,8 @@ wp_maintenance_mode();
             
             <div class="site-name">
                 <a href="<?php echo get_site_url(); ?>">
-                    <h1><?php the_field('quartiersplattform-name', 'option'); ?> </h1>
-                    <h2><?php the_field('quartiersplattform-description', 'option'); ?>  </h2>
+                    <h1><?php the_field('quartiersplattform-name', 'option'); ?></h1>
+                    <h2><?php the_field('quartiersplattform-description', 'option'); ?></h2>
                 </a>
                 
             </div>
@@ -191,29 +191,29 @@ wp_maintenance_mode();
 
     </header><!-- #site-header -->
     <script>
-    window.onscroll = function() {
-        scrollFunction()
-    };
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
-    var currentScrollTop = 0;
-    var c = 0;
+        var currentScrollTop = 0;
+        var c = 0;
 
-    function scrollFunction() {
-        currentScrollTop = document.documentElement.scrollTop;
+        function scrollFunction() {
+            currentScrollTop = document.documentElement.scrollTop;
 
-        if (Math.abs(currentScrollTop - c) > 150) {
-            // console.log(currentScrollTop+ ' '+ c);
-            if (currentScrollTop > c) {
-                // console.log('down');
-                document.getElementById("site-header").style.top = "-45px";
+            if (Math.abs(currentScrollTop - c) > 150) {
+                // console.log(currentScrollTop+ ' '+ c);
+                if (currentScrollTop > c) {
+                    // console.log('down');
+                    document.getElementById("site-header").style.top = "-45px";
+                }
+                else {
+                    // console.log('up');
+                    document.getElementById("site-header").style.top = "0px";
+                }
+                c = currentScrollTop;
             }
-            else {
-                // console.log('up');
-                document.getElementById("site-header").style.top = "0px";
-            }
-            c = currentScrollTop;
         }
-    }
     </script>
 
 
