@@ -324,6 +324,11 @@ get_header();
                 </div>
             </div>
 
+            <?php 
+                
+
+            ?>
+
             <script>
                 function copy() {
                     _paq.push(['trackEvent', 'Share', 'Copy Link', '<?php the_title(); ?>']);
@@ -341,6 +346,11 @@ get_header();
         # post löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
 
+            # delete taxonomy (projekt)
+            $term = get_term_by('slug', $post->post_name, 'projekt');
+            wp_delete_term( $term->term_id, 'projekt');
+
+            # delete post
             wp_delete_post(get_the_ID());
             wp_redirect( get_site_url() );
 
