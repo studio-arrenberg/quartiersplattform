@@ -897,7 +897,6 @@ require_once dirname( __FILE__ ) .'/setup/sdg.php';
 // Anmerkungen
 require_once dirname( __FILE__ ) .'/setup/anmerkungen.php';
 
-
  /**
  *  --------------------------------------------------------
  *  Setup - call additional function files
@@ -1129,9 +1128,6 @@ function single_template_hook() {
 	else if ( 'projekte' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-projekte.php';
     }
-	// else if ( 'poll' === $post->post_type ) {
-    //     $single_template = dirname( __FILE__ ) . '/pages/single-poll.php';
-    // }
 	else if ( 'geschichten' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
     }
@@ -1150,10 +1146,7 @@ function single_template_hook() {
 	else if ( 'veranstaltungen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
-	// else if ( 'user' === $post->post_type ) {
-    //     $single_template = dirname( __FILE__ ) . '/template-parts/author.php';
-    // }
- 
+
     return $single_template;
 }
 
@@ -1568,7 +1561,7 @@ function wp_maintenance_mode() {
 		exit();
 	}
 	# if maintenance mode on and not administrator
-	else if (get_field('maintenance', 'option') == true && !current_user_can('administrator')) {
+	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance')) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
 	}

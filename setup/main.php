@@ -9,6 +9,8 @@
  *  3. Permalink Structure
  *  4. Set Home Page
  *  5. Create Pages
+ *  6. User Role (beta)
+ *  7. Admin bar only for admins
  * 
  */
 
@@ -28,35 +30,6 @@ $menu_exists = wp_get_nav_menu_object( $menuname );
 // If it doesn't exist, let's create it.
 if( !$menu_exists){
     $menu_id = wp_create_nav_menu($menuname);
-
-    // Set up default BuddyPress links and add them to the menu.
-    // wp_update_nav_menu_item($menu_id, 0, array(
-    //     'menu-item-title' =>  __('Überblick'),
-    //     'menu-item-classes' => 'überblick',
-    //     'menu-item-url' => home_url( '/' ), 
-    //     'menu-item-status' => 'publish'));
-
-    // wp_update_nav_menu_item($menu_id, 0, array(
-    //     'menu-item-title' =>  __('Veranstaltungen'),
-    //     'menu-item-classes' => 'veranstaltungen',
-    //     'menu-item-url' => home_url( '/veranstaltungen/' ), 
-    //     'menu-item-status' => 'publish'));
-
-    // wp_update_nav_menu_item($menu_id, 0, array(
-    //     'menu-item-title' =>  __('Projekte'),
-    //     'menu-item-classes' => 'projekte',
-    //     'menu-item-url' => home_url( '/projekte/' ), 
-    //     'menu-item-status' => 'publish'));
-
-    // wp_update_nav_menu_item($menu_id, 0, array(
-    //     'menu-item-title' =>  __('Gemeinsam'),
-    //     'menu-item-classes' => 'gemeinsam',
-    //     'menu-item-url' => home_url( '/gemeinsam/' ), 
-    //     'menu-item-status' => 'publish'));
-
-
-
-
 
     $überblick = get_page_by_title( 'Überblick', OBJECT, 'page' );
     wp_update_nav_menu_item($menu_id, 0, array(
@@ -202,4 +175,34 @@ function create_pages() {
         }
     }
 
+}
+
+/**
+ *  --------------------------------------------------------
+ *  6. User Role (beta)
+ *  --------------------------------------------------------
+ */
+
+function beta_user_role() {
+    add_role( 'firstmover', 'First mover', get_role( 'subscriber' )->capabilities );
+
+    $role = get_role( 'firstmover' );
+	$role->add_cap( 'skip_maintenance' , true );
+
+    $role = get_role( 'administrator' );
+	$role->add_cap( 'skip_maintenance' , true );
+
+}
+add_action( 'after_setup_theme', 'beta_user_role' );
+
+
+
+/**
+ *  --------------------------------------------------------
+ *  7. Admin bar only for admins
+ *  --------------------------------------------------------
+ */
+
+if (!current_user_can('manage_options')) {
+    add_filter('show_admin_bar', '__return_false');
 }

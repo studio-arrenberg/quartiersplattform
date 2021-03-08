@@ -9,7 +9,7 @@ if (class_exists('acf_pro') && class_exists('UM')) {
   }
 }
 # redirect if plugins are installed and user can visit
-if (class_exists('acf_pro') && class_exists('UM') && current_user_can('administrator')) {
+if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_maintenance'))) {
   wp_redirect( get_site_url() );
 }
 

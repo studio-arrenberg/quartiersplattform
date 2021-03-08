@@ -1,12 +1,10 @@
 <?php
-/**
- * Header file 
- */
 
 # redirect when maintenance is ON
 wp_maintenance_mode();
 
 ?>
+
 <!DOCTYPE html>
 
 <html class="no-js" <?php language_attributes(); ?>>
