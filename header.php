@@ -219,7 +219,7 @@ wp_maintenance_mode();
 
 
     <!-- energie ampel -->
-    <div id="overlay" class="overlay hidden " onclick="hide()">
+    <div id="overlay" class="overlay hidden">
 
         <div class="overlay-content">
             <button class="button header-button button-has-icon is-style-outline" onclick="hide()">
