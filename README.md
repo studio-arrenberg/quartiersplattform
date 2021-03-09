@@ -4,24 +4,27 @@
 Die Quartierrsplattform ist eine **open source** Plattform für Quartiere und Stadtteile zur organisation und stärkung der BürgerInnen und nachhaltigen sowie solidarischen Projekten. Entwickelt von [studio arrenberg](https://arrenberg.studio)
 und unterstützt durch das [Wuppertal Institut](https://wupperinst.org/p/wi/p/s/pd/921/).<br><br>
 
-<!-- ## Inhaltsübersicht
+<!-- 
+## Inhaltsübersicht
 - Einleitung
   - Mission (Lizienz)
   - Features
 - Installation
   - Anforderungen
   - Schritte
-- Unterstützer -->
+- Unterstützer 
+- -->
 
-<br>
 
+<!-- 
 ![Feature 1](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-1.png)
 <br>
 
 ![Feature 2](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-2.png)
 <br>
 
-![Feature 3](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-3.png)
+![Feature 3](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-3.png) 
+-->
 
 
 <!-- ## Features -->
