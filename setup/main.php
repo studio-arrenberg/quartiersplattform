@@ -183,18 +183,18 @@ function create_pages() {
  *  --------------------------------------------------------
  */
 
-function beta_user_role() {
+function firstmover_user_role() {
     add_role( 'firstmover', 'First mover', get_role( 'subscriber' )->capabilities );
 
     $role_firstmover = get_role( 'firstmover' );
 	$role_firstmover->add_cap( 'skip_maintenance' , true );
     $role_administrator = get_role( 'administrator' );
-	$role_administrator->add_cap( 'skip_maintenance' , false );
-    $role_user = get_role( 'user' );
-	$role_user->add_cap( 'skip_maintenance' , false );
+	$role_administrator->add_cap( 'skip_maintenance' , true );
+    // $role_user = get_role( 'user' );
+	// $role_user->add_cap( 'skip_maintenance' , false );
 
 }
-add_action( 'init', 'beta_user_role' );
+add_action( 'init', 'firstmover_user_role' );
 
 
 
