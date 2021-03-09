@@ -1905,6 +1905,9 @@ function get_author($contact = false) {
 			<?php
 		}
 	}
+	else {
+		return false;
+	}
 }
 
 /**
@@ -2191,6 +2194,70 @@ function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '
 	}
 
 }
+
+/**
+ *  --------------------------------------------------------
+ *  Public Functions - landscape_card
+ *  --------------------------------------------------------
+ */
+
+function emoji_picker_init($id) {
+
+	if ($id) {
+		?>
+
+		<script>
+
+			// get element
+			var el = $("#<?php echo $id; ?>");
+			el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+			el.attr("data-emojiable", "true");
+
+			// remove previous emojies
+			// $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
+			// 	$(this).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
+			// });
+			
+			// remove previous emojies
+			var alt;
+			$('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
+
+				console.log($(".emoji-wysiwyg-editor").children().length);
+
+				if ($(".emoji-wysiwyg-editor").children().length > 1) {
+					// console.log('remove childs ' + alt);
+					if (!alt) {
+						$('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
+					} else if (alt) {
+						if (alt !== $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
+							$('.emoji-wysiwyg-editor').children("img[alt='" + alt + "']").remove();
+						} else {
+							$('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
+						}
+					}
+					alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
+				}
+
+			});
+
+			$(function() {
+				window.emojiPicker = new EmojiPicker({
+					emojiable_selector: '[data-emojiable=true]',
+					assetsPath: '<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/img/',
+					popupButtonClasses: 'fa fa-smile-o'
+				});
+				window.emojiPicker.discover();
+
+				$('div.emoji-wysiwyg-editor').attr('tabindex', '-1');
+			});
+
+		</script>
+
+		<?php 
+	}
+}
+
+
 
 
 /**
