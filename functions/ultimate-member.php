@@ -2,7 +2,13 @@
 
 /**
  * 
- * additional functions to Ultimate Member 
+ * Additional functions for 
+ * Ultimate Member 
+ * 
+ * 	1. Show profil image upload
+ * 	2. Maybe remove Ultimate Member CSS and JS
+ * 	3. Remove widget styles
+ * 	4. Deregister UM Styles
  * 
  */
 
@@ -13,20 +19,6 @@ function um_show_hidden_field(){
 			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
 	}
 } add_action('wp_footer', 'um_show_hidden_field');
-
-
-
- // ultimate member remove styles
-// if (qp_check_dependencies()) {
-	add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
-	add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );
-	add_action( 'wp_print_styles', 'um_remove_scripts_and_styles', 9 );
-	add_action( 'dynamic_sidebar', 'um_remove_scripts_and_styles_widget' );
-// }
-
-
-
-
 
 /**
  * Maybe remove Ultimate Member CSS and JS
@@ -103,6 +95,11 @@ function um_remove_scripts_and_styles() {
 		}
 	}
 }
+add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
+add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );
+add_action( 'wp_print_styles', 'um_remove_scripts_and_styles', 9 );
+add_action( 'dynamic_sidebar', 'um_remove_scripts_and_styles_widget' );
+
 
 /**
  * Check whether Ultimate Member widget was used
@@ -114,7 +111,9 @@ function um_remove_scripts_and_styles_widget( $widget ) {
 	}
 }
 
-// deregiter UM Styles
+/**
+ * Deregister UM Styles
+ */
 function um_deregister_styles() {
 
 	wp_deregister_style( 'select2');

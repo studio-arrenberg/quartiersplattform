@@ -52,8 +52,8 @@ function link_block_render_callback( $block ) {
 	$slug = str_replace('acf/', '', $block['name']);
 	
 	// include a template part from within the "template-parts/block" folder
-	if( file_exists( get_theme_file_path("/components/link-card.php") ) ) {
-		include( get_theme_file_path("/components/link-card.php") );
+	if( file_exists( get_theme_file_path("/components/gutenberg-blocks/link-card.php") ) ) {
+		include( get_theme_file_path("/components/gutenberg-blocks/link-card.php") );
 	}
 }
 

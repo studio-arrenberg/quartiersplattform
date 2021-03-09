@@ -783,10 +783,10 @@ function twentytwenty_get_elements_array() {
 
 
 /**
- * 
- * 
- * Custom Functions
- * 
+ *  -------------------------------------------------------- Custom Functions --------------------------------------------------------
+ */
+
+/**
  * Table of Contents:
  * 
  * - Setup
@@ -833,14 +833,19 @@ function twentytwenty_get_elements_array() {
  * 		list_card
  * 		landscape_card
  * 
- * 
  */
 
 
 /**
- *  --------------------------------------------------------
- *  Setup - Remove Default WP Widgets
- *  --------------------------------------------------------
+ *  -------------------------------------------------------- Setup --------------------------------------------------------
+ */
+
+/**
+ * Remove Default WP Widgets
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
 
 function remove_default_WP_widgets( ){
@@ -856,89 +861,70 @@ function remove_default_WP_widgets( ){
 	unregister_widget('WP_Widget_Recent_Comments');
 	unregister_widget('WP_Widget_RSS');
 	unregister_widget('WP_Widget_Tag_Cloud');
-
-	unregister_widget('BBP_Login_Widget');
-	unregister_widget('BBP_Views_Widget');
-	unregister_widget('BBP_Forums_Widget');
-	unregister_widget('BBP_Replies_Widget');
-	
 } add_action( 'widgets_init', 'remove_default_WP_widgets' );
 
+
 /**
- *  --------------------------------------------------------
- *  Setup - call setup files
- *  --------------------------------------------------------
+ * Call setup files
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
+require_once dirname( __FILE__ ) .'/setup/main.php'; # General
+require_once dirname( __FILE__ ) .'/setup/immigration.php'; # Immigration
+require_once dirname( __FILE__ ) .'/setup/settings.php'; # Setting Page
+require_once dirname( __FILE__ ) .'/setup/kontakt.php'; # Kontakt Einstellungen
+require_once dirname( __FILE__ ) .'/setup/blocks.php'; # Blocks
+require_once dirname( __FILE__ ) .'/setup/projekte.php'; # Projekte
+require_once dirname( __FILE__ ) .'/setup/nachrichten.php'; # Nachrichten
+require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php'; # Veranstaltungen
+require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
+require_once dirname( __FILE__ ) .'/setup/fragen.php'; # Fragen
+require_once dirname( __FILE__ ) .'/setup/angebote.php'; # Angebote
+require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
+require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
 
- // General
-require_once dirname( __FILE__ ) .'/setup/main.php';
-// Immigration
-require_once dirname( __FILE__ ) .'/setup/immigration.php';
-// Setting Page
-require_once dirname( __FILE__ ) .'/setup/settings.php';
-// Kontakt Einstellungen
-require_once dirname( __FILE__ ) .'/setup/kontakt.php';
-// Blocks
-require_once dirname( __FILE__ ) .'/setup/blocks.php';
-// Projekte
-require_once dirname( __FILE__ ) .'/setup/projekte.php';
-// Nachrichten
-require_once dirname( __FILE__ ) .'/setup/nachrichten.php';
-// Veranstaltungen
-require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php';
-// Umfragen
-require_once dirname( __FILE__ ) .'/setup/umfragen.php';
-// Fragen
-require_once dirname( __FILE__ ) .'/setup/fragen.php';
-// Angebote
-require_once dirname( __FILE__ ) .'/setup/angebote.php';
-// SDG
-require_once dirname( __FILE__ ) .'/setup/sdg.php';
-// Anmerkungen
-require_once dirname( __FILE__ ) .'/setup/anmerkungen.php';
-
- /**
- *  --------------------------------------------------------
- *  Setup - call additional function files
- *  --------------------------------------------------------
+/**
+ * Call UM & ACF function files
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
-// Ultimate Member (UM)
-if (class_exists('UM')) {
+if (class_exists('UM')) { # Ultimate Member
 	require dirname( __FILE__ ) .'/functions/ultimate-member.php';
 }
-// Advanced Custom Fields Pro (ACF)
-if (class_exists('acf_pro')) {
+if (class_exists('acf_pro')) { # Advanced custom fields
 	require dirname( __FILE__ ) .'/functions/advanced-custom-fields.php';
 }
 
-/**
- *  --------------------------------------------------------
- *  Setup - admin notes/warnings
- *  --------------------------------------------------------
- */
 
+/**
+ * Admin notes & warnings
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
+ */
 add_action('admin_init', function() {
-	// ACF Pro
-	// if (is_admin() && current_user_can('activate_plugins') && !class_exists('acf_pro')) {
+	# ACF Pro
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
 			$notice = __('Die Quartiersplattform braucht das Plugin <strong>Advaced Custom Fields</strong> um vollständig zu funktionieren.', 'quartiersplattform');
 			$link = '<strong>Advaced Custom Fields</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">installieren</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
-		// switch_theme('twentytwenty');	
 	}
-	// Ultimate Memmber
+	# Ultimate Memmber
 	if (!class_exists('UM')) {
 		add_action('admin_notices', function() {
-			// $notice = __('Sorry, but the theme Quartiersplattform requires that <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Ultimate Member</strong> is installed and active.', 'quartiersplattform');
 			$notice = __('Die Quartiersplattform braucht das Plugin <strong>Ultimate Member</strong> um vollständig zu funktionieren.', 'quartiersplattform');
 			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">installieren</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
-		// switch_theme('twentytwenty');	
 	}
+	# Quartiersplattform is running
 	if (class_exists('acf_pro') && class_exists('UM')) {
 		add_action('admin_notices', function() {
 			$notice = "Gratulation die Quartiersplattform wurde erfolgreich aufgesetzt.";
@@ -950,6 +936,7 @@ add_action('admin_init', function() {
 		  	</div>';
 		});
 	}
+	# Install Ultimate Member
 	if (class_exists('UM')) {
 		add_action('admin_notices', function() {
 			$notice = "Anleitung zum einstellen des Ultimate Member Plugin.";
@@ -961,11 +948,7 @@ add_action('admin_init', function() {
 			</p>
 		  
 			<p>
-			  <a
-				href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md"
-				class="button button-primary"
-				>Anleitung öffnen</a
-			  >
+			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md" class="button button-primary">Anleitung öffnen</a>
 			</p>
 		  
 			<button type="button" class="notice-dismiss">
@@ -974,6 +957,7 @@ add_action('admin_init', function() {
 		  </div>';
 		});
 	}
+	# WP Mail SMTP suggestion
 	if (class_exists('wp_mail_smtp')) {
 		add_action('admin_notices', function() {
 			$notice = "Anleitung zum einstellen des WP Mail SMTP Plugin.";
@@ -985,12 +969,7 @@ add_action('admin_init', function() {
 			</p>
 		  
 			<p>
-			  <a
-				href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md"
-				class="button button-primary"
-				target="_blank"
-				>Anleitung für WP Mail SMTP</a
-			  >
+			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md" class="button button-primary" target="_blank">Anleitung für WP Mail SMTP</a>
 			</p>
 		  
 			<button type="button" class="notice-dismiss">
@@ -1028,95 +1007,107 @@ add_action('admin_init', function() {
 	}
 });
 
-/**
- *  --------------------------------------------------------
- *  Setup - assign templates pages
- *  --------------------------------------------------------
- */
 
- // assigne templates to pages
+/**
+ * Assign templates to pages
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
+ */
+function custom_page_template( $page_template, $post_states ) {
+	global $post;
+
+	$post_states = [];
+	$prefix = "QP ";
+
+	if ($post->post_title == "Überblick") {
+		$post_states[] = $prefix.'Überblick';
+		$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
+	}
+	else if ($post->post_title == "Veranstaltungen") {
+		$post_states[] = $prefix.'Veranstaltungen';
+		$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
+	}
+	else if ($post->post_title == "Projekte") {
+		$post_states[] = $prefix.'Projekte';
+		$page_template= get_stylesheet_directory() . '/pages/page-projekte.php';
+	}
+	else if ($post->post_title == "Projekt erstellen") {
+		$post_states[] = $prefix.'Projekt erstellen';
+		$page_template= get_stylesheet_directory() . '/forms/form-projekte.php';
+	}
+	else if ($post->post_title == "Gemeinsam") {
+		$post_states[] = $prefix.'Gemeinsam';
+		$page_template= get_stylesheet_directory() . '/pages/page-gemeinsam.php';
+	}
+	else if ($post->post_title == "Frage erstellen") {
+		$post_states[] = $prefix.'Frage erstellen';
+		$page_template= get_stylesheet_directory() . '/forms/form-fragen.php';
+	}
+	else if ($post->post_title == "Angebot erstellen") {
+		$post_states[] = $prefix.'Angebot erstellen';
+		$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
+	}
+	else if ($post->post_title == "Geschichten") {
+		$post_states[] = $prefix.'Geschichten page';
+		$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
+	}
+	else if ($post->post_title == "Anmerkungen") {
+		$post_states[] = $prefix.'Anmerkungen';
+		$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
+	}
+	else if ($post->post_title == "Profil") {
+		$post_states[] = $prefix.'Profil';
+		$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
+	}
+	else if ($post->post_title == "Nachricht erstellen") {
+		$post_states[] = $prefix.'Nachricht erstellen';
+		$page_template= get_stylesheet_directory() . '/forms/form-nachrichten.php';
+	}
+	else if ($post->post_title == "Umfrage erstellen") {
+		$post_states[] = $prefix.'Umfrage erstellen';
+		$page_template= get_stylesheet_directory() . '/forms/form-umfragen.php';
+	}
+	else if ($post->post_title == "Veranstaltung erstellen") {
+		$post_states[] = $prefix.'Veranstaltung erstellen';
+		$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
+	}
+	else if ($post->post_title == "SDGs") {
+		$post_states[] = $prefix.'SDGs';
+		$page_template= get_stylesheet_directory() . '/pages/page-sdg.php';
+	}
+	else if ($post->post_title == "Anmelden") {
+		$post_states[] = $prefix.'Anmelden';
+		$page_template= get_stylesheet_directory() . '/templates/center-blank.php';
+	}
+	else if ($post->post_title == "Registrieren") {
+		$post_states[] = $prefix.'Registrieren';
+		$page_template= get_stylesheet_directory() . '/templates/center-blank.php';
+	}
+	else if ($post->post_title == "Passwort zurücksetzen") {
+		$post_states[] = $prefix.'Passwort zurücksetzen';
+		$page_template= get_stylesheet_directory() . '/templates/center-blank.php';
+	}
+	
+	if (doing_filter( 'page_template') && !empty($page_template)) {
+		return $page_template;
+	}
+	else if (doing_filter( 'display_post_states') && !empty($post_states)) {
+		return $post_states;
+	}
+}
 add_filter( 'page_template', 'custom_page_template', 10, 2 );
 add_filter( 'display_post_states', 'custom_page_template', 1, 2);
-function custom_page_template( $page_template, $post_states ) {
-		global $post;
 
-		$post_states = [];
-		$prefix = "QP ";
-        
-			if ($post->post_title == "Überblick") {
-				$post_states[] = $prefix.'Überblick';
-				$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
-			}
-			else if ($post->post_title == "Veranstaltungen") {
-				$post_states[] = $prefix.'Veranstaltungen';
-				$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
-			}
-			else if ($post->post_title == "Projekte") {
-				$post_states[] = $prefix.'Projekte';
-				$page_template= get_stylesheet_directory() . '/pages/page-projekte.php';
-			}
-			else if ($post->post_title == "Projekt erstellen") {
-				$post_states[] = $prefix.'Projekt erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-projekte.php';
-			}
-			else if ($post->post_title == "Gemeinsam") {
-				$post_states[] = $prefix.'Gemeinsam';
-				$page_template= get_stylesheet_directory() . '/pages/page-gemeinsam.php';
-			}
-			else if ($post->post_title == "Frage erstellen") {
-				$post_states[] = $prefix.'Frage erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-fragen.php';
-			}
-			else if ($post->post_title == "Angebot erstellen") {
-				$post_states[] = $prefix.'Angebot erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
-			}
-			else if ($post->post_title == "Geschichten") {
-				$post_states[] = $prefix.'Geschichten page';
-				$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
-			}
-			else if ($post->post_title == "Anmerkungen") {
-				$post_states[] = $prefix.'Anmerkungen';
-				$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
-			}
-			else if ($post->post_title == "Profil") {
-				$post_states[] = $prefix.'Profil';
-				$page_template= get_stylesheet_directory() . '/pages/page-profil.php';
-			}
-			else if ($post->post_title == "Nachricht erstellen") {
-				$post_states[] = $prefix.'Nachricht erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-nachrichten.php';
-			}
-			else if ($post->post_title == "Umfrage erstellen") {
-				$post_states[] = $prefix.'Umfrage erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-umfragen.php';
-      		}
-			else if ($post->post_title == "Veranstaltung erstellen") {
-				$post_states[] = $prefix.'Veranstaltung erstellen';
-				$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
-			}
-			else if ($post->post_title == "SDGs") {
-				$post_states[] = $prefix.'SDGs';
-				$page_template= get_stylesheet_directory() . '/pages/page-sdg.php';
-			}
-
-		
-		if (doing_filter( 'page_template') && !empty($page_template)) {
-			return $page_template;
-		}
-		else if (doing_filter( 'display_post_states') && !empty($post_states)) {
-			return $post_states;
-		}
-		
-}
 
 /**
- *  --------------------------------------------------------
- *  Setup - assign templates posts
- *  --------------------------------------------------------
+ * Assign templates for custom post types
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
  */
-
-// set template for custom post type  
 add_filter( 'single_template', 'single_template_hook' );
 function single_template_hook() {
 
@@ -1151,12 +1142,16 @@ function single_template_hook() {
 }
 
 /**
- *  --------------------------------------------------------
- *  File Managment - wpdocs_dequeue_dashicon
- *  --------------------------------------------------------
+ *  -------------------------------------------------------- File Managment --------------------------------------------------------
  */
 
-//remove dashicons in frontend to non-admin  
+/**
+ * Remove dashicons in frontend to non-admin  
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
+ */
 function wpdocs_dequeue_dashicon() {
 	if (current_user_can( 'update_core' )) {
 		return;
@@ -1166,46 +1161,45 @@ function wpdocs_dequeue_dashicon() {
 
 
 /**
- *  --------------------------------------------------------
- *  File Managment - disable twenty twenty inline styles
- *  --------------------------------------------------------
+ * Disable twenty twenty inline styles
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
  */
-
-// Disable twenty twenty inline styles
 add_action( 'wp_enqueue_scripts', function() {
 	$styles = wp_styles();
 	$styles->add_data( 'twentytwenty-style', 'after', array() );
 }, 20 );
 
 
- /**
- *  --------------------------------------------------------
- *  File Managment - replace_core_jquery_version
- *  --------------------------------------------------------
+/**
+ * Replace Core jQuery Version
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
 function replace_core_jquery_version() {
     wp_deregister_script( 'jquery' );
-    // Change the URL if you want to load a local copy of jQuery from your own server.
     wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
-}
-add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+} add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+
 
 /**
- *  --------------------------------------------------------
- *  File Managment - my_init
- *  --------------------------------------------------------
+ * Conditinally load jQuery and Emoji files
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
-// jQuery deregister + min
-function my_init() {
+function load_scripts() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
     if (
 		!is_admin() 
 		&& strpos($REQUEST_URI,'/profil/') === false
-		&& strpos($REQUEST_URI,'/frage-dein-quartier/') === false
 		&& strpos($REQUEST_URI,'/frage-erstellen/') === false
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
 		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
@@ -1249,24 +1243,23 @@ function my_init() {
 	 }
 
 }
-add_action('init', 'my_init', 11);
+add_action('init', 'load_scripts', 11);
 
- /**
- *  --------------------------------------------------------
- *  File Managment - emoji_picker
- *  --------------------------------------------------------
+/**
+ * Register emoji picker script
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
-// register emoji picker script
 function emoji_picker() { 
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
     if (
-		strpos($REQUEST_URI,'/frage-dein-quartier/') !== false
-		|| strpos($REQUEST_URI,'/frage-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false /* '/angebot-erstellen/' */
+		strpos($REQUEST_URI,'/frage-erstellen/') !== false
+		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
-		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
+		|| $_GET['action'] == 'edit'
 	 ) {
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
@@ -1288,34 +1281,42 @@ function emoji_picker() {
 }
 add_action("wp_enqueue_scripts", "emoji_picker");
 
- /**
- *  --------------------------------------------------------
- *  File Managment - embla_carousel
- *  --------------------------------------------------------
+/**
+ * Register embla carousel script
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
-// register embla carousel script
 function embla_carousel() { 
     wp_register_script('embla-carousel', get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
 } add_action("wp_enqueue_scripts", "embla_carousel");
 
 
- /**
- *  --------------------------------------------------------
- *  General Functions - cookie setting
- *  --------------------------------------------------------
+/**
+ *  -------------------------------------------------------- General Functions --------------------------------------------------------
  */
 
 
-
-// prolog loged in session to a year
+/**
+ * Prolong loged in session cookie
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
 function wpdev_login_session( $expire ) { // Set login session limit in seconds
     return YEAR_IN_SECONDS;
-} 
-add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
+} add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 
-// set guest cookie
+/**
+ * Set guest cookie
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
 function set_user_cookie_inc_guest(){
 	# check if cookie not set
     if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
@@ -1333,15 +1334,21 @@ function set_user_cookie_inc_guest(){
 		$expiry = strtotime('+1 year');
 		setcookie('guest', md5($counter), $expiry, $path, $host);
     }  
-
 } 
 add_action('init', 'set_user_cookie_inc_guest');
 
-// cookie for logged in users
+/**
+ * Set Cookie on login
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
 function add_custom_cookie_admin() {
 	wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
 } 
-// add_action('wp_login', 'add_custom_cookie_admin');
+add_action('wp_login', 'add_custom_cookie_admin');
+
 // function add_cookie_admin() {
 // 	wp_set_current_user($user_id); 
 // 	if (wp_validate_auth_cookie()==FALSE)
@@ -1350,6 +1357,21 @@ function add_custom_cookie_admin() {
 // 	}
 // }
 
+/**
+ * Redirect WP Login
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
+function redirect_wp_login(){
+	global $pagenow;
+	if (('wp-login.php' == $pagenow )&&(!is_user_logged_in())){
+		wp_redirect(get_site_url().'/login');
+		exit();
+	}
+}
+add_action('init','redirect_wp_login');
 
 /**
  *  --------------------------------------------------------

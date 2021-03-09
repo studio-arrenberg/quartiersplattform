@@ -1,15 +1,9 @@
 <?php
 
 /**
+ * 
  * Default Square Card
  *
- * Used for both singular and index.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 ?>
@@ -33,6 +27,5 @@
             </p>
         </div>
         <?php  the_post_thumbnail( 'square_l' ); ?>
-        <?php // the_post_thumbnail( array(180, 180) ); ?>
     </a>
 </div>

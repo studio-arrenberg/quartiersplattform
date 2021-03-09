@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Card => Gemeinsam
+ * 
+ * Card => Umfragen
  *
- * Used for both singular and index.
  */
 
 ?>

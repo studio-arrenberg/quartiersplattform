@@ -17,6 +17,7 @@
 		'orderby'           => 'expire_timestamp',
 		'order'             => 'ASC'
     );
+    
     $my_query = new WP_Query($args4);
     if ($my_query->post_count > 0) {
 

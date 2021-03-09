@@ -1,6 +1,12 @@
 <?php
+
+/**
+ * 
+ * Card => Anmerkung
+ *
+ */
+
 $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
-// if(is_array($terms_status) && array_key_exists('slug', $terms_status)) { 
 ?>
 
 <div class="card <?php if(!is_single( )) echo 'shadow'; ?> anmerkung <?php echo $terms_status[0]->slug; ?>">
@@ -16,8 +22,12 @@ $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
             </div>
             <h3 class="card-title-large">
                 <?php  
-                    if (!is_single( )) shorten_title(get_field('text'), '85'); 
-                    else the_field('text'); 
+                    if (!is_single( )) {
+                        shorten_title(get_field('text'), '85'); 
+                    } 
+                    else {
+                        the_field('text'); 
+                    }
                 ?>
             </h3>
             <div class="comment-count">

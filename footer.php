@@ -15,15 +15,16 @@
 <footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
     <div class="sponsoren">
         <?php if( have_rows('sponsors', 'option') ): ?>    
-        <?php while( have_rows('sponsors', 'option') ): the_row();  
-            $image = get_sub_field('field_6024f5b43157e');
-        ?>
-            <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
-        <?php endwhile; ?>
+            <?php while( have_rows('sponsors', 'option') ): the_row();  
+                $image = get_sub_field('field_6024f5b43157e');
+            ?>
+                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+            <?php endwhile; ?>
         <?php endif; ?>
     </div>
 
     <div class="footer">
+
     <?php 
     $image = get_field('logo', 'option');
     if( !empty( $image ) ): ?>
@@ -39,6 +40,7 @@
                 <?php
             } 
         ?>
+        
     </div><!-- .section-inner -->
 </footer><!-- #site-footer -->
 <?php wp_footer(); ?>

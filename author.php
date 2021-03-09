@@ -7,7 +7,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 ?>
 
 <main id="site-content" class="center-header-template <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>" role="main">
-    <?php // print_r($curauth); ?>
 
     <div class="center-header">
 
@@ -35,8 +34,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                     <?php the_field('phone', $userid); ?>
                 </a>
             <?php } ?>
-
-
 
         </div>
     </div>

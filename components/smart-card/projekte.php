@@ -1,6 +1,6 @@
 
 <?php
-// echo "<h1>Hello".get_current_user_id()."</h1>";
+
     $args4 = array(
         'post_type'=> array('projekte'), 
         'post_status'=>'publish', 
@@ -9,6 +9,7 @@
         'order' => 'DESC',
         'offset' => '0', 
     );
+    
     $my_query = new WP_Query($args4);
     if ($my_query->post_count > 0) {
         
@@ -42,8 +43,6 @@
         }
         wp_reset_postdata();
 
-
-        
     }
 
 ?>

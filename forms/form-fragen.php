@@ -1,11 +1,8 @@
 <?php 
-/* 
-*
-* Template Name: Frage erstellen
-*
-*/
+
 acf_form_head();
 get_header();
+
 ?>
 
 <main id="site-content" role="main">
@@ -22,49 +19,39 @@ get_header();
         </div>
     </div>
 
-    <?php // acf_form_head(); ?>
-
-
-    
     <div class="publish-form">
-    <h2>Was möchtest du wissen?</h2>
-    <br>
+        <h2>Was möchtest du wissen?</h2>
+        <br>
 
-    <?php $hierarchical_tax = array( 1 ); ?>
-    <?php 
-    acf_form(
-			array(
+        <?php 
+
+        acf_form(
+            array(
                 'form' => true,
-				'id' => 'fragen-form',
-				'html_before_fields' => '',
-				'html_after_fields' => '',
-				'label_placement'=> '',                
-				'post_id'=>'new_post',
-				'new_post'=>array(
+                'id' => 'fragen-form',
+                'html_before_fields' => '',
+                'html_after_fields' => '',
+                'label_placement'=> '',                
+                'post_id'=>'new_post',
+                'new_post'=>array(
                     'post_type' => 'fragen',
                     'post_status' => 'publish',
-				),
-				'field_el' => 'div',
-				'post_content' => false,
+                ),
+                'field_el' => 'div',
+                'post_content' => false,
                 'post_title' => false,
                 'submit_value'=>'Frage veröffentlichen',
-                'return' => get_site_url().'/gemeinsam', // post gets dublicated
-				'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App
+                'return' => get_site_url().'/gemeinsam', 
+                'field_groups' => array('group_5fcf56cd99219'),
                 
-			)
-    ); 
+            )
+        ); 
 
+        ?>
 
-    ?>
-       </div>
-        <!-- <div class="lead emoji-picker-container">
-            <input id="emoji" type="email" class="form-control" placeholder="Input with max length of 10" data-emojiable="true"
-                maxlength="9">
-        </div> -->
-
+    </div>
 
     <script>
-
        
         // picker for acf field
         var el = $( "#acf-field_5fcf563d5b576" );
@@ -103,7 +90,7 @@ get_header();
 
     </script>
 
-    </div>
+
 </main><!-- #site-content -->
 
 <?php  get_footer(); ?>

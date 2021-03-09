@@ -1,10 +1,9 @@
 <?php
+
 /**
+ * 
  * Call to post project
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 ?>
