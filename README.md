@@ -36,7 +36,7 @@ und unterstützt durch das [Wuppertal Institut](https://wupperinst.org/p/wi/p/s/
 
 
 ## Installation
-Die Quartiersplattform wird als *Wordpress Theme* genutzt und setzt daher einen Server mit Worpress vorraus. Zusätzlich müssen zwei Plugins installiert werden um die Plattform zu nutzten. 
+Die Quartiersplattform wird als **Wordpress Theme** genutzt und setzt daher einen Server mit Worpress vorraus. Zusätzlich müssen zwei Plugins installiert werden um die Plattform zu nutzten. 
 #### Erforderte Plugins
 - [Advanced Custom Fields Pro](https://github.com/AdvancedCustomFields/acf)
 - [Ultimate Member](https://ultimatemember.com)

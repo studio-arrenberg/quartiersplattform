@@ -1108,7 +1108,7 @@ add_filter( 'display_post_states', 'custom_page_template', 1, 2);
  *
  * @return string
  */
-add_filter( 'single_template', 'single_template_hook', 10 );
+add_filter( 'single_template', 'single_template_hook', 11 );
 function single_template_hook() {
 
 	global $post;
@@ -1119,9 +1119,9 @@ function single_template_hook() {
 	else if ( 'projekte' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-projekte.php';
     }
-	// else if ( 'geschichten' === $post->post_type ) {
-    //     $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
-    // }
+	else if ( 'geschichten' === $post->post_type ) {
+        $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
+    }
 	else if ( 'fragen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
     }
@@ -1138,7 +1138,7 @@ function single_template_hook() {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
 
-	if ( !empty($single_template) ) {
+	if (doing_filter( 'single_template') && !empty($single_template) ) {
 		return $single_template;
 	}
 }
