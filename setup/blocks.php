@@ -10,6 +10,7 @@
  * 
  * 	Blocks
  *	- Link Card
+ * 	- Geschichten Block
  * 
  */
 
@@ -33,10 +34,21 @@ function qp_acf_block_init() {
 			'title'				=> __('Link Block'),
 			'description'		=> __('Link Post and Pages'),
 			'render_callback'	=> 'link_block_render_callback',
-			'category'			=> 'quartiersplattform',
+			'category'			=> 'common',
 			'icon'				=> 'admin-links',
-			'keywords'			=> array( 'link', 'arreberg' ),
+			'keywords'			=> array( 'link', 'arrenberg' ),
 		));
+
+		// register a geschichten block
+		// acf_register_block(array(
+		// 	'name'				=> 'arrenberg-geschichten',
+		// 	'title'				=> __('Arrenberg Geschichten'),
+		// 	'description'		=> __('Geschichten am Arrenberg'),
+		// 	'render_callback'	=> 'geschichten_block_render_callback',
+		// 	'category'			=> 'common', //  quartiersplattform
+		// 	'icon'				=> 'text-page',
+		// 	'keywords'			=> array( 'geschichten', 'arrenberg', 'menschen' ),
+		// ));
 	}
 }
 
@@ -56,6 +68,18 @@ function link_block_render_callback( $block ) {
 		include( get_theme_file_path("/components/gutenberg-blocks/link-card.php") );
 	}
 }
+
+// function geschichten_block_render_callback( $block ) {
+	
+// 	// convert name ("acf/testimonial") into path friendly slug ("testimonial")
+// 	$slug = str_replace('acf/', '', $block['name']);
+	
+// 	// include a template part from within the "template-parts/block" folder
+// 	if( file_exists( get_theme_file_path("/components/gutenberg-blocks/geschichten-block.php") ) ) {
+// 		include( get_theme_file_path("/components/gutenberg-blocks/geschichten-block.php") );
+// 	}
+
+// }
 
 
 /**

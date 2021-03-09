@@ -145,7 +145,7 @@ function create_pages() {
         7 => array('title' => 'Kontakt', 'slug' => 'kontakt'),
         8 => array('title' => 'Veranstaltung erstellen', 'slug' => 'veranstaltung-erstellen'),
         9 => array('title' => 'Nachricht erstellen', 'slug' => 'nachricht-erstellen'),
-        10 => array('title' => 'Angebot erstellen', 'slug' => 'angeebot-erstellen'),
+        10 => array('title' => 'Angebot erstellen', 'slug' => 'angebot-erstellen'),
         11 => array('title' => 'Frage erstellen', 'slug' => 'frage-erstellen'),
         12 => array('title' => 'Projekt erstellen', 'slug' => 'projekt-erstellen'),
     );

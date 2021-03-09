@@ -1022,7 +1022,7 @@ function custom_page_template( $page_template, $post_states ) {
 	$prefix = "QP ";
 
 	if ($post->post_title == "Überblick") {
-		$post_states[] = $prefix.'Überblick';
+		$post_states[] = $prefix.'Startseite';
 		$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
 	}
 	else if ($post->post_title == "Veranstaltungen") {
@@ -1049,10 +1049,10 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Angebot erstellen';
 		$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
 	}
-	else if ($post->post_title == "Geschichten") {
-		$post_states[] = $prefix.'Geschichten page';
-		$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
-	}
+	// else if ($post->post_title == "Geschichten") {
+	// 	$post_states[] = $prefix.'Geschichten';
+	// 	$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
+	// }
 	else if ($post->post_title == "Anmerkungen") {
 		$post_states[] = $prefix.'Anmerkungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
@@ -1108,7 +1108,7 @@ add_filter( 'display_post_states', 'custom_page_template', 1, 2);
  *
  * @return string
  */
-add_filter( 'single_template', 'single_template_hook' );
+add_filter( 'single_template', 'single_template_hook', 10 );
 function single_template_hook() {
 
 	global $post;
@@ -1119,9 +1119,9 @@ function single_template_hook() {
 	else if ( 'projekte' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-projekte.php';
     }
-	else if ( 'geschichten' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
-    }
+	// else if ( 'geschichten' === $post->post_type ) {
+    //     $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
+    // }
 	else if ( 'fragen' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
     }
@@ -1138,7 +1138,9 @@ function single_template_hook() {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
 
-    return $single_template;
+	if ( !empty($single_template) ) {
+		return $single_template;
+	}
 }
 
 /**
