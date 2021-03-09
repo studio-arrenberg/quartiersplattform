@@ -15,7 +15,6 @@ und unterstützt durch das [Wuppertal Institut](https://wupperinst.org/p/wi/p/s/
 - Unterstützer 
 - -->
 
-
 <!-- 
 ![Feature 1](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-1.png)
 <br>

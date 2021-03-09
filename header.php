@@ -61,6 +61,10 @@ wp_maintenance_mode();
 
 <body <?php body_class(); ?>>
 
+<?php 
+// echo current_user_can('skip_maintenance');
+?>
+
     <?php
         wp_body_open();
         // check if menu is needed

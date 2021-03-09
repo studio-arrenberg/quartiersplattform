@@ -186,14 +186,15 @@ function create_pages() {
 function beta_user_role() {
     add_role( 'firstmover', 'First mover', get_role( 'subscriber' )->capabilities );
 
-    $role = get_role( 'firstmover' );
-	$role->add_cap( 'skip_maintenance' , true );
-
-    $role = get_role( 'administrator' );
-	$role->add_cap( 'skip_maintenance' , true );
+    $role_firstmover = get_role( 'firstmover' );
+	$role_firstmover->add_cap( 'skip_maintenance' , true );
+    $role_administrator = get_role( 'administrator' );
+	$role_administrator->add_cap( 'skip_maintenance' , false );
+    $role_user = get_role( 'user' );
+	$role_user->add_cap( 'skip_maintenance' , false );
 
 }
-add_action( 'after_setup_theme', 'beta_user_role' );
+add_action( 'init', 'beta_user_role' );
 
 
 

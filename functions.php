@@ -1673,19 +1673,21 @@ function post_remove () {
  add_action('admin_menu', 'post_remove');
  
 
- add_filter('allowed_block_types', function($block_types, $post) {
+ add_filter('allowed_block_types', 'block_limit', 10, 2);
+ function block_limit($block_types, $post) {
 	 $allowed = [
 		 'core/paragraph',
 		 'core/heading',
 		 'acf/link-card',
-		 'acf/arrenberg-wetter'
+		 'acf/arrenberg-wetter',
+		 'acf/arrenberg-geschichten'
 		 // 'core/image'
 	 ];
 	 if ($post->post_title == "Überblick") {
 		 return $allowed;
 	 }
 	 return $block_types;
- }, 10, 2);
+ }
  
 
 /**
