@@ -2062,11 +2062,11 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
     <div class="embla__container">
         <?php
 		while ( $query2->have_posts() ) {
-		$query2->the_post();
-		echo "<div class='embrela-slide'>";
-		get_template_part('elements/'.$type.'', get_post_type());
-		echo "</div>";
-	}
+			$query2->the_post();
+			echo "<div class='embrela-slide'>";
+			get_template_part('elements/'.$type.'', get_post_type());
+			echo "</div>";
+		}
 	wp_reset_postdata();
 	?>
     </div>
