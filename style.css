@@ -5892,6 +5892,8 @@ input[type="file"] {
   font-size: 1.7rem;
 }
 
+.um{max-width: 100% !important;}
+
 .um-modal input[type="file"]::-webkit-file-upload-button {
   width: 145px;
   height: 44px;
