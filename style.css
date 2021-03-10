@@ -5873,7 +5873,7 @@ padding: 5px 10px 3px 10px;
   align-items: center;
 }
 .page-template-profil{
-  margin-top: 290px;
+  margin-top: 290px !important;
 }
 
 input[type="file"] {
