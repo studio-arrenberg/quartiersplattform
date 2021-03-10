@@ -143,6 +143,8 @@ get_header();
     <!-- add website to homescreen -->
     <!-- not ready yet -->
 
+
+	<div class="card-container ">
 	<?php
 		// Gutenberg Editor Content
 		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
@@ -151,6 +153,7 @@ get_header();
 			the_content( __( 'Continue reading', 'twentytwenty' ) );
 		}
 	?>
+	</div>
 
     <?php 
 		// feedback
@@ -219,6 +222,9 @@ else {
 
     </div>
 
+	<div class="card-container ">
+
+
 	<?php
 		// Gutenberg Editor Content
 		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
@@ -227,6 +233,8 @@ else {
 			the_content( __( 'Continue reading', 'twentytwenty' ) );
 		}
 	?>
+</div>
+	
 
     <!-- *urbane transformation* -->
     <!-- not ready yet -->
