@@ -2088,7 +2088,7 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 		dragFree: <?php echo $dragfree; ?>,
 		slidesToScroll: slides_num, // viewport > 768px 4
 		draggable: draggable_state,
-		align: <?php echo $align; ?>
+		align: <?php echo "'".$align."'"; ?>,
 	}
 	var embla = EmblaCarousel(emblaNode, options)
 

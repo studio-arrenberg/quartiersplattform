@@ -32,7 +32,7 @@ get_header();
 			'order' => 'DESC',
 		);
 
-		slider($args2,'card', '1','false'); 
+		slider($args2, 'card', '1', 'false', 'start');
 		?>
 
     <?php
