@@ -61,6 +61,10 @@ wp_maintenance_mode();
 
 <body <?php body_class(); ?>>
 
+<?php 
+// echo current_user_can('skip_maintenance');
+?>
+
     <?php
         wp_body_open();
         // check if menu is needed
@@ -74,25 +78,27 @@ wp_maintenance_mode();
         <div class="pull-left">
 
         <?php 
-        if ($menu == 'page-header' && get_field('maintenance', 'option') == false || current_user_can('skip_maintenance')) {
+        # if in menu && if in maintenance mode + user cant skip
+        if (cms_is_in_menu( 'qp_menu') || ( get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance'))) {
         ?>
-            <!-- back button -->
-            <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Zurück</span>
-            </button>
-            <?php 
-        } 
-        else {
-            ?>
-            
+
             <div class="site-name">
                 <a href="<?php echo get_site_url(); ?>">
                     <h1><?php the_field('quartiersplattform-name', 'option'); ?></h1>
                     <h2><?php the_field('quartiersplattform-description', 'option'); ?></h2>
                 </a>
-                
             </div>
+
+            <?php 
+        } 
+        else {
+            ?>
+            
+            <!-- back button -->
+            <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Zurück</span>
+            </button>
         
             <?php 
         }

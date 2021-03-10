@@ -1022,7 +1022,7 @@ function custom_page_template( $page_template, $post_states ) {
 	$prefix = "QP ";
 
 	if ($post->post_title == "Überblick") {
-		$post_states[] = $prefix.'Überblick';
+		$post_states[] = $prefix.'Startseite';
 		$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
 	}
 	else if ($post->post_title == "Veranstaltungen") {
@@ -1049,10 +1049,10 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Angebot erstellen';
 		$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
 	}
-	else if ($post->post_title == "Geschichten") {
-		$post_states[] = $prefix.'Geschichten page';
-		$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
-	}
+	// else if ($post->post_title == "Geschichten") {
+	// 	$post_states[] = $prefix.'Geschichten';
+	// 	$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
+	// }
 	else if ($post->post_title == "Anmerkungen") {
 		$post_states[] = $prefix.'Anmerkungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
@@ -1108,7 +1108,7 @@ add_filter( 'display_post_states', 'custom_page_template', 1, 2);
  *
  * @return string
  */
-add_filter( 'single_template', 'single_template_hook' );
+add_filter( 'single_template', 'single_template_hook', 11 );
 function single_template_hook() {
 
 	global $post;
@@ -1138,7 +1138,9 @@ function single_template_hook() {
         $single_template = dirname( __FILE__ ) . '/pages/single-veranstaltungen.php';
     }
 
-    return $single_template;
+	if (doing_filter( 'single_template') && !empty($single_template) ) {
+		return $single_template;
+	}
 }
 
 /**
@@ -1671,19 +1673,21 @@ function post_remove () {
  add_action('admin_menu', 'post_remove');
  
 
- add_filter('allowed_block_types', function($block_types, $post) {
+ add_filter('allowed_block_types', 'block_limit', 10, 2);
+ function block_limit($block_types, $post) {
 	 $allowed = [
 		 'core/paragraph',
 		 'core/heading',
 		 'acf/link-card',
-		 'acf/arrenberg-wetter'
+		 'acf/arrenberg-wetter',
+		 'acf/arrenberg-geschichten'
 		 // 'core/image'
 	 ];
 	 if ($post->post_title == "Überblick") {
 		 return $allowed;
 	 }
 	 return $block_types;
- }, 10, 2);
+ }
  
 
 /**
@@ -1900,6 +1904,9 @@ function get_author($contact = false) {
             </div>
 			<?php
 		}
+	}
+	else {
+		return false;
 	}
 }
 
@@ -2187,6 +2194,70 @@ function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '
 	}
 
 }
+
+/**
+ *  --------------------------------------------------------
+ *  Public Functions - landscape_card
+ *  --------------------------------------------------------
+ */
+
+function emoji_picker_init($id) {
+
+	if ($id) {
+		?>
+
+		<script>
+
+			// get element
+			var el = $("#<?php echo $id; ?>");
+			el.parent('div.acf-input-wrap').addClass('lead emoji-picker-container');
+			el.attr("data-emojiable", "true");
+
+			// remove previous emojies
+			// $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
+			// 	$(this).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
+			// });
+			
+			// remove previous emojies
+			var alt;
+			$('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
+
+				console.log($(".emoji-wysiwyg-editor").children().length);
+
+				if ($(".emoji-wysiwyg-editor").children().length > 1) {
+					// console.log('remove childs ' + alt);
+					if (!alt) {
+						$('.emoji-wysiwyg-editor').children('img:nth-of-type(2)').remove();
+					} else if (alt) {
+						if (alt !== $('.emoji-wysiwyg-editor').children("img:last").attr("alt")) {
+							$('.emoji-wysiwyg-editor').children("img[alt='" + alt + "']").remove();
+						} else {
+							$('.emoji-wysiwyg-editor').children('img:nth-of-type(1)').remove();
+						}
+					}
+					alt = $('.emoji-wysiwyg-editor').children("img:first").attr("alt");
+				}
+
+			});
+
+			$(function() {
+				window.emojiPicker = new EmojiPicker({
+					emojiable_selector: '[data-emojiable=true]',
+					assetsPath: '<?php echo get_template_directory_uri(); ?>/assets/emoji-picker/img/',
+					popupButtonClasses: 'fa fa-smile-o'
+				});
+				window.emojiPicker.discover();
+
+				$('div.emoji-wysiwyg-editor').attr('tabindex', '-1');
+			});
+
+		</script>
+
+		<?php 
+	}
+}
+
+
 
 
 /**

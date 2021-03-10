@@ -145,7 +145,7 @@ function create_pages() {
         7 => array('title' => 'Kontakt', 'slug' => 'kontakt'),
         8 => array('title' => 'Veranstaltung erstellen', 'slug' => 'veranstaltung-erstellen'),
         9 => array('title' => 'Nachricht erstellen', 'slug' => 'nachricht-erstellen'),
-        10 => array('title' => 'Angebot erstellen', 'slug' => 'angeebot-erstellen'),
+        10 => array('title' => 'Angebot erstellen', 'slug' => 'angebot-erstellen'),
         11 => array('title' => 'Frage erstellen', 'slug' => 'frage-erstellen'),
         12 => array('title' => 'Projekt erstellen', 'slug' => 'projekt-erstellen'),
     );
@@ -183,17 +183,18 @@ function create_pages() {
  *  --------------------------------------------------------
  */
 
-function beta_user_role() {
+function firstmover_user_role() {
     add_role( 'firstmover', 'First mover', get_role( 'subscriber' )->capabilities );
 
-    $role = get_role( 'firstmover' );
-	$role->add_cap( 'skip_maintenance' , true );
-
-    $role = get_role( 'administrator' );
-	$role->add_cap( 'skip_maintenance' , true );
+    $role_firstmover = get_role( 'firstmover' );
+	$role_firstmover->add_cap( 'skip_maintenance' , true );
+    $role_administrator = get_role( 'administrator' );
+	$role_administrator->add_cap( 'skip_maintenance' , true );
+    // $role_user = get_role( 'user' );
+	// $role_user->add_cap( 'skip_maintenance' , false );
 
 }
-add_action( 'after_setup_theme', 'beta_user_role' );
+add_action( 'init', 'firstmover_user_role' );
 
 
 
