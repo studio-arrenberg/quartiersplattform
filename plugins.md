@@ -1,10 +1,10 @@
 ![Quartiersplattform Banner](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/quartiersplattform-banner-02.jpg)
 
 ## Dokumentation für die Quartiersplattform
-Hier finden sich alle Informationen und Einstellungen die für die korrekte Einstellung der Quartiersplattform benötigt werden.
+Hier finden sich alle Informationen und Einstellungen die für die korrekte Einrichtung der Quartiersplattform benötigt werden.
 
 ### Plugin – WP Mail SMTP
-1. Installieren Sie das Plugin über den Wordpress Plugin Manager.[WP Mail SMTP](https://de.wordpress.org/plugins/wp-mail-smtp/) 
+1. Installieren Sie das Plugin über den Wordpress Plugin Manager. [WP Mail SMTP](https://de.wordpress.org/plugins/wp-mail-smtp/) 
 2. Aktivieren Sie das Plugin.
 3. Starten Sie den Plugin Assistenten.
 4. Wählen Sie andere SMTP Verbindung aus.
@@ -16,7 +16,7 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Eins
 ### Plugin Ultimate Member
 
 #### Installation
-1. Installieren Sie das Plugin über den Wordpress Plugin Manager [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/) 
+1. Installieren Sie das Plugin über den Wordpress Plugin Manager. [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/) 
 2. Aktivieren Sie das Plugin.
 3. Öffnen Sie den Bereich Ultimate Member im Wordpress Admin Panel.
 4. Erstellen Sie die Seiten durch das Ultimate Member Plugin.
