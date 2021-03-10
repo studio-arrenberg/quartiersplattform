@@ -22,7 +22,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 ?>
 
-<main id="site-content" class="page-template-profil " role="main">
+<main id="site-content" class="site-content-profil " role="main">
 
     <div class="single-header profil">
         
