@@ -234,6 +234,14 @@ function twentytwenty_register_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'twentytwenty_register_scripts' );
 
+
+// admin.css einbinden
+function admin_style() {
+	wp_enqueue_style('admin-styles', get_stylesheet_directory_uri().'/admin.css');
+	}
+	add_action('admin_enqueue_scripts', 'admin_style');
+
+	
 /**
  * Fix skip link focus in IE11.
  *

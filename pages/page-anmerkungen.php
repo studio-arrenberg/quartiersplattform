@@ -11,7 +11,6 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-
 <div class="card-container">
 
 	<?php 

@@ -1,0 +1,11 @@
+
+/*! This file is auto-generated */
+
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+  width: 200px!important;
+}
+
+#wpcontent, #wpfooter{
+  margin-left: 200px;
+}
+

@@ -26,7 +26,7 @@ $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
                         shorten_title(get_field('text'), '85'); 
                     } 
                     else {
-                        the_field('text'); 
+                        shorten_title(get_field('text'), '22285'); 
                     }
                 ?>
             </h3>
