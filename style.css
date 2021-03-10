@@ -3194,7 +3194,7 @@ figure.wp-block-table.is-style-stripes {
 
 @media (min-width: 782px) {
   .sponsoren-logo {
-    height: 30px;
+    height: 35px;
     margin-top: 5px;
   }
 }
@@ -4764,7 +4764,6 @@ a.card-link{
 
 .landscape,
 .square {
-  max-height: 200px;
   position: relative;
   padding: 0px;
 }
@@ -4786,11 +4785,11 @@ a.card-link{
 
 .landscape img,
 .square img {
-  width: 100%;
   min-width: inherit;
   max-width: inherit;
+  width: 100%;
   height: 100%;
-  max-height: 200px;
+  /* max-height: 200px; */
   object-fit: cover;
   border-radius: 20px;
 }
@@ -5086,8 +5085,10 @@ a.card-link{
 }
 
 
-.landscape.gardient a .content {
+.landscape.gardient .content {
   padding-bottom: 15px !important;
+  height: 100%;
+  bottom: 0px;
 }
 
 
@@ -5198,6 +5199,16 @@ a.card-link{
   .card .card-button{
     font-size: 1.8rem;
   }
+
+}
+
+
+@media (max-width: 782px) {
+  
+  .card .content {
+    margin-top: 5px;
+  }
+
 }
 
 .card-footer a:last-of-type{
@@ -5227,9 +5238,9 @@ a.card-link{
     margin: 10px 0px;
     max-width: calc(50% - 5px);
   }
-  .card .content {
+  /* .card .content {
     margin-top: 10px;
-  }
+  } */
 
   .card .pre-title {
     font-size: 1.7rem;
@@ -5277,11 +5288,13 @@ a.card-link{
   .square {
     max-width: 100%;
     max-height: 100%;
+    height: calc((100vw - 60px) / 4);
   }
 
   .landscape{
     max-width: max-content;
     max-height: max-content;
+    height: calc((100vw - 20px) / 4);
   }
 
   .landscape img,
@@ -5290,12 +5303,9 @@ a.card-link{
     max-height: 100%;
   }
 
-  .square {
-   height: calc((100vw - 60px) / 4);
-  }
-
-  .landscape {
-   height: calc((100vw - 20px) / 4);
+  .landscape a, .landscape img  {
+    height: 100%;
+    width: 100%;
   }
 
   .square .preview-text {
@@ -5339,10 +5349,6 @@ a.card-link{
     max-height: 240px;
   }
 
-  .card-container .landscape a, .card-container .landscape img  {
-    max-height: 240px;
-  }
-
   .card-container .landscape .card-title {
     font-size: 1.8rem;
     line-height: 2rem;
@@ -5365,6 +5371,8 @@ a.card-link{
   .landscape {
     height: calc((1000px - 20px) / 2);
   }
+
+
 }
 
 .anmerkung .pre-title {
@@ -6187,6 +6195,7 @@ form.poll{
 .card .content{
   width: 100%;
 }
+
 
 form.poll .answers{
   margin-top: 10px;
