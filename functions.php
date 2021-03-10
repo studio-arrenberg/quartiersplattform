@@ -1087,15 +1087,15 @@ function custom_page_template( $page_template, $post_states ) {
 	}
 	else if ($post->post_title == "Anmelden") {
 		$post_states[] = $prefix.'Anmelden';
-		$page_template= get_stylesheet_directory() . '/templates/center-blank.php';
+		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
 	}
 	else if ($post->post_title == "Registrieren") {
 		$post_states[] = $prefix.'Registrieren';
-		$page_template= get_stylesheet_directory() . '/templates/center-blank.php';
+		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
 	}
 	else if ($post->post_title == "Passwort zurücksetzen") {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
-		$page_template= get_stylesheet_directory() . '/templates/center-blank.php';
+		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
 	}
 	
 	if (doing_filter( 'page_template') && !empty($page_template)) {
