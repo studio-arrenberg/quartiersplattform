@@ -3,6 +3,7 @@
 
 #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
   width: 200px!important;
+  /* background: palevioletred !important; */
 }
 
 #wpcontent, #wpfooter{
