@@ -21,12 +21,18 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 3. Öffnen Sie den Bereich Ultimate Member im Wordpress Admin Panel.
 4. Erstellen Sie die Seiten durch das Ultimate Member Plugin.
 ![Seiteneinstellungen](/documentation/UM_Pages_Documentation.jpg)
+<br>
+<br>
 
 #### Einstellungen Formulare
 1. Tragen Sie auf der Seite Profil den Shortcode von Ultimate Member für das Profil Formular ein. Diesen finden Sie in den Ultimate Member Einstellungen im Bereich Formulare.
 ![Formulare](/documentation/UM_Allgemein_Benutzer_Documentation.jpg)
+<br>
+<br>
 2. Deaktivieren Sie das Profil Menü in den Einstellungen von Ultimate Member unter dem Reiter Design.
 ![Profil Menü](/documentation/UM_Design_Profilmenu_Documentation.jpg)
+<br>
+<br>
 3. Deaktivieren Sie in den Einstellungen "Allgemein --> Konto" die Datenschutz, Nachrichten und die Konto löschen Registerkarte.
 ![Datenschutz](/documentation/UM_Allgemein_Konto_Documentation.jpg)
 
@@ -48,7 +54,15 @@ Benutzerdefinierte Weiterleitungs-URL setzen --> **https://quartiersplattform-do
 
 
 #### Allgemeine Quartierseinstellungen
-1. 
+1. Legen Sie die Seite Datenschutzerklärung mit den Informationen Ihrer Organisation für die Quartiersplattform an, indem Sie auf die Schaltfläche klicken.
+![Quartierseinstellungen](/documentation/QP_Datenschutz_Documentation.jpg)
+<br>
+<br>
+
+2. Unter dem Bereich Quartierseinstellungen können Sie die Konfiguration der Plattform anpassen. So kann der Name, das Logo und die Liste der Sponsoren in diesem Bereich angepasst werden.
+![Quartierseinstellungen](/documentation/QP_Quartierseinstellungen_Documentation.jpg)
+
+
 
 
 
