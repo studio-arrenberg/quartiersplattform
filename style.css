@@ -4773,7 +4773,6 @@ a.card-link{
   position: absolute;
   bottom: 0px;
   left: 0px;
-  top: 0px;
   padding: 10px;
   width: 100%;
   max-width: 100%;
@@ -5323,6 +5322,8 @@ a.card-link{
 
   .landscape a .content {
     padding: 20px;
+    height: 100%;
+    margin: 0px;
   }
 
   /* Zwei Spallten layout am Desktop */
@@ -5358,9 +5359,9 @@ a.card-link{
     font-size: 1.7rem;
   }
 
-  .card-container .landscape a .content {
+  /* .card-container .landscape a .content {
     padding: 5px 15px;
-  }
+  } */
 }
 
 @media (min-width: 1000px) {

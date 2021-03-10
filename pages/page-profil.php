@@ -22,7 +22,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-template-profil " role="main">
 
     <div class="single-header profil">
         
@@ -42,7 +42,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
     </div>
 
     <!-- Gutenberg Editor Content -->    
-    <div class="gutenberg-content">
+    <div class="gutenberg-content ">
         <?php
             if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
                 the_excerpt();
