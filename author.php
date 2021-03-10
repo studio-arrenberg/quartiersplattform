@@ -17,6 +17,14 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             <h1><?php echo $curauth->display_name; ?></h1>
             <br>
 
+            <?php 
+                if ($curauth->ID == get_current_user_id()) {
+                    ?>
+                        <a class="button" href="<?php echo get_site_url(); ?>/profil/">Mein Profil bearbeiten</a>
+                    <?php 
+                }
+            ?>
+
             <!-- Kontakt  -->
             <?php $userid = "user_".$curauth->ID; ?>
 
@@ -55,8 +63,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
                 
-                echo "<h2>Projekte von $curauth->first_name</h2>";
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');
+                echo "<h2>Projekte</h2>";
+                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');                
                 
             }
         ?>
@@ -67,15 +75,16 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 'post_type'=> array('angebote', 'fragen'), 
                 'post_status'=>'publish', 
                 'author' =>  $curauth->ID,
-                'posts_per_page'=> -1, 
+                'posts_per_page'=> 20, 
                 'order' => 'DESC',
                 'offset' => '0', 
             );
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
   
-                echo "<h2>Frage und Angebote von $curauth->first_name</h2>";
+                echo "<h2>Fragen und Angebote</h2>";
                 slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+                // get_template_part('elements/'.$type.'', get_post_type());
                 
             }
         ?>

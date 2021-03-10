@@ -38,6 +38,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
         </div>
 
+        
     </div>
 
     <!-- Gutenberg Editor Content -->    
@@ -113,6 +114,10 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
     <h2>Profil bearbeiten</h2>
     <?php echo do_shortcode("[ultimatemember_account]"); ?>
+
+    <a class="button is-style-outline" href="<?php echo get_author_posts_url(get_current_user_id()); ?>">Mein öffentliches Profil ansehen</a>
+
+    <br>
     
     <?php if (is_user_logged_in()) : ?>
         <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
