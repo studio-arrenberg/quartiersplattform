@@ -20,7 +20,7 @@
 
             ?>
 
-                <div class="card smart-card shadow">
+                <div class="card smart-card ">
                     <div class="card-header">
                         <h2>Dein Projekt</h2>
                     </div>
