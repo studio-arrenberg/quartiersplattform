@@ -4508,6 +4508,7 @@ figure.wp-block-table.is-style-stripes {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-content: space-between;
   border-radius: 20px;
   width: 100%;
   max-width: 400px;
@@ -4915,6 +4916,14 @@ a.card-link{
 
 
 
+.bg_red-light{
+  background: 
+  linear-gradient(
+    45deg,
+    rgba(255, 82, 128, 1) 0%,
+    rgba(194, 12, 61, 1) 100%
+    )
+}
 .bg_red {
   background: 
   linear-gradient(to top right, rgba(255, 0, 0, 1), rgba(197, 0, 0, 1))}

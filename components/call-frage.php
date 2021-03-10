@@ -8,7 +8,7 @@
 
 ?>
 
-<div class="card  card-centered shadow bg_orange-dark">
+<div class="card  card-centered shadow bg_blue-light">
     <a class="card-link" href="<?php echo get_site_url(); ?>/frage-erstellen/">
         <div class="content white-text">
             <h3 class="card-title">
