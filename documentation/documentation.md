@@ -20,56 +20,45 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 2. Aktivieren Sie das Plugin.
 3. Öffnen Sie den Bereich Ultimate Member im Wordpress Admin Panel.
 4. Erstellen Sie die Seiten durch das Ultimate Member Plugin.
-![Seiteneinstellungen](/documentation/UM_Pages_Documentation.jpg)
+![Seiteneinstellungen](/documentation/assets/UM_Pages_Documentation.jpg)
 <br>
 <br>
 
 #### Einstellungen Formulare
 1. Tragen Sie auf der Seite Profil den Shortcode von Ultimate Member für das Profil Formular ein. Diesen finden Sie in den Ultimate Member Einstellungen im Bereich Formulare.
-![Formulare](/documentation/UM_Allgemein_Benutzer_Documentation.jpg)
+![Formulare](/documentation/assets/UM_Allgemein_Benutzer_Documentation.jpg)
 <br>
 <br>
+
 2. Deaktivieren Sie das Profil Menü in den Einstellungen von Ultimate Member unter dem Reiter Design.
-![Profil Menü](/documentation/UM_Design_Profilmenu_Documentation.jpg)
+![Profil Menü](/documentation/assets/UM_Design_Profilmenu_Documentation.jpg)
 <br>
 <br>
+
 3. Deaktivieren Sie in den Einstellungen "Allgemein --> Konto" die Datenschutz, Nachrichten und die Konto löschen Registerkarte.
-![Datenschutz](/documentation/UM_Allgemein_Konto_Documentation.jpg)
+![Datenschutz](/documentation/assets/UM_Allgemein_Konto_Documentation.jpg)
 
 
 
 #### Einstellungen – Benutzer
-1. Deaktivieren Sie in den `Einstellungen von Ultimate Member` unter dem Bereich Benutzer die Profilweiterleitung und das Mitgliederverzeichnis. <br>
-![Benutzereinstellungen](/documentation/UM_Allgemein_Benutzer_Documentation.jpg)
-
+1. Deaktivieren Sie in den Einstellungen von Ultimate Member unter dem Bereich Benutzer die Profilweiterleitung und das Mitgliederverzeichnis.
+![Benutzereinstellungen](/documentation/assets/UM_Allgemein_Benutzer_Documentation.jpg)
 #### Einstellungen – E-Mail
 1. Deaktivieren Sie unter dem Bereich E-Mail alle Benachrichtigungen, außer der Willkommens- der Aktivierungs- sowie den beiden Passwort E-Mails.
-![E-Mail Einstellungen](/documentation/E-Mail_Documentation.jpg)
+![E-Mail Einstellungen](/documentation/assets/E-Mail_Documentation.jpg)
 
 #### Einstellungen – Weiterleitungen
 1. Stellen Sie in den Einstellungen von Ultimate Member im Bereich Benutzerrollen die korrekten Weiterleitungen bei der Benutzerrolle "Subscriber" und "Administrator" ein. Ändern Sie die Einstellung wie folgt als Registrierungs- Anmelde- und Abmeldeoption:<br>
 Maßnahmen, die nach der Anmeldung ergriffen werden --> Zu URL Umleiten
 Benutzerdefinierte Weiterleitungs-URL setzen --> **https://quartiersplattform-domain.de** (Durch die Domain der Quartiersplattform Installation ersetzen)
-![Benutzerrollen](/documentation/UM_Benutzerrollen_Weiterleitung_Documentation.jpg)
+![Benutzerrollen](/documentation/assets/UM_Benutzerrollen_Weiterleitung_Documentation.jpg)
 
 
 #### Allgemeine Quartierseinstellungen
 1. Legen Sie die Seite Datenschutzerklärung mit den Informationen Ihrer Organisation für die Quartiersplattform an, indem Sie auf die Schaltfläche klicken.
-![Quartierseinstellungen](/documentation/QP_Datenschutz_Documentation.jpg)
+![Quartierseinstellungen](/documentation/assets/QP_Datenschutz_Documentation.jpg)
 <br>
 <br>
 
 2. Unter dem Bereich Quartierseinstellungen können Sie die Konfiguration der Plattform anpassen. So kann der Name, das Logo und die Liste der Sponsoren in diesem Bereich angepasst werden.
-![Quartierseinstellungen](/documentation/QP_Quartierseinstellungen_Documentation.jpg)
-
-
-
-
-
-
-
-
-
-
-
-
+![Quartierseinstellungen](/documentation/assets/QP_Quartierseinstellungen_Documentation.jpg)

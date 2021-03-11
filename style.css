@@ -5872,8 +5872,8 @@ padding: 5px 10px 3px 10px;
   text-align: center;
   align-items: center;
 }
-.page-template-profil #site-content {
-  margin-top: 290px;
+.site-content-profil{
+  margin-top: 290px !important;
 }
 
 input[type="file"] {
@@ -5891,6 +5891,8 @@ input[type="file"] {
     sans-serif;
   font-size: 1.7rem;
 }
+
+.um{max-width: 100% !important;}
 
 .um-modal input[type="file"]::-webkit-file-upload-button {
   width: 145px;
