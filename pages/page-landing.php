@@ -91,7 +91,7 @@ get_header();
 					)
 				)
 			);
-			list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen am Arrenberg','Hier gehts zur Veranstaltungsübersicht');
+			list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen in deinem Quartier','Hier gehts zur Veranstaltungsübersicht');
 			?>
 
 	</div>
