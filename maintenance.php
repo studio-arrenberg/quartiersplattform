@@ -81,7 +81,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
     <div class="top-bar">
       <img class="top-bar-logo" src="<?php echo get_template_directory_uri()?>/assets/sponsoren/quartiersplattform.svg" alt=""/>
       <div class="flex-push-end">
-      <a class="btn btn-shadow" href="https://arrenberg.app/projekte/quartiersplattform/">Das Projekt</a>
+      <!-- <a class="btn btn-shadow" href="https://arrenberg.app/projekte/quartiersplattform/">Das Projekt</a> -->
       <a class="btn btn-shadow" href="https://github.com/studio-arrenberg/quartiersplattform#readme">Zur Dokumentation</a>
       </div>
     </div>
