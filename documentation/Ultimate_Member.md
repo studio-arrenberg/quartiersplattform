@@ -15,7 +15,7 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 <br>
 
 #### Einstellungen Formulare
-1. Tragen Sie auf der Seite Profil den Shortcode von Ultimate Member für das Profil Formular ein. Diesen finden Sie in den Ultimate Member Einstellungen im Bereich Formulare.
+1. Tragen Sie auf der Seite `Profil` den Shortcode von Ultimate Member für das Profil Formular ein. Diesen finden Sie in den Ultimate Member Einstellungen im Bereich Formulare.
 ![Formulare](/documentation/assets/UM_Allgemein_Benutzer_Documentation.jpg)
 <br>
 <br>
