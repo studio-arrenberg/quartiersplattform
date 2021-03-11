@@ -17,12 +17,13 @@
 		'orderby'           => 'expire_timestamp',
 		'order'             => 'ASC'
     );
+    
     $my_query = new WP_Query($args4);
     if ($my_query->post_count > 0) {
 
         ?>
 
-            <div class="card smart-card shadow">
+            <div class="card smart-card ">
                 <div class="card-header">
                     <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
                     <h3>Du hast folgene <span class="highlight">Sharingangebote </span> und <span class="highlight">
@@ -43,7 +44,7 @@
         ?>
 
                 <div class="card-footer">
-                    <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-dein-quartier//">Frage an die Community</a>
+                    <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-erstellen/">Frage an die Community</a>
                     <a class="button card-button" href="<?php echo get_site_url(); ?>/angebot-erstellen/">Angebot teilen</a>
                 </div>
 
@@ -55,14 +56,14 @@
     else {
         ?>
 
-        <div class="card smart-card shadow">
+        <div class="card smart-card ">
             <div class="card-header">
             <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
                 <h3>Du hast noch <span class="highlight">kein Sharingangebot </span> erstellt oder  <span class="highlight">Frage</span> gepostet.</h3>
             </div>
 
             <div class="card-footer">
-                <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-dein-quartier//">Frage an die
+                <a class="button card-button" href="<?php echo get_site_url(); ?>/frage-erstellen/">Frage an die
                     Community</a>
                 <a class="button card-button" href="<?php echo get_site_url(); ?>/angebot-erstellen/">Angebot teilen</a>
             </div>

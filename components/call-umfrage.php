@@ -1,14 +1,12 @@
 <?php
+
 /**
+ * 
  * Call to post survey
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 ?>
-
 
 <div class="card  landscape shadow">
     <a class="card-link" href="<?php echo get_site_url(); ?>/nachrichten/umfrage-transformation-am-arrenberg/">

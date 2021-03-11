@@ -1,34 +1,40 @@
 <?php
 
 /**
+ * 
  * Card => Anmerkung
+ *
  */
 
-?>
-
-<?php
 $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
-$terms_version = "";
-if ($terms_status) {
-    $terms_version = get_the_terms( $post->ID, 'anmerkungen_version' );
-}
 ?>
 
-<div class="card shadow anmerkung <?php echo $terms_status[0]->slug; ?>">
+<div class="card <?php if(!is_single( )) echo 'shadow'; ?> anmerkung <?php echo $terms_status[0]->slug; ?>">
+    <?php if(!is_single()) { ?>
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
+    <?php } ?>
         <div class="content">
-            <div class="pre-title"><?php echo $terms_version[0]->name; ?> 
+            <div class="pre-title">
+                <?php echo $terms_status[0]->name; ?>
                 <span class="date">
-                    <?php echo $terms_status[0]->name; ?> 
-                    <?php // echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-                </span>
+                    <?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "Vorschlag von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                <span>
             </div>
             <h3 class="card-title-large">
-                <?php  shorten_title(get_field('text'), '200'); ?>
+                <?php  
+                    if (!is_single( )) {
+                        shorten_title(get_field('text'), '85'); 
+                    } 
+                    else {
+                        shorten_title(get_field('text'), '22285'); 
+                    }
+                ?>
             </h3>
             <div class="comment-count">
                 <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
             </div>
         </div>
+    <?php if(!is_single()) { ?>
     </a>
+    <?php } ?>
 </div>

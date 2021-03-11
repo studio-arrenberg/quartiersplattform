@@ -1,9 +1,15 @@
 <?php
+
 /**
+ * 
  * Template Name: Profil
  *
- *
  */
+
+if ( ( is_user_logged_in() ) ) {
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+}
 
 get_header();
 
@@ -12,9 +18,11 @@ if (!is_user_logged_in()){
     exit();
 }
 
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="site-content-profil " role="main">
 
     <div class="single-header profil">
         
@@ -30,24 +38,25 @@ if (!is_user_logged_in()){
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
         </div>
 
+        
     </div>
 
-    <?php // echo do_shortcode('[ultimatemember form_id="63"]'); ?>
-
-    <!-- Gutenberg Editor Content -->
-	<div class="gutenberg-content">
-
-        <?php echo do_shortcode( '[ultimatemember form_id="63"]' ); ?>
-        <?php // echo do_shortcode( '[ultimatemember_account ]' ); ?>
-
+    <!-- Gutenberg Editor Content -->    
+    <div class="gutenberg-content ">
+        <?php
+            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                the_excerpt();
+            } else {
+                the_content( __( 'Continue reading', 'twentytwenty' ) );
+            }
+        ?>
 	</div>
-
 
     <br>
 
-    <!-- user posts -->
     <h2>Deine Angebote und Fragen</h2>
     <?php
+        // user posts
         $args4 = array(
             'post_type'=> array('angebote', 'fragen'), 
             'post_status'=>'publish', 
@@ -83,17 +92,37 @@ if (!is_user_logged_in()){
         <?php get_template_part( 'components/call', 'projekt' ); ?>
     </div>
 
+    <br>
+    <br>
+    <h2>Bearbeite deine Kontaktinformationen</h2>
+        <?php
+        $userid = "user_".$current_user->ID; 
+        acf_form (
+            array(
+                'form' => true,
+                'post_id' => $userid,
+                'return' => get_site_url()."/profil"."/",
+                'submit_value' => 'Änderungen speichern',
+                'post_title' => false,
+                'post_content' => false,    
+                'field_groups' => array('group_6034e1d00f273'),
+            )
+        );
+        ?>
+    <br>
+    <br>
 
-    <br>
-    <br>
     <h2>Profil bearbeiten</h2>
     <?php echo do_shortcode("[ultimatemember_account]"); ?>
+
+    <a class="button is-style-outline" href="<?php echo get_author_posts_url(get_current_user_id()); ?>">Mein öffentliches Profil ansehen</a>
+
+    <br>
     
     <?php if (is_user_logged_in()) : ?>
         <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
     <?php endif;?>
     
-
    
 </main><!-- #site-content -->
 

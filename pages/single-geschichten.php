@@ -1,7 +1,10 @@
 <?php
+
 /**
+ * 
  * Template Name: Geschichten [Default]
  * Template Post Type: geschichten
+ * 
  */
 
 get_header();
@@ -24,34 +27,34 @@ get_header();
 
 			?>
 
-    <div class="single-header">
-        <!-- post title -->
-        <div class="single-header-content">
-            <h1><?php the_title(); ?></h1>
-            <h3></h3>
-        </div>
+            <div class="single-header">
+                <!-- post title -->
+                <div class="single-header-content">
+                    <h1><?php the_title(); ?></h1>
+                    <h3></h3>
+                </div>
 
-        <!-- Bild -->
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                <!-- Bild -->
+                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
-    </div>
-    <!-- Eventtext felder gibt es noch nicht -->
-    <div class="site-content">
-        <!-- not ready yet -->
-    </div>
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
-        <?php
-        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-            the_excerpt();
-        } else {
-            the_content( __( 'Continue reading', 'twentytwenty' ) );
-        }
-    ?>
+            </div>
+            <!-- Eventtext felder gibt es noch nicht -->
+            <div class="site-content">
+                <!-- not ready yet -->
+            </div>
+            <!-- Gutenberg Editor Content -->
+            <div class="gutenberg-content">
+                <?php
+                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                    the_excerpt();
+                } else {
+                    the_content( __( 'Continue reading', 'twentytwenty' ) );
+                }
+            ?>
 
-    </div>
+            </div>
 
-    <?php edit_post_link(); ?>
+        <?php edit_post_link(); ?>
 
     <?php			
 
@@ -62,13 +65,11 @@ get_header();
 
     <br><br><br>
     <h2>Weitere Geschichten</h2>
-    <!-- weitere veranstaltungen -->
     <?php
 	$args2 = array(
 		'post_type'=>'geschichten', 
 		'post_status'=>'publish', 
 		'posts_per_page'=> 4, 
-		//'orderby' => 'meta_value',
 		'orderby' => 'rand',
 	);
 

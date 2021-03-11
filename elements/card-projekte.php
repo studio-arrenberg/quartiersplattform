@@ -1,9 +1,9 @@
 <?php
 
 /**
+ * 
  * Card => Projekte
  *
- * Used for both singular and index.
  */
 
 
@@ -19,10 +19,6 @@ else {
 if (strlen(get_field('slogan')) > 1 ) {
     $char = 50;
 }
-else { }
-
-
-
 
 ?>
 

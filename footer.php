@@ -14,30 +14,36 @@
 ?>
 <footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
     <div class="sponsoren">
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/wsw.svg" alt="WSW"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/buw.svg" alt="Universität Wuppertal"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/wuppertal-institut.svg" alt="Wuppertal Institt"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/studio-arrenberg.svg" alt="Studio Arrenberg"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/efre.svg" alt="Studio Arrenberg"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/dbu.svg" alt="Studio Arrenberg"> 
-        <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/eu.svg" alt="Studio Arrenberg"> 
+        <?php if( have_rows('sponsors', 'option') ): ?>    
+            <?php while( have_rows('sponsors', 'option') ): the_row();  
+                $image = get_sub_field('field_6024f5b43157e');
+            ?>
+                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 
     <div class="footer">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
+
+    <?php 
+    $image = get_field('logo', 'option');
+    if( !empty( $image ) ): ?>
+        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
 
         <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Kontakt</a>
         <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
-
-       
+        <?php
+            if (get_privacy_policy_url()) {
+                ?> 
+            <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>">Datenschutzerklärung</a>
+                <?php
+            } 
+        ?>
+        
     </div><!-- .section-inner -->
-
 </footer><!-- #site-footer -->
-
 <?php wp_footer(); ?>
-
-
-
 </body>
 
 </html>

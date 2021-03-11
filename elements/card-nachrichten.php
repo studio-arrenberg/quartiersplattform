@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * 
  * Card => Nachrichten
  *
  */

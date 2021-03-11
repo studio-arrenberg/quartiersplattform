@@ -4,7 +4,7 @@
   <div class="content" style="padding: 5%;text-align: center;vertical-align: center;position: relative;color: #666666;font-family: &quot;Open Sans&quot;, Helvetica,
 Arial;font-size: 16px;background-color: white;display: inline-block;border-radius: 50px;">
     <div>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/mail/registrieren.png" alt="Arrenberg Logo" width="300" height="auto">
+      
     </div>
     
     <div>
@@ -41,18 +41,20 @@ Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
     </div>
     <div style="color: ; padding: 20px 30px">
       <div>Vielen Dank!</div>
-      <div>Dein Arrenberg Team.</div>
+      <div>Dein <?php the_field('quartiersplattform-description', 'option'); ?> Team.</div>
     </div>
   </div>
   <div class="footer" style="text-align: center;margin-top: 5%;">
     <p>
-      <img src="https://ap1.arrenberg.studio/wp-content/themes/quartiersplattform/assets/sponsoren/aufbruch.svg" alt="Arrenberg Logo" width="200">
+    <?php 
+    $image = get_field('logo', 'option');
+    if( !empty( $image ) ): ?>
+        <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php endif; ?>
+
     </p>
-    <p class="footer" style="text-align: center;margin-top: 5%;">
-      <a class="footer_link" href="{login_url}" style="text-decoration: none;color: #62b2f0;font-family: &quot;Open Sans&quot;, Helvetica,
-Arial;margin-top: 100px;padding: 20% 2%;">Impressum </a>
-      <a class="footer_link" href="{login_url}" style="text-decoration: none;color: #62b2f0;font-family: &quot;Open Sans&quot;, Helvetica,
-Arial;margin-top: 100px;padding: 20% 2%;">Datenschutz </a>
-    </p>
+    <p class="footer" style="text-align: center; margin-top: 5%;">
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/">Impressum </a> 
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/">Datenschutz </a></p>
   </div>
 </div>

@@ -6,30 +6,52 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="center-header-template <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>" role="main">
 
-<?php // print_r($curauth); ?>
+    <div class="center-header">
 
-    <div class="single-header  ">
+        <img class="center-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
 
-        <img class="single-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
-
-        <div class="single-header-content center-mobile">
+        <div class="center-header-content center-mobile">
 
             <h1><?php echo $curauth->display_name; ?></h1>
+            <br>
+
+            <?php 
+                if ($curauth->ID == get_current_user_id()) {
+                    ?>
+                        <a class="button" href="<?php echo get_site_url(); ?>/profil/">Mein Profil bearbeiten</a>
+                    <?php 
+                }
+            ?>
+
+            <!-- Kontakt  -->
+            <?php $userid = "user_".$curauth->ID; ?>
+
+            <!-- phone -->
+            <?php if( get_field('mail', $userid) ) { ?>    
+                    <a class="button is-style-outline" target="blank"
+                    href="mailto:<?php the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
+                    rel="nofollow"><?php the_field('mail', $userid);?></a>
+            <?php } ?>
+
+
+            <!-- mail -->
+            <?php if( get_field('phone', $userid) ) { ?>
+                <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
+                    <?php the_field('phone', $userid); ?>
+                </a>
+            <?php } ?>
 
         </div>
-
+    </div>
     </div>
 
 
+    <div class="single-content-fullwith">
 
-    <div class="single-content">
-
-    
-
-        <!-- Projekte -->
         <?php
+            // Projekte
             $args4 = array(
                 'post_type'=> array('projekte'), 
                 'post_status'=>'publish', 
@@ -41,38 +63,33 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
                 
-                echo "<h2>Projekte von $curauth->display_name</h2>";
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+                echo "<h2>Projekte</h2>";
+                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');                
                 
             }
         ?>
 
-        <!-- Angebote und Fragen -->
         <?php
+            // Angebote und Fragen
             $args4 = array(
                 'post_type'=> array('angebote', 'fragen'), 
                 'post_status'=>'publish', 
                 'author' =>  $curauth->ID,
-                'posts_per_page'=> -1, 
+                'posts_per_page'=> 20, 
                 'order' => 'DESC',
                 'offset' => '0', 
             );
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
   
-                echo "<h2>Frage und Angebote von $curauth->display_name</h2>";
+                echo "<h2>Fragen und Angebote</h2>";
                 slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+                // get_template_part('elements/'.$type.'', get_post_type());
                 
             }
         ?>
 
-
-        <!-- Kontakt  -->
-        <!-- not ready yet -->
-
-
     </div>
-
 
 
 </div>

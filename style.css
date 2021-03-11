@@ -1,14 +1,13 @@
 /* 
 Theme Name: Quartiersplattform
 Text Domain: quartiersplattform
-Version: 0.1
+Version: 1.5.4
 Requires at least: 4.7
 Requires PHP: 5.2.4
-Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
-Author: the WordPress team
-Author URI: https://wordpress.org/
-Theme URI: https://wordpress.org/themes/twentytwenty/
+Description: Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz erstrahlen.
+Author: Studio Arrenberg
+Author URI: https://arrenberg.studio
+Theme URI: https://github.com/studio-arrenberg/quartiersplattform
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -1579,6 +1578,15 @@ button.toggle {
   margin-bottom: 20px;
 }
 
+.single-content-fullwith{
+  width: 100%;
+  text-align: left;
+}
+
+.single-content-fullwith .embla{
+  margin-bottom: 30px ;
+}
+
 .gutenberg-content {
   margin-top: 20px;
 }
@@ -2730,7 +2738,7 @@ figure.wp-block-table.is-style-stripes {
 /* -------------------------------------------------------------------------- */
 .comments-wrapper,
 .comment-respond {
-  max-width: 600px;
+  /* max-width: 600px; */
   margin: 15px 0px;
 }
 .comment-respond {
@@ -3186,7 +3194,7 @@ figure.wp-block-table.is-style-stripes {
 
 @media (min-width: 782px) {
   .sponsoren-logo {
-    height: 30px;
+    height: 35px;
     margin-top: 5px;
   }
 }
@@ -4500,6 +4508,7 @@ figure.wp-block-table.is-style-stripes {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-content: space-between;
   border-radius: 20px;
   width: 100%;
   max-width: 400px;
@@ -4725,9 +4734,17 @@ a.card-link{
   height: calc((100vw - 40px) / 2);
 }
 
+.landscape {
+  height: calc((100vw - 40px) / 2);
+}
+
 
 @media (min-width: 400px) {
   .square {
+    height: calc((400px - 40px) / 2);
+  }
+
+  .landscape {
     height: calc((400px - 40px) / 2);
   }
 }
@@ -4747,7 +4764,6 @@ a.card-link{
 
 .landscape,
 .square {
-  max-height: 200px;
   position: relative;
   padding: 0px;
 }
@@ -4757,7 +4773,6 @@ a.card-link{
   position: absolute;
   bottom: 0px;
   left: 0px;
-  top: 0px;
   padding: 10px;
   width: 100%;
   max-width: 100%;
@@ -4769,11 +4784,11 @@ a.card-link{
 
 .landscape img,
 .square img {
-  width: 100%;
   min-width: inherit;
   max-width: inherit;
+  width: 100%;
   height: 100%;
-  max-height: 200px;
+  /* max-height: 200px; */
   object-fit: cover;
   border-radius: 20px;
 }
@@ -4784,6 +4799,24 @@ a.card-link{
   color: #fff
 }
 
+
+/* ACF MAP */
+
+.gmnoprint, .gm-control-active {
+  display: none;
+}
+.pac-container{
+  border-radius: 0px 0px 20px 20px;
+  box-shadow: none;
+  border: none;
+  margin-top: -10px;
+  padding-top: 20px;
+  font-size: 1.3rem;
+}
+
+
+
+/* MAP MARKER */ 
 .marker-container{
   position: absolute;
   height: 100%;
@@ -4839,7 +4872,11 @@ a.card-link{
   background: #fff;
   border-radius: 20px;
   z-index: 2;
+}
 
+.card .marker img.emoji{
+  
+  border-radius: 0px;
 }
 
 .card .marker .emoji-marker{
@@ -4869,39 +4906,125 @@ a.card-link{
 }
 
 
-
-
-
-
-
-.bg_blue {
-  background: rgb(12, 194, 171);
-  background: linear-gradient(
-    45deg,
-    rgba(12, 194, 171, 1) 0%,
-    rgba(12, 165, 194, 1) 100%
-  );
+.card-sgd .card-link{
+  color: #fff;
 }
 
-.bg_green {
-  background: rgb(12, 194, 171);
-  /* background: linear-gradient(to top right, rgba(77, 201, 69, 1), rgba(0, 187, 92, 1)); */
-  background: linear-gradient(to top right, rgba(69, 199, 112, 1), rgba(68, 144, 105, 1));
+.card-content-hidden{
+  display: none;
+  opacity: 0;
 }
 
-.bg_orange {
-  background: rgb(12, 194, 171);
-  background: linear-gradient(to top right, rgba(255, 114, 0, 1), rgba(255, 154, 0, 1))
+.card-content-visible{
+  display: block;
+  opacity: 1;
 }
 
-.bg_red {
-  background: rgb(255, 82, 128);
-  background: linear-gradient(
+
+
+.bg_red-light{
+  background: 
+  linear-gradient(
     45deg,
     rgba(255, 82, 128, 1) 0%,
     rgba(194, 12, 61, 1) 100%
-  );
+    )
 }
+.bg_red {
+  background: 
+  linear-gradient(to top right, rgba(255, 0, 0, 1), rgba(197, 0, 0, 1))}
+
+.bg_red-dark {
+  background: 
+  linear-gradient(to top right, rgba(204, 0, 59, 1), rgba(143, 0, 32, 1))
+}
+
+.bg_orange-dark {
+  background: 
+  linear-gradient(to top right, rgba(255, 90, 0, 1), rgba(188, 72, 0, 1))
+}
+
+.bg_cyan{
+  background: 
+  linear-gradient(to top right, rgba(0, 231, 255, 1), rgba(0, 165, 196, 1))
+}
+
+.bg_blue-light {
+  background: 
+  linear-gradient( 45deg,rgba(12, 194, 171, 1),rgba(12, 165, 194, 1))
+}
+
+.bg_blue {
+  background: 
+  linear-gradient(to top right, rgba(0, 165, 255, 1), rgba(0, 138, 178, 1))
+}
+
+.bg_blue-dark {
+  background: 
+  linear-gradient(to top right, rgba(0, 76, 230, 1), rgba(0, 13, 174, 1))
+}
+
+.bg_yellow-light{
+  background: 
+  linear-gradient(to top right, rgba(255, 252, 0, 1), rgba(213, 204, 0, 1))
+}
+
+.bg_yellow{
+  background: 
+  linear-gradient(to top right, rgba(255, 230, 76, 1), rgba(248, 212, 37, 1))}
+
+
+.bg_orange-light {
+  background: 
+  linear-gradient(to top right, rgba(255, 203, 0, 1), rgba(255, 155, 0, 1))}
+
+.bg_orange {
+  background: 
+  linear-gradient(to top right, rgba(255, 114, 0, 1), rgba(255, 154, 0, 1))
+}
+
+.bg_brown {
+  background: 
+  linear-gradient(to top right, rgba(201, 84, 0, 1), rgba(169, 81, 0, 1))
+}
+
+.bg_pink {
+  background: 
+  linear-gradient(to top right, rgba(255, 0, 187, 1), rgba(199, 0, 89, 1))
+}
+  
+.bg_violett{
+  background: 
+  linear-gradient(to top right, rgba(220, 0, 119, 1), rgba(174, 0, 78, 1))
+}
+
+.bg_green {
+  background: 
+  linear-gradient(to top right, rgba(69, 199, 112, 1), rgba(68, 144, 105, 1));
+}
+
+.bg_green-light {
+  background: 
+  linear-gradient(to top right, rgba(0, 255, 10, 1), rgba(35, 191, 0, 1))
+}
+
+.bg_green-dark {
+  background: 
+  linear-gradient(to top right, rgba(0, 169, 7, 1), rgba(0, 116, 2, 1))
+}
+
+.bg_grey{
+  background: 
+  linear-gradient(to top right, rgba(145, 145, 145, 1), rgba(89, 89, 89, 1))
+}
+
+
+
+
+
+
+
+
 
 .bg_green a .content,
 .bg_blue  a .content,
@@ -4961,8 +5084,10 @@ a.card-link{
 }
 
 
-.landscape.gardient a .content {
+.landscape.gardient .content {
   padding-bottom: 15px !important;
+  height: 100%;
+  bottom: 0px;
 }
 
 
@@ -4990,7 +5115,6 @@ a.card-link{
   margin-top: 3px;
   margin-bottom: -6px;
 }
-
 
 /* login-wall */
 
@@ -5023,7 +5147,6 @@ a.card-link{
   width: initial;
   margin: 10px;
 }
-
 
 /* if backdrop support: very transparent and blurred */
 @supports (
@@ -5075,6 +5198,16 @@ a.card-link{
   .card .card-button{
     font-size: 1.8rem;
   }
+
+}
+
+
+@media (max-width: 782px) {
+  
+  .card .content {
+    margin-top: 5px;
+  }
+
 }
 
 .card-footer a:last-of-type{
@@ -5104,9 +5237,9 @@ a.card-link{
     margin: 10px 0px;
     max-width: calc(50% - 5px);
   }
-  .card .content {
+  /* .card .content {
     margin-top: 10px;
-  }
+  } */
 
   .card .pre-title {
     font-size: 1.7rem;
@@ -5140,6 +5273,8 @@ a.card-link{
     max-width: 700px;
   }
 
+
+
   .gutenberg-content p {
     margin-bottom: 10px;
   }
@@ -5148,10 +5283,17 @@ a.card-link{
     line-height: 2.6rem;
   }
 
-  .landscape,
+  
   .square {
     max-width: 100%;
     max-height: 100%;
+    height: calc((100vw - 60px) / 4);
+  }
+
+  .landscape{
+    max-width: max-content;
+    max-height: max-content;
+    height: calc((100vw - 20px) / 4);
   }
 
   .landscape img,
@@ -5160,8 +5302,9 @@ a.card-link{
     max-height: 100%;
   }
 
-  .square {
-   height: calc((100vw - 60px) / 4);
+  .landscape a, .landscape img  {
+    height: 100%;
+    width: 100%;
   }
 
   .square .preview-text {
@@ -5179,6 +5322,8 @@ a.card-link{
 
   .landscape a .content {
     padding: 20px;
+    height: 100%;
+    margin: 0px;
   }
 
   /* Zwei Spallten layout am Desktop */
@@ -5205,10 +5350,6 @@ a.card-link{
     max-height: 240px;
   }
 
-  .card-container .landscape a, .card-container .landscape img  {
-    max-height: 240px;
-  }
-
   .card-container .landscape .card-title {
     font-size: 1.8rem;
     line-height: 2rem;
@@ -5218,15 +5359,21 @@ a.card-link{
     font-size: 1.7rem;
   }
 
-  .card-container .landscape a .content {
+  /* .card-container .landscape a .content {
     padding: 5px 15px;
-  }
+  } */
 }
 
 @media (min-width: 1000px) {
   .square {
     max-height: calc((1000px - 60px) / 4);
   }
+
+  .landscape {
+    height: calc((1000px - 20px) / 2);
+  }
+
+
 }
 
 .anmerkung .pre-title {
@@ -5725,8 +5872,8 @@ padding: 5px 10px 3px 10px;
   text-align: center;
   align-items: center;
 }
-.page-template-profil #site-content {
-  margin-top: 290px;
+.site-content-profil{
+  margin-top: 290px !important;
 }
 
 input[type="file"] {
@@ -5744,6 +5891,8 @@ input[type="file"] {
     sans-serif;
   font-size: 1.7rem;
 }
+
+.um{max-width: 100% !important;}
 
 .um-modal input[type="file"]::-webkit-file-upload-button {
   width: 145px;
@@ -5887,7 +6036,7 @@ input[type="file"] {
   -webkit-appearance: none;
   appearance: none;
   display: inline-block;
-  border-radius: 0px;
+  /* border-radius: 0px; */
   border: none;
 }
 
@@ -6049,6 +6198,7 @@ form.poll{
 .card .content{
   width: 100%;
 }
+
 
 form.poll .answers{
   margin-top: 10px;

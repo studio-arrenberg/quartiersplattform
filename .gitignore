@@ -30,3 +30,6 @@ assets/generated/calendar-files/*
 # workflows
 .github/workflows/*
 *.yml
+
+# DS store
+.DS_Store

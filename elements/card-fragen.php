@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Card => Gemeinsam
+ * 
+ * Card => Fragen
  *
- * Used for both singular and index.
  */
 
 ?>

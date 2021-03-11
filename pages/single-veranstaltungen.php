@@ -1,13 +1,19 @@
 <?php
+
 /**
+ * 
  * Template Name: Veranstaltung [Default]
  * Template Post Type: projekte
+ * 
  */
+
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
+
 get_header();
+
 ?>
 
 <main id="site-content" role="main">
@@ -31,104 +37,113 @@ get_header();
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
             $the_slug = $term_list[0]->slug;
             $project_id = $term_list[0]->description;
-	?>
-
-<div class="single-header">
-        <!-- post title -->
-        <div class="single-header-content">
-            <h1><?php the_title(); ?></h1>
-            <h3 class="single-header-slogan">
-                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
-                <span class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?></span>
-            </h3>
-
-        <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
             ?>
-            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>
-            <a class="button is-style-outline button-red" onclick="return confirm('Diese Veranstaltung entgültig löschen?')"
-                href="<?php get_permalink(); ?>?action=delete">Veranstaltung löschen</a>
+
+            <div class="single-header">
+                <!-- post title -->
+                <div class="single-header-content">
+                    <h1><?php the_title(); ?></h1>
+                    <h3 class="single-header-slogan">
+                        <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
+                        <span class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?></span>
+                    </h3>
+
+                <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                    ?>
+                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('Diese Veranstaltung entgültig löschen?')"
+                        href="<?php get_permalink(); ?>?action=delete">Veranstaltung löschen</a>
+                    <?php
+                    }
+                ?>
+
+                </div>
+
+                <!-- Bild -->
+                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+            </div>
+
+            <!-- Eventtext felder gibt es noch nicht -->
+            <div class="site-content">
+            
+                <?php 
+                // text
+                the_field('text');
+
+                // temp fix
+                echo "<br><br>";
+
+                // livestream
+                if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livesstream</a>";
+
+                // Ticket
+                if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livesstream</a>";
+
+                // Website
+                if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livesstream</a>";
+
+                ?>
+
+            </div>
+
+            <div class="gutenberg-content">
+
+                <?php
+                // Gutenberg Editor Content
+                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                    the_excerpt();
+                } else {
+                    the_content( __( 'Continue reading', 'twentytwenty' ) );
+                }
+                ?>
+
+            </div>
+
+            <?php 
+                // author card
+                get_author(); 
+            ?>
+
+            <?php 
+                // calendar download
+                calendar_download($post); 
+            ?>
+
+            <br>
+            <br>
+
+
             <?php
-            }
-        ?>
+                // weitere Nachrichten
+                $args2 = array(
+                    'post_type'=> array('nachrichten', 'veranstaltungen'), 
+                    'post_status'=>'publish', 
+                    'posts_per_page'=> 6,
+                    'order' => 'DESC',
+                    'post__not_in' => array(get_the_ID()),
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'projekt',
+                            'field' => 'slug',
+                            'terms' => ".$the_slug."
+                        )
+                    )
+                );
+                
+                $my_query = new WP_Query($args2);
+                if ($my_query->post_count > 0) {
+                ?>
+                    <h2>Weitere Nachrichten & Veranstaltungen</h2>
+                <?php
+                    slider($args2,'card', '1','false');
+                }
+            ?>
+            <br>
 
-        </div>
-
-        <!-- Bild -->
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-    </div>
-    <!-- Eventtext felder gibt es noch nicht -->
-    <div class="site-content">
-    
-        <?php 
-        // text
-        the_field('text');
-
-        // temp fix
-        echo "<br><br>";
-
-        // livestream
-        if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livesstream</a>";
-
-        // Ticket
-        if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livesstream</a>";
-
-        // Website
-        if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livesstream</a>";
-        ?>
-
-    </div>
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
         <?php
-        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-            the_excerpt();
-        } else {
-            the_content( __( 'Continue reading', 'twentytwenty' ) );
-        }
-        ?>
-
-    </div>
-
-    <?php get_author(); ?>
-
-    <!-- calendar download -->
-    <?php calendar_download($post); ?>
-
-
-    <br>
-    <br>
-
-<!-- weitere Nachrichten -->
-<?php
-		$args2 = array(
-			'post_type'=> array('nachrichten', 'veranstaltungen'), 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 6,
-            'order' => 'DESC',
-            'post__not_in' => array(get_the_ID()),
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'projekt',
-                    'field' => 'slug',
-                    'terms' => ".$the_slug."
-                )
-            )
-        );
-        
-        $my_query = new WP_Query($args2);
-        if ($my_query->post_count > 0) {
-        ?>
-            <h2>Weitere Nachrichten & Veranstaltungen</h2>
-        <?php
-            slider($args2,'card', '1','false');
-        }
-?>
-    <br>
-
-  <!-- Projekt Kachel -->
-  <?php
+        // Projekt Kachel
         $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
         $the_slug = $term_list[0]->slug;
         if ($the_slug) {
@@ -139,27 +154,26 @@ get_header();
                 'numberposts' => '1'
             );
 
-
             $my_query = new WP_Query($args);
             if ($my_query->post_count > 0) {
-     ?>
+            ?>
 
+            <h2>Das Projekt</h2>
 
-    <h2>Das Projekt</h2>
+            <div class="card-container ">
 
-    <div class="card-container ">
-
+            <?php
+                landscape_card($args);
+                } 
+            ?>
+            </div>
         <?php
-            landscape_card($args);
-            } 
-
-            
         }
-    ?>
+        ?>
 
-    </div>
+    
 
-    <!-- Map -->
+        <!-- Map -->
         <!-- not ready yet -->
         <?php if ( current_user_can('administrator') ) { // new feature only for admins 
             
@@ -168,26 +182,27 @@ get_header();
                 get_template_part('components/map-card');
             }    
 
-        } ?>
+        } 
+        ?>
     
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
+        <!-- Backend edit link -->
+        <?php edit_post_link(); ?>
 
-    <!-- kommentare -->
-    <?php			
-		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-	?>
+        <!-- kommentare -->
+        <?php			
+            if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+        ?>
 
-    <div class="comments-wrapper">
+        <div class="comments-wrapper">
+            <?php comments_template('', true); ?>
+        </div><!-- .comments-wrapper -->
 
-        <?php comments_template('', true); ?>
+        <?php
+            } # kommentare
 
-    </div><!-- .comments-wrapper -->
+        }   # main loop 
 
-    <?php
-            }
-        }
-
+        # post löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
 
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
@@ -204,9 +219,8 @@ get_header();
                 wp_redirect( get_site_url() );
             }
             
-
         }
-
+        # posst bearbeiten
         else {
             
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
@@ -224,8 +238,7 @@ get_header();
                             'field_5fc8d16e8765c', //Start AP1
                             'field_5fc8d18b8765d', //End AP1 
                             'field_5fc8d1e0d15c9', //Livestream
-                            'field_601d9d8ac7c9b', //Bilder
-                            'field_60226dfd58a16', //Bilder AP1
+                            'field_603f4c75747e9', //Bilder
                             
                         ),
                         'submit_value'=>'Änderungen speichern',
@@ -237,8 +250,7 @@ get_header();
     }
 }
     
-
-	?>
+?>
 
 </main><!-- #site-content -->
 

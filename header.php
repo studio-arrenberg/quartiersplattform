@@ -1,15 +1,10 @@
 <?php
-/**
- * Header file for the Twenty Twenty WordPress default theme.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
+
+# redirect when maintenance is ON
+wp_maintenance_mode();
 
 ?>
+
 <!DOCTYPE html>
 
 <html class="no-js" <?php language_attributes(); ?>>
@@ -59,44 +54,22 @@
     <!-- Emoji Picker -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Matomo -->
-    <script type="text/javascript">
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u = "//abdruck.arrenberg.studio/";
-        _paq.push(['setTrackerUrl', u + 'matomo.php']);
-        _paq.push(['setSiteId', '12']);
-        var d = document,
-            g = d.createElement('script'),
-            s = d.getElementsByTagName('script')[0];
-        g.type = 'text/javascript';
-        g.async = true;
-        g.src = u + 'matomo.js';
-        s.parentNode.insertBefore(g, s);
-    })();
-    </script>
-    <noscript>
-        <p><img src="//abdruck.arrenberg.studio/matomo.php?idsite=12&amp;rec=1" style="border:0;" alt="" /></p>
-    </noscript>
-    <!-- End Matomo Code -->
-
-    <!-- Matomo Addition -->
-    <script>
-        _paq.push(['trackVisibleContentImpressions']);
-    </script>
+    <!-- Matomo Tracking API Key -->
+    <?php the_field('matomo_api', 'option'); ?>
 
 </head>
 
 <body <?php body_class(); ?>>
 
+<?php 
+// echo current_user_can('skip_maintenance');
+?>
+
     <?php
         wp_body_open();
         // check if menu is needed
         $menu = 'page-header';
-        if( cms_is_in_menu( 'menu' ) ) {
+        if( cms_is_in_menu( 'qp_menu') ) {
             $menu = 'post-header';
         }
     ?>
@@ -104,25 +77,28 @@
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="pull-left">
 
-            <?php 
-        if ($menu == 'page-header') {
+        <?php 
+        # if in menu && if in maintenance mode + user cant skip
+        if (cms_is_in_menu( 'qp_menu') || ( get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance'))) {
         ?>
-            <!-- back button -->
-            <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label">Zurück</span>
-            </button>
+
+            <div class="site-name">
+                <a href="<?php echo get_site_url(); ?>">
+                    <h1><?php the_field('quartiersplattform-name', 'option'); ?></h1>
+                    <h2><?php the_field('quartiersplattform-description', 'option'); ?></h2>
+                </a>
+            </div>
+
             <?php 
         } 
         else {
             ?>
             
-            <div class="site-name">
-                <a href="<?php echo get_site_url(); ?>">
-                    <h1>Arrenberg </h1>
-                    <h2>Quartiersplattform </h2>
-                </a>
-            </div>
+            <!-- back button -->
+            <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+                <span class="button-has-icon-label">Zurück</span>
+            </button>
         
             <?php 
         }
@@ -137,8 +113,8 @@
             </a>
 
             <?php
-        // logged in user
-        if (is_user_logged_in()) {
+            // logged in user
+            if (is_user_logged_in()) {
             ?>
 
             <?php 
@@ -164,7 +140,7 @@
         else {
             ?>
             <a class="button header-button button-has-icon is-style-outline push-right"
-                href="<?php echo get_site_url(); ?>/anmelden">
+                href="<?php echo get_site_url(); ?>/login">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
                 <span class="button-has-icon-label">Anmelden</span>
             </a>
@@ -177,79 +153,83 @@
 
 
         <?php
-				if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-
-
-					?>
+            # remove menu when in maintenance mode
+            if (get_field('maintenance', 'option') == false || current_user_can('skip_maintenance')) {
+			     if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
+        ?>
 
         <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>"
             role="navigation">
 
             <?php
-								if ( has_nav_menu( 'primary' ) ) {
+                if ( has_nav_menu( 'primary' ) ) {
 
-									wp_nav_menu(
-										array(
-											'container'  => '',
-											'items_wrap' => '%3$s',
-											'theme_location' => 'primary',
-										)
-									);
+                    wp_nav_menu(
+                        array(
+                            'container'  => '',
+                            'items_wrap' => '%3$s',
+                            'theme_location' => 'primary',
+                        )
+                    );
 
-								} elseif ( ! has_nav_menu( 'expanded' ) ) {
+                } elseif ( ! has_nav_menu( 'expanded' ) ) {
 
-									wp_list_pages(
-										array(
-											'match_menu_classes' => true,
-											'show_sub_menu_icons' => true,
-											'title_li' => false,
-											'walker'   => new TwentyTwenty_Walker_Page(),
-										)
-									);
+                    wp_list_pages(
+                        array(
+                            'match_menu_classes' => true,
+                            'show_sub_menu_icons' => true,
+                            'title_li' => false,
+                            'walker'   => new TwentyTwenty_Walker_Page(),
+                        )
+                    );
 
-								}
-								?>
+                }
+			?>
 
         </ul>
 
-        <?php } ?>
+        <?php 
+                }   
+            }
+        ?>
         </div><!-- .header-navigation-wrapper -->
 
-
-
-
-
     </header><!-- #site-header -->
+
+    <?php 
+    
+    ?>
+
     <script>
-    window.onscroll = function() {
-        scrollFunction()
-    };
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
-    var currentScrollTop = 0;
-    var c = 0;
+        var currentScrollTop = 0;
+        var c = 0;
 
-    function scrollFunction() {
-        currentScrollTop = document.documentElement.scrollTop;
+        function scrollFunction() {
+            currentScrollTop = document.documentElement.scrollTop;
 
-        if (Math.abs(currentScrollTop - c) > 150) {
-            // console.log(currentScrollTop+ ' '+ c);
-            if (currentScrollTop > c) {
-                // console.log('down');
-                document.getElementById("site-header").style.top = "-45px";
+            if (Math.abs(currentScrollTop - c) > 150) {
+                // console.log(currentScrollTop+ ' '+ c);
+                if (currentScrollTop > c) {
+                    // console.log('down');
+                    document.getElementById("site-header").style.top = "-45px";
+                }
+                else {
+                    // console.log('up');
+                    document.getElementById("site-header").style.top = "0px";
+                }
+                c = currentScrollTop;
             }
-            else {
-                // console.log('up');
-                document.getElementById("site-header").style.top = "0px";
-            }
-            c = currentScrollTop;
         }
-    }
     </script>
 
 
 
     <!-- energie ampel -->
-    <div id="overlay" class="overlay hidden " onclick="hide()">
+    <div id="overlay" class="overlay hidden">
 
         <div class="overlay-content">
             <button class="button header-button button-has-icon is-style-outline" onclick="hide()">
