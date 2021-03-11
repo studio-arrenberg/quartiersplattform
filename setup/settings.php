@@ -141,7 +141,7 @@ if( function_exists('acf_add_local_field_group') ):
 				),
 				'collapsed' => '',
 				'min' => 0,
-				'max' => 6,
+				'max' => 10,
 				'layout' => 'table',
 				'button_label' => '',
 				'sub_fields' => array(

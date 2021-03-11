@@ -15,13 +15,15 @@ und unterstützt durch das [Wuppertal Institut für Klima, Umwelt, Energie](http
 
 <br>
 
+<!-- 
 ![Feature 1](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-1.png)
 <br>
 
 ![Feature 2](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-2.png)
 <br>
 
-![Feature 3](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-3.png)
+![Feature 3](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-3.png) 
+-->
 
 
 <!-- ## Features -->

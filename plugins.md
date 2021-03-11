@@ -39,7 +39,7 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 
 
 #### Einstellungen – Benutzer
-1. Deaktivieren Sie in den Einstellungen von Ultimate Member unter dem Bereich Benutzer die Profilweiterleitung und das Mitgliederverzeichnis.
+1. Deaktivieren Sie in den `Einstellungen von Ultimate Member` unter dem Bereich Benutzer die Profilweiterleitung und das Mitgliederverzeichnis. <br>
 ![Benutzereinstellungen](/documentation/UM_Allgemein_Benutzer_Documentation.jpg)
 
 #### Einstellungen – E-Mail
