@@ -1,5 +1,6 @@
 # ⚙️ Development Notes
 
+
 ## Image Sizes (Ratio)
 
 | Name          | S       | M       | M(2)    | M(3)    | L       |
