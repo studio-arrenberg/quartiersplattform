@@ -23,6 +23,8 @@
         <img class="sponsoren-logo" src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/eu.svg" alt="Studio Arrenberg"> 
     </div>
 
+
+
     <div class="footer">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/sponsoren/aufbruch.svg" alt="Aufbruch am Arrenberg"> 
 
