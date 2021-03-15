@@ -21,3 +21,12 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+
+# calendar files
+assets/generated/calendar-files/*
+*.ics
+#!assets/generated/calendar-files/
+
+# workflows
+.github/workflows/*
+*.yml

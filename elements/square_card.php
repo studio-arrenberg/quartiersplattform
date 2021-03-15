@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The default template for displaying content
+ * Default Square Card
  *
  * Used for both singular and index.
  *
@@ -14,18 +14,18 @@
 
 ?>
 
-
-<div class="card square shadow">
+<div class="card square shadow gardient">
     <a href="<?php echo esc_url( get_permalink() ); ?>">
 
         <div class="content">
             <h3 class="card-title">
-                Square Card Title
+                <?php shorten_title(get_the_title(), '30'); ?>
             </h3>
             <p class="preview-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <?php  get_excerpt(get_the_content(), '55'); ?>
             </p>
         </div>
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x400.png" alt="" />
+        <?php  the_post_thumbnail( 'square_l' ); ?>
+        <?php // the_post_thumbnail( array(180, 180) ); ?>
     </a>
 </div>

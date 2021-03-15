@@ -214,7 +214,13 @@ function twentytwenty_edit_post_link( $link, $post_id, $text ) {
 		get_the_title( $post_id )
 	);
 
-	return '<div class="post-meta-wrapper post-meta-edit-link-wrapper"><ul class="post-meta"><li class="post-edit meta-wrapper"><span class="meta-icon">' . twentytwenty_get_theme_svg( 'edit' ) . '</span><span class="meta-text"><a href="' . esc_url( $edit_url ) . '">' . $text . '</a></span></li></ul><!-- .post-meta --></div><!-- .post-meta-wrapper -->';
+
+	return '
+	<a class="button button-has-icon is-style-outline" href="' . esc_url( $edit_url ) . '">
+            <img class="button-icon" src="'. get_template_directory_uri() . '/assets/icons/edit.svg">
+            <span class="button-has-icon-label">Bearbeiten</span>
+		</a>';
+		
 
 }
 

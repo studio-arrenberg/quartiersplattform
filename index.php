@@ -55,28 +55,16 @@ get_header();
 	}
 
 	if ( $archive_title || $archive_subtitle ) {
-		?>
-
-		<header class="archive-header has-text-align-center header-footer-group">
-
-			<div class="archive-header-inner section-inner medium">
-
-				<?php if ( $archive_title ) { ?>
-					<h1 class="archive-title"><?php echo wp_kses_post( $archive_title ); ?></h1>
-				<?php } ?>
-
-				<?php if ( $archive_subtitle ) { ?>
-					<div class="archive-subtitle section-inner thin max-percentage intro-text"><?php echo wp_kses_post( wpautop( $archive_subtitle ) ); ?></div>
-				<?php } ?>
-
-			</div><!-- .archive-header-inner -->
-
-		</header><!-- .archive-header -->
-
-		<?php
+		
 	}
 
 	if ( have_posts() ) {
+
+		?>
+			<div class="card-container">
+			
+
+		<?php
 
 		$i = 0;
 
@@ -87,9 +75,17 @@ get_header();
 			}
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			// get_template_part( 'template-parts/content', get_post_type() );
+			get_template_part( 'elements/card', get_post_type() );
 
 		}
+		?>
+
+		</div>
+
+		<?php
+
+
 	} elseif ( is_search() ) {
 		?>
 
@@ -113,7 +109,6 @@ get_header();
 
 </main><!-- #site-content -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php
 get_footer();

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The default template for displaying content
+ * Default List Card
  *
  * Used for both singular and index.
  *
@@ -15,13 +15,13 @@
 ?>
 
 <div class="list-item">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/400x300.png" alt="" />
+    <?php the_post_thumbnail( 'preview_m' ); ?>
     <div class="content">
         <h3 class="card-title">
-            Card Title
+            <?php shorten_title(get_the_title(), '30'); ?>
         </h3>
         <p class="preview-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <?php  get_excerpt(get_the_content(), '55'); ?>
         </p>
     </div>
 </div>

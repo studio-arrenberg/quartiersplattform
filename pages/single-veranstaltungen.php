@@ -1,13 +1,7 @@
 <?php
 /**
- * Template Name: Projekt [Default]
+ * Template Name: Veranstaltung [Default]
  * Template Post Type: projekte
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
  */
 
 get_header();
@@ -16,56 +10,103 @@ get_header();
 <main id="site-content" role="main">
 
     <?php
-
 	if ( have_posts() ) {
-
 		while ( have_posts() ) {
 			the_post();
 			
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'twentytwenty-fullscreen' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
 				$cover_header_classes = ' bg-image';
-			}
-
-			?>
-
-    <!-- post title -->
-    <h1><?php the_title(); ?></h1>
-
-    <!-- projekt / akteur -->
-    <!-- not ready yet -->
-
-    <!-- datum -->
-    <p><?php the_field('kurzbeschreibung'); ?></p>
+            }
 
 
-    <!-- Bild -->
-    <img src="<?php echo esc_url( $image_url ) ?>" />
+            $date = get_field('event_date');
+            $time = get_field('event_time');
 
-    <!-- Projektbeschreibung felder gibt es noch nicht -->
-    <div>
-        <p>Das Projekt der Arrenberg-Farm, eine moderne, kreislaufbasierte Lebensmittelproduktionsanlage mitten in
-            Wuppertal zu realisieren, soll in der Zukunft ein Stück dazu beitragen, die Ressource Wasser zu sparen und
-            gleichzeitig die Talbewohner mit frischen und gesunden Lebensmitteln zu versorgen. Ganz nach dem Motto
-            „close the loop – new urban food“ wird ein kreislaufbasiertes Modell der Lebensmittelproduktion angestrebt,
-            um so effizient und schonend wie möglich mit kostbaren Ressourcen umzugehen.
-        </p>
+	?>
+
+    <div class="single-header">
+        <!-- post title -->
+        <div class="single-header-content">
+            <h1><?php the_title(); ?></h1>
+            <h3>
+                <?php if (current_user_can('administrator')) echo get_the_author_meta( 'display_name', $author_id ); ?>
+                <span class="date"><?php echo date('j. F G:i', strtotime("$date $time")); ?></span>
+            </h3>
+        </div>
+
+        <!-- projekt / akteur -->
+        <!-- not ready yet -->
+
+        <!-- Bild -->
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+        <!-- slogan / emoji -->
+        <?php if ( current_user_can('administrator') ) { // new feature only for admins ?>
+        <p><?php the_field('website'); ?></p>
+        <p><?php the_field('livestream'); ?></p>
+        <p><?php the_field('ticket'); ?></p>
+        <?php } ?>
+
+    </div>
+    <!-- Eventtext felder gibt es noch nicht -->
+    <div class="site-content">
+        <!-- not ready yet -->
+    </div>
+    <!-- Gutenberg Editor Content -->
+    <div class="gutenberg-content">
+        <?php
+        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+            the_excerpt();
+        } else {
+            the_content( __( 'Continue reading', 'twentytwenty' ) );
+        }
+    ?>
+
     </div>
 
-    <?php edit_post_link(); ?>
-
-    <!-- card: projekt / akteur -->
+    <!-- calendar download -->
     <!-- not ready yet -->
+    <?php calendar_download($post); ?>
+    <?php edit_post_link(); ?>
+    <br>
 
+  <!-- Projekt Kachel -->
+  <?php
+        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+        $the_slug = $term_list[0]->slug;
+        if ($the_slug) {
+            $args = array(
+                'name'        => $term_list[0]->slug,
+                'post_type'   => 'projekte',
+                'post_status' => 'publish',
+                'numberposts' => '1'
+            );
+
+
+            $my_query = new WP_Query($args);
+            if ($my_query->post_count > 0) {
+     ?>
+
+
+    <h2>Das Projekt</h2>
+
+    <div class="card-container ">
+
+        <?php
+            landscape_card($args);
+            } 
+
+            
+        }
+    ?>
+
+    </div>
     <!-- map: adresse -->
     <!-- not ready yet -->
-
-    <!-- cards: weitere veranstaltungen -->
-    <!-- not ready yet -->
-
 
     <?php			
 
@@ -74,8 +115,33 @@ get_header();
 
 	?>
 
+    <br><br><br>
+    <h2>Weitere Veranstaltungen</h2>
+    <!-- weitere veranstaltungen -->
+    <?php
+	$args2 = array(
+		'post_type'=>'veranstaltungen', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4, 
+		'meta_key' => 'event_date',
+		//'orderby' => 'meta_value',
+		'orderby' => 'rand',
+		'order' => 'ASC',
+		'offset' => '0', 
+		'meta_query' => array(
+			array(
+				'key' => 'event_date', 
+				'value' => date("Y-m-d"),
+				'compare' => '>=', 
+				'type' => 'DATE'
+			)
+		)
+	);
+
+	slider($args2,'card', '1','false'); 
+	?>
+
 </main><!-- #site-content -->
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php get_footer(); ?>

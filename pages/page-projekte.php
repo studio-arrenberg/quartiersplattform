@@ -2,6 +2,7 @@
 /**
  * Template Name: Projekte
  * Template Post Type: page
+ * 
  *
  * @package WordPress
  * @subpackage Twenty_Twenty
@@ -9,39 +10,43 @@
  */
 
 get_header();
-
-
-
-$args = array(
-	'post_type'=>'projekte', 
-	'post_status'=>'publish', 
-	'posts_per_page'=> -1
-);
-query_posts( $args );
-
 ?>
 
 <main id="site-content" role="main">
-
-	<?php
-
-	if ( have_posts() ) {
-
-		while ( have_posts() ) {
-			the_post();
-
-			// get_template_part( 'elements/card' );
-
-			get_template_part( 'elements/card', 'projekt' );
-
-			// get_template_part( 'template-parts/content-cover' );
+<div class="card-container card-container__center card-container__long">
+	<?php 
+		if ( ( is_user_logged_in() ) ) {
+			get_template_part( 'components/call', 'projekt' ); 
 		}
-	}
+	?>
+</div>
 
+    <?php
+	// featured projekte
+	$args3 = array(
+		'post_type'=>'projekte', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 4,
+		'orderby' => 'rand'
+	);
+
+	slider($args3,'square_card', '2','true'); 
 	?>
 
+	
+    <?php 
+	// veranstaltung list
+	$args4 = array(
+		'post_type'=>'projekte', 
+		'post_status'=>'publish', 
+		'posts_per_page'=> -1
+	);
+	?>
+	
+	<div class="card-container">
+	<?php card_list($args4);
+	?>
+</div>
 </main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 
 <?php get_footer(); ?>
