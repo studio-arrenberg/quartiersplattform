@@ -3457,7 +3457,8 @@ figure.wp-block-table.is-style-stripes {
   input[type="reset"],
   input[type="submit"] {
     font-size: 1.8rem;
-    word-wrap: keep-all:   word-break: keep-all;
+    word-wrap: keep-all;
+    word-break: keep-all;
   }
 
   /* MEDIA */
