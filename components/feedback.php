@@ -24,6 +24,7 @@
 				'post_type' => 'anmerkungen',
 				'post_status' => 'publish',
 			),
+			'honeypot' => true,
 			'field_el' => 'div',
 			'post_content' => false,
 			'post_title' => false,
@@ -34,6 +35,5 @@
     ); 
 	?>
 
-    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen">Zur Wunschliste
-</a>
+    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen">Zur Wunschliste</a>
 </div>

@@ -161,7 +161,7 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 			'maxlength' => '',
 			'rows' => '',
-			'new_lines' => '',
+			'new_lines' => 'br',
 		),
 		array(
 			'key' => 'field_60017e90839ca',
@@ -180,7 +180,7 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 			'maxlength' => '',
 			'rows' => '',
-			'new_lines' => '',
+			'new_lines' => 'br',
 		),
 		array(
 			'key' => 'field_600180493ab1a',

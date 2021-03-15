@@ -1,8 +1,93 @@
-# Wordpress Snippets
+# ⚙️ Development Notes
 
-## Query
+## Image Sizes (Ratio)
 
-### Loop Posts (list)
+| Name          | S       | M       | M(2)    | M(3)    | L       |
+| ------------- | ------- | ------- | ------- | ------- | ------- |
+| Square 1:1    | 80x80   | 180x180 | 300x300 | -       | 400x400 |
+| Preview 4:3   | 160x120 | 200x150 | 400x300 | 600x450 | 800x600 |
+| Landscape 2:1 | 400x200 | 750x375 | -       | -       | 970x485 |
+
+## SEO
+
+1. Descriptions: Description Atribut = Bierdeckeltext
+2. Page Title 
+3. URL: arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
+3. Robots.txt!! Crawlbare seiten indexieren
+4. H1 H2 H3 P
+5. [Prüfen](https://search.google.com/test/rich-results) von Rich markup möglichkeiten
+6. Data Highlighter verwenden
+7. Veraltete Navigationsseite mit fehlerhaften Links (Alte Links weiterleiten!)
+8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
+
+[Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
+
+## Matomo Event Tracking
+[Basics](https://matomo.org/docs/event-tracking/)
+[In Depth](https://developer.matomo.org/guides/tracking-javascript-guide)
+
+```js
+_paq.push(['trackEvent', 'Categories', 'Action', 'Name/Page URL', 1000]);
+```
+#### Tracked
+* Share (social media buttons)
+* Interaction (Energie Ampel, Slider)
+
+#### Track Content
+
+```js
+_paq.push(['trackVisibleContentImpressions']);
+```
+```html 
+<div data-track-content>
+    <div data-content-piece="arrenberg wetter" >
+    </div>
+</div>
+```
+#### Tracked
+* Arrenberg Wetter
+* List Card
+* Footer
+
+## Git Commands
+#### Get Rid of all untracked changes
+```bash
+git stash
+```
+
+#### Update public branch from master
+```s
+git fetch
+git checkout public
+git reset --hard main
+```
+
+#### Go back in timelin
+```bash
+git fetch
+git reset --hard *hash*
+git push --force
+```
+
+#### Trash commits ahead
+```bash
+git push --force
+```
+
+#### Checkout any commit
+```bash
+git checkout <commit-id> . 
+```
+
+## Recources 
+- [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
+- [Emoji Picker](https://github.com/OneSignal/emoji-picker)
+
+
+
+## Noted Queries 
+
+#### Loop Posts (list)
 
 ```php
 $args = array(
@@ -21,7 +106,7 @@ if ( have_posts() ) {
 }
 ```
 
-### Date
+#### Date
 
 #### Post Date
 ```php
@@ -72,7 +157,7 @@ wp media regenerate --allow-root
 
 ## Change Meta name
 [Link](https://support.advancedcustomfields.com/forums/topic/changing-field-name-question/)
-```mysql 
+```php 
 UPDATE wp_postmeta
 SET meta_key='new_name'
 where meta_key='old_name';
@@ -82,7 +167,7 @@ SET meta_key='_new_name'
 where meta_key='_old_name';
 ```
 [Other](https://support.advancedcustomfields.com/forums/topic/best-practice-for-changing-custom-fields/)
-```mysql 
+```php 
 UPDATE wp_postmeta
 SET meta_key = 'new_field_name'
 WHERE meta_key = 'old_field_name';
