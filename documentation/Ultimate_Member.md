@@ -41,7 +41,7 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 #### Einstellungen – Weiterleitungen
 1. Stellen Sie in den Einstellungen von Ultimate Member im Bereich Benutzerrollen die korrekten Weiterleitungen bei der Benutzerrolle "Subscriber" und "Administrator" ein. Ändern Sie die Einstellung wie folgt als Registrierungs- Anmelde- und Abmeldeoption:<br>
 Maßnahmen, die nach der Anmeldung ergriffen werden --> Zu URL Umleiten
-Benutzerdefinierte Weiterleitungs-URL setzen --> **https://quartiersplattform-domain.de** (Durch die Domain der Quartiersplattform Installation ersetzen)
+Benutzerdefinierte Weiterleitungs-URL setzen --> ++quartiersplattform-domain.de** (Durch die Domain der Quartiersplattform Installation ersetzen)
 ![Benutzerrollen](/documentation/assets/UM_Benutzerrollen_Weiterleitung_Documentation.jpg)
 
 
