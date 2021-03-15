@@ -11,3 +11,4 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 
 2. Unter dem Bereich Quartierseinstellungen können Sie die Konfiguration der Plattform anpassen. So kann der Name, das Logo und die Liste der Sponsoren in diesem Bereich angepasst werden.
 ![Quartierseinstellungen](/documentation/assets/QP_Quartierseinstellungen_Documentation.jpg)
+
