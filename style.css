@@ -6405,7 +6405,6 @@ input:placeholder-shown {
 
 
  @media (max-width: 782px) {
- 
   .acf-image-uploader{
     min-height: 300px;
   }
