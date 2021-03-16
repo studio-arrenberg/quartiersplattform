@@ -122,8 +122,7 @@ html {
 }
 
 body {
-  background: #f7f7f7;
-  box-sizing: border-box;
+  background: #FCFCFE;  box-sizing: border-box;
   color: #000;
   font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
     sans-serif;
@@ -1824,8 +1823,7 @@ button.toggle {
 
 :root .has-primary-background-color {
   background-color: #000;
-  color: #f7f7f7;
-}
+  color: #FCFCFE;}
 
 :root .has-secondary-color {
   color: #6d6d6d;
@@ -1846,12 +1844,10 @@ button.toggle {
 }
 
 :root .has-background-color {
-  color: #f7f7f7;
-}
+  color: #FCFCFE;}
 
 :root .has-background-background-color {
-  background-color: #f7f7f7;
-  color: #000;
+  background-color: #FCFCFE;  color: #000;
 }
 
 /* Block Typography Classes ------------------ */
@@ -4710,8 +4706,7 @@ a.card-link{
 }
 
 .list-item a:hover{
-  background: #f7f7f7;
-  border-radius: 10px;
+  background: #FCFCFE;  border-radius: 10px;
 }
 
 .card .list-item a .content{
