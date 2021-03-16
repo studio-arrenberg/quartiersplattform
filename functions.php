@@ -1859,7 +1859,6 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 	                     
 }
 
-
 /**
  * Get Author Card
  *
