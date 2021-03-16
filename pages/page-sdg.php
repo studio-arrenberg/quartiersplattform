@@ -24,10 +24,13 @@ get_header();
 	$args = new WP_Query($args);
 	while ( $args->have_posts() ) {
 		$args->the_post();
-		// get_template_part('elements/card', get_post_type());
+
+		// get_template_part( 'components/sdg/sdg-card' );
+
+		// echo get_post_field( 'post_name' );
 
 		?>
-			<div id="sdg-card" class="card card-sgd shadow bg_red">
+			<div id="sdg-card" class="card card-sgd shadow <?php echo get_post_meta( get_the_ID(), 'class', true ); ?>">
                 <a class="card-link"  onclick="myFunction()">
                     <div class="content">    
 						<h3 class="card-title">
@@ -35,13 +38,8 @@ get_header();
                         </h3>
                         <p class="preview-text">
                         	<?php
-                        		if (strlen(get_field('text')) > 2) {
-                            		get_excerpt(get_field('text'), '55');
-                            	}
-                                else {
-                                get_excerpt(get_the_content(), '55');
-                                }
-                                ?>
+                                the_content();
+                    		?>
                         </p>
                     </div>
                 </a>
@@ -54,10 +52,15 @@ get_header();
 					$args4 = array(
 						'post_type'=> 'projekte', 
 						'post_status'=> 'publish', 
-						'author' =>  $current_user->ID,
-						'posts_per_page'=> 10, 
+						'posts_per_page'=> 6, 
 						'order' => 'DESC',
-						'offset' => '0', 
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'sdg',
+								'field' => 'slug',
+								'terms' => get_post_field( 'post_name' ),
+							)
+						)
 					);
 					slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
 				?>

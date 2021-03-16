@@ -4922,7 +4922,7 @@ a.card-link{
 
 
 
-.bg_red-light{
+.bg_red-light, .sdg1 {
   background: 
   linear-gradient(
     45deg,
@@ -4930,7 +4930,7 @@ a.card-link{
     rgba(194, 12, 61, 1) 100%
     )
 }
-.bg_red {
+.bg_red, .sdg2 {
   background: 
   linear-gradient(to top right, rgba(255, 0, 0, 1), rgba(197, 0, 0, 1))}
 
@@ -4964,12 +4964,12 @@ a.card-link{
   linear-gradient(to top right, rgba(0, 76, 230, 1), rgba(0, 13, 174, 1))
 }
 
-.bg_yellow-light{
+.bg_yellow-light {
   background: 
   linear-gradient(to top right, rgba(255, 252, 0, 1), rgba(213, 204, 0, 1))
 }
 
-.bg_yellow{
+.bg_yellow {
   background: 
   linear-gradient(to top right, rgba(255, 230, 76, 1), rgba(248, 212, 37, 1))}
 
@@ -5013,7 +5013,7 @@ a.card-link{
   linear-gradient(to top right, rgba(0, 169, 7, 1), rgba(0, 116, 2, 1))
 }
 
-.bg_grey{
+.bg_grey {
   background: 
   linear-gradient(to top right, rgba(145, 145, 145, 1), rgba(89, 89, 89, 1))
 }
