@@ -2,7 +2,7 @@
 
 ### Die Quartiersplattform
 Die Quartierrsplattform ist eine **Open Source** Plattform für Quartiere und Stadtteile zur Organisation und Stärkung der BürgerInnen, um nachhaltige und solidarische Projekte zu unterstützen. Entwickelt vom [studio arrenberg](https://arrenberg.studio)
-und unterstützt durch das [Wuppertal Institut für Klima, Umwelt, Energie](https://wupperinst.org/p/wi/p/s/pd/921/).<br><br>
+und unterstützt durch das [Wuppertal Institut für Klima, Umwelt, Energie](https://wupperinst.org/p/wi/p/s/pd/921/).
 
 <!-- ## Inhaltsübersicht
 - Einleitung
@@ -53,6 +53,11 @@ Die Quartiersplattform wird als *Wordpress Theme* genutzt und setzt daher einen 
 Die Quartiersplattform wird von folgenden Quartieren und Stadtteilen genutzt.
 * Arrenberg in Wuppertal
 * Langerfled in Wuppertal -->
+
+<br>
+
+## Entwicklung
+Die Quartiersplattform wird momentan vom [studio arrenberg](https://arrenberg.studio) Entwickelt. Um einen Einblick in die Entwicklung zu bekommen haben wir eine [Liste der Features](https://github.com/studio-arrenberg/quartiersplattform/blob/main/setup/development-status.md) und deren Status erstellt. 
 
 <br>
 
