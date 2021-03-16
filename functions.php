@@ -1020,7 +1020,8 @@ add_action('admin_init', function() {
  * Assign templates to pages
  *
  * @since Quartiersplattform 1.0
- *
+ * @param array $page_template 
+ * @param array $post_states
  * @return string
  */
 function custom_page_template( $page_template, $post_states ) {
@@ -1314,9 +1315,10 @@ function embla_carousel() {
  *
  * @since Quartiersplattform 1.0
  *
+ * @param integer $expire
  * @return void
  */
-function wpdev_login_session( $expire ) { // Set login session limit in seconds
+function wpdev_login_session( $expire ) {
     return YEAR_IN_SECONDS;
 } add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 
@@ -1359,13 +1361,6 @@ function add_custom_cookie_admin() {
 } 
 add_action('wp_login', 'add_custom_cookie_admin');
 
-// function add_cookie_admin() {
-// 	wp_set_current_user($user_id); 
-// 	if (wp_validate_auth_cookie()==FALSE)
-// 	{
-// 		wp_set_auth_cookie($user_id, true, false);
-// 	}
-// }
 
 /**
  * Redirect WP Login
@@ -1383,13 +1378,15 @@ function redirect_wp_login(){
 }
 add_action('init','redirect_wp_login');
 
-/**
- *  --------------------------------------------------------
- *  General Functions - custom archive query 
- *  --------------------------------------------------------
- */
 
-// veranstaltungen archive custom order
+/**
+ * Veranstaltungen archive custom order
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param array $query
+ * @return array
+ */
 add_action( 'pre_get_posts', function ( $query ) {
     if ( is_post_type_archive( 'veranstaltungen' ) && $query->is_main_query() ) {
         $query->set( 'orderby', 'meta_value' );
@@ -1398,20 +1395,28 @@ add_action( 'pre_get_posts', function ( $query ) {
     }
 } );
 
-// projekt archive custom post types
+/**
+ * Projekt archive custom post types
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param array $query
+ * @return array
+ */
 add_action( 'pre_get_posts', function ( $query ) {
     if ( is_tax( 'projekt' ) && $query->is_main_query() && !current_user_can('administrator') ) {
         $query->set( 'post_type', array('veranstaltungen','nachrichten') );
     }
 } );
 
-/**
- *  --------------------------------------------------------
- *  General Functions - unset_url_field
- *  --------------------------------------------------------
- */
 
-//remove website field if user is not logged in  
+/**
+ * Remove Website field form Comments
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return array
+ */
 add_filter('comment_form_default_fields', 'unset_url_field');
 function unset_url_field($fields){
     if(isset($fields['url']))
@@ -1420,116 +1425,54 @@ function unset_url_field($fields){
 }
 
 /**
- *  --------------------------------------------------------
- *  General Functions - CPT save function
- *  --------------------------------------------------------
+ * Custom Post Type Save function
+ * (Anmerkungen, Angebote & Fragen, Nachrichten, Umfragen, Veranstaltungen)
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param integer $post_id
+ * @return void
  */
-
-// on save ACF function
 add_action('acf/save_post', 'cpt_save_worker', 20);
 function cpt_save_worker( $post_id ) {
 
 	// Post Type Anmerkungen
 	if ( get_post_type($post_id) == 'anmerkungen' ) {
+		// Get Post ID 
 		$my_post = array();
 		$my_post['ID'] = $post_id;
+		// Get Text
 		$text = get_field( 'text', $post_id );
-		// shorten
-		$chars_limit = 50; // Character length
-		$chars_text = strlen($text);
-		$text = $text." ";
-		$text = substr($text,0,$chars_limit);
-		$text = substr($text,0,strrpos($text,' '));
-	  
-		if ($chars_text > $chars_limit)
-		   { $text = $text."..."; } // Ellipsis
-
-		$my_post['post_title'] = $text;
-		wp_update_post( $my_post ); // Update the post into the database
+		$my_post['post_title'] = shorten($text, 50);
+		wp_update_post( $my_post ); 
 		// update taxonomy
 		if(!has_term('', 'anmerkungen_status') ){
-			// do something
-			// wp_set_object_terms( $post_id, 'arrenberg-update', 'anmerkungen_version', false ); // change to status!
 			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
 		}
-		
-		// FURTHER READING
-		// https://support.advancedcustomfields.com/forums/topic/acf_form-create-post-set-taxonomy-author-default/
 
 	}
 	// Post type fragen & angebote 
-	if ( get_post_type($post_id) == 'angebote' || get_post_type($post_id) == 'fragen' ) {
+	else if ( get_post_type($post_id) == 'angebote' || get_post_type($post_id) == 'fragen' ) {
+		// Get Post ID 
 		$my_post = array();
 		$my_post['ID'] = $post_id;
-		$text = get_field( 'text', $post_id );
-
-		// shorten
-		$chars_limit = 50; // Character length
-		$chars_text = strlen($text);
-		$text = $text." ";
-		$text = substr($text,0,$chars_limit);
-		$text = substr($text,0,strrpos($text,' '));
-	  
-		if ($chars_text > $chars_limit)
-		   { $text = $text."..."; } // Ellipsis
-
-		$my_post['post_title'] = $text;
+		$text = get_field( 'text', $post_id );		
+		$my_post['post_title'] = shorten($text, 50);
+		// create slug
 		$my_post['post_name'] = wp_unique_post_slug( sanitize_title($my_post['post_title']), $my_post['ID'], $my_post['post_status'], $my_post['post_type'], $my_post['post_parent'] );
-
 		// set expire meta field with timestamp
-		// $duration = (60*60*24); // default
 		if (get_field('duration', $post_id ) == 'Stunde') $duration = (60*60);
 		else if (get_field('duration', $post_id ) == 'Tag') $duration = (60*60*24);
 		else if (get_field('duration', $post_id ) == 'Woche') $duration = (60*60*24*7);
 		// set field
 		update_post_meta($post_id, 'expire_timestamp', current_time('timestamp') + get_field('duration', $post_id ));
-
 		// update post
 		wp_update_post( $my_post ); // Update the post into the database
 	}
-	if ( get_post_type($post_id) == 'nachrichten' ) {
+	// Umfragen
+	else if ( get_post_type($post_id) == 'umfragen' ) {
 
-		$tax = $_POST['project_tax'];
-		
-		if (!empty($tax)) {
-			# set taxonomy 
-			wp_set_object_terms( $post_id, $tax, 'projekt', false);
-			# update project date
-			$page = get_page_by_path($tax, OBJECT, 'projekte');
-			if ($page) {
-				$my_post = array();
-				$my_post['ID'] = $page->ID;
-				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
-				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
-				# update post 
-				wp_update_post( $my_post );
-			}
-			
-		}
-
-		wp_redirect( get_post_permalink($post_id) ); 
-		exit;
-
-	}
-	if ( get_post_type($post_id) == 'umfragen' ) {
-
-		$tax = $_POST['project_tax'];
-
-		if (!empty($tax)) {
-			# set taxonomy 
-			wp_set_object_terms( $post_id, $tax, 'projekt', false);
-			# update project date
-			$page = get_page_by_path($tax, OBJECT, 'projekte');
-			if ($page) {
-				$my_post = array();
-				$my_post['ID'] = $page->ID;
-				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
-				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
-				# update post 
-				wp_update_post( $my_post );
-			}
-		}
-    
+		// create poll count array
     	$array;
 		$i = 0;
 		$rows = get_field('questions', $post_id);
@@ -1539,36 +1482,30 @@ function cpt_save_worker( $post_id ) {
 				$i++;
 			}
 		}
-
 		$array_prev = get_post_meta(get_the_ID(), 'polls', true);
-
+		// add or update array
 		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
 			update_post_meta ( $post_id, 'polls', $array );
     	}
-
-		wp_redirect( get_post_permalink($post_id) ); 
-		exit;
-    
-  }
-
-    if ( get_post_type($post_id) == 'veranstaltungen' ) {
-
-		$tax = $_POST['project_tax'];
+  	}
+	// assign post to project
+	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
 		
+		$tax = $_POST['project_tax'];
+		// assign post to project
 		if (!empty($tax)) {
-			# set taxonomy 
+			// set taxonomy 
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
-			# update project date
+			// update project date
 			$page = get_page_by_path($tax, OBJECT, 'projekte');
 			if ($page) {
 				$my_post = array();
 				$my_post['ID'] = $page->ID;
 				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
 				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
-				# update post 
+				// update post 
 				wp_update_post( $my_post );
 			}
-			
 		}
 
 		wp_redirect( get_post_permalink($post_id) ); 
@@ -1579,22 +1516,22 @@ function cpt_save_worker( $post_id ) {
 }
 
 /**
- *  --------------------------------------------------------
- *  General Functions - maintenance Mode
- *  --------------------------------------------------------
+ * Maintenance Mode
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
-// Maintenance Mode
 function wp_maintenance_mode() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	# if plugins not installed
+	// if plugins not installed
 	if (!class_exists('acf_pro') || !class_exists('UM')) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
 	}
-	# if maintenance mode on and not administrator
+	// if maintenance mode on and not administrator
 	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance') && ( strpos($REQUEST_URI,'/register/') === false && strpos($REQUEST_URI,'/login/') === false && strpos($REQUEST_URI,'/password-reset/') === false )) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
@@ -1604,47 +1541,49 @@ function wp_maintenance_mode() {
 
 
 /**
- *  --------------------------------------------------------
- *  Ajax Functions - polling
- *  --------------------------------------------------------
+ *  -------------------------------------------------------- AJAX Functions --------------------------------------------------------
  */
 
-
-
-# ajax polling function
+/**
+ * Polling Function
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
 add_action('wp_ajax_polling','polling');
 function polling() {
 
-	# if no user input --> abort
+	// if no user input --> abort
 	if (!is_user_logged_in() || !is_numeric($_POST['poll'])) exit;
 
-	# get meta field data (array)
+	// get meta field data (array)
 	$array = get_post_meta($_POST['ID'], 'polls', true);
 
-	# find user in meta field --> if true add || remove
+	// find user in meta field --> if true add || remove
 	for ($i = 0; $i < count($array); $i++) {
 
-		# when array has no user and should not -> nothing && when array has user and should -> nothing
+		// when array has no user and should not -> nothing && when array has user and should -> nothing
 		if (($i != $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user']))||($i == $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user']))) {
 			// nothing
 		}
-		# when array has user but should not -> unset id
+		// when array has user but should not -> unset id
 		else if ($i != $_POST['poll'] && in_array(get_current_user_id(),$array[$i]['user'])) {
 			unset($array[$i]['user'][ array_search(get_current_user_id(),$array[$i]['user']) ]);
 		}
-		# when array has no user and shouold -> push id
+		// when array has no user and shouold -> push id
 		else if ($i == $_POST['poll'] && !in_array(get_current_user_id(),$array[$i]['user'])) {
 			array_push($array[$i]['user'], get_current_user_id());
 		}
 	}
 
-	# count all votes
+	// count all votes
 	$total_voter = 0;
 	for ($i = 0; $i < count($array); $i++) {
 		$total_voter = $total_voter + count($array[$i]['user']);
 	}
 
-	# write into array
+	// write into array
 	for ($i = 0; $i < count($array); $i++) {
 		# count
 		$array[$i]['count'] = count($array[$i]['user']);
@@ -1652,10 +1591,10 @@ function polling() {
 		$array[$i]['total_voter'] = $total_voter;
 	}
 
-	# update meta field
+	// update meta field
 	update_post_meta($_POST['ID'], 'polls', $array);
 
-	# prepare response (delete user and set choice)
+	// prepare response (delete user and set choice)
 	for ($i = 0; $i < count($array); $i++) {
 		$array[$i]['user'] = array(false);
 		if ($i == $_POST['poll']) {
@@ -1663,24 +1602,36 @@ function polling() {
 		}
 	}
 
-	# send response
+	// send response
 	wp_send_json_success( $array );
 	// wp_send_json_success( $_POST );	
 
 }
 
+
 /**
- *  --------------------------------------------------------
- *  Backend Functions - admin (gutenberg) settings
- *  --------------------------------------------------------
+ *  -------------------------------------------------------- Backend Functions --------------------------------------------------------
  */
 
+/**
+ * Remove Posts from Admin Menu
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
 function post_remove () { 
 	remove_menu_page('edit.php');
  }
  add_action('admin_menu', 'post_remove');
  
-
+/**
+ * Restrict Blocks for the Landing Page
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
  add_filter('allowed_block_types', 'block_limit', 10, 2);
  function block_limit($block_types, $post) {
 	 $allowed = [
@@ -1699,13 +1650,12 @@ function post_remove () {
  
 
 /**
- *  --------------------------------------------------------
- *  Backend Functions - media copyright
- *  --------------------------------------------------------
+ * Adding a "Copyright" field to the media uploader $form_fields array
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
-// Media Copyright function
-// Adding a "Copyright" field to the media uploader $form_fields array
 function add_copyright_field_to_media_uploader( $form_fields, $post ) {
 	$form_fields['copyright_field'] = array(
 		'label' => __('Copyright'),
@@ -1717,7 +1667,13 @@ function add_copyright_field_to_media_uploader( $form_fields, $post ) {
 }
 add_filter( 'attachment_fields_to_edit', 'add_copyright_field_to_media_uploader', null, 2 );
 
-// Save our new "Copyright" field
+/**
+ * Save our new "Copyright" field
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
 function add_copyright_field_to_media_uploader_save( $post, $attachment ) {
 	if ( ! empty( $attachment['copyright_field'] ) ) 
 		update_post_meta( $post['ID'], '_custom_copyright', $attachment['copyright_field'] );
@@ -1728,27 +1684,39 @@ function add_copyright_field_to_media_uploader_save( $post, $attachment ) {
 }
 add_filter( 'attachment_fields_to_save', 'add_copyright_field_to_media_uploader_save', null, 2 );
 
-// Display our new "Copyright" field
+/**
+ * Display our new "Copyright" field
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
+ */
 function get_featured_image_copyright( $attachment_id = null ) {
 	$attachment_id = ( empty( $attachment_id ) ) ? get_post_thumbnail_id() : (int) $attachment_id;
 
 	if ( $attachment_id )
 		return get_post_meta( $attachment_id, '_custom_copyright', true );
 }
+/**
+ * Display our new "Copyright" field
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return string
+ */
 function copywrite_beitragsbild() {
     if (get_featured_image_copyright()) {
         return "<p class='copyright'>© ".get_featured_image_copyright()."</p>";
     }
 }
 
-
 /**
- *  --------------------------------------------------------
- *  Backend Functions - create tax on project creation
- *  --------------------------------------------------------
+ * Create Taxonomy 'projekt' in veranstaltung & nachrichten
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
  */
-
- // create TAX projekt in veranstaltung & nachrichten
 function update_taxonomy_projekt($post_id) {
 
     // only update terms if it's a post-type-B post
@@ -1797,62 +1765,89 @@ function update_taxonomy_projekt($post_id) {
 //run the update function whenever a post is created or edited
 add_action('save_post', 'update_taxonomy_projekt');
 
+
 /**
- *  --------------------------------------------------------
- *  Public Functions - shorten_title
- *  --------------------------------------------------------
+ *  -------------------------------------------------------- Public Functions --------------------------------------------------------
  */
 
-// shorten text fuction
+/**
+ * Shorten Title
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param string $text
+ * @param integer $count
+ * @return void
+ */
 function shorten_title($text, $count = '55') {
-	$chars_limit = $count; // Character length
-	$chars_text = strlen($text);
 	$text = $text." ";
-	$text = substr($text,0,$chars_limit);
-	$text = substr($text,0,strrpos($text,' '));
+	$text = substr($text,0,$count);
+	$text = substr($text,0,strripos($text,' '));
   
-	if ($chars_text > $chars_limit)
-	   { $text = $text."..."; } // Ellipsis
+	if (strlen($text) > $count) { 
+		$text = $text."..."; 
+	}
+
 	echo $text;
 }
 
-
 /**
- *  --------------------------------------------------------
- *  Public Functions - get_excerpt
- *  --------------------------------------------------------
+ * Exerpt Text
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param string $text
+ * @param integer $count
+ * @return void
  */
-
-// custom excerpt lenght
 function get_excerpt($text, $count = '55') {
-	// $permalink = get_permalink($post->ID);
 	$excerpt = $text;
-	$excerpt = strip_tags($excerpt);
+	// $excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 	$excerpt = $excerpt.'...';
 	echo $excerpt;
 }
 
+/**
+ * Shorten Title
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @param string $text
+ * @param integer $count
+ * @return void
+ */
+function shorten($text, $count = '55') {
+	$text = $text." ";
+	$text = substr( $text , 0 , $count );
+	$text = substr( $text, 0, strripos( $text , ' ' ) );
+  
+	if ( strlen( $text ) > $count ) { 
+		$text = $text."..."; 
+	}
+	echo $text;
+}
+
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - debugToConsole
- *  --------------------------------------------------------
+ * Debug Function
+ *
+ * @since Quartiersplattform 1.2
+ *
+ * @return string
  */
-
-// debug function
 function debugToConsole($msg) { 
 	echo "<script>console.log(".json_encode($msg).")</script>";
 }
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - get_cpt_term_owner
- *  --------------------------------------------------------
+ * Display Author of Post
+ *
+ * @since Quartiersplattform 1.2
+ *
+ * @return string
  */
-
-// display owner of CPT 
 function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 
 	if (wp_get_post_terms( $post_ID, $term, array( 'fields' => 'all' ) )) {
@@ -1866,11 +1861,13 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - get_author
- *  --------------------------------------------------------
+ * Get Author Card
+ *
+ * @since Quartiersplattform 1.5
+ *
+ * @param boolean $contact show contact information
+ * @return string
  */
-
 function get_author($contact = false) {
 	if (get_the_author_meta( 'ID' )) {
 	?>
@@ -1919,13 +1916,14 @@ function get_author($contact = false) {
 }
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - cms_is_in_menu
- *  --------------------------------------------------------
+ * Check if Current Page is in Menu
+ *
+ * @since Quartiersplattform 1.5
+ *
+ * @param string $menu by Slug
+ * @param string $object_id Page ID
+ * @return boolean
  */
-
-
-// check if page/post is in menu
 function cms_is_in_menu( $menu = null, $object_id = null ) {
 
     // get menu object
@@ -1950,13 +1948,13 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 }
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - calendar_download
- *  --------------------------------------------------------
+ * Calendar Download Button
+ *
+ * @since Quartiersplattform 1.5
+ *
+ * @param array $post Post ID
+ * @return string
  */
-
-
-// calendar download button
 function calendar_download($post) {
 	
 	// needed variabels
@@ -1987,10 +1985,7 @@ function calendar_download($post) {
     $kurz = get_field( "kurzbeschreibung" );
     $file_name = $post->post_name;
     $dir = "/assets/generated/calendar-files/";
-    
-    // frequency (wiederholung)
-    // $kb_freq_end = date('Ymd', strtotime(get_field( "ende_der_widerholung" ))) . "T" . date('His', strtotime(get_field( "ende_der_widerholung" )));
-	
+
     $kb_start = $start;
     $kb_end = $ende;
     $kb_current_time = $creation;
@@ -2026,10 +2021,6 @@ function calendar_download($post) {
     'UID:'.$kb_current_time.'-'.$kb_start.'-'.$kb_end.$eol.
     'END:VEVENT'.$eol.
     'END:VCALENDAR';
-    
-//    header("Content-Type: text/Calendar;charset=utf-8");
-//    header('Content-Disposition: inline; filename="' . $kb_file_name . '.ics"');
-
     // header('HTTP/1.0 200 OK', true, 200);
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
@@ -2039,15 +2030,17 @@ function calendar_download($post) {
 }
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - slider
- *  --------------------------------------------------------
+ * Slider
+ *
+ * @since Quartiersplattform 1.5
+ *
+ * @param array $args WP Query
+ * @param string $type element type (card, landscape_card, list_card, square_card)
+ * @param integer $slides Slides visible at once on mobile (desktop x2)
+ * @param boolean $dragfree determins if slider stops at exact cars postion
+ * @param boolean $align where to align slider
+ * @return string
  */
-
-
-
-// slider
-// for card & square_card
 function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align = 'center') {
 
 	$slider_class = "q".uniqid();
@@ -2119,12 +2112,13 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 }
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - card_list
- *  --------------------------------------------------------
+ * Card List - Display Cards as List
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param array $args WP Query
+ * @return string
  */
-
-// card list (diplay a list of cards)
 function card_list($args) {
 
 	$query2 = new WP_Query($args);
@@ -2138,13 +2132,18 @@ function card_list($args) {
 
 }
 
-/**
- *  --------------------------------------------------------
- *  Public Functions - list_card
- *  --------------------------------------------------------
- */
 
-// list card
+/**
+ * List Card - Multiple Cards in one Card
+ *
+ * @since Quartiersplattform 1.2
+ *
+ * @param array $args WP Query
+ * @param string $link Link of Card
+ * @param string $card_title Title of Card
+ * @param string $card_subtitle Subtitle of Card
+ * @return string
+ */
 function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 	?>
@@ -2171,12 +2170,19 @@ function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
 }
 
-/**
- *  --------------------------------------------------------
- *  Public Functions - landscape_card
- *  --------------------------------------------------------
- */
 
+/**
+ * Landscape Card
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @param array $args WP Query
+ * @param string $title (if set will overwrite)
+ * @param string $text (if set will overwrite)
+ * @param string $bg background picture (if set will overwrite)
+ * @param string $lnik link (if set will overwrite)
+ * @return string
+ */
 // function template part test
 function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '')  {
 
@@ -2204,11 +2210,13 @@ function landscape_card($args = '', $title = '', $text = '', $bg = '', $link = '
 }
 
 /**
- *  --------------------------------------------------------
- *  Public Functions - landscape_card
- *  --------------------------------------------------------
+ * Emoji Picker init
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @param integer $id id of emoji field
+ * @return string
  */
-
 function emoji_picker_init($id) {
 
 	if ($id) {

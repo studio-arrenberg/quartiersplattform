@@ -65,8 +65,7 @@ slider($query,'landscape_card', '1','false');
 ```
 #### Shorten
 ```php 
-shorten_title($text, $count = '55'); // für den title
-get_excerpt($text, $count = '55'); // für den fließtext
+shorten($text, $count = '55'); // für alles
 ```
 #### Calendar Download
 ```php
