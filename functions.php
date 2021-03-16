@@ -919,23 +919,23 @@ add_action('admin_init', function() {
 	# ACF Pro
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Die Quartiersplattform braucht das Plugin <strong>Advaced Custom Fields</strong> um vollständig zu funktionieren.', 'quartiersplattform');
-			$link = '<strong>Advaced Custom Fields</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">installieren</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin <strong>Advaced Custom Fields,</strong> um vollständig funktionieren zu können.', 'quartiersplattform');
+			$link = '<strong>Advaced Custom Fields</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">Installiere ACF</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}
 	# Ultimate Memmber
 	if (!class_exists('UM')) {
 		add_action('admin_notices', function() {
-			$notice = __('Die Quartiersplattform braucht das Plugin <strong>Ultimate Member</strong> um vollständig zu funktionieren.', 'quartiersplattform');
-			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">installieren</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin <strong>Ultimate Member,</strong> um vollständig funktionieren zu können.', 'quartiersplattform');
+			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Installiere Ultimate Member</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}
 	# Quartiersplattform is running
 	if (class_exists('acf_pro') && class_exists('UM')) {
 		add_action('admin_notices', function() {
-			$notice = "Gratulation die Quartiersplattform wurde erfolgreich aufgesetzt.";
+			$notice = "Gratulation, deine Quartiersplattform wurde erfolgreich aufgesetzt.";
 			echo '<div id="message" class="updated notice is-dismissible">
 			<p>'.$notice.'</p>
 			<button type="button" class="notice-dismiss">
@@ -947,7 +947,7 @@ add_action('admin_init', function() {
 	# Install Ultimate Member
 	if (class_exists('UM')) {
 		add_action('admin_notices', function() {
-			$notice = "Anleitung zum einstellen des Ultimate Member Plugin.";
+			$notice = "Richte das Ultimate Member Plugin vollständig ein.";
 			echo '<div
 			class="updated um-admin-notice notice is-dismissible"
 			data-key="wrong_pages">
@@ -956,7 +956,7 @@ add_action('admin_init', function() {
 			</p>
 		  
 			<p>
-			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md" class="button button-primary">Anleitung öffnen</a>
+			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" class="button button-primary">Anleitung öffnen</a>
 			</p>
 		  
 			<button type="button" class="notice-dismiss">
@@ -968,7 +968,7 @@ add_action('admin_init', function() {
 	# WP Mail SMTP suggestion
 	if (class_exists('wp_mail_smtp')) {
 		add_action('admin_notices', function() {
-			$notice = "Anleitung zum einstellen des WP Mail SMTP Plugin.";
+			$notice = "Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten.";
 			echo '<div
 			class="updated um-admin-notice notice is-dismissible"
 			data-key="wrong_pages">
@@ -977,7 +977,7 @@ add_action('admin_init', function() {
 			</p>
 		  
 			<p>
-			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md" class="button button-primary" target="_blank">Anleitung für WP Mail SMTP</a>
+			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/WP_Mail_SMTP.md" class="button button-primary" target="_blank">Anleitung öffnen</a>
 			</p>
 		  
 			<button type="button" class="notice-dismiss">
@@ -989,7 +989,7 @@ add_action('admin_init', function() {
 	# Datenschutz reminder
 	if (!get_privacy_policy_url() && class_exists('acf_pro') && class_exists('UM')) {
 		add_action('admin_notices', function() {
-			$notice = __('Die Quartiersplattform hat noch <strong>keine Datenschutzerklärung</strong>', 'quartiersplattform');
+			$notice = __('Deine Quartiersplattform hat noch <strong>keine Datenschutzerklärung.</strong>', 'quartiersplattform');
 			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">Datenschutzerklärung erstellen</a>';
 			echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
 		});
@@ -998,7 +998,7 @@ add_action('admin_init', function() {
 	if (class_exists('acf_pro') && class_exists('UM')) {
 		if (!get_field('quartiersplattform-name', 'option')) {
 			add_action('admin_notices', function() {
-				$notice = __('Gebe deiner Quartiersplattform einen Namen und Logo', 'quartiersplattform');
+				$notice = __('Richte das Logo sowie den Namen deiner Quartiersplattform ein ', 'quartiersplattform');
 				$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">Zu den Einstellungen</a>';
 				echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
 			});
@@ -1007,9 +1007,9 @@ add_action('admin_init', function() {
 	# WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
 		add_action('admin_notices', function() {
-			$notice = __('Wir empfehlen das Plugin <strong>WP Mail SMTP</strong> zu installieren um einen zuverlässigen Mail transfere zu garantieren.', 'quartiersplattform');
+			$notice = __('Wir empfehlen das Plugin <strong>WP Mail SMTP</strong> zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten.', 'quartiersplattform');
 			$link = '<strong>WP Mail SMTP</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">installieren</a>';
-			// $notice = __('We recommend to installt and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
+			// $notice = __('We recommend to install and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
 			echo "<div class='notice'><p>$notice</p></div>";
 		});
 	}

@@ -38,8 +38,8 @@ und unterstützt durch das [Wuppertal Institut für Klima, Umwelt, Energie](http
 ## Installation
 Die Quartiersplattform wird als *Wordpress Theme* genutzt und setzt daher einen Server mit einer Wordpress-Installation voraus. Zusätzlich müssen zwei Plugins installiert werden um die Plattform nutzen zu können. 
 #### Erforderliche Plugins
-- [Advanced Custom Fields Pro](https://github.com/AdvancedCustomFields/acf)
-- [Ultimate Member](https://ultimatemember.com)
+- [Advanced Custom Fields Pro](https://de.wordpress.org/plugins/advanced-custom-fields/)
+- [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/)
 
 ### Schnell aufgesetzt
 1. Wordpress installieren
@@ -47,7 +47,7 @@ Die Quartiersplattform wird als *Wordpress Theme* genutzt und setzt daher einen 
 3. Quartiersplattform als Theme hochladen
 4. Erforderte Plugins installieren & Einstellungen vornehmen
 
-#### zur [Dokumentation](https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md) 📑
+#### zur [Dokumentation](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md) 📑
 
 <!-- ## Beispiele
 Die Quartiersplattform wird von folgenden Quartieren und Stadtteilen genutzt.

@@ -96,21 +96,21 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       ?>
 
         <h2 class="pre-title">Gestalte dein Viertel</h2>
-        <h1>Hier entsteht <br>deine Quatiersplattform</h1>
+        <h1>Hier entsteht <br>deine Quartiersplattform</h1>
 
         <p class="big">
-          Dein Viertel  bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
+          Dein Viertel bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
         </p>
 
         <!-- neu -->
-        <p>Du möchtest dabei helfen die Plattform für das Quartier vorzubrereiten? <br>Dann registriere dich jetzt!</p>
+        <p>Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten? <br>Dann registriere dich jetzt!</p>
         <div class="btn-container">
           <a   class="btn btn-shadow" href="<?php echo get_site_url(); ?>/login/">Anmelden</a>
           <a class="btn btn-shadow" href="<?php echo get_site_url(); ?>/register/">Registrieren</a>
         </div>
 
 
-        <h3>Die Quatiersplattform wird bereits in folgenden Viertel genutzt</h3>
+        <h3>Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:</h3>
         <div class="flex">
           <?php
           # map picture variables
