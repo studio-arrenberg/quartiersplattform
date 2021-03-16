@@ -322,4 +322,24 @@ else {
 
 </main><!-- #site-content -->
 
+<div class="right-sidebar">
+		<?php 
+			// Smart cards 
+			// Angebote und fragen
+			get_template_part('components/smart-card/angebote-fragen');
+			// Projekte
+			get_template_part('components/smart-card/projekte');
+		?>
+			
+			<div class="card ">
+			<div class="emojis-top">🍾🍰
+            <div class="card-header">
+            <h2>Wir laufen jetzt unter <span class="highlight">CSS GRID</span></h2>
+			<p>Es gibt eine Sitebar die beliebig erweitert werden kann</p>
+            </div>
+
+           
+        </div>
+	</div>
+
 <?php get_footer(); ?>
