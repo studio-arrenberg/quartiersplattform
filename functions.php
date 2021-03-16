@@ -796,50 +796,12 @@ function twentytwenty_get_elements_array() {
 
 /**
  * Table of Contents:
- * 
- * - Setup
- * 		Remove Default WP Widgets
- * 		call setup files
- * 		call additional function files
- * 		Admin notes/warnings
- * 		Assign templates Pages
- * 		Assign templates Post Types
- * 
- * - File Managment
- * 		wpdocs_dequeue_dashicon
- * 		disable twenty twenty inline styles
- * 		replace_core_jquery_version
- * 		my_init (jQuery deregister + min) rename!
- * 		emoji_picker
- * 		embla_carousel
- * 
- * - General Functions 
- * 		cookie setting
- * 		custom archive query
- * 		unset_url_field ??
- * 		CPT save function
- * 		maintenance Mode
- * 
- * - Ajax Functions
- * 		polling
- * 
- * - Backend Functions
- * 		admin (gutenberg) settings
- * 		media copyright
- * 		create tax on project creation
- * 
- * - Public functions
- * 		shorten_title
- * 		get_excerpt
- * 		debugToConsole
- * 		get_cpt_term_owner
- * 		get_author
- * 		cms_is_in_menu
- * 		calendar_download
- * 		slider
- * 		card_list
- * 		list_card
- * 		landscape_card
+ * 	- Setup
+ * 	- File Managment
+ * 	- General Functions 
+ * 	- Ajax Functions
+ * 	- Backend Functions
+ * 	- Public functions
  * 
  */
 
@@ -1058,10 +1020,6 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Angebot erstellen';
 		$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
 	}
-	// else if ($post->post_title == "Geschichten") {
-	// 	$post_states[] = $prefix.'Geschichten';
-	// 	$page_template= get_stylesheet_directory() . '/pages/page-geschichten.php';
-	// }
 	else if ($post->post_title == "Anmerkungen") {
 		$post_states[] = $prefix.'Anmerkungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
@@ -1771,46 +1729,7 @@ add_action('save_post', 'update_taxonomy_projekt');
  */
 
 /**
- * Shorten Title
- *
- * @since Quartiersplattform 1.0
- *
- * @param string $text
- * @param integer $count
- * @return void
- */
-function shorten_title($text, $count = '55') {
-	$text = $text." ";
-	$text = substr($text,0,$count);
-	$text = substr($text,0,strripos($text,' '));
-  
-	if (strlen($text) > $count) { 
-		$text = $text."..."; 
-	}
-
-	echo $text;
-}
-
-/**
- * Exerpt Text
- *
- * @since Quartiersplattform 1.0
- *
- * @param string $text
- * @param integer $count
- * @return void
- */
-function get_excerpt($text, $count = '55') {
-	$excerpt = $text;
-	// $excerpt = strip_tags($excerpt);
-	$excerpt = substr($excerpt, 0, $count);
-	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
-	$excerpt = $excerpt.'...';
-	echo $excerpt;
-}
-
-/**
- * Shorten Title
+ * Shorten Text
  *
  * @since Quartiersplattform 1.6
  *
@@ -1820,6 +1739,7 @@ function get_excerpt($text, $count = '55') {
  */
 function shorten($text, $count = '55') {
 	$text = $text." ";
+	$text = strip_tags($text);
 	$text = substr( $text , 0 , $count );
 	$text = substr( $text, 0, strripos( $text , ' ' ) );
   
@@ -1891,7 +1811,6 @@ function get_author($contact = false) {
 				<?php if( get_field('mail', $userid) ){
 				?>
 				<a class="button is-style-outline" target="_blank"
-                onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
                 href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"
                 rel="nofollow"><?php echo the_field('mail', $userid);?></a>
 				
@@ -2003,6 +1922,7 @@ function calendar_download($post) {
 	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
         
     $eol = "\r\n";
+
     $kb_ics_content =
     'BEGIN:VCALENDAR'.$eol.
     'VERSION:2.0'.$eol.
@@ -2024,8 +1944,7 @@ function calendar_download($post) {
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
 
-	echo '<a class="button" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">Termin im Kalender speichern</a>';
-    
+	echo '<a class="button" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">Termin im Kalender speichern</a>';   
 }
 
 /**
@@ -2051,7 +1970,7 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 	$query2 = new WP_Query($args);
 	?>
 	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
-    <div class="embla__container">
+    	<div class="embla__container">
         <?php
 		while ( $query2->have_posts() ) {
 			$query2->the_post();
@@ -2059,54 +1978,54 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 			get_template_part('elements/'.$type.'', get_post_type());
 			echo "</div>";
 		}
-	wp_reset_postdata();
-	?>
-    </div>
-</div>
+		wp_reset_postdata();
+		?>
+		</div>
+	</div>
 
-<script>
-	var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
+	<script>
+		var emblaNode = document.getElementById('<?php echo $slider_class; ?>')
 
-	var slides_num = <?php echo $slides; ?>;
-	var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-	var draggable_state = true;
-
-	if (vw > 768) {
-		slides_num = slides_num * 2;
-		draggable_state = false;
-	}
-
-	var options = {
-		dragFree: <?php echo $dragfree; ?>,
-		slidesToScroll: slides_num, // viewport > 768px 4
-		draggable: draggable_state,
-		align: <?php echo "'".$align."'"; ?>,
-	}
-	var embla = EmblaCarousel(emblaNode, options)
-
-	embla.on('settle', (eventName) => {
-		// console.log(`Embla just triggered ${eventName}!`)
-		_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
-	})
-
-	embla.on('resize', () => {
+		var slides_num = <?php echo $slides; ?>;
 		var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-		slidesToScroll = '<?php echo $slides; ?>';
-		// console.log(vw);
+		var draggable_state = true;
+
 		if (vw > 768) {
-			slidesToScroll = slidesToScroll * 2;
-			draggable = false;
-		} else {
-			slidesToScroll = slides_num;
-			draggable = true;
+			slides_num = slides_num * 2;
+			draggable_state = false;
 		}
 
-		embla.reInit({
-			slidesToScroll,
-			draggable
+		var options = {
+			dragFree: <?php echo $dragfree; ?>,
+			slidesToScroll: slides_num, // viewport > 768px 4
+			draggable: draggable_state,
+			align: <?php echo "'".$align."'"; ?>,
+		}
+		var embla = EmblaCarousel(emblaNode, options)
+
+		embla.on('settle', (eventName) => {
+			// console.log(`Embla just triggered ${eventName}!`)
+			_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
+		})
+
+		embla.on('resize', () => {
+			var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+			slidesToScroll = '<?php echo $slides; ?>';
+			// console.log(vw);
+			if (vw > 768) {
+				slidesToScroll = slidesToScroll * 2;
+				draggable = false;
+			} else {
+				slidesToScroll = slides_num;
+				draggable = true;
+			}
+
+			embla.reInit({
+				slidesToScroll,
+				draggable
+			});
 		});
-	});
-</script>
+	</script>
 <?php
 }
 
@@ -2229,11 +2148,6 @@ function emoji_picker_init($id) {
 			el.attr("data-emojiable", "true");
 
 			// remove previous emojies
-			// $('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
-			// 	$(this).find('.emoji-wysiwyg-editor').children('img').not(':last').remove();
-			// });
-			
-			// remove previous emojies
 			var alt;
 			$('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
 
@@ -2271,7 +2185,6 @@ function emoji_picker_init($id) {
 		<?php 
 	}
 }
-
 
 
 

@@ -63,7 +63,7 @@ else {
             </div>
             <h3 class="card-title-large">
                 <?php  
-                    if (!is_single( )) shorten_title(get_field('text'), '50'); 
+                    if (!is_single( )) shorten(get_field('text'), '50'); 
                     else the_field('text'); 
                 ?>
             </h3>
@@ -75,7 +75,7 @@ else {
         </div>
         <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
         <div class="emoji">
-            <?php  shorten_title(get_field('emoji'), '200'); ?>
+            <?php  shorten(get_field('emoji'), '200'); ?>
         </div>
     <?php if(!is_single()) { ?>
     </a>

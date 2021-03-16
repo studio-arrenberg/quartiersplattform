@@ -1,19 +1,8 @@
-<?php
-
-/**
- * 
- * Default Square Card
- *
- */
-
-?>
-
-<div class="card square shadow gardient">
-    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-
+<div class="card card-sgd shadow <?php echo get_post_meta( get_the_ID(), 'class', true ); ?>">
+    <!-- <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>"> -->
         <div class="content">
             <h3 class="card-title">
-                <?php shorten(get_the_title(), '30'); ?>
+                <?php echo get_the_title(); ?>
             </h3>
             <p class="preview-text">
                 <?php
@@ -26,6 +15,5 @@
                 ?>
             </p>
         </div>
-        <?php  the_post_thumbnail( 'square_l' ); ?>
-    </a>
+    <!-- </a> -->
 </div>

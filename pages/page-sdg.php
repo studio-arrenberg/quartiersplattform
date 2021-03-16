@@ -36,10 +36,10 @@ get_header();
                         <p class="preview-text">
                         	<?php
                         		if (strlen(get_field('text')) > 2) {
-                            		get_excerpt(get_field('text'), '55');
+                            		shorten(get_field('text'), '55');
                             	}
                                 else {
-                                get_excerpt(get_the_content(), '55');
+									shorten(get_the_content(), '55');
                                 }
                                 ?>
                         </p>

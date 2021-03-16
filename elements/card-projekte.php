@@ -28,12 +28,19 @@ if (strlen(get_field('slogan')) > 1 ) {
         <div class="content content_shrink">
             <!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
             <h3 class="card-title">
-                <?php shorten_title(get_the_title(), '60'); ?>
+                <?php shorten(get_the_title(), '60'); ?>
             </h3>
             <div class="pre-title"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div> 
 
             <p class="preview-text <?php  if (strlen(get_field('slogan')) > 30 ) echo 'hidden'; ?> "> 
-                <?php  if (!empty(get_the_content())) { get_excerpt(get_the_content(), $char); } else { get_excerpt(get_field('text'),  $char); }  //echo $char?>
+                <?php  
+                if (!empty(get_the_content())) { 
+                    shorten(get_the_content(), $char); 
+                } 
+                else { 
+                    shorten(get_field('text'),  $char); 
+                }
+                ?>
             
             </p>
         </div>

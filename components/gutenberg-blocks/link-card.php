@@ -39,13 +39,13 @@ $id = url_to_postid( $link );
         <div class="content">
             <h3 class="card-title">
                 <?php 
-                        shorten_title(get_the_title($id), '60');
+                        shorten(get_the_title($id), '60');
                 ?>
             </h3>
             <p class="preview-text">
                 <?php
 
-                        get_excerpt(get_the_content(null,false,$id), '55');
+                        shorten(get_the_content(null,false,$id), '55');
                 ?>
             </p>
         </div>
