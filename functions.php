@@ -1782,55 +1782,23 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 /**
  * Get Author Card
  *
- * @since Quartiersplattform 1.5
+ * @since Quartiersplattform 1.6
  *
  * @param boolean $contact show contact information
  * @return string
  */
-function get_author($contact = false) {
+function author_card($contact = false) {
+	// get_author = > author_card
+	set_query_var('contact_inforation', $contact);
+
 	if (get_the_author_meta( 'ID' )) {
-	?>
-        <!-- allgemein formulieren... (für projekte, posts, angebote, ....) -->
-	<div class="team">		
-		<div class="team-member">	
-			<!-- <?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?> -->
-				<!-- <a href="<?php echo esc_url(get_site_url()."/author/".get_the_author_meta( 'nickname' )); ?>"> -->
-				<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
-         	   	<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); // 32 or 100 = size ?>
-				<?php echo get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ); ?>
-			</a>
-        </div>
-	</div>
-	<?php 
-	// $contact entscheidet, ob die Kontaktcard angezeigt wird
-	if($contact == true && is_user_logged_in()){
-                $userid = "user_".get_the_author_meta( 'ID' ); 
-            ?>
-            <div class="share-button">
-
-				<?php if( get_field('mail', $userid) ){
-				?>
-				<a class="button is-style-outline" target="_blank"
-                href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"
-                rel="nofollow"><?php echo the_field('mail', $userid);?></a>
-				
-				<?php
-				}?>
-
-				<?php if( get_field('phone', $userid) ){?>
-            		<a class="button is-style-outline" target="_blank" href="tel:<?php echo the_field('phone', $userid);?>" >
-                <?php echo the_field('phone', $userid); ?>
-                </a>
-				<?php
-				}?>
-
-            </div>
-			<?php
-		}
+		get_template_part( 'components/author-card' );
 	}
 	else {
 		return false;
 	}
+
+	set_query_var('contact_inforation', false);
 }
 
 /**
@@ -1862,7 +1830,6 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
 
     // test if the specified page is in the menu or not. return true or false.
     return in_array( (int) $object_id, $menu_items );
-
 }
 
 /**

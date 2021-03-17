@@ -101,10 +101,7 @@ get_header();
 
             </div>
 
-            <?php 
-                // author card
-                get_author(); 
-            ?>
+            <?php author_card(); ?>
 
             <?php 
                 // calendar download

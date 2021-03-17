@@ -286,9 +286,7 @@ get_header();
             <div class="team">
                 <h2> Hutträger </h2>    
 
-                <?php 
-                    get_author(true); 
-                ?>
+                <?php author_card(true); ?>
 
             </div>
 
