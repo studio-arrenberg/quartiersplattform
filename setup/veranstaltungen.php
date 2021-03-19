@@ -152,7 +152,8 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'display_format' => 'g:i a',
+                // 'display_format' => 'g:i a',
+                'display_format' => 'H:i',
                 'return_format' => 'H:i:s',
             ),
             array(
@@ -168,8 +169,8 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'display_format' => 'g:i a',
-                'return_format' => 'g:i a',
+                'display_format' => 'H:i',
+                'return_format' => 'H:i:s',
             ),
             array(
                 'key' => 'field_5fc8d1c4d15c8',
