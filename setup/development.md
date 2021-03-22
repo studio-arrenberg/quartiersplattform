@@ -93,3 +93,11 @@ author_card(true); // true for contact details (only for logged in users)
 ```php 
 extract_links($text);
 ```
+#### Display Date
+```php
+echo qp_date( $date, $detail = false, $time = '' );
+```
+#### Display Time remaining
+```php
+echo qp_remaining( $date );
+```

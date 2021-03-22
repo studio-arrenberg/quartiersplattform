@@ -2169,7 +2169,9 @@ function emoji_picker_init($id) {
 function extract_links( $text ) {
 
 	$pattern = '~[a-z]+://\S+~';
-	$pattern_mail = '/[a-z\d._%+-]+@[a-z\d.-]+\.[a-z]{2,4}\b/i';
+	// $pattern_mail = '~[a-z]+@\S+~';
+	$pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
+	// $pattern_mail = '/[a-z\d._%+-]+@[a-z\d.-]+\.[a-z]{2,4}\b/i';
 
 	preg_match_all($pattern, $text, $out);
 	preg_match_all($pattern_mail, $text, $out_mail);
@@ -2184,6 +2186,96 @@ function extract_links( $text ) {
 	echo $text;
 
 }
+
+/**
+ * Display Date 
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @param string $date date
+ * @return string text with html a tags
+ */
+function qp_date( $date, $detail = false, $time = '' ) {
+
+	// get time
+	if ($time) {
+		$date = strtotime("$date $time");
+	}
+	else {
+		$date = strtotime($date);
+	}
+
+	// tomorrow
+	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
+		$string = "Morgen";
+	}
+	// today
+	else if (date("Y-m-d") == date("Y-m-d", $date) ) {
+		$string = "Heute";
+	}
+	// yesterday
+	else if (date("Y-m-d", (current_time('timestamp') - 86400)) == date("Y-m-d", $date) ) {
+		$string = "Gestern";
+	}
+	// date + year
+	else if (date("Y") != date("Y", $date) ) {
+		$string = wp_date('j. F Y', $date);
+	}
+	// default (just date)
+	else {
+		$string = wp_date('j. F', $date);
+	}
+
+	if ($detail) {
+		$string = $string." um ".wp_date('H:i', $date);
+	}
+
+	return $string;
+
+}
+
+/**
+ * Display Time Remaining 
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @param string $date date
+ * @return string text with html a tags
+ */
+function qp_remaining( $date ) {
+
+	// minutes
+	if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 3600 ) {
+		$time = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0)." Minuten";
+	}
+	// hours
+	else if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 10800 ) {
+		$time = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/3600), 0)." Stunden";
+	}
+	// today
+	else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
+		$time = "bis um ".wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+	}
+	// tomorrow
+	else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
+		$time = "bis Morgen";
+	}
+	// no data
+	else if (!get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
+		$time = "vom ".get_the_date('j. M');
+	}
+	else if (get_post_meta(get_the_ID(), 'expire_timestamp', true) < current_time('timestamp')) {
+		$time = "vom ".date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
+	}
+	// other
+	else {
+		$time = "bis zum ".wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+	}
+
+	return $time;
+
+}
+
 
 
 
