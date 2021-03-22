@@ -4806,10 +4806,44 @@ a.card-link{
   border-radius: 20px;
 }
 
-
-
 .landscape .pre-title {
   color: #fff
+}
+
+
+
+/* Card Center */
+
+
+.card.card-center img{
+  width: 100%;
+  height: auto;
+  max-width: none;
+  min-height: none;
+}
+
+.card.card-center .content{
+  height: 100px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card.card-center .pre-title{
+  display: block;
+}
+
+
+.card.card-center .emojis-top{
+margin-top: -30px;
+}
+
+.card-center > a.card-link{
+  text-align:  center;
+   flex-direction: column;
+  /* justify-content: space-between;
+  align-items: center;  */
 }
 
 
@@ -5348,6 +5382,21 @@ a.card-link{
     margin: 10px 0px;
     position: relative;
   }
+
+  .card-container-col-4 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+    position: relative;
+  }
+
+
+  .card-container-col-4 .card{
+   width: calc( 25% - 5px);
+  }
+
+  
 
   /* Can align a landscape Card center */
   .card-container__center {

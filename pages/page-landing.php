@@ -26,7 +26,7 @@ get_header();
     <?php
 		// Neuste Meldungen
 		$args2 = array(
-			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte'), 
+			'post_type'=> array('veranstaltungen', 'nachrichten'), 
 			'post_status'=> 'publish', 
 			'posts_per_page'=> 6,
 			'order' => 'DESC',
@@ -69,6 +69,7 @@ get_header();
 				'post_status'=>'publish', 
 				'posts_per_page'=> 3
 			);
+
 			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quartier','Updates aus spannenden Projekten');
 		?>
 
@@ -126,6 +127,7 @@ get_header();
 		?>
     </div>
 
+
     <?php
 		// featured projects (square_card + carousel query + function)
 		$args3 = array(
@@ -134,7 +136,7 @@ get_header();
 			'posts_per_page'=> 4,
 			'orderby' => 'rand'
 		);
-		slider($args3,'square_card', '2','true'); 
+		slider($args3,'card', '2','true'); 
 		?>
 
     <?php 

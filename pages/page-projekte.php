@@ -45,7 +45,7 @@ get_header();
 	);
 	?>
 	
-	<div class="card-container">
+	<div class="card-container-col-4">
 	<?php card_list($args4);
 	?>
 </div>
