@@ -2031,24 +2031,29 @@ function card_list($args) {
  */
 function list_card($args, $link = '', $card_title = '', $card_subtitle = '') {
 
+	set_query_var( 'list-item', true );
 	?>
-	<div class='card list-card shadow' data-content-piece="<?php echo $card_title; ?>">
-	<?php if ($link) echo "<a class='card-link' href='".$link."'>"; ?>
+
+<div class='card list-card shadow' data-content-piece="<?php echo $card_title; ?>">
+	<a class="card-link" href="<?php echo $link; ?>">
 
 		<div class='card-header'>
 			<h2><?php echo $card_title; ?></h2>
 			<h3><?php echo $card_subtitle; ?></h3>
 		</div>
+
 		<?php
-		$query2 = new WP_Query( $args);
+		$query2 = new WP_Query( $args );
 		// The Loop
 		while ( $query2->have_posts() ) {
 			$query2->the_post();
 			get_template_part('elements/list_card');
+			// get_template_part('elements/card', get_post_type());
 		}
 		// Restore original Post Data
 		wp_reset_postdata();
 		?>
+
 	</a>
 </div>
 <?php
