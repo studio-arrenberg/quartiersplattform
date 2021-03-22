@@ -44,11 +44,9 @@ wp_maintenance_mode();
     <?php the_field('matomo_api', 'option'); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
 
-<?php 
-// echo current_user_can('skip_maintenance');
-?>
+<?php display_cookie_warning(); ?>
 
     <?php
         wp_body_open();

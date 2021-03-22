@@ -1281,31 +1281,53 @@ function wpdev_login_session( $expire ) {
 } add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 
 /**
- * Set guest cookie
+ * Display cookie warning
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @return string
+ */
+function display_cookie_warning() {
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+
+	if (!isset($_COOKIE['guest']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
+		get_template_part( 'components/cookie/cookie-alert' );
+	}
+
+}
+
+/**
+ * Set guest cookie (ajax)
  *
  * @since Quartiersplattform 1.0
  *
- * @return void
+ * @return string
  */
-function set_user_cookie_inc_guest(){
+function set_cookie_callback(){
 	# check if cookie not set
     if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
-		# get/increase or set guest counter
+		// set guest counter
 		if (!get_option('guest_counter')) {
 			add_option('guest_counter', 1);
 		}
+		// get/increase guest counter
 		else {
 			$counter = get_option('guest_counter') + 1;
 			update_option('guest_counter', $counter);
 		}
-		# set guest cookie
+		// set guest cookie
 		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
 		setcookie('guest', md5($counter), $expiry, $path, $host);
     }  
 } 
-add_action('init', 'set_user_cookie_inc_guest');
+// add_action('init', 'set_user_cookie_inc_guest');
+add_action( 'wp_ajax_set_cookie', 'set_cookie_callback' );
+add_action( 'wp_ajax_nopriv_set_cookie', 'set_cookie_callback' );
+
+
 
 /**
  * Set Cookie on login
