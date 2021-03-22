@@ -15,9 +15,11 @@
         <?php } ?>
         <div class="content">
             <div class="pre-title red-text ">
+                Umfrage
                 <?php 
-                    # get projekt or owner
-                    if (get_cpt_term_owner($post->ID, 'projekt')) echo "Umfrage von ".get_cpt_term_owner($post->ID, 'projekt');
+                    // get projekt or owner
+                    if (get_cpt_term_owner($post->ID, 'projekt')) echo " von ".get_cpt_term_owner($post->ID, 'projekt');
+                    echo " vom ".qp_date(get_the_date('Y-m-d'));
                 ?>
             </div>
             <h3 class="card-title-large">

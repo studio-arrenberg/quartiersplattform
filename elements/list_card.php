@@ -23,7 +23,6 @@ if (strlen($the_slug < 1 )) {
 
 <div class="list-item">
     <?php the_post_thumbnail( 'preview_m' ); ?>
-    <a class="sd"></a>
     <div class="content">
         <h3 class="card-title">
             <?php shorten(get_the_title(), '30'); ?>

@@ -48,7 +48,7 @@ get_header();
 
                 <h3 class="single-header-slogan">
                     <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
-                    <span class="date"><?php echo get_the_date('j. F'); ?></span>
+                    <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
                 </h3>
 
                 <?php

@@ -27,7 +27,7 @@ if (strlen($the_slug < 1 )) {
             <div class="pre-title">
                 <span><?php echo get_cpt_term_owner($post->ID, 'projekt'); ?></span>
                 <span class="date">
-                    <?php  echo get_the_date('j. F'); ?>
+                    <?php  echo qp_date(get_the_date('Y-m-d')); ?>
                 <span>
             </div> 
             <h3 class="card-title">
