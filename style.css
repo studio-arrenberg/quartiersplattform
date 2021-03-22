@@ -6458,3 +6458,26 @@ img.button-icon.hide {
   opacity: 0;
 }
 
+/* johann  */
+
+/* alert box */
+div.alert-box {
+  position: relative;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 16px 5px 5px 10px;
+  border: 1px solid rgb(0, 145, 255);
+}
+
+.alert-box > p {
+  color: #616161;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.alert-box > h4 {
+  line-height: 30px;
+  font-size: 20px;
+}

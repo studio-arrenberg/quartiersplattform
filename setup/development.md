@@ -57,7 +57,7 @@ landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Quer
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
 #### Slider
-`slides` get multiplied by 2 for desktop
+`slides` get multiplied by 2 for desktop view
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
@@ -88,4 +88,8 @@ get_cpt_term_owner($post_ID, $term, $type = 'name');
 Should be used in the Wordpress Loop 
 ```php
 author_card(true); // true for contact details (only for logged in users)
+```
+#### Creat Mail and Website links in Text
+```php 
+extract_links($text);
 ```

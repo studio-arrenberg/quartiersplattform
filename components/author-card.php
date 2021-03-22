@@ -34,5 +34,13 @@ if($contact && is_user_logged_in()){
 
     </div>
 
+    <?php if( !get_field('phone', $userid) && !get_field('mail', $userid) && get_the_author_meta( 'ID' ) == get_current_user_id()) { ?>
+        <div class="alert-box">
+            <h4>Kontaktdaten hinterlegen</h4>
+            <p>Hinterlege deine Kontaktdaten <br> damit du kontaktiert werden kannst.</p>
+            <a class="button" href="<?php echo get_site_url(); ?>/profil">Zum Profil</a>
+        </div>
+    <?php } ?>
+
 <?php
 }
