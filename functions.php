@@ -2168,19 +2168,18 @@ function emoji_picker_init($id) {
  */
 function extract_links( $text ) {
 
-	$pattern = '~[a-z]+://\S+~';
-	// $pattern_mail = '~[a-z]+@\S+~';
+	$pattern = '~[a-z]+://\S+~i';
+	// $pattern = '~www\S+~i';
 	$pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
-	// $pattern_mail = '/[a-z\d._%+-]+@[a-z\d.-]+\.[a-z]{2,4}\b/i';
 
 	preg_match_all($pattern, $text, $out);
 	preg_match_all($pattern_mail, $text, $out_mail);
 
 	for ($i=0; $i < count($out[0]); $i++) { 
-		$text = str_replace($out[0][$i], "<a href='".$out[0][$i]."'>".$out[0][$i]."</a>", $text);
+		$text = str_replace($out[0][$i], "<a class='text-link' href='".$out[0][$i]."' target='_blank'>".$out[0][$i]."</a>", $text);
 	}
 	for ($i=0; $i < count($out_mail[0]); $i++) { 
-		$text = str_replace($out_mail[0][$i], "<a href='mailto:".$out_mail[0][$i]."'>".$out_mail[0][$i]."</a>", $text);
+		$text = str_replace($out_mail[0][$i], "<a class='text-link' href='mailto:".$out_mail[0][$i]."'>".$out_mail[0][$i]."</a>", $text);
 	}
 
 	echo $text;
