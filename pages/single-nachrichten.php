@@ -70,7 +70,7 @@ get_header();
 
     <div class="site-content">
 
-        <?php the_field('text'); ?>
+        <?php extract_links(get_field('text')); ?>
 
     </div>
 

@@ -104,7 +104,7 @@ get_header();
             <?php if (get_field('text')) { ?>
             <div class="single-content">
                 <h2>Beschreibung</h2>
-                <p><?php the_field('text'); ?></p>
+                <p><?php extract_links(get_field('text')); ?></p>
             </div>
             <?php } ?>
 

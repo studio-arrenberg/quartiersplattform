@@ -70,7 +70,7 @@ get_header();
             
                 <?php 
                 // text
-                the_field('text');
+                extract_links(get_field('text'));
 
                 // temp fix
                 echo "<br><br>";

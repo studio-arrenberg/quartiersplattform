@@ -181,10 +181,6 @@ wp_maintenance_mode();
 
     </header><!-- #site-header -->
 
-    <?php 
-    
-    ?>
-
     <script>
         window.onscroll = function() {
             scrollFunction()
