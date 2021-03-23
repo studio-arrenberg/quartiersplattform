@@ -1491,34 +1491,69 @@ button.toggle {
 /* GRID in the making */
 
 
+
+.masonry{
+  width: 100%;
+}
+
+
+.masonry .card{
+  width: 400px;
+  max-width: 400px;
+  margin: 0px;
+
+}
+
+
+
+.grid {
+  max-width: 100vw;
+  width: 100vw;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.grid .card{
+  width: 400px;
+  max-width: 400px;
+  margin: 0px;
+}
+
+
+
 @media (min-width: 1000px) {
 
   html {
     overflow-x: inherit !important;
   }
+
+
   .home{
-    max-width: 1500px;
-    margin: 0 auto;
-    justify-content: unset;
+    /* max-width: 1500px;
+    justify-content: unset; */
     display: grid;
-    grid-template-columns: minmax(500px, 1000px) minmax(250px, 400px) ;
-    grid-template-rows: auto;
-    grid-template-areas: "center right-sidebar"
-                          "footer footer";
+    margin: 0px;
+    max-width: 100vw;
+    padding: 15px;
+    grid-template-columns: 1000px 400px;
+    grid-template-areas: "center sidebar"
+    "footer footer"
 
-                          align-items: baseline;
 
   }
 
-  #site-content {
+#site-content {
     grid-area: center;
+    margin: 150px 0px 0px 0px;
+    max-width: none;
+    overflow: visible;
   }
 
-  .right-sidebar{
+  .home .right-sidebar{
     display: block;
     height: 400px;
     margin-top: 115px;
-    grid-area: right-sidebar;
+    grid-area: sidebar;
     position: -webkit-sticky;
     position: sticky;
     top: 115px;
@@ -1528,7 +1563,7 @@ button.toggle {
     max-width: none;
   }
 
-  footer {
+  .home footer {
     grid-area: footer;
     padding-left: 5px;
     align-items: center;
@@ -5372,14 +5407,6 @@ margin-top: -30px;
     height: 100%;
     margin: 0px;
   }
-
-
-  #masonry .card{
-    width: 400px;
-    max-width: none;
-    margin: 0px;
-  }
-
 
 
   /* Zwei Spallten layout am Desktop */

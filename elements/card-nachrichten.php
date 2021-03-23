@@ -21,11 +21,19 @@ if (strlen($the_slug < 1 )) {
 
 ?>
 
-<div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
+
+
+<div class="card-group">
+    <div class="pre-card">
+    <b> Projektupdate</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
+    </div>
+
+<div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-        <div class="content content_shrink">
+        <?php the_post_thumbnail( 'preview_m' ); ?>
+
+        <div class="content ">
             <div class="pre-title">
-                <span><?php echo get_cpt_term_owner($post->ID, 'projekt'); ?></span>
                 <span class="date">
                     <?php  echo qp_date(get_the_date('Y-m-d')); ?>
                 <span>
@@ -45,6 +53,11 @@ if (strlen($the_slug < 1 )) {
                 ?>
             </p>
         </div>
-        <?php the_post_thumbnail( 'preview_m' ); ?>
     </a>
 </div>
+
+
+<div class="after-card ">
+        <h4 class=""> <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?></h4>
+    </div>
+    </div>

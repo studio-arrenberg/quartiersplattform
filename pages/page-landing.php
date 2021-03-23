@@ -21,27 +21,139 @@ get_header();
 
 <main id="site-content" role="main" data-track-content>
 
+<h1> Wir wollen eine Suche </h1>
+
     <?php 
 	// ---------------------------------- Logged in ----------------------------------
 	if (is_user_logged_in()) {
 	?>
 
 
-<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
 
-<style>
-    .container div {
-      width: 280px;
-      height: 500px;
-      background-color: antiquewhite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 8px;
-    }
 
-  
-  </style>
+	<?php 
+		$args4 = array(
+		'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 12,
+		'orderby' => 'modified'
+	);
+	?>
+	 <section class="grid" data-grid>
+	 	<?php card_list($args4);?>
+      </section>
+	</div>
+
+
+
+	<script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
+    <!-- <script src="bundle.js"></script> -->
+
+    <script>
+const sizes = [
+  { columns: 2, gutter: 10 },                   // assumed to be mobile, because of the missing mq property
+  { mq: '768px', columns: 3, gutter: 25 },
+  { mq: '1024px', columns: 4, gutter: 50 }
+]
+
+// create an instance
+
+const instance = Bricks({
+  container: '.grid',
+  packed:    'data-packed',        // if not prefixed with 'data-', it will be added
+  sizes:     sizes
+})
+
+// bind callbacks
+
+instance
+  .on('pack',   () => console.log('ALL grid items packed.'))
+  .on('update', () => console.log('NEW grid items packed.'))
+  .on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
+
+// start it up, when the DOM is ready
+// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+
+document.addEventListener('DOMContentLoaded', event => {
+  instance
+    .resize(true)     // bind resize handler
+    .pack()           // pack initial items
+})
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.cjs.js"></script>
+
+
+	<?php 
+		$args4 = array(
+		'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 12,
+		'orderby' => 'modified'
+	);
+	?>
+	
+	<div class="masonry">
+		<?php card_list($args4);?>
+		<!-- <div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div>
+		<div class="card" style="background: red"> test </div> -->
+
+	</div>
+
+<script>
+	let magicGrid = new MagicGrid({
+	container: ".masonry", // Required. Can be a class, id, or an HTMLElement.
+	static: true, // Required for static content. Default: false.
+	items: 12, // Required for dynamic content. Initial number of items in the container.
+	gutter: 50, // Optional. Space between items. Default: 25(px).
+	maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
+	useMin: false, // Optional. Prioritize shorter columns when positioning items? Default: false.
+	useTransform: true, // Optional. Position items using CSS transform? Default: True.
+	animate: true, // Optional. Animate item positioning? Default: false.
+	center: false, //Optional. Center the grid items? Default: true. 
+	});
+	
+	magicGrid.listen();
+</script>
+
+
+
+
+
+<?php
+}
+// ---------------------------------- Logged out ----------------------------------
+else {
+?>
+
+
+
 
 <?php 
 	// veranstaltung list
@@ -53,7 +165,7 @@ get_header();
 	);
 	?>
 	
-	<div id="masonry">
+	<div class="masonry">
 		<?php card_list($args4);
 	?>
 
@@ -62,179 +174,19 @@ get_header();
 
 <script>
 	let magicGrid = new MagicGrid({
-	container: "#masonry", // Required. Can be a class, id, or an HTMLElement.
-	static: true, // Required for static content.
+	container: ".masonry", // Required. Can be a class, id, or an HTMLElement.
+	static: false, // Required for static content. Default: false.
+	items: 12, // Required for dynamic content. Initial number of items in the container.
 	gutter: 30, // Optional. Space between items. Default: 25(px).
-	animate: true, // Optional.
-	maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
-	center: false,
+	maxColumns: 5, // Optional. Maximum number of columns. Default: Infinite.
+	useMin: true, // Optional. Prioritize shorter columns when positioning items? Default: false.
+	useTransform: true, // Optional. Position items using CSS transform? Default: True.
+	animate: true, // Optional. Animate item positioning? Default: false.
+	center: true, //Optional. Center the grid items? Default: true. 
 	});
 	
 	magicGrid.listen();
 </script>
-
-
-
-
-
-
-<hr>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<?php
-		// Neuste Meldungen
-		$args2 = array(
-			'post_type'=> array('veranstaltungen', 'nachrichten'), 
-			'post_status'=> 'publish', 
-			'posts_per_page'=> 6,
-			'order' => 'DESC',
-		);
-
-		slider($args2, 'card', '1', 'false', 'start');
-		?>
-	
-	
-	
-	<?php
-		// Angebote und Fragen
-		$args4 = array(
-			'post_type'=> array('angebote', 'fragen'), 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 4,
-			'meta_query' => array(
-				array(
-					'key'     => 'expire_timestamp',
-					'value'   => current_time('timestamp'),
-					'compare' => '>',
-					'type' 	=> 'timestamp',       
-				),
-			),
-			'meta_key'          => 'expire_timestamp',
-			'orderby'           => 'expire_timestamp',
-			'order'             => 'ASC'
-		);
-
-		slider($args4,'card', '1','false'); 
-		?>
-
-
-
-
-	<div class="list-cards">
-
-		<?php
-			// projekt updates (list_card query function)
-			$args2 = array(
-				'post_type'=>'nachrichten', 
-				'post_status'=>'publish', 
-				'posts_per_page'=> 3
-			);
-
-			list_card($args2, get_post_type_archive_link( 'nachrichten' ),'Neuigkeiten aus deinem Quartier','Updates aus spannenden Projekten');
-		?>
-
-		<?php
-			// veranstaltungen
-			$args3 = array(
-				'post_type'=>'veranstaltungen', 
-				'post_staus'=>'publish', 
-				'posts_per_page'=> 3,
-				'meta_key' => 'event_date',
-				// 'orderby' => 'rand',
-				'order' => 'ASC',
-				'offset' => '0', 
-				'meta_query' => array(
-					array(
-						'key' => 'event_date', 
-						'value' => date("Y-m-d"),
-						'compare' => '>=', 
-						'type' => 'DATE'
-					)
-				)
-			);
-			list_card($args3, get_site_url().'/veranstaltungen', 'Veranstaltungen in deinem Quartier','Hier gehts zur Veranstaltungsübersicht');
-			?>
-
-	</div>
-
-	<div class="card-container ">
-
-		<?php 
-			// Smart cards 
-			// Angebote und fragen
-			get_template_part('components/smart-card/angebote-fragen');
-			// Projekte
-			get_template_part('components/smart-card/projekte');
-		?>
-
-	</div>
-
-
-    <!-- call to register -->
-    <div class="card-container ">
-        <!-- arrenberg farm link card -->
-        <?php // link_card('Aquaponik am Arrenberg','', get_site_url().'/wp-content/uploads/2020/05/CTL_Titelbild-1.jpg', '/projekte/arrenberg-farm'); ?>
-        <?php 
-			$args_gesschichten = array(
-				'post_type'   => 'geschichten',
-				'post_status' => 'publish',
-				'orderby' => 'rand',
-				'posts_per_page'=> '1'
-			);
-			// landscape_card($args_gesschichten, 'Geschichten & Menschen','', '', '/geschichten'); 
-			
-			// landscape_card(null, 'Entdecke das Quartier','Alles über den Arrenberg',get_template_directory_uri().'/assets/images/Entdecke-den-Arrenberg-Wupptertal_900x450.jpg', '/das-quartier'); 
-		?>
-    </div>
-
-
-    <?php
-		// featured projects (square_card + carousel query + function)
-		$args3 = array(
-			'post_type'=>'projekte', 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 4,
-			'orderby' => 'rand'
-		);
-		slider($args3,'card', '2','true'); 
-		?>
-
-    <?php 
-		// Aufbruch am Arrenberg link card
-		// landscape_card(null,'Über den Verein und Initiator','Aufbruch am Arrenberg', get_template_directory_uri().'/assets/images/Aufbruch-am-Arrenberg_900x450.jpg', '/aufbruch-am-arrenberg'); 
-	?>
-
-    <!-- add website to homescreen -->
-    <!-- not ready yet -->
-
-
-	<div class="card-container ">
-	<?php
-		// Gutenberg Editor Content
-		if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-			the_excerpt();
-		} else {
-			the_content( __( 'Continue reading', 'twentytwenty' ) );
-		}
-	?>
-	</div>
-
-    <?php 
-		// feedback
-		get_template_part('components/feedback'); 
-	?>
-
-<?php
-}
-// ---------------------------------- Logged out ----------------------------------
-else {
-?>
 
     <?php
 		// Neuste Meldungen
@@ -400,7 +352,7 @@ else {
 		?>
 			
 			<div class="card ">
-			<div class="emojis-top">🍾🍰
+				<div class="emojis-top">🍾🍰</div>
             <div class="card-header">
             <h2>Wir laufen jetzt unter <span class="highlight">CSS GRID</span></h2>
 			<p>Es gibt eine Sitebar die beliebig erweitert werden kann</p>
@@ -409,5 +361,6 @@ else {
            
         </div>
 	</div>
+</div>
 
 <?php get_footer(); ?>
