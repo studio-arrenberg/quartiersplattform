@@ -21,7 +21,7 @@ if (strlen($the_slug < 1 )) {
 
 ?>
 
-<div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
+<div class="card shadow nachricht">
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content content_shrink">
             <div class="pre-title">

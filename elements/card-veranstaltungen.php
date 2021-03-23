@@ -17,7 +17,7 @@ else {
 
 ?>
 
-<div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
+<div class="card shadow">
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <?php the_post_thumbnail( 'preview_m' ); ?>
         <div class="content">
