@@ -1056,6 +1056,10 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
 		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
 	}
+	else if ($post->post_title == "Introduction") {
+		$post_states[] = $prefix.'Introduction';
+		$page_template= get_stylesheet_directory() . '/pages/page-intro.php';
+	}
 	
 	if (doing_filter( 'page_template') && !empty($page_template)) {
 		return $page_template;
@@ -1493,6 +1497,23 @@ function wp_maintenance_mode() {
 	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance') && ( strpos($REQUEST_URI,'/register/') === false && strpos($REQUEST_URI,'/login/') === false && strpos($REQUEST_URI,'/password-reset/') === false )) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
+	}
+
+}
+/**
+ * Redirect new visitor
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @return void
+ */
+function redirect_visitor() {
+
+	if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
+
+		wp_redirect( home_url()."/intro" ); 
+		exit;
+
 	}
 
 }

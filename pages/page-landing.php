@@ -8,8 +8,11 @@
  */
 
 
-# redirect before acf_form_head
+// redirect before acf_form_head
 wp_maintenance_mode();
+
+// redirect to intro page when new visitor
+redirect_visitor();
 
 acf_form_head(); // before wp header !important!
 get_header();

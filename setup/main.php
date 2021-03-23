@@ -43,36 +43,15 @@ $defined_menu_item = array(
 );
 // create menu if not exists 
 if (!$menu_id) {
-
     // create menu
     $menu_id = wp_create_nav_menu($menuname);        
-
-    // iterate through menu items 
-    for ($i=0; $i < count($defined_menu_item); $i++) { 
-
-        wp_update_nav_menu_item($menu_id, 0, array(
-            'menu-item-title' =>  __($defined_menu_item[$i]['title']),
-            'menu-item-object-id' => get_page_by_title( $defined_menu_item[$i]['page_name'], OBJECT, 'page' )->ID,
-            'menu-item-object' => 'page',
-            'menu-item-type' => 'post_type',
-            'menu-item-db-id' => $defined_menu_item[$i]['ID'],
-            'menu-item-attr-title' => $defined_menu_item[$i]['attr'],
-            'menu-item-status' => 'publish'));
-        
-    }
-
-    // set menu location
-    $locations = get_theme_mod('nav_menu_locations');
-    $locations['primary'] = $menu_id;
-    set_theme_mod( 'nav_menu_locations', $locations );
-
 }
 // menu already exists
 else {
 
     // get menu items
     $menu_items = wp_get_nav_menu_items($menu_id);
-    print_r($menu_items);
+    // print_r($menu_items);
 
     // iterate through given menu items
     for ($i=0; $i < count($defined_menu_item); $i++) { 
@@ -82,6 +61,8 @@ else {
 
         // iterate and check existing menu items
         for ($a=0; $a < count($menu_items); $a++) { 
+
+            // echo "<br>".$menu_items[$a]->ID;
 
             if ($defined_menu_item[$i]['attr'] == $menu_items[$a]->attr_title) {
                 $exists = true;
@@ -101,34 +82,15 @@ else {
 
     }
 
-    // if (count($defined_menu_item) < count($menu_items)) {
+    // set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary'] = $menu_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
 
-    //     for ($a=0; $a < count($menu_items); $a++) {
-    //         $exists = true;
 
-    //         for ($i=0; $i < count($defined_menu_item); $i++) { 
-
-    //             if ($defined_menu_item[$i]['attr'] == $menu_items[$a]->attr_title) {
-    //                 // echo "<br><br>".$menu_items[$a]->attr_title;
-    //                 echo "<br>true";
-    //                 $exists = true;
-
-    //             }
-    //             else {
-    //                 $exists = false;
-    //                 echo "<br><br>".$menu_items[$a]->attr_title;
-    //             }
-
-    //         }
-    //         if ($exists) {
-    //             // finde & delete
-    //             echo "<br>delete: ".$menu_items[$a]->attr_title;
-    //             wp_delete_post($menu_items[$a]->ID);
-    //         }
-
-    //     }
-
-    // }
+    if (count($defined_menu_item) < count($menu_items)) {
+        wp_delete_nav_menu($menuname);
+    }
 
 }
 
@@ -208,6 +170,7 @@ function create_pages() {
         10 => array('title' => 'Angebot erstellen', 'slug' => 'angebot-erstellen'),
         11 => array('title' => 'Frage erstellen', 'slug' => 'frage-erstellen'),
         12 => array('title' => 'Projekt erstellen', 'slug' => 'projekt-erstellen'),
+        13 => array('title' => 'Introduction', 'slug' => 'intro'),
     );
 
     for ($i = 0; $i < count($pages); $i++) {
