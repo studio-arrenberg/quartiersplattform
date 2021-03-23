@@ -20,7 +20,6 @@
 
             ?>
 
-                <div class="card smart-card ">
                     <div class="card-header">
                         <h2>Dein Projekt</h2>
                     </div>
@@ -33,11 +32,10 @@
 
                     ?>
                     <div class="card-footer">
-                        <a class="button card-button" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Update veröffentlichen</a>
-                        <a class="button card-button" href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
+                        <a class="button " href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Update veröffentlichen</a>
+                        <a class="button" href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
                     </div>
 
-                </div>
             
             <?php
         }
