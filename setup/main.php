@@ -43,56 +43,45 @@ $defined_menu_item = array(
 );
 // create menu if not exists 
 if (!$menu_id) {
-    // create menu
     $menu_id = wp_create_nav_menu($menuname);        
 }
-// menu already exists
-else {
 
-    // get menu items
-    $menu_items = wp_get_nav_menu_items($menu_id);
-    // print_r($menu_items);
+// get menu items
+$menu_items = wp_get_nav_menu_items($menu_id);
+// print_r($menu_items);
 
-    // iterate through given menu items
-    for ($i=0; $i < count($defined_menu_item); $i++) { 
-
-        $exists = false;
-        $id = '0';
-
-        // iterate and check existing menu items
-        for ($a=0; $a < count($menu_items); $a++) { 
-
-            // echo "<br>".$menu_items[$a]->ID;
-
-            if ($defined_menu_item[$i]['attr'] == $menu_items[$a]->attr_title) {
-                $exists = true;
-                $id = $menu_items[$a]->ID;
-            }
-            
+// iterate through given menu items
+for ($i=0; $i < count($defined_menu_item); $i++) { 
+    $id = '0';
+    // iterate and check existing menu items
+    for ($a=0; $a < count($menu_items); $a++) { 
+        if ($defined_menu_item[$i]['attr'] == $menu_items[$a]->attr_title) {
+            $id = $menu_items[$a]->ID;
         }
-        // update or create menu item
-        wp_update_nav_menu_item($menu_id, $id, array(
-            'menu-item-title' =>  __($defined_menu_item[$i]['title']),
-            'menu-item-object-id' => get_page_by_title( $defined_menu_item[$i]['page_name'], OBJECT, 'page' )->ID,
-            'menu-item-object' => 'page',
-            'menu-item-type' => 'post_type',
-            'menu-item-db-id' => $defined_menu_item[$i]['ID'],
-            'menu-item-attr-title' => $defined_menu_item[$i]['attr'],
-            'menu-item-status' => 'publish'));
-
     }
-
-    // set menu location
-    $locations = get_theme_mod('nav_menu_locations');
-    $locations['primary'] = $menu_id;
-    set_theme_mod( 'nav_menu_locations', $locations );
-
-
-    if (count($defined_menu_item) < count($menu_items)) {
-        wp_delete_nav_menu($menuname);
-    }
+    // update or create menu item
+    wp_update_nav_menu_item($menu_id, $id, array(
+        'menu-item-title' =>  __($defined_menu_item[$i]['title']),
+        'menu-item-object-id' => get_page_by_title( $defined_menu_item[$i]['page_name'], OBJECT, 'page' )->ID,
+        'menu-item-object' => 'page',
+        'menu-item-type' => 'post_type',
+        'menu-item-db-id' => $defined_menu_item[$i]['ID'],
+        'menu-item-attr-title' => $defined_menu_item[$i]['attr'],
+        'menu-item-status' => 'publish')
+    );
 
 }
+
+// set menu location
+$locations = get_theme_mod('nav_menu_locations');
+$locations['primary'] = $menu_id;
+set_theme_mod( 'nav_menu_locations', $locations );
+
+
+if (count($defined_menu_item) < count($menu_items)) {
+    wp_delete_nav_menu($menuname);
+}
+
 
 
 /**
