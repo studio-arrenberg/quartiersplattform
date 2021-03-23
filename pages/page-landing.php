@@ -21,7 +21,28 @@ get_header();
 
 <main id="site-content" role="main" data-track-content>
 
-<h1> Wir wollen eine Suche </h1>
+<div class="card  card-centered shadow">
+	<a class="card-link" href="<?php echo get_site_url(); ?>/projekt-erstellen/">
+		<div class="content ">
+
+			<h1 class="card-title-large">
+				Neuigkeiten und Projektupdates
+			</h1>
+			<h2>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?	
+			</h2>
+		</div>
+	</a>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
     <?php 
 	// ---------------------------------- Logged in ----------------------------------
@@ -29,32 +50,27 @@ get_header();
 	?>
 
 
-
-
 	<?php 
 		$args4 = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
+		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
 		'post_status'=>'publish', 
 		'posts_per_page'=> 12,
 		'orderby' => 'modified'
 	);
-	?>
-	 <section class="grid" data-grid>
-	 	<?php card_list($args4);?>
-      </section>
-	</div>
-
-
+	?>  
+	
+	<div class="grid" data-grid>
+		<?php card_list($args4);?>
+    </div>
 
 	<script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
     <!-- <script src="bundle.js"></script> -->
 
     <script>
-const sizes = [
-  { columns: 2, gutter: 10 },                   // assumed to be mobile, because of the missing mq property
-  { mq: '768px', columns: 3, gutter: 25 },
-  { mq: '1024px', columns: 4, gutter: 50 }
-]
+	const sizes = [
+	{ columns: 1, gutter: 10 }, // assumed to be mobile, because of the missing mq property
+	{ mq: '800px', columns: 2, gutter: 120 },
+	]
 
 // create an instance
 
@@ -81,67 +97,6 @@ document.addEventListener('DOMContentLoaded', event => {
 })
     
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://unpkg.com/magic-grid/dist/magic-grid.cjs.js"></script>
-
-
-	<?php 
-		$args4 = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 12,
-		'orderby' => 'modified'
-	);
-	?>
-	
-	<div class="masonry">
-		<?php card_list($args4);?>
-		<!-- <div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div>
-		<div class="card" style="background: red"> test </div> -->
-
-	</div>
-
-<script>
-	let magicGrid = new MagicGrid({
-	container: ".masonry", // Required. Can be a class, id, or an HTMLElement.
-	static: true, // Required for static content. Default: false.
-	items: 12, // Required for dynamic content. Initial number of items in the container.
-	gutter: 50, // Optional. Space between items. Default: 25(px).
-	maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
-	useMin: false, // Optional. Prioritize shorter columns when positioning items? Default: false.
-	useTransform: true, // Optional. Position items using CSS transform? Default: True.
-	animate: true, // Optional. Animate item positioning? Default: false.
-	center: false, //Optional. Center the grid items? Default: true. 
-	});
-	
-	magicGrid.listen();
-</script>
-
 
 
 

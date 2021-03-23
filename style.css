@@ -1505,18 +1505,17 @@ button.toggle {
 }
 
 
-
 .grid {
-  max-width: 100vw;
-  width: 100vw;
-  margin-right: auto;
+  width: 100%;
+  margin-right: 0px;
   margin-bottom: 50px;
 }
 
-.grid .card{
+.grid div{
   width: 400px;
   max-width: 400px;
   margin: 0px;
+  transition: all 0.2s ease-in-out;
 }
 
 
@@ -1529,24 +1528,23 @@ button.toggle {
 
 
   .home{
-    /* max-width: 1500px;
-    justify-content: unset; */
+    justify-content: unset; 
     display: grid;
-    margin: 0px;
-    max-width: 100vw;
+    max-width: 1500px;
+    margin: 0 auto;
     padding: 15px;
-    grid-template-columns: 1000px 400px;
+    grid-template-columns: auto 400px;
     grid-template-areas: "center sidebar"
     "footer footer"
 
+}
 
-  }
-
-#site-content {
+.home #site-content {
     grid-area: center;
     margin: 150px 0px 0px 0px;
-    max-width: none;
+    max-width: 1000px;
     overflow: visible;
+    padding: 0px;
   }
 
   .home .right-sidebar{
