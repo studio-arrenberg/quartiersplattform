@@ -8,8 +8,11 @@
  */
 
 
-# redirect before acf_form_head
+// redirect before acf_form_head
 wp_maintenance_mode();
+
+// redirect to intro page when new visitor
+redirect_visitor();
 
 acf_form_head(); // before wp header !important!
 get_header();
@@ -23,7 +26,68 @@ get_header();
 	if (is_user_logged_in()) {
 	?>
 
-    <?php
+
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+
+<style>
+    .container div {
+      width: 280px;
+      height: 500px;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+    }
+
+  
+  </style>
+
+<?php 
+	// veranstaltung list
+	$args4 = array(
+		'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
+		'post_status'=>'publish', 
+		'posts_per_page'=> 12,
+		'orderby' => 'modified'
+	);
+	?>
+	
+	<div id="masonry">
+		<?php card_list($args4);
+	?>
+
+
+</div>
+
+<script>
+	let magicGrid = new MagicGrid({
+	container: "#masonry", // Required. Can be a class, id, or an HTMLElement.
+	static: true, // Required for static content.
+	gutter: 30, // Optional. Space between items. Default: 25(px).
+	animate: true, // Optional.
+	maxColumns: 2, // Optional. Maximum number of columns. Default: Infinite.
+	center: false,
+	});
+	
+	magicGrid.listen();
+</script>
+
+
+
+
+
+
+<hr>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<?php
 		// Neuste Meldungen
 		$args2 = array(
 			'post_type'=> array('veranstaltungen', 'nachrichten'), 
@@ -34,8 +98,10 @@ get_header();
 
 		slider($args2, 'card', '1', 'false', 'start');
 		?>
-
-    <?php
+	
+	
+	
+	<?php
 		// Angebote und Fragen
 		$args4 = array(
 			'post_type'=> array('angebote', 'fragen'), 

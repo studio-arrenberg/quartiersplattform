@@ -6,7 +6,6 @@
  *
  */
 
-
 // variable text length
 if (strlen(get_the_title()) < 35 ) {
     $char = 90;
@@ -16,30 +15,36 @@ else {
 }
 
 // variable text length
-if (strlen(get_field('slogan')) > 1 ) {
-    $char = 50;
+if (strlen($the_slug < 1 )) {
+    $char = 40;
 }
 
 ?>
 
-
-<!-- <div class="<?php //if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?> card-center"> -->
-<div class="card shadow card-center">
+<div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-        <?php the_post_thumbnail( 'preview_m' ); ?>
-        <div class="content ">
-            <div class="emojis-top">
-                 <?php  shorten_title(get_field('emoji'), '200'); ?>
-            </div>
-            <!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
+        <div class="content content_shrink">
+            <div class="pre-title">
+                <span><?php echo get_cpt_term_owner($post->ID, 'projekt'); ?></span>
+                <span class="date">
+                    <?php  echo qp_date(get_the_date('Y-m-d')); ?>
+                <span>
+            </div> 
             <h3 class="card-title">
-                <?php shorten_title(get_the_title(), '60'); ?>
+                <?php shorten(get_the_title(), '60'); ?>
+                <?php //echo strlen(get_the_title()) ?>
             </h3>
-            <div class="pre-title"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div> 
-
-            <!-- <p class="preview-text <?php // if (strlen(get_field('slogan')) > 30 ) echo 'hidden'; ?> "> 
-                <?php // if (!empty(get_the_content())) { get_excerpt(get_the_content(), $char); } else { get_excerpt(get_field('text'),  $char); }  //echo $char?>
-            </p> -->
+            <p class="preview-text">
+                <?php  
+                if (strlen(get_field('text')) > 2) {
+                    shorten(get_field('text'), $char);
+                }
+                else {
+                    shorten(get_the_content(), $char);
+                }
+                ?>
+            </p>
         </div>
+        <?php the_post_thumbnail( 'preview_m' ); ?>
     </a>
 </div>

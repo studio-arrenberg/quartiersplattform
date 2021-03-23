@@ -45,7 +45,7 @@ get_header();
                     <h1><?php the_title(); ?></h1>
                     <h3 class="single-header-slogan">
                         <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
-                        <span class="date"><?php echo wp_date('j. F', strtotime(get_field('event_date'))); ?></span>
+                        <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
                     </h3>
 
                 <?php
@@ -70,7 +70,7 @@ get_header();
             
                 <?php 
                 // text
-                the_field('text');
+                extract_links(get_field('text'));
 
                 // temp fix
                 echo "<br><br>";
@@ -101,10 +101,7 @@ get_header();
 
             </div>
 
-            <?php 
-                // author card
-                get_author(); 
-            ?>
+            <?php author_card(); ?>
 
             <?php 
                 // calendar download

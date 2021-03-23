@@ -86,7 +86,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'placeholder' => '',
                 'maxlength' => '',
                 'rows' => '',
-                'new_lines' => '',
+                'new_lines' => 'br',
             ),
             array(
                 'key' => 'field_5fcf56cd9e356',

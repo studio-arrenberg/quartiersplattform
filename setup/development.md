@@ -57,7 +57,7 @@ landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Quer
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
 #### Slider
-`slides` get multiplied by 2 for desktop
+`slides` get multiplied by 2 for desktop view
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
@@ -65,8 +65,7 @@ slider($query,'landscape_card', '1','false');
 ```
 #### Shorten
 ```php 
-shorten_title($text, $count = '55'); // für den title
-get_excerpt($text, $count = '55'); // für den fließtext
+shorten($text, $count = '55'); // für alles
 ```
 #### Calendar Download
 ```php
@@ -88,5 +87,17 @@ get_cpt_term_owner($post_ID, $term, $type = 'name');
 #### Get Author of Post Type
 Should be used in the Wordpress Loop 
 ```php
-get_author(true); // true for further detail
+author_card(true); // true for contact details (only for logged in users)
+```
+#### Creat Mail and Website links in Text
+```php 
+extract_links($text);
+```
+#### Display Date
+```php
+echo qp_date( $date, $detail = false, $time = '' );
+```
+#### Display Time remaining
+```php
+echo qp_remaining( $date );
 ```

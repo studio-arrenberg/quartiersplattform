@@ -21,57 +21,79 @@
  *  --------------------------------------------------------
  */
 
-// $menuname = 'qp_menu';
 $menuname = 'qp_menu';
-// $bpmenulocation = 'lblgbpmenu';
-// Does the menu exist already?
-$menu_exists = wp_get_nav_menu_object( $menuname );
+// get menu id
+$menu_array = wp_get_nav_menus();
+for ($i=0; $i < count($menu_array) ; $i++) { 
 
-// If it doesn't exist, let's create it.
-if( !$menu_exists){
-    $menu_id = wp_create_nav_menu($menuname);
-
-    $überblick = get_page_by_title( 'Überblick', OBJECT, 'page' );
-    wp_update_nav_menu_item($menu_id, 0, array(
-        'menu-item-title' =>  __('Überblick'),
-        'menu-item-object-id' => $überblick->ID,
-        'menu-item-object' => 'page',
-        'menu-item-type' => 'post_type',
-        'menu-item-status' => 'publish'));
-
-    $veranstaltungen = get_page_by_title( 'Veranstaltungen', OBJECT, 'page' );
-    wp_update_nav_menu_item($menu_id, 0, array(
-        'menu-item-title' =>  __('Veranstaltungen'),
-        'menu-item-object-id' => $veranstaltungen->ID,
-        'menu-item-object' => 'page',
-        'menu-item-type' => 'post_type',
-        'menu-item-status' => 'publish'));
-
-    $projekte = get_page_by_title( 'Projekte', OBJECT, 'page' );
-    wp_update_nav_menu_item($menu_id, 0, array(
-        'menu-item-title' =>  __('Projekte'),
-        'menu-item-object-id' => $projekte->ID,
-        'menu-item-object' => 'page',
-        'menu-item-type' => 'post_type',
-        'menu-item-status' => 'publish'));
-
-    $gemeinsam = get_page_by_title( 'Gemeinsam', OBJECT, 'page' );
-    wp_update_nav_menu_item($menu_id, 0, array(
-        'menu-item-title' =>  __('Gemeinsam'),
-        'menu-item-object-id' => $gemeinsam->ID,
-        'menu-item-object' => 'page',
-        'menu-item-type' => 'post_type',
-        'menu-item-status' => 'publish'));
-
-
-    // Grab the theme locations and assign our newly-created menu
-    // to the BuddyPress menu location.
-    // if( !has_nav_menu( 'primary' ) ){
-        $locations = get_theme_mod('nav_menu_locations');
-        $locations['primary'] = $menu_id;
-        set_theme_mod( 'nav_menu_locations', $locations );
-    // }
+    if ($menu_array[$i]->slug == $menuname) {
+        $menu_id = $menu_array[$i]->term_id;
     }
+    else {
+        $menu_id = false;
+    }
+}
+// defined menus
+$defined_menu_item = array(
+    0 => array ('title' => 'Aktuelles', 'page_name' => 'Überblick', 'ID' => '100100', 'attr' => 'first'),
+    1 => array ('title' => 'Veranstaltungen', 'page_name' => 'Veranstaltungen', 'ID' => '100200', 'attr' => 'second'),
+    2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'third'),
+    3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'fourth'),
+    // 4 => array ('title' => 'Impressum', 'page_name' => 'Impressum', 'ID' => '100700', 'attr' => 'fifth'),
+);
+// create menu if not exists 
+if (!$menu_id) {
+    // create menu
+    $menu_id = wp_create_nav_menu($menuname);        
+}
+// menu already exists
+else {
+
+    // get menu items
+    $menu_items = wp_get_nav_menu_items($menu_id);
+    // print_r($menu_items);
+
+    // iterate through given menu items
+    for ($i=0; $i < count($defined_menu_item); $i++) { 
+
+        $exists = false;
+        $id = '0';
+
+        // iterate and check existing menu items
+        for ($a=0; $a < count($menu_items); $a++) { 
+
+            // echo "<br>".$menu_items[$a]->ID;
+
+            if ($defined_menu_item[$i]['attr'] == $menu_items[$a]->attr_title) {
+                $exists = true;
+                $id = $menu_items[$a]->ID;
+            }
+            
+        }
+        // update or create menu item
+        wp_update_nav_menu_item($menu_id, $id, array(
+            'menu-item-title' =>  __($defined_menu_item[$i]['title']),
+            'menu-item-object-id' => get_page_by_title( $defined_menu_item[$i]['page_name'], OBJECT, 'page' )->ID,
+            'menu-item-object' => 'page',
+            'menu-item-type' => 'post_type',
+            'menu-item-db-id' => $defined_menu_item[$i]['ID'],
+            'menu-item-attr-title' => $defined_menu_item[$i]['attr'],
+            'menu-item-status' => 'publish'));
+
+    }
+
+    // set menu location
+    $locations = get_theme_mod('nav_menu_locations');
+    $locations['primary'] = $menu_id;
+    set_theme_mod( 'nav_menu_locations', $locations );
+
+
+    if (count($defined_menu_item) < count($menu_items)) {
+        wp_delete_nav_menu($menuname);
+    }
+
+}
+
 
 /**
  *  --------------------------------------------------------
@@ -148,6 +170,7 @@ function create_pages() {
         10 => array('title' => 'Angebot erstellen', 'slug' => 'angebot-erstellen'),
         11 => array('title' => 'Frage erstellen', 'slug' => 'frage-erstellen'),
         12 => array('title' => 'Projekt erstellen', 'slug' => 'projekt-erstellen'),
+        13 => array('title' => 'Introduction', 'slug' => 'intro'),
     );
 
     for ($i = 0; $i < count($pages); $i++) {

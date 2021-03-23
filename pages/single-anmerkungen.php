@@ -28,7 +28,7 @@ get_header();
     </div>
 
 
-    <?php get_author(); ?>
+    <?php author_card(); ?>
 
     <?php edit_post_link(); ?>
 

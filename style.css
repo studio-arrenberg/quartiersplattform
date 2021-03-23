@@ -5373,6 +5373,15 @@ margin-top: -30px;
     margin: 0px;
   }
 
+
+  #masonry .card{
+    width: 400px;
+    max-width: none;
+    margin: 0px;
+  }
+
+
+
   /* Zwei Spallten layout am Desktop */
 
   .card-container {
@@ -5435,8 +5444,10 @@ margin-top: -30px;
     height: calc((1000px - 20px) / 2);
   }
 
-
 }
+
+
+
 
 .anmerkung .pre-title {
   margin-bottom: 5px;
@@ -6520,3 +6531,37 @@ img.button-icon.hide {
   opacity: 0;
 }
 
+/* johann  */
+
+/* alert box */
+div.alert-box {
+  position: relative;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 16px 5px 5px 10px;
+  border: 1px solid rgb(0, 145, 255);
+}
+
+.alert-box > p {
+  color: #616161;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.alert-box > h4 {
+  line-height: 30px;
+  font-size: 20px;
+}
+
+/* text links */
+a.text-link {
+  /* font-weight: bold; */
+  /* letter-spacing: -1px; */
+  text-decoration: none !important;
+}
+
+a.text-link:hover {
+  text-decoration: underline !important;
+}

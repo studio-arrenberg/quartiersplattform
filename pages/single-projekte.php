@@ -104,7 +104,7 @@ get_header();
             <?php if (get_field('text')) { ?>
             <div class="single-content">
                 <h2>Beschreibung</h2>
-                <p><?php the_field('text'); ?></p>
+                <p><?php extract_links(get_field('text')); ?></p>
             </div>
             <?php } ?>
 
@@ -260,10 +260,10 @@ get_header();
                                             <p class="preview-text">
                                                 <?php
                                                     if (strlen(get_field('text')) > 2) {
-                                                        get_excerpt(get_field('text'), '55');
+                                                        shorten(get_field('text'), '55');
                                                     }
                                                     else {
-                                                        get_excerpt(get_the_content(), '55');
+                                                        shorten(get_the_content(), '55');
                                                     }
                                                 ?>
                                             </p>
@@ -286,9 +286,7 @@ get_header();
             <div class="team">
                 <h2> Hutträger </h2>    
 
-                <?php 
-                    get_author(true); 
-                ?>
+                <?php author_card(true); ?>
 
             </div>
 
