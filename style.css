@@ -5326,6 +5326,15 @@ a.card-link{
     margin: 0px;
   }
 
+
+  #masonry .card{
+    width: 400px;
+    max-width: none;
+    margin: 0px;
+  }
+
+
+
   /* Zwei Spallten layout am Desktop */
 
   .card-container {
@@ -5373,8 +5382,10 @@ a.card-link{
     height: calc((1000px - 20px) / 2);
   }
 
-
 }
+
+
+
 
 .anmerkung .pre-title {
   margin-bottom: 5px;
