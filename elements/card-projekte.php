@@ -25,14 +25,16 @@ if (strlen(get_field('slogan')) > 1 ) {
 
 <div class="card-group">
     <div class="pre-card">
-        <b>Neues Projekt</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
+        <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); // 32 or 100 = size ?>
+            <span><b>Neues Projekt</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
+        </a>
     </div>
     <div class="<?php if (get_query_var('list-item') == false) echo 'card  card-center '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <?php the_post_thumbnail( 'preview_m' ); ?>
 
             <div class="content ">
-                <!-- <div class="pre-title">Pre-Title <span class="date">vor 30 Minuten<span></div> -->
                 <h3 class="card-title-large">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
@@ -51,5 +53,4 @@ if (strlen(get_field('slogan')) > 1 ) {
             </div>
         </a>
     </div>
-
 </div>

@@ -60,7 +60,7 @@ get_header();
 		<?php card_list($args4);?>
     </div>
 
-	<script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
+	<script src="<?php echo get_template_directory_uri()?>/assets/js/bricks.js"></script>
     <!-- <script src="bundle.js"></script> -->
 
     <script>

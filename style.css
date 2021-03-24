@@ -528,7 +528,7 @@ img,
 embed,
 object {
   display: block;
-  height: auto;
+  /* height: auto; */
   max-width: 100%;
 }
 
@@ -1492,18 +1492,6 @@ button.toggle {
 
 
 
-.masonry{
-  width: 100%;
-}
-
-
-.masonry .card{
-  width: 400px;
-  max-width: 400px;
-  margin: 0px;
-
-}
-
 
 .grid {
   width: 100%;
@@ -1512,6 +1500,12 @@ button.toggle {
 }
 
 
+.grid > div{
+  width: 345px;
+  margin: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
 
 @media (min-width: 1000px) {
 
@@ -1519,7 +1513,7 @@ button.toggle {
     overflow-x: inherit !important;
   }
 
-  .home{
+  .page{
     justify-content: unset; 
     display: grid;
     max-width: 1500px;
@@ -1531,42 +1525,40 @@ button.toggle {
 }
 
 
-.home #site-content {
-    grid-area: center;
-    margin: 150px 0px 0px 0px;
-    max-width: 1000px;
-    overflow: visible;
-    padding: 0px;
-  }
+  .page #site-content {
+      grid-area: center;
+      margin: 150px 0px 0px 0px;
+      max-width: 1000px;
+      overflow: visible;
+      padding: 0px;
+    }
 
-  .home .right-sidebar{
-    display: block;
-    height: 400px;
-    margin-top: 115px;
-    grid-area: sidebar;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 115px;
-  }
+    .page .right-sidebar{
+      display: block;
+      height: 400px;
+      margin-top: 115px;
+      grid-area: sidebar;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 115px;
+    }
 
-  .right-sidebar .card{
-    max-width: none;
-  }
+    .right-sidebar .card{
+      max-width: none;
+    }
 
-  .home footer {
-    grid-area: footer;
-    padding-left: 5px;
-    align-items: center;
-  }
+    .page footer {
+      grid-area: footer;
+      padding-left: 5px;
+      align-items: center;
+    }
 
 
-
-.grid div{
-  width: 400px;
-  max-width: 400px;
-  margin: 0px;
-  transition: all 0.2s ease-in-out;
-}
+    .grid > div{
+      width: 400px;
+      margin: 0px;
+      transition: all 0.2s ease-in-out;
+    }
 
 }
 
@@ -1914,7 +1906,7 @@ button.toggle {
   text-align: center;
 }
 
-.has-text-align-right {
+.align-right {
   text-align: right;
 }
 
@@ -4567,17 +4559,6 @@ figure.wp-block-table.is-style-stripes {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
-/* .card a {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-grow: 1;
-  color: #000;
-  text-decoration: none !important;
-  min-height: 100px;
-} */
-
 a.card-link{
   position: relative;
   display: flex;
@@ -4631,15 +4612,12 @@ a.card-link{
   height: auto;
 }
 
-
-
 .card .emoji {
   position: absolute;
   bottom: -10px;
   right: 55px;
   font-size: 50px;
 }
-
 
 .card img.emoji {
   position: relative;
@@ -4651,13 +4629,10 @@ a.card-link{
   border-radius: 0px;
 }
 
-
 .card .emojis-top {
   font-size: 4rem;
   margin-bottom: 5px;
 }
-
-
 
 .card .content.content_shrink {
   width: calc( 100% - 140px );
@@ -4687,6 +4662,12 @@ a.card-link{
 
 
 .card .date {
+  position: absolute;
+  border-radius: 10px;
+  top: 10px;
+  left: 10px;
+  padding: 7px 12px;
+  background: #fff;
   color: #0091ff;
   font-size: 1.4rem;
   font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
@@ -4726,6 +4707,40 @@ a.card-link{
   font-size: 1.4rem;
   line-height: 1.5rem;
 }
+
+
+
+.pre-card  a, .after-card a{
+  display: flex;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  color: #000;
+  text-decoration: none;
+}
+
+.after-card a{
+  justify-content: flex-end; 
+  color: #616161;
+}
+
+.pre-card  a img{
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+
+.pre-card  a > span {
+  margin-top: 3px;
+}
+
+
+
+.pre-card a:hover, .after-card a:hover {
+  color: #0091ff;
+}
+
+
+
 
 .list-card a{
   flex-wrap: wrap;
@@ -5317,7 +5332,6 @@ margin-top: -30px;
   }
   .card {
     margin: 10px 0px;
-    max-width: calc(50% - 5px);
   }
   /* .card .content {
     margin-top: 10px;
@@ -5373,38 +5387,28 @@ margin-top: -30px;
   }
 
   .landscape{
-    max-width: max-content;
-    max-height: max-content;
     height: 200px;
-  }
-
-  .landscape img,
-  .square img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 400px;;
   }
 
   .landscape a, .landscape img  {
-    height: 100%;
     width: 100%;
+    min-width: none;
+    max-width: none;
   }
 
   .square .preview-text {
     display: block;
   }
-
-
-  .landscape .card-title {
-    font-size: 2.8rem;
-    line-height: 3rem;
-  }
-  .landscape .preview-text {
+  
+  
+  .preview-text-large {
     font-size: 2rem;
   }
 
   .landscape a .content {
     padding: 20px;
-    height: 100%;
+    height: 200px;
     margin: 0px;
   }
 
@@ -5467,9 +5471,7 @@ margin-top: -30px;
     max-height: calc((1000px - 60px) / 4);
   }
 
-  .landscape {
-    height: calc((1000px - 20px) / 2);
-  }
+ 
 
 }
 

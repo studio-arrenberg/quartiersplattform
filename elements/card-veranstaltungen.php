@@ -31,10 +31,11 @@ else {
         <?php
     }
     ?>
+
+<span class="date"><?php echo qp_date(get_field('event_date')); ?></span>
+
         <div class="content">
             <div class="pre-title">
-                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
-                <span class="date"><?php echo qp_date(get_field('event_date')); ?><span>
             </div>
                 <h3 class="card-title"><?php shorten(get_the_title(), '30'); ?></h3>
                 <p class="preview-text">
