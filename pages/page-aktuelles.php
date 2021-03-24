@@ -115,40 +115,40 @@ get_header();
 		<?php card_list($args4);?>
     </div>
 
-	<script src="https://unpkg.com/bricks.js/dist/bricks.js"></script>
+	<script src="<?php echo get_template_directory_uri()?>/assets/js/bricks.js"></script>
     <!-- <script src="bundle.js"></script> -->
 
     <script>
+	const sizes = [
+	{ columns: 1, gutter: 0 }, // assumed to be mobile, because of the missing mq property
+	{ mq: '800px', columns: 2, gutter: 150 },
+	]
 
-		const sizes = [
-		{ columns: 1, gutter: 10 }, // assumed to be mobile, because of the missing mq property
-		{ mq: '800px', columns: 2, gutter: 120 },
-		]
+	// create an instance
 
-		// create an instance
+	const instance = Bricks({
+	container: '.grid',
+	packed:    'data-packed',        // if not prefixed with 'data-', it will be added
+	sizes:     sizes,
+	position: false
 
-		const instance = Bricks({
-		container: '.grid',
-		packed:    'data-packed',        // if not prefixed with 'data-', it will be added
-		sizes:     sizes
-		})
+	})
 
-		// bind callbacks
+	// bind callbacks
 
-		instance
-		.on('pack',   () => console.log('ALL grid items packed.'))
-		.on('update', () => console.log('NEW grid items packed.'))
-		.on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
+	instance
+	.on('pack',   () => console.log('ALL grid items packed.'))
+	.on('update', () => console.log('NEW grid items packed.'))
+	.on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
 
-		// start it up, when the DOM is ready
-		// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+	// start it up, when the DOM is ready
+	// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
 
-		document.addEventListener('DOMContentLoaded', event => {
-		instance
-			.resize(true)     // bind resize handler
-			.pack()           // pack initial items
-		})
-		
+	document.addEventListener('DOMContentLoaded', event => {
+	instance
+		.resize(true)     // bind resize handler
+		.pack()           // pack initial items
+	})
     </script>
 
 
