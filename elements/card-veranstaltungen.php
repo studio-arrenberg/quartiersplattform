@@ -17,9 +17,20 @@ else {
 
 ?>
 
-<div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
-    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-        <?php the_post_thumbnail( 'preview_m' ); ?>
+<div class="veranstaltung card landscape shadow gardient ">
+
+    <?php   
+    if (get_query_var('link_card_link')) {
+        ?>
+            <a class="card-link" href="<?php echo get_site_url(); echo get_query_var('link_card_link'); ?>">
+        <?php
+    }
+    else {
+        ?>
+            <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
+        <?php
+    }
+    ?>
         <div class="content">
             <div class="pre-title">
                 <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
@@ -36,6 +47,9 @@ else {
                     }
                     ?> 
                 </p>
-        </div>
+           </div>
+        <?php the_post_thumbnail( 'landscape_s' ); ?>
     </a>
 </div>
+
+

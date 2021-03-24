@@ -68,33 +68,35 @@ get_header();
 
     <script>
 	const sizes = [
-	{ columns: 1, gutter: 10 }, // assumed to be mobile, because of the missing mq property
-	{ mq: '800px', columns: 2, gutter: 120 },
+	{ columns: 1, gutter: 0 }, // assumed to be mobile, because of the missing mq property
+	{ mq: '800px', columns: 2, gutter: 150 },
 	]
 
-// create an instance
+	// create an instance
 
-const instance = Bricks({
-  container: '.grid',
-  packed:    'data-packed',        // if not prefixed with 'data-', it will be added
-  sizes:     sizes
-})
+	const instance = Bricks({
+	container: '.grid',
+	packed:    'data-packed',        // if not prefixed with 'data-', it will be added
+	sizes:     sizes,
+	position: false
 
-// bind callbacks
+	})
 
-instance
-  .on('pack',   () => console.log('ALL grid items packed.'))
-  .on('update', () => console.log('NEW grid items packed.'))
-  .on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
+	// bind callbacks
 
-// start it up, when the DOM is ready
-// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+	instance
+	.on('pack',   () => console.log('ALL grid items packed.'))
+	.on('update', () => console.log('NEW grid items packed.'))
+	.on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
 
-document.addEventListener('DOMContentLoaded', event => {
-  instance
-    .resize(true)     // bind resize handler
-    .pack()           // pack initial items
-})
+	// start it up, when the DOM is ready
+	// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+
+	document.addEventListener('DOMContentLoaded', event => {
+	instance
+		.resize(true)     // bind resize handler
+		.pack()           // pack initial items
+	})
     
     </script>
 

@@ -1511,13 +1511,6 @@ button.toggle {
   margin-bottom: 50px;
 }
 
-.grid div{
-  width: 400px;
-  max-width: 400px;
-  margin: 0px;
-  transition: all 0.2s ease-in-out;
-}
-
 
 
 @media (min-width: 1000px) {
@@ -1526,18 +1519,17 @@ button.toggle {
     overflow-x: inherit !important;
   }
 
-
   .home{
     justify-content: unset; 
     display: grid;
     max-width: 1500px;
     margin: 0 auto;
     padding: 15px;
-    grid-template-columns: auto 400px;
+    grid-template-columns: auto 345px;
     grid-template-areas: "center sidebar"
-    "footer footer"
-
+    "footer footer";
 }
+
 
 .home #site-content {
     grid-area: center;
@@ -1566,6 +1558,16 @@ button.toggle {
     padding-left: 5px;
     align-items: center;
   }
+
+
+
+.grid div{
+  width: 400px;
+  max-width: 400px;
+  margin: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
 }
 
 
@@ -5373,7 +5375,7 @@ margin-top: -30px;
   .landscape{
     max-width: max-content;
     max-height: max-content;
-    height: calc((100vw - 20px) / 4);
+    height: 200px;
   }
 
   .landscape img,
