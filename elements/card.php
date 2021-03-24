@@ -9,7 +9,7 @@
 ?>
 
 
-<div class="card shadow projekt">
+<div class="card shadow ">
 
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
     
