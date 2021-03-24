@@ -16,7 +16,7 @@ else {
 
 // variable text length
 if (strlen($the_slug < 1 )) {
-    $char = 40;
+    $char = 200;
 }
 
 ?>
@@ -27,7 +27,7 @@ if (strlen($the_slug < 1 )) {
     <div class="pre-card">
         <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
             <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); // 32 or 100 = size ?>
-            <span><b>Projektupdate</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
+            <span><b>Projektupdate</b> vom <?php  echo qp_date(get_the_date('Y-m-d')); ?><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br>Veröffentlicht von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
         </a>
     </div>
     <div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
@@ -41,7 +41,6 @@ if (strlen($the_slug < 1 )) {
                 </div> 
                 <h3 class="card-title">
                     <?php shorten(get_the_title(), '60'); ?>
-                    <?php //echo strlen(get_the_title()) ?>
                 </h3>
                 <p class="preview-text">
                     <?php  
