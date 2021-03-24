@@ -11,7 +11,7 @@
 // redirect before acf_form_head
 wp_maintenance_mode();
 
-acf_form_head(); // before wp header !important!
+// acf_form_head(); // before wp header !important!
 get_header();
 
 ?>
@@ -64,35 +64,36 @@ get_header();
     <!-- <script src="bundle.js"></script> -->
 
     <script>
-	const sizes = [
-	{ columns: 1, gutter: 10 }, // assumed to be mobile, because of the missing mq property
-	{ mq: '800px', columns: 2, gutter: 120 },
-	]
 
-// create an instance
+		const sizes = [
+		{ columns: 1, gutter: 10 }, // assumed to be mobile, because of the missing mq property
+		{ mq: '800px', columns: 2, gutter: 120 },
+		]
 
-const instance = Bricks({
-  container: '.grid',
-  packed:    'data-packed',        // if not prefixed with 'data-', it will be added
-  sizes:     sizes
-})
+		// create an instance
 
-// bind callbacks
+		const instance = Bricks({
+		container: '.grid',
+		packed:    'data-packed',        // if not prefixed with 'data-', it will be added
+		sizes:     sizes
+		})
 
-instance
-  .on('pack',   () => console.log('ALL grid items packed.'))
-  .on('update', () => console.log('NEW grid items packed.'))
-  .on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
+		// bind callbacks
 
-// start it up, when the DOM is ready
-// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+		instance
+		.on('pack',   () => console.log('ALL grid items packed.'))
+		.on('update', () => console.log('NEW grid items packed.'))
+		.on('resize', size => console.log('The grid has be re-packed to accommodate a new BREAKPOINT.'))
 
-document.addEventListener('DOMContentLoaded', event => {
-  instance
-    .resize(true)     // bind resize handler
-    .pack()           // pack initial items
-})
-    
+		// start it up, when the DOM is ready
+		// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
+
+		document.addEventListener('DOMContentLoaded', event => {
+		instance
+			.resize(true)     // bind resize handler
+			.pack()           // pack initial items
+		})
+		
     </script>
 
 
@@ -286,7 +287,7 @@ else {
 
 	<?php 
 		// feedback
-		get_template_part('components/feedback'); 
+		// get_template_part('components/feedback'); 
 	?>
 
 
