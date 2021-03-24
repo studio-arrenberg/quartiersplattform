@@ -128,7 +128,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'event_date',
                 'type' => 'date_picker',
                 'instructions' => 'Wann wird deine Veranstaltung stattfinden?',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -145,7 +145,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'event_time',
                 'type' => 'time_picker',
                 'instructions' => 'Wann startet deine Veranstaltung?',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -162,7 +162,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'event_end_time',
                 'type' => 'time_picker',
                 'instructions' => 'Wann endet deine Veranstaltung?',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
