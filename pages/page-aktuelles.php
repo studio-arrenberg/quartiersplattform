@@ -17,39 +17,45 @@ get_header();
 ?>
 
 <main id="site-content" role="main" data-track-content>
-
-<div class="card card-large">
-	<a class="card-link" href="<?php echo get_site_url(); ?>/projekt-erstellen/">
-		<div class="content ">
-
+	<div class="card card-large">
+		<div class="content content-shrink">
 			<h1 class="card-title-large">
 				Neuigkeiten und Projektupdates
 			</h1>
-			<h2>
+			<h3>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?	
-			</h2>
+			</h3>
 		</div>
-	</a>
-</div>
+		<a class="close-card-link" href="#">
+			<img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+		</a>
+	</div>
 
+	<?php
+		if ( current_user_can('administrator') ) {
+			get_search_form(
+				array(
+					'label' => __( '404 not found', 'twentytwenty' ),
+				)
+			);
+		}
+		?>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 
     <?php 
 	// ---------------------------------- Logged in ----------------------------------
 	if (is_user_logged_in()) {
 	?>
 
-
 	<?php 
 		$args4 = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
 		'post_status'=>'publish', 
 		'posts_per_page'=> 12,
 		'orderby' => 'modified'
@@ -61,17 +67,14 @@ get_header();
     </div>
 
 	<script src="<?php echo get_template_directory_uri()?>/assets/js/bricks.js"></script>
-    <!-- <script src="bundle.js"></script> -->
 
     <script>
 	const sizes = [
 	{ columns: 1, gutter: 0 }, // assumed to be mobile, because of the missing mq property
-	{ mq: '800px', columns: 2, gutter: 150 },
-	{ mq: '2000px', columns: 4, gutter: 150 },
+	{ mq: '1000px', columns: 2, gutter: 175 },
 	]
 
 	// create an instance
-
 	const instance = Bricks({
 	container: '.grid',
 	packed:    'data-packed',        // if not prefixed with 'data-', it will be added
@@ -81,7 +84,6 @@ get_header();
 	})
 
 	// bind callbacks
-
 	instance
 	.on('pack',   () => console.log('ALL grid items packed.'))
 	.on('update', () => console.log('NEW grid items packed.'))
@@ -89,7 +91,6 @@ get_header();
 
 	// start it up, when the DOM is ready
 	// note that if images are in the grid, you may need to wait for document.readyState === 'complete'
-
 	document.addEventListener('DOMContentLoaded', event => {
 	instance
 		.resize(true)     // bind resize handler
@@ -97,50 +98,41 @@ get_header();
 	})
     </script>
 
+	<?php
+	}
+	// ---------------------------------- Logged out ----------------------------------
+	else {
+	?>
 
-
-
-<?php
-}
-// ---------------------------------- Logged out ----------------------------------
-else {
-?>
-
-
-
-
-<?php 
-	// veranstaltung list
-	$args4 = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 12,
-		'orderby' => 'modified'
-	);
+	<?php 
+		// veranstaltung list
+		$args4 = array(
+			'post_type'=> array('veranstaltungen', 'nachrichten','projekte', 'angebote', 'fragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 12,
+			'orderby' => 'modified'
+		);
 	?>
 	
 	<div class="masonry">
-		<?php card_list($args4);
-	?>
+		<?php card_list($args4); ?>
+	</div>
 
-
-</div>
-
-<script>
-	let magicGrid = new MagicGrid({
-	container: ".masonry", // Required. Can be a class, id, or an HTMLElement.
-	static: false, // Required for static content. Default: false.
-	items: 12, // Required for dynamic content. Initial number of items in the container.
-	gutter: 30, // Optional. Space between items. Default: 25(px).
-	maxColumns: 5, // Optional. Maximum number of columns. Default: Infinite.
-	useMin: true, // Optional. Prioritize shorter columns when positioning items? Default: false.
-	useTransform: true, // Optional. Position items using CSS transform? Default: True.
-	animate: true, // Optional. Animate item positioning? Default: false.
-	center: true, //Optional. Center the grid items? Default: true. 
-	});
-	
-	magicGrid.listen();
-</script>
+	<script>
+		let magicGrid = new MagicGrid({
+		container: ".masonry", // Required. Can be a class, id, or an HTMLElement.
+		static: false, // Required for static content. Default: false.
+		items: 12, // Required for dynamic content. Initial number of items in the container.
+		gutter: 30, // Optional. Space between items. Default: 25(px).
+		maxColumns: 5, // Optional. Maximum number of columns. Default: Infinite.
+		useMin: true, // Optional. Prioritize shorter columns when positioning items? Default: false.
+		useTransform: true, // Optional. Position items using CSS transform? Default: True.
+		animate: true, // Optional. Animate item positioning? Default: false.
+		center: true, //Optional. Center the grid items? Default: true. 
+		});
+		
+		magicGrid.listen();
+	</script>
 
     <?php
 		// Neuste Meldungen
@@ -153,7 +145,6 @@ else {
 
 		slider($args2,'card', '1','false'); 
 		?>
-
     <?php
 		// Angebote und Fragen
 		$args4 = array(

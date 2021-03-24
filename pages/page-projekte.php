@@ -12,7 +12,21 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-	
+		
+	<div class="card card-large">
+		<a class="card-link" href="<?php echo get_site_url(); ?>/projekt-erstellen/">
+			<div class="content content-shrink">
+				<h1 class="card-title-large">
+					Projekte
+				</h1>
+				<h3>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?	
+				</h3>
+
+			</div>
+			<img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+		</a>
+	</div>
 
 	<?php 
 			$args4 = array(
@@ -23,7 +37,7 @@ get_header();
 		);
 		?>  
 		
-		<div class="grid" data-grid>
+		<div class="grid-4col" data-grid>
 			<?php card_list($args4);?>
 		</div>
 
@@ -33,14 +47,14 @@ get_header();
 		<script>
 		const sizes = [
 		{ columns: 1, gutter: 0 }, // assumed to be mobile, because of the missing mq property
-		{ mq: '800px', columns: 2, gutter: 150 },
+		{ mq: '800px', columns: 4, gutter: 30 },
 		{ mq: '2000px', columns: 4, gutter: 150 },
 		]
 
 		// create an instance
 
 		const instance = Bricks({
-		container: '.grid',
+		container: '.grid-4col',
 		packed:    'data-packed',        // if not prefixed with 'data-', it will be added
 		sizes:     sizes,
 		position: false
@@ -68,7 +82,7 @@ get_header();
 
 
 
-</main><!-- #site-content -->
+	</main><!-- #site-content -->
 
 
 		<div class="right-sidebar">

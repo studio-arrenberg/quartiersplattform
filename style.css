@@ -122,7 +122,7 @@ html {
 }
 
 body {
-  background: #FCFCFE;  box-sizing: border-box;
+  background: #fff;  box-sizing: border-box;
   color: #000;
   font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
     sans-serif;
@@ -1096,9 +1096,9 @@ button.toggle {
   top: 0px;
   width: 100%;
   z-index: 101;
-  max-width: 782px;
   margin: 0 auto;
   background-color: rgba(255, 255, 250, 1);
+  border-bottom: 1px solid #dcf0ff;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -1120,7 +1120,7 @@ button.toggle {
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
     #site-header {
-      background-color: rgba(255, 255, 250, 0.5);
+      background-color: rgba(255, 255, 250, 0.8);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
@@ -1238,9 +1238,8 @@ button.toggle {
     right: 0px;
     top: 0px !important;
     margin-top: 0px;
-    max-width: 1000px;
     height: 100px;
-    padding: 0px;
+    padding: 0px 30px;
   }
 
   #site-content {
@@ -1297,8 +1296,8 @@ button.toggle {
   }
 
   .menu li > a {
-    font-size: 1.93rem;
-    line-height: 1.93rem;
+    font-size: 2rem;
+    line-height: 2rem;
     padding: 20px 5px 17px 5px;
     min-width: 135px;
     text-align: center;
@@ -1320,7 +1319,6 @@ button.toggle {
 
   #site-header {
     flex-wrap: nowrap;
-    max-width: 1500px;
     justify-content: unset;
     display: grid;
     grid-template-columns: 1fr minmax(500px, 800px) 1fr;
@@ -1492,18 +1490,71 @@ button.toggle {
 
 
 
-.grid {
+
+.grid, .grid-3col, .grid-4col {
   width: 100%;
   margin-right: 0px;
   margin-bottom: 50px;
 }
 
-
-.grid > div{
-  width: 345px;
+.grid > div, .grid-3col > div, .grid-4col > div{
   margin: 0px;
   transition: all 0.2s ease-in-out;
 }
+
+
+.grid > div{
+  width: 345px;
+}
+
+.grid-3col > div{
+  width: calc( 50% - 30px / 2 );
+  margin: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.grid-4col > div{
+  width: calc( 25% - 30px / 2 );
+  margin: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+/* Projekt Card size adjustment */ 
+
+.grid-4col .pre-card{
+  display: none;
+}
+
+.grid-4col .card-title-large{
+  font-size: 2rem;
+  line-height: 2.3rem;
+}
+
+.grid-4col .emoji-large{
+  font-size: 3rem;
+}
+
+.grid-4col .highlight{
+  font-size: 1.6rem;
+  max-height: 20px;
+  overflow: hidden;
+}
+
+.grid-4col .content{
+  height: 140px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid-3col .preview-text{
+  display: none;
+}
+
+
 
 
 @media (min-width: 1000px) {
@@ -1554,7 +1605,7 @@ button.toggle {
 
 
     .grid > div{
-      width: 400px;
+      width: calc( 50% - 175px / 2 );
       margin: 0px;
       transition: all 0.2s ease-in-out;
     }
@@ -4608,7 +4659,7 @@ a.card-link{
   padding: 12px 10px 7px 10px;
 }
 
-.card img {
+.card .wp-post-image {
   border-radius: 15px;
   background: #e7e7e7;
   border: none;
@@ -4745,6 +4796,10 @@ a.card-link{
 
 
 
+
+
+
+
 .list-card a{
   flex-wrap: wrap;
   flex-grow: 4;
@@ -4800,10 +4855,6 @@ a.card-link{
   height: calc((100vw - 40px) / 2);
 }
 
-.landscape {
-  height: calc((100vw - 40px) / 2);
-}
-
 
 @media (min-width: 400px) {
   .square {
@@ -4818,6 +4869,33 @@ a.card-link{
 .square .preview-text {
   display: none;
 }
+
+.landscape{
+  height: 200px;
+  width: 400px;;
+}
+
+
+.landscape a .content {
+  padding: 20px;
+  height: 200px;
+  margin: 0px;
+}
+
+
+
+@media (min-width: 1000px) {
+ 
+  .grid-3col .landscape{
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    transition: all 0.2s ease-in-out;
+  }
+
+}
+
+
 
 .landscape,
 .square {
@@ -4883,7 +4961,8 @@ margin-top: -30px;
 .card-large{
   padding: 25px;
   width: 100%;
-  background: #E8F5FF;
+  background: #f9fcff;
+  border: 1px solid #dcf0ff;
 }
 
 /* ACF MAP */
@@ -5314,9 +5393,6 @@ margin-top: -30px;
   .card {
     margin: 10px 0px;
   }
-  /* .card .content {
-    margin-top: 10px;
-  } */
 
   .card .pre-title {
     font-size: 1.7rem;
@@ -5360,12 +5436,8 @@ margin-top: -30px;
     height: calc((100vw - 60px) / 4);
   }
 
-  .landscape{
-    height: 200px;
-    width: 400px;;
-  }
+  
 
- 
 
   .square .preview-text {
     display: block;
@@ -5375,13 +5447,6 @@ margin-top: -30px;
   .preview-text-large {
     font-size: 2rem;
   }
-
-  .landscape a .content {
-    padding: 20px;
-    height: 200px;
-    margin: 0px;
-  }
-
 
   /* Zwei Spallten layout am Desktop */
 
@@ -6264,11 +6329,32 @@ form.poll{
   width: 100%;
 }
 
+.card .content-shrink{
+  width: 80%;
+}
+
+.card-large h3{
+  margin-top: 10px;
+}
+
 
 form.poll .answers{
   margin-top: 10px;
 }
 
+.close-card-link{
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 10px;
+  background: #fff;
+}
+
+.close-card-icon{
+  
+  width: 20px;
+  background: transparent;
+}
 
 .answers button{
   display: block;
@@ -6287,9 +6373,7 @@ form.poll .answers{
 
 
 .answers button:hover{
-  
   background: #E8F5FF;
- 
 }
 
 .answers button label{
