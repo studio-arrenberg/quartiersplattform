@@ -35,7 +35,7 @@ for ($i=0; $i < count($menu_array) ; $i++) {
 }
 // defined menus
 $defined_menu_item = array(
-    0 => array ('title' => 'Aktuelles', 'page_name' => 'Überblick', 'ID' => '100100', 'attr' => 'first'),
+    0 => array ('title' => 'Aktuelles', 'page_name' => 'Aktuelles', 'ID' => '100100', 'attr' => 'first'),
     1 => array ('title' => 'Veranstaltungen', 'page_name' => 'Veranstaltungen', 'ID' => '100200', 'attr' => 'second'),
     2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'third'),
     3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'fourth'),
@@ -159,7 +159,7 @@ function create_pages() {
         10 => array('title' => 'Angebot erstellen', 'slug' => 'angebot-erstellen'),
         11 => array('title' => 'Frage erstellen', 'slug' => 'frage-erstellen'),
         12 => array('title' => 'Projekt erstellen', 'slug' => 'projekt-erstellen'),
-        13 => array('title' => 'Introduction', 'slug' => 'intro'),
+        13 => array('title' => 'Aktuelles', 'slug' => 'aktuelles'),
     );
 
     for ($i = 0; $i < count($pages); $i++) {

@@ -2,7 +2,7 @@
 
 /**
  * 
- * Template Name: Landing Page
+ * Template Name: Aktuelles
  * Template Post Type: page
  * 
  */
@@ -11,10 +11,7 @@
 // redirect before acf_form_head
 wp_maintenance_mode();
 
-// redirect to intro page when new visitor
-redirect_visitor();
-
-acf_form_head(); // before wp header !important!
+// acf_form_head(); // before wp header !important!
 get_header();
 
 ?>
@@ -97,7 +94,6 @@ get_header();
 		.resize(true)     // bind resize handler
 		.pack()           // pack initial items
 	})
-    
     </script>
 
 
@@ -291,7 +287,7 @@ else {
 
 	<?php 
 		// feedback
-		get_template_part('components/feedback'); 
+		// get_template_part('components/feedback'); 
 	?>
 
 

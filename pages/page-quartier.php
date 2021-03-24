@@ -2,7 +2,7 @@
 
 /**
  * 
- * Template Name: Introduction Page
+ * Template Name: Quartier
  * Template Post Type: page
  * 
  */
@@ -10,6 +10,9 @@
 
 # redirect before acf_form_head
 wp_maintenance_mode();
+
+// redirect to intro page when new visitor
+redirect_visitor();
 
 get_header();
 

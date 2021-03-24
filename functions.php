@@ -993,8 +993,12 @@ function custom_page_template( $page_template, $post_states ) {
 	$prefix = "QP ";
 
 	if ($post->post_title == "Überblick") {
-		$post_states[] = $prefix.'Startseite';
-		$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
+		$post_states[] = $prefix.'Über das Quartier';
+		$page_template= get_stylesheet_directory() . '/pages/page-quartier.php';
+	}
+	else if ($post->post_title == "Aktuelles") {
+		$post_states[] = $prefix.'Aktuelles';
+		$page_template= get_stylesheet_directory() . '/pages/page-aktuelles.php';
 	}
 	else if ($post->post_title == "Veranstaltungen") {
 		$post_states[] = $prefix.'Veranstaltungen';
@@ -1056,10 +1060,7 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
 		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
 	}
-	else if ($post->post_title == "Introduction") {
-		$post_states[] = $prefix.'Introduction';
-		$page_template= get_stylesheet_directory() . '/pages/page-intro.php';
-	}
+	
 	
 	if (doing_filter( 'page_template') && !empty($page_template)) {
 		return $page_template;
@@ -1509,9 +1510,9 @@ function wp_maintenance_mode() {
  */
 function redirect_visitor() {
 
-	if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
+	if ( empty($_GET['stay']) && ( isset($_COOKIE['guest']) || is_user_logged_in() ) ) {
 
-		wp_redirect( home_url()."/intro" ); 
+		wp_redirect( home_url()."/aktuelles" ); 
 		exit;
 
 	}
