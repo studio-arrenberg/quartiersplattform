@@ -46,6 +46,61 @@ get_header();
 	if (is_user_logged_in()) {
 	?>
 
+	<?php 
+
+		
+
+		// get last login from cookie 'feed_timestamp'
+		if (isset($_COOKIE['feed_timestamp'])) $feed_timestamp = $_COOKIE['feed_timestamp'];
+		// set cookie to new timestamo
+		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
+		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		$expiry = strtotime('+1 year');
+		$timespamp = time();
+		// $timespamp = time() - 80000 * 10;
+		setcookie('feed_timestamp', $timespamp, $expiry, $path, $host);
+		// query num missed posts from db (veranstaltung issue (different date))
+		if (isset($_COOKIE['feed_timestamp'])) {
+			$args = array(
+				'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+				'post_status'=>'publish', 
+				'posts_per_page'=> $num_missed_posts,
+				'orderby' => 'date',
+				'date_query' => array(
+					array(
+						// 'after'     => 'January 1st, 2015',
+						'after'		=> date('Y-m-d', $_COOKIE['feed_timestamp']),
+						// 'before'    => 'December 31st, 2015',
+						// 'inclusive' => true,
+					),
+				),
+			);
+	
+			$thePosts = query_posts($args);
+			global $wp_query; 
+			$num_missed_posts = $wp_query->found_posts;
+			// $my_query = new WP_Query($args4);
+            // if ($my_query->post_count > 0) {
+			// echo $num_missed_posts;
+		}
+		// defne 'posts_per_page'
+		if ($num_missed_posts > 30) $num_missed_posts = 30;
+		else if ($num_missed_posts < 5) $num_missed_posts = 5;
+		echo "missed posts: ".$num_missed_posts;
+		// query
+		$args = array(
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> $num_missed_posts,
+			'orderby' => 'modified' // ..?
+		);
+
+		// grid
+
+		// *up to date*
+
+	?>
+
 
 	<?php 
 		$args4 = array(
