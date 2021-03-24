@@ -67,6 +67,7 @@ else {
             <span style="margin:-1px 0px 0px 5px"><?php  shorten(get_field('emoji'), '200'); ?>🎯</span>
         </a>
     </div>
+    
     </div>
 
 

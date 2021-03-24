@@ -30,9 +30,9 @@ if (strlen(get_field('slogan')) > 1 ) {
             <span><b>Projekt</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
         </a>
     </div>
-    <div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
+    <div class="projekt <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-            <?php the_post_thumbnail( 'preview_m' ); ?>
+        <?php the_post_thumbnail( 'preview_m' ); ?>
 
             <div class="content align-center ">
                 <span class="emoji-large"><?php  shorten(get_field('emoji'), '200'); ?></span>
