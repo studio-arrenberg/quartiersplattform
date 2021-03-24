@@ -6492,3 +6492,32 @@ a.text-link {
 a.text-link:hover {
   text-decoration: underline !important;
 }
+
+/* acf spinner */
+.acf-spinner.is-active::after {
+/* .acf-spinner::after { */
+	display: inline-table;
+	white-space: pre;
+	content: "🕐\A🕑\A🕒\A🕓\A🕔\A🕕\A🕖\A🕗\A🕘\A🕙\A🕚\A🕛";
+	animation: spin12 3s steps(12) infinite;
+	width: 1.5em;
+}
+
+.acf-spinner {
+	display: inline-block;
+	overflow: hidden;
+	height: 1.3em;
+	margin-top: -0.3em;
+	line-height: 1.5em;
+	vertical-align: text-bottom;
+  font-size: 28px;
+  position: relative;
+  top: 8px;
+  left: 5px;
+}
+
+@keyframes spin12 {
+	to {
+		transform: translateY(-18.0em);
+	}
+}

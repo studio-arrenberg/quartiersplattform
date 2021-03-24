@@ -869,7 +869,6 @@ if (class_exists('acf_pro')) { # Advanced custom fields
 	require dirname( __FILE__ ) .'/functions/advanced-custom-fields.php';
 }
 
-
 /**
  * Admin notes & warnings
  *
