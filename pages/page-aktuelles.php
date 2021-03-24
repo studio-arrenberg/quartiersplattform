@@ -18,7 +18,7 @@ get_header();
 
 <main id="site-content" role="main" data-track-content>
 
-<div class="card  card-centered shadow">
+<div class="card card-large">
 	<a class="card-link" href="<?php echo get_site_url(); ?>/projekt-erstellen/">
 		<div class="content ">
 
@@ -67,6 +67,7 @@ get_header();
 	const sizes = [
 	{ columns: 1, gutter: 0 }, // assumed to be mobile, because of the missing mq property
 	{ mq: '800px', columns: 2, gutter: 150 },
+	{ mq: '2000px', columns: 4, gutter: 150 },
 	]
 
 	// create an instance

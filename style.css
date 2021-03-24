@@ -1492,7 +1492,6 @@ button.toggle {
 
 
 
-
 .grid {
   width: 100%;
   margin-right: 0px;
@@ -1562,6 +1561,34 @@ button.toggle {
 
 }
 
+
+
+@media (min-width: 2000px) {
+
+  html {
+    overflow-x: inherit !important;
+  }
+
+  .page{
+    justify-content: unset; 
+    display: grid;
+    max-width: 2500px;
+    margin: 0 auto;
+    padding: 15px;
+    grid-template-columns: auto 345px;
+    grid-template-areas: "center sidebar"
+    "footer footer";
+  }
+
+
+  .page #site-content {
+    grid-area: center;
+    margin: 150px 0px 0px 0px;
+    max-width: 2500px;
+    overflow: visible;
+    padding: 0px;
+  }
+}
 
 
 
@@ -4552,7 +4579,6 @@ figure.wp-block-table.is-style-stripes {
   align-content: space-between;
   border-radius: 20px;
   width: 100%;
-  max-width: 400px;
   background-color: #fff;
   margin: 10px auto;
   padding: 5px 5px 5px 5px;
@@ -4564,36 +4590,30 @@ a.card-link{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-direction: column;
+
   flex-grow: 1;
   color: #000;
   text-decoration: none !important;
   min-height: 100px;
 }
 
-.card a.flex-col{
-  flex-direction: column;
-}
-.card-centered a {
+
+.align-center  {
   align-items: center !important;
+  text-align: center !important;
 }
 
-.card-centered .content {
-  margin: 0px !important;
-}
 .card .content {
-  padding: 0px 10px;
-  /* flex-grow: 1; */
-  margin-top: 7px;
-  margin-bottom: 10px;
+  padding: 12px 10px 7px 10px;
 }
+
 .card img {
-  width: 140px;
-  height: 105px;
-  flex-grow: 1;
   border-radius: 15px;
-  align-self: start;
   background: #e7e7e7;
   border: none;
+  width: 100%;
+  height: auto;
 }
 
 .card .avatar {
@@ -4629,57 +4649,12 @@ a.card-link{
   border-radius: 0px;
 }
 
-.card .emojis-top {
-  font-size: 4rem;
+.emoji-large{  
+  font-size: 5rem;
   margin-bottom: 5px;
 }
 
-.card .content.content_shrink {
-  width: calc( 100% - 140px );
-  /* max-width: 175px; */
-}
 
-.card .pre-title {
-  color: #0091ff;
-  font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-
-  /* max-width: 175px; */
-
-}
-
-.card .pre-title span:first-of-type{
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  /* max-width: 70%; */
-  text-overflow: ellipsis;
-}
-
-
-
-.card .date {
-  position: absolute;
-  border-radius: 10px;
-  top: 10px;
-  left: 10px;
-  padding: 7px 12px;
-  background: #fff;
-  color: #0091ff;
-  font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
-  margin-bottom: 3px;
-  white-space: nowrap;
- 
-}
-
-.date {
-   white-space: nowrap;
- 
-}
 
 .card .card-title {
   font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
@@ -4697,17 +4672,48 @@ a.card-link{
   margin-top: 3px;
 }
 
+.card .preview-text {
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+
 .card .preview-text-large {
   margin-top: 5px;
   font-size: 1.8rem;
   line-height: 2rem;
 }
 
-.card .preview-text {
+.card .pre-title {
+  color: #0091ff;
   font-size: 1.4rem;
-  line-height: 1.5rem;
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }
 
+.card .pre-title span:first-of-type{
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  /* max-width: 70%; */
+  text-overflow: ellipsis;
+}
+
+
+.card .date {
+  position: absolute;
+  border-radius: 10px;
+  top: 10px;
+  left: 10px;
+  padding: 7px 12px;
+  background: #fff;
+  color: #0091ff;
+  font-size: 1.4rem;
+  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
 
 
 .pre-card  a, .after-card a{
@@ -4728,12 +4734,9 @@ a.card-link{
   margin-right: 5px;
 }
 
-
 .pre-card  a > span {
   margin-top: 3px;
 }
-
-
 
 .pre-card a:hover, .after-card a:hover {
   color: #0091ff;
@@ -4812,15 +4815,6 @@ a.card-link{
   }
 }
 
-.square .card-title {
-  font-size: 1.8rem;
-  line-height: 1.8rem;
-}
-
-.square a.card-link {
-  max-width: 100%;
-}
-
 .square .preview-text {
   display: none;
 }
@@ -4845,16 +4839,13 @@ a.card-link{
   justify-content: flex-end;
 }
 
-.landscape img,
+/* .landscape img,
 .square img {
-  min-width: inherit;
-  max-width: inherit;
   width: 100%;
   height: 100%;
-  /* max-height: 200px; */
   object-fit: cover;
   border-radius: 20px;
-}
+} */
 
 .landscape .pre-title {
   color: #fff
@@ -4865,12 +4856,6 @@ a.card-link{
 /* Card Center */
 
 
-.card.card-center img{
-  width: 100%;
-  height: auto;
-  max-width: none;
-  min-height: none;
-}
 
 .card.card-center .content{
   height: 100px;
@@ -4892,10 +4877,14 @@ margin-top: -30px;
 .card-center > a.card-link{
   text-align:  center;
    flex-direction: column;
-  /* justify-content: space-between;
-  align-items: center;  */
 }
 
+
+.card-large{
+  padding: 25px;
+  width: 100%;
+  background: #E8F5FF;
+}
 
 /* ACF MAP */
 
@@ -5270,6 +5259,11 @@ margin-top: -30px;
   z-index: 1;
 }
 
+.card-footer a:last-of-type{
+  margin-left: 5px;
+}
+
+
 .card .card-button{
   width: 100%;
   min-height: inherit !important;
@@ -5295,21 +5289,8 @@ margin-top: -30px;
   .card .card-button{
     font-size: 1.8rem;
   }
-
 }
 
-
-@media (max-width: 782px) {
-  
-  .card .content {
-    margin-top: 5px;
-  }
-
-}
-
-.card-footer a:last-of-type{
-  margin-left: 5px;
-}
 
 /* Tablet - 2 slides in viewport */
 @media (min-width: 782px) {
@@ -5351,16 +5332,9 @@ margin-top: -30px;
     line-height: 1.9rem;
   }
 
-  .card img {
-    width: 100%;
-    min-width: 140px;
-    max-width: 150px;
-  }
-
+  
   .card .list-item img {
-    min-width: 135px;
-    max-width: 135px;
-    max-height: 101px;
+    width: 130px;
   }
 
   .single-content,
@@ -5391,11 +5365,7 @@ margin-top: -30px;
     width: 400px;;
   }
 
-  .landscape a, .landscape img  {
-    width: 100%;
-    min-width: none;
-    max-width: none;
-  }
+ 
 
   .square .preview-text {
     display: block;
@@ -5470,8 +5440,6 @@ margin-top: -30px;
   .square {
     max-height: calc((1000px - 60px) / 4);
   }
-
- 
 
 }
 
@@ -5598,12 +5566,7 @@ margin-top: -30px;
     margin-bottom: 10px;
   }
 
-  .card .card-title-large {
-    font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
-      sans-serif;
-    font-size: 3rem;
-    line-height: 3.2rem;
-  }
+ 
 
   .card-container__large .card .pre-title,
   .card .preview-text-large {
