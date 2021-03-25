@@ -1595,7 +1595,7 @@ button.toggle {
   }
 
   .grid-4col > div{
-    width: calc( ( 100% - ( 3 * 30px )) / 4 );
+    width: calc( ( 100% - ( 3 * 20px )) / 4 );
     margin: 0px;
     transition: all 0.2s ease-in-out;
   }
@@ -1617,6 +1617,7 @@ button.toggle {
     margin: 0 auto;
     padding: 15px;
     grid-template-columns: auto 345px;
+    grid-gap: 15px;
     grid-template-areas: "center sidebar"
     "footer footer";
   }
@@ -5505,9 +5506,7 @@ margin-top: -30px;
     max-width: 100%;
     margin: 10px 0px;
   }
-  .card {
-    margin: 10px 0px;
-  }
+ 
 
   .card .pre-title {
     font-size: 1.7rem;
