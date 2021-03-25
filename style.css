@@ -1523,26 +1523,26 @@ button.toggle {
 
 /* Projekt Card size adjustment */ 
 
-.grid-4col .pre-card{
+.grid .pre-card, .grid-4col .pre-card{
   display: none;
 }
 
-.grid-4col .card-title-large{
+.grid .card-title-large, .grid-4col .card-title-large{
   font-size: 2rem;
   line-height: 2.3rem;
 }
 
-.grid-4col .emoji-large{
+.grid .emoji-large, .grid-4col .emoji-large{
   font-size: 3rem;
 }
 
-.grid-4col .highlight{
+.grid .highlight, .grid-4col .highlight{
   font-size: 1.6rem;
   max-height: 20px;
   overflow: hidden;
 }
 
-.grid-4col .content{
+.grid .content, .grid-4col .content{
   height: 140px;
   overflow: hidden;
   display: flex;
@@ -1573,6 +1573,12 @@ button.toggle {
     grid-template-areas: "center sidebar"
     "footer footer";
 }
+
+  .home{
+    display: block;
+    max-width: none;
+    padding: 0px;
+  }
 
 
   .page #site-content {
@@ -1907,6 +1913,71 @@ button.toggle {
   line-height: 4.3rem;
   margin-top: 10px;
 }
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	8. Landing quartier
+/* -------------------------------------------------------------------------- */
+
+
+.quartier section {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.quartier .section-full-width{
+  max-width: none;
+  flex-direction: column;
+  
+}
+
+.quartier section:first-of-type{
+  padding-top: 100px;
+}
+
+.stage-center{
+  max-width: 800px;
+  text-align: center;
+}
+
+.stage-left{
+  max-width: 800px;
+}
+
+.link-card-container{
+  display: flex;
+  flex-wrap: wrap;
+  transform: scale(0.7);
+}
+
+.stage-title{
+  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica;
+  margin-bottom: 10px;
+}
+.projekt-card-container{
+  display: flex;
+  max-width: 1800px;
+}
+
+.projekt-card-container div{
+  margin: 15px;
+}
+
+
+.projekt-card-container > div{
+  margin-top: 100px;
+}
+
+
+.projekt-card-container > div:nth-of-type(2n){
+  margin-top: 0px;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /*	8. Post: Archive
@@ -5333,13 +5404,17 @@ margin-top: -30px;
 
 .card-footer{
   margin-top: 5px;
-  width: 100%;
+  margin-left: -2.5px;
+  margin-right: -2.5px;
+  margin-bottom: -5px;
+  width: calc( 100% + 5px );
   display: flex;
+  flex-wrap: wrap;
   z-index: 1;
 }
-
-.card-footer a:last-of-type{
-  margin-left: 5px;
+.card .card-footer .card-button{
+  margin: 5px 2.5px;
+  width: auto;
 }
 
 
@@ -6344,14 +6419,23 @@ form.poll .answers{
 
 .close-card-link{
   position: absolute;
-  right: 15px;
-  top: 15px;
-  padding: 10px;
-  background: #fff;
+  right: 5px;
+  top: 5px;
+  padding: 15px;
+  border-radius: 15px;
+
 }
 
+
+.close-card-link:hover{
+  background: #fff;
+
+  box-shadow: 0 0px 20px rgba(0, 0, 0, 0.05);
+
+}
+
+
 .close-card-icon{
-  
   width: 20px;
   background: transparent;
 }
