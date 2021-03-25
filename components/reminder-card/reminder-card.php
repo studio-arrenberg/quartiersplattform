@@ -1,5 +1,7 @@
 <div class="card card-large reminder <?php echo get_query_var('reminder_card_slug'); ?>">
 
+<?php print_r( get_user_option( 'qp_reminder_card', get_current_user_id( ) ) ); ?>
+
 	<div class="content content-shrink">
 		<h1 class="card-title-large">
 			<?php echo get_query_var('reminder_card_title'); ?>
@@ -21,25 +23,24 @@
 
 	function remove_reminder(element_slug) {
 
-		alert('remove' + element_slug);
-
 		var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
+    
+        var data = {
+        'action': 'remove_reminder',
+		'slug': element_slug,
+        'request': 1
+        };
 
-		var data = {
-			'action': 'remove_reminder',
-			'request': 1
-		};
-
-		$.ajax({
-			url: ajax_url,
-			type: 'post',
-			data: data,
-			dataType: 'json',
-			success: function(response){
-				$('div.reminder.' + element_slug).fadeOut();
-			}
-		});
-		// $('div.reminder.' + element_slug).fadeOut();
+        $.ajax({
+            url: ajax_url,
+            type: 'post',
+            data: data,
+            dataType: 'json',
+            success: function(response){
+				console.log(response);
+                $('div.reminder.' + element_slug).fadeOut();
+            }
+        });
 	}
 
 </script>

@@ -2314,9 +2314,15 @@ function reminder_card( $slug, $title, $text ) {
 		return false;
 	}
 
-	// check user option || guest
+	// check user option
 	
-	// display card
+	if ( is_user_logged_in(  ) ) {
+		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+		if (in_array($slug, $array, true) ) {
+			return false;
+		}
+	}
+	
 	// define query vars 
 	set_query_var('reminder_card_slug', $slug);
 	set_query_var('reminder_card_title', $title);
@@ -2334,28 +2340,24 @@ function reminder_card( $slug, $title, $text ) {
  * @return string
  */
 function remove_reminder_callback(){
-	# check if cookie not set
-	return true;
-    // if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
-	// 	// set guest counter
-	// 	if (!get_option('guest_counter')) {
-	// 		add_option('guest_counter', 1);
-	// 	}
-	// 	// get/increase guest counter
-	// 	else {
-	// 		$counter = get_option('guest_counter') + 1;
-	// 		update_option('guest_counter', $counter);
-	// 	}
-	// 	// set guest cookie
-	// 	$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
-	// 	$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
-	// 	$expiry = strtotime('+1 year');
-	// 	setcookie('guest', md5($counter), $expiry, $path, $host);
-    // }  
+
+	$slug = $_POST['slug'];
+
+	$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+
+	if (!is_array($array)) {
+		$array = [];
+	}
+
+	$item = $slug;
+	array_push($array, $item);
+	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
+
+	return;
+
 } 
-// add_action('init', 'set_user_cookie_inc_guest');
-add_action( 'wp_ajax_set_cookie', 'remove_reminder_callback' );
-add_action( 'wp_ajax_nopriv_set_cookie', 'remove_reminder_callback' );
+add_action( 'wp_ajax_remove_reminder', 'remove_reminder_callback' );
+add_action( 'wp_ajax_nopriv_remove_reminder', 'remove_reminder_callback' );
 
 
 

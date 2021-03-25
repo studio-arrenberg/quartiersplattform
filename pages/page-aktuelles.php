@@ -21,7 +21,7 @@ get_header();
 
 	<?php
 		$text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
-		reminder_card('hello', 'Neuigkeiten und Projektupdates', $text );
+		reminder_card('helloss', 'Neuigkeiten und Projektupdates', $text );
 	?>
 
 
