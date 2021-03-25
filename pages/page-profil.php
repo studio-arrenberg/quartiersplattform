@@ -35,7 +35,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         <!-- user  name -->
         <div class="single-header-content">
-            <h1><?php $current_user = wp_get_current_user(); echo $current_user->display_name; ?></h1>
+            <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
         </div>
 
         
@@ -112,6 +112,44 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
     <br>
     <br>
 
+    <?php if( current_user_can('administrator') ) { ?>
+        <br>
+        <h2>Reminder Cards</h2>
+        <p>Zeige alle Reminder Cards wieder an.</p>
+        <div class="reset_reminder_cards">
+            <a class="button reset_reminder_cards" onclick="reset_reminder_cards()">Reminder Cards zurücksetzen</a>
+            <span class="acf-spinner is-active" style="display: inline-block;"></span>
+        </div>
+        
+        <script>
+            function reset_reminder_cards() {
+
+                $('div.reset_reminder_cards span.acf-spinner').addClass('is-active');
+
+                var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
+
+                var data = {
+                    'action': 'reset_reminder_cards',
+                    'request': 1
+                };
+
+                $.ajax({
+                    url: ajax_url,
+                    type: 'post',
+                    data: data,
+                    dataType: 'json',
+                    success: function(response){
+                        console.log(response);
+                        $('a.reset_reminder_cards').addClass('is-done');
+                        $('div.reset_reminder_cards span.acf-spinner').removeClass('is-active');
+                    }
+                });
+            }
+        </script>
+    <?php } ?>
+
+    <br>
+    <br>
     <h2>Profil bearbeiten</h2>
     <?php echo do_shortcode("[ultimatemember_account]"); ?>
 

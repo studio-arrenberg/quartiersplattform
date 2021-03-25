@@ -86,7 +86,7 @@ get_header();
             // if ($my_query->post_count > 0) {
 			// echo $num_missed_posts;
 		}
-		echo "missed posts: ".$num_missed_posts;
+		// echo "missed posts: ".$num_missed_posts;
 		// defne 'posts_per_page'
 		if (isset($_COOKIE['feed_timestamp'])) $num_missed_posts = 30;
 		else if ($num_missed_posts > 30) $num_missed_posts = 30;

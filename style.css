@@ -6743,3 +6743,7 @@ a.text-link {
 a.text-link:hover {
   text-decoration: underline !important;
 }
+
+.button.is-done {
+  background-color: #40b82e !important;
+}

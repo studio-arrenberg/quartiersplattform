@@ -14,7 +14,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         <div class="center-header-content center-mobile">
 
-            <h1><?php echo $curauth->display_name; ?></h1>
+            <h1><?php echo $curauth->first_name." ".$curauth->last_name; ?></h1>
             <br>
 
             <?php 
