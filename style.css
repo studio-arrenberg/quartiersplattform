@@ -5072,13 +5072,22 @@ margin-top: -30px;
    flex-direction: column;
 }
 
-
 .card-large{
-  padding: 25px;
+  padding: 10px;
   width: 100%;
   background: #f9fcff;
   border: 1px solid #dcf0ff;
+  margin-bottom: 20px;
 }
+
+
+@media (min-width: 782px) {
+  .card-large{
+    padding: 25px;
+  }
+}
+
+
 
 /* ACF MAP */
 
@@ -6355,10 +6364,15 @@ form.poll{
   width: 100%;
 }
 
-.card .content-shrink{
-  width: 80%;
+.content-shrink .card-title-large{
+  width: calc( 100% - 30px ) 
 }
 
+@media (min-width: 782px) {
+    .content-shrink{
+      width: 80%;
+    }
+}
 .card-large h3{
   margin-top: 10px;
 }
