@@ -2308,7 +2308,7 @@ function qp_remaining( $date ) {
  * @param string $body body
  * @return string html
  */
-function reminder_card( $slug, $title, $text ) {
+function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 
 	if (empty($slug) || empty($title) || empty($text) ) {
 		return false;
@@ -2327,6 +2327,10 @@ function reminder_card( $slug, $title, $text ) {
 	set_query_var('reminder_card_slug', $slug);
 	set_query_var('reminder_card_title', $title);
 	set_query_var('reminder_card_text', $text);
+	if (!empty($slug) || !empty($title)) {
+		set_query_var('reminder_card_button', $button);
+		set_query_var('reminder_card_link', $link);
+	}
 	// template part
 	get_template_part( 'components/reminder-card/reminder-card' );
 
