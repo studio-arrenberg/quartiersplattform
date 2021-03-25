@@ -2298,6 +2298,73 @@ function qp_remaining( $date ) {
 }
 
 
+/**
+ * Reminder Card function
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $slug date
+ * @param string $title title
+ * @param string $body body
+ * @return string html
+ */
+function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
+
+	if (empty($slug) || empty($title) || empty($text) ) {
+		return false;
+	}
+
+	// check user option
+	
+	if ( is_user_logged_in(  ) ) {
+		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+		if (in_array($slug, $array, true) ) {
+			return false;
+		}
+	}
+	
+	// define query vars 
+	set_query_var('reminder_card_slug', $slug);
+	set_query_var('reminder_card_title', $title);
+	set_query_var('reminder_card_text', $text);
+	if (!empty($slug) || !empty($title)) {
+		set_query_var('reminder_card_button', $button);
+		set_query_var('reminder_card_link', $link);
+	}
+	// template part
+	get_template_part( 'components/reminder-card/reminder-card' );
+
+}
+
+/**
+ * Remove Reminder Card (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @return string
+ */
+function remove_reminder_callback(){
+
+	$slug = $_POST['slug'];
+
+	$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+
+	if (!is_array($array)) {
+		$array = [];
+	}
+
+	$item = $slug;
+	array_push($array, $item);
+	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
+
+	return;
+
+} 
+add_action( 'wp_ajax_remove_reminder', 'remove_reminder_callback' );
+add_action( 'wp_ajax_nopriv_remove_reminder', 'remove_reminder_callback' );
+
+
+
 
 
 /**

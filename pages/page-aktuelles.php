@@ -16,20 +16,14 @@ get_header();
 
 ?>
 
+
 <main id="site-content" role="main" data-track-content>
-	<div class="card card-large">
-		<div class="content content-shrink">
-			<h1 class="card-title-large">
-				Neuigkeiten und Projektupdates
-			</h1>
-			<h3>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?	
-			</h3>
-		</div>
-		<a class="close-card-link" href="#">
-			<img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
-		</a>
-	</div>
+
+	<?php
+		$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
+		reminder_card('hellosss', 'Neuigkeiten und Projektupdates', $text, 'Impressum', home_url( ).'/impressum' );
+	?>
+
 
 	<?php
 		if ( current_user_can('administrator') ) {
@@ -52,6 +46,63 @@ get_header();
 	// ---------------------------------- Logged in ----------------------------------
 	if (is_user_logged_in()) {
 	?>
+
+	<?php 
+
+		
+
+		// get last login from cookie 'feed_timestamp'
+		if (isset($_COOKIE['feed_timestamp'])) $feed_timestamp = $_COOKIE['feed_timestamp'];
+		// set cookie to new timestamo
+		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
+		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		$expiry = strtotime('+1 year');
+		$timespamp = time();
+		// $timespamp = time() - 80000 * 10;
+		setcookie('feed_timestamp', $timespamp, $expiry, $path, $host);
+		// query num missed posts from db (veranstaltung issue (different date))
+		if (isset($_COOKIE['feed_timestamp'])) {
+			$args = array(
+				'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+				'post_status'=>'publish', 
+				'posts_per_page'=> $num_missed_posts,
+				'orderby' => 'date',
+				'date_query' => array(
+					array(
+						// 'after'     => 'January 1st, 2015',
+						'after'		=> date('Y-m-d', $_COOKIE['feed_timestamp']),
+						// 'before'    => 'December 31st, 2015',
+						// 'inclusive' => true,
+					),
+				),
+			);
+	
+			$thePosts = query_posts($args);
+			global $wp_query; 
+			$num_missed_posts = $wp_query->found_posts;
+			// $my_query = new WP_Query($args4);
+            // if ($my_query->post_count > 0) {
+			// echo $num_missed_posts;
+		}
+		echo "missed posts: ".$num_missed_posts;
+		// defne 'posts_per_page'
+		if (isset($_COOKIE['feed_timestamp'])) $num_missed_posts = 30;
+		else if ($num_missed_posts > 30) $num_missed_posts = 30;
+		else if ($num_missed_posts < 5) $num_missed_posts = 5;
+		// query
+		$args = array(
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> $num_missed_posts,
+			'orderby' => 'modified' // ..?
+		);
+
+		// grid
+
+		// *up to date*
+
+	?>
+
 
 	<?php 
 		$args4 = array(
