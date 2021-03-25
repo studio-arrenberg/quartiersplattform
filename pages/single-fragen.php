@@ -35,7 +35,7 @@ get_header();
                 </div>
 
                 <h4>Kontakt</h4>
-                <?php get_author(true); ?>
+                <?php author_card(true); ?>
 
             <?php 
 
