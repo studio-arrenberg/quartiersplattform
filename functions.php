@@ -2298,6 +2298,67 @@ function qp_remaining( $date ) {
 }
 
 
+/**
+ * Reminder Card function
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $slug date
+ * @param string $title title
+ * @param string $body body
+ * @return string html
+ */
+function reminder_card( $slug, $title, $text ) {
+
+	if (empty($slug) || empty($title) || empty($text) ) {
+		return false;
+	}
+
+	// check user option || guest
+	
+	// display card
+	// define query vars 
+	set_query_var('reminder_card_slug', $slug);
+	set_query_var('reminder_card_title', $title);
+	set_query_var('reminder_card_text', $text);
+	// template part
+	get_template_part( 'components/reminder-card/reminder-card' );
+
+}
+
+/**
+ * Remove Reminder Card (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @return string
+ */
+function remove_reminder_callback(){
+	# check if cookie not set
+	return true;
+    // if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
+	// 	// set guest counter
+	// 	if (!get_option('guest_counter')) {
+	// 		add_option('guest_counter', 1);
+	// 	}
+	// 	// get/increase guest counter
+	// 	else {
+	// 		$counter = get_option('guest_counter') + 1;
+	// 		update_option('guest_counter', $counter);
+	// 	}
+	// 	// set guest cookie
+	// 	$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
+	// 	$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+	// 	$expiry = strtotime('+1 year');
+	// 	setcookie('guest', md5($counter), $expiry, $path, $host);
+    // }  
+} 
+// add_action('init', 'set_user_cookie_inc_guest');
+add_action( 'wp_ajax_set_cookie', 'remove_reminder_callback' );
+add_action( 'wp_ajax_nopriv_set_cookie', 'remove_reminder_callback' );
+
+
+
 
 
 /**
