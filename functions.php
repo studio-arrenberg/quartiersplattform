@@ -2341,7 +2341,7 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
  *
  * @since Quartiersplattform 1.7
  *
- * @return string
+ * @return void
  */
 function remove_reminder_callback(){
 
@@ -2363,6 +2363,22 @@ function remove_reminder_callback(){
 add_action( 'wp_ajax_remove_reminder', 'remove_reminder_callback' );
 add_action( 'wp_ajax_nopriv_remove_reminder', 'remove_reminder_callback' );
 
+/**
+ * Remove Reminder Option (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @return void
+ */
+function reset_reminder_cards_callback(){
+
+	$array = [];
+	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
+	return;
+
+} 
+add_action( 'wp_ajax_reset_reminder_cards', 'reset_reminder_cards_callback' );
+add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callback' );
 
 
 

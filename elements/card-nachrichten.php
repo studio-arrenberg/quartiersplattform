@@ -27,7 +27,7 @@ if (strlen($the_slug < 1 )) {
     <div class="pre-card">
         <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
             <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); // 32 or 100 = size ?>
-            <span><b>Projektupdate</b> vom <?php  echo qp_date(get_the_date('Y-m-d')); ?><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br>Veröffentlicht von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
+            <span><b>Projektupdate</b> <?php  echo qp_date(get_the_date('Y-m-d')); ?><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br>Veröffentlicht von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
         </a>
     </div>
     <div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
@@ -56,11 +56,14 @@ if (strlen($the_slug < 1 )) {
         </a>
     </div>
 
-
+    <?php
+    // get project with link...
+    ?>
     <div class="after-card">
         <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
             <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
             <span style="margin:-1px 0px 0px 5px"><?php  shorten(get_field('emoji'), '200'); ?>🎯</span>
         </a>
     </div>
+
 </div>
