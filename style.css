@@ -1244,6 +1244,8 @@ button.toggle {
 
   #site-content {
     margin: 150px auto 100px auto;
+    padding: 15px;
+    width: 100%;
     max-width: 1000px;
     overflow: visible;
   }
@@ -1312,10 +1314,6 @@ button.toggle {
   }
 }
 
-@media (min-width: 1000px) {
-  #site-content {
-    margin: 100px auto 100px auto;
-  }
 
   #site-header {
     flex-wrap: nowrap;
@@ -1341,7 +1339,7 @@ button.toggle {
     padding-left: 5px;
     align-items: center;
   }
-}
+
 
 
 @media (max-width: 374px) {
@@ -1489,75 +1487,124 @@ button.toggle {
 /* GRID in the making */
 
 
-
-
-.grid, .grid-3col, .grid-4col {
+.grid, .grid-2col, .grid-4col {
   width: 100%;
   margin-right: 0px;
   margin-bottom: 50px;
 }
 
-.grid > div, .grid-3col > div, .grid-4col > div{
+.grid > div, .grid-2col > div, .grid-4col > div{
   margin: 0px;
   transition: all 0.2s ease-in-out;
 }
-
 
 .grid > div{
   width: 345px;
 }
 
-.grid-3col > div{
-  width: calc( 50% - 30px / 2 );
-  margin: 0px;
-  transition: all 0.2s ease-in-out;
-}
-
-.grid-4col > div{
-  width: calc( 25% - 30px / 2 );
-  margin: 0px;
-  transition: all 0.2s ease-in-out;
-}
-
-
-
 /* Projekt Card size adjustment */ 
 
-.grid .pre-card, .grid-4col .pre-card{
+.grid-4col .pre-card{
   display: none;
 }
 
-.grid .card-title-large, .grid-4col .card-title-large{
+.grid .card .card-title-large, .grid-4col .card .card-title-large{
   font-size: 2rem;
   line-height: 2.3rem;
 }
 
-.grid .emoji-large, .grid-4col .emoji-large{
+.grid .card .emoji-large, .grid-4col .card .emoji-large{
   font-size: 3rem;
 }
 
-.grid .highlight, .grid-4col .highlight{
+.grid .card .highlight, .grid-4col .card .highlight{
   font-size: 1.6rem;
   max-height: 20px;
   overflow: hidden;
 }
 
-.grid .content, .grid-4col .content{
+.grid .card .content, .grid-4col .card .content{
   height: 140px;
+  width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.grid-3col .preview-text{
+
+.grid-2col{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.grid-4col{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid-2col .preview-text{
   display: none;
+}
+
+.grid-2col{
+  margin: 0px auto;
+  width: 100%;
+}
+
+.grid-2col > div{
+  width: 100%;
+  margin: 0px;
+}
+
+
+.grid-4col > div{
+  width: 100%;
+  margin: 0px;
+}
+
+@media (min-width: 782px ) {
+  .grid-2col{
+    margin: 0px auto;
+    width: 100%;
+  }
+
+  .grid-2col > div{
+    width: calc( (100% - 30px) / 2 );
+    margin: 0px;
+  }
+  
+  .grid-4col > div{
+    width: calc( (100% - 60px) / 3 );
+  }
+}
+
+
+
+@media (min-width: 1000px ) {
+  .grid-2col{
+    margin: 0px;
+    width: 1000px;
+  }
+
+  .grid-2col > div{
+    width: 485px;
+  }
+
+  .grid-4col > div{
+    width: calc( ( 100% - ( 3 * 30px )) / 4 );
+    margin: 0px;
+    transition: all 0.2s ease-in-out;
+  }
 }
 
 
 
 
-@media (min-width: 1000px) {
+@media (min-width: 1345px) {
 
   html {
     overflow-x: inherit !important;
@@ -1572,7 +1619,7 @@ button.toggle {
     grid-template-columns: auto 345px;
     grid-template-areas: "center sidebar"
     "footer footer";
-}
+  }
 
   .home{
     display: block;
@@ -1580,21 +1627,21 @@ button.toggle {
     padding: 0px;
   }
 
-
   .page #site-content {
-      grid-area: center;
-      margin: 150px 0px 0px 0px;
-      max-width: 1000px;
-      overflow: visible;
-      padding: 0px;
-    }
-
-    .page .right-sidebar{
-      display: block;
-      height: 400px;
-      margin-top: 115px;
-      grid-area: sidebar;
-      position: -webkit-sticky;
+    margin: 125px 0px 0px 0px;
+    grid-area: center;
+    max-width: 1000px;
+    overflow: visible;
+    padding: 0px;
+  }
+  
+  .page .right-sidebar{
+    display: block;
+    margin-top: 115px;
+    height: 100vh;
+    grid-area: sidebar;
+    position: -webkit-sticky;
+      /* overflow: scroll; */
       position: sticky;
       top: 115px;
     }
@@ -4837,6 +4884,13 @@ a.card-link{
   white-space: nowrap;
 }
 
+.pre-card{
+  margin-bottom: 5px;
+}
+
+.after-card{
+  margin-top: 5px;
+}
 
 .pre-card  a, .after-card a{
   display: flex;
@@ -4931,10 +4985,6 @@ a.card-link{
   .square {
     height: calc((400px - 40px) / 2);
   }
-
-  .landscape {
-    height: calc((400px - 40px) / 2);
-  }
 }
 
 .square .preview-text {
@@ -4953,18 +5003,14 @@ a.card-link{
   margin: 0px;
 }
 
-
-
-@media (min-width: 1000px) {
  
-  .grid-3col .landscape{
-    width: 100%;
-    height: auto;
-    margin: 0px;
-    transition: all 0.2s ease-in-out;
-  }
-
+.grid-2col .landscape{
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  transition: all 0.2s ease-in-out;
 }
+
 
 
 
@@ -4988,13 +5034,6 @@ a.card-link{
   justify-content: flex-end;
 }
 
-/* .landscape img,
-.square img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-} */
 
 .landscape .pre-title {
   color: #fff
@@ -5546,35 +5585,7 @@ margin-top: -30px;
    width: calc( 25% - 5px);
   }
 
-  
 
-  /* Can align a landscape Card center */
-  .card-container__center {
-    justify-content: center;
-  }
-
-  .card-container .card {
-    margin: 5px 0px;
-  }
-  .card-container .landscape {
-    max-width: calc(50% - 5px);
-    margin: 10px 0px 0px 0px;
-    max-height: 240px;
-  }
-
-  .card-container .landscape .card-title {
-    font-size: 1.8rem;
-    line-height: 2rem;
-  }
-
-  .card-container .landscape .preview-text {
-    font-size: 1.7rem;
-  }
-
-  /* .card-container .landscape a .content {
-    padding: 5px 15px;
-  } */
-}
 
 @media (min-width: 1000px) {
   .square {
@@ -6400,9 +6411,6 @@ form.poll{
 
 }
 
-.card .content{
-  width: 100%;
-}
 
 .card .content-shrink{
   width: 80%;
