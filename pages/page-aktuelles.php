@@ -21,7 +21,9 @@ get_header();
 
 	<?php
 		$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
-		reminder_card('hellosss', 'Neuigkeiten und Projektupdates', $text, 'Impressum', home_url( ).'/impressum' );
+		reminder_card('helloss', 'Neuigkeiten und Projektupdates', $text );
+
+		// 'Impressum', home_url( ).'/impressum'
 	?>
 
 
