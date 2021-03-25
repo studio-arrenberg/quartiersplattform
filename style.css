@@ -1668,34 +1668,6 @@ button.toggle {
 
 
 
-@media (min-width: 2000px) {
-
-  html {
-    overflow-x: inherit !important;
-  }
-
-  .page{
-    justify-content: unset; 
-    display: grid;
-    max-width: 2500px;
-    margin: 0 auto;
-    padding: 15px;
-    grid-template-columns: auto 345px;
-    grid-template-areas: "center sidebar"
-    "footer footer";
-  }
-
-
-  .page #site-content {
-    grid-area: center;
-    margin: 150px 0px 0px 0px;
-    max-width: 2500px;
-    overflow: visible;
-    padding: 0px;
-  }
-}
-
-
 
 /*	7a. Template: Single Template
 /* -------------------------------------------------------------------------- */
@@ -1989,18 +1961,30 @@ button.toggle {
 }
 
 .stage-center{
-  max-width: 800px;
+  max-width: 700px;
   text-align: center;
 }
 
 .stage-left{
-  max-width: 800px;
+  /* max-width: 800px; */
+  flex-grow: 1;
+  padding-right: 25px;
 }
 
 .link-card-container{
   display: flex;
   flex-wrap: wrap;
-  transform: scale(0.7);
+  min-width: 650px;
+}
+
+.link-card-container .card-group {
+  margin: 5px;
+  width: 300px;
+}
+
+.link-card-container .landscape{
+  width: 300px;
+  height: 150px;
 }
 
 .stage-title{
@@ -2010,21 +1994,47 @@ button.toggle {
 .projekt-card-container{
   display: flex;
   max-width: 1800px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-.projekt-card-container div{
-  margin: 15px;
-}
-
 
 .projekt-card-container > div{
+  margin: 5px;
   margin-top: 100px;
+
 }
 
+.projekt-card-container  .card{
+  margin: 0px;
+}
 
 .projekt-card-container > div:nth-of-type(2n){
   margin-top: 0px;
 }
+
+
+@media (max-width: 999px) {
+  .quartier section {
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .link-card-container{
+    min-width: 0px;
+    width: 100%;
+
+  }
+  .link-card-container .landscape{
+  }
+}
+
+
+
+
+
+
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -4750,7 +4760,7 @@ figure.wp-block-table.is-style-stripes {
   border-radius: 20px;
   width: 100%;
   background-color: #fff;
-  margin: 10px auto;
+  margin: 5px;
   padding: 5px 5px 5px 5px;
   transition: all ease-in-out 0.2s; /* Animation */
 }
