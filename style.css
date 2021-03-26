@@ -1565,6 +1565,11 @@ button.toggle {
   margin: 0px;
 }
 
+
+.grid-4col > div{
+  width: calc( (100% - 30px) / 2 );
+}
+
 @media (min-width: 782px ) {
   .grid-2col{
     margin: 0px auto;
