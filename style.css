@@ -1565,6 +1565,11 @@ button.toggle {
   margin: 0px;
 }
 
+
+.grid-4col > div{
+  width: calc( (100% - 30px) / 2 );
+}
+
 @media (min-width: 782px ) {
   .grid-2col{
     margin: 0px auto;
@@ -4773,7 +4778,7 @@ figure.wp-block-table.is-style-stripes {
   border-radius: 20px;
   width: 100%;
   background-color: #fff;
-  margin: 5px;
+  margin-bottom: 15px;
   padding: 5px 5px 5px 5px;
   transition: all ease-in-out 0.2s; /* Animation */
 }
@@ -5072,13 +5077,22 @@ margin-top: -30px;
    flex-direction: column;
 }
 
-
 .card-large{
-  padding: 25px;
+  padding: 10px;
   width: 100%;
   background: #f9fcff;
   border: 1px solid #dcf0ff;
+  margin-bottom: 20px;
 }
+
+
+@media (min-width: 782px) {
+  .card-large{
+    padding: 25px;
+  }
+}
+
+
 
 /* ACF MAP */
 
@@ -6355,10 +6369,15 @@ form.poll{
   width: 100%;
 }
 
-.card .content-shrink{
-  width: 80%;
+.content-shrink .card-title-large{
+  width: calc( 100% - 30px ) 
 }
 
+@media (min-width: 782px) {
+    .content-shrink{
+      width: 80%;
+    }
+}
 .card-large h3{
   margin-top: 10px;
 }

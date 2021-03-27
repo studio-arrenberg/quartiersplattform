@@ -32,12 +32,9 @@ if (strlen($the_slug < 1 )) {
     </div>
     <div class="nachricht <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-            <?php the_post_thumbnail( 'preview_m' ); ?>
             <div class="content">
                 <div class="pre-title">
-                    <span class="date">
-                        <?php  echo qp_date(get_the_date('Y-m-d')); ?>
-                    <span>
+                    <?php  echo qp_date(get_the_date('Y-m-d')); ?>
                 </div> 
                 <h3 class="card-title">
                     <?php shorten(get_the_title(), '60'); ?>
@@ -53,6 +50,8 @@ if (strlen($the_slug < 1 )) {
                     ?>
                 </p>
             </div>
+            <?php the_post_thumbnail( 'preview_m' ); ?>
+
         </a>
     </div>
 
