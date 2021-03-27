@@ -607,7 +607,6 @@ input[type="checkbox"] {
   margin: 0;
   width: 25px;
   height: 25px;
-  background: #fff;
   border-radius: 15px;
   border-style: solid;
   border-width: 0.1rem;
@@ -649,7 +648,7 @@ button,
   border: none;
   border-radius: 15px;
   text-decoration: none;
-white-space: nowrap;
+  white-space: nowrap;
   word-wrap: none;
   word-break: keep-all;
 }
@@ -687,16 +686,17 @@ textarea {
   max-width: 100%;
   width: 100%;
   padding: 15px 15px 13px 20px;
+  background: #f9fcff;
+  border: 1px solid #dcf0ff;
 }
 
 textarea {
   min-height: 200px;
   line-height: 1.5;
   width: 100%;
-
-white-space: normal;
-word-wrap: normal;
-word-break: keep-all;
+  white-space: normal;
+  word-wrap: normal;
+  word-break: keep-all;
 }
 
 
@@ -708,24 +708,7 @@ textarea span{
   min-height: 40px;
   line-height: 20px;
 }
-/* 
-input[type="submit" i] {
-  color: #fff;
-  background-color: rgb(0, 145, 255);
-  box-sizing: border-box;
-  border-width: 0px;
-  border-style: none;
-  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.07),
-    0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
-    0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
-    0 32px 64px rgba(0, 145, 255, 0.07);
-}
-.button {
-  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.07),
-    0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
-    0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
-    0 32px 64px rgba(0, 145, 255, 0.07);
-} */
+
 
 button,
 .button,
@@ -846,10 +829,20 @@ textarea:focus {
 }
 
 input[type="search"]:focus {
-  outline: thin dotted;
-  outline-offset: -4px;
+  outline: none;
+  outline-offset: 0px;
+  border: 1px solid #c2e4ff;
 }
 
+.search-form {
+  display: flex;
+}
+
+
+.search-form label{
+  flex-grow: 1;
+  margin-right: 5px;
+}
 /* Tables ------------------------------------ */
 
 table {
@@ -1492,6 +1485,12 @@ button.toggle {
   margin-bottom: 50px;
 }
 
+.grid{
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
 .grid > div, .grid-2col > div, .grid-4col > div{
   margin: 0px;
   transition: all 0.2s ease-in-out;
@@ -1997,6 +1996,7 @@ button.toggle {
   font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica;
   margin-bottom: 10px;
 }
+
 .projekt-card-container{
   display: flex;
   max-width: 1800px;
@@ -2007,7 +2007,6 @@ button.toggle {
 .projekt-card-container > div{
   margin: 5px;
   margin-top: 100px;
-
 }
 
 .projekt-card-container  .card{
@@ -2031,9 +2030,30 @@ button.toggle {
     width: 100%;
 
   }
+
   .link-card-container .landscape{
     width: 100%;
     height: 300px;
+  }
+
+
+
+  .projekt-card-container {
+    flex-wrap: wrap;
+    padding: 0px;
+  }
+
+  .projekt-card-container > div{
+    width: calc( (100% - 20px) / 2 );
+    margin-top: 20px;
+  }
+  
+  .projekt-card-container  .card{
+    margin: 0px;
+  }
+
+  .projekt-card-container > div:nth-of-type(2n){
+    margin-top: 0px;
   }
 }
 
@@ -4815,6 +4835,8 @@ a.card-link{
   height: auto;
 }
 
+
+
 .card .avatar {
   min-width: inherit;
   max-width: inherit;
@@ -4845,7 +4867,7 @@ a.card-link{
   font-size: unset;
   max-width: unset;
   min-width: unset;
-  border-radius: 0px;
+  border-radius: 0px !important;
 }
 
 .emoji-large{  
@@ -5051,7 +5073,9 @@ a.card-link{
   color: #fff
 }
 
-
+.landscape .wp-post-image {
+  border-radius: 20px;
+}
 
 /* Card Center */
 
@@ -5085,12 +5109,16 @@ margin-top: -30px;
   margin-bottom: 20px;
 }
 
-
+.right-sidebar .card-large{
+  padding: 10px;
+}
 @media (min-width: 782px) {
   .card-large{
     padding: 25px;
   }
 }
+
+
 
 
 
@@ -6193,9 +6221,9 @@ input[type="file"] {
 }
 .acf-button-group label {
   flex-grow: 1;
-  background-color: #fff;
   height: 50px;
   padding: 5px;
+  background: #f9fcff;
 }
 
 .acf-button-group label span {

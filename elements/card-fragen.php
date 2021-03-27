@@ -16,7 +16,7 @@
             <div class="pre-title green-text">Frage
                 <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
                 <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-                <span class="date green-text"><?php echo qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
+                <span class=" green-text"><?php echo qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
             </div>
             <h3 class="card-title-large">
             <?php  
@@ -24,11 +24,9 @@
                 else the_field('text'); 
             ?>
             </h3>
-
             <div class="kommentare">
                 <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
             </div>
-            
         </div>
         <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
         <div class="emoji">
