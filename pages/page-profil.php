@@ -139,7 +139,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         <p>Zeige alle Reminder Cards wieder an.</p>
         <div class="reset_reminder_cards">
             <a class="button reset_reminder_cards" onclick="reset_reminder_cards()">Reminder Cards zurücksetzen</a>
-            <span class="acf-spinner is-active" style="display: inline-block;"></span>
+            <span class="acf-spinner" style="display: inline-block;"></span>
         </div>
         
         <script>

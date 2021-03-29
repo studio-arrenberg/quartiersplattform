@@ -13,6 +13,9 @@
 
 ?>
 <footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
+
+    <?php if ( is_front_page() || cms_is_in_menu( 'qp_menu') ) { ?>
+
     <div class="sponsoren">
         <?php if( have_rows('sponsors', 'option') ): ?>    
             <?php while( have_rows('sponsors', 'option') ): the_row();  
@@ -22,6 +25,8 @@
             <?php endwhile; ?>
         <?php endif; ?>
     </div>
+
+    <?php } ?>
 
     <div class="footer">
 
@@ -42,6 +47,8 @@
         ?>
         
     </div><!-- .section-inner -->
+
+
 </footer><!-- #site-footer -->
 <?php wp_footer(); ?>
 </body>

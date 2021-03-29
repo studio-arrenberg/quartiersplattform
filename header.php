@@ -57,14 +57,17 @@ wp_maintenance_mode();
         if( cms_is_in_menu( 'qp_menu') ) {
             $menu = 'post-header';
         }
+        
     ?>
+
+    
 
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="pull-left">
 
         <?php 
         # if in menu && if in maintenance mode + user cant skip
-        if (cms_is_in_menu( 'qp_menu') || ( get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance'))) {
+        if (is_front_page() || cms_is_in_menu( 'qp_menu') || ( get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance')) ) {
         ?>
 
             <div class="site-name">

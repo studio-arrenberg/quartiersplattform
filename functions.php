@@ -1173,6 +1173,7 @@ function load_scripts() {
 
     if (
 		!is_admin() 
+		&& is_front_page()
 		&& strpos($REQUEST_URI,'/profil/') === false
 		&& strpos($REQUEST_URI,'/frage-erstellen/') === false
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
@@ -1229,6 +1230,7 @@ add_action('init', 'load_scripts', 11);
 function emoji_picker() { 
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+	
     if (
 		strpos($REQUEST_URI,'/frage-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
@@ -1510,7 +1512,10 @@ function wp_maintenance_mode() {
  */
 function redirect_visitor() {
 
-	if ( empty($_GET['stay']) && ( isset($_COOKIE['guest']) || is_user_logged_in() ) ) {
+	// redirect guests as well
+	// if ( empty($_GET['stay']) && ( isset($_COOKIE['guest']) || is_user_logged_in() ) ) {
+
+	if ( empty($_GET['stay']) &&  is_user_logged_in() ) {
 
 		wp_redirect( home_url()."/aktuelles" ); 
 		exit;
@@ -1622,6 +1627,7 @@ function post_remove () {
 		 'acf/arrenberg-geschichten'
 		 // 'core/image'
 	 ];
+	 // !!! dynaisch nicht statisch
 	 if ($post->post_title == "Überblick") {
 		 return $allowed;
 	 }
