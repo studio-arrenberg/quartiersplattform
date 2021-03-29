@@ -2190,18 +2190,24 @@ function emoji_picker_init($id) {
  */
 function extract_links( $text ) {
 
-	$pattern = '~[a-z]+://\S+~i';
-	// $pattern = '~www\S+~i';
-	$pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
+	// $pattern_url = '~[a-z]+://\S+~i';
+	// $pattern_url = '~www\S+~i';
+	$pattern_url = '/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/';
+	
+	// $pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
+	// $pattern_mail = '/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n\s]+/';
+	$pattern_mail = '/(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/';
 
-	preg_match_all($pattern, $text, $out);
+	preg_match_all($pattern_url, $text, $out);
 	preg_match_all($pattern_mail, $text, $out_mail);
 
 	for ($i=0; $i < count($out[0]); $i++) { 
 		$text = str_replace($out[0][$i], "<a class='text-link' href='".$out[0][$i]."' target='_blank'>".$out[0][$i]."</a>", $text);
 	}
+
 	for ($i=0; $i < count($out_mail[0]); $i++) { 
 		$text = str_replace($out_mail[0][$i], "<a class='text-link' href='mailto:".$out_mail[0][$i]."'>".$out_mail[0][$i]."</a>", $text);
+
 	}
 
 	echo $text;
