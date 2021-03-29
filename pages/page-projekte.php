@@ -42,17 +42,10 @@ get_header();
 				}
 			?>
 		
-			<div class="card ">
-					<div class="emojis-top">🍾🍰</div>
-				<div class="card-header">
-					<h2>Wir laufen jetzt unter <span class="highlight">CSS GRID</span></h2>
-					<p>Es gibt eine Sitebar die beliebig erweitert werden kann</p>
-				</div>
-			</div>
 			<?php 
 
 			$text = 'Es gibt eine Sitebar die beliebig erweitert werden kann';
-			reminder_card('css-grid', '🏗 Wir laufen jetzt unter <span class="highlight">CSS GRID</span>', $text );
+			reminder_card('css-grid', '🏗  Wir haben jetzt eine Sidebar <span class="highlight">CSS GRID</span>', $text );
 
 			$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum.';
 			reminder_card('huhu', '🐝 Huhu', $text );

@@ -123,8 +123,10 @@ get_header();
 
     <script>
 	const sizes = [
-	{ columns: 1, gutter: 0 }, // assumed to be mobile, because of the missing mq property
-	{ mq: '1000px', columns: 2, gutter: 175 },
+	{ columns: 1, gutter: 25 }, // assumed to be mobile, because of the missing mq property
+	{ mq: '750px', columns: 2, gutter: 25 },
+	{ mq: '800px', columns: 2, gutter: 100 },
+	{ mq: '875px', columns: 2, gutter: 175 },
 	]
 
 	// create an instance

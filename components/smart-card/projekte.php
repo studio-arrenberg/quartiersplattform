@@ -21,7 +21,9 @@
             ?>
 <br>
 <br>
+                    <div class="pre-card">
                         <h2>Dein Projekt</h2>
+                    </div>
                     <?php
 
                     $args4->the_post();
@@ -43,7 +45,7 @@
                             <div class="card-footer">
                                 <a class="button card-button"  href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Projektupdate</a>
                                 <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung</a>
-                                <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">+</a>
+                                <!-- <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">+</a> -->
                             </div>
                     </div>
                     
