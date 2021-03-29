@@ -2190,6 +2190,9 @@ function emoji_picker_init($id) {
  */
 function extract_links( $text ) {
 
+	# https://ihateregex.io/expr/email-2/
+	# https://regex101.com
+
 	// $pattern_url = '~[a-z]+://\S+~i';
 	// $pattern_url = '~www\S+~i';
 	$pattern_url = '/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/';
