@@ -68,9 +68,9 @@ wp_maintenance_mode();
         ?>
 
             <div class="site-name">
-                <a href="<?php echo get_site_url(); ?>">
+                <a href="<?php echo get_site_url(); ?>?stay=true">
                     <h1><?php the_field('quartiersplattform-name', 'option'); ?></h1>
-                    <h2><?php the_field('quartiersplattform-description', 'option'); ?></h2>
+                    <!-- <h2><?php //the_field('quartiersplattform-description', 'option'); ?></h2> -->
                 </a>
             </div>
 

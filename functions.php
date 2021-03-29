@@ -993,8 +993,12 @@ function custom_page_template( $page_template, $post_states ) {
 	$prefix = "QP ";
 
 	if ($post->post_title == "Überblick") {
-		$post_states[] = $prefix.'Startseite';
-		$page_template= get_stylesheet_directory() . '/pages/page-landing.php';
+		$post_states[] = $prefix.'Über das Quartier';
+		$page_template= get_stylesheet_directory() . '/pages/page-quartier.php';
+	}
+	else if ($post->post_title == "Aktuelles") {
+		$post_states[] = $prefix.'Aktuelles';
+		$page_template= get_stylesheet_directory() . '/pages/page-aktuelles.php';
 	}
 	else if ($post->post_title == "Veranstaltungen") {
 		$post_states[] = $prefix.'Veranstaltungen';
@@ -1056,6 +1060,7 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
 		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
 	}
+	
 	
 	if (doing_filter( 'page_template') && !empty($page_template)) {
 		return $page_template;
@@ -1493,6 +1498,23 @@ function wp_maintenance_mode() {
 	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance') && ( strpos($REQUEST_URI,'/register/') === false && strpos($REQUEST_URI,'/login/') === false && strpos($REQUEST_URI,'/password-reset/') === false )) {
 		header("Location: ".get_template_directory_uri().'/maintenance.php');
 		exit();
+	}
+
+}
+/**
+ * Redirect new visitor
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @return void
+ */
+function redirect_visitor() {
+
+	if ( empty($_GET['stay']) && ( isset($_COOKIE['guest']) || is_user_logged_in() ) ) {
+
+		wp_redirect( home_url()."/aktuelles" ); 
+		exit;
+
 	}
 
 }
@@ -2168,18 +2190,27 @@ function emoji_picker_init($id) {
  */
 function extract_links( $text ) {
 
-	$pattern = '~[a-z]+://\S+~i';
-	// $pattern = '~www\S+~i';
-	$pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
+	# https://ihateregex.io/expr/email-2/
+	# https://regex101.com
 
-	preg_match_all($pattern, $text, $out);
+	// $pattern_url = '~[a-z]+://\S+~i';
+	// $pattern_url = '~www\S+~i';
+	$pattern_url = '/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/';
+	
+	// $pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
+	// $pattern_mail = '/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n\s]+/';
+	$pattern_mail = '/(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/';
+
+	preg_match_all($pattern_url, $text, $out);
 	preg_match_all($pattern_mail, $text, $out_mail);
 
 	for ($i=0; $i < count($out[0]); $i++) { 
 		$text = str_replace($out[0][$i], "<a class='text-link' href='".$out[0][$i]."' target='_blank'>".$out[0][$i]."</a>", $text);
 	}
+
 	for ($i=0; $i < count($out_mail[0]); $i++) { 
 		$text = str_replace($out_mail[0][$i], "<a class='text-link' href='mailto:".$out_mail[0][$i]."'>".$out_mail[0][$i]."</a>", $text);
+
 	}
 
 	echo $text;
@@ -2274,6 +2305,89 @@ function qp_remaining( $date ) {
 	return $time;
 
 }
+
+
+/**
+ * Reminder Card function
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $slug date
+ * @param string $title title
+ * @param string $body body
+ * @return string html
+ */
+function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
+
+	if (empty($slug) || empty($title) || empty($text) ) {
+		return false;
+	}
+
+	// check user option
+	
+	if ( is_user_logged_in(  ) ) {
+		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+		if (in_array($slug, $array, true) ) {
+			return false;
+		}
+	}
+	
+	// define query vars 
+	set_query_var('reminder_card_slug', $slug);
+	set_query_var('reminder_card_title', $title);
+	set_query_var('reminder_card_text', $text);
+	if (!empty($slug) || !empty($title)) {
+		set_query_var('reminder_card_button', $button);
+		set_query_var('reminder_card_link', $link);
+	}
+	// template part
+	get_template_part( 'components/reminder-card/reminder-card' );
+
+}
+
+/**
+ * Remove Reminder Card (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @return void
+ */
+function remove_reminder_callback(){
+
+	$slug = $_POST['slug'];
+
+	$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+
+	if (!is_array($array)) {
+		$array = [];
+	}
+
+	$item = $slug;
+	array_push($array, $item);
+	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
+
+	return;
+
+} 
+add_action( 'wp_ajax_remove_reminder', 'remove_reminder_callback' );
+add_action( 'wp_ajax_nopriv_remove_reminder', 'remove_reminder_callback' );
+
+/**
+ * Remove Reminder Option (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @return void
+ */
+function reset_reminder_cards_callback(){
+
+	$array = [];
+	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
+	return;
+
+} 
+add_action( 'wp_ajax_reset_reminder_cards', 'reset_reminder_cards_callback' );
+add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callback' );
 
 
 

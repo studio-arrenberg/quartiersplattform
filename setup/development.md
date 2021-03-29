@@ -101,3 +101,10 @@ echo qp_date( $date, $detail = false, $time = '' );
 ```php
 echo qp_remaining( $date );
 ```
+#### Reminder Card
+Logged in users can remove reminder cards (uses `ajax`).
+```php
+reminder_card( $slug, $title, $text, $button = '', $link = '' );
+// example
+reminder_card('unique_slug', 'Title', 'Text...', 'Impressum', home_url( ).'/impressum' );
+```

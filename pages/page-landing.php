@@ -322,4 +322,18 @@ else {
 
 </main><!-- #site-content -->
 
+<div class="right-sidebar">
+		<?php 
+			// Smart cards 
+			// Angebote und fragen
+			get_template_part('components/smart-card/angebote-fragen');
+			// Projekte
+			get_template_part('components/smart-card/projekte');
+		?>
+			
+		
+           
+        </div>
+	</div>
+
 <?php get_footer(); ?>

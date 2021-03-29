@@ -12,43 +12,45 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-<div class="card-container card-container__center card-container__long">
+		
+	<?php 
+		$text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
+		reminder_card('projekte-intro', 'Projekte', $text );
+	?>
 
 	<?php 
-		if ( ( is_user_logged_in() ) ) {
-			get_template_part( 'components/call', 'projekt' ); 
-		}
-	?>
-	
-</div>
+			$args4 = array(
+			'post_type'=> array('projekte'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 50,
+			'orderby' => 'modified'
+		);
+		?>  
+		
+		<div class="grid-4col" data-grid>
+			<?php card_list($args4);?>
+		</div>
 
-    <?php
-	// featured projekte
-	$args3 = array(
-		'post_type'=>'projekte', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 4,
-		'orderby' => 'rand'
-	);
 
-	slider($args3,'square_card', '2','true'); 
-	?>
+	</main><!-- #site-content -->
 
-	
-    <?php 
-	// veranstaltung list
-	$args4 = array(
-		'post_type'=>'projekte', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> -1,
-		'orderby' => 'modified'
-	);
-	?>
-	
-	<div class="card-container">
-	<?php card_list($args4);
-	?>
-</div>
-</main><!-- #site-content -->
+
+		<div class="right-sidebar">
+			<?php 
+				if ( ( is_user_logged_in() ) ) {
+					get_template_part( 'components/call', 'projekt' ); 
+				}
+			?>
+		
+			<?php 
+
+			$text = 'Es gibt eine Sitebar die beliebig erweitert werden kann';
+			reminder_card('css-grid', '🏗  Wir haben jetzt eine Sidebar <span class="highlight">CSS GRID</span>', $text );
+
+			$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum.';
+			reminder_card('huhu', '🐝 Huhu', $text );
+			?>
+		</div>
+	</div>
 
 <?php get_footer(); ?>

@@ -9,6 +9,25 @@
 | Preview 4:3   | 160x120 | 200x150 | 400x300 | 600x450 | 800x600 |
 | Landscape 2:1 | 400x200 | 750x375 | -       | -       | 970x485 |
 
+
+## Translation
+- [WordPress Localization +](https://translatepress.com/wordpress-localization/)
+- [Not so good](https://www.sktthemes.org/wordpress/translate-wordpress-theme/)
+- [efficiently translate their themes and plugins](https://www.icanlocalize.com/site/tutorials/how-to-translate-wordpress-themes-and-plugins/)
+- [Everything You Need to Know About Translating WordPress Plugins](https://wpmudev.com/blog/translating-wordpress-plugins/)
+
+
+```php
+# create .po file in languages/
+de_DE.mo # german
+de_DE.pp # german
+quartiersplattform.pot # all strings list
+# init in functions
+load_theme_textdomain('YOUR_THEME', THEME_PATH.'/languages');
+# call in file
+<?php _e('Welcome to Great Theme!', 'YOUR_THEME'); ?>
+```
+
 ## SEO
 
 1. Descriptions: Description Atribut = Bierdeckeltext

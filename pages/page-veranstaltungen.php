@@ -11,76 +11,29 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main" >
-
-    <?php
-	// featured veranstaltungen
-	$args3 = array(
-		'post_type'=>'veranstaltungen', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 4,
-		'meta_key' => 'event_date',
-		'orderby' => 'rand',
-		'order' => 'ASC',
-		'offset' => '0', 
-		'meta_query' => array(
-			array(
-				'key' => 'event_date', 
-				'value' => date("Y-m-d"),
-				'compare' => '>=', 
-				'type' => 'DATE'
-			)
-		)
-	);
-
-	slider($args3,'square_card', '2','true'); 
-	?>
-
-	<div class="card-container ">
-
-    <?php 
-	// veranstaltung list
-	$args4 = array(
-		'post_type'=>'veranstaltungen', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 10, 
-		'meta_key' => 'event_date',
-		'orderby' => 'meta_value',
-		'order' => 'ASC',
-		'offset' => '0', 
-		'meta_query' => array(
-			array(
-				'key' => 'event_date', 
-				'value' => date("Y-m-d"),
-				'compare' => '>=', 
-				'type' => 'DATE'
-			)
-		)
-	);
-	card_list($args4);
-	?>
-
+<main id="site-content" role="main">
+		
 	<?php 
-	// mehr veranstaltungen (offset)
-	$args5 = array(
-		'post_type'=>'veranstaltungen', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 10, 
-		'meta_key' => 'event_date',
-		'orderby' => 'meta_value',
-		'order' => 'ASC',
-		'offset' => '10', 
-		'meta_query' => array(
-			array(
-				'key' => 'event_date', 
-				'value' => date("Y-m-d"),
-				'compare' => '>=', 
-				'type' => 'DATE'
-			)
-		)
-	);
-	card_list($args5);
+		$text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
+		reminder_card('veranstaltungen-intro', 'Veranstaltungen in deinem Viertel', $text );
 	?>
+
+	
+	<?php 
+			$args4 = array(
+			'post_type'=> array('veranstaltungen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 50,
+			'orderby' => 'modified'
+		);
+		?>  
+		
+		<div class="grid-2col" data-grid>
+			<?php card_list($args4);?>
+		</div>
+
+
+
 
 </div>
 

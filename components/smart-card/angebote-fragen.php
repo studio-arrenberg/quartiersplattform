@@ -23,7 +23,7 @@
 
         ?>
 
-            <div class="card smart-card ">
+            <div class="card smart-card shadow">
                 <div class="card-header">
                     <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
                     <h3>Du hast folgene <span class="highlight">Sharingangebote </span> und <span class="highlight">
@@ -56,7 +56,7 @@
     else {
         ?>
 
-        <div class="card smart-card ">
+        <div class="card shadow smart-card">
             <div class="card-header">
             <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
                 <h3>Du hast noch <span class="highlight">kein Sharingangebot </span> erstellt oder  <span class="highlight">Frage</span> gepostet.</h3>
