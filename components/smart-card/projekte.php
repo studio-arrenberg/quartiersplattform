@@ -12,18 +12,27 @@
     
     $my_query = new WP_Query($args4);
     if ($my_query->post_count > 0) {
-        
+        ?>
 
+        <div class="pre-card">
+            <?php 
+            if ($my_query->post_count > 1) {
+                echo '<h2>Deine Projekte</h2>';
+            }
+            else {
+                echo '<h2>Dein Projekt</h2>';
+            }
+            ?>
+        </div>
+        <br>
+
+    <?php
         $args4 = new WP_Query($args4);
         while ( $args4->have_posts() ) {
 
 
             ?>
-<br>
-<br>
-                    <div class="pre-card">
-                        <h2>Dein Projekt</h2>
-                    </div>
+
                     <?php
 
                     $args4->the_post();
@@ -41,7 +50,7 @@
                                 </h3>
                                 <div class="highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div> 
                             </div>
-                            </a>
+                        </a>
                             <div class="card-footer">
                                 <a class="button card-button"  href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Projektupdate</a>
                                 <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung</a>
