@@ -845,6 +845,7 @@ require_once dirname( __FILE__ ) .'/setup/main.php'; # General
 require_once dirname( __FILE__ ) .'/setup/immigration.php'; # Immigration
 require_once dirname( __FILE__ ) .'/setup/settings.php'; # Setting Page
 require_once dirname( __FILE__ ) .'/setup/kontakt.php'; # Kontakt Einstellungen
+require_once dirname( __FILE__ ) .'/setup/biografie.php'; # Kontakt Einstellungen
 require_once dirname( __FILE__ ) .'/setup/blocks.php'; # Blocks
 require_once dirname( __FILE__ ) .'/setup/projekte.php'; # Projekte
 require_once dirname( __FILE__ ) .'/setup/nachrichten.php'; # Nachrichten
@@ -868,7 +869,6 @@ if (class_exists('UM')) { # Ultimate Member
 if (class_exists('acf_pro')) { # Advanced custom fields
 	require dirname( __FILE__ ) .'/functions/advanced-custom-fields.php';
 }
-
 
 /**
  * Admin notes & warnings

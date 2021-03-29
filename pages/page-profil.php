@@ -94,7 +94,9 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
     <br>
     <br>
+    <!-- Contact Information -->   
     <h2>Bearbeite deine Kontaktinformationen</h2>
+    <br>
         <?php
         $userid = "user_".$current_user->ID; 
         acf_form (
@@ -106,6 +108,25 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 'post_title' => false,
                 'post_content' => false,    
                 'field_groups' => array('group_6034e1d00f273'),
+            )
+        );
+        ?>
+    <br>
+    <br>
+    <!-- Biography Information -->   
+    <h2>Erzähle etwas über dich</h2>
+    <br>
+        <?php
+        $userid = "user_".$current_user->ID; 
+        acf_form (
+            array(
+                'form' => true,
+                'post_id' => $userid,
+                'return' => get_site_url()."/profil"."/",
+                'submit_value' => 'Änderungen speichern',
+                'post_title' => false,
+                'post_content' => false,    
+                'field_groups' => array('group_605dc2bb690d9'),
             )
         );
         ?>

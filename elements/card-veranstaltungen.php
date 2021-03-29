@@ -57,6 +57,7 @@ else {
                         }
                         ?> 
                     </p>
+
             </div>
             <?php the_post_thumbnail( 'landscape_s' ); ?>
         </a>

@@ -76,13 +76,13 @@ get_header();
                 echo "<br><br>";
 
                 // livestream
-                if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livesstream</a>";
+                if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livestream</a>";
 
                 // Ticket
-                if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livesstream</a>";
+                if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livestream</a>";
 
                 // Website
-                if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livesstream</a>";
+                if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livestream</a>";
 
                 ?>
 

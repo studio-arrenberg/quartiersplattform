@@ -28,19 +28,29 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             <!-- Kontakt  -->
             <?php $userid = "user_".$curauth->ID; ?>
 
-            <!-- phone -->
+            <!-- Phone -->
             <?php if( get_field('mail', $userid) ) { ?>    
+                    <h2>E-Mail</h2>
                     <a class="button is-style-outline" target="blank"
                     href="mailto:<?php the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
                     rel="nofollow"><?php the_field('mail', $userid);?></a>
             <?php } ?>
 
 
-            <!-- mail -->
+            <!-- Mail -->
             <?php if( get_field('phone', $userid) ) { ?>
+                <h2>Telefon</h2>
                 <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
                     <?php the_field('phone', $userid); ?>
                 </a>
+            <?php } ?>
+            
+            <!-- About -->
+            <?php if( get_field('about', $userid) ) { ?>
+                <br>
+                <br>
+                <h2>Über mich</h2>
+                <div><?php the_field('about', $userid); ?></div>
             <?php } ?>
 
         </div>
