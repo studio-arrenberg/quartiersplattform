@@ -1112,7 +1112,7 @@ button.toggle {
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
     #site-header {
-      background-color: rgba(255, 255, 250, 0.8);
+      background-color: rgba(252, 255, 255, 0.8);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
