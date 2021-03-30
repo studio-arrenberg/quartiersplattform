@@ -25,6 +25,32 @@ get_header();
 		// 'Impressum', home_url( ).'/impressum'
 	?>
 
+	<?php 
+		// echo "sdadsjk saa ads d";
+		$page_slug = get_post_field( 'post_name', $post_id );
+		get_notification($page_slug, 'hi', false);
+
+		$args = array(
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> -1,
+			'orderby' => 'date',
+			'date_query' => array(
+				array(
+					'after'	=> date( 'Y-m-d', 1617127217 ),
+				),
+			),
+		);
+	
+		$thePosts = query_posts($args);
+		global $wp_query; 
+		$num_missed_posts = $wp_query->found_posts;
+	
+		if ( current_user_can('administrator') ) {
+			echo "missed posts: ".$num_missed_posts."<br>";
+			print_r($array);
+		}
+	?>
 
 	<?php 
 		$args4 = array(

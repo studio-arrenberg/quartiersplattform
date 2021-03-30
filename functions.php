@@ -2374,7 +2374,6 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	}
 
 	// check user option
-	
 	if ( is_user_logged_in(  ) ) {
 		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
 		if (in_array($slug, $array, true) ) {
@@ -2439,6 +2438,72 @@ function reset_reminder_cards_callback(){
 add_action( 'wp_ajax_reset_reminder_cards', 'reset_reminder_cards_callback' );
 add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callback' );
 
+/**
+ * Get Notification Count
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $page page/projekt/slug
+ * @param array $cpts array('angebote', ...)
+ * @return int
+ */
+
+function get_notification($slug, $cpts, $update = false) {
+
+	if (empty($slug) || empty($cpts) || !is_user_logged_in( ) ) {
+		return false;
+	}
+
+	// get user option
+	$array = get_user_option( 'qp_page_timestamp', get_current_user_id( ) );
+
+	// create array if not available
+	if (!is_array($array)) {
+		$array = [];
+		return false;
+	} 
+
+	// check for key
+	if ( array_key_exists($slug, $array) ) {
+		$timestamp = $array[$slug];
+		// upddate for this page
+		if ($update) {
+			$array[$slug] = time();
+		} 
+
+	}
+	// create timestamp if not exsistent
+	else {
+		$array[$slug] = time();
+		return false;
+	}
+
+	// get number of missed posts
+	$args = array(
+        'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+        'post_status'=>'publish', 
+        'posts_per_page'=> -1,
+        'orderby' => 'date',
+        'date_query' => array(
+            array(
+                'after'	=> date( 'Y-m-d H:i:s', $timestamp ),
+            ),
+        ),
+    );
+
+	$thePosts = query_posts($args);
+    global $wp_query; 
+    $num_missed_posts = $wp_query->found_posts;
+
+	// debugging
+	echo "missed posts: ".$num_missed_posts."<br>";
+	print_r($array);
+	echo date( 'Y-m-d H:i:s', $timestamp );
+
+	// update user option
+	update_user_option( get_current_user_id( ), 'qp_page_timestamp', $array );
+	
+}
 
 
 /**
