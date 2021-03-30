@@ -1159,6 +1159,32 @@ function replace_core_jquery_version() {
     wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 } add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
 
+/**
+ * Register Scripts & Stylesheets
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
+function register_scripts() {
+
+	// !!! update wp_register_script &  wp_register_style with timestemp
+
+	// create my own version codes
+    // $my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
+    // $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
+     
+    // wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
+    // wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
+    // wp_enqueue_style ( 'my_css' );
+
+	// register bricks.js
+	wp_register_script('bricks', get_template_directory_uri() .'/assets/js/bricks.js',  false, false, false);
+	wp_enqueue_script('bricks');
+
+} add_action('init', 'register_scripts', 9);
+
+
 
 /**
  * Conditinally load jQuery and Emoji files
@@ -1288,7 +1314,7 @@ function wpdev_login_session( $expire ) {
 } add_filter ( 'auth_cookie_expiration', 'wpdev_login_session' );
 
 /**
- * Set guest cookie
+ * Set visitor cookie
  *
  * @since Quartiersplattform 1.0
  *
@@ -1296,20 +1322,20 @@ function wpdev_login_session( $expire ) {
  */
 function set_user_cookie_inc_guest(){
 	# check if cookie not set
-    if (!isset($_COOKIE['guest']) && !is_user_logged_in()) {
+    if (!isset($_COOKIE['visitor']) && !is_user_logged_in()) {
 		# get/increase or set guest counter
-		if (!get_option('guest_counter')) {
-			add_option('guest_counter', 1);
+		if (!get_option('visitor_counter')) {
+			add_option('visitor_counter', 1);
 		}
 		else {
-			$counter = get_option('guest_counter') + 1;
-			update_option('guest_counter', $counter);
+			$counter = get_option('visitor_counter') + 1;
+			update_option('visitor_counter', $counter);
 		}
 		# set guest cookie
 		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
-		setcookie('guest', md5($counter), $expiry, $path, $host);
+		setcookie('visitor', md5($counter), $expiry, $path, $host);
     }  
 } 
 add_action('init', 'set_user_cookie_inc_guest');
@@ -1513,7 +1539,7 @@ function wp_maintenance_mode() {
 function redirect_visitor() {
 
 	// redirect guests as well
-	// if ( empty($_GET['stay']) && ( isset($_COOKIE['guest']) || is_user_logged_in() ) ) {
+	// if ( empty($_GET['stay']) && ( isset($_COOKIE['visitor']) || is_user_logged_in() ) ) {
 
 	if ( empty($_GET['stay']) &&  is_user_logged_in() ) {
 
@@ -2412,7 +2438,6 @@ function reset_reminder_cards_callback(){
 } 
 add_action( 'wp_ajax_reset_reminder_cards', 'reset_reminder_cards_callback' );
 add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callback' );
-
 
 
 

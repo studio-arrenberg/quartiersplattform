@@ -21,13 +21,16 @@ get_header();
 <main class="quartier" role="main" data-track-content>
     <?php
           # map picture variables
+          $location = get_field('map', 'option');
           $latlong = "7.128,51.2485,";
-          $map_zoom = 13.48; 
+          $map_zoom = 16.48; 
+          $bearing = 0;
+          $pitch = 60;
           $width = 1280;
           $height = 900;
     ?>
 
-    <section class="section-full-width" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
+    <section class="section-full-width" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $location['lng'].",".($location['lat'] - 0.008).",".$map_zoom.",".$bearing.",".$pitch."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
         <div class="stage-center">
             <div class="pre-header highlight"><b>Quartiersplattform</b></div>
             <h1 class="stage-title">Willkommen am digitalen Arrenberg</h1>
