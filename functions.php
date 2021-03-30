@@ -2480,10 +2480,10 @@ function get_notification($slug, $cpts, $update = false) {
 
 	// get number of missed posts
 	$args = array(
-        'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen'), 
+        'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
         'post_status'=>'publish', 
         'posts_per_page'=> -1,
-        'orderby' => 'date',
+        'orderby' => 'post_date',
         'date_query' => array(
             array(
                 'after'	=> date( 'Y-m-d H:i:s', $timestamp ),
@@ -2498,7 +2498,7 @@ function get_notification($slug, $cpts, $update = false) {
 	// debugging
 	echo "missed posts: ".$num_missed_posts."<br>";
 	print_r($array);
-	echo date( 'Y-m-d H:i:s', $timestamp );
+	// echo date( 'Y-m-d H:i:s', $timestamp );
 
 	// update user option
 	update_user_option( get_current_user_id( ), 'qp_page_timestamp', $array );
