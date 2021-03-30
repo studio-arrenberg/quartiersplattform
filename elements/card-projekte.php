@@ -24,12 +24,21 @@ if (strlen(get_field('slogan')) > 1 ) {
 
 
 <div class="card-group">
-    <div class="pre-card">
-        <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
-            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); // 32 or 100 = size ?>
-            <span><b>Projekt</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
-        </a>
-    </div>
+
+    <?php if (get_query_var( 'additional_info') && get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) { ?>
+        <div class="pre-card">
+            <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
+                <span>
+                    <b>Projekt</b>
+                    <br>
+                    von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                </span>
+            </a>
+        </div>
+    <?php } ?>
+
     <div class="projekt <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <?php the_post_thumbnail( 'preview_m' ); ?>
@@ -43,4 +52,5 @@ if (strlen(get_field('slogan')) > 1 ) {
             </div>
         </a>
     </div>
+
 </div>

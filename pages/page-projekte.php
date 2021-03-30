@@ -37,20 +37,21 @@ get_header();
 
 	<div class="right-sidebar">
 		<?php 
-			if ( ( is_user_logged_in() ) ) {
-				get_template_part( 'components/call', 'projekt' ); 
-			}
-		?>
-	
-		<?php 
 
-		$text = 'Es gibt eine Sitebar die beliebig erweitert werden kann';
-		reminder_card('css-grid', '🏗  Wir haben jetzt eine Sidebar <span class="highlight">CSS GRID</span>', $text );
+		if ( !is_user_logged_in()  ) {
+			$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
+			reminder_card('register', 'registiere dich', $text, 'Registieren', home_url( ).'/register' );
+		}
+		else {
+			get_template_part( 'components/call', 'projekt' ); 
 
-		$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum.';
-		reminder_card('huhu', '🐝 Huhu', $text );
+			get_template_part('components/smart-card/projekte');
+		}
+
 		?>
 	</div>
+
+
 <!-- </div> -->
 
 <?php get_footer(); ?>

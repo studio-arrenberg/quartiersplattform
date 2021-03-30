@@ -17,15 +17,18 @@ else {
 
 ?>
 
-
-
 <div class="card-group">
 
-    <?php if (get_query_var( 'additional_info')) { ?>
+    <?php if (get_query_var( 'additional_info') && get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) { ?>
         <div class="pre-card">
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
-                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); // 32 or 100 = size ?>
-                <span><b>Veranstaltung</b><?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "<br> von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?></span>
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
+                <span>
+                    <b>Veranstaltung</b>
+                    <br>
+                    von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                </span>
             </a>
         </div>
     <?php } ?>
@@ -54,11 +57,11 @@ else {
         </a>
     </div>
 
-    <?php if (get_query_var( 'additional_info')) { ?>
+    <?php if (get_query_var( 'additional_info') ) { ?>
         <div class="after-card">
-            <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
-                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
-                <span style="margin:-1px 0px 0px 5px"><?php  shorten(get_field('emoji'), '200'); ?>🎯</span>
+            <a href="<?php echo get_permalink( get_term_id($post->ID, 'projekt') ); ?>">
+                <?php echo get_the_title( get_term_id($post->ID, 'projekt') ); ?>
+                <span style="margin:-1px 0px 0px 5px"><?php the_field('emoji', get_term_id($post->ID, 'projekt')); ?></span>
             </a>
         </div>
     <?php } ?>

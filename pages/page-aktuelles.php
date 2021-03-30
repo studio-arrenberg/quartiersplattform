@@ -36,6 +36,7 @@ get_header();
 		}
 		?>
 
+	
 	<br>
 	<br>
 	<br>
@@ -165,7 +166,6 @@ get_header();
 		else {
 			$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
 			reminder_card('register', 'registiere dich', $text, 'Registieren', home_url( ).'/register' );
-		// 'Impressum', home_url( ).'/impressum'
 		}
 	?>	
 </div>

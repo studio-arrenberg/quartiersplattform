@@ -1173,7 +1173,7 @@ function load_scripts() {
 
     if (
 		!is_admin() 
-		&& is_front_page()
+		// && is_front_page()
 		&& strpos($REQUEST_URI,'/profil/') === false
 		&& strpos($REQUEST_URI,'/frage-erstellen/') === false
 		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
@@ -1230,7 +1230,7 @@ add_action('init', 'load_scripts', 11);
 function emoji_picker() { 
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
-	
+
     if (
 		strpos($REQUEST_URI,'/frage-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
@@ -1808,6 +1808,24 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 }
 
 /**
+ * Get Projekt ID
+ *
+ * @since Quartiersplattform 1.2
+ *
+ * @return string
+ */
+function get_term_id($post_ID, $term = 'projekt') {
+
+	if (wp_get_post_terms( $post_ID, $term, array( 'fields' => 'all' ) )) {
+		return wp_get_post_terms( $post_ID, $term, array( 'fields' => 'all' ) )[0]->description;
+	}
+	else {
+		return false;
+	}
+	                     
+}
+
+/**
  * Get Author Card
  *
  * @since Quartiersplattform 1.6
@@ -2308,7 +2326,7 @@ function qp_remaining( $date ) {
 		$time = "bis zum ".wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
 	}
 
-	return $time;
+	return " ".$time;
 
 }
 

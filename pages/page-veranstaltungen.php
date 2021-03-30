@@ -19,17 +19,28 @@ get_header();
 	?>
 
 	
-	<?php 
-			$args4 = array(
-			'post_type'=> array('veranstaltungen'), 
+		<?php 
+		$args = array(
+			'post_type'=>'veranstaltungen', 
 			'post_status'=>'publish', 
-			'posts_per_page'=> 50,
-			'orderby' => 'modified'
+			'posts_per_page'=> 4,
+			'meta_key' => 'event_date',
+			'orderby' => 'rand',
+			'order' => 'ASC',
+			'offset' => '0', 
+			'meta_query' => array(
+				array(
+					'key' => 'event_date', 
+					'value' => date("Y-m-d"),
+					'compare' => '>=', 
+					'type' => 'DATE'
+				)
+			)
 		);
 		?>  
 		
 		<div class="grid-2col" data-grid>
-			<?php card_list($args4);?>
+			<?php card_list($args);?>
 		</div>
 
 
