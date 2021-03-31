@@ -122,10 +122,10 @@
                 ?>
                 <div class="login-wall">
                     <p>Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen.</p>
-                    <a class="button card-button" href="<?php echo get_site_url(); ?>/anmelden">
+                    <a class="button card-button" href="<?php echo get_site_url(); ?>/login">
                         Anmelden
                     </a>
-                    <a class="button card-button" href="<?php echo get_site_url(); ?>/anmelden">
+                    <a class="button card-button" href="<?php echo get_site_url(); ?>/register">
                         Registrieren
                     </a>
                 </div>
