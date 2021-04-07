@@ -72,10 +72,10 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_5fcf55f35b575',
-                'label' => 'Dein Angebot',
+                'label' => __( 'Dein Angebot', "quartiersplattform"),
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => 'Beschreibe dein Angebot für das Quartier.',
+                'instructions' => __( "Beschreibe dein Angebot für das Quartier.", "quartiersplattform" ),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -91,10 +91,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fcf563d5b576',
-                'label' => 'Emoji',
+                'label' => __('Emoji', "quartiersplattform"),
                 'name' => 'emoji',
                 'type' => 'text',
-                'instructions' => 'Erkläre dein Projekt mit einem Emoji.',
+                'instructions' => __( 'Erkläre dein Projekt mit einem Emoji.', "quartiersplattform"),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -110,10 +110,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fcf56935b578',
-                'label' => 'Zeitraum',
+                'label' => __('Zeitraum', "quartiersplattform"),
                 'name' => 'duration',
                 'type' => 'button_group',
-                'instructions' => 'Lege fest, wie lange dein Angebot gültig sein wird.',
+                'instructions' => __('Lege fest, wie lange dein Angebot gültig sein wird.', "quartiersplattform"),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -122,9 +122,9 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'choices' => array(
-                    3600 => '<span>Stunde</span>',
-                    86400 => '<span>Tag</span>',
-                    604800 => '<span>Woche</span>',
+                    3600 => '<span>'.__("Stunde", "quartiersplattform").'</span>',
+                    86400 => '<span>'.__("Tag", "quartiersplattform").'</span>',
+                    604800 => '<span>'.__("Woche", "quartiersplattform").'</span>',
                 ),
                 'allow_null' => 0,
                 'default_value' => '',
@@ -133,10 +133,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             // array(
             //     'key' => 'field_60088e9aaec9f',
-            //     'label' => 'Telefonnummer',
+            //     'label' => __('Telefonnummer', "quartiersplattform"),
             //     'name' => 'phone',
             //     'type' => 'text',
-            //     'instructions' => 'Gib deine Telefonnummer, damit du kontaktiert werden kannst. Wenn du nicht Angemeldet bist wäre dein Name auch wichtig.',
+            //     'instructions' => __('Gib deine Telefonnummer an, damit du kontaktiert werden kannst. Wenn du nicht Angemeldet bist wäre dein Name auch wichtig.', "quartiersplattform"),
             //     'required' => 0,
             //     'conditional_logic' => 0,
             //     'wrapper' => array(
