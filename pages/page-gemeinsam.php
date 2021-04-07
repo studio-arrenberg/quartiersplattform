@@ -82,18 +82,28 @@ get_header();
 
 	<div class="right-sidebar">
 
-		<div class="card-container card-container__small">
-			<?php get_template_part( 'components/call', 'frage' ); ?>
-			<?php get_template_part( 'components/call', 'angebot' ); ?>
-		</div>
+	<?php 
+
+		// Call to Action Card 
+		call_to_action_card('bg_red-light', 'angebot-erstellen', 'Teile ein Angebot', 'Biete deine Hilfe an und unterstütze dein Viertel.' );
+		call_to_action_card('bg_blue-light', 'frage-erstellen', 'Frage dein Quartier', 'Was wünscht du dir in deinem Viertel? Wie können dich deine Nachbarn unterstützen?' );
+		//call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
 	
-		<?php 
+	
+		if (is_user_logged_in(  )) {
+			// Hier vielleicht die eigenen Angebote einblenden
+			
+		}
+			else {
+			$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
+			// Als angemeldeter Benutzer kannst du: <br>
+			// + Projekte erstellen <br>
+			// + Nachrichten veröffentlichen <br>
+			// + Veranstaltungen teilen <br>
+			// + Quartiersumfragen erstellen<br>';
+			reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
+		}
 
-		$text = 'Es gibt eine Sitebar die beliebig erweitert werden kann';
-		reminder_card('css-grid', '🏗  Wir haben jetzt eine Sidebar <span class="highlight">CSS GRID</span>', $text );
-
-		$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum.';
-		reminder_card('huhu', '🐝 Huhu', $text );
 		?>
 
 	

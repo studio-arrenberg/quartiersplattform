@@ -14,7 +14,6 @@
         <div class="pre-card">
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
-                <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
                 <span>
                     <b>Frage</b>
                     <br>
@@ -34,7 +33,7 @@
                     <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                     <span class=" green-text"><?php echo " ".qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
                 </div>
-                <h3 class="card-title-large">
+                <h3 class="card-preview-text-large">
                 <?php  
                     if (!is_single( )) shorten(get_field('text'), '50'); 
                     else the_field('text'); 

@@ -11,19 +11,19 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-<div class="card-container">
+	<div class="card-container">
 
-	<?php 
-	// veranstaltung list
-	$args4 = array(
-		'post_type'=>'anmerkungen', 
-		'post_status'=>'publish', 
-        'posts_per_page'=> -1
-	);
-	card_list($args4);
-	?>
+		<?php 
+		// veranstaltung list
+		$args4 = array(
+			'post_type'=>'anmerkungen', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> -1
+		);
+		card_list($args4);
+		?>
 
-</div>
+	</div>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

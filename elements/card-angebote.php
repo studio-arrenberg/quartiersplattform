@@ -36,7 +36,7 @@
 
                     <span class="pre-title red-text "><?php echo qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
                 </div>
-                <h3 class="card-title-large">
+                <h3 class="card-preview-text-large">
                     <?php  
                         if (!is_single( )) shorten(get_field('text'), '50'); 
                         else the_field('text'); 

@@ -20,8 +20,20 @@
             <?php if( have_rows('sponsors', 'option') ): ?>    
                 <?php while( have_rows('sponsors', 'option') ): the_row();  
                     $image = get_sub_field('field_6024f5b43157e');
-                ?>
-                    <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+                    $link = get_sub_field('field_6036469e6db06');
+                
+                    if( !empty( $link ) ){
+                    ?> 
+                        <a href="<?php echo $link; ?>">
+                    <?php } ?>
+
+                        <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+                    
+
+                       <?php if( !empty( $link ) ){ ?> 
+                        </a>
+                    <?php } ?>
+                 
                 <?php endwhile; ?>
             <?php endif; ?>
         </div>

@@ -3052,6 +3052,7 @@ figure.wp-block-table.is-style-stripes {
   margin-right: 10px;
   border-radius: 15px;
   width: 55px;
+  height: 55px;
   align-self: flex-start;
 }
 
@@ -3103,6 +3104,7 @@ figure.wp-block-table.is-style-stripes {
 @media (min-width: 782px) {
   .comment-body img {
     width: 70px;
+    height: 70px;
   }
   .comment-author {
     font-size: 2rem;
@@ -3480,7 +3482,7 @@ figure.wp-block-table.is-style-stripes {
 
 @media (min-width: 782px) {
   .sponsoren-logo {
-    height: 35px;
+    height: 45px;
     margin-top: 5px;
   }
 }
@@ -4816,6 +4818,13 @@ a.card-link{
   min-height: 100px;
 }
 
+.call_to_action a.card-link{
+  min-height: 0px !important;
+}
+
+.card.call_to_action .content{
+  padding: 12px 10px 10px 10px;
+}
 
 .align-center  {
   align-items: center !important;

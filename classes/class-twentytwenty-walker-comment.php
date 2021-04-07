@@ -50,7 +50,6 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 								}
 							}
 
-
 	?>
 
         <div class="comment-content">
