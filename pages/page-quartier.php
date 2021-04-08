@@ -32,19 +32,18 @@ get_header();
 
     <section class="section-full-width" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $location['lng'].",".($location['lat'] - 0.008).",".$map_zoom.",".$bearing.",".$pitch."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
         <div class="stage-center">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Willkommen am digitalen Arrenberg</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+            <div class="pre-header highlight"><b><?php _e("Quartiersplattform", "quartiersplattform"); ?></b></div>
+            <h1 class="stage-title"><?php _e("Willkommen in deinem digitalen Quartier", "quartiersplattform"); ?></h1>
+            <p><?php _e("Hier findest du alle Aktionen und Aktivitäten in deinem Quartier. Sieh dir alle Neuigkeiten, Veranstaltungen und Umfragen aus deiner Nachbarschaft an und beteilige dich an der Entwicklung von deinem Viertel!","quartiersplattform"); ?></p>
         </div>
     </section>
 
     <section>
         <div class="stage-left">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Lerne dein Quartier kennen</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+            <div class="pre-header highlight"><b><?php _e("Dein Quartier", "quartiersplattform"); ?></b></div>
+            <h1 class="stage-title"><?php _e("Lerne deine Nachbarschaft kennen", "quartiersplattform"); ?></h1>
+            <p><?php _e("Entdecke dein Quartier sowie die Organisationen und Menschen vor Ort. Hier kannst du dich informieren und so an einer demokratischen Stadtentwicklung in deinem Quartier beteiligen.", "quartiersplattform"); ?></p>
+            <a class="button" href="<?php echo get_site_url()."/aktuelles"; ?>"><?php _e("Zum Dashboard", "quartiersplattform"); ?></a>
         </div>
         <div class="link-card-container">
             <?php
@@ -60,10 +59,10 @@ get_header();
 
     <section class="section-full-width">
         <div class="stage-center">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Entdecke spannende Projekte aus deinem Quartier</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+            <div class="pre-header highlight"><b><?php _e("Lokale Projekte", "quartiersplattform"); ?></b></div>
+            <h1 class="stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h1>
+            <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben! Veröffentliche eigene Projekte und finde Untersützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
+            <a class="button" href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Zu den Projekten", "quartiersplattform"); ?></a>
            
         </div>
         <div class="grid projekt-card-container">
@@ -83,10 +82,10 @@ get_header();
 
     <section>
         <div class="stage-left">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Save the dates</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+            <div class="pre-header highlight"><b><?php _e("Lokale Veranstaltungen", "quartiersplattform"); ?></b></div>
+            <h1 class="stage-title"><?php _e("Save the date!", "quartiersplattform"); ?></h1>
+            <p><?php _e("Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!", "quartiersplattform"); ?></p>
+            <a class="button" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
         </div>
         <div class="link-card-container">
             <?php 
