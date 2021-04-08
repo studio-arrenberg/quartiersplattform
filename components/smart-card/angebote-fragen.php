@@ -26,7 +26,7 @@
             <div class="card smart-card shadow">
                 <div class="card-header">
                     <h2>Hallo <?php echo get_user_meta( get_current_user_id(), 'first_name', true ); ?>, </h2>
-                    <h3>Du hast folgene <span class="highlight">Sharingangebote </span> und <span class="highlight">
+                    <h3>Du hast folgende <span class="highlight">Sharingangebote </span> und <span class="highlight">
                             Fragen</span> gepostet.</h3>
                 </div>
 

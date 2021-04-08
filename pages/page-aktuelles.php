@@ -20,7 +20,7 @@ get_header();
 <main id="site-content" role="main" data-track-content>
 
 	<?php
-		$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
+		$text = __('Hier findest du alle Nachrichten und Neuigkeiten von deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");
 		reminder_card('helloss', 'Neuigkeiten und Projektupdates', $text );
 		// 'Impressum', home_url( ).'/impressum'
 	?>

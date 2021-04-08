@@ -14,7 +14,7 @@ get_header();
 <main id="site-content" role="main">
 		
 	<?php 
-		$text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
+		$text = __('Entecke lokale Veranstaltungen in deinem Quartier. Hier findest du Kulturveranstaltungen und Aktionen von Projekten in deiner Nachbarschaft.', "quartiersplattform");
 		reminder_card('veranstaltungen-intro', 'Veranstaltungen in deinem Viertel', $text );
 	?>
 
