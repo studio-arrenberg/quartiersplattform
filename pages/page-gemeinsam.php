@@ -42,6 +42,15 @@ get_header();
 		?>
 	</div>
 
+
+
+	<div class="grid-1col" style="margin-top:200px">
+	<?php
+		set_query_var( 'additional_info', true );
+		card_list($args4);
+		?>
+	</div>
+
 </div>
 
 	<script src="<?php echo get_template_directory_uri()?>/assets/js/bricks.js"></script>
@@ -96,11 +105,6 @@ get_header();
 		}
 			else {
 			$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
-			// Als angemeldeter Benutzer kannst du: <br>
-			// + Projekte erstellen <br>
-			// + Nachrichten veröffentlichen <br>
-			// + Veranstaltungen teilen <br>
-			// + Quartiersumfragen erstellen<br>';
 			reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
 		}
 
