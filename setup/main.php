@@ -35,10 +35,10 @@ for ($i=0; $i < count($menu_array) ; $i++) {
 }
 // defined menus
 $defined_menu_item = array(
-    0 => array ('title' => 'Aktuelles', 'page_name' => 'Aktuelles', 'ID' => '100100', 'attr' => 'first'),
-    1 => array ('title' => 'Veranstaltungen', 'page_name' => 'Veranstaltungen', 'ID' => '100200', 'attr' => 'second'),
-    2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'third'),
-    3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'fourth'),
+    0 => array ('title' => 'Aktuelles', 'page_name' => 'Aktuelles', 'ID' => '100100', 'attr' => 'Aktuelles'),
+    1 => array ('title' => 'Veranstaltungen', 'page_name' => 'Veranstaltungen', 'ID' => '100200', 'attr' => 'Veranstaltungen'),
+    2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
+    3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'Gemeinsam'),
     // 4 => array ('title' => 'Impressum', 'page_name' => 'Impressum', 'ID' => '100700', 'attr' => 'fifth'),
 );
 // create menu if not exists 
