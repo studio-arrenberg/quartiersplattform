@@ -2441,6 +2441,31 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
 
 
 
+
+/**
+ * Call To Action Card function
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $slug date
+ * @param string $title title
+ * @param string $body body
+ * @return string html
+ */
+
+function call_to_action_card( $bg_color, $link, $title, $text) {
+
+
+	// define query vars 
+	set_query_var('call_to_action_bg_color', $bg_color);
+	set_query_var('call_to_action_link', $link);
+	set_query_var('call_to_action_title', $title);
+	set_query_var('call_to_action_text', $text);
+	// template part
+	get_template_part( 'components/call-to-action-card' );
+
+}
+
 /**
  * 
  * End of File

@@ -20,7 +20,7 @@ get_header();
 <main id="site-content" role="main" data-track-content>
 
 	<?php
-		$text = __('Hier findest du alle Nachrichten und Neuigkeiten von deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");
+		$text = __('Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");
 		reminder_card('helloss', 'Neuigkeiten und Projektupdates', $text );
 		// 'Impressum', home_url( ).'/impressum'
 	?>
@@ -71,8 +71,7 @@ get_header();
 			.pack()           // pack initial items
 		})
     </script>
-
-
+	
 </main><!-- #site-content -->
 
 <div class="right-sidebar">
@@ -80,10 +79,17 @@ get_header();
 		// Projekte
 		if (is_user_logged_in(  )) {
 			get_template_part('components/smart-card/projekte');
+			
+			// Call to Action Card 
+			//call_to_action_card('bg_red-light', 'angebot-erstellen', 'Teile ein Angebot', 'Biete deine Hilfe an und unterstütze dein Viertel.' );
+			//call_to_action_card('bg_blue-light', 'frage-erstellen', 'Frage dein Quartier', 'Was wünscht du dir in deinem Viertel? Wie können dich deine Nachbarn unterstützen?' );
+			call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
+	
 		}
 		else {
-			$text = 'Lorem <strong>ipsum</strong> dolor sit amet consectetur adipisicing elit. Sunt sed veritatis et quibusdam molestiae repellendus fugiat in dolorum. Tempore illo eum itaque voluptate, nulla exercitationem laborum placeat eius odio possimus?';
-			reminder_card('register', 'registiere dich', $text, 'Registieren', home_url( ).'/register' );
+			$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
+		
+			reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
 		}
 	?>	
 </div>
