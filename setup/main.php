@@ -33,12 +33,21 @@ for ($i=0; $i < count($menu_array) ; $i++) {
         $menu_id = false;
     }
 }
+
+// get Quartier Name
+if (class_exists('acf_pro')) {
+    $qp_name = get_field('quartiersplattform-name','option');
+}
+else {
+    $qp_name = "Quartier";
+}
+
 // defined menus
 $defined_menu_item = array(
-    0 => array ('title' => 'Aktuelles', 'page_name' => 'Aktuelles', 'ID' => '100100', 'attr' => 'Aktuelles'),
-    1 => array ('title' => 'Veranstaltungen', 'page_name' => 'Veranstaltungen', 'ID' => '100200', 'attr' => 'Veranstaltungen'),
-    2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
-    3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'Gemeinsam'),
+    0 => array ('title' => $qp_name, 'page_name' => 'Startseite', 'ID' => '100100', 'attr' => $qp_name),
+    1 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
+    // 2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
+    // 3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'Gemeinsam'),
     // 4 => array ('title' => 'Impressum', 'page_name' => 'Impressum', 'ID' => '100700', 'attr' => 'fifth'),
 );
 // create menu if not exists 
@@ -146,7 +155,7 @@ add_action( 'after_setup_theme', 'create_pages' );
 function create_pages() {
 
     $pages = array(
-        0 => array('title' => 'Überblick', 'slug' => 'ueberblick'),
+        0 => array('title' => 'Startseite', 'slug' => 'startseite'),
         1 => array('title' => 'Veranstaltungen', 'slug' => 'veranstaltungen'),
         2 => array('title' => 'Projekte', 'slug' => 'projekte'),
         3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
