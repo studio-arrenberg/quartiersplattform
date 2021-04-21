@@ -62,7 +62,7 @@ get_header();
 				//call_to_action_card('bg_red-light', 'angebot-erstellen', 'Teile ein Angebot', 'Biete deine Hilfe an und unterstütze dein Viertel.' );
 				//call_to_action_card('bg_blue-light', 'frage-erstellen', 'Frage dein Quartier', 'Was wünscht du dir in deinem Viertel? Wie können dich deine Nachbarn unterstützen?' );
 					
-				$text = 'Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und poste den Termin zu deinem Projekt. ';
+				$text = 'Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und poste den Termin zu deiner Veranstaltung. ';
 				reminder_card('ErstelleEineVeranstaltung', 'Veröffentliche deine Veranstaltung', $text, '', '' );
 				
 				call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
@@ -75,6 +75,4 @@ get_header();
 			}
 		?>	
 	</div>
-
-
 <?php get_footer(); ?>

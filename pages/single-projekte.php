@@ -221,12 +221,12 @@ get_header();
             </div>
 
 
-            <!-- Ziele für nachhaltige Etwicklung -->
+            <!-- Ziele für nachhaltige Entwicklung -->
             <!-- not ready yet -->
             <?php if ( current_user_can('administrator') ) { 
 
                 ?>
-                    <h2>Ziele für nachhaltige Etwicklung</h2>
+                    <h2>Ziele für nachhaltige Entwicklung</h2>
                 <?php
 
                 $terms = get_field('sdg');
