@@ -887,6 +887,7 @@ add_action('admin_init', function() {
 	}
 	# Ultimate Memmber
 	if (!class_exists('UM')) {
+
 		add_action('admin_notices', function() {
 			$notice = __('Deine Quartiersplattform benötigt das Plugin <strong>Ultimate Member,</strong> um vollständig funktionieren zu können.', 'quartiersplattform');
 			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Installiere Ultimate Member</a>';
@@ -895,84 +896,62 @@ add_action('admin_init', function() {
 	}
 	# Quartiersplattform is running
 	if (class_exists('acf_pro') && class_exists('UM')) {
+
 		add_action('admin_notices', function() {
 			$notice = "Gratulation, deine Quartiersplattform wurde erfolgreich aufgesetzt.";
-			echo '<div id="message" class="updated notice is-dismissible">
-			<p>'.$notice.'</p>
-			<button type="button" class="notice-dismiss">
-			  <span class="screen-reader-text">Diese Meldung ausblenden.</span>
-			</button>
-		  	</div>';
+			reminder_backend('setup-finished', $notice, 'updated notice');
 		});
+
 	}
 	# Install Ultimate Member
 	if (class_exists('UM')) {
+
 		add_action('admin_notices', function() {
 			$notice = "Richte das Ultimate Member Plugin vollständig ein.";
-			echo '<div
-			class="updated um-admin-notice notice is-dismissible"
-			data-key="wrong_pages">
-			<p>
-			  '.$notice.'
-			</p>
-		  
-			<p>
-			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" class="button button-primary">Anleitung öffnen</a>
-			</p>
-		  
-			<button type="button" class="notice-dismiss">
-			  <span class="screen-reader-text">Diese Meldung ausblenden.</span>
-			</button>
-		  </div>';
+			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" class="button button-primary">Anleitung öffnen</a>';
+			reminder_backend('install-UM', $notice.'<br>'.$link, 'updated notice');
 		});
+
 	}
 	# WP Mail SMTP suggestion
 	if (class_exists('wp_mail_smtp')) {
+
 		add_action('admin_notices', function() {
 			$notice = "Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten.";
-			echo '<div
-			class="updated um-admin-notice notice is-dismissible"
-			data-key="wrong_pages">
-			<p>
-			  '.$notice.'
-			</p>
-		  
-			<p>
-			  <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/WP_Mail_SMTP.md" class="button button-primary" target="_blank">Anleitung öffnen</a>
-			</p>
-		  
-			<button type="button" class="notice-dismiss">
-			  <span class="screen-reader-text">Diese Meldung ausblenden.</span>
-			</button>
-		  </div>';
+			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/WP_Mail_SMTP.md" class="button button-primary" target="_blank">Anleitung öffnen</a>';
+			reminder_backend('wp_mail_smtp-setup', $notice.'<br>'.$link, 'updated notice');
 		});
 	}
 	# Datenschutz reminder
 	if (!get_privacy_policy_url() && class_exists('acf_pro') && class_exists('UM')) {
+
 		add_action('admin_notices', function() {
 			$notice = __('Deine Quartiersplattform hat noch <strong>keine Datenschutzerklärung.</strong>', 'quartiersplattform');
 			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">Datenschutzerklärung erstellen</a>';
-			echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
+			reminder_backend('datenschutz-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
+
 	}
 	# reminder for settings
 	if (class_exists('acf_pro') && class_exists('UM')) {
-		if (!get_field('quartiersplattform-name', 'option')) {
-			add_action('admin_notices', function() {
-				$notice = __('Richte das Logo sowie den Namen deiner Quartiersplattform ein ', 'quartiersplattform');
-				$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">Zu den Einstellungen</a>';
-				echo "<div class='updated um-admin-notice notice'><p>$notice<br><br>$link<br></p></div>";
-			});
-		}
+
+
+		add_action('admin_notices', function() {
+			$notice = __('Richte das Logo sowie den Namen deiner Quartiersplattform ein ', 'quartiersplattform');
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">Zu den Einstellungen</a>';
+			reminder_backend('qp-settings-reminder-setup', $notice.'<br>'.$link, 'updated notice');
+		});
+
 	}
 	# WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
+
 		add_action('admin_notices', function() {
 			$notice = __('Wir empfehlen das Plugin <strong>WP Mail SMTP</strong> zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten.', 'quartiersplattform');
 			$link = '<strong>WP Mail SMTP</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">installieren</a>';
-			// $notice = __('We recommend to install and activate <strong><a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail SMTP</a></strong> to use Quartiersplattform.', 'quartiersplattform');
-			echo "<div class='notice'><p>$notice</p></div>";
+			reminder_backend('qp-mail-smtp-suggestion', $notice.'<br>'.$link, 'updated notice');
 		});
+
 	}
 });
 
@@ -991,8 +970,8 @@ function custom_page_template( $page_template, $post_states ) {
 	$post_states = [];
 	$prefix = "QP ";
 
-	if ($post->post_title == "Überblick") {
-		$post_states[] = $prefix.'Über das Quartier';
+	if ($post->post_title == "Startseite") {
+		$post_states[] = $prefix.'Startseite';
 		$page_template= get_stylesheet_directory() . '/pages/page-quartier.php';
 	}
 	else if ($post->post_title == "Aktuelles") {
@@ -1285,7 +1264,7 @@ function load_scripts() {
 	 }
 
 }
-add_action('init', 'load_scripts', 11);
+// add_action('init', 'load_scripts', 11);
 
 /**
  * Register emoji picker script
@@ -2415,7 +2394,6 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	}
 
 	// check user option
-	
 	if ( is_user_logged_in(  ) ) {
 		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
 		if (in_array($slug, $array, true) ) {
@@ -2433,6 +2411,40 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	}
 	// template part
 	get_template_part( 'components/reminder-card/reminder-card' );
+
+}
+
+/**
+ * Reminder Backend function
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $slug date
+ * @param string $body body
+ * @param string $state state (error, notice, updated)
+ * @return string html
+ */
+function reminder_backend( $slug, $html, $state = 'notice' ) {
+
+	if (empty($slug) || empty($html) ) {
+		return false;
+	}
+
+	// check user option
+	if ( is_user_logged_in(  ) ) {
+		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
+		if (in_array($slug, $array, true) ) {
+			return false;
+		}
+	}
+	
+	// define query vars 
+	set_query_var('reminder_card_slug', $slug);
+	set_query_var('reminder_card_html', $html);
+	set_query_var('reminder_card_state', $state);
+
+	// template part
+	get_template_part( 'components/reminder-card/reminder-backend' );
 
 }
 
