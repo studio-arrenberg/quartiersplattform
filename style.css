@@ -1485,10 +1485,22 @@ button.toggle {
   margin-bottom: 50px;
 }
 
+
+.grid-1col {
+  max-width: 600px ;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+
+.grid-1col > div{
+  margin-bottom: 75px;
+}
+
 .grid{
   margin-left: auto;
   margin-right: auto;
-
 }
 
 .grid > div, .grid-2col > div, .grid-4col > div{
@@ -4836,6 +4848,18 @@ a.card-link{
   width: 100%;
 }
 
+.card .content-flex{
+  padding: 12px 10px 7px 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.card .content-flex p{
+ flex: 1 1 260px; /* Flex x basis is 260px */
+}
+
 .card .wp-post-image {
   border-radius: 15px;
   background: #e7e7e7;
@@ -4863,10 +4887,9 @@ a.card-link{
 }
 
 .card .emoji {
-  position: absolute;
-  bottom: -10px;
-  right: 55px;
   font-size: 50px;
+  margin-top: 10px;
+
 }
 
 .card img.emoji {
@@ -4918,6 +4941,7 @@ a.card-link{
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  width: 100%;
 }
 
 .card .pre-title span:first-of-type{

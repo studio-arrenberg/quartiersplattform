@@ -14,7 +14,7 @@ get_header();
 <main id="site-content" role="main">
 		
 	<?php 
-		$text = 'Projekte sind der Dreh- und Angelpunkt von deiner Quartiersplattform. Erkunde das Quartiersgeschehen, finde spannende Projekte und beteilige dich. 
+		$text = 'Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
 	 	Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ';
 		reminder_card('projekte-intro', 'Entdecke alle Projekte aus deinem Quartier', $text );
 	?>

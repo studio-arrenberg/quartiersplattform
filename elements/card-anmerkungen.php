@@ -23,7 +23,7 @@ $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
             <h3 class="card-preview-text-large">
                 <?php  
                     if (!is_single( )) {
-                        shorten(get_field('text'), '85'); 
+                        shorten(get_field('text'), '2222'); 
                     } 
                     else {
                         shorten(get_field('text'), '22285'); 
