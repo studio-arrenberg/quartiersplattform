@@ -180,8 +180,6 @@ get_header();
 
                         function projekt_toggle_status(id) {
 
-                            // alert($('label.projekt_toggle_status input').is(":checked"));
-
                             var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
                         
                             var data = {
