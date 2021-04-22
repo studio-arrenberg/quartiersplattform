@@ -3,7 +3,7 @@
 
     $args4 = array(
         'post_type'=> array('projekte'), 
-        'post_status'=>'publish', 
+        'post_status' => array('publish', 'pending', 'draft', 'auto-draft'),
         'author' =>  get_current_user_id(),
         'posts_per_page'=> -1, 
         'order' => 'DESC',
