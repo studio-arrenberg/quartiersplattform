@@ -153,12 +153,65 @@ get_header();
             <div>
                 <div id="summary" class="bar bar-active">
                     <h4>Übersicht</h4>
+
+                    <?php 
+                    // project is not public
+                    if (get_post_status() == 'draft') {
+                        reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                    }
+                    ?>
+
                 </div>
                 <div id="posts" class="bar bar-hidden">
                     <h4>Chronik</h4>
                 </div>
                 <div id="settings" class="bar bar-hidden">
                     <h4>Einstellungen</h4>
+
+                    <h4>Status</h4>
+
+                    <label class="projekt_toggle_status">
+                        <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="projekt_toggle_status('<?php echo get_the_ID(  ); ?>')" >
+                        <span class="slider active">Deine Projekt ist Öffentlich</span>
+                        <span class="slider hidden">Deine Projekt ist Privat</span>
+                    </label> 
+
+                    <?php echo get_the_ID(  ); ?>
+
+                    <script>
+
+                        function projekt_toggle_status(id) {
+
+                            alert($('label.projekt_toggle_status input').is(":checked"));
+
+                            var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
+                        
+                            var data = {
+                                'action': 'projekt_toggle_status',
+                                'post_id': id,
+                                'status': $('label.projekt_toggle_status input').is(":checked"),
+                                'request': 1
+                            };
+
+                            $.ajax({
+                                url: ajax_url,
+                                type: 'post',
+                                data: data,
+                                dataType: 'json',
+                                success: function(response){
+                                    console.log(response);
+                                    $('label.projekt_toggle_status. span.slider').toggleClass('active');
+                                    $('label.projekt_toggle_status. span.slider').toggleClass('hidden');
+                                }
+                            });
+                        }
+
+                    </script>
+                    
+
+                    <?php 
+                        
+                    ?>
                 </div>
             </div>
 

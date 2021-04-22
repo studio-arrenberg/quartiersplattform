@@ -2497,6 +2497,41 @@ function call_to_action_card( $bg_color, $link, $title, $text) {
 
 }
 
+
+/**
+ * Projekt Toggle Status (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $post_id id
+ * @param string $status status
+ * @return void
+ */
+function projekt_toggle_status_callback() {
+
+	$post_id = $_POST['post_id'];
+	$status = $_POST['status'];
+
+	if ($status == 'true') {
+		$status = 'publish';
+	}
+	else {
+		$status = 'draft';
+	}
+
+	$my_post = array();
+	$my_post['ID'] = $post_id;
+	$my_post['post_status'] = $status;
+	wp_update_post( $my_post ); // Update the post into the database
+
+	// return;
+	echo $status." - ".$post_id;
+
+} 
+add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
+add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callback' );
+
+
 /**
  * 
  * End of File
