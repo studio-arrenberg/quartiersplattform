@@ -2373,7 +2373,8 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	// check user option
 	if ( is_user_logged_in(  ) ) {
 		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
-		if (in_array($slug, $array, true) ) {
+		
+		if ($array && in_array($slug, $array, true) ) {
 			return false;
 		}
 	}
