@@ -23,6 +23,7 @@ get_header();
 		
 		$array = [];
 
+		
 		// get published posts
 		$args_public = array(
 			'post_type' => 'projekte',
@@ -34,20 +35,21 @@ get_header();
 			array_push($array, get_the_ID(  ) );
 		}
 		wp_reset_postdata();
-
-		// get drafts by user
-		$args_private = array(
-			'post_type' => 'projekte',
-			'author__in' => $current_user->ID,
-			'post_status' => array('pending', 'draft', 'auto-draft')    
-		);
-		$args_private = new WP_Query($args_private);
-		while ( $args_private->have_posts() ) {
-			$args_private->the_post();
-			array_push($array, get_the_ID(  ) );
+		
+		if (is_user_logged_in(  )) {
+			// get drafts by user
+			$args_private = array(
+				'post_type' => 'projekte',
+				'author__in' => $current_user->ID,
+				'post_status' => array('pending', 'draft', 'auto-draft')    
+			);
+			$args_private = new WP_Query($args_private);
+			while ( $args_private->have_posts() ) {
+				$args_private->the_post();
+				array_push($array, get_the_ID(  ) );
+			}
+			wp_reset_postdata();
 		}
-		wp_reset_postdata();
-
 
 		$args4 = array(
 			'post_type'=> array('projekte'), 
