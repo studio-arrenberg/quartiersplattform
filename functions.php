@@ -1156,10 +1156,6 @@ function register_scripts() {
     // wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
     // wp_enqueue_style ( 'my_css' );
 
-	// register bricks.js
-	wp_register_script('bricks', get_template_directory_uri() .'/assets/js/bricks.js',  false, false, false);
-	wp_enqueue_script('bricks');
-
 } add_action('init', 'register_scripts', 9);
 
 /**
@@ -1264,7 +1260,7 @@ function load_scripts() {
 	 }
 
 }
-// add_action('init', 'load_scripts', 11);
+add_action('init', 'load_scripts', 11);
 
 /**
  * Register emoji picker script
@@ -1549,26 +1545,7 @@ function wp_maintenance_mode() {
 	}
 
 }
-/**
- * Redirect new visitor
- *
- * @since Quartiersplattform 1.6
- *
- * @return void
- */
-function redirect_visitor() {
 
-	// redirect guests as well
-	// if ( empty($_GET['stay']) && ( isset($_COOKIE['visitor']) || is_user_logged_in() ) ) {
-
-	if ( empty($_GET['stay']) &&  is_user_logged_in() ) {
-
-		wp_redirect( home_url()."/aktuelles" ); 
-		exit;
-
-	}
-
-}
 
 
 /**

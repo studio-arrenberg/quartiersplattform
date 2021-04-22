@@ -130,7 +130,7 @@ $wp_rewrite->flush_rules( true );
 
 function themename_after_setup_theme() {
     $site_type = get_option('show_on_front');
-    $home = get_page_by_title( 'Überblick', OBJECT, 'page' );
+    $home = get_page_by_title( 'Startseite', OBJECT, 'page' );
     // if($site_type == 'posts') {
         update_option( 'show_on_front', 'page' );
         // update_option( 'page_for_posts', $home->ID );
