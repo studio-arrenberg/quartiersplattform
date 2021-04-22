@@ -172,17 +172,15 @@ get_header();
 
                     <label class="projekt_toggle_status">
                         <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="projekt_toggle_status('<?php echo get_the_ID(  ); ?>')" >
-                        <span class="slider active">Deine Projekt ist Öffentlich</span>
+                        <span class="slider">Deine Projekt ist Öffentlich</span>
                         <span class="slider hidden">Deine Projekt ist Privat</span>
                     </label> 
-
-                    <?php echo get_the_ID(  ); ?>
 
                     <script>
 
                         function projekt_toggle_status(id) {
 
-                            alert($('label.projekt_toggle_status input').is(":checked"));
+                            // alert($('label.projekt_toggle_status input').is(":checked"));
 
                             var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
                         
@@ -199,9 +197,7 @@ get_header();
                                 data: data,
                                 dataType: 'json',
                                 success: function(response){
-                                    console.log(response);
-                                    $('label.projekt_toggle_status. span.slider').toggleClass('active');
-                                    $('label.projekt_toggle_status. span.slider').toggleClass('hidden');
+                                    $('label.projekt_toggle_status span.slider').toggleClass('hidden');
                                 }
                             });
                         }

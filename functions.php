@@ -2524,8 +2524,8 @@ function projekt_toggle_status_callback() {
 	$my_post['post_status'] = $status;
 	wp_update_post( $my_post ); // Update the post into the database
 
-	// return;
-	echo $status." - ".$post_id;
+	return;
+	// echo $status." - ".$post_id;
 
 } 
 add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
