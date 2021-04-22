@@ -101,6 +101,69 @@ get_header();
             </div>
 
 
+            <!-- bar -->
+            <div class="filters-container">
+                <div class="filters-wrapper">
+                    <ul class="filter-tabs">
+                        <li>
+                        <button class="filter-button filter-active" data-value="summary" data-translate-value="0">
+                            Übersicht
+                        </button>
+                        </li>
+                        <li>
+                        <button class="filter-button" data-value="posts" data-translate-value="100%">
+                            Chronik
+                        </button>
+                        </li>
+                        <li>
+                        <button class="filter-button" data-value="settings" data-translate-value="200%">
+                            Einstellungen
+                        </button>
+                        </li>
+                    </ul>
+                <div class="filter-slider" aria-hidden="true">
+                    <div class="filter-slider-rect">&nbsp;</div>
+                </div>
+                </div>
+            </div>
+
+            <script>
+
+                const filterTabs = document.querySelector(".filter-tabs");
+
+                filterTabs.addEventListener("click", (event) => {                
+                    const root = document.documentElement;
+                    const targetTranslateValue = event.target.dataset.translateValue;
+                    // console.log(targetTranslateValue);
+                    // console.log(event.target.dataset.value);
+
+                    if (targetTranslateValue == undefined) {
+                        return false;
+                    }
+
+                    root.style.setProperty("--translate-filters-slider", targetTranslateValue);
+
+                    document.querySelector(".bar.bar-active").classList.toggle('bar-active');
+                    document.querySelector(".bar#" + event.target.dataset.value ).classList.toggle('bar-active');
+                });
+
+            </script>
+
+            <!-- page bar content -->
+            <div>
+                <div id="summary" class="bar bar-active">
+                    <h4>Übersicht</h4>
+                </div>
+                <div id="posts" class="bar bar-hidden">
+                    <h4>Chronik</h4>
+                </div>
+                <div id="settings" class="bar bar-hidden">
+                    <h4>Einstellungen</h4>
+                </div>
+            </div>
+
+            <!-- wtf -->
+
             <?php if (get_field('text')) { ?>
             <div class="single-content">
                 <h2>Beschreibung</h2>
