@@ -6771,7 +6771,7 @@ ul.filter-tabs {
 }
 
 .filters-container {
-  overflow: hidden;
+  /* overflow: hidden; */
   padding: 0 3rem;
   transition: max-height 0.4s ease-in-out;
   max-height: var(--filters-container-height);
@@ -6786,7 +6786,7 @@ ul.filter-tabs {
 .filter-tabs {
   border-radius: 1rem;
   padding: 0.3rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: var(--orange-50);
 }
 
