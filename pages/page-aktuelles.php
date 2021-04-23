@@ -25,13 +25,15 @@ get_header();
 		// 'Impressum', home_url( ).'/impressum'
 	?>
 
+	<?php projekt_carousel(); ?>
+
 
 	<?php 
 		$args4 = array(
 		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
 		'post_status'=>'publish', 
 		'posts_per_page'=> 12,
-		'orderby' => 'modified'
+		'orderby' => 'date'
 	);
 	?>  
 	

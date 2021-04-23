@@ -2007,15 +2007,41 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 	?>
 	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
     	<div class="embla__container">
-        <?php
-		while ( $query2->have_posts() ) {
-			$query2->the_post();
-			echo "<div class='embrela-slide'>";
-			get_template_part('elements/'.$type.'', get_post_type());
-			echo "</div>";
-		}
-		wp_reset_postdata();
-		?>
+
+			<!-- Button back -->
+			<button class="embla__button embla__button--prev" type="button">
+				<svg
+				class="embla__button__svg"
+				viewBox="137.718 -1.001 366.563 643.999"
+				>
+				<path
+					d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
+				></path>
+				</svg>
+			</button>
+
+			<!-- Button forwards -->
+			<button class="embla__button embla__button--next" type="button">
+				<svg class="embla__button__svg" viewBox="0 0 238.003 238.003">
+				<path
+					d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z"
+				></path>
+				</svg>
+			</button>
+
+
+			<?php
+				while ( $query2->have_posts() ) {
+					$query2->the_post();
+					echo "<div class='embrela-slide'>";
+					get_template_part('elements/'.$type.'', get_post_type());
+					echo "</div>";
+				}
+				wp_reset_postdata();
+			?>
+
+			
+
 		</div>
 	</div>
 
@@ -2044,6 +2070,15 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 			_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
 		})
 
+		const wrap = document.querySelector(".embla");
+		const nextBtn = wrap.querySelector(".embla__button--next");
+		const prevBtn = wrap.querySelector(".embla__button--prev");
+		nextBtn.addEventListener('click', embla.scrollNext, false);
+		prevBtn.addEventListener('click', embla.scrollPrev, false);
+
+		// https://codesandbox.io/s/embla-carousel-arrows-dots-vanilla-twh0h?file=/src/js/prevAndNextButtons.js:64-126
+
+	
 		embla.on('resize', () => {
 			var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 			slidesToScroll = '<?php echo $slides; ?>';
@@ -2530,6 +2565,66 @@ function projekt_toggle_status_callback() {
 } 
 add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
 add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callback' );
+
+
+/**
+ * Projekt Carousel
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @param string $slug date
+ * @param string $title title
+ * @param string $body body
+ * @return string html
+ */
+
+function projekt_carousel( ) {
+
+	$array = [];
+
+	// get published posts
+	$args_public = array(
+		'post_type' => 'projekte',
+		'post_status' => array('publish')    
+	);
+	$args_public = new WP_Query($args_public);
+	while ( $args_public->have_posts() ) {
+		$args_public->the_post();
+		array_push($array, get_the_ID(  ) );
+	}
+	wp_reset_postdata();
+
+	if (is_user_logged_in(  )) {
+		// get drafts by user
+		$args_private = array(
+			'post_type' => 'projekte',
+			'author__in' => $current_user->ID,
+			'post_status' => array('pending', 'draft', 'auto-draft')    
+		);
+		$args_private = new WP_Query($args_private);
+		while ( $args_private->have_posts() ) {
+			$args_private->the_post();
+			array_push($array, get_the_ID(  ) );
+		}
+		wp_reset_postdata();
+	}
+
+	$args4 = array(
+		'post_type'=> array('projekte'), 
+		'post__in' => $array,
+		'post_status'=>'any', 
+		'posts_per_page'=> 50,
+		'orderby' => 'modified'
+	);
+
+	?>  
+		<!-- projekt carousel -->
+		<div class="projekt-carousel">
+			<?php slider($args4, 'badge', 2, 'false'); ?>
+		</div>
+
+	<?php 
+}
 
 
 /**

@@ -35,7 +35,7 @@ get_header();
 			array_push($array, get_the_ID(  ) );
 		}
 		wp_reset_postdata();
-		
+
 		if (is_user_logged_in(  )) {
 			// get drafts by user
 			$args_private = array(
@@ -66,27 +66,31 @@ get_header();
 		</div>
 
 
+		<?php projekt_carousel(); ?>
+
+
 </main><!-- #site-content -->
 
 
+
+
+
 <div class="right-sidebar">
-		<?php 
-			// Projekte
-			if (is_user_logged_in(  )) {
-				get_template_part('components/smart-card/projekte');
-				
-				// Call to Action Card 
-				//call_to_action_card('bg_red-light', 'angebot-erstellen', 'Teile ein Angebot', 'Biete deine Hilfe an und unterstütze dein Viertel.' );
-				//call_to_action_card('bg_blue-light', 'frage-erstellen', 'Frage dein Quartier', 'Was wünscht du dir in deinem Viertel? Wie können dich deine Nachbarn unterstützen?' );
-				call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
-		
-			}
-			else {
-				$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
-				reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
-			}
-		?>	
-	</div>
+	<?php 
+		// Projekte
+		if (is_user_logged_in(  )) {
+			get_template_part('components/smart-card/projekte');
+			
+			// Call to Action Card 
+			call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
+	
+		}
+		else {
+			$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
+			reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
+		}
+	?>	
+</div>
 
 
 <!-- </div> -->
