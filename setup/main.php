@@ -150,7 +150,6 @@ add_action( 'after_setup_theme', 'themename_after_setup_theme' );
  *  --------------------------------------------------------
  */
 
-
 add_action( 'after_setup_theme', 'create_pages' );
 function create_pages() {
 
@@ -158,7 +157,7 @@ function create_pages() {
         0 => array('title' => 'Startseite', 'slug' => 'startseite'),
         1 => array('title' => 'Veranstaltungen', 'slug' => 'veranstaltungen'),
         2 => array('title' => 'Projekte', 'slug' => 'projekte'),
-        3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
+        // 3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
         4 => array('title' => 'Anmerkungen', 'slug' => 'anmerkung'),
         5 => array('title' => 'Profil', 'slug' => 'profil'),
         6 => array('title' => 'Impressum', 'slug' => 'impressum'),
