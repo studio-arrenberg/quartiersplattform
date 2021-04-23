@@ -66,9 +66,6 @@ get_header();
 		</div>
 
 
-		<?php projekt_carousel(); ?>
-
-
 </main><!-- #site-content -->
 
 

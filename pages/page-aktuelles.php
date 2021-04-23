@@ -30,18 +30,61 @@ get_header();
 
 	<?php 
 		$args4 = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
-		'post_status'=>'publish', 
-		'posts_per_page'=> 12,
-		'orderby' => 'date'
-	);
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 20,
+			'orderby' => 'date'
+		);
 	?>  
 	
 	<div class="grid" data-grid>
-		<?php set_query_var( 'additional_info', true )?>
-		<?php card_list($args4);?>
+		<?php set_query_var( 'additional_info', true ); ?>
+		<?php card_list($args4); ?>
     </div>
 
+	<div class="newsfeed_loadmore">
+		<a onclick="more()" class="button">Gib mir mehr</a>
+		<span class="acf-spinner" style="display: inline-block;"></span>
+	</div>
+	
+
+	<script>
+
+		var offset = 0;
+		var posts_per_page = 2;
+
+		function more() {
+			// alert('hello there');
+
+			$('div.newsfeed_loadmore span.acf-spinner').addClass('is-active');
+
+			var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
+    
+			var data = {
+				'action': 'projekt_feed',
+				'offset': offset,
+				'posts': posts_per_page,
+				'request': 1,
+				_ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
+			};
+
+			$.ajax({
+				url: ajax_url,
+				type: 'post',
+				data: data,
+				dataType: 'html',
+				success: function(response){
+					offset = offset + posts_per_page;
+					$('div.grid').append(response);
+					$('div.newsfeed_loadmore span.acf-spinner').removeClass('is-active');
+				},
+				error: function (data) {
+					// alert("error");
+				}
+			});
+		}
+		
+	</script>
 	
 </main><!-- #site-content -->
 

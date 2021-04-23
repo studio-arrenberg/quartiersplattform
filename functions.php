@@ -2626,6 +2626,41 @@ function projekt_carousel( ) {
 	<?php 
 }
 
+/**
+ * Projekt Feed (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $post_id id
+ * @param string $status status
+ * @return void
+ */
+function projekt_feed_callback() {
+
+	check_ajax_referer('my_ajax_nonce');
+
+	$offset = $_POST['offset'];
+	$posts = $_POST['posts'];
+
+	$args = array(
+		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
+		'post_status'=>'publish', 
+		'posts_per_page'=> $posts,
+		'offset' => $offset,
+		'orderby' => 'date'
+	);
+
+	set_query_var( 'additional_info', true );
+
+	card_list($args);
+	wp_die(); 
+	return;
+
+} 
+add_action( 'wp_ajax_projekt_feed', 'projekt_feed_callback' );
+add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
+
+
 
 /**
  * 
