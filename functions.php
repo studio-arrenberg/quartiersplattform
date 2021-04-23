@@ -1519,6 +1519,20 @@ function cpt_save_worker( $post_id ) {
 		exit;
 
 	}
+	if ( get_post_type($post_id) == 'projekte' ) {
+
+		$status = $_POST['project_status'];
+
+		if ($_POST['project_status']) {
+
+			$my_post = array();
+			$my_post['ID'] = $post_id;
+			$my_post['post_status'] = $status;
+			wp_update_post( $my_post ); // Update the post into the database
+
+		}
+
+	}
 
 }
 

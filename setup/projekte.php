@@ -169,7 +169,7 @@ acf_add_local_field_group(array(
 			'name' => '_thumbnail_id',
 			'type' => 'image',
 			'instructions' => 'Gib deinem Projekt ein Bild!',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
