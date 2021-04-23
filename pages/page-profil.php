@@ -104,27 +104,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
         <div id="content" class="bar bar-hidden">
-            <h4>Inhalte</h4>
-            <h2>Deine Angebote und Fragen</h2>
-            <?php
-                // user posts
-                $args4 = array(
-                    'post_type'=> array('angebote', 'fragen'), 
-                    'post_status'=>'publish', 
-                    'author' =>  $current_user->ID,
-                    'posts_per_page'=> -1, 
-                    'order' => 'DESC',
-                    'offset' => '0', 
-                );
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
-            ?>
 
-            <div class="card-container card-container__small">
-                <?php get_template_part( 'components/call', 'frage' ); ?>
-                <?php get_template_part( 'components/call', 'angebot' ); ?>
-            </div>
-
-            <br>
             <h2>Deine Projekte</h2>
             <?php
                 $args4 = array(
@@ -138,6 +118,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
 
             ?>
+
         </div>
 
 
@@ -236,21 +217,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         </div>
     </div>
-
-
-
-    <h1>----OLD----</h1>
-
-    <br>
-    <br>
-    
-    <br>
-    <br>
-
-
-
-    <br>
-    <br>
 
     
    
