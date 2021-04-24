@@ -263,10 +263,34 @@ get_header();
                         ?>
 
                     </div>
+
+
+                    <div class="publish-form">
+                        <h2>SDGs bearbeiten</h2>
+                        <br>
+
+                        <?php
+                            acf_form (
+                                array(
+                                    'form' => true,
+                                    'return' => '%post_url%',
+                                    'submit_value' => 'Änderungen speichern',
+                                    'post_title' => false,
+                                    'post_content' => false,    
+                                    'uploader' => 'basic',
+                                    // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                    'fields' => array(
+                                        'field_602e74121ff45',
+                                    ),
+                                )
+                            );
+                        ?>
+
+                    </div>
                     
                 </div>
                 <?php } ?>
-                
+
             </div>
 
 
@@ -374,7 +398,7 @@ get_header();
             <?php if ( current_user_can('administrator') ) { 
 
                 ?>
-                    <a href="<?php echo get_site_url( ) ?>/sdgs"><h2>Ziele für nachhaltige Entwicklung</h2></a>
+                    <h2>Ziele für nachhaltige Entwicklung</h2>
                 <?php
 
                 $terms = get_field('sdg');
@@ -395,19 +419,18 @@ get_header();
                             'name'=> $tax->slug 
                         );
 
-                        $args = new WP_Query($args);
-                        while ( $args->have_posts() ) {
-                            $args->the_post();
-                            
-                            get_template_part( 'components/sdg/sdg-card' );
-
-                        }
-                        wp_reset_postdata();
+                        slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
 
                     endforeach;
                 endif;
+
+                ?>
+                    <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
+                <?php 
                     
             } 
+            
+            
             ?>
 
 
