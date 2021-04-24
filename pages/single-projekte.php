@@ -101,19 +101,173 @@ get_header();
             </div>
 
 
-            <?php if (get_field('text')) { ?>
-            <div class="single-content">
-                <h2>Beschreibung</h2>
-                <p><?php the_field('text'); ?></p>
+            <!-- bar -->
+            <div class="filters-container">
+                <div class="filters-wrapper">
+                    <ul class="filter-tabs">
+                        <li>
+                        <button class="filter-button filter-active" data-value="summary" data-translate-value="0">
+                            Übersicht
+                        </button>
+                        </li>
+                        <li>
+                        <button class="filter-button" data-value="posts" data-translate-value="100%">
+                            Chronik
+                        </button>
+                        </li>
+                        <?php if ($current_user->ID == $post->post_author) { ?>
+                        <li>
+                        <button class="filter-button" data-value="settings" data-translate-value="200%">
+                            Einstellungen
+                        </button>
+                        </li>
+                        <?php } ?>
+                    </ul>
+                <div class="filter-slider" aria-hidden="true">
+                    <div class="filter-slider-rect">&nbsp;</div>
+                </div>
+                </div>
             </div>
-            <?php } ?>
 
-            <?php if (get_field('goal')) { ?>
-            <div class="single-content">
-                <h2>Projektziel</h2>
-                <p><?php the_field('goal'); ?></p>
+            <script>
+
+                const filterTabs = document.querySelector(".filter-tabs");
+
+                filterTabs.addEventListener("click", (event) => {                
+                    const root = document.documentElement;
+                    const targetTranslateValue = event.target.dataset.translateValue;
+                    // console.log(targetTranslateValue);
+                    // console.log(event.target.dataset.value);
+
+                    if (targetTranslateValue == undefined) {
+                        return false;
+                    }
+
+                    root.style.setProperty("--translate-filters-slider", targetTranslateValue);
+
+                    document.querySelector(".bar.bar-active").classList.toggle('bar-active');
+                    document.querySelector(".bar#" + event.target.dataset.value ).classList.toggle('bar-active');
+                });
+
+            </script>
+
+            <!-- page bar content -->
+            <div>
+                <div id="summary" class="bar bar-active">
+                    <h4>Übersicht</h4>
+
+                    <?php 
+                    // project is not public
+                    if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
+                        reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                    }
+                    ?>
+
+                </div>
+                <div id="posts" class="bar bar-hidden">
+                    <h4>Chronik</h4>
+
+                    <?php 
+
+                        // Projektverlauf
+                        $args_chronik = array(
+                            'post_type' => array('veranstaltungen', 'nachrichten'),
+                            'posts_per_page' => -1,
+                            'order_by' => 'date',
+                            'order' => 'DESC',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'projekt',
+                                    'field' => 'slug',
+                                    'terms' => ".$post->post_name."
+                                )
+                            )
+                        );
+
+                        card_list($args_chronik);
+
+                    ?>
+                </div>
+                <?php if ($current_user->ID == $post->post_author) { ?>
+                <div id="settings" class="bar bar-hidden">
+                    <h4>Einstellungen</h4>
+
+                    <h4>Status</h4>
+
+                    <label class="projekt_toggle_status">
+                        <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="projekt_toggle_status('<?php echo get_the_ID(  ); ?>')" >
+                        <span class="slider toggle_a">Dein Projekt ist Öffentlich</span>
+                        <span class="slider toggle_b">Dein Projekt ist Privat</span>
+                        <span class="acf-spinner" style="display: inline-block;"></span>
+                    </label> 
+
+                    <script>
+                        
+                        if ($('label.projekt_toggle_status input').is(":checked")) {
+                            $('span.toggle_b').toggleClass('hidden');
+                            // alert('a');
+                        }
+                        else {
+                            $('span.toggle_a').toggleClass('hidden');
+                            // alert('b');
+                        }
+
+                        function projekt_toggle_status(id) {
+
+                            $('label.projekt_toggle_status span.acf-spinner').addClass('is-active');
+
+                            var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
+                        
+                            var data = {
+                                'action': 'projekt_toggle_status',
+                                'post_id': id,
+                                'status': $('label.projekt_toggle_status input').is(":checked"),
+                                'request': 1
+                            };
+
+                            $.ajax({
+                                url: ajax_url,
+                                type: 'post',
+                                data: data,
+                                dataType: 'json',
+                                success: function(response){
+                                    $('span.slider').toggleClass('hidden');
+                                    $('label.projekt_toggle_status span.acf-spinner').removeClass('is-active');
+                                }
+                            });
+                        }
+
+                    </script>
+
+
+                    <div class="publish-form">
+                        <h2>Bearbeite dein Projekt</h2>
+                        <br>
+
+                        <?php
+                            acf_form (
+                                array(
+                                    'form' => true,
+                                    'return' => '%post_url%',
+                                    'submit_value' => 'Änderungen speichern',
+                                    'post_title' => true,
+                                    'post_content' => false,    
+                                    'uploader' => 'basic',
+                                    // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                    'fields' => array(
+                                        'field_5fc64834f0bf2', // Emoji
+                                        'field_5fc647f6f0bf0', // Kurzbeschreibung
+                                    ),
+                                )
+                            );
+                        ?>
+
+                    </div>
+                    
+                </div>
+                <?php } ?>
+                
             </div>
-            <?php } ?>
 
 
             <?php
@@ -183,27 +337,21 @@ get_header();
                 }
             ?>
 
-            <?php
-                // Projektverlauf
-                $args_chronik = array(
-                    'post_type' => array('veranstaltungen', 'nachrichten'),
-                    'posts_per_page' => '3',
-                    'order_by' => 'date',
-                    'order' => 'DESC',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'projekt',
-                            'field' => 'slug',
-                            'terms' => ".$post->post_name."
-                        )
-                    )
-                );
+            <!-- wtf -->
 
-                $my_query = new WP_Query($args_chronik);
-                if ($my_query->post_count > 0) {
-                    list_card($args_chronik, get_site_url().'/projekt/'.$post->post_name.'/', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
-                }
-            ?>
+            <?php if (get_field('text')) { ?>
+            <div class="single-content">
+                <h2>Beschreibung</h2>
+                <p><?php extract_links(get_field('text')); ?></p>
+            </div>
+            <?php } ?>
+
+            <?php if (get_field('goal')) { ?>
+            <div class="single-content">
+                <h2>Projektziel</h2>
+                <p><?php the_field('goal'); ?></p>
+            </div>
+            <?php } ?>
 
 
 
@@ -221,7 +369,7 @@ get_header();
             </div>
 
 
-            <!-- Ziele für nachhaltige Etwicklung -->
+            <!-- Ziele für nachhaltige Entwicklung -->
             <!-- not ready yet -->
             <?php if ( current_user_can('administrator') ) { 
 
@@ -267,9 +415,7 @@ get_header();
             <div class="team">
                 <h2> Hutträger </h2>    
 
-                <?php 
-                    get_author(true); 
-                ?>
+                <?php author_card(true); ?>
 
             </div>
 
@@ -324,7 +470,7 @@ get_header();
         <?php
         }
 
-        # post löschen
+        # projekt löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
 
             # delete taxonomy (projekt)
@@ -353,10 +499,16 @@ get_header();
                                 'form' => true,
                                 'return' => '%post_url%',
                                 'submit_value' => 'Änderungen speichern',
-                                'post_title' => true,
+                                'post_title' => false,
                                 'post_content' => false,    
                                 'uploader' => 'basic',
-                                'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                'fields' => array(
+                                    // 'field_5fc64834f0bf2', // Emoji
+                                    // 'field_5fc647f6f0bf0', // Kurzbeschreibung
+                                    'field_5fc647e3f0bef', // Text
+                                    'field_600180493ab1a', // Bild
+                                ),
                             )
                         );
                     ?>
@@ -402,7 +554,7 @@ get_header();
             ?>
 
                 <div class="comments-wrapper">
-                    <?php comments_template('', true); ?>
+                    <?php // comments_template('', true); ?>
                 </div><!-- .comments-wrapper -->
 
                 <?php
@@ -417,7 +569,7 @@ get_header();
     ?>
 
         <br><br><br>
-        <h2>Weitere Projekte</h2>
+        <!-- <h2>Weitere Projekte</h2> -->
 
         <?php
         $args3 = array(
@@ -427,7 +579,7 @@ get_header();
             'orderby' => 'rand'
         );
 
-        slider($args3,'square_card', '2','true'); 
+        // slider($args3,'square_card', '2','true'); 
 
     }
     ?>

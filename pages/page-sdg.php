@@ -32,6 +32,7 @@ get_header();
 		?>
 			<div id="sdg-card" class="card card-sgd shadow <?php echo get_post_meta( get_the_ID(), 'class', true ); ?>">
                 <a class="card-link"  onclick="myFunction()">
+
                     <div class="content">    
 						<h3 class="card-title">
                         	<?php echo get_the_title(); ?>
@@ -40,6 +41,7 @@ get_header();
                         	<?php
                                 the_content();
                     		?>
+
                         </p>
                     </div>
                 </a>
@@ -68,22 +70,12 @@ get_header();
 			<!-- </div> -->
 
 
+
 		<?php
 
 	}
 	?>
 
-	<script>
-		function myFunction() {
-		var element = document.getElementById("sdg-projekts");
-		element.classList.add("card-content-visible");
-
-
-		var element = document.getElementById("sdg-card");
-		element.classList.remove("shadow");
-		}
-
-	</script>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

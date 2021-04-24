@@ -8,76 +8,64 @@
 
 ?>
 
-<?php
+<div class="card-group">
 
-// calc time remaining
-// minuten
-if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 3600 ) {
-    $time_remaining = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0)." Minuten";
-}
-// stunden
-else if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 10800 ) {
-    $time_remaining = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/3600), 0)." Stunden";
-}
-// today
-else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-    $time_remaining = "bis um ".wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
-}
-// tomorrow
-else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-    $time_remaining = "bis Morgen";
-}
-// no data
-else if (!get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
-    $time_remaining = "vom ".get_the_date('j. M');
-}
-else if (get_post_meta(get_the_ID(), 'expire_timestamp', true) < current_time('timestamp')) {
-    $time_remaining = "vom ".date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
-}
-// other
-else {
-    $time_remaining = "bis zum ".wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
-}
-
-
-
-# .list-item
-
-# not single --> shadow
-# none --> card
-# list-item --> list-item
-
-?>
-
-<!-- <div class="card <?php if (!is_single() && empty(get_query_var('bg'))) echo 'shadow'; else if(get_query_var('bg') == false) echo 'list-item'; ?> "> -->
-<div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
-    <?php if(!is_single()) { ?>
-    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
+    <?php if (get_query_var( 'additional_info') && get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) { ?>
+        <div class="pre-card">
+            <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <span>
+                    <b>Angebot</b>
+                    <br>
+                    von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                </span>
+            </a>
+        </div>
     <?php } ?>
-        <div class="content">
-            <div class="pre-title red-text ">Angebot 
-                <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
-                <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
 
-                <span class="date red-text"><?php echo $time_remaining; ?><span>
+    <!-- <div class="card <?php //if (!is_single() && empty(get_query_var('bg'))) echo 'shadow'; else if(get_query_var('bg') == false) echo 'list-item'; ?> "> -->
+    <div class="<?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item') === true) echo 'list-item ';?>">
+        <?php if(!is_single()) { ?>
+        <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
+        <?php } ?>
+            <div class="content-flex">
+                <div class="pre-title red-text ">Angebot 
+                    <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
+                    <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+
+                    <span class="red-text "><?php echo qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
+                </div>
+                <p class="preview-text-large">
+                    <?php  
+                        if (!is_single( )) shorten(get_field('text'), '2000'); 
+                        else the_field('text'); 
+                    ?>
+                </p>
+
+                <div class="emoji">
+                <?php  shorten(get_field('emoji'), '200'); ?>
             </div>
-            <h3 class="card-title-large">
-                <?php  
-                    if (!is_single( )) shorten_title(get_field('text'), '50'); 
-                    else the_field('text'); 
-                ?>
-            </h3>
+                
+                <div class="kommentare">
+                    <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
+                </div>
+
+            </div>
+            <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
             
-            <div class="kommentare">
-                <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
-            </div>
+        <?php if(!is_single()) { ?>
+        </a>
+        <?php } ?>
+    </div>
 
+    <?php if ( get_query_var( 'additional_info') && get_term_id($post->ID, 'projekt') ) { ?>
+        <div class="after-card">
+            <a href="<?php echo get_permalink( get_term_id($post->ID, 'projekt') ); ?>">
+                <?php echo get_the_title( get_term_id($post->ID, 'projekt') ); ?>
+                <span style="margin:-1px 0px 0px 5px"><?php the_field('emoji', get_term_id($post->ID, 'projekt')); ?></span>
+            </a>
         </div>
-        <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
-        <div class="emoji">
-            <?php  shorten_title(get_field('emoji'), '200'); ?>
-        </div>
-    <?php if(!is_single()) { ?>
-    </a>
     <?php } ?>
+
+
 </div>

@@ -32,7 +32,7 @@
                         echo get_query_var('link_card_title');
                     }
                     else {
-                        shorten_title(get_the_title(), '60');
+                        shorten(get_the_title(), '60');
                     }
                 ?>
             </h3>
@@ -42,10 +42,10 @@
                         echo get_query_var('link_card_text');
                     }
                     else if (strlen(get_field('text')) > 2) {
-                        get_excerpt(get_field('text'), '55');
+                        shorten(get_field('text'), '55');
                     }
                     else {
-                        get_excerpt(get_the_content(), '55');
+                        shorten(get_the_content(), '55');
                     }
                 ?>
             </p>

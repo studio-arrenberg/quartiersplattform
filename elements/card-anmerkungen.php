@@ -20,13 +20,13 @@ $terms_status = get_the_terms($post->ID, 'anmerkungen_status' );
                     <?php if( get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) echo "Vorschlag von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                 <span>
             </div>
-            <h3 class="card-title-large">
+            <h3 class="card-preview-text-large">
                 <?php  
                     if (!is_single( )) {
-                        shorten_title(get_field('text'), '85'); 
+                        shorten(get_field('text'), '2222'); 
                     } 
                     else {
-                        shorten_title(get_field('text'), '22285'); 
+                        shorten(get_field('text'), '22285'); 
                     }
                 ?>
             </h3>

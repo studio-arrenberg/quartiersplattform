@@ -18,7 +18,11 @@ get_header();
             </div>
         </div>
 	</div>
-	
+
+    <?php 
+        reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen');
+	?>
+
     <div class="publish-form">
         <h2>Erstelle dein eigenes Projekt</h2>
         <br>
@@ -37,8 +41,13 @@ get_header();
                     'post_content' => false,
                     'post_title' => true,
                     'return' => get_site_url().'/projekte',
-                    'field_groups' => array('group_5c5de08e4b57c'),
+                    // 'field_groups' => array('group_5c5de08e4b57c'),
+                    'fields' => array(
+                        'field_5fc64834f0bf2', // Emoji
+                        'field_5fc647f6f0bf0', // Kurzbeschreibung
+                    ),
                     'submit_value'=>'Projekt veröffentlichen',
+                    'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
                 )
             ); 
         ?>

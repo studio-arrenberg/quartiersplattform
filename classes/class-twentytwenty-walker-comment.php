@@ -41,15 +41,18 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 							$comment_author_url = get_comment_author_url( $comment );
 							$comment_author     = get_comment_author( $comment );
 							$avatar             = get_avatar( $comment, $args['avatar_size'] );
+							// print_r($comment);
+							// echo $comment_author_url;
+							// echo get_comment_author_link($comment->comment_ID);
 							if ( 0 !== $args['avatar_size'] ) {
 								if ( empty( $comment_author_url ) ) {
 									echo wp_kses_post( $avatar );
 								} else {
+									// echo get_comment_author_link($comment->comment_ID);
 									printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --Escaped in https://developer.wordpress.org/reference/functions/get_comment_author_url/
 									echo wp_kses_post( $avatar );
 								}
 							}
-
 
 	?>
 
