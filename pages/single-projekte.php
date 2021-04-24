@@ -374,7 +374,7 @@ get_header();
             <?php if ( current_user_can('administrator') ) { 
 
                 ?>
-                    <h2>Ziele für nachhaltige Entwicklung</h2>
+                    <a href="<?php echo get_site_url( ) ?>/sdgs"><h2>Ziele für nachhaltige Entwicklung</h2></a>
                 <?php
 
                 $terms = get_field('sdg');
@@ -398,28 +398,9 @@ get_header();
                         $args = new WP_Query($args);
                         while ( $args->have_posts() ) {
                             $args->the_post();
-                            ?>
-                                <div class="card card-sgd shadow bg_red">
-                                    <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-                                        <div class="content">
-                                            <h3 class="card-title">
-                                                <?php echo get_the_title(); ?>
-                                            </h3>
-                                            <p class="preview-text">
-                                                <?php
-                                                    if (strlen(get_field('text')) > 2) {
-                                                        shorten(get_field('text'), '55');
-                                                    }
-                                                    else {
-                                                        shorten(get_the_content(), '55');
-                                                    }
-                                                ?>
-                                            </p>
-                                        </div>
-                                    </a>
-                                </div>
+                            
+                            get_template_part( 'components/sdg/sdg-card' );
 
-                            <?php
                         }
                         wp_reset_postdata();
 

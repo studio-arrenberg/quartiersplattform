@@ -7,10 +7,10 @@
             <p class="preview-text">
                 <?php
                     if (strlen(get_field('text')) > 2) {
-                        shorten(get_field('text'), '55');
+                        get_excerpt(get_field('text'), '55');
                     }
                     else {
-                        shorten(get_the_content(), '55');
+                        get_excerpt(get_the_content(), '55');
                     }
                 ?>
             </p>
