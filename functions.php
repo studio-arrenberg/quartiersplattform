@@ -2561,6 +2561,8 @@ function projekt_toggle_status_callback() {
 	$post_id = $_POST['post_id'];
 	$status = $_POST['status'];
 
+	// !!! check if logged in user has privilages
+
 	if ($status == 'true') {
 		$status = 'publish';
 	}

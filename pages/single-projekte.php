@@ -115,11 +115,13 @@ get_header();
                             Chronik
                         </button>
                         </li>
+                        <?php if ($current_user->ID == $post->post_author) { ?>
                         <li>
                         <button class="filter-button" data-value="settings" data-translate-value="200%">
                             Einstellungen
                         </button>
                         </li>
+                        <?php } ?>
                     </ul>
                 <div class="filter-slider" aria-hidden="true">
                     <div class="filter-slider-rect">&nbsp;</div>
@@ -156,7 +158,7 @@ get_header();
 
                     <?php 
                     // project is not public
-                    if (get_post_status() == 'draft') {
+                    if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
                         reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
                     }
                     ?>
@@ -165,6 +167,7 @@ get_header();
                 <div id="posts" class="bar bar-hidden">
                     <h4>Chronik</h4>
                 </div>
+                <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
                     <h4>Einstellungen</h4>
 
@@ -214,12 +217,34 @@ get_header();
                         }
 
                     </script>
-                    
 
-                    <?php 
-                        
-                    ?>
+
+                    <div class="publish-form">
+                        <h2>Bearbeite dein Projekt</h2>
+                        <br>
+
+                        <?php
+                            acf_form (
+                                array(
+                                    'form' => true,
+                                    'return' => '%post_url%',
+                                    'submit_value' => 'Änderungen speichern',
+                                    'post_title' => true,
+                                    'post_content' => false,    
+                                    'uploader' => 'basic',
+                                    // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                    'fields' => array(
+                                        'field_5fc64834f0bf2', // Emoji
+                                        'field_5fc647f6f0bf0', // Kurzbeschreibung
+                                    ),
+                                )
+                            );
+                        ?>
+
+                    </div>
+                    
                 </div>
+                <?php } ?>
             </div>
 
             <!-- wtf -->
@@ -493,10 +518,16 @@ get_header();
                                 'form' => true,
                                 'return' => '%post_url%',
                                 'submit_value' => 'Änderungen speichern',
-                                'post_title' => true,
+                                'post_title' => false,
                                 'post_content' => false,    
                                 'uploader' => 'basic',
-                                'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                'fields' => array(
+                                    // 'field_5fc64834f0bf2', // Emoji
+                                    // 'field_5fc647f6f0bf0', // Kurzbeschreibung
+                                    'field_5fc647e3f0bef', // Text
+                                    'field_600180493ab1a', // Bild
+                                ),
                             )
                         );
                     ?>
@@ -542,7 +573,7 @@ get_header();
             ?>
 
                 <div class="comments-wrapper">
-                    <?php comments_template('', true); ?>
+                    <?php // comments_template('', true); ?>
                 </div><!-- .comments-wrapper -->
 
                 <?php
@@ -557,7 +588,7 @@ get_header();
     ?>
 
         <br><br><br>
-        <h2>Weitere Projekte</h2>
+        <!-- <h2>Weitere Projekte</h2> -->
 
         <?php
         $args3 = array(
@@ -567,7 +598,7 @@ get_header();
             'orderby' => 'rand'
         );
 
-        slider($args3,'square_card', '2','true'); 
+        // slider($args3,'square_card', '2','true'); 
 
     }
     ?>
