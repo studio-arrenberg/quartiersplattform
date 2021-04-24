@@ -58,7 +58,7 @@ get_header();
                     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                     ?>
                     <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
+                    
                     <?php
                     }
                     ?>
@@ -287,6 +287,10 @@ get_header();
                         ?>
 
                     </div>
+
+                    <h2>Projekt Löschen</h2>
+                    <p>Danger zone</p>
+                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
                     
                 </div>
                 <?php } ?>

@@ -1,5 +1,5 @@
 <?php 
-
+// old!
 $array = array(
     'pages' => array (
         0 => array('title' => 'Startseite', 'slug' => 'startseite'),
@@ -15,7 +15,7 @@ $array = array(
         10 => array('title' => 'Angebot erstellen', 'slug' => 'angebot-erstellen'),
         11 => array('title' => 'Frage erstellen', 'slug' => 'frage-erstellen'),
         12 => array('title' => 'Projekt erstellen', 'slug' => 'projekt-erstellen'),
-        13 => array('title' => 'Aktuelles', 'slug' => 'aktuelles')
+        // 13 => array('title' => 'Aktuelles', 'slug' => 'aktuelles')
     ),
     'menu' => array(
         0 => array('hello' => 'world')

@@ -974,16 +974,16 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Startseite';
 		$page_template= get_stylesheet_directory() . '/pages/page-quartier.php';
 	}
-	else if ($post->post_title == "Aktuelles") {
-		$post_states[] = $prefix.'Aktuelles';
-		$page_template= get_stylesheet_directory() . '/pages/page-aktuelles.php';
+	else if ($post->post_title == "Projekte") {
+		$post_states[] = $prefix.'Projekte';
+		$page_template= get_stylesheet_directory() . '/pages/projekt-feed.php';
 	}
 	else if ($post->post_title == "Veranstaltungen") {
 		$post_states[] = $prefix.'Veranstaltungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
 	}
-	else if ($post->post_title == "Projekte") {
-		$post_states[] = $prefix.'Projekte';
+	else if ($post->post_title == "Projektverzeichnis") {
+		$post_states[] = $prefix.'Projektverzeichnis';
 		$page_template= get_stylesheet_directory() . '/pages/page-projekte.php';
 	}
 	else if ($post->post_title == "Projekt erstellen") {

@@ -2,7 +2,7 @@
 
 /**
  * 
- * Template Name: Aktuelles
+ * Template Name: Projekt Feed
  * Template Post Type: page
  * 
  */

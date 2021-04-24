@@ -101,6 +101,19 @@ get_header();
         </div>
     </section>
 
+    <section>
+        <h1>SDGs im Quartier</h1>
+        <p>preview....</p>
+        <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
+    </section>
+
+
+    <section>
+        <h1>Projekte im Quartier</h1>
+        <p>preview....</p>
+        <a class="button" href="<?php echo get_site_url( ) ?>/projektverzeichnis">Projekt liste</a>
+    </section>
+
 
 
 </main><!-- #site-content -->
