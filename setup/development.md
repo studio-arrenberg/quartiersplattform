@@ -53,6 +53,7 @@ landscape_card(null, 'Hallo Welt','Text....',get_template_directory_uri().'/asse
 landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Query and Manual
 ```
 #### List Card
+**🚨 deprechted**
 ```php 
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```

@@ -166,6 +166,27 @@ get_header();
                 </div>
                 <div id="posts" class="bar bar-hidden">
                     <h4>Chronik</h4>
+
+                    <?php 
+
+                        // Projektverlauf
+                        $args_chronik = array(
+                            'post_type' => array('veranstaltungen', 'nachrichten'),
+                            'posts_per_page' => -1,
+                            'order_by' => 'date',
+                            'order' => 'DESC',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'projekt',
+                                    'field' => 'slug',
+                                    'terms' => ".$post->post_name."
+                                )
+                            )
+                        );
+
+                        card_list($args_chronik);
+
+                    ?>
                 </div>
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
@@ -245,23 +266,8 @@ get_header();
                     
                 </div>
                 <?php } ?>
+                
             </div>
-
-            <!-- wtf -->
-
-            <?php if (get_field('text')) { ?>
-            <div class="single-content">
-                <h2>Beschreibung</h2>
-                <p><?php extract_links(get_field('text')); ?></p>
-            </div>
-            <?php } ?>
-
-            <?php if (get_field('goal')) { ?>
-            <div class="single-content">
-                <h2>Projektziel</h2>
-                <p><?php the_field('goal'); ?></p>
-            </div>
-            <?php } ?>
 
 
             <?php
@@ -331,27 +337,21 @@ get_header();
                 }
             ?>
 
-            <?php
-                // Projektverlauf
-                $args_chronik = array(
-                    'post_type' => array('veranstaltungen', 'nachrichten'),
-                    'posts_per_page' => '3',
-                    'order_by' => 'date',
-                    'order' => 'DESC',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'projekt',
-                            'field' => 'slug',
-                            'terms' => ".$post->post_name."
-                        )
-                    )
-                );
+            <!-- wtf -->
 
-                $my_query = new WP_Query($args_chronik);
-                if ($my_query->post_count > 0) {
-                    list_card($args_chronik, get_site_url().'/projekt/'.$post->post_name.'/', 'Projektverlauf','Alle Veranstaltungen und Nachrichten');
-                }
-            ?>
+            <?php if (get_field('text')) { ?>
+            <div class="single-content">
+                <h2>Beschreibung</h2>
+                <p><?php extract_links(get_field('text')); ?></p>
+            </div>
+            <?php } ?>
+
+            <?php if (get_field('goal')) { ?>
+            <div class="single-content">
+                <h2>Projektziel</h2>
+                <p><?php the_field('goal'); ?></p>
+            </div>
+            <?php } ?>
 
 
 
@@ -489,7 +489,7 @@ get_header();
         <?php
         }
 
-        # post löschen
+        # projekt löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
 
             # delete taxonomy (projekt)
