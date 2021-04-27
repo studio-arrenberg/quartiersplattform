@@ -58,10 +58,6 @@ get_header();
 			if (is_user_logged_in(  )) {
 				get_template_part('components/smart-card/projekte');
 				
-				// Call to Action Card 
-				//call_to_action_card('bg_red-light', 'angebot-erstellen', 'Teile ein Angebot', 'Biete deine Hilfe an und unterstütze dein Viertel.' );
-				//call_to_action_card('bg_blue-light', 'frage-erstellen', 'Frage dein Quartier', 'Was wünscht du dir in deinem Viertel? Wie können dich deine Nachbarn unterstützen?' );
-					
 				$text = 'Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und poste den Termin zu deiner Veranstaltung. ';
 				reminder_card('ErstelleEineVeranstaltung', 'Veröffentliche deine Veranstaltung', $text, '', '' );
 				

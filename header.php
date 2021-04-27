@@ -95,8 +95,12 @@ wp_maintenance_mode();
 
         <div class="push-right">
 
-            <a class="button header-button push-right" onclick="show()">
+            <a class="button header-button push-right is-style-outline" onclick="show()">
                 <span class="button-has-icon-label">Energie Ampel</span>
+            </a>
+
+            <a class="button header-button  button-has-icon <?php if (!is_page( 'Veranstaltungen' )) echo "is-style-outline"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
+                <span class="button-has-icon-label">Veranstaltungen</span>
             </a>
 
             <?php
@@ -108,12 +112,12 @@ wp_maintenance_mode();
             // backend login button for admins
             if(current_user_can('administrator')) {
                 ?>
-            <a class="button header-button  button-has-icon is-style-outline "
-                href="<?php echo get_site_url(); ?>/wp-admin">
-                <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
-                <span class="button-has-icon-label">Backend</span>
-            </a>
-            <?php 
+                    <a class="button header-button  button-has-icon is-style-outline "
+                        href="<?php echo get_site_url(); ?>/wp-admin">
+                        <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/backend.svg" />
+                        <!-- <span class="button-has-icon-label">Backend</span> -->
+                    </a>
+                <?php 
             }
             ?>
 
