@@ -21,6 +21,17 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## v1.7
+
+### Features
+- Beiträge verbergen
+- Pinned Posts (Projekt & Quartier)
+- Neue Menu Leiste
+- Neuer Footer
+- Restrukturierte Quartiersseite
+### Bugs
+- Umfragen im Newsfeed
+
 ## Theme Publication
 
 1.  [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)

@@ -2680,7 +2680,6 @@ add_action( 'wp_ajax_nopriv_pin_toggle', 'pin_toggle_callback' );
  * @param string $body body
  * @return string html
  */
-
 function projekt_carousel( ) {
 
 	$array = [];
@@ -2759,7 +2758,7 @@ function projekt_feed_callback() {
 	wp_die(); 
 	return;
 
-} 
+}
 add_action( 'wp_ajax_projekt_feed', 'projekt_feed_callback' );
 add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
 
@@ -2788,7 +2787,6 @@ function add_project_callback() {
 			'post_content' => false,
 			'post_title' => true,
 			'return' => get_site_url().'/projekte',
-			// 'field_groups' => array('group_5c5de08e4b57c'),
 			'fields' => array(
 				'field_5fc64834f0bf2', // Emoji
 				'field_5fc647f6f0bf0', // Kurzbeschreibung
