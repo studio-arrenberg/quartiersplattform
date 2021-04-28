@@ -1300,7 +1300,7 @@ function display_cookie_warning() {
 /**
  * Set guest cookie (ajax)
  *
- * @since Quartiersplattform 1.0
+ * @since Quartiersplattform 1.7
  *
  * @return string
  */
