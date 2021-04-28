@@ -59,7 +59,7 @@
 
                 ?>
 
-            <form class="poll" id="poll-form" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
+            <form class="poll" id="poll-<?php echo get_the_ID(  ); ?>" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
 
                 <div class="answers">
                     <?php
@@ -105,7 +105,7 @@
                 </div>
 
                 <?php 
-                if (is_single( ) && is_user_logged_in()) {
+                if (is_user_logged_in()) {
                 ?>
 
                 <div class="card-footer">
@@ -137,20 +137,22 @@
             <script>
             jQuery(document).ready(function($) {
                 // console.log('ready');
-                jQuery('.poll').ajaxForm({
+                jQuery('#poll-<?php echo get_the_ID(  ); ?>').ajaxForm({
+                    // console.log('sd');
+                    // alert('hi');
                     success: function(response) {
                         // console.log(response);
                         $.each(response.data, function(k, v) {
                             // console.log(k+" : "+v['user']);
-                            $('form div#poll' + k).text(v['count'] + ' Stimmen');
-                            $('form.poll span#poll' + k).css('width', v['percentage'] + '%');
+                            $('form#poll-<?php echo get_the_ID(  ); ?> div#poll' + k).text(v['count'] + ' Stimmen');
+                            $('form#poll-<?php echo get_the_ID(  ); ?> span#poll' + k).css('width', v['percentage'] + '%');
                             
                             if (v['user'] == 'true') {
                                 // $('form input#poll' + k).attr('checked', true);
-                                $('form label#poll' + k + ' img.button-icon').removeClass('hide');
+                                $('form#poll-<?php echo get_the_ID(  ); ?> label#poll' + k + ' img.button-icon').removeClass('hide');
                             }
                             else {
-                                $('form label#poll' + k + ' img.button-icon').addClass('hide');
+                                $('form#poll-<?php echo get_the_ID(  ); ?> label#poll' + k + ' img.button-icon').addClass('hide');
                             }
                             // console.log('form label#poll' + k + ' img');
                         });
@@ -163,6 +165,17 @@
                 })
             });
             // console.log('hello');
+
+            // jQuery('.poll').on('click', function(e) {
+            //     alert('poll');
+            // });
+
+            // $( ".poll" ).submit(function( event ) {
+            //     // alert( "Handler for .submit() called." );
+            //     alert($(this).attr('id'));
+            //     event.preventDefault();
+            // });
+
             </script>
 
 

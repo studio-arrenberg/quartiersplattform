@@ -2629,6 +2629,7 @@ function pin_toggle($type = 'pin_project') {
 	return;
 }
 
+// general toggle function (metafield, options array, name array)
 
 /**
  * Pin Toggle Status (ajax)
