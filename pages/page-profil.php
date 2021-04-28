@@ -6,17 +6,15 @@
  *
  */
 
-if ( ( is_user_logged_in() ) ) {
-    acf_form_head();
-    wp_deregister_style( 'wp-admin' );
-}
-
-get_header();
 
 if (!is_user_logged_in()){
     header("Location: ".get_site_url());
     exit();
 }
+
+acf_form_head();
+wp_deregister_style( 'wp-admin' );
+get_header();
 
 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
@@ -27,13 +25,12 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
     <div class="single-header profil">
         
         <?php 
-        // User Avatar
-        $current_user = wp_get_current_user();
-        echo get_avatar( $current_user->user_email, 32 );
+            // User Avatar
+            $current_user = wp_get_current_user();
+            echo get_avatar( $current_user->user_email, 32 );
         ?>
 
-
-        <!-- user  name -->
+        <!-- user name -->
         <div class="single-header-content">
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
         </div>
@@ -51,18 +48,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                     </button>
                 </li>
                 <li>
-                    <button class="filter-button" data-value="content" data-translate-value="100%">
-                        Inhalte
-                    </button>
-                </li>
-                <li>
                     <button class="filter-button" data-value="settings" data-translate-value="200%">
                         Einstellungen
-                    </button>
-                </li>
-                <li>
-                    <button class="filter-button" data-value="edit" data-translate-value="300%">
-                        Bearbeiten
                     </button>
                 </li>
             </ul>
@@ -99,11 +86,9 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
         <div id="profil" class="bar bar-active">
-            <h4>Übersicht</h4>
-        </div>
 
-
-        <div id="content" class="bar bar-hidden">
+            <h2>Dein Kontakt</h2>
+            <?php author_card(true, $current_user->ID); ?>
 
             <h2>Deine Projekte</h2>
             <?php

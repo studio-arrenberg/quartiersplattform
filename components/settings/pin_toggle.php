@@ -1,10 +1,5 @@
 <h4>Projekt Pin</h4>
 
-<?php 
-// echo get_query_var( 'pin_type' );
-// the_field(get_query_var( 'pin_type' )); 
-?>
-
 <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
     <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
     <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">Dieser Post ist Pinned</span>
@@ -14,15 +9,6 @@
 
 <script>
     
-    // if ($('label.'+class+' input').is(":checked")) {
-    //     $('label.'+class+' span.toggle_b').toggleClass('hidden');
-    //     // alert('a');
-    // }
-    // else {
-    //     $('label.'+class+' span.toggle_a').toggleClass('hidden');
-    //     // alert('b');
-    // }
-
     function pin_toggle(id, type, elementClass) { // id, type, class
 
         $('label.'+elementClass+' span.acf-spinner').addClass('is-active');

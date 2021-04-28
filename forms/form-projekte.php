@@ -41,7 +41,6 @@ get_header();
                     'post_content' => true,
                     'post_title' => true,
                     'return' => get_site_url().'/projekte',
-                    // 'field_groups' => array('group_5c5de08e4b57c'),
                     'fields' => array(
                         'field_5fc64834f0bf2', // Emoji
                         'field_5fc647f6f0bf0', // Kurzbeschreibung

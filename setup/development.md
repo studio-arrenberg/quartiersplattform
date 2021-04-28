@@ -31,6 +31,7 @@
 - Restrukturierte Quartiersseite
 ### Bugs
 - Umfragen im Newsfeed
+- Ajax mit Nonce Sicherheit
 
 ## Theme Publication
 

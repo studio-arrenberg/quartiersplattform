@@ -1870,11 +1870,12 @@ function get_term_id($post_ID, $term = 'projekt') {
  * @param boolean $contact show contact information
  * @return string
  */
-function author_card($contact = false) {
+function author_card($contact = false, $user = '') {
 	// get_author = > author_card
 	set_query_var('contact_inforation', $contact);
+	set_query_var('contact_user_id', $user);
 
-	if (get_the_author_meta( 'ID' )) {
+	if (get_the_author_meta( 'ID' ) || $user) {
 		get_template_part( 'components/author-card' );
 	}
 	else {
@@ -1882,6 +1883,8 @@ function author_card($contact = false) {
 	}
 
 	set_query_var('contact_inforation', false);
+	set_query_var('contact_user_id', false);
+
 }
 
 /**
