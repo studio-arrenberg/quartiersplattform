@@ -162,6 +162,20 @@ get_header();
                         reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
                     }
                     ?>
+                    <h4>Pinned:</h4>
+                    <?php
+                    // pinned project posts
+                    $args_chronik = array(
+                        'post_type' => array('veranstaltungen', 'nachrichten'),
+                        'posts_per_page' => -1,
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'meta_key'   => 'pin_project',
+                        'meta_value' => 'true'
+                    );
+
+                    card_list($args_chronik);
+                    ?>
 
                 </div>
                 <div id="posts" class="bar bar-hidden">
@@ -192,6 +206,8 @@ get_header();
                 <div id="settings" class="bar bar-hidden">
                     <h4>Einstellungen</h4>
 
+
+                    <?php pin_toggle('pin_main'); ?>
 
                     <?php post_visibility_toggle( get_the_ID(  ) ); ?>
 

@@ -115,6 +115,22 @@ get_header();
     </section>
 
 
+    <h4>Pinned Projects:</h4>
+    <?php
+    // pinned project posts
+    $args_chronik = array(
+        'post_type' => array('projekte'),
+        'posts_per_page' => -1,
+        'order_by' => 'date',
+        'order' => 'DESC',
+        'meta_key'   => 'pin_main',
+        'meta_value' => 'true'
+    );
+
+    card_list($args_chronik);
+    ?>
+
+
 
 </main><!-- #site-content -->
 

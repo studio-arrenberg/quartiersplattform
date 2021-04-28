@@ -51,6 +51,7 @@ get_header();
                 <?php
                     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                         post_visibility_toggle( get_the_ID(  ) ); 
+                        pin_toggle();
                     ?>
                     
                     <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>

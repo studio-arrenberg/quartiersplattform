@@ -2555,9 +2555,9 @@ function call_to_action_card( $bg_color, $link, $title, $text) {
  * @param string $status status
  * @return void
  */
-function post_visibility_toggle() {
+function post_visibility_toggle() { // !!! naming => visibility_toggle
 
-	get_template_part( 'components/settings/post_visibility_toggle' );
+	get_template_part( 'components/settings/visibility_toggle' );
 
 	return;
 }
@@ -2572,7 +2572,7 @@ function post_visibility_toggle() {
  * @param string $status status
  * @return void
  */
-function projekt_toggle_status_callback() {
+function projekt_toggle_status_callback() { // !!! naming => visibility_toggle_callback
 
 	$post_id = $_POST['post_id'];
 	$status = $_POST['status'];
@@ -2597,6 +2597,76 @@ function projekt_toggle_status_callback() {
 } 
 add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
 add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callback' );
+
+
+// funtion with button in component
+// if project owner => projekt pin || admin => system pin (can be both should be determined before hand)
+
+// function ajax callback
+// check privilages
+// change state (true || false)
+
+// query quertier => get projects/akteure/pages/(posts) where meta main_pin:: true
+// query project => get posts where project_pin:: true
+
+
+
+/**
+ * Pin Toggle Function
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $post_id id
+ * @param string $status status
+ * @return void
+ */
+function pin_toggle($type = 'pin_project') {
+
+	set_query_var('pin_type', $type);
+
+	get_template_part( 'components/settings/pin_toggle' );
+
+	return;
+}
+
+
+/**
+ * Pin Toggle Status (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $post_id id
+ * @param string $status status
+ * @return void
+ */
+function pin_toggle_callback() {
+
+	$post_id = $_POST['post_id'];
+	$status = $_POST['status'];
+	$type = $_POST['pin_type']; // main_pin & project_pin
+
+	// !!! check if logged in user has privilages
+
+	if ($status != 'true' && $status != 'false') {
+		echo "nooo status";
+		return false;
+	}
+	// validate type
+	if ($type != 'pin_main' && $type != 'pin_project') { // !!! wording
+		echo "nooo type";
+		return false;
+	}
+
+	if ( ! add_post_meta( $post_id, $type, $status, true ) ) { 
+		update_post_meta ( $post_id, $type, $status );
+	}
+
+	return;
+	// echo $status." - ".$post_id;
+
+} 
+add_action( 'wp_ajax_pin_toggle', 'pin_toggle_callback' );
+add_action( 'wp_ajax_nopriv_pin_toggle', 'pin_toggle_callback' );
 
 
 /**
@@ -2744,5 +2814,3 @@ add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
  * End of File
  * 
  */
-
-
