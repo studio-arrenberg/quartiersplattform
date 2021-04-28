@@ -34,7 +34,8 @@
             'post_id': id,
             'pin_type': type,
             'status': $('label.'+elementClass+' input').is(":checked"),
-            'request': 1
+            'request': 1,
+            _ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
         };
 
         // alert($('label.'+elementClass+' input').is(":checked")+ ' id: ' +id);

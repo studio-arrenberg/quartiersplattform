@@ -2484,6 +2484,8 @@ function reminder_backend( $slug, $html, $state = 'notice' ) {
  */
 function remove_reminder_callback(){
 
+	check_ajax_referer('my_ajax_nonce');
+
 	$slug = $_POST['slug'];
 
 	$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
@@ -2511,6 +2513,8 @@ add_action( 'wp_ajax_nopriv_remove_reminder', 'remove_reminder_callback' );
  */
 function reset_reminder_cards_callback(){
 
+	check_ajax_referer('my_ajax_nonce');
+
 	$array = [];
 	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
 	return;
@@ -2534,7 +2538,6 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
  */
 
 function call_to_action_card( $bg_color, $link, $title, $text) {
-
 
 	// define query vars 
 	set_query_var('call_to_action_bg_color', $bg_color);
@@ -2573,6 +2576,8 @@ function post_visibility_toggle() { // !!! naming => visibility_toggle
  * @return void
  */
 function projekt_toggle_status_callback() { // !!! naming => visibility_toggle_callback
+
+	check_ajax_referer('my_ajax_nonce');
 
 	$post_id = $_POST['post_id'];
 	$status = $_POST['status'];
@@ -2641,6 +2646,8 @@ function pin_toggle($type = 'pin_project') {
  * @return void
  */
 function pin_toggle_callback() {
+
+	check_ajax_referer('my_ajax_nonce');
 
 	$post_id = $_POST['post_id'];
 	$status = $_POST['status'];
@@ -2772,6 +2779,7 @@ add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
 function add_project_callback() {
 
 	// check_ajax_referer('my_ajax_nonce');
+
 	echo "<h1>erstelle dein project</h1>";
 
 	acf_form(

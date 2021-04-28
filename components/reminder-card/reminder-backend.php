@@ -17,9 +17,10 @@
 		var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
     
         var data = {
-        'action': 'remove_reminder',
-		'slug': element_slug,
-        'request': 1
+            'action': 'remove_reminder',
+            'slug': element_slug,
+            'request': 1,
+            _ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
         };
 
         jQuery.ajax({

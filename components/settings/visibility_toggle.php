@@ -34,7 +34,8 @@
             'action': 'projekt_toggle_status', // !!! wording
             'post_id': id,
             'status': $('label.'+elementClass+' input').is(":checked"),
-            'request': 1
+            'request': 1,
+            _ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
         };
 
         $.ajax({

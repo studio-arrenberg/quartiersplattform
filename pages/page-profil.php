@@ -141,7 +141,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                     var data = {
                         'action': 'reset_reminder_cards',
-                        'request': 1
+                        'request': 1,
+                        _ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
                     };
 
                     $.ajax({

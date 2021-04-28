@@ -31,14 +31,14 @@ get_header();
 	<div class="add_project">Hi</div>
 	<script>
 		function add_project() {
-			alert('add projekt');
+			// alert('add projekt');
 
 			var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
     
 			var data = {
-			'action': 'add_project',
-			// 'slug': element_slug,
-			'request': 1
+				'action': 'add_project',
+				'request': 1,
+				_ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
 			};
 
 			$.ajax({
