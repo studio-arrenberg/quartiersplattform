@@ -38,7 +38,7 @@ get_header();
                     ),
                     'field_el' => 'div',
                     'uploader' => 'basic',
-                    'post_content' => false,
+                    'post_content' => true,
                     'post_title' => true,
                     'return' => get_site_url().'/projekte',
                     // 'field_groups' => array('group_5c5de08e4b57c'),

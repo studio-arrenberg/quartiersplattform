@@ -11,7 +11,7 @@
 // redirect before acf_form_head
 wp_maintenance_mode();
 
-// acf_form_head(); // before wp header !important!
+acf_form_head(); // before wp header !important!
 get_header();
 
 ?>
@@ -27,6 +27,33 @@ get_header();
 
 	<?php projekt_carousel(); ?>
 
+	<button class="button" onclick="add_project();">Projekt anlegen</button>
+	<div class="add_project">Hi</div>
+	<script>
+		function add_project() {
+			alert('add projekt');
+
+			var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
+    
+			var data = {
+			'action': 'add_project',
+			// 'slug': element_slug,
+			'request': 1
+			};
+
+			$.ajax({
+				url: ajax_url,
+				type: 'post',
+				data: data,
+				dataType: 'html',
+				success: function(response){
+					console.log(response);
+					$('div.add_project').html(response);
+					acf.do_action('append', $('div.add_project'));
+				}
+			});
+		}
+	</script>
 
 	<?php 
 		$args4 = array(

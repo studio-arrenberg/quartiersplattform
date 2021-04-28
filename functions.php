@@ -2683,3 +2683,46 @@ add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
  * End of File
  * 
  */
+
+
+function add_project_callback() {
+
+	// check_ajax_referer('my_ajax_nonce');
+
+	
+
+
+	echo "<h1>erstelle dein project</h1>";
+
+	acf_form(
+		array(
+			'id' => 'projekte-form',         
+			'post_id'=>'new_post',
+			'new_post'=>array(
+				'post_type' => 'projekte',
+				'post_status' => 'publish',
+			),
+			'field_el' => 'div',
+			'uploader' => 'basic',
+			'post_content' => false,
+			'post_title' => true,
+			'return' => get_site_url().'/projekte',
+			// 'field_groups' => array('group_5c5de08e4b57c'),
+			'fields' => array(
+				'field_5fc64834f0bf2', // Emoji
+				'field_5fc647f6f0bf0', // Kurzbeschreibung
+			),
+			'submit_value'=>'Projekt veröffentlichen',
+			'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
+		)
+	); 
+
+	emoji_picker_init('acf-field_5fc64834f0bf2');
+
+
+	wp_die(); 
+	return;
+
+} 
+add_action( 'wp_ajax_add_project', 'add_project_callback' );
+add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );

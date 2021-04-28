@@ -38,7 +38,7 @@ wp_maintenance_mode();
     <meta name="theme-color" content="#ffffff">
 
     <!-- Emoji Picker -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> -->
 
     <!-- Matomo Tracking API Key -->
     <?php the_field('matomo_api', 'option'); ?>
