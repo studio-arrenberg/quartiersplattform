@@ -25,7 +25,7 @@
 
 <script>
     
-    $("div.cookie-alert").click(function(){
+    $("div.cookie-alert a.button").click(function(){
 
         var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
     
