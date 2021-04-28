@@ -2546,6 +2546,22 @@ function call_to_action_card( $bg_color, $link, $title, $text) {
 
 }
 
+/**
+ * Projekt Toggle Function
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $post_id id
+ * @param string $status status
+ * @return void
+ */
+function post_visibility_toggle() {
+
+	get_template_part( 'components/settings/post_visibility_toggle' );
+
+	return;
+}
+
 
 /**
  * Projekt Toggle Status (ajax)
@@ -2676,22 +2692,16 @@ function projekt_feed_callback() {
 add_action( 'wp_ajax_projekt_feed', 'projekt_feed_callback' );
 add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
 
-
-
 /**
+ * Add Project (ajax)
+ *
+ * @since Quartiersplattform 1.7
  * 
- * End of File
- * 
+ * @return string
  */
-
-
 function add_project_callback() {
 
 	// check_ajax_referer('my_ajax_nonce');
-
-	
-
-
 	echo "<h1>erstelle dein project</h1>";
 
 	acf_form(
@@ -2726,3 +2736,13 @@ function add_project_callback() {
 } 
 add_action( 'wp_ajax_add_project', 'add_project_callback' );
 add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
+
+
+
+/**
+ * 
+ * End of File
+ * 
+ */
+
+
