@@ -1278,6 +1278,7 @@ function emoji_picker() {
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit'
+		// || is_front_page()
 	 ) {
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
@@ -1298,6 +1299,7 @@ function emoji_picker() {
       
 }
 add_action("wp_enqueue_scripts", "emoji_picker");
+
 
 /**
  * Register embla carousel script
