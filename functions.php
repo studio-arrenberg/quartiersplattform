@@ -2732,7 +2732,7 @@ function projekt_carousel( ) {
 	?>  
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
-			<?php slider($args4, 'badge', 2, 'false'); ?>
+			<?php slider($args4, 'badge', 4, 'false'); ?>
 		</div>
 
 	<?php 

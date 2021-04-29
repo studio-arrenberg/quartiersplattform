@@ -124,8 +124,8 @@ html {
 body {
   background: #fff;  box-sizing: border-box;
   color: #000;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
   font-size: 1.8rem;
   text-align: left;
 }
@@ -240,8 +240,9 @@ h6,
 .faux-heading {
   font-feature-settings: "lnum";
   font-variant-numeric: lining-nums;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
   font-weight: 500;
 }
 
@@ -249,8 +250,8 @@ h1,
 .heading-size-1 {
   font-size: 2.8rem;
   line-height: 3.1rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
 }
 
 h2,
@@ -262,8 +263,8 @@ h3,
 .heading-size-3 {
   font-size: 1.8rem;
   line-height: 2rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
 }
 
 h4,
@@ -307,8 +308,9 @@ i em,
 i i,
 cite em,
 cite i {
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
 }
 
 big {
@@ -322,8 +324,9 @@ small {
 b,
 strong {
   font-weight: 500;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
 }
 
 ins {
@@ -640,8 +643,8 @@ button,
 .pagination .next,
 .pagination .prev,
 .wp-block-file__button {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
   padding: 15px 20px 13px 20px;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -1085,17 +1088,21 @@ button.toggle {
 
 #site-header {
   position: fixed;
-  padding: 5px 10px 0px 10px;
   top: 0px;
-  width: 100%;
+  width: 100vw;
   z-index: 101;
-  margin: 0 auto;
   background-color: rgba(255, 255, 250, 1);
   border-bottom: 1px solid #dcf0ff;
+  transition: all ease-in-out 0.2s; /* Animation */
+}
+
+.site-header-content{
+  padding: 5px 10px 5px 10px;
+  margin: 0 auto;
+  max-width: 1440px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  transition: all ease-in-out 0.2s; /* Animation */
 }
 
 #site-content {
@@ -1107,7 +1114,6 @@ button.toggle {
 
 /*  BLURRY HEADER */
 
-/* @media (max-width: 782px) { */
   @supports (
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
@@ -1117,37 +1123,8 @@ button.toggle {
       backdrop-filter: blur(10px);
     }
   }
-/* } */
 
-.site-name {
-  margin-top: 9px;
-  margin-bottom: -2px;
-  margin-left: 5px;
-}
 
-.site-name a{
-  color: inherit;
-  text-decoration: none;
-}
-
-.site-name a:hover{
-  color:#0091ff;
-  text-decoration: none;
-}
-.site-name h1 {
-  font-size: 1.8rem;
-  line-height: 1.9rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
-    sans-serif;
-}
-
-.site-name h2 {
-  font-size: 1.3rem;
-  line-height: 1.3rem;
-  color: #6d6d6d;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-  sans-serif;
-}
 .header-button {
   display: flex;
   margin: 5px 3px;
@@ -1207,8 +1184,8 @@ button.toggle {
 .menu li > a {
   color: rgb(27, 9, 9);
   text-decoration: none;
-  font-size: 1.60rem;
-  line-height: 1.60rem;
+  font-size: 1.90rem;
+  line-height: 1.90rem;
   word-wrap: none;
   word-break: keep-all;
   padding: 15px 5px 15px 5px;
@@ -1220,48 +1197,15 @@ button.toggle {
 } 
   
 .menu .current-menu-item > a {
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
 } 
   
-
 @media (min-width: 782px) {
-  #site-header {
-    left: 0px;
-    right: 0px;
-    top: 0px !important;
-    margin-top: 0px;
-    height: 100px;
-    padding: 0px 30px;
-  }
-
-  #site-content {
-    margin: 150px auto 100px auto;
-    padding: 15px;
-    width: 100%;
-    max-width: 1030px;
-    overflow: visible;
-  }
-
-  .site-name{
-    margin: 0px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-  }
-  
-
-  .site-name h1 {
-    font-size: 2.5rem;
-    line-height: 2.6rem;
-    word-wrap: none;
-    word-break: keep-all;
-    white-space: nowrap;
-  }
-
   .header-button {
     height: 45px;
     min-width: 45px;
-    border-radius: 20px;
+    border-radius: 15px;
     font-size: 1.6rem;
   }
 
@@ -1270,31 +1214,23 @@ button.toggle {
   }
 
   .button-image {
-    border-radius: 20px;
-  }
-
-  .menu {
-    padding: 0px 15px 0px 15px;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-  }
-
-  .header-title {
-    padding: 0px;
-    display: none;
-  }
-
-  .menu-container ul {
-    justify-content: space-around;
+    border-radius: 15px;
   }
 
   .menu li > a {
-    font-size: 2rem;
-    line-height: 2rem;
-    padding: 20px 5px 17px 5px;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    display: flex;
+    align-items: center;
+    height: 90px;
     min-width: 135px;
     text-align: center;
+  }
+
+  .push-right {
+    display: flex;
+    align-items: center;
+    height: 90px;
   }
 
   .header-button .button-icon {
@@ -1304,34 +1240,17 @@ button.toggle {
     min-width: 25px;
     display: block;
   }
-}
 
-@media (min-width: 1000px) {
-  #site-header {
-    flex-wrap: nowrap;
-    justify-content: unset;
-    display: grid;
-    grid-template-columns: 1fr minmax(500px, 800px) 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "left center right";
-  }
-
-  .pull-left {
-    grid-area: left;
-    padding-right: 5px;
-  }
-
-  .menu {
-    grid-area: center;
-    max-width: 782px;
-  }
-
-  .push-right {
-    grid-area: right;
-    padding-left: 5px;
-    align-items: center;
+  #site-content {
+    margin: 150px auto 100px auto;
+    padding: 15px;
+    width: 100%;
+    max-width: 1440px;
+    overflow: visible;
   }
 }
+
+
 
 @media (max-width: 374px) {
   .site-name{
@@ -1349,18 +1268,8 @@ button.toggle {
 
 
 @media (max-width: 340px) {
-  .site-name{
-    margin-top: 10px;
-  }
-
-
-  .site-name h1{
-    font-size: 1.5rem;
-  }
-
-
-  .site-name h2{
-    display: none;
+  .menu li > a{
+    font-size: 1.4rem;
   }
 
   .header-button{
@@ -1378,16 +1287,10 @@ button.toggle {
     margin-right: 0px;
 
   }
-
-  .menu li > a{
-    font-size: 1.4rem;
-  }
 }
 
 
 /* Overlays */
-
-
 
 .overlay{
   position: fixed;
@@ -1456,7 +1359,14 @@ button.toggle {
   display: none;
   opacity: 0;
   transition: all ease-in-out 0.2s; /* Animation */
+}
 
+@media (max-width: 782px ) {
+
+.hidden-small{
+  display: none;
+  opacity: 0;
+}
 }
 
 
@@ -1618,63 +1528,41 @@ button.toggle {
 
 
 
-
 @media (min-width: 1345px) {
 
   html {
     overflow-x: inherit !important;
   }
 
-  .page{
+  .page-grid{
     justify-content: unset; 
     display: grid;
-    max-width: 1500px;
     margin: 0 auto;
-    padding: 15px;
-    grid-template-columns: auto 345px;
-    grid-gap: 15px;
-    grid-template-areas: "center sidebar"
-    "footer footer";
+    grid-template-columns: 345px 600px 345px;
+    grid-gap: 45px;
+    grid-template-areas: "left-sidebar content right-sidebar ";
   }
 
-  .home{
-    display: block;
-    max-width: none;
-    padding: 0px;
-  }
-
-  .page #site-content {
-    margin: 125px 0px 0px 0px;
-    grid-area: center;
-    max-width: 1000px;
-    overflow: visible;
-    padding: 0px;
-  }
-  
-  .page .right-sidebar{
+  .right-sidebar{
     display: block;
     margin-top: 115px;
     height: 100vh;
-    grid-area: sidebar;
+    grid-area: right-sidebar;
     position: -webkit-sticky;
-      /* overflow: scroll; */
-      position: sticky;
-      top: 115px;
+    position: sticky;
+    top: 115px;
+  }
+
+  .right-sidebar .card{
+    max-width: none;
+  }
+
+  .content {
+      grid-area: content;
     }
 
-    .right-sidebar .card{
-      max-width: none;
-    }
-
-    .page footer {
-      grid-area: footer;
-      padding-left: 5px;
-      align-items: center;
-    }
-
-
-    .grid > div{
-      width: calc( 50% - 175px / 2 );
+  .newsfeed{
+      width: 100%;
       margin: 0px;
       transition: all 0.2s ease-in-out;
     }
@@ -1957,11 +1845,11 @@ button.toggle {
 
 
 .quartier section {
-  min-height: 600px;
+  min-height: 700px;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1440px;
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
@@ -1974,7 +1862,7 @@ button.toggle {
 }
 
 .quartier section:first-of-type{
-  padding-top: 100px;
+  margin-top: 100px;
 }
 
 .stage-center{
@@ -2005,7 +1893,8 @@ button.toggle {
 }
 
 .stage-title{
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica;
+   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -2084,7 +1973,31 @@ button.toggle {
 }
 
 
+.badge-link{
+  width: 70px !important;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+}
 
+.badge{
+  width: 70px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 3.6rem;
+}
+
+.card-title-small{
+  font-size: 1.1rem;
+  max-height: 1.7rem;
+  overflow: hidden;
+
+}
 
 /* -------------------------------------------------------------------------- */
 
@@ -2169,8 +2082,8 @@ button.toggle {
 
 .has-drop-cap:not(:focus)::first-letter {
   color: #0091ff;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
   font-size: 5.1em;
   font-weight: 500;
   margin: 0.05em 0.1em 0 0;
@@ -2197,8 +2110,8 @@ button.toggle {
 .entry-content .wp-block-pullquote,
 .entry-content .wp-block-quote.is-large,
 .entry-content .wp-block-quote.is-style-large {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
 }
 
 /* Block Font Sizes -------------------------- */
@@ -2883,8 +2796,8 @@ figure.wp-block-table.is-style-stripes {
 /* Font Families ----------------------------- */
 
 .entry-content {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
   letter-spacing: normal;
 }
 
@@ -2900,8 +2813,8 @@ figure.wp-block-table.is-style-stripes {
 .entry-content address,
 .entry-content .wp-caption-text,
 .entry-content .wp-block-file {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
 }
 
 /* Alignment Classes ------------------------- */
@@ -3070,8 +2983,9 @@ figure.wp-block-table.is-style-stripes {
 
 .comment-author {
   display: inline;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
 }
 
 .comment-body p {
@@ -3245,16 +3159,16 @@ figure.wp-block-table.is-style-stripes {
 .widget_text dl,
 .widget_text dt,
 .widget-content .rssSummary {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
   letter-spacing: normal;
 }
 
 .widget-content cite,
 .widget-content figcaption,
 .widget-content .wp-caption-text {
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 400;
 }
 
 /* Base List Widget -------------------------- */
@@ -4908,16 +4822,18 @@ a.card-link{
 }
 
 .card .card-title {
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
   font-size: 1.8rem;
   line-height: 1.9rem;
   margin: 0px;
 }
 
 .card .card-title-large {
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
   font-size: 2.5rem;
   line-height: 2.8rem;
   margin-top: 3px;
@@ -4937,7 +4853,8 @@ a.card-link{
 .card .pre-title {
   color: #0091ff;
   font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+ font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 700;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -4961,7 +4878,8 @@ a.card-link{
   background: #fff;
   color: #0091ff;
   font-size: 1.4rem;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-weight: 400;
   margin-bottom: 3px;
   white-space: nowrap;
 }
@@ -5444,7 +5362,7 @@ margin-top: -30px;
 
 /* Mobile - 1 slide in viewport */
 .embla-one .embrela-slide {
-  flex: 0 0 100%;
+  /* flex: 0 0 100%; */
   padding-left: 10px;
 }
 
@@ -6006,7 +5924,8 @@ margin-top: -30px;
 .um-account-heading,
 .um-field-image label {
   font-size: 2rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+ font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 700;
   margin-top: 25px;
   margin-bottom: 5px;
 }
@@ -6127,8 +6046,8 @@ input[type="file"] {
   padding-top: 5px !important;
   height: 50px !important;
 
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-weight: 400;
   font-size: 1.7rem;
 }
 
@@ -6138,8 +6057,8 @@ input[type="file"] {
   width: 145px;
   height: 44px;
   padding-top: 5px !important;
-  font-family: "OfficinaSansITCStd-Book", "Helvetica Neue", Helvetica,
-    sans-serif;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-weight: 400;
   font-size: 1.7rem;
   padding-bottom: 5px !important;
 }
@@ -6156,8 +6075,9 @@ input[type="file"] {
   width: calc(100% - 30px);
   max-width: 1000px;
   font-size: 2.4rem;
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica,
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
+font-weight: 700;
   margin-bottom: 10px;
 }
 .upload {
@@ -6294,7 +6214,8 @@ input[type="radio"]:checked {
 }
 
 .acf-label label{
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+ font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 700;
   font-size: 1.6rem;
   line-height: 2.3rem;
 }
@@ -6600,7 +6521,8 @@ form.poll .answers{
 }
 
 .ui-datepicker th{
-  font-family: "OfficinaSansITCStd-Bold", "Helvetica Neue", Helvetica, sans-serif;
+ font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+font-weight: 700;
   opacity: 0.7;
   margin-top: 20px;
 }

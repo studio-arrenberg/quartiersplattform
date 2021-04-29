@@ -24,7 +24,6 @@ if (strlen(get_field('slogan')) > 1 ) {
 
 
 <div class="card-group">
-
     <?php if (get_query_var( 'additional_info') && get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) { ?>
         <div class="pre-card">
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">

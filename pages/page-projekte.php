@@ -11,13 +11,19 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
-		
-	<?php 
-		$text = 'Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
-	 	Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ';
-		reminder_card('projekte-intro', 'Entdecke alle Projekte aus deinem Quartier', $text );
-	?>
+<main id="site-content" class="page-grid" role="main">
+
+
+	<div class="left-sidebar">
+
+	</div>
+
+	<div class="content">
+		<?php 
+			$text = 'Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
+			Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ';
+			reminder_card('projekte-intro', 'Entdecke alle Projekte aus deinem Quartier', $text );
+		?>
 
 		<?php
 		
@@ -64,30 +70,31 @@ get_header();
 		<div class="grid-4col" data-grid>
 			<?php card_list($args4);?>
 		</div>
+	
+	</div>
 
+	<div class="right-sidebar">
+		<?php 
+			// Projekte
+			if (is_user_logged_in(  )) {
+				get_template_part('components/smart-card/projekte');
+					
+			// Call to Action Card 
+				call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
+			
+			}
+			else {
+				$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
+				reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
+			}
+		?>	
+	</div>
 
 </main><!-- #site-content -->
 
 
 
 
-
-<div class="right-sidebar">
-	<?php 
-		// Projekte
-		if (is_user_logged_in(  )) {
-			get_template_part('components/smart-card/projekte');
-			
-			// Call to Action Card 
-			call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
-	
-		}
-		else {
-			$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
-			reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
-		}
-	?>	
-</div>
 
 
 <!-- </div> -->
