@@ -68,14 +68,16 @@ get_header();
         <div class="grid projekt-card-container">
                     
             <?php 
-                $args4 = array(
-                'post_type'=> array('projekte'), 
-                'post_status'=>'publish', 
-                'posts_per_page'=> 5,
-                'orderby' => 'modified'
-            );
-            ?>  
-                <?php card_list($args4);?>
+                $pinned_projects = array(
+                    'post_type' => 'projekte',
+                    'posts_per_page' => -1,
+                    'order_by' => 'date',
+                    'order' => 'DESC',
+                    'meta_key'   => 'pin_main',
+                    'meta_value' => array(true, 'true')
+                );
+                card_list($pinned_projects);
+            ?>
         </div>
     </section>
 
@@ -107,43 +109,26 @@ get_header();
         <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
     </section>
 
-
-    <section>
-        <h1>Projekte im Quartier</h1>
-        <p>preview....</p>
-        <a class="button" href="<?php echo get_site_url( ) ?>/projektverzeichnis">Projekt liste</a>
-    </section>
-
-
-    <h4>Pinned Projects:</h4>
+    
     <?php
-    // pinned project posts
-    $args_chronik = array(
-        'post_type' => array('projekte'),
-        'posts_per_page' => -1,
-        'order_by' => 'date',
-        'order' => 'DESC',
-        'meta_key'   => 'pin_main',
-        'meta_value' => 'true'
-    );
+        // pinned pages
+        $pinned_pages = array(
+            'post_type' => 'page',
+            'posts_per_page' => -1,
+            'order_by' => 'date',
+            'order' => 'DESC',
+            'meta_key'   => 'pin_main',
+            'meta_value' => array(true, 'true')
+        );
 
-    card_list($args_chronik);
-    ?>
+        if (count_query($pinned_pages)) {
+            ?>
 
+                <h4>Wichtige Seiten</h4>
+                <?php card_list($pinned_pages); ?>
 
-    <h4>Pinned Pages:</h4>
-    <?php
-    // pinned pages
-    $args_chronik2 = array(
-        'post_type' => 'page',
-        'posts_per_page' => -1,
-        'order_by' => 'date',
-        'order' => 'DESC',
-        'meta_key'   => 'pin_main',
-        'meta_value' => true
-    );
-
-    card_list($args_chronik2);
+            <?php            
+        }
     ?>
 
 

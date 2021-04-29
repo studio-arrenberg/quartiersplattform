@@ -2835,6 +2835,27 @@ add_action( 'wp_ajax_add_project', 'add_project_callback' );
 add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
 
 
+/**
+ * Count Query
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return string
+ */
+function count_query($query, $amount = 1) {
+
+	if (!$query) {
+		return false;
+	}
+
+	$my_query = new WP_Query($query);
+
+	if ($my_query->post_count >= $amount) {
+		return true;
+	}
+    
+}
+
 
 /**
  * 
