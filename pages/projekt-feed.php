@@ -27,9 +27,10 @@ get_header();
 
 	<?php projekt_carousel(); ?>
 
-	<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen ex</a>
+	<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
-	<button class="button" onclick="add_project();">Projekt anlegen</button>
+
+	<!-- <button class="button" onclick="add_project();">Projekt anlegen</button>
 	<div class="add_project">Hi</div>
 	<script>
 		function add_project() {
@@ -55,7 +56,7 @@ get_header();
 				}
 			});
 		}
-	</script>
+	</script> -->
 
 	<?php 
 		$args4 = array(
@@ -120,17 +121,51 @@ get_header();
 <div class="right-sidebar">
 	<?php 
 		// Projekte
-		if ( is_user_logged_in( ) ) {
+		// if ( is_user_logged_in( ) ) {
 
-			get_template_part('components/smart-card/projekte');
+		// 	get_template_part('components/smart-card/projekte');
 			
-			// Call to Action Card 
-			call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
+		// 	// Call to Action Card 
+		// 	call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
 	
-		}
+		// }
+		// else {
+		// 	$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
+		// 	reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
+		// }
+
+		// anstehende veranstaltungen
+        $veranstaltungen = array(
+			'post_type'=>'veranstaltungen', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 20,
+			'meta_key' => 'event_date',
+			'orderby' => 'meta_val',
+			'order' => 'ASC',
+			'offset' => '0', 
+			'meta_query' => array(
+				array(
+					'key' => 'event_date', 
+					'value' => date("Y-m-d"),
+					'compare' => '>=', 
+					'type' => 'DATE'
+				)
+			)
+		);
+
+        if (count_query($veranstaltungen)) {
+			set_query_var( 'additional_info', false);
+            ?>
+
+                <h4>Anstehende Veranstaltungen</h4>
+                <?php card_list($veranstaltungen); ?>
+
+            <?php            
+        }
 		else {
-			$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
-			reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
+			// keine veranstaltungen
+			// funktion ..?
+			echo "keine veranstaltung";
 		}
 	?>	
 </div>
