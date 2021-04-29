@@ -1497,9 +1497,26 @@ function cpt_save_worker( $post_id ) {
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
+
+		// set projekt visibility
+		$visibilty_status = get_field('qp_visibility', $post_id);
+		if (empty($visibilty_status)) {
+			$status = 'publish';
+		}
+		else if ($visibilty_status === true) {
+			$status = 'publish';
+		}
+		else if ($visibilty_status === false) {
+			$status = 'draft';
+		}
+		// update post
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_status'] = $status;
+		wp_update_post( $my_post );
 		
-		$tax = $_POST['project_tax'];
 		// assign post to project
+		$tax = $_POST['project_tax'];
 		if (!empty($tax)) {
 			// set taxonomy 
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
@@ -2659,12 +2676,12 @@ function pin_toggle_callback() {
 	// !!! check if logged in user has privilages
 
 	if ($status != 'true' && $status != 'false') {
-		echo "nooo status";
+		// echo "nooo status";
 		return false;
 	}
 	// validate type
 	if ($type != 'pin_main' && $type != 'pin_project') { // !!! wording
-		echo "nooo type";
+		// echo "nooo type";
 		return false;
 	}
 

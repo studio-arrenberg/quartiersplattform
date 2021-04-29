@@ -6847,3 +6847,17 @@ ul.filter-tabs {
   opacity: 1 !important;
   transition: opacity 1s; 
 }
+
+/* acf toggle in form */
+div.acf-switch.-on span.acf-switch-on {
+  display: block;
+}
+div.acf-switch.-on span.acf-switch-off {
+  display: none;
+}
+div.acf-switch span.acf-switch-off {
+  display: block;
+}
+div.acf-switch span.acf-switch-on {
+  display: none;
+}

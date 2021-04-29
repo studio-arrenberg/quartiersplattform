@@ -319,8 +319,7 @@ if( function_exists('acf_add_local_field_group') ):
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => 'Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten.
-		Wir sind bald wieder online.',
+					'default_value' => 'Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten. Wir sind bald wieder online.',
 					'placeholder' => '',
 					'maxlength' => '',
 					'rows' => '',

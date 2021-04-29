@@ -227,6 +227,25 @@ acf_add_local_field_group(array(
 			'return_format' => 'id',
 			'multiple' => 1,
 		),
+		// array(
+		// 	'key' => 'field_608a9c2dfed4d',
+		// 	'label' => 'Projekt Pin',
+		// 	'name' => 'pin_projekt',
+		// 	'type' => 'true_false',
+		// 	'instructions' => '',
+		// 	'required' => 0,
+		// 	'conditional_logic' => 0,
+		// 	'wrapper' => array(
+		// 		'width' => '',
+		// 		'class' => '',
+		// 		'id' => '',
+		// 	),
+		// 	'message' => '',
+		// 	'default_value' => 0,
+		// 	'ui' => 0,
+		// 	'ui_on_text' => '',
+		// 	'ui_off_text' => '',
+		// ),
 	),
 	'location' => array(
 		array(
