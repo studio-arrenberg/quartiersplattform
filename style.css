@@ -2016,7 +2016,22 @@ button.toggle {
   background: #fff;
   font-size: 3.6rem;
 }
+/* 
+.yours{
+  border: 3px solid;
+  border-image-source: conic-gradient(from 180deg at 50% 50%, #0091FF 0deg, #91CFFF 360deg);
+  border-image-slice: 2;
+} */
 
+.yours::after {
+  position: absolute;
+  width: 77px;
+  height: 72px;
+  background: linear-gradient(180deg, #0091FF 0%, #68BEFF 100%);
+  content: '';
+  z-index: -1;
+  border-radius: 22.5px;
+}
 
 .large-header {
   min-height: 60vh;
