@@ -1397,10 +1397,122 @@ button.toggle {
 }
 
 
+@media (min-width: 782px) {
+
+  html {
+    overflow-x: inherit !important;
+  }
+
+  .page-grid{
+    justify-content: unset; 
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 100px minmax(400px, 1fr)  345px;
+    grid-gap: 45px;
+    grid-template-areas: "left-sidebar main-content right-sidebar ";
+  }
+
+  .right-sidebar{
+    display: block;
+    margin-top: 0px;
+    height: 100vh;
+    grid-area: right-sidebar;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 115px;
+  }
+
+
+  .left-sidebar{
+    grid-area: left-sidebar;
+
+  }
+
+  .right-sidebar .card{
+    max-width: none;
+  }
+
+  .main-content {
+      grid-area: main-content;
+      padding-top: 0px;
+    }
+
+  .main-content > div {
+    max-width: 600px;
+  }
+
+  .newsfeed{
+      width: 100%;
+      margin: 0px;
+      transition: all 0.2s ease-in-out;
+    }
+
+  
+}
 
 
 
 
+
+
+@media (min-width: 1045px) {
+
+  html {
+    overflow-x: inherit !important;
+  }
+
+  .page-grid{
+    justify-content: unset; 
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 300px minmax(400px, 1fr)  345px;
+    grid-gap: 45px;
+    grid-template-areas: "left-sidebar main-content right-sidebar ";
+  }
+
+  .right-sidebar{
+    display: block;
+    margin-top: 0px;
+    height: 100vh;
+    grid-area: right-sidebar;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 115px;
+  }
+
+
+  .left-sidebar{
+    grid-area: left-sidebar;
+
+  }
+
+  .right-sidebar .card{
+    max-width: none;
+  }
+
+  .main-content {
+      grid-area: main-content;
+      padding-top: 0px;
+    }
+
+  .main-content > div {
+    max-width: 600px;
+  }
+
+  .newsfeed{
+      width: 100%;
+      margin: 0px;
+      transition: all 0.2s ease-in-out;
+    }
+}
+
+
+
+
+
+
+
+/* STUPID GRID 
 
 
 
@@ -1438,7 +1550,7 @@ button.toggle {
 }
 
 /* Projekt Card size adjustment */ 
-
+/* 
 .grid-4col .pre-card{
   display: none;
 }
@@ -1542,58 +1654,7 @@ button.toggle {
 }
 
 
-
-@media (min-width: 900px) {
-
-  html {
-    overflow-x: inherit !important;
-  }
-
-  .page-grid{
-    justify-content: unset; 
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: 300px minmax(400px, 1fr)  345px;
-    grid-gap: 45px;
-    grid-template-areas: "left-sidebar main-content right-sidebar ";
-  }
-
-  .right-sidebar{
-    display: block;
-    margin-top: 0px;
-    height: 100vh;
-    grid-area: right-sidebar;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 115px;
-  }
-
-
-  .left-sidebar{
-    grid-area: left-sidebar;
-
-  }
-
-  .right-sidebar .card{
-    max-width: none;
-  }
-
-  .main-content {
-      grid-area: main-content;
-    }
-
-  .main-content > div {
-    max-width: 600px;
-  }
-
-
-  .newsfeed{
-      width: 100%;
-      margin: 0px;
-      transition: all 0.2s ease-in-out;
-    }
-
-}
+ */
 
 
 
@@ -2079,17 +2140,21 @@ button.toggle {
     overflow: hidden;
   }
 
-
-
-.card-title-small{
-  font-size: 1.5rem;
-  line-height: 1.6rem;
-  max-height: none;
-  font-weight: 700;
-  overflow: hidden;
+  .card-title-small{
+    display: none;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    max-height: none;
+    font-weight: 700;
+    overflow: hidden;
+  }
 }
 
 
+@media (min-width: 1045px) {
+  .card-title-small{
+    display: block;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
