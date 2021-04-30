@@ -87,20 +87,26 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         <div id="profil" class="bar bar-active">
 
-            <h2>Dein Kontakt</h2>
-            <?php author_card(true, $current_user->ID); ?>
+
+            <?php 
+            
+            // echo $current_user->ID;
+            author_card(true, $current_user->ID); 
+            
+            ?>
 
             <h2>Deine Projekte</h2>
             <?php
                 $args4 = array(
                     'post_type'=> 'projekte', 
-                    'post_status'=> 'publish', 
+                    'post_status'=> array('publish', 'draft'), 
                     'author' =>  $current_user->ID,
                     'posts_per_page'=> 10, 
                     'order' => 'DESC',
                     'offset' => '0', 
                 );
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+                // slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+                card_list($args4);
 
             ?>
 
@@ -133,22 +139,22 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 <br>
                 <br>
                 <!-- Biography Information -->   
-                <h2>Erzähle etwas über dich</h2>
+                <!-- <h2>Erzähle etwas über dich</h2>
                 <br>
-                    <?php
-                    $userid = "user_".$current_user->ID; 
-                    acf_form (
-                        array(
-                            'form' => true,
-                            'post_id' => $userid,
-                            'return' => get_site_url()."/profil"."/",
-                            'submit_value' => 'Änderungen speichern',
-                            'post_title' => false,
-                            'post_content' => false,    
-                            'field_groups' => array('group_605dc2bb690d9'),
-                        )
-                    );
-                    ?>
+                <?php
+                // $userid = "user_".$current_user->ID; 
+                // acf_form (
+                //     array(
+                //         'form' => true,
+                //         'post_id' => $userid,
+                //         'return' => get_site_url()."/profil"."/",
+                //         'submit_value' => 'Änderungen speichern',
+                //         'post_title' => false,
+                //         'post_content' => false,    
+                //         'field_groups' => array('group_605dc2bb690d9'),
+                //     )
+                // );
+                ?> -->
 
                 <h2>Profil bearbeiten</h2>
                 <?php echo do_shortcode("[ultimatemember_account]"); ?>
