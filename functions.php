@@ -2873,6 +2873,7 @@ function count_query($query, $amount = 1) {
 }
 
 
+
 /**
  * 
  * End of File

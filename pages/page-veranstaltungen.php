@@ -20,33 +20,11 @@ get_header();
 
 	
 		<?php 
-		$args = array(
-			'post_type'=>'veranstaltungen', 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 20,
-			'meta_key' => 'event_date',
-			'orderby' => 'meta_val',
-			'order' => 'ASC',
-			'offset' => '0', 
-			'meta_query' => array(
-				array(
-					'key' => 'event_date', 
-					'value' => date("Y-m-d"),
-					'compare' => '>=', 
-					'type' => 'DATE'
-				)
-			)
-		);
-
+		
+		get_template_part('components/views/veranstaltungen');
 		// !!! function wenn keine veranstaltungen angezeigt werden
 
 		?>  
-		
-		<div class="grid-2col" data-grid>
-			<?php card_list($args);?>
-		</div>
-
-
 		
 
 
@@ -58,6 +36,9 @@ get_header();
 </main><!-- #site-content -->
 	<div class="right-sidebar">
 		<?php 
+
+			projekt_carousel();
+
 			// Projekte
 			if (is_user_logged_in(  )) {
 				get_template_part('components/smart-card/projekte');
@@ -73,6 +54,7 @@ get_header();
 				reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
 			
 			}
+			
 		?>	
 	</div>
 <?php get_footer(); ?>

@@ -11,7 +11,7 @@
 // redirect before acf_form_head
 wp_maintenance_mode();
 
-acf_form_head(); // before wp header !important!
+// acf_form_head(); // before wp header !important!
 get_header();
 
 ?>
@@ -20,28 +20,30 @@ get_header();
 <main id="site-content" class="page-grid" role="main">
 
 	<div class="left-sidebar">
-	<?php projekt_carousel(); ?>
 
-	<div class="hidden-small">
-	<!-- Hier -->
+		
+		<!-- <div class="add_project">Hi</div> -->
 
-		<?php 
-			$args4 = array(
-				'post_type'=> array('projekte'), 
-				'post_status'=>'publish', 
-				'posts_per_page'=> 20,
-				'orderby' => 'date'
-			);
-		?>  
+		<div class="hidden-small">
 
-		<?php // card_list($args4); ?>
-	</div>
+			<?php 
+				$args4 = array(
+					'post_type'=> array('projekte'), 
+					'post_status'=>'publish', 
+					'posts_per_page'=> 20,
+					'orderby' => 'date'
+				);
+			?>  
 
-	<button class="button" onclick="add_project();">Projekt anlegen</button>
-	<div class="add_project">Hi</div>
+			<?php // card_list($args4); ?>
+		</div>
 	</div>
 
 	<div class="content">
+
+	<?php projekt_carousel(); ?>
+
+
 
 	<?php
 		$text = __('Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");
@@ -55,33 +57,6 @@ get_header();
 	<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
 
-	<!-- <button class="button" onclick="add_project();">Projekt anlegen</button>
-	<div class="add_project">Hi</div>
-	<script>
-		function add_project() {
-			// alert('add projekt');
-			var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
-    
-			var data = {
-				'action': 'add_project',
-				'request': 1,
-				_ajax_nonce: '<?php echo wp_create_nonce( 'my_ajax_nonce' ); ?>'
-			};
-
-			$.ajax({
-				url: ajax_url,
-				type: 'post',
-				data: data,
-				dataType: 'html',
-				success: function(response){
-					console.log(response);
-					$('div.add_project').html(response);
-					acf.do_action('append', $('div.add_project'));
-				}
-			});
-		}
-	</script> -->
-
 	<?php 
 		$args4 = array(
 			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
@@ -94,6 +69,7 @@ get_header();
 	<div class="newsfeed" data-grid>
 		<?php set_query_var( 'additional_info', true ); ?>
 		<?php card_list($args4); ?>
+		<?php set_query_var( 'additional_info', false ); ?>
     </div>
 
 	<div class="newsfeed_loadmore">
@@ -143,7 +119,6 @@ get_header();
 	</script>
 	</div>
 
-
 <div class="right-sidebar">
 	<?php 
 		// Projekte
@@ -160,39 +135,7 @@ get_header();
 		// 	reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
 		// }
 
-		// anstehende veranstaltungen
-        $veranstaltungen = array(
-			'post_type'=>'veranstaltungen', 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 20,
-			'meta_key' => 'event_date',
-			'orderby' => 'meta_val',
-			'order' => 'ASC',
-			'offset' => '0', 
-			'meta_query' => array(
-				array(
-					'key' => 'event_date', 
-					'value' => date("Y-m-d"),
-					'compare' => '>=', 
-					'type' => 'DATE'
-				)
-			)
-		);
-
-        if (count_query($veranstaltungen)) {
-			set_query_var( 'additional_info', false);
-            ?>
-
-                <h4>Anstehende Veranstaltungen</h4>
-                <?php card_list($veranstaltungen); ?>
-
-            <?php            
-        }
-		else {
-			// keine veranstaltungen
-			// funktion ..?
-			echo "keine veranstaltung";
-		}
+		get_template_part('components/views/veranstaltungen');
 	?>	
 </div>
 
