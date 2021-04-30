@@ -853,7 +853,7 @@ require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
 require_once dirname( __FILE__ ) .'/setup/fragen.php'; # Fragen
 require_once dirname( __FILE__ ) .'/setup/angebote.php'; # Angebote
 require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
-require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
+// require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
 
 /**
  * Call UM & ACF function files
@@ -1278,6 +1278,7 @@ function emoji_picker() {
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit'
+		// || is_front_page()
 	 ) {
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
@@ -1298,6 +1299,7 @@ function emoji_picker() {
       
 }
 add_action("wp_enqueue_scripts", "emoji_picker");
+
 
 /**
  * Register embla carousel script
@@ -1497,9 +1499,26 @@ function cpt_save_worker( $post_id ) {
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
+
+		// set projekt visibility
+		$visibilty_status = get_field('qp_visibility', $post_id);
+		if (empty($visibilty_status)) {
+			$status = 'publish';
+		}
+		else if ($visibilty_status === true) {
+			$status = 'publish';
+		}
+		else if ($visibilty_status === false) {
+			$status = 'draft';
+		}
+		// update post
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_status'] = $status;
+		wp_update_post( $my_post );
 		
-		$tax = $_POST['project_tax'];
 		// assign post to project
+		$tax = $_POST['project_tax'];
 		if (!empty($tax)) {
 			// set taxonomy 
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
@@ -2659,12 +2678,12 @@ function pin_toggle_callback() {
 	// !!! check if logged in user has privilages
 
 	if ($status != 'true' && $status != 'false') {
-		echo "nooo status";
+		// echo "nooo status";
 		return false;
 	}
 	// validate type
 	if ($type != 'pin_main' && $type != 'pin_project') { // !!! wording
-		echo "nooo type";
+		// echo "nooo type";
 		return false;
 	}
 
@@ -2817,6 +2836,27 @@ function add_project_callback() {
 add_action( 'wp_ajax_add_project', 'add_project_callback' );
 add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
 
+
+/**
+ * Count Query
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return string
+ */
+function count_query($query, $amount = 1) {
+
+	if (!$query) {
+		return false;
+	}
+
+	$my_query = new WP_Query($query);
+
+	if ($my_query->post_count >= $amount) {
+		return true;
+	}
+    
+}
 
 
 /**

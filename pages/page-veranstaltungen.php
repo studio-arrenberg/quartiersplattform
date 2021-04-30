@@ -23,9 +23,9 @@ get_header();
 		$args = array(
 			'post_type'=>'veranstaltungen', 
 			'post_status'=>'publish', 
-			'posts_per_page'=> 4,
+			'posts_per_page'=> 20,
 			'meta_key' => 'event_date',
-			'orderby' => 'rand',
+			'orderby' => 'meta_val',
 			'order' => 'ASC',
 			'offset' => '0', 
 			'meta_query' => array(
@@ -37,6 +37,9 @@ get_header();
 				)
 			)
 		);
+
+		// !!! function wenn keine veranstaltungen angezeigt werden
+
 		?>  
 		
 		<div class="grid-2col" data-grid>
@@ -44,6 +47,7 @@ get_header();
 		</div>
 
 
+		
 
 
 </div>

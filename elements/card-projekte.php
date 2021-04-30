@@ -20,6 +20,18 @@ if (strlen(get_field('slogan')) > 1 ) {
     $char = 50;
 }
 
+/*
+
+fehlt:
+- badges 
+    - privat / unsichtbar / Entwurf
+    - mein projekt 
+    - aktuell läuft eine veranstaltung
+    - Bezirksvertretung
+- notifications
+
+*/
+
 ?>
 
 
