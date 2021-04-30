@@ -1543,7 +1543,7 @@ button.toggle {
 
 
 
-@media (min-width: 1345px) {
+@media (min-width: 900px) {
 
   html {
     overflow-x: inherit !important;
@@ -1553,19 +1553,25 @@ button.toggle {
     justify-content: unset; 
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 345px 600px 345px;
+    grid-template-columns: 300px minmax(400px, 1fr)  345px;
     grid-gap: 45px;
     grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
 
   .right-sidebar{
     display: block;
-    margin-top: 115px;
+    margin-top: 0px;
     height: 100vh;
     grid-area: right-sidebar;
     position: -webkit-sticky;
     position: sticky;
     top: 115px;
+  }
+
+
+  .left-sidebar{
+    grid-area: left-sidebar;
+
   }
 
   .right-sidebar .card{
@@ -1575,6 +1581,11 @@ button.toggle {
   .main-content {
       grid-area: main-content;
     }
+
+  .main-content > div {
+    max-width: 600px;
+  }
+
 
   .newsfeed{
       width: 100%;
@@ -1987,7 +1998,6 @@ button.toggle {
   }
 }
 
-
 .badge-link{
   width: 70px !important;
   text-decoration: none;
@@ -2007,10 +2017,55 @@ button.toggle {
   font-size: 3.6rem;
 }
 
+
+.large-header {
+  min-height: 60vh;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  max-width: 800px;
+}
+
+.large-header h1 {
+  font-size: 4rem;
+  line-height: 4.3rem;
+  margin-top: 10px;
+}
+
+
 .card-title-small{
   font-size: 1.1rem;
   max-height: 1.7rem;
   overflow: hidden;
+}
+
+
+
+@media (min-width: 782px) {
+ 
+  .badge-link{
+    display: flex;
+    align-items: center;
+    width: auto !important;
+  max-width: 300px;
+
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .badge{
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+.card-title-small{
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  max-height: none;
+  font-weight: 700;
+  overflow: hidden;
+}
+
 
 }
 
@@ -5086,9 +5141,16 @@ margin-top: -30px;
 .right-sidebar .card-large{
   padding: 10px;
 }
+
+
 @media (min-width: 782px) {
   .card-large{
     padding: 25px;
+  }
+
+  .landscape{
+    height: unset;
+    max-height: 300px;
   }
 }
 
@@ -5338,7 +5400,7 @@ margin-top: -30px;
 /* Shadow */
 
 /* nur bei gardent */
-
+/* 
 .shadow {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
     0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
@@ -5349,7 +5411,24 @@ margin-top: -30px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.15),
     0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 32px rgba(0, 0, 0, 0.15),
     0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 126px rgba(0, 0, 0, 0.15);
+} */
+
+
+
+.shadow {
+  box-shadow: 0 1px 20px rgba(196, 196, 196, 0.5);
+  transition: box-shadow 0.2s ease-in-out;
+
 }
+
+.shadow:hover {
+  box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
+}
+
+a:hover .shadow{
+  box-shadow: 0 1px  30px rgba(196, 196, 196, 0.9);
+}
+
 
 .gardient {
   background: #d1d1d1;

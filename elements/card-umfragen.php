@@ -17,14 +17,7 @@
     <div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
         <!-- <a class="flex-col card-link" href="<?php echo esc_url( get_permalink() ); ?>"> -->
             <div class="content">
-                <div class="pre-title red-text ">
-                    Umfrage
-                    <?php 
-                        // get projekt or owner
-                        if (get_cpt_term_owner($post->ID, 'projekt')) echo " von ".get_cpt_term_owner($post->ID, 'projekt');
-                        echo " vom ".qp_date(get_the_date('Y-m-d'));
-                    ?>
-                </div>
+                
                 <h3 class="card-title-large">
                     <?php  
                         if (!is_single( )) shorten(get_the_title(), '50'); 
