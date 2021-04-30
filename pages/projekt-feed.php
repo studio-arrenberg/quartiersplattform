@@ -22,7 +22,7 @@ get_header();
 	<div class="left-sidebar">
 
 		<button class="button" onclick="add_project();">Projekt anlegen</button>
-		<div class="add_project">Hi</div>
+		<div class="add_project"></div>
 
 		<div class="hidden-small">
 
@@ -37,11 +37,14 @@ get_header();
 
 			<?php card_list($args4); ?>
 		</div>
+
+		<?php projekt_carousel(); ?>
+
 	</div>
 
-	<div class="content">
 
-	<?php projekt_carousel(); ?>
+	<div class="main-content">
+
 
 
 
@@ -50,11 +53,6 @@ get_header();
 		reminder_card('helloss', 'Neuigkeiten und Projektupdates', $text );
 		// 'Impressum', home_url( ).'/impressum'
 	?>
-
-
-	<?php projekt_carousel(); ?>
-
-	<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
 
 	<!-- <button class="button" onclick="add_project();">Projekt anlegen</button>
@@ -86,7 +84,7 @@ get_header();
 
 	<?php 
 		$args4 = array(
-			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'), 
 			'post_status'=>'publish', 
 			'posts_per_page'=> 20,
 			'orderby' => 'date'

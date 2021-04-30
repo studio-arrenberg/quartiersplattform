@@ -1108,7 +1108,7 @@ button.toggle {
 #site-content {
   overflow: hidden;
   padding: 10px 15px 20px 15px;
-  margin: 95px auto 0px auto;
+  margin: 55px auto 0px auto;
   overflow: visible;
 }
 
@@ -1388,6 +1388,21 @@ button.toggle {
 
 /* GRID in the making */
 
+.main-content{
+  padding-top: 30px;
+}
+
+.newsfeed > div{
+  margin-bottom: 35px;
+}
+
+
+
+
+
+
+
+
 
 .grid, .grid-2col, .grid-4col {
   width: 100%;
@@ -1540,7 +1555,7 @@ button.toggle {
     margin: 0 auto;
     grid-template-columns: 345px 600px 345px;
     grid-gap: 45px;
-    grid-template-areas: "left-sidebar content right-sidebar ";
+    grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
 
   .right-sidebar{
@@ -1557,8 +1572,8 @@ button.toggle {
     max-width: none;
   }
 
-  .content {
-      grid-area: content;
+  .main-content {
+      grid-area: main-content;
     }
 
   .newsfeed{
@@ -4753,6 +4768,8 @@ a.card-link{
 }
 
 .align-center  {
+  height: 100%;
+  justify-content: center!important;
   align-items: center !important;
   text-align: center !important;
 }
@@ -4834,14 +4851,14 @@ font-weight: 700;
   font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
 font-weight: 700;
-  font-size: 2.5rem;
-  line-height: 2.8rem;
+font-size: 2rem;
+line-height: 2.3rem;
   margin-top: 3px;
 }
 
 .card .preview-text {
-  font-size: 1.4rem;
-  line-height: 1.5rem;
+  font-size: 1.55rem;
+  line-height: 1.7rem;
 }
 
 .card .preview-text-large {
@@ -4983,7 +5000,8 @@ font-weight: 700;
 
 .landscape{
   height: 200px;
-  width: 400px;;
+  width: 100%;
+  height: calc((100vw - 30px) / 2);
 }
 
 .landscape a .content {
@@ -5006,7 +5024,8 @@ font-weight: 700;
 }
 
 .landscape .content,
-.square .content {
+.square .content,
+.background-image .content {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -5019,6 +5038,10 @@ font-weight: 700;
   justify-content: flex-end;
 }
 
+
+.background-image .content {
+  border-radius: 15px;
+}
 
 .landscape .pre-title {
   color: #fff
@@ -5349,6 +5372,22 @@ margin-top: -30px;
   height: 100%;
   bottom: 0px;
 }
+
+
+.blur .content {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* if backdrop support: very transparent and blurred */
+@supports (
+  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px) )) {
+    .blur .content {
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+  }
+}
+
 
 
 .embla {
