@@ -2139,18 +2139,19 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 /**
  * Card List - Display Cards as List
  *
- * @since Quartiersplattform 1.0
+ * @since Quartiersplattform 1.0 - 1.7 update
  *
  * @param array $args WP Query
+ * @param string $element element type
  * @return string
  */
-function card_list($args) {
+function card_list($args, $element = 'card') {
 
 	$query2 = new WP_Query($args);
 	// The Loop
 	while ( $query2->have_posts() ) {
 		$query2->the_post();
-		get_template_part('elements/card', get_post_type());
+		get_template_part('elements/'.$element, get_post_type());
 	}
 	// Restore original Post Data
 	wp_reset_postdata();
@@ -2748,14 +2749,27 @@ function projekt_carousel( ) {
 		'orderby' => 'modified'
 	);
 
+	set_query_var( 'highlight_display', true );
+
 	?>  
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
-			<?php slider($args4, 'badge', 4, 'false', 'start'); ?>
+
+			<?php  
 			
+			if (wp_is_mobile(  )) {
+				slider($args4, 'badge', 4, 'false');
+			}
+			else {
+				card_list($args4, 'badge');
+			}
+			
+			?>
 		</div>
 
 	<?php 
+
+	set_query_var( 'highlight_display', false );
 }
 
 /**
@@ -2858,6 +2872,7 @@ function count_query($query, $amount = 1) {
 	}
     
 }
+
 
 
 /**

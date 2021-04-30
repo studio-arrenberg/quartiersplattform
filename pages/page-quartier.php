@@ -91,11 +91,22 @@ get_header();
         <div class="link-card-container">
             <?php 
                     $args4 = array(
-                    'post_type'=> array('veranstaltungen'), 
-                    'post_status'=>'publish', 
-                    'posts_per_page'=> 4,
-                    'orderby' => 'modified'
-                );
+                        'post_type'=>'veranstaltungen', 
+                        'post_status'=>'publish', 
+                        'posts_per_page'=> 20,
+                        'meta_key' => 'event_date',
+                        'orderby' => 'meta_val',
+                        'order' => 'ASC',
+                        'offset' => '0', 
+                        'meta_query' => array(
+                            array(
+                                'key' => 'event_date', 
+                                'value' => date("Y-m-d"),
+                                'compare' => '>=', 
+                                'type' => 'DATE'
+                            )
+                        )
+                    );
                 ?>  
                     <?php card_list($args4);?>
             </div>
