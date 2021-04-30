@@ -371,42 +371,9 @@ get_header();
 
             <!-- Ziele für nachhaltige Entwicklung -->
             <!-- not ready yet -->
-            <?php if ( current_user_can('administrator') ) { 
-
-                ?>
-                    <h2>Ziele für nachhaltige Entwicklung</h2>
-                <?php
-
-                $terms = get_field('sdg');
-                if( $terms ): ?>
-
-                    <?php 
-                    
-                    // print_r($terms); 
-                    foreach( $terms as $term ): 
-
-                        $tax = get_term( $term, 'sdg' );
-                        $slug = $tax->slug;
-
-                        $args = array(
-                            'post_type'=>'sdg', 
-                            'post_status'=>'publish', 
-                            'posts_per_page'=> -1,
-                            'name'=> $tax->slug 
-                        );
-
-                        slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
-
-                    endforeach;
-                endif;
-
-                ?>
-                    <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
-                <?php 
-                    
-            } 
-            
-            
+            <?php 
+            // SDGs
+            get_template_part( 'components/project/sdg-display' );
             ?>
 
 
@@ -419,52 +386,11 @@ get_header();
             </div>
 
 
-
-            <!-- Projekt Teilen -->
-            <?php  
-                $page_for_posts = get_option( 'page_for_posts' );
-                ?>
-            <div class="share">
-                <h2> Projekt teilen </h2>
-                <div class="copy-url">
-                    <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-                    <button class="copy" onclick="copy()">Kopieren</button>
-
-                </div>
-
-                <div class="share-button">
-
-                    <a class="button is-style-outline " target="blank"
-                    onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
-                    href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
-                
-                    <a class="button is-style-outline" target="blank"
-                    onclick="_paq.push(['trackEvent', 'Share', 'Twitter', '<?php the_title(); ?>']);"
-                    href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
-                
-                    <a class="button is-style-outline" target="blank"
-                    onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
-                    href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"
-                    rel="nofollow">Email</a>
-
-                </div>
-            </div>
-
             <?php 
-                
-
+            // share post
+            get_template_part( 'components/general/share-post' );
             ?>
 
-            <script>
-                function copy() {
-                    _paq.push(['trackEvent', 'Share', 'Copy Link', '<?php the_title(); ?>']);
-                    var copyText = document.getElementById("myInput");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999)
-                    document.execCommand("copy");
-                    // alert("Copied the text: " + copyText.value);
-                }
-            </script>
 
         <?php
         }
@@ -524,18 +450,7 @@ get_header();
 
             <!-- Map -->
             <!-- not ready yet -->
-            <?php 
-            
-            if ( current_user_can('administrator') ) { // new feature only for admins 
-                
-                // the_field('map');
-                if (get_field('map')) {
-                    get_template_part('elements/map-card');
-                }
-
-            } 
-            
-            ?>
+            <?php get_template_part('components/map-card'); ?>
 
             <!-- Backend edit link -->
             <?php 
