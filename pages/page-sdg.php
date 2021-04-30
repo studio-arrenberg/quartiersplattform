@@ -10,7 +10,33 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="full-width page-grid" role="main">
+	<div class="left-sidebar">
+		<div class="hidden-small">
+			<?php 
+				$args4 = array(
+					'post_type'=> array('projekte'), 
+					'post_status'=>'publish', 
+					'posts_per_page'=> 20,
+					'orderby' => 'date'
+				);
+			?>  
+			<?php // card_list($args4); ?>
+		</div>
+		<?php projekt_carousel(); ?>
+	</div>
+
+
+	<div class="main-content">
+
+	<div class="">
+		<h1 class="page-title">
+			Ziele für nachhaltige Entwicklung
+		</h1>
+		<h2> 
+			Die Vereinten Nationen haben 2015 im Rahmen der Agenda 2030 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs sind nicht nur für die nationale und regionale, sondern auch für die lokale Ebene relevant.
+		</h2>
+	</div>
 
     <?php
 	// featured projekte
@@ -28,16 +54,23 @@ get_header();
 		$args->the_post();
 
 		?>
-			<div id="sdg-card" style="background-color: <?php the_field('color'); ?>;" class="card card-sgd shadow">
-                <a class="card-link" >
+			<div class="sdg-section" id="sdg-card <?php the_field('goal'); ?>" 
 
+			style="
+				background: linear-gradient(<?php the_field('color'); ?>20, rgba(255,255,255,0));
+				color: <?php the_field('color'); ?>;">
+			
                     <div class="content">    
-						<h1>
+						<span class="sdg-number">
 							<?php the_field('goal'); ?>
-						</h1>
-						<h3 class="card-title">
+	</span >
+						<h3 class="card-title-large">
                         	<?php the_title(); ?>
-                        </h3>
+						</h3>
+
+						<h4 class="preview-text-large">
+                        	<?php the_title(); ?>
+						</h4>
                         <p class="preview-text">
                         	<?php the_content(); ?>
                         </p>
@@ -68,7 +101,7 @@ get_header();
 
 	}
 	?>
-
+</div>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

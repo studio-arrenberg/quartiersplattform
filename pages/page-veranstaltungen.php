@@ -20,10 +20,8 @@ get_header();
 
 	
 		<?php 
-		
 		get_template_part('components/views/veranstaltungen');
 		// !!! function wenn keine veranstaltungen angezeigt werden
-
 		?>  
 		
 

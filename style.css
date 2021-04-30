@@ -1109,7 +1109,11 @@ button.toggle {
   overflow: hidden;
   padding: 10px 15px 20px 15px;
   margin: 55px auto 0px auto;
-  overflow: visible;
+}
+
+#site-content.full-width{
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 /*  BLURRY HEADER */
@@ -4980,8 +4984,7 @@ a.card-link{
   font-size: 5rem;
   margin-bottom: 5px;
 }
-
-.card .card-title {
+.card-title {
   font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
 font-weight: 700;
@@ -4990,7 +4993,7 @@ font-weight: 700;
   margin: 0px;
 }
 
-.card .card-title-large {
+.card-title-large {
   font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
 font-weight: 700;
@@ -4999,15 +5002,15 @@ line-height: 2.6rem;
   margin-top: 3px;
 }
 
-.card .preview-text {
+.preview-text {
   font-size: 1.55rem;
   line-height: 1.7rem;
 }
 
-.card .preview-text-large {
+.preview-text-large {
   margin-top: 5px;
-  font-size: 1.8rem;
-  line-height: 2rem;
+  font-size: 2rem;
+  line-height: 2.2rem;
 }
 
 .card .pre-title {
@@ -5070,9 +5073,6 @@ font-weight: 700;
   margin-right: 5px;
 }
 
-.pre-card  a > span {
-  margin-top: 3px;
-}
 
 .pre-card a:hover, .after-card a:hover {
   color: #0091ff;
@@ -5485,22 +5485,6 @@ margin-top: -30px;
 
 
 }
-/* Shadow */
-
-/* nur bei gardent */
-/* 
-.shadow {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
-    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
-    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
-}
-
-.shadow:hover {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 8px rgba(0, 0, 0, 0.15),
-    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 32px rgba(0, 0, 0, 0.15),
-    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 126px rgba(0, 0, 0, 0.15);
-} */
-
 
 
 .shadow {
@@ -6051,6 +6035,57 @@ a:hover .shadow{
 
 /* ------ */
 
+
+.sdg-card{
+  border: 3px solid #fff;
+  
+}
+
+.sdg-section::after{
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sdg-section .content{
+  padding: 30px 15px;
+}
+
+.sdg-number{
+  font-size: 9rem;
+  font-weight: 700;
+  position: absolute;
+  right: 15px;
+  opacity: 0.4;
+}
+
+
+.sdg-section .preview-text, .sdg-section p{
+  color: #000 !important;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------- */
+
 /* feedback */
 
 .feedback {
@@ -6367,6 +6402,22 @@ font-weight: 700;
     width: 100%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* publish-form  */
