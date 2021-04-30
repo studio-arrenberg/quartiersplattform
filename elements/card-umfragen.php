@@ -93,13 +93,16 @@
 
                 if (!is_user_logged_in()) {
                 ?>
-                    <div class="login-wall">
+                    <div class="login-wall hidden">
                         <p>Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen.</p>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/login">
                             Anmelden
                         </a>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/register">
                             Registrieren
+                        </a>
+                        <a class="close-card-link">
+                            <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
                         </a>
                     </div>
                 <?php
@@ -143,8 +146,8 @@
 
                 ?>
 
-                jQuery('#poll-<?php echo get_the_ID(  ); ?>').on('click', function(e) {
-                    alert('einmal bitte einloggen');
+                jQuery('#poll-<?php echo get_the_ID(  ); ?> div.login-wall').on('click', function(e) {
+                    $('#poll-<?php echo get_the_ID(  ); ?> div.login-wall').toggleClass('hidden');
                 });
 
                 <?php 
