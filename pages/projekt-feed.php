@@ -20,28 +20,30 @@ get_header();
 <main id="site-content" class="page-grid" role="main">
 
 	<div class="left-sidebar">
-	<?php projekt_carousel(); ?>
 
-	<div class="hidden-small">
-	<!-- Hier -->
+		<button class="button" onclick="add_project();">Projekt anlegen</button>
+		<div class="add_project">Hi</div>
 
-		<?php 
-			$args4 = array(
-				'post_type'=> array('projekte'), 
-				'post_status'=>'publish', 
-				'posts_per_page'=> 20,
-				'orderby' => 'date'
-			);
-		?>  
+		<div class="hidden-small">
 
-		<?php card_list($args4); ?>
-	</div>
+			<?php 
+				$args4 = array(
+					'post_type'=> array('projekte'), 
+					'post_status'=>'publish', 
+					'posts_per_page'=> 20,
+					'orderby' => 'date'
+				);
+			?>  
 
-	<button class="button" onclick="add_project();">Projekt anlegen</button>
-	<div class="add_project">Hi</div>
+			<?php card_list($args4); ?>
+		</div>
 	</div>
 
 	<div class="content">
+
+	<?php projekt_carousel(); ?>
+
+
 
 	<?php
 		$text = __('Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");

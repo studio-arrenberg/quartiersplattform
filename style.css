@@ -5470,7 +5470,7 @@ margin-top: -30px;
 /* Tablet - 2 slides in viewport */
 @media (min-width: 782px) {
   .embla-one .embrela-slide {
-    flex: 0 0 50%;
+    /* flex: 0 0 50%; */
     display: none;
   }
 
