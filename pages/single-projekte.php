@@ -52,7 +52,6 @@ get_header();
 
                     <!-- slogan -->
                     <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-                    <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4> -->
 
                     <?php
                     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
@@ -63,34 +62,6 @@ get_header();
                     }
                     ?>
 
-
-                <!-- Nachricht erstellen -->
-
-                <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    ?>
-                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
-                    <?php
-                    }
-                ?>
-
-                <?php
-                    if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
-                    ?>
-                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
-                    <?php
-                    }
-                ?>
-                <!-- Veranstaltung erstellen -->
-
-                <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    ?>
-                <a class="button is-style-outline"
-                    href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
-                <?php
-                    }
-                ?>
 
                 </div>
 
@@ -154,58 +125,56 @@ get_header();
             <!-- page bar content -->
             <div>
                 <div id="summary" class="bar bar-active">
-                    <h4>Übersicht</h4>
 
                     <?php 
                     // project is not public
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
-                        reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                        reminder_card('warning-draft-'.get_the_ID(  ), 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                        reminder_card('warning', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
                     }
-                    ?>
-                    <h4>Pinned:</h4>
-                    <?php
-                    // pinned project posts
-                    $args_chronik = array(
-                        'post_type' => array('veranstaltungen', 'nachrichten'),
-                        'posts_per_page' => -1,
-                        'order_by' => 'date',
-                        'order' => 'DESC',
-                        'meta_key'   => 'pin_project',
-                        'meta_value' => 'true'
-                    );
 
-                    card_list($args_chronik);
+                    // Toolbox
+                    get_template_part( 'components/project/toolbox' );
+
+                    // Anstehende Events
+                    get_template_part( 'components/project/coming-events' );
+                    
+                    // Pinned Posts
+                    get_template_part( 'components/project/pinned-posts' );
+
+                    // Content
+                    get_template_part( 'components/project/content' );
+
+                    // SDGs
+                    get_template_part( 'components/project/sdg-display' );
+
+                    // Author
+                    author_card(true);
+
+                    // Share post
+                    get_template_part( 'components/general/share-post' );
+
+                    // Map
+                    get_template_part('components/map-card');
+
+
                     ?>
+                    
+
 
                 </div>
+
+
                 <div id="posts" class="bar bar-hidden">
-                    <h4>Chronik</h4>
 
-                    <?php 
-
-                        // Projektverlauf
-                        $args_chronik = array(
-                            'post_type' => array('veranstaltungen', 'nachrichten'),
-                            'posts_per_page' => -1,
-                            'order_by' => 'date',
-                            'order' => 'DESC',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'projekt',
-                                    'field' => 'slug',
-                                    'terms' => ".$post->post_name."
-                                )
-                            )
-                        );
-
-                        card_list($args_chronik);
-
-                    ?>
+                    <?php get_template_part( 'components/project/history' ); ?>
+                    
                 </div>
+
+
+
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
-                    <h4>Einstellungen</h4>
-
 
                     <?php pin_toggle('pin_main'); ?>
 
@@ -264,132 +233,18 @@ get_header();
                     <p>Danger zone</p>
                     <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
                     
+                    <!-- Backend edit link -->
+                    <?php 
+                    if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
+                        edit_post_link(); 
+                    }
+                    ?>
+
+
                 </div>
                 <?php } ?>
 
             </div>
-
-
-            <?php
-                // Last Polling
-                if (current_user_can('administrator')) {
-                    $args_chronik = array(
-                        'post_type'=>'umfragen', 
-                        'post_status'=>'publish', 
-                        'posts_per_page'=> 1,
-                        'order' => 'DESC',
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'projekt',
-                                'field' => 'slug',
-                                'terms' => ".$post->post_name."
-                            )
-                        )
-
-                    );
-
-                    $my_query = new WP_Query($args_chronik);
-                    if ($my_query->post_count > 0) {
-                        ?>
-                            <h2>Umfrage</h2>
-                        <?php 
-                        slider($args_chronik,'card', '1','false'); 
-                    }
-                }
-            ?>
-
-            <?php
-                // Anstehende Veranstaltungen
-                $args_chronik = array(
-                    'post_type'=>'veranstaltungen', 
-                    'post_status'=>'publish', 
-                    'posts_per_page'=> 2,
-                    'meta_key' => 'event_date',
-                    'orderby' => 'rand',
-                    'order' => 'ASC',
-                    'offset' => '0', 
-                    'meta_query' => array(
-                        array(
-                            'key' => 'event_date', 
-                            'value' => date("Y-m-d"),
-                            'compare' => '>=', 
-                            'type' => 'DATE'
-                        )
-                    ),
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'projekt',
-                            'field' => 'slug',
-                            'terms' => ".$post->post_name."
-                        )
-                    )
-
-                );
-
-                $my_query = new WP_Query($args_chronik);
-                if ($my_query->post_count > 0) {
-                    ?>
-                        <h2>Anstehende Veranstaltung</h2>
-                    <?php 
-                    // slider($args_chronik,'card', '1','false'); 
-                    get_template_part('elements/card', get_post_type());
-
-                }
-            ?>
-
-            <!-- wtf -->
-
-            <?php if (get_field('text')) { ?>
-            <div class="single-content">
-                <h2>Beschreibung</h2>
-                <p><?php extract_links(get_field('text')); ?></p>
-            </div>
-            <?php } ?>
-
-            <?php if (get_field('goal')) { ?>
-            <div class="single-content">
-                <h2>Projektziel</h2>
-                <p><?php the_field('goal'); ?></p>
-            </div>
-            <?php } ?>
-
-
-
-            <!-- Gutenberg Editor Content -->
-            <div class="gutenberg-content">
-
-                <?php
-                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                        the_excerpt();
-                    } else {
-                        the_content( __( 'Continue reading', 'twentytwenty' ) );
-                    }
-                ?>
-
-            </div>
-
-
-            <!-- Ziele für nachhaltige Entwicklung -->
-            <!-- not ready yet -->
-            <?php 
-            // SDGs
-            get_template_part( 'components/project/sdg-display' );
-            ?>
-
-
-            <!-- Team -->
-            <div class="team">
-                <h2> Hutträger </h2>    
-
-                <?php author_card(true); ?>
-
-            </div>
-
-
-            <?php 
-            // share post
-            get_template_part( 'components/general/share-post' );
-            ?>
 
 
         <?php
@@ -446,57 +301,9 @@ get_header();
             emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
 
             }
-            ?>
-
-            <!-- Map -->
-            <!-- not ready yet -->
-            <?php get_template_part('components/map-card'); ?>
-
-            <!-- Backend edit link -->
-            <?php 
-            if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
-                edit_post_link(); 
-            }
-            ?>
-
-            <!-- kommentare -->
-            <?php	
-
-            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
-                if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-                    
-            ?>
-
-                <div class="comments-wrapper">
-                    <?php // comments_template('', true); ?>
-                </div><!-- .comments-wrapper -->
-
-                <?php
-
-                }
-            }
         }
     }
-
-
-    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
-    ?>
-
-        <br><br><br>
-        <!-- <h2>Weitere Projekte</h2> -->
-
-        <?php
-        $args3 = array(
-            'post_type'=>'projekte', 
-            'post_status'=>'publish', 
-            'posts_per_page'=> 4,
-            'orderby' => 'rand'
-        );
-
-        // slider($args3,'square_card', '2','true'); 
-
-    }
-    ?>
+?>
 
 </main><!-- #site-content -->
 

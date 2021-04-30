@@ -29,6 +29,7 @@
 - Neue Menu Leiste
 - Neuer Footer
 - Restrukturierte Quartiersseite
+- Cookie Disclaimer
 ### Bugs
 - Umfragen im Newsfeed
 - Ajax mit Nonce Sicherheit
