@@ -1361,20 +1361,28 @@ button.toggle {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
+
+
 @media (max-width: 782px ) {
-
-.hidden-small{
-  display: none;
-  opacity: 0;
+  .hidden-small{
+    display: none;
+    opacity: 0;
+  }
 }
-}
-
 
 .visible{
-  top: 100px;
+  top: 60px;
   opacity: 1;
   transition: all ease-in-out 0.2s; /* Animation */
 }
+
+@media (min-width: 782px ) {
+  .visible{
+    top: 100px
+  }
+}
+
+
 
 .no-scroll{
   overflow: hidden;
