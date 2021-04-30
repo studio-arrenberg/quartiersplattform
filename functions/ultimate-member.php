@@ -190,3 +190,17 @@ function my_registration_after_auto_login( $user_id ) {
 	// your code here
 	exit(wp_redirect( home_url(  ) ));
 }
+
+/**
+ * Set UM Settings
+ * 
+ * @return void
+ */
+// in file: class-admin-settings.php line 2702
+if (UM()->options()->get('author_redirect') == true) {
+	UM()->options()->update('author_redirect', false);
+}
+
+if (UM()->options()->get('members_page') == true) {
+	UM()->options()->update('members_page', false);
+}
