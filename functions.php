@@ -2754,6 +2754,7 @@ function projekt_carousel( ) {
 	?>  
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
+
 			<?php  
 			
 			if (wp_is_mobile(  )) {
