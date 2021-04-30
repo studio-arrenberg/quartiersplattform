@@ -2759,6 +2759,15 @@ function projekt_carousel( ) {
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
 
+			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
+				<div class="badge badge-button">
+				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
+				</div>
+				<h3 class="card-title-small">
+					Projekt erstellen    
+				</h3>
+			</a>
+
 			<?php  
 			
 			if (wp_is_mobile(  )) {

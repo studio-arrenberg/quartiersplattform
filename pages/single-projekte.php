@@ -53,15 +53,6 @@ get_header();
                     <!-- slogan -->
                     <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
 
-                    <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    ?>
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
-                    
-                    <?php
-                    }
-                    ?>
-
 
                 </div>
 
