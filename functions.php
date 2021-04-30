@@ -2640,18 +2640,6 @@ add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
 add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callback' );
 
 
-// funtion with button in component
-// if project owner => projekt pin || admin => system pin (can be both should be determined before hand)
-
-// function ajax callback
-// check privilages
-// change state (true || false)
-
-// query quertier => get projects/akteure/pages/(posts) where meta main_pin:: true
-// query project => get posts where project_pin:: true
-
-
-
 /**
  * Pin Toggle Function
  *
@@ -2662,6 +2650,9 @@ add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callb
  * @return void
  */
 function pin_toggle($type = 'pin_project') {
+
+	// pin_main :: pages, projects
+	// pin_project :: veranstaltungen, nachrichten, umfragen
 
 	set_query_var('pin_type', $type);
 

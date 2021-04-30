@@ -127,3 +127,16 @@ reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','' );
 // without close button
 reminder_card('', 'Dein Profil ist unsichtbar','' );
 ```
+#### Visibility Toggle
+Toggle between `draft` and `pubish` for all post types.
+Can only be used in Loop
+```php
+post_visibility_toggle();
+```
+
+#### pin_toggle($type = 'pin_project')
+Pin Post or Pages on the Landing Page `pin_main` or Projekt Page `pin_project`
+Can only be used in Loop
+```php
+pin_toggle($type = 'pin_project');
+```
