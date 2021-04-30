@@ -135,12 +135,12 @@ wp_maintenance_mode();
 
             <div class="push-right">
 
-                <a class="button header-button is-style-outline bg_green" onclick="show()">
+                <a class="button header-button is-style-outline " onclick="show()">
                 <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/ampelmann.svg" />
                 </a>
 
                 <a class="button header-button  button-has-icon <?php if (!is_page( 'Veranstaltungen' )) echo "is-style-outline"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
-                <img class="button-icon " src="<?php echo get_template_directory_uri()?>/assets/icons/calendar.svg" />
+                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/calendar.svg" />
                 </a>
 
                 <?php
