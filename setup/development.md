@@ -120,4 +120,10 @@ Logged in users can remove reminder cards (uses `ajax`).
 reminder_card( $slug, $title, $text, $button = '', $link = '' );
 // example
 reminder_card('unique_slug', 'Title', 'Text...', 'Impressum', home_url( ).'/impressum' );
+// warning without ID no close button
+reminder_card('warning', 'Dein Profil ist unsichtbar','' );
+// warning with ID with close button
+reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','' );
+// without close button
+reminder_card('', 'Dein Profil ist unsichtbar','' );
 ```

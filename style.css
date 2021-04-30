@@ -6916,3 +6916,8 @@ div.acf-switch span.acf-switch-off {
 div.acf-switch span.acf-switch-on {
   display: none;
 }
+
+/* reminder card */
+div.warning {
+  background-color: yellow !important;
+}
