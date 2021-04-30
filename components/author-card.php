@@ -24,11 +24,10 @@ else {
 
 <?php 
 if($contact && is_user_logged_in()){
-    
+    // echo $user_id;
     $userid = "user_".$user_id; 
 ?>
     <div class="share-button">
-
         <?php if( get_field('mail', $userid) ){ ?>
             <a class="button is-style-outline" target="_blank" href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"rel="nofollow">
                 <?php echo the_field('mail', $userid);?>
@@ -44,7 +43,7 @@ if($contact && is_user_logged_in()){
     </div>
 
     <?php 
-    if( !get_field('phone', $userid) && !get_field('mail', $userid) && $user_id == get_current_user_id()) {
+    if( !get_field('phone', $userid) && !get_field('mail', $userid) && $userid == get_current_user_id()) {
         $text = 'Hinterlege deine Kontaktdaten <br> damit du kontaktiert werden kannst.';
         reminder_card('no-contact-information', 'Kontaktdaten hinterlegen', $text, 'Zum Profil', get_site_url().'/profil' );
     }

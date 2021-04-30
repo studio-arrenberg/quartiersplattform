@@ -1890,7 +1890,7 @@ function get_term_id($post_ID, $term = 'projekt') {
  * @return string
  */
 function author_card($contact = false, $user = '') {
-	// get_author = > author_card
+	
 	set_query_var('contact_inforation', $contact);
 	set_query_var('contact_user_id', $user);
 
