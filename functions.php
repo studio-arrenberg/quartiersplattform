@@ -2438,7 +2438,7 @@ function qp_remaining( $date ) {
  */
 function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 
-	if (empty($slug) || empty($title) || empty($text) ) {
+	if (empty($title) && empty($text) ) {
 		return false;
 	}
 
@@ -2452,15 +2452,28 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	}
 	
 	// define query vars 
+	set_query_var('reminder_card_fix', false);
 	set_query_var('reminder_card_slug', $slug);
 	set_query_var('reminder_card_title', $title);
 	set_query_var('reminder_card_text', $text);
+	set_query_var('reminder_card_style', false);
+
 	if (!empty($slug) || !empty($title)) {
 		set_query_var('reminder_card_button', $button);
 		set_query_var('reminder_card_link', $link);
 	}
+	if (!$slug || $slug == 'warning') {
+		set_query_var('reminder_card_fix', true);
+		set_query_var('reminder_card_style', 'warning');
+	}
+	else if (strpos($slug, 'warning') !== false) {
+		set_query_var('reminder_card_style', 'warning');
+		
+	}
 	// template part
 	get_template_part( 'components/reminder-card/reminder-card' );
+
+	
 
 }
 

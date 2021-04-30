@@ -28,6 +28,9 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             // User Avatar
             $current_user = wp_get_current_user();
             echo get_avatar( $current_user->user_email, 32 );
+
+            reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','', 'Jetzt Registieren', home_url( ).'/register' );
+            // echo "<br>";
         ?>
 
         <!-- user name -->
@@ -37,6 +40,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         
     </div>
+
+    <?php reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar (einzeiler...)','' ); ?>
 
     <!-- bar -->
     <div class="filters-container">

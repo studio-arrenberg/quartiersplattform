@@ -1,4 +1,4 @@
-<div class="card card-large reminder <?php echo get_query_var('reminder_card_slug'); ?>">
+<div class="card card-large reminder <?php echo get_query_var('reminder_card_slug')." ".get_query_var('reminder_card_style'); ?>">
 
 <!-- <?php print_r( get_user_option( 'qp_reminder_card', get_current_user_id( ) ) ); ?> -->
 
@@ -17,7 +17,7 @@
 		</a>
 	<?php } ?>
 
-	<?php if ( is_user_logged_in(  )) { ?>
+	<?php if ( is_user_logged_in(  ) && get_query_var('reminder_card_fix') === false) { ?>
 		<a class="close-card-link" onclick="remove_reminder('<?php echo get_query_var('reminder_card_slug'); ?>')">
 			<img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
 		</a>
