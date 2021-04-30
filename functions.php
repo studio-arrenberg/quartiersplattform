@@ -2886,6 +2886,60 @@ function count_query($query, $amount = 1) {
     
 }
 
+/**
+ * Project Card
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $type post / projekt
+ * @param string $id id
+ * @return string
+ */
+function project_card($id, $type = "post") {
+
+	if (empty($id)) {
+		return false;
+	}
+
+	if ($type == "post") {
+		// get project id
+		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) );
+		// query
+		$args = array(
+			'name'        => $term_list[0]->slug,
+			'post_type'   => 'projekte',
+			'post_status' => 'publish',
+			'numberposts' => '1'
+		);
+
+	}
+	else if ($type == "projekt") {
+		// query
+		$args = array(
+			'p'         => $id,
+  			'post_type' => 'any',
+			'post_status' => 'publish',
+			'numberposts' => '1'
+		);
+
+	}
+	else if ($type == "slug") {
+		// query
+		$args = array(
+			'name'        => $id,
+			'post_type'   => 'projekte',
+			'post_status' => 'publish',
+			'numberposts' => '1'
+		);
+
+	}
+
+	// query and display
+	card_list( $args, 'card' );
+	
+
+}
+
 
 
 /**
