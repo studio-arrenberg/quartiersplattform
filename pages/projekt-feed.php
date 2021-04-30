@@ -21,7 +21,6 @@ get_header();
 
 	<div class="left-sidebar">
 
-		<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
 
 		<div class="hidden-small">

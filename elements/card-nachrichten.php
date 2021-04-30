@@ -22,6 +22,21 @@ if (strlen($the_slug < 1 )) {
 <div class="card-group">
 
     <!-- main card -->
+    <?php if (get_query_var( 'additional_info') && get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) { ?>
+        <div class="pre-card">
+            <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
+                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+                <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
+                <span>
+                    <b>Nachricht</b>
+                    <br>
+                    von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                </span>
+            </a>
+        </div>
+    <?php } ?>
+    
+    
     <div class="card shadow nachricht">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
