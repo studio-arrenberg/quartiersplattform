@@ -1342,7 +1342,7 @@ function display_cookie_warning() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	if (!isset($_COOKIE['guest']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
+	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
 		get_template_part( 'components/cookie/cookie-alert' );
 	}
 
@@ -1372,6 +1372,8 @@ function set_cookie_callback(){
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
 		setcookie('visitor', md5($counter), $expiry, $path, $host);
+
+		return;
     }  
 } 
 // add_action('init', 'set_user_cookie_inc_guest');

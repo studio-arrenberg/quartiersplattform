@@ -9,7 +9,28 @@
                     Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten.
                 </h3>
             </div>
-            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/impressum/">Datenschutz</a>
+            
+
+            <?php 
+
+                if (get_privacy_policy_url()) {
+
+                    ?> 
+                        <a class="button is-style-outline" href="<?php echo get_privacy_policy_url(); ?>">Datenschutzerklärung</a>
+                    <?php
+
+                }
+                else {
+
+                    ?> 
+                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
+                    <?php
+
+                }
+
+            ?>
+
+
             <a class="button accept" >Zustimmen</a>
         </div>
     </div>
@@ -17,7 +38,7 @@
 
 <script>
     
-    $("div.cookie-alert a.accept").click(function(){
+    $("div.cookie-alert a.button").click(function(){
 
         var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
     
