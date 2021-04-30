@@ -14,7 +14,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
         <div class="center-header-content center-mobile">
 
-            <h1><?php echo $curauth->display_name; ?></h1>
+            <h1><?php echo $curauth->first_name." ".$curauth->last_name; ?></h1>
             <br>
 
             <?php 
@@ -26,22 +26,22 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             ?>
 
             <!-- Kontakt  -->
-            <?php $userid = "user_".$curauth->ID; ?>
+            <?php 
+            
+            $userid = "user_".$curauth->ID; 
+            // echo $curauth->ID;
+            author_card(true, $curauth->ID);
+            
+            ?>
 
-            <!-- phone -->
-            <?php if( get_field('mail', $userid) ) { ?>    
-                    <a class="button is-style-outline" target="blank"
-                    href="mailto:<?php the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>" target="_blank"
-                    rel="nofollow"><?php the_field('mail', $userid);?></a>
-            <?php } ?>
-
-
-            <!-- mail -->
-            <?php if( get_field('phone', $userid) ) { ?>
-                <a class="button is-style-outline" target="blank" href="tel:<?php the_field('phone', $userid);?>" >
-                    <?php the_field('phone', $userid); ?>
-                </a>
-            <?php } ?>
+            
+            <!-- About -->
+            <!-- <?php if( get_field('about', $userid) ) { ?>
+                <br>
+                <br>
+                <h2>Über mich</h2>
+                <div><?php the_field('about', $userid); ?></div>
+            <?php } ?> -->
 
         </div>
     </div>
@@ -64,29 +64,30 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             if ($my_query->post_count > 0) {
                 
                 echo "<h2>Projekte</h2>";
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');                
+                // slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');          
+                card_list($args4);      
                 
             }
         ?>
 
         <?php
             // Angebote und Fragen
-            $args4 = array(
-                'post_type'=> array('angebote', 'fragen'), 
-                'post_status'=>'publish', 
-                'author' =>  $curauth->ID,
-                'posts_per_page'=> 20, 
-                'order' => 'DESC',
-                'offset' => '0', 
-            );
-            $my_query = new WP_Query($args4);
-            if ($my_query->post_count > 0) {
+            // $args4 = array(
+            //     'post_type'=> array('angebote', 'fragen'), 
+            //     'post_status'=>'publish', 
+            //     'author' =>  $curauth->ID,
+            //     'posts_per_page'=> 20, 
+            //     'order' => 'DESC',
+            //     'offset' => '0', 
+            // );
+            // $my_query = new WP_Query($args4);
+            // if ($my_query->post_count > 0) {
   
-                echo "<h2>Fragen und Angebote</h2>";
-                slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
-                // get_template_part('elements/'.$type.'', get_post_type());
+            //     echo "<h2>Fragen und Angebote</h2>";
+            //     slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+            //     // get_template_part('elements/'.$type.'', get_post_type());
                 
-            }
+            // }
         ?>
 
     </div>

@@ -128,7 +128,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'event_date',
                 'type' => 'date_picker',
                 'instructions' => 'Wann wird deine Veranstaltung stattfinden?',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -145,7 +145,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'name' => 'event_time',
                 'type' => 'time_picker',
                 'instructions' => 'Wann startet deine Veranstaltung?',
-                'required' => 0,
+                'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -220,6 +220,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
+            // array(
+            //     'key' => 'field_608a6c2c1be28',
+            //     'label' => 'Sichtbar',
+            //     'name' => 'qp_visibility',
+            //     'type' => 'true_false',
+            //     'instructions' => 'Entscheide ob deine Veranstaltung direkt sichtbar sein soll.',
+            //     'required' => 0,
+            //     'conditional_logic' => 0,
+            //     'wrapper' => array(
+            //         'width' => '',
+            //         'class' => '',
+            //         'id' => '',
+            //     ),
+            //     'message' => '',
+            //     'default_value' => 1,
+            //     'ui' => 1,
+            //     'ui_on_text' => 'Sichtbar',
+            //     'ui_off_text' => 'Privat',
+            // ),
             array(
                 'key' => 'field_5fc8d20bd15cb',
                 'label' => 'Map',

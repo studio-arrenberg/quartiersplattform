@@ -138,3 +138,55 @@ function um_deregister_styles() {
 
 } add_action( 'wp_print_styles', 'um_deregister_styles', 100 );
 
+
+/**
+ * Redirect after Login
+ * 
+ * UM Filter
+ * @return string url
+ */
+add_filter( 'um_login_redirect_url', 'my_login_redirect_url', 10, 2 );
+function my_login_redirect_url( $url, $id ) {
+	// your code here
+	$url = home_url( );
+	return $url;
+}
+
+/**
+ * Redirect after Login
+ * 
+ * UM Filter
+ * @return void
+ */
+add_action( 'um_on_login_before_redirect', 'my_on_login_before_redirect', 10, 1 );
+function my_on_login_before_redirect( $user_id ) {
+   // your code here
+   exit(wp_redirect( home_url(  ) ));
+}
+
+
+/**
+ * Redirect after Register
+ * 
+ * UM Filter
+ * @return string url
+ */
+add_filter( 'um_registration_pending_user_redirect', 'my_registration_pending_user_redirect', 10, 3 );
+function my_registration_pending_user_redirect( $url, $status, $user_id ) {
+    // your code here
+	$url = home_url( );
+    return $url;
+}
+
+
+/**
+ * Redirect after Register
+ * 
+ * UM Filter
+ * @return void
+ */
+add_action( 'um_registration_after_auto_login', 'my_registration_after_auto_login', 10, 1 );
+function my_registration_after_auto_login( $user_id ) {
+	// your code here
+	exit(wp_redirect( home_url(  ) ));
+}

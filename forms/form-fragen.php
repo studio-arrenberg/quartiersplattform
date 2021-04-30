@@ -7,7 +7,7 @@ get_header();
 
 <main id="site-content" role="main">
     <div class="card-container card-container__center card-container__large ">
-     <div class="card bg_red-light">            
+     <div class="card bg_blue-light">            
          <div class="content white-text">
                 <h3 class="card-title-large">
                     Stelle eine Frage an dein Quartier!

@@ -21,6 +21,18 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## v1.7
+
+### Features
+- Beiträge verbergen
+- Pinned Posts (Projekt & Quartier)
+- Neue Menu Leiste
+- Neuer Footer
+- Restrukturierte Quartiersseite
+### Bugs
+- Umfragen im Newsfeed
+- Ajax mit Nonce Sicherheit
+
 ## Theme Publication
 
 1.  [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)
@@ -53,11 +65,12 @@ landscape_card(null, 'Hallo Welt','Text....',get_template_directory_uri().'/asse
 landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Query and Manual
 ```
 #### List Card
+**🚨 deprechted**
 ```php 
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
 #### Slider
-`slides` get multiplied by 2 for desktop
+`slides` get multiplied by 2 for desktop view
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
@@ -88,4 +101,29 @@ get_cpt_term_owner($post_ID, $term, $type = 'name');
 Should be used in the Wordpress Loop 
 ```php
 author_card(true); // true for contact details (only for logged in users)
+```
+#### Creat Mail and Website links in Text
+```php 
+extract_links($text);
+```
+#### Display Date
+```php
+echo qp_date( $date, $detail = false, $time = '' );
+```
+#### Display Time remaining
+```php
+echo qp_remaining( $date );
+```
+#### Reminder Card
+Logged in users can remove reminder cards (uses `ajax`).
+```php
+reminder_card( $slug, $title, $text, $button = '', $link = '' );
+// example
+reminder_card('unique_slug', 'Title', 'Text...', 'Impressum', home_url( ).'/impressum' );
+// warning without ID no close button
+reminder_card('warning', 'Dein Profil ist unsichtbar','' );
+// warning with ID with close button
+reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','' );
+// without close button
+reminder_card('', 'Dein Profil ist unsichtbar','' );
 ```

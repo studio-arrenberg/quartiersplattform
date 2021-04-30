@@ -13,15 +13,32 @@
 
 ?>
 <footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
-    <div class="sponsoren">
-        <?php if( have_rows('sponsors', 'option') ): ?>    
-            <?php while( have_rows('sponsors', 'option') ): the_row();  
-                $image = get_sub_field('field_6024f5b43157e');
-            ?>
-                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
-            <?php endwhile; ?>
-        <?php endif; ?>
-    </div>
+
+    <?php if ( is_front_page() || cms_is_in_menu( 'qp_menu') ) { ?>
+
+        <div class="sponsoren">
+            <?php if( have_rows('sponsors', 'option') ): ?>    
+                <?php while( have_rows('sponsors', 'option') ): the_row();  
+                    $image = get_sub_field('field_6024f5b43157e');
+                    $link = get_sub_field('field_6036469e6db06');
+                
+                    if( !empty( $link ) ){
+                    ?> 
+                        <a href="<?php echo $link; ?>">
+                    <?php } ?>
+
+                        <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+                    
+
+                       <?php if( !empty( $link ) ){ ?> 
+                        </a>
+                    <?php } ?>
+                 
+                <?php endwhile; ?>
+            <?php endif; ?>
+        </div>
+
+    <?php } ?>
 
     <div class="footer">
 
@@ -42,6 +59,8 @@
         ?>
         
     </div><!-- .section-inner -->
+
+
 </footer><!-- #site-footer -->
 <?php wp_footer(); ?>
 </body>
