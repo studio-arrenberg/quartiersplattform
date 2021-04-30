@@ -853,7 +853,7 @@ require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
 require_once dirname( __FILE__ ) .'/setup/fragen.php'; # Fragen
 require_once dirname( __FILE__ ) .'/setup/angebote.php'; # Angebote
 require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
-require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
+// require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
 
 /**
  * Call UM & ACF function files
