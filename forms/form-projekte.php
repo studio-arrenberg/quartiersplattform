@@ -6,18 +6,7 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-<div class="card-container card-container__center card-container__large ">
-        <div class="card bg_green">
-            <div class="content white-text">
-                <h3 class="card-title-large">
-                    Veröffentliche dein Projekt auf der Quartiersplattform 
-                </h3>
-                <p class="preview-text-large">
-                    Profitiere von der Community! <br>
-                </p>
-            </div>
-        </div>
-	</div>
+
 
     <?php 
         reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen');
@@ -38,7 +27,7 @@ get_header();
                     ),
                     'field_el' => 'div',
                     'uploader' => 'basic',
-                    'post_content' => true,
+                    'post_content' => false,
                     'post_title' => true,
                     'return' => get_site_url().'/projekte',
                     'fields' => array(
