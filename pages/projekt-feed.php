@@ -21,8 +21,7 @@ get_header();
 
 	<div class="left-sidebar">
 
-		<button class="button" onclick="add_project();">Projekt anlegen</button>
-		<div class="add_project"></div>
+		<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
 
 		<div class="hidden-small">
@@ -58,7 +57,6 @@ get_header();
 
 	<?php // projekt_carousel(); ?>
 
-	<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
 
 	<?php 
