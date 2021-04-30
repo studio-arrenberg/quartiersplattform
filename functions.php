@@ -1890,7 +1890,7 @@ function get_term_id($post_ID, $term = 'projekt') {
  * @return string
  */
 function author_card($contact = false, $user = '') {
-	
+
 	set_query_var('contact_inforation', $contact);
 	set_query_var('contact_user_id', $user);
 
@@ -2560,17 +2560,17 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
  * @return string html
  */
 
-function call_to_action_card( $bg_color, $link, $title, $text) {
+// function call_to_action_card( $bg_color, $link, $title, $text) {
 
-	// define query vars 
-	set_query_var('call_to_action_bg_color', $bg_color);
-	set_query_var('call_to_action_link', $link);
-	set_query_var('call_to_action_title', $title);
-	set_query_var('call_to_action_text', $text);
-	// template part
-	get_template_part( 'components/call-to-action-card' );
+// 	// define query vars 
+// 	set_query_var('call_to_action_bg_color', $bg_color);
+// 	set_query_var('call_to_action_link', $link);
+// 	set_query_var('call_to_action_title', $title);
+// 	set_query_var('call_to_action_text', $text);
+// 	// template part
+// 	get_template_part( 'components/call-to-action-card' );
 
-}
+// }
 
 /**
  * Projekt Toggle Function

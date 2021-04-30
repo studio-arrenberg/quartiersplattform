@@ -80,7 +80,7 @@ get_header();
 				get_template_part('components/smart-card/projekte');
 					
 			// Call to Action Card 
-				call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
+				// call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
 			
 			}
 			else {
