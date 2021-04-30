@@ -61,7 +61,6 @@ wp_maintenance_mode();
         if( cms_is_in_menu( 'qp_menu') ) {
             $menu = 'post-header';
         }
-        
     ?>
 
     

@@ -34,7 +34,7 @@ get_header();
 			);
 		?>  
 
-		<?php card_list($args4); ?>
+		<?php // card_list($args4); ?>
 	</div>
 
 	<button class="button" onclick="add_project();">Projekt anlegen</button>
@@ -50,7 +50,7 @@ get_header();
 	?>
 
 
-	<?php projekt_carousel(); ?>
+	<?php // projekt_carousel(); ?>
 
 	<a href="<?php echo home_url() ?>/projekt-erstellen/" class="button">Projekt anlegen</a>
 
