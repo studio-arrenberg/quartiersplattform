@@ -29,6 +29,7 @@ fehlt:
     - aktuell läuft eine veranstaltung
     - Bezirksvertretung
 - notifications
+- pinned
 
 */
 

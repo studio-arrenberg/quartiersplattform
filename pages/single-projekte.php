@@ -227,7 +227,7 @@ get_header();
                     <!-- Backend edit link -->
                     <?php 
                     if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
-                        edit_post_link(); 
+                        edit_post_link(); // !!! simplify only function
                     }
                     ?>
 

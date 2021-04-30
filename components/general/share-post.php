@@ -43,8 +43,8 @@
 
 <?php 
 } else {
-    $text = "Du musst dein Projekt erst veröffentlichen bevor du dies teilen kannst.";
-    reminder_card('project-share'.get_the_ID(  ), 'Dein Projekt kann nicht geteilt werden', $text);
+    // $text = "Du musst dein Projekt erst veröffentlichen bevor du dies teilen kannst.";
+    // reminder_card('project-share'.get_the_ID(  ), 'Dein Projekt kann nicht geteilt werden', $text);
 } 
 
 ?>

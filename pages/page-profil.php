@@ -7,7 +7,7 @@
  */
 
 
-if (!is_user_logged_in()){
+if (!is_user_logged_in()) {
     header("Location: ".get_site_url());
     exit();
 }
@@ -30,7 +30,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             echo get_avatar( $current_user->user_email, 32 );
 
             reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','', 'Jetzt Registieren', home_url( ).'/register' );
-            // echo "<br>";
         ?>
 
         <!-- user name -->
