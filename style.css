@@ -2005,23 +2005,29 @@ button.toggle {
   text-align: center;
 }
 
+.badge-link:hover{
+  color: #0091ff;
+}
+
 .badge{
   width: 70px;
   height: 65px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  /* padding: 15px; */
   border-radius: 20px;
   background: #fff;
   font-size: 3.6rem;
 }
-/* 
-.yours{
-  border: 3px solid;
-  border-image-source: conic-gradient(from 180deg at 50% 50%, #0091FF 0deg, #91CFFF 360deg);
-  border-image-slice: 2;
-} */
+
+.badge img{
+  height: auto  !important;
+}
+
+.badge-button{
+  background: #F4F4F4;
+}
 
 .yours::after {
   position: absolute;
@@ -2062,8 +2068,7 @@ button.toggle {
     display: flex;
     align-items: center;
     width: auto !important;
-  max-width: 300px;
-
+    max-width: 300px;
     margin-bottom: 10px;
     text-align: left;
   }
@@ -2071,7 +2076,10 @@ button.toggle {
   .badge{
     margin-right: 10px;
     flex-shrink: 0;
+    overflow: hidden;
   }
+
+
 
 .card-title-small{
   font-size: 1.5rem;
@@ -4921,8 +4929,8 @@ font-weight: 700;
   font-family: "Titillium Web", "Helvetica Neue", Helvetica,
     sans-serif;
 font-weight: 700;
-font-size: 2rem;
-line-height: 2.3rem;
+font-size: 2.3rem;
+line-height: 2.6rem;
   margin-top: 3px;
 }
 
@@ -5442,6 +5450,16 @@ margin-top: -30px;
 
 a:hover .shadow{
   box-shadow: 0 1px  30px rgba(196, 196, 196, 0.9);
+}
+
+
+.shadow-on-hover .badge {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.shadow-on-hover:hover .badge{
+  box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
+
 }
 
 
