@@ -98,7 +98,7 @@ get_header();
 	</script>
 	</div>
 
-<div class="right-sidebar">
+<div class="right-sidebar ">
 	<?php 
 		// Projekte
 		// if ( is_user_logged_in( ) ) {

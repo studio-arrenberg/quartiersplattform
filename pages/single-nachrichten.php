@@ -24,6 +24,7 @@ get_header();
 
 	<div class="main-content">
 
+
     <?php
 	if ( have_posts() ) {
 		while ( have_posts() ) {
@@ -45,57 +46,69 @@ get_header();
 
 			?>
 
+            <h2 class="heading-size-3 highlight">
+                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - 
+                <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
+            </h2>
+            <h1 class="heading-size-1"><?php the_title(); ?><br><br></h1>
 
-        <div class="single-header">
-            <!-- post title -->
-            <div class="single-header-content">
+            <?php
+            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            ?>
 
-                <h1><?php the_title(); ?></h1>
-
-                <h3 class="single-header-slogan">
-                    <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
-                    <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
-                </h3>
-
-                <?php
-                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                ?>
+            <div class="simple-card">
+                <div class="button-group">
                     <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
                     <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
                         href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
-                <?php
-                }
+                </div>
+            </div>
+            <?php
+            }
             ?>
 
-            </div>
+        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
-            <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+        <div class="site-content">
+            <?php extract_links(get_field('text')); ?>
 
         </div>
 
+        <div class="gutenberg-content">
+            <?php
+                // Gutenberg Editor Content
+                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                    the_excerpt();
+                } else {
+                    the_content( __( 'Continue reading', 'twentytwenty' ) );
+                }
+            ?>
+        </div>
 
-    <div class="site-content">
+        <div class="small-projekt-card">
+            <?php project_card($post->ID); ?>
+        </div>
+        <?php author_card(); ?>
 
-        <?php extract_links(get_field('text')); ?>
+        
 
-    </div>
+        <!-- Backend edit link -->
+        <?php edit_post_link(); ?>
 
-    <div class="gutenberg-content">
-
-        <?php
-            // Gutenberg Editor Content
-            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                the_excerpt();
-            } else {
-                the_content( __( 'Continue reading', 'twentytwenty' ) );
-            }
+        <!-- kommentare -->
+        <?php			
+            if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
         ?>
 
+        <div class="comments-wrapper">
+            <?php comments_template('', true); ?>
+        </div><!-- .comments-wrapper -->
+
     </div>
 
-    <?php author_card(); ?>
-
-    <?php
+    <div class="right-sidebar">
+        <?php
         // weitere Nachrichten
 		$args2 = array(
 			'post_type'=> array('nachrichten', 'veranstaltungen'), 
@@ -115,31 +128,15 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
         ?>
-            <h2>Weitere Nachrichten & Veranstaltungen</h2>
+            <h3>Weitere Nachrichten & Veranstaltungen vom Projekt</h3>
+            <br>
         <?php
-            slider($args2,'card', '1','false');
+            card_list($args2);
         }
 
     ?>
     <br>
-
-    <?php
-    // Projekt Kachel 
-    project_card($post->ID);
-    ?>
-
-
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
-
-    <!-- kommentare -->
-    <?php			
-		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-	?>
-
-    <div class="comments-wrapper">
-        <?php comments_template('', true); ?>
-    </div><!-- .comments-wrapper -->
+    </div>
 
     <?php
             }
