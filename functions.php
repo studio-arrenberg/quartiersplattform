@@ -2632,6 +2632,16 @@ function projekt_toggle_status_callback() { // !!! naming => visibility_toggle_c
 	$my_post['post_status'] = $status;
 	wp_update_post( $my_post ); // Update the post into the database
 
+	// if post type == projekte
+	// iterate all posts with tax projekte == projekte id
+	// write post_status in array
+	// turn draft or reset
+
+
+	// post project cpt 
+	// if project privat 
+	// cpt = draft
+
 	return;
 	// echo $status." - ".$post_id;
 

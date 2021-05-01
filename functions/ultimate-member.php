@@ -204,3 +204,5 @@ if (UM()->options()->get('author_redirect') == true) {
 if (UM()->options()->get('members_page') == true) {
 	UM()->options()->update('members_page', false);
 }
+// Mail settings
+// ...
