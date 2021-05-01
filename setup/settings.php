@@ -20,8 +20,8 @@
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
-		'page_title' 	=> 'Einstellungen für die Quartiersplattform',
-		'menu_title'	=> 'Quartiersplattform',
+		'page_title' 	=> __('Einstellungen für die Quartiersplattform',"quartiersplattform"),
+		'menu_title'	=> __('Quartiersplattform', "quartiersplattform"),
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false,
@@ -31,8 +31,8 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Wartungsmodus',
-		'menu_title'	=> 'Wartungsmodus',
+		'page_title' 	=> __('Wartungsmodus',"quartiersplattform"),
+		'menu_title'	=> __('Wartungsmodus',"quartiersplattform"),
 		'parent_slug'	=> 'theme-general-settings',
 		'update_button' => __('Aktualisieren', 'acf'),
 		'capability'	=> 'edit_posts',
@@ -41,8 +41,8 @@ if( function_exists('acf_add_options_page') ) {
 		'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
 	));
 	acf_add_options_sub_page(array(
-		'page_title' 	=> 'API-Schlüssel',
-		'menu_title'	=> 'API-Schlüssel',
+		'page_title' 	=> __('API-Schlüssel', "quartiersplattform"),
+		'menu_title'	=> __('API-Schlüssel', "quartiersplattform"),
 		'parent_slug'	=> 'theme-general-settings',
 		'update_button' => __('Aktualisieren', 'acf'),
 		'capability'	=> 'edit_posts',
@@ -62,14 +62,14 @@ if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
 		'key' => 'group_6023ea77ebd53',
-		'title' => 'Quartierseinstellungen',
+		'title' => __('Quartierseinstellungen',"quartiersplattform"),
 		'fields' => array(
 			array(
 				'key' => 'field_6023eb94d4c72',
-				'label' => 'Logo',
+				'label' => __('Logo', "quartiersplattform"),
 				'name' => 'logo',
 				'type' => 'image',
-				'instructions' => 'Gib deinem Quartier ein Logo.',
+				'instructions' => __('Hier kannst du das Logo von deinem Quartier oder deiner Organisation einfügen.',"quartiersplattform"),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -90,10 +90,10 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_6024ebe66b644',
-				'label' => 'Name',
+				'label' => __('Name',"quartiersplattform"),
 				'name' => 'quartiersplattform-name',
 				'type' => 'text',
-				'instructions' => 'Gib deiner Quartiersplattform einen Namen.',
+				'instructions' => __('Hier kannst du den Namen feslegen, der den Besuchern der Quartiersplattform angezeigt wird.',"quartiersplattform"),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -102,7 +102,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'id' => '',
 				),
 				'default_value' => '',
-				'placeholder' => 'Name',
+				'placeholder' => __('Name',"quartiersplattform"),
 				'prepend' => '',
 				'append' => '',
 				'maxlength' => '',
@@ -128,10 +128,10 @@ if( function_exists('acf_add_local_field_group') ):
 			// ),
 			array(
 				'key' => 'field_6063336394327',
-				'label' => 'Mittelpunkt deines Quartiers',
+				'label' => __('Mittelpunkt deines Quartiers',"quartiersplattform"),
 				'name' => 'map',
 				'type' => 'google_map',
-				'instructions' => 'Dieser Ort wird für die Karte auf der Startseite genutzt.',
+				'instructions' => __('Dieser Ort wird für die Karte auf der Startseite genutzt.',"quartiersplattform"),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -146,10 +146,10 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_6024f0beeb1e7',
-				'label' => 'Sponsoren',
+				'label' => __('Sponsoren',"quartiersplattform"),
 				'name' => 'sponsors',
 				'type' => 'repeater',
-				'instructions' => 'Trag hier die Sponsoren der Plattform ein.',
+				'instructions' => __('Hier kannst du die Partner deiner Quartiersplattform eintragen.',"quartiersplattform"),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -165,7 +165,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'sub_fields' => array(
 					array(
 						'key' => 'field_6024f5b43157e',
-						'label' => 'Logo',
+						'label' => __('Logo',"quartiersplattform"),
 						'name' => 'logo',
 						'type' => 'image',
 						'instructions' => '',
@@ -208,7 +208,7 @@ if( function_exists('acf_add_local_field_group') ):
 					// ),
 					array(
 						'key' => 'field_6036469e6db06',
-						'label' => 'Website',
+						'label' => __('Website',"quartiersplattform"),
 						'name' => 'website',
 						'type' => 'url',
 						'instructions' => '',
@@ -246,14 +246,14 @@ if( function_exists('acf_add_local_field_group') ):
     
 	acf_add_local_field_group(array(
 			'key' => 'group_60241960f114c',
-			'title' => 'Wartungsmodus',
+			'title' => __('Wartungsmodus',"quartiersplattform"),
 			'fields' => array(
 				array(
 					'key' => 'field_6024196b56d53',
-					'label' => 'Wartungsmodus',
+					'label' => __('Wartungsmodus',"quartiersplattform"),
 					'name' => 'maintenance',
 					'type' => 'true_false',
-					'instructions' => 'Schalte hier den Wartungsmodus für die Quartiersseite ein.',
+					'instructions' => __('Schalte hier den Wartungsmodus für die Quartiersseite ein.',"quartiersplattform"),
 					'required' => 0,
 					'required' => 0,
 					'conditional_logic' => 0,
@@ -289,10 +289,10 @@ if( function_exists('acf_add_local_field_group') ):
 				// ),
 				array(
 					'key' => 'field_6024e6c4388e2',
-					'label' => 'Überschrift',
+					'label' => __('Überschrift',"quartiersplattform"),
 					'name' => 'headline',
 					'type' => 'text',
-					'instructions' => 'Gib hier eine Überschrift für die Wartungsseite ein.',
+					'instructions' => __('Hier kannst du eine Überschrift für die Wartungsseite eintragen.',"quartiersplattform"),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -300,7 +300,7 @@ if( function_exists('acf_add_local_field_group') ):
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => 'Deine Quatiersplattform wird aktualisiert.',
+					'default_value' => __('Deine Quatiersplattform wird aktualisiert.',"quartiersplattform"),
 					'placeholder' => '',
 					'prepend' => '',
 					'append' => '',
@@ -308,10 +308,10 @@ if( function_exists('acf_add_local_field_group') ):
 				),
 				array(
 					'key' => 'field_6024e751388e3',
-					'label' => 'Text',
+					'label' => __('Text',"quartiersplattform"),
 					'name' => 'text',
 					'type' => 'textarea',
-					'instructions' => 'Gib hier eine Beschreibung für den Wartungsmodus ein.',
+					'instructions' => __('Hier kannst du einen Beschreibungstext für den Wartungsmodus einfügen.',"quartiersplattform"),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -319,7 +319,7 @@ if( function_exists('acf_add_local_field_group') ):
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => 'Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten. Wir sind bald wieder online.',
+					'default_value' => __('Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten. Wir sind bald wieder online.',"quartiersplattform"),
 					'placeholder' => '',
 					'maxlength' => '',
 					'rows' => '',
@@ -394,10 +394,10 @@ if( function_exists('acf_add_local_field_group') ):
 				// ),
 				array(
 					'key' => 'field_6036d8d042014',
-					'label' => 'Matomo API Schlüssel',
+					'label' => __('Matomo API Schlüssel',"quartiersplattform"),
 					'name' => 'matomo_api',
 					'type' => 'textarea',
-					'instructions' => 'Trage hier deinen Matomo API-Schlüssel ein.',
+					'instructions' => __('Trage hier deinen Matomo API-Schlüssel ein.',"quartiersplattform"),
 					'required' => 0,
 					'conditional_logic' => 0,
 					'wrapper' => array(
@@ -437,14 +437,14 @@ if( function_exists('acf_add_local_field_group') ):
 
 			acf_add_local_field_group(array(
 				'key' => 'group_606d79da63449',
-				'title' => 'Quartierskoordinaten',
+				'title' => __('Quartierskoordinaten',"quartiersplattform"),
 				'fields' => array(
 					array(
 						'key' => 'field_606d79e0461d4',
-						'label' => 'Breitengrad',
+						'label' => __('Breitengrad',"quartiersplattform"),
 						'name' => 'lat',
 						'type' => 'number',
-						'instructions' => 'Trage hier den Breitengrad von deinem Quartier ein. Diesen findest du beispielsweise über Google Maps heraus.',
+						'instructions' => __('Trage hier den Breitengrad von deinem Quartier ein. Diesen findest du beispielsweise über Google Maps heraus.',"quartiersplattform"),
 						'required' => 0,
 						'conditional_logic' => 0,
 						'wrapper' => array(
@@ -462,10 +462,10 @@ if( function_exists('acf_add_local_field_group') ):
 					),
 					array(
 						'key' => 'field_606d7bd1461d6',
-						'label' => 'Längengrad',
+						'label' => __('Längengrad',"quartiersplattform"),
 						'name' => 'lng',
 						'type' => 'number',
-						'instructions' => 'Trage hier den Längengrad von deinem Quartier ein. Diesen findest du beispielsweise über Google Maps heraus.',
+						'instructions' => __('Trage hier den Längengrad von deinem Quartier ein. Diesen findest du beispielsweise über Google Maps heraus.',"quartiersplattform"),
 						'required' => 0,
 						'conditional_logic' => 0,
 						'wrapper' => array(

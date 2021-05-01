@@ -125,7 +125,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                 <h4>Einstellungen</h4>
                 <!-- Contact Information -->   
-                <h2>Bearbeite deine Kontaktinformationen</h2>
+                <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
                 <br>
                     <?php
                     $userid = "user_".$current_user->ID; 
