@@ -24,7 +24,6 @@ if ( current_user_can('administrator') ) {
             slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
 
         endforeach;
-
         ?>
             <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
         <?php 

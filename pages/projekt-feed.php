@@ -22,7 +22,6 @@ get_header();
 	<div class="left-sidebar">
 
 
-
 		<div class="hidden-small">
 
 			<?php 
