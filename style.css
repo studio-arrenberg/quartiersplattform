@@ -4896,10 +4896,19 @@ font-weight: 400;
 
 
 .simple-card{
+  position: relative;
   border-radius: 20px;
   width: 100%;
   background-color: #fff;
   padding: 5px 5px 5px 5px;
+}
+
+.page-card{
+  position: relative;
+  border-radius: 25px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px 15px
 }
 
 .card {
@@ -6992,7 +7001,8 @@ a.text-link:hover {
 }
 
 /* bar styles */
-button {
+
+.filters-container button {
   border: none;
   cursor: pointer;
   background-color: transparent;
