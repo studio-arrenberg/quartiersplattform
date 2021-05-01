@@ -54,7 +54,7 @@ get_header();
 		$args->the_post();
 
 		?>
-			<div class="sdg-section" id="sdg-card <?php the_field('goal'); ?>" 
+			<div class="sdg-section" id="sdg-card sdg-id-<?php the_field('goal'); ?>" 
 
 			style="
 				background: linear-gradient(<?php the_field('color'); ?>20, rgba(255,255,255,0));
@@ -63,7 +63,7 @@ get_header();
                     <div class="content">    
 						<span class="sdg-number">
 							<?php the_field('goal'); ?>
-	</span >
+						</span >
 						<h3 class="card-title-large">
                         	<?php the_title(); ?>
 						</h3>

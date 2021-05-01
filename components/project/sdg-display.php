@@ -6,7 +6,7 @@ if ( current_user_can('administrator') ) {
 
     if( $terms ) { ?>
 
-        <h2>Ziele für nachhaltige Entwicklung</h2>
+        <h3 class="heading-size-3">Ziele für nachhaltige Entwicklung</h3>
 
         <?php 
         foreach( $terms as $term ): 
@@ -24,7 +24,6 @@ if ( current_user_can('administrator') ) {
             slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
 
         endforeach;
-
         ?>
             <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
         <?php 

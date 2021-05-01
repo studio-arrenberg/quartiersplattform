@@ -48,11 +48,9 @@ wp_maintenance_mode();
     <?php the_field('matomo_api', 'option'); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
 
-<?php 
-// echo current_user_can('skip_maintenance');
-?>
+<?php display_cookie_warning(); ?>
 
     <?php
         wp_body_open();
@@ -69,12 +67,8 @@ wp_maintenance_mode();
         <div class="site-header-content">
             <div class="pull-left">
 
-            <?php 
-            # if in menu && if in maintenance mode + user cant skip
-            if (is_front_page() || cms_is_in_menu( 'qp_menu') || ( get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance')) ) {
-            ?>
 
-                <?php
+            <?php
                 # remove menu when in maintenance mode
                 if (get_field('maintenance', 'option') == false || current_user_can('skip_maintenance')) {
                     if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
@@ -114,6 +108,12 @@ wp_maintenance_mode();
 
 
 
+            <?php 
+            # if in menu && if in maintenance mode + user cant skip
+            if (is_front_page() || cms_is_in_menu( 'qp_menu') || ( get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance')) ) {
+            ?>
+
+                
 
 
                 <?php 
@@ -121,12 +121,12 @@ wp_maintenance_mode();
             else {
                 ?>
                 
-                <!-- back button -->
+                <!-- back button 
                 <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
                     <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
                     <span class="button-has-icon-label">Zurück</span>
                 </button>
-            
+            -->
                 <?php 
             }
             ?>

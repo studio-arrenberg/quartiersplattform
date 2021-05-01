@@ -15,8 +15,33 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
 
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+
+		<div class="hidden-small">
+
+			<?php 
+				$args4 = array(
+					'post_type'=> array('projekte'), 
+					'post_status'=>'publish', 
+					'posts_per_page'=> 20,
+					'orderby' => 'date'
+				);
+			?>  
+
+			<?php // card_list($args4); ?>
+
+            <?php projekt_carousel(); ?>
+
+		</div>
+
+		
+	</div>
+
+
+	<div class="main-content">
     <?php
 
 	if ( have_posts() ) {
@@ -36,55 +61,40 @@ get_header();
 
 			?>
 
-            <div class="single-header  ">
-                <!-- without-single-header-image -->
+            <div class="projekt-header">
+                <!-- emoji -->
+                <div class="projekt-header-emoji">
+                    <?php the_field('emoji'); ?>
+                </div>
 
+                <div class="projekt-header-content">
 
-                <!-- Bild -->
-                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-                <!-- post title -->
-                <div class="single-header-content center-mobile">
-                    <!-- emoji -->
-                    <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
-
-                    <h1><?php the_title(); ?></h1>
-
-                    <!-- slogan -->
-                    <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
+                    <h1 class="heading-size-1"><?php the_title(); ?></h1>
+                    <h2 class="heading-size-3 highlight"><?php the_field('slogan'); ?></h2>
 
 
                 </div>
-
-                <!-- akteur -->
-                <!-- not ready yet -->
-
-
             </div>
+
 
 
             <!-- bar -->
             <div class="filters-container">
-                <div class="filters-wrapper">
-                    <ul class="filter-tabs">
-                        <li>
-                        <button class="filter-button filter-active" data-value="summary" data-translate-value="0">
+                <div class="filters-wrapper <?php if ($current_user->ID == $post->post_author) { ?> tabs-3 <?php } ?>">
+                    <div class="filter-tabs  ">
+                        <button class="filter-button filter-active " data-value="summary" data-translate-value="0">
                             Übersicht
                         </button>
-                        </li>
-                        <li>
                         <button class="filter-button" data-value="posts" data-translate-value="100%">
                             Chronik
                         </button>
-                        </li>
+
                         <?php if ($current_user->ID == $post->post_author) { ?>
-                        <li>
-                        <button class="filter-button" data-value="settings" data-translate-value="200%">
-                            Einstellungen
-                        </button>
-                        </li>
+                            <button class="filter-button" data-value="settings" data-translate-value="200%">
+                                Einstellungen
+                            </button>
                         <?php } ?>
-                    </ul>
+                    </div>
                 <div class="filter-slider" aria-hidden="true">
                     <div class="filter-slider-rect">&nbsp;</div>
                 </div>
@@ -116,6 +126,10 @@ get_header();
             <!-- page bar content -->
             <div>
                 <div id="summary" class="bar bar-active">
+
+                     <!-- Bild -->
+                     <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
 
                     <?php 
                     // project is not public
@@ -295,6 +309,9 @@ get_header();
         }
     }
 ?>
+</div>
+
+</div>
 
 </main><!-- #site-content -->
 

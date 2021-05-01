@@ -20,32 +20,10 @@ get_header();
 <main id="site-content" class="page-grid" role="main">
 
 	<div class="left-sidebar">
-
-
-
-		<div class="hidden-small">
-
-			<?php 
-				$args4 = array(
-					'post_type'=> array('projekte'), 
-					'post_status'=>'publish', 
-					'posts_per_page'=> 20,
-					'orderby' => 'date'
-				);
-			?>  
-
-			<?php // card_list($args4); ?>
-		</div>
-
 		<?php projekt_carousel(); ?>
-
 	</div>
 
-
 	<div class="main-content">
-
-
-
 
 	<?php
 		$text = __('Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");
@@ -65,8 +43,8 @@ get_header();
 			'posts_per_page'=> 20,
 			'orderby' => 'date'
 		);
-	?>  
-	
+	?> 
+
 	<div class="newsfeed" data-grid>
 		<?php set_query_var( 'additional_info', true ); ?>
 		<?php card_list($args4); ?>
@@ -120,7 +98,7 @@ get_header();
 	</script>
 	</div>
 
-<div class="right-sidebar">
+<div class="right-sidebar ">
 	<?php 
 		// Projekte
 		// if ( is_user_logged_in( ) ) {

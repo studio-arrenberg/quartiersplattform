@@ -11,7 +11,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 
 <?php if (get_field('text')) { ?>
 <div class="single-content">
-    <h2>Beschreibung</h2>
+    <h3 class="heading-size-3">Beschreibung</h3>
     <p><?php extract_links(get_field('text')); ?></p>
 </div>
 <?php } ?>

@@ -6,11 +6,12 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-    
+    <div class="small-projekt-card">
     <?php
         // Projekt Kachel
         project_card($_GET['project'], 'slug');
     ?>
+</div>
 
     <div class="publish-form">
         <h2>Erstelle eine Nachricht</h2>

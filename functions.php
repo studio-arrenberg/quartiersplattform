@@ -1334,29 +1334,53 @@ function wpdev_login_session( $expire ) {
 /**
  * Set visitor cookie
  *
- * @since Quartiersplattform 1.0
+ * @since Quartiersplattform 1.6
  *
- * @return void
+ * @return string
  */
-function set_user_cookie_inc_guest(){
+function display_cookie_warning() {
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+
+	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
+		get_template_part( 'components/cookie/cookie-alert' );
+	}
+
+}
+
+/**
+ * Set guest cookie (ajax)
+ *
+ * @since Quartiersplattform 1.7
+ *
+ * @return string
+ */
+function set_cookie_callback(){
 	# check if cookie not set
     if (!isset($_COOKIE['visitor']) && !is_user_logged_in()) {
 		# get/increase or set guest counter
 		if (!get_option('visitor_counter')) {
 			add_option('visitor_counter', 1);
 		}
+		// get/increase guest counter
 		else {
 			$counter = get_option('visitor_counter') + 1;
 			update_option('visitor_counter', $counter);
 		}
-		# set guest cookie
+		// set guest cookie
 		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
 		setcookie('visitor', md5($counter), $expiry, $path, $host);
+
+		return;
     }  
 } 
-add_action('init', 'set_user_cookie_inc_guest');
+// add_action('init', 'set_user_cookie_inc_guest');
+add_action( 'wp_ajax_set_cookie', 'set_cookie_callback' );
+add_action( 'wp_ajax_nopriv_set_cookie', 'set_cookie_callback' );
+
+
 
 /**
  * Set Cookie on login
@@ -2773,7 +2797,7 @@ function projekt_carousel( ) {
 				<div class="badge badge-button">
 				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
 				</div>
-				<h3 class="card-title-small">
+				<h3 class="heading-size-4">
 					Projekt erstellen    
 				</h3>
 			</a>
