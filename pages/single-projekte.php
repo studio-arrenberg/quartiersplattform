@@ -20,8 +20,6 @@ get_header();
 
 	<div class="left-sidebar">
 
-
-
 		<div class="hidden-small">
 
 			<?php 
@@ -34,18 +32,16 @@ get_header();
 			?>  
 
 			<?php // card_list($args4); ?>
+
+            <?php projekt_carousel(); ?>
+
 		</div>
 
-		<?php projekt_carousel(); ?>
-
+		
 	</div>
 
 
 	<div class="main-content">
-
-
-
-
     <?php
 
 	if ( have_posts() ) {
@@ -66,24 +62,20 @@ get_header();
 			?>
 
             <div class="projekt-header">
-                
-                    <!-- post title -->
-                    <div class="projekt-header-content">
-                    <!-- emoji -->
-                    <div class="projekt-header-emoji"><?php the_field('emoji'); ?></div>
+                <!-- emoji -->
+                <div class="projekt-header-emoji">
+                    <?php the_field('emoji'); ?>
+                </div>
 
-                    <h1><?php the_title(); ?></h1>
+                <div class="projekt-header-content">
 
-                    <div class="projekt-header-slogan"><?php the_field('slogan'); ?></div>
+                    <h1 class="heading-size-1"><?php the_title(); ?></h1>
+                    <h2 class="heading-size-3 highlight"><?php the_field('slogan'); ?></h2>
 
 
                 </div>
-
-                <!-- akteur -->
-                <!-- not ready yet -->
-
-
             </div>
+
 
 
             <!-- bar -->
@@ -317,6 +309,7 @@ get_header();
         }
     }
 ?>
+</div>
 
 </div>
 

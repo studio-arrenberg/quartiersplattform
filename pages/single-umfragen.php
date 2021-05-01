@@ -57,7 +57,7 @@ get_header();
 
                 <div class="copy-url">
                     <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
-                    <button class="copy" onclick="copy()">Kopieren</button>
+                    <button class="copy is-style-outline" onclick="copy()">Kopieren</button>
 
                 </div>
 

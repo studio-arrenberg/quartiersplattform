@@ -2787,7 +2787,7 @@ function projekt_carousel( ) {
 				<div class="badge badge-button">
 				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
 				</div>
-				<h3 class="card-title-small">
+				<h3 class="heading-size-4">
 					Projekt erstellen    
 				</h3>
 			</a>

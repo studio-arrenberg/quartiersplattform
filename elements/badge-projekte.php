@@ -17,5 +17,5 @@
      -->
         
     </div>
-    <h3 class="card-title-small"><?php shorten(get_the_title(), '60'); ?></h3>
+    <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); ?></h3>
 </a>

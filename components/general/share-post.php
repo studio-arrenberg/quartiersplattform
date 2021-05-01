@@ -8,7 +8,7 @@
         <h2> Projekt teilen </h2>
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-            <button class="copy" onclick="copy()">Kopieren</button>
+            <button class="copy is-style-outline" onclick="copy()">Kopieren</button>
 
         </div>
 
