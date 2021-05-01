@@ -2664,18 +2664,6 @@ add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
 add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callback' );
 
 
-// funtion with button in component
-// if project owner => projekt pin || admin => system pin (can be both should be determined before hand)
-
-// function ajax callback
-// check privilages
-// change state (true || false)
-
-// query quertier => get projects/akteure/pages/(posts) where meta main_pin:: true
-// query project => get posts where project_pin:: true
-
-
-
 /**
  * Pin Toggle Function
  *
@@ -2686,6 +2674,9 @@ add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callb
  * @return void
  */
 function pin_toggle($type = 'pin_project') {
+
+	// pin_main :: pages, projects
+	// pin_project :: veranstaltungen, nachrichten, umfragen
 
 	set_query_var('pin_type', $type);
 
@@ -2792,6 +2783,15 @@ function projekt_carousel( ) {
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
 
+			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
+				<div class="badge badge-button">
+				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
+				</div>
+				<h3 class="card-title-small">
+					Projekt erstellen    
+				</h3>
+			</a>
+
 			<?php  
 			
 			if (wp_is_mobile(  )) {
@@ -2850,43 +2850,43 @@ add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
  * 
  * @return string
  */
-function add_project_callback() {
+// function add_project_callback() {
 
-	// check_ajax_referer('my_ajax_nonce');
+// 	check_ajax_referer('my_ajax_nonce');
 
-	echo "<h1>erstelle dein project</h1>";
+// 	echo "<h1>erstelle dein project</h1>";
 
-	acf_form(
-		array(
-			'id' => 'projekte-form',         
-			'post_id'=>'new_post',
-			'new_post'=>array(
-				'post_type' => 'projekte',
-				'post_status' => 'publish',
-			),
-			'field_el' => 'div',
-			'uploader' => 'basic',
-			'post_content' => false,
-			'post_title' => true,
-			'return' => get_site_url().'/projekte',
-			'fields' => array(
-				'field_5fc64834f0bf2', // Emoji
-				'field_5fc647f6f0bf0', // Kurzbeschreibung
-			),
-			'submit_value'=>'Projekt veröffentlichen',
-			'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
-		)
-	); 
+// 	acf_form(
+// 		array(
+// 			'id' => 'projekte-form',         
+// 			'post_id'=>'new_post',
+// 			'new_post'=>array(
+// 				'post_type' => 'projekte',
+// 				'post_status' => 'publish',
+// 			),
+// 			'field_el' => 'div',
+// 			'uploader' => 'basic',
+// 			'post_content' => false,
+// 			'post_title' => true,
+// 			'return' => get_site_url().'/projekte',
+// 			'fields' => array(
+// 				'field_5fc64834f0bf2', // Emoji
+// 				'field_5fc647f6f0bf0', // Kurzbeschreibung
+// 			),
+// 			'submit_value'=>'Projekt veröffentlichen',
+// 			'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
+// 		)
+// 	); 
 
-	emoji_picker_init('acf-field_5fc64834f0bf2');
+// 	emoji_picker_init('acf-field_5fc64834f0bf2');
 
 
-	wp_die(); 
-	return;
+// 	wp_die(); 
+// 	return;
 
-} 
-add_action( 'wp_ajax_add_project', 'add_project_callback' );
-add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
+// } 
+// add_action( 'wp_ajax_add_project', 'add_project_callback' );
+// add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
 
 
 /**
@@ -2908,6 +2908,60 @@ function count_query($query, $amount = 1) {
 		return true;
 	}
     
+}
+
+/**
+ * Project Card
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $type post / projekt
+ * @param string $id id
+ * @return string
+ */
+function project_card($id, $type = "post") {
+
+	if (empty($id)) {
+		return false;
+	}
+
+	if ($type == "post") {
+		// get project id
+		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) );
+		// query
+		$args = array(
+			'name'        => $term_list[0]->slug,
+			'post_type'   => 'projekte',
+			'post_status' => 'publish',
+			'numberposts' => '1'
+		);
+
+	}
+	else if ($type == "projekt") {
+		// query
+		$args = array(
+			'p'         => $id,
+  			'post_type' => 'any',
+			'post_status' => 'publish',
+			'numberposts' => '1'
+		);
+
+	}
+	else if ($type == "slug") {
+		// query
+		$args = array(
+			'name'        => $id,
+			'post_type'   => 'projekte',
+			'post_status' => 'publish',
+			'numberposts' => '1'
+		);
+
+	}
+
+	// query and display
+	card_list( $args, 'card' );
+	
+
 }
 
 

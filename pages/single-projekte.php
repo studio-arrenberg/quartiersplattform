@@ -15,7 +15,36 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
+
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+
+
+
+		<div class="hidden-small">
+
+			<?php 
+				$args4 = array(
+					'post_type'=> array('projekte'), 
+					'post_status'=>'publish', 
+					'posts_per_page'=> 20,
+					'orderby' => 'date'
+				);
+			?>  
+
+			<?php // card_list($args4); ?>
+		</div>
+
+		<?php projekt_carousel(); ?>
+
+	</div>
+
+
+	<div class="main-content">
+
+
+
 
     <?php
 
@@ -36,61 +65,17 @@ get_header();
 
 			?>
 
-            <div class="single-header  ">
-                <!-- without-single-header-image -->
-
-
-                <!-- Bild -->
-                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-                <!-- post title -->
-                <div class="single-header-content center-mobile">
+            <div class="projekt-header">
+                
+                    <!-- post title -->
+                    <div class="projekt-header-content">
                     <!-- emoji -->
-                    <div class="single-header-emoji"><?php the_field('emoji'); ?></div>
+                    <div class="projekt-header-emoji"><?php the_field('emoji'); ?></div>
 
                     <h1><?php the_title(); ?></h1>
 
-                    <!-- slogan -->
-                    <div class="single-header-slogan"><?php the_field('slogan'); ?></div>
-                    <!-- <h4><?php //if (current_user_can('administrator')) echo get_the_author(); ?></h4> -->
+                    <div class="projekt-header-slogan"><?php the_field('slogan'); ?></div>
 
-                    <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    ?>
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
-                    
-                    <?php
-                    }
-                    ?>
-
-
-                <!-- Nachricht erstellen -->
-
-                <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    ?>
-                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Nachricht erstellen</a>
-                    <?php
-                    }
-                ?>
-
-                <?php
-                    if ( is_user_logged_in() && $current_user->ID == $post->post_author && current_user_can('administrator') ) {
-                    ?>
-                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">Umfrage erstellen</a>
-                    <?php
-                    }
-                ?>
-                <!-- Veranstaltung erstellen -->
-
-                <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    ?>
-                <a class="button is-style-outline"
-                    href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung erstellen</a>
-                <?php
-                    }
-                ?>
 
                 </div>
 
@@ -103,26 +88,21 @@ get_header();
 
             <!-- bar -->
             <div class="filters-container">
-                <div class="filters-wrapper">
-                    <ul class="filter-tabs">
-                        <li>
-                        <button class="filter-button filter-active" data-value="summary" data-translate-value="0">
+                <div class="filters-wrapper <?php if ($current_user->ID == $post->post_author) { ?> tabs-3 <?php } ?>">
+                    <div class="filter-tabs  ">
+                        <button class="filter-button filter-active " data-value="summary" data-translate-value="0">
                             Übersicht
                         </button>
-                        </li>
-                        <li>
                         <button class="filter-button" data-value="posts" data-translate-value="100%">
                             Chronik
                         </button>
-                        </li>
+
                         <?php if ($current_user->ID == $post->post_author) { ?>
-                        <li>
-                        <button class="filter-button" data-value="settings" data-translate-value="200%">
-                            Einstellungen
-                        </button>
-                        </li>
+                            <button class="filter-button" data-value="settings" data-translate-value="200%">
+                                Einstellungen
+                            </button>
                         <?php } ?>
-                    </ul>
+                    </div>
                 <div class="filter-slider" aria-hidden="true">
                     <div class="filter-slider-rect">&nbsp;</div>
                 </div>
@@ -154,58 +134,60 @@ get_header();
             <!-- page bar content -->
             <div>
                 <div id="summary" class="bar bar-active">
-                    <h4>Übersicht</h4>
+
+                     <!-- Bild -->
+                     <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
 
                     <?php 
                     // project is not public
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
-                        reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                        reminder_card('warning-draft-'.get_the_ID(  ), 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                        reminder_card('warning', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
                     }
-                    ?>
-                    <h4>Pinned:</h4>
-                    <?php
-                    // pinned project posts
-                    $args_chronik = array(
-                        'post_type' => array('veranstaltungen', 'nachrichten'),
-                        'posts_per_page' => -1,
-                        'order_by' => 'date',
-                        'order' => 'DESC',
-                        'meta_key'   => 'pin_project',
-                        'meta_value' => 'true'
-                    );
 
-                    card_list($args_chronik);
+                    // Toolbox
+                    get_template_part( 'components/project/toolbox' );
+
+                    // Anstehende Events
+                    get_template_part( 'components/project/coming-events' );
+                    
+                    // Pinned Posts
+                    get_template_part( 'components/project/pinned-posts' );
+
+                    // Content
+                    get_template_part( 'components/project/content' );
+
+                    // SDGs
+                    get_template_part( 'components/project/sdg-display' );
+
+                    // Author
+                    author_card(true);
+
+                    // Share post
+                    get_template_part( 'components/general/share-post' );
+
+                    // Map
+                    get_template_part('components/map-card');
+
+
                     ?>
+                    
+
 
                 </div>
+
+
                 <div id="posts" class="bar bar-hidden">
-                    <h4>Chronik</h4>
 
-                    <?php 
-
-                        // Projektverlauf
-                        $args_chronik = array(
-                            'post_type' => array('veranstaltungen', 'nachrichten'),
-                            'posts_per_page' => -1,
-                            'order_by' => 'date',
-                            'order' => 'DESC',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'projekt',
-                                    'field' => 'slug',
-                                    'terms' => ".$post->post_name."
-                                )
-                            )
-                        );
-
-                        card_list($args_chronik);
-
-                    ?>
+                    <?php get_template_part( 'components/project/history' ); ?>
+                    
                 </div>
+
+
+
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
-                    <h4>Einstellungen</h4>
-
 
                     <?php pin_toggle('pin_main'); ?>
 
@@ -264,207 +246,19 @@ get_header();
                     <p>Danger zone</p>
                     <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
                     
+                    <!-- Backend edit link -->
+                    <?php 
+                    if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
+                        edit_post_link(); 
+                    }
+                    ?>
+
+
                 </div>
                 <?php } ?>
 
             </div>
 
-
-            <?php
-                // Last Polling
-                if (current_user_can('administrator')) {
-                    $args_chronik = array(
-                        'post_type'=>'umfragen', 
-                        'post_status'=>'publish', 
-                        'posts_per_page'=> 1,
-                        'order' => 'DESC',
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'projekt',
-                                'field' => 'slug',
-                                'terms' => ".$post->post_name."
-                            )
-                        )
-
-                    );
-
-                    $my_query = new WP_Query($args_chronik);
-                    if ($my_query->post_count > 0) {
-                        ?>
-                            <h2>Umfrage</h2>
-                        <?php 
-                        slider($args_chronik,'card', '1','false'); 
-                    }
-                }
-            ?>
-
-            <?php
-                // Anstehende Veranstaltungen
-                $args_chronik = array(
-                    'post_type'=>'veranstaltungen', 
-                    'post_status'=>'publish', 
-                    'posts_per_page'=> 2,
-                    'meta_key' => 'event_date',
-                    'orderby' => 'rand',
-                    'order' => 'ASC',
-                    'offset' => '0', 
-                    'meta_query' => array(
-                        array(
-                            'key' => 'event_date', 
-                            'value' => date("Y-m-d"),
-                            'compare' => '>=', 
-                            'type' => 'DATE'
-                        )
-                    ),
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'projekt',
-                            'field' => 'slug',
-                            'terms' => ".$post->post_name."
-                        )
-                    )
-
-                );
-
-                $my_query = new WP_Query($args_chronik);
-                if ($my_query->post_count > 0) {
-                    ?>
-                        <h2>Anstehende Veranstaltung</h2>
-                    <?php 
-                    // slider($args_chronik,'card', '1','false'); 
-                    get_template_part('elements/card', get_post_type());
-
-                }
-            ?>
-
-            <!-- wtf -->
-
-            <?php if (get_field('text')) { ?>
-            <div class="single-content">
-                <h2>Beschreibung</h2>
-                <p><?php extract_links(get_field('text')); ?></p>
-            </div>
-            <?php } ?>
-
-            <?php if (get_field('goal')) { ?>
-            <div class="single-content">
-                <h2>Projektziel</h2>
-                <p><?php the_field('goal'); ?></p>
-            </div>
-            <?php } ?>
-
-
-
-            <!-- Gutenberg Editor Content -->
-            <div class="gutenberg-content">
-
-                <?php
-                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                        the_excerpt();
-                    } else {
-                        the_content( __( 'Continue reading', 'twentytwenty' ) );
-                    }
-                ?>
-
-            </div>
-
-
-            <!-- Ziele für nachhaltige Entwicklung -->
-            <!-- not ready yet -->
-            <?php if ( current_user_can('administrator') ) { 
-
-                ?>
-                    <h2>Ziele für nachhaltige Entwicklung</h2>
-                <?php
-
-                $terms = get_field('sdg');
-                if( $terms ): ?>
-
-                    <?php 
-                    
-                    // print_r($terms); 
-                    foreach( $terms as $term ): 
-
-                        $tax = get_term( $term, 'sdg' );
-                        $slug = $tax->slug;
-
-                        $args = array(
-                            'post_type'=>'sdg', 
-                            'post_status'=>'publish', 
-                            'posts_per_page'=> -1,
-                            'name'=> $tax->slug 
-                        );
-
-                        slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
-
-                    endforeach;
-                endif;
-
-                ?>
-                    <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
-                <?php 
-                    
-            } 
-            
-            
-            ?>
-
-
-            <!-- Team -->
-            <div class="team">
-                <h2> Hutträger </h2>    
-
-                <?php author_card(true); ?>
-
-            </div>
-
-
-
-            <!-- Projekt Teilen -->
-            <?php  
-                $page_for_posts = get_option( 'page_for_posts' );
-                ?>
-            <div class="share">
-                <h2> Projekt teilen </h2>
-                <div class="copy-url">
-                    <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-                    <button class="copy" onclick="copy()">Kopieren</button>
-
-                </div>
-
-                <div class="share-button">
-
-                    <a class="button is-style-outline " target="blank"
-                    onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
-                    href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
-                
-                    <a class="button is-style-outline" target="blank"
-                    onclick="_paq.push(['trackEvent', 'Share', 'Twitter', '<?php the_title(); ?>']);"
-                    href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
-                
-                    <a class="button is-style-outline" target="blank"
-                    onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
-                    href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"
-                    rel="nofollow">Email</a>
-
-                </div>
-            </div>
-
-            <?php 
-                
-
-            ?>
-
-            <script>
-                function copy() {
-                    _paq.push(['trackEvent', 'Share', 'Copy Link', '<?php the_title(); ?>']);
-                    var copyText = document.getElementById("myInput");
-                    copyText.select();
-                    copyText.setSelectionRange(0, 99999)
-                    document.execCommand("copy");
-                    // alert("Copied the text: " + copyText.value);
-                }
-            </script>
 
         <?php
         }
@@ -520,68 +314,11 @@ get_header();
             emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
 
             }
-            ?>
-
-            <!-- Map -->
-            <!-- not ready yet -->
-            <?php 
-            
-            if ( current_user_can('administrator') ) { // new feature only for admins 
-                
-                // the_field('map');
-                if (get_field('map')) {
-                    get_template_part('elements/map-card');
-                }
-
-            } 
-            
-            ?>
-
-            <!-- Backend edit link -->
-            <?php 
-            if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
-                edit_post_link(); 
-            }
-            ?>
-
-            <!-- kommentare -->
-            <?php	
-
-            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
-                if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-                    
-            ?>
-
-                <div class="comments-wrapper">
-                    <?php // comments_template('', true); ?>
-                </div><!-- .comments-wrapper -->
-
-                <?php
-
-                }
-            }
         }
     }
+?>
 
-
-    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
-    ?>
-
-        <br><br><br>
-        <!-- <h2>Weitere Projekte</h2> -->
-
-        <?php
-        $args3 = array(
-            'post_type'=>'projekte', 
-            'post_status'=>'publish', 
-            'posts_per_page'=> 4,
-            'orderby' => 'rand'
-        );
-
-        // slider($args3,'square_card', '2','true'); 
-
-    }
-    ?>
+</div>
 
 </main><!-- #site-content -->
 

@@ -1,10 +1,24 @@
-<div id="sdg-card" style="background-color: <?php the_field('color'); ?>;"  class="card card-sgd shadow">
-    <a class="card-link" >
-        <div class="content">
-            <h1>
-                <?php the_field('goal'); ?>
-            </h1>
-            <h3 class="card-title">
+
+
+
+<?php
+
+/**
+ * 
+ * Card => SDG
+ *
+ */
+
+?>
+
+
+<div id="sdg-card" class="card card-sgd shadow" style="border-color: <?php the_field('color'); ?>;"  >
+    <a class="card-link" href="<?php echo get_site_url(); ?>/sdgs#sdg-id-<?php the_field('goal'); ?>">
+        <div class="content" style="color: <?php the_field('color'); ?>;">
+            <span class="sdg-number">
+			    <?php the_field('goal'); ?>
+			</span >
+            <h3 class="card-title-large">
                 <?php the_title(); ?>
             </h3>
         </div>

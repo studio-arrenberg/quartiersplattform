@@ -5,6 +5,8 @@ $map_zoom = 15;
 $width = 500;
 $height = 300;
 
+if ( current_user_can('administrator') && get_field('map') ) { // new feature only for admins 
+
 ?>
 
 
@@ -62,3 +64,9 @@ $height = 300;
         }
     }
 </script>
+
+<?php
+
+}
+
+?>

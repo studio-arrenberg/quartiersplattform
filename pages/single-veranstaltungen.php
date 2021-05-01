@@ -50,8 +50,8 @@ get_header();
 
                 <?php
                     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                        post_visibility_toggle( get_the_ID(  ) ); 
-                        pin_toggle();
+                        // post_visibility_toggle( get_the_ID(  ) ); 
+                        // pin_toggle();
                     ?>
                     
                     <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>
@@ -142,33 +142,9 @@ get_header();
             ?>
             <br>
 
-        <?php
+        <?php 
         // Projekt Kachel
-        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-        $the_slug = $term_list[0]->slug;
-        if ($the_slug) {
-            $args = array(
-                'name'        => $term_list[0]->slug,
-                'post_type'   => 'projekte',
-                'post_status' => 'publish',
-                'numberposts' => '1'
-            );
-
-            $my_query = new WP_Query($args);
-            if ($my_query->post_count > 0) {
-            ?>
-
-            <h2>Das Projekt</h2>
-
-            <div class="card-container ">
-
-            <?php
-                landscape_card($args);
-                } 
-            ?>
-            </div>
-        <?php
-        }
+        project_card($post->ID);
         ?>
 
     
