@@ -1,8 +1,13 @@
 <?php 
 
+$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+
+if ( $curauth->ID == get_current_user_id() ) {
+    exit(wp_redirect( home_url().'/profil'));
+}
+
 get_header(); 
 
-$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
 ?>
 
@@ -36,12 +41,13 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
             
             <!-- About -->
-            <!-- <?php if( get_field('about', $userid) ) { ?>
+            <?php if( get_field('about', $userid) ) { ?>
                 <br>
                 <br>
                 <h2>Über mich</h2>
                 <div><?php the_field('about', $userid); ?></div>
-            <?php } ?> -->
+            <?php } ?>
+
 
         </div>
     </div>

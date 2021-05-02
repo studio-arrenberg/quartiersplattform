@@ -1,20 +1,18 @@
 <?php
 
-/**
- * 
- * Card => Projekte
- *
- */
+global $current_user;
 
 ?>
-<!-- add class yours if its yours -->
+
 <a class="badge-link" href="<?php echo esc_url( get_permalink() ); ?>">
-    <div class="badge shadow   <?php if (get_query_var( 'highlight_display') === true && get_queried_object_id() ==  get_the_ID(  )) echo "active"; ?>">
-        <span class="emoji"><?php  shorten(get_field('emoji'), '200'); ?></span> 
+    <div class="badge shadow   <?php if (get_query_var( 'highlight_display') === true && get_queried_object_id() ==  get_the_ID(  )) echo "active"; if($current_user->ID == $post->post_author) echo 'yours'; ?>">
+        <span class="emoji"><?php the_field('emoji'); ?></span> 
         
-     <!-- MORITZ - hier wenn post emoji hat  thumbnail einblenden 
-     <?php the_post_thumbnail( 'preview_m' ); ?>
-     -->
+        <?php 
+            if (!get_field('emoji') && get_the_post_thumbnail( 'preview_m' )) {
+                the_post_thumbnail( 'preview_m' ); 
+            }
+        ?>
         
     </div>
     <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); ?></h3>

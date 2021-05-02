@@ -1,4 +1,4 @@
-<h4><?php _e('Projektsichtbarkeit', 'quartiersplattform'); ?></h4>
+<h3><?php _e('Projektsichtbarkeit', 'quartiersplattform'); ?></h3>
 
 <label class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>">
     <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >

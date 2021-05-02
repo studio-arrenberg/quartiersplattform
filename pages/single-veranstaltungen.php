@@ -48,10 +48,10 @@ get_header();
                         <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
                     </h3>
 
-                <?php
+                    <?php
                     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                         // post_visibility_toggle( get_the_ID(  ) ); 
-                        // pin_toggle();
+                        pin_toggle();
                     ?>
                     
                     <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>

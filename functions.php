@@ -1225,6 +1225,7 @@ function load_scripts() {
 		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
+		&& $current_user->ID != $post->post_author
 	 ) {
 
 		// jQuery min
@@ -1278,7 +1279,9 @@ function emoji_picker() {
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit'
+		// || strpos($REQUEST_URI,'/projekte/') !== false
 		// || is_front_page()
+		|| $current_user->ID == $post->post_author
 	 ) {
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
@@ -1343,7 +1346,7 @@ function display_cookie_warning() {
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
 	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
-		get_template_part( 'components/cookie/cookie-alert' );
+		// get_template_part( 'components/cookie/cookie-alert' );
 	}
 
 }
@@ -1913,20 +1916,17 @@ function get_term_id($post_ID, $term = 'projekt') {
  * @param boolean $contact show contact information
  * @return string
  */
-function author_card($contact = false, $user = '') {
+function author_card($contact = true, $user = '', $profile = true) {
 
 	set_query_var('contact_inforation', $contact);
+	set_query_var('contact_profile', $profile);
 	set_query_var('contact_user_id', $user);
 
-	if (get_the_author_meta( 'ID' ) || $user) {
-		get_template_part( 'components/author-card' );
-	}
-	else {
+	if (!get_the_author_meta( 'ID' ) && !$user) {
 		return false;
 	}
 
-	set_query_var('contact_inforation', false);
-	set_query_var('contact_user_id', false);
+	get_template_part( 'components/author-card' );
 
 }
 
@@ -2091,6 +2091,22 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 
 
 			<?php
+				if (get_query_var( 'projekt_carousel_add')) { // !!! this is dirty
+					?>
+
+					<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
+						<div class="badge badge-button">
+						<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
+						</div>
+						<h3 class="heading-size-4">
+							Projekt erstellen    
+						</h3>
+					</a>
+
+
+					<?php
+				}
+
 				while ( $query2->have_posts() ) {
 					$query2->the_post();
 					echo "<div class='embrela-slide'>";
@@ -2130,11 +2146,11 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 			_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
 		})
 
-		const wrap = document.querySelector(".embla");
-		const nextBtn = wrap.querySelector(".embla__button--next");
-		const prevBtn = wrap.querySelector(".embla__button--prev");
-		nextBtn.addEventListener('click', embla.scrollNext, false);
-		prevBtn.addEventListener('click', embla.scrollPrev, false);
+		// const wrap = document.querySelector(".embla");
+		// const nextBtn = wrap.querySelector(".embla__button--next");
+		// const prevBtn = wrap.querySelector(".embla__button--prev");
+		// nextBtn.addEventListener('click', embla.scrollNext, false);
+		// prevBtn.addEventListener('click', embla.scrollPrev, false);
 
 		// https://codesandbox.io/s/embla-carousel-arrows-dots-vanilla-twh0h?file=/src/js/prevAndNextButtons.js:64-126
 
@@ -2384,11 +2400,11 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 	// today
 	else if (date("Y-m-d") == date("Y-m-d", $date) ) {
-		$string = "Heute";
+		$string = "Heute"; // am ..?
 	}
 	// yesterday
 	else if (date("Y-m-d", (current_time('timestamp') - 86400)) == date("Y-m-d", $date) ) {
-		$string = "Gestern";
+		$string = "Gestern"; // am ..?
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
@@ -2656,6 +2672,16 @@ function projekt_toggle_status_callback() { // !!! naming => visibility_toggle_c
 	$my_post['post_status'] = $status;
 	wp_update_post( $my_post ); // Update the post into the database
 
+	// if post type == projekte
+	// iterate all posts with tax projekte == projekte id
+	// write post_status in array
+	// turn draft or reset
+
+
+	// post project cpt 
+	// if project privat 
+	// cpt = draft
+
 	return;
 	// echo $status." - ".$post_id;
 
@@ -2778,11 +2804,13 @@ function projekt_carousel( ) {
 	);
 
 	set_query_var( 'highlight_display', true );
+	set_query_var( 'projekt_carousel_add', true );
 
 	?>  
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
 
+			<?php if (!wp_is_mobile(  )) { ?> 
 			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
 				<div class="badge badge-button">
 				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
@@ -2791,6 +2819,7 @@ function projekt_carousel( ) {
 					Projekt erstellen    
 				</h3>
 			</a>
+			<?php } ?>
 
 			<?php  
 			
@@ -2799,6 +2828,7 @@ function projekt_carousel( ) {
 			}
 			else {
 				card_list($args4, 'badge');
+				// slider($args4, 'badge', 4, 'false');
 			}
 			
 			?>
@@ -2807,6 +2837,7 @@ function projekt_carousel( ) {
 	<?php 
 
 	set_query_var( 'highlight_display', false );
+	set_query_var( 'projekt_carousel_add', false );
 }
 
 /**
@@ -2919,7 +2950,7 @@ function count_query($query, $amount = 1) {
  * @param string $id id
  * @return string
  */
-function project_card($id, $type = "post") {
+function project_card($id, $type = "post") { 
 
 	if (empty($id)) {
 		return false;
@@ -2928,12 +2959,13 @@ function project_card($id, $type = "post") {
 	if ($type == "post") {
 		// get project id
 		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) );
+		if (!$term_list) return false;
 		// query
 		$args = array(
 			'name'        => $term_list[0]->slug,
 			'post_type'   => 'projekte',
 			'post_status' => 'publish',
-			'numberposts' => '1'
+			'posts_per_page' => '1'
 		);
 
 	}
@@ -2943,7 +2975,7 @@ function project_card($id, $type = "post") {
 			'p'         => $id,
   			'post_type' => 'any',
 			'post_status' => 'publish',
-			'numberposts' => '1'
+			'posts_per_page' => '1'
 		);
 
 	}
@@ -2953,13 +2985,15 @@ function project_card($id, $type = "post") {
 			'name'        => $id,
 			'post_type'   => 'projekte',
 			'post_status' => 'publish',
-			'numberposts' => '1'
+			'posts_per_page' => '1'
 		);
 
 	}
 
-	// query and display
-	card_list( $args, 'card' );
+	if (count_query($args)) {
+		// query and display
+		card_list( $args, 'card' );
+	}
 	
 
 }

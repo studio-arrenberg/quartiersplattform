@@ -7,7 +7,7 @@
  */
 
 
-if (!is_user_logged_in()){
+if (!is_user_logged_in()) {
     header("Location: ".get_site_url());
     exit();
 }
@@ -95,8 +95,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
             <?php 
             
-            // echo $current_user->ID;
-            author_card(true, $current_user->ID); 
+            author_card(true, $current_user->ID, false); 
             
             ?>
 
@@ -152,8 +151,8 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                     array(
                         'form' => true,
                         'post_id' => $userid,
-                        'return' => get_site_url()."/profil"."/",
-                        'submit_value' => 'Änderungen speichern',
+                        'return' => get_site_url()."/profil/",
+                        'submit_value' => __('Änderungen speichern','quartiersplattform'),
                         'post_title' => false,
                         'post_content' => false,    
                         'field_groups' => array('group_605dc2bb690d9'),
