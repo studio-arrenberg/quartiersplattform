@@ -95,8 +95,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
             <?php 
             
-            // echo $current_user->ID;
-            author_card(true, $current_user->ID); 
+            author_card(true, $current_user->ID, false); 
             
             ?>
 

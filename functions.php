@@ -1916,20 +1916,17 @@ function get_term_id($post_ID, $term = 'projekt') {
  * @param boolean $contact show contact information
  * @return string
  */
-function author_card($contact = false, $user = '') {
+function author_card($contact = true, $user = '', $profile = true) {
 
 	set_query_var('contact_inforation', $contact);
+	set_query_var('contact_profile', $profile);
 	set_query_var('contact_user_id', $user);
 
-	if (get_the_author_meta( 'ID' ) || $user) {
-		get_template_part( 'components/author-card' );
-	}
-	else {
+	if (!get_the_author_meta( 'ID' ) && !$user) {
 		return false;
 	}
 
-	set_query_var('contact_inforation', false);
-	set_query_var('contact_user_id', false);
+	get_template_part( 'components/author-card' );
 
 }
 
@@ -2954,7 +2951,7 @@ function count_query($query, $amount = 1) {
  * @return string
  */
 function project_card($id, $type = "post") { 
-	
+
 	if (empty($id)) {
 		return false;
 	}

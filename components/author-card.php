@@ -14,6 +14,7 @@ else {
 ?>
 <div class="team">
 
+    <?php if (get_query_var('contact_profile')) { ?>
     <div class="team">		
         <div class="team-member">	
                 <a href="<?php echo get_author_posts_url($user_id); ?>">
@@ -22,6 +23,7 @@ else {
             </a>
         </div>
     </div>
+    <?php } ?>
 
     <?php 
     if($contact && is_user_logged_in()){
