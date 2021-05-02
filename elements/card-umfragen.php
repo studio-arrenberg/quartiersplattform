@@ -34,9 +34,11 @@
             $array = get_post_meta(get_the_ID(), 'polls', true);
             // set vote state 
             for ($i = 0; $i < count($array); $i++) if(in_array(get_current_user_id(),$array[$i]['user'])) $vote_state = true;
+
+            $randId = md5(rand());
             ?>
 
-            <form class="poll" id="poll-<?php echo get_the_ID(  ); ?>" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
+            <form class="poll" id="poll-<?php echo get_the_ID(  ).$randId; ?>" method="POST" action="<?php echo admin_url( 'admin-ajax.php' ); ?>">
 
                 <div class="answers">
                 
@@ -110,20 +112,20 @@
 
             jQuery(document).ready(function($) {
                 // console.log('ready');
-                jQuery('#poll-<?php echo get_the_ID(  ); ?>').ajaxForm({
+                jQuery('#poll-<?php echo get_the_ID(  ).$randId; ?>').ajaxForm({
                     success: function(response) {
                         // console.log(response);
                         $.each(response.data, function(k, v) {
                             // console.log(k+" : "+v['user']);
-                            $('form#poll-<?php echo get_the_ID(  ); ?> div#poll' + k).text(v['count'] + '<?php _e(' Stimmen', 'quartiersplattform'); ?>');
-                            $('form#poll-<?php echo get_the_ID(  ); ?> span#poll' + k).css('width', v['percentage'] + '%');
+                            $('form#poll-<?php echo get_the_ID(  ).$randId; ?> div#poll' + k).text(v['count'] + '<?php _e(' Stimmen', 'quartiersplattform'); ?>');
+                            $('form#poll-<?php echo get_the_ID(  ).$randId; ?> span#poll' + k).css('width', v['percentage'] + '%');
                             
                             if (v['user'] == 'true') {
                                 // $('form input#poll' + k).attr('checked', true);
-                                $('form#poll-<?php echo get_the_ID(  ); ?> label#poll' + k + ' img.button-icon').removeClass('hide');
+                                $('form#poll-<?php echo get_the_ID(  ).$randId; ?> label#poll' + k + ' img.button-icon').removeClass('hide');
                             }
                             else {
-                                $('form#poll-<?php echo get_the_ID(  ); ?> label#poll' + k + ' img.button-icon').addClass('hide');
+                                $('form#poll-<?php echo get_the_ID(  ).$randId; ?> label#poll' + k + ' img.button-icon').addClass('hide');
                             }
                         });
                     },
@@ -139,8 +141,8 @@
 
                 ?>
 
-                jQuery('#poll-<?php echo get_the_ID(  ); ?> div.login-wall').on('click', function(e) {
-                    $('#poll-<?php echo get_the_ID(  ); ?> div.login-wall').toggleClass('hidden');
+                jQuery('#poll-<?php echo get_the_ID(  ).$randId; ?> div.login-wall').on('click', function(e) {
+                    $('#poll-<?php echo get_the_ID(  ).$randId; ?> div.login-wall').toggleClass('hidden');
                 });
 
                 <?php 

@@ -321,7 +321,7 @@ get_header();
             <?php
             }
 
-            emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
+            // emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
 
             }
         }

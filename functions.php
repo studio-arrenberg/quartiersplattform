@@ -1126,18 +1126,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 /**
- * Replace Core jQuery Version
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function replace_core_jquery_version() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
-} add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
-
-/**
  * Register Scripts & Stylesheets
  *
  * @since Quartiersplattform 1.0
@@ -1203,6 +1191,37 @@ function qp_comment_author( $return, $author, $comment_ID ) {
 
 
 /**
+ * Replace Core jQuery Version
+ *
+ * @since Quartiersplattform 1.0
+ *
+ * @return void
+ */
+function replace_core_jquery_version() {
+
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
+
+	// wp_enqueue_script( 'jquery-form' );
+	// wp_enqueue_script( 'jquery-core' );
+
+	// wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
+	// wp_enqueue_script('emoji_picker-config');
+	// wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js',  false, false, false);
+	// wp_enqueue_script('emoji_picker-util');
+	// wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js',  false, false, true);
+	// wp_enqueue_script('emoji_picker-emojiarea');
+	// wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
+	// wp_enqueue_script('emoji_picker-picker');
+	// wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
+	// wp_enqueue_style( 'emoji_picker-css' );
+
+} 
+add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
+
+
+
+/**
  * Conditinally load jQuery and Emoji files
  *
  * @since Quartiersplattform 1.0
@@ -1212,6 +1231,12 @@ function qp_comment_author( $return, $author, $comment_ID ) {
 function load_scripts() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+	// global $current_user;
+	// // Global $post;
+	// echo "<br><br><br><br><h1>files: ".get_post_type()."</h1>";
+	// echo "user:".$current_user->ID."post:".$post->post_author;
+	// echo is_page(  );
+	
 
     if (
 		!is_admin() 
@@ -1227,6 +1252,8 @@ function load_scripts() {
 		&& !$_GET['action'] == 'edit'
 		&& $current_user->ID != $post->post_author
 	 ) {
+
+		// echo "<br><br><br><br>it meee";
 
 		// jQuery min
 		wp_deregister_script('jquery-ui-draggable');
@@ -1257,11 +1284,15 @@ function load_scripts() {
 		// scripts for ajax
 		wp_enqueue_script( 'jquery-form' );
 		wp_enqueue_script( 'jquery-core' );
-
 	 }
 
 }
-add_action('init', 'load_scripts', 11);
+add_action('wp_enqueue_scripts', 'load_scripts', 11);
+
+// alternative
+// function scripts() {
+
+// }
 
 /**
  * Register emoji picker script
@@ -1298,6 +1329,11 @@ function emoji_picker() {
 		// wp_register_script('emoji-picker-init', get_template_directory_uri() .'/assets/js/emoji-picker-init.js', array('jQuery', 'emoji_picker-config'), false, true);
 		// wp_enqueue_script('emoji-picker-init');
 
+		// scripts for ajax
+		// wp_enqueue_script( 'jquery-form' );
+		// wp_enqueue_script( 'jquery-core' );
+
+		// wp_register_script('jquery', false, false, true);
 	}
       
 }
@@ -2294,6 +2330,7 @@ function emoji_picker_init($id) {
 		?>
 
 		<script>
+// jQuery(function ($) {
 
 			// get element
 			var el = $("#<?php echo $id; ?>");
