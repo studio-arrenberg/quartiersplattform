@@ -60,6 +60,8 @@ get_header();
 
             <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+
+                pin_toggle();
             ?>
 
             <div class="simple-card">

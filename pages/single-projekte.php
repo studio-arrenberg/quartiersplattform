@@ -134,8 +134,7 @@ get_header();
                     <?php 
                     // project is not public
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
-                        reminder_card('warning-draft-'.get_the_ID(  ), 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
-                        reminder_card('warning', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen', 'Einstellungen');
+                        reminder_card('warning', 'Dein Projekt ist nicht öffentlich', '');
                     }
 
                     // Toolbox
@@ -162,6 +161,10 @@ get_header();
                     // Map
                     get_template_part('components/map-card');
 
+                    // Pin Project to Landing Page
+                    if ( current_user_can('administrator') ) {
+                        pin_toggle('pin_main'); 
+                    }
 
                     ?>
                     
@@ -180,8 +183,6 @@ get_header();
 
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
-
-                    <?php pin_toggle('pin_main'); ?>
 
                     <?php post_visibility_toggle( get_the_ID(  ) ); ?>
 
@@ -206,6 +207,8 @@ get_header();
                                     ),
                                 )
                             );
+
+                            emoji_picker_init('acf-field_5fc64834f0bf2');
                         ?>
 
                     </div>

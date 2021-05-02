@@ -5,7 +5,7 @@ $args_chronik = array(
     'post_status'=>'publish', 
     'posts_per_page'=> 2,
     'meta_key' => 'event_date',
-    'orderby' => 'rand',
+    'orderby' => 'meta_val',
     'order' => 'ASC',
     'offset' => '0', 
     'meta_query' => array(
@@ -26,13 +26,11 @@ $args_chronik = array(
 
 );
 
-$my_query = new WP_Query($args_chronik);
-if ($my_query->post_count > 0) {
-    ?>
-        <h2>Anstehende Veranstaltung</h2>
-    <?php 
-    // slider($args_chronik,'card', '1','false'); 
-    get_template_part('elements/card', get_post_type());
+if (count_query($args_chronik)) {
+
+    echo "<h3>Anstehende Veranstaltung</h3>";
+    card_list($args_chronik);
 
 }
+
 ?>

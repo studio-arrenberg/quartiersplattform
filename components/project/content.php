@@ -1,5 +1,14 @@
 <?php global $current_user; ?>
 
+
+
+<?php if (get_field('text')) { ?>
+<div class="single-content">
+    <h3 class="heading-size-3">Beschreibung</h3>
+    <p><?php extract_links(get_field('text')); ?></p>
+</div>
+<?php } ?>
+
 <?php
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 ?>
@@ -8,13 +17,6 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 <?php
 }
 ?>
-
-<?php if (get_field('text')) { ?>
-<div class="single-content">
-    <h3 class="heading-size-3">Beschreibung</h3>
-    <p><?php extract_links(get_field('text')); ?></p>
-</div>
-<?php } ?>
 
 
 <!-- Gutenberg Editor Content -->

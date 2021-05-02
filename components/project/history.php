@@ -1,7 +1,7 @@
 <?php 
 // Projektverlauf
 $args_chronik = array(
-    'post_type' => array('veranstaltungen', 'nachrichten'),
+    'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
     'posts_per_page' => -1,
     'order_by' => 'date',
     'order' => 'DESC',

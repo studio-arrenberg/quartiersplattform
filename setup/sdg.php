@@ -149,13 +149,14 @@ function register_sdg() {
 			}
 			# create tax
 			$number = $i + 1;
+			if ($number < 10) $number = "0".$number;
 			$post_slug = get_post_field( 'post_name', $mypost_id->ID );
 			wp_insert_term(
 				$number.". ".$sdgs[$i]['title'],
 				'sdg',
 				array(
 					'description' => $sdgs[$i]['slogan'],
-					'slug'        => $post_slug
+					'slug'        => $number
 				) 
 			);
 		}

@@ -28,9 +28,12 @@ get_header();
 
             <br>
 
+
             <?php
 
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+
+                pin_toggle();
 
                 $array = get_post_meta(get_the_ID(), 'polls', true);
                 $array[$i]['total_voter'];

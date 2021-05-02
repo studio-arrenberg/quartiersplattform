@@ -1225,6 +1225,7 @@ function load_scripts() {
 		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
 		&& strpos($REQUEST_URI,'/register/') === false
 		&& !$_GET['action'] == 'edit'
+		&& $current_user->ID != $post->post_author
 	 ) {
 
 		// jQuery min
@@ -1278,7 +1279,9 @@ function emoji_picker() {
 		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| $_GET['action'] == 'edit'
+		// || strpos($REQUEST_URI,'/projekte/') !== false
 		// || is_front_page()
+		|| $current_user->ID == $post->post_author
 	 ) {
 		
 		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
@@ -1343,7 +1346,7 @@ function display_cookie_warning() {
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
 	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
-		get_template_part( 'components/cookie/cookie-alert' );
+		// get_template_part( 'components/cookie/cookie-alert' );
 	}
 
 }
@@ -2130,11 +2133,11 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 			_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
 		})
 
-		const wrap = document.querySelector(".embla");
-		const nextBtn = wrap.querySelector(".embla__button--next");
-		const prevBtn = wrap.querySelector(".embla__button--prev");
-		nextBtn.addEventListener('click', embla.scrollNext, false);
-		prevBtn.addEventListener('click', embla.scrollPrev, false);
+		// const wrap = document.querySelector(".embla");
+		// const nextBtn = wrap.querySelector(".embla__button--next");
+		// const prevBtn = wrap.querySelector(".embla__button--prev");
+		// nextBtn.addEventListener('click', embla.scrollNext, false);
+		// prevBtn.addEventListener('click', embla.scrollPrev, false);
 
 		// https://codesandbox.io/s/embla-carousel-arrows-dots-vanilla-twh0h?file=/src/js/prevAndNextButtons.js:64-126
 
