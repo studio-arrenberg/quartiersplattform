@@ -3004,6 +3004,9 @@ function count_query($query, $amount = 1) {
 	if ($my_query->post_count >= $amount) {
 		return true;
 	}
+	else {
+		return false;
+	}
     
 }
 
