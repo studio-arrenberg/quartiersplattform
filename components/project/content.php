@@ -3,7 +3,7 @@
 <?php
 if( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 ?>
-<a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Projekt bearbeiten', 'quartiersplattform'); ?> </a>
+<!-- <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Projekt bearbeiten', 'quartiersplattform'); ?> </a> -->
 <?php } ?>
 
 <?php if (get_field('text')) { ?>

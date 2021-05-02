@@ -1273,7 +1273,7 @@ function script_managment() {
 	} 
 	// user is post owner
 	else if ($current_user->ID == $post->post_author && get_post_type() != 'projekte') {
-		echo "<br><br><br><br>! Post Owner ;)";
+		// echo "<br><br><br><br>! Post Owner ;)";
 		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
 		files_edit();
 	}
