@@ -41,12 +41,13 @@ get_header();
 
             
             <!-- About -->
-            <!-- <?php if( get_field('about', $userid) ) { ?>
+            <?php if( get_field('about', $userid) ) { ?>
                 <br>
                 <br>
                 <h2>Über mich</h2>
                 <div><?php the_field('about', $userid); ?></div>
-            <?php } ?> -->
+            <?php } ?>
+
 
         </div>
     </div>

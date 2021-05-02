@@ -30,6 +30,7 @@
 - Neuer Footer
 - Restrukturierte Quartiersseite
 - Cookie Disclaimer
+- Über Mich
 ### Bugs
 - Umfragen im Newsfeed
 - Ajax mit Nonce Sicherheit
