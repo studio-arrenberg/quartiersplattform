@@ -10,40 +10,32 @@
           font-weight: 600;
           color: #62b2f0;
           font-family: 'Open Sans', Helvetica, Arial;
-        ">Willkommen im Quartier, {first_name}
+        ">
+        <?php _e('Willkommen im Quartier, ', 'quartiersplattform'); ?>  {first_name}
       </span>
     </div>
     <div> </div>
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;">
-        <span>Schön das du da bist! Auf der <?php the_field('quartiersplattform-description', 'option'); ?>  findest du alle
+        <span>
+        <?php _e('Schön das du da bist! Auf der Quartiersplattform findest du alle
           relevanten Informationen rund um dein Viertel. So kannst du neue
           Menschen kennen lernen und dein Quartier nachhaltig entwickeln und
-          verbessern.
+          verbessern.', 'quartiersplattform'); ?> 
       </span></div>
       <p></p>
       <div class="table" style="margin-top: 50px;display: flex;justify-content: center;flex-wrap: wrap;padding: 0%;">
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
 
-          <h1 style="font-size: 16px;">Nachrichten</h1>
+          <h1 style="font-size: 16px;"><?php _e('Projekte', 'quartiersplattform'); ?> </h1>
           <p>
-            Sieh dir Angebote und Nachrichten von deinen Nachbar*innen an! Teile
-            deine Ressourcen und erhalte Hilfe von anderen.
+            <?php _e('Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!', 'quartiersplattform'); ?> 
           </p>
         </div>
         <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <h1 style="font-size: 16px;">Projekte</h1>
+          <h1 style="font-size: 16px;"><?php _e('Veranstaltungen', 'quartiersplattform'); ?></h1>
           <p>
-            Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem
-            Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!
-          </p>
-        </div>
-        <div class="column" style="width: 100%;padding: 4%;font-size: 14px;line-height: 18px;">
-          <h1 style="font-size: 16px;">Veranstaltungen</h1>
-          <p>
-            Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier
-            findest du alles was du wissen musst, um bei nächsten mal dabei zu
-            sein.
+            <?php _e('Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein.', 'quartiersplattform'); ?>
           </p>
         </div>
       </div>
@@ -54,17 +46,17 @@
         <a class="shadow" style="background: #0091ff;color: #fff;padding: 20px 30px;text-decoration: none;border-radius: 20px;letter-spacing: 0.3px;font-family: &quot;Open Sans&quot;, Helvetica,
   Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
   2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0,
-  0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 16px;" href="{login_url}">Entdecke dein Quartier!
+  0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 16px;" href="{login_url}">
+  <?php _e('Entdecke dein Quartier!', 'quartiersplattform'); ?>
         </a>
       </div>
       <div style="padding: 20px">
-        Sollten Probleme auftreten wende dich bitte per Mail an uns.
+      <?php _e('Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden.', 'quartiersplattform'); ?>
         {admin_email}
       </div>
     </div>
     <div style="color: ; padding: 20px 30px">
-      <div>Vielen Dank!</div>
-      <div>Dein <?php the_field('quartiersplattform-description', 'option'); ?> Team.</div>
+      <div><?php _e('Vielen Dank!', 'quartiersplattform'); ?> </div>
     </div>
   </div>
   <div class="footer" style="text-align: center;margin-top: 5%;">
@@ -76,7 +68,7 @@
     <?php endif; ?>
     </p>
     <p class="footer" style="text-align: center; margin-top: 5%;">
-<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/">Impressum </a> 
-<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/">Datenschutz </a></p>
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?>  </a> 
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/"><?php _e('Datenschutz', 'quartiersplattform'); ?>  </a></p>
   </div>
 </div>
