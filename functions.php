@@ -1273,7 +1273,7 @@ function script_managment() {
 	} 
 	// user is post owner
 	else if ($current_user->ID == $post->post_author && get_post_type() != 'projekte') {
-		// echo "<br><br><br><br>! Post Owner ;)";
+		echo "<br><br><br><br>! Post Owner ;)";
 		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
 		files_edit();
 	}
@@ -1341,6 +1341,15 @@ function files_edit() {
 	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 	// scripts for ajax
 	wp_enqueue_script( 'jquery-form' );
+
+	wp_deregister_script('jquery-ui-draggable');
+	wp_deregister_script('jquery-ui-mouse');
+	wp_deregister_script('jquery-ui-resizable');
+	wp_deregister_script('jquery-ui-sortable');
+	wp_deregister_script('jquery-ui-widget');
+	wp_deregister_script('jquery-ui-selectable');
+
+	wp_deregister_script('twentytwenty-color-calculations');
 
 }
 function files_none() {

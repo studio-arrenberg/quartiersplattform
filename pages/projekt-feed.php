@@ -56,8 +56,8 @@ get_header();
 	
 	<script>
 
-		var offset = 0;
-		var posts_per_page = 2;
+		var offset = 20;
+		var posts_per_page = 10;
 
 		function more() {
 			// alert('hello there');
