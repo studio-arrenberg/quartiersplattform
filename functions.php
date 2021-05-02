@@ -1138,10 +1138,10 @@ function register_scripts() {
 
 	// create my own version codes
     // $my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
-    // $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
+    $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
      
     // wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
-    // wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
+    wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
     // wp_enqueue_style ( 'my_css' );
 
 } add_action('init', 'register_scripts', 9);
@@ -1191,35 +1191,12 @@ function qp_comment_author( $return, $author, $comment_ID ) {
 
 
 /**
- * Replace Core jQuery Version
+ * Conditinally load jQuery and Emoji files
  *
- * @since Quartiersplattform 1.0
+ * @since Quartiersplattform 1.7
  *
  * @return void
  */
-function replace_core_jquery_version() {
-
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
-
-	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
-	wp_enqueue_script('emoji_picker-config');
-	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js',  false, false, false);
-	wp_enqueue_script('emoji_picker-util');
-	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js',  false, false, true);
-	wp_enqueue_script('emoji_picker-emojiarea');
-	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
-	wp_enqueue_script('emoji_picker-picker');
-	wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
-	wp_enqueue_style( 'emoji_picker-css' );
-
-	// scripts for ajax
-	wp_enqueue_script( 'jquery-form' );
-	// wp_enqueue_script( 'jquery-core' );
-
-} 
-// add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
-
 function script_managment() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
@@ -1381,125 +1358,6 @@ function files_none() {
 
 }
 
-
-
-/**
- * Conditinally load jQuery and Emoji files
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function load_scripts() {
-
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
-	// global $current_user;
-	// // Global $post;
-	// echo "<br><br><br><br><h1>files: ".get_post_type()."</h1>";
-	// echo "user:".$current_user->ID."post:".$post->post_author;
-	// echo is_page(  );
-	
-
-    if (
-		!is_admin() 
-		// && is_front_page()
-		&& strpos($REQUEST_URI,'/profil/') === false
-		&& strpos($REQUEST_URI,'/frage-erstellen/') === false
-		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
-		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
-		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
-		&& strpos($REQUEST_URI,'/umfrage-erstellen/') === false
-		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
-		&& strpos($REQUEST_URI,'/register/') === false
-		&& !$_GET['action'] == 'edit'
-		&& $current_user->ID != $post->post_author
-	 ) {
-
-		// echo "<br><br><br><br>it meee";
-
-		// jQuery min
-		wp_deregister_script('jquery-ui-draggable');
-		wp_deregister_script('jquery-ui-mouse');
-		wp_deregister_script('jquery-ui-resizable');
-		wp_deregister_script('jquery-ui-sortable');
-		wp_deregister_script('jquery-ui-widget');
-		wp_deregister_script('jquery-ui-selectable');
-		// wp_deregister_script('jquery-ui-core');
-		// wp_deregister_script( 'jquery-core' );
-
-		// initially called for ajax
-		// wp_deregister_script( 'jquery-core' );
-
-		// jQuery
-        // wp_deregister_script('jquery');
-		wp_register_script('jquery', false, false, true);
-
-		// emoji picker
-		wp_deregister_script('emoji_picker-config');
-		wp_deregister_script('emoji_picker-util');
-		wp_deregister_script('emoji_picker-emojiarea');
-		wp_deregister_script('emoji_picker-picker');
-
-		// wp customize scripts
-		wp_deregister_script('twentytwenty-color-calculations');
-
-		// scripts for ajax
-		wp_enqueue_script( 'jquery-form' );
-		wp_enqueue_script( 'jquery-core' );
-	 }
-
-}
-// add_action('wp_enqueue_scripts', 'load_scripts', 11);
-
-// alternative
-// function scripts() {
-
-// }
-
-/**
- * Register emoji picker script
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function emoji_picker() { 
-
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
-
-    if (
-		strpos($REQUEST_URI,'/frage-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
-		|| $_GET['action'] == 'edit'
-		// || strpos($REQUEST_URI,'/projekte/') !== false
-		// || is_front_page()
-		|| $current_user->ID == $post->post_author
-	 ) {
-		
-		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
-		wp_enqueue_script('emoji_picker-config');
-		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js',  false, false, false);
-		wp_enqueue_script('emoji_picker-util');
-		wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js',  false, false, true);
-		wp_enqueue_script('emoji_picker-emojiarea');
-		wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
-		wp_enqueue_script('emoji_picker-picker');
-		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
-		wp_enqueue_style( 'emoji_picker-css' );
-
-		// wp_register_script('emoji-picker-init', get_template_directory_uri() .'/assets/js/emoji-picker-init.js', array('jQuery', 'emoji_picker-config'), false, true);
-		// wp_enqueue_script('emoji-picker-init');
-
-		// scripts for ajax
-		// wp_enqueue_script( 'jquery-form' );
-		// wp_enqueue_script( 'jquery-core' );
-
-		// wp_register_script('jquery', false, false, true);
-	}
-      
-}
-// add_action("wp_enqueue_scripts", "emoji_picker");
 
 
 /**
