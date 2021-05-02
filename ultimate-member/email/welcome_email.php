@@ -18,10 +18,7 @@
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;">
         <span>
-        <?php _e('Schön das du da bist! Auf der Quartiersplattform findest du alle
-          relevanten Informationen rund um dein Viertel. So kannst du neue
-          Menschen kennen lernen und dein Quartier nachhaltig entwickeln und
-          verbessern.', 'quartiersplattform'); ?> 
+        <?php _e('Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen und dein Quartier nachhaltig entwickeln und verbessern.', 'quartiersplattform'); ?> 
       </span></div>
       <p></p>
       <div class="table" style="margin-top: 50px;display: flex;justify-content: center;flex-wrap: wrap;padding: 0%;">
