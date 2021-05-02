@@ -31,10 +31,10 @@ get_header();
 
 	<div class="">
 		<h1 class="page-title">
-			Ziele für nachhaltige Entwicklung
+			<?php _e(' Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?>
 		</h1>
 		<h2> 
-			Die Vereinten Nationen haben 2015 im Rahmen der Agenda 2030 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs sind nicht nur für die nationale und regionale, sondern auch für die lokale Ebene relevant.
+			<?php _e('Die Vereinten Nationen haben 2015 im Rahmen der Agenda 2030 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?> 
 		</h2>
 	</div>
 

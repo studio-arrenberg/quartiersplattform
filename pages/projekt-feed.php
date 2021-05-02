@@ -34,8 +34,6 @@ get_header();
 
 	<?php // projekt_carousel(); ?>
 
-
-
 	<?php 
 		$args4 = array(
 			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'), 
@@ -52,12 +50,9 @@ get_header();
     </div>
 
 	<div class="newsfeed_loadmore">
-		<a onclick="more()" class="button">Gib mir mehr</a>
+		<a onclick="more()" class="button"><?php _e('Mehr Projektinhalte laden', 'quartiersplattform'); ?> </a>
 		<span class="acf-spinner" style="display: inline-block;"></span>
 	</div>
-
-	<a onclick="more()" class="button">Gib mir mehr</a>
-		<span class="acf-spinner" style="display: inline-block;"></span>
 	
 	<script>
 

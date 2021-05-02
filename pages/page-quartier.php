@@ -114,9 +114,9 @@ get_header();
     </section>
 
     <section>
-        <h1>SDGs im Quartier</h1>
+        <h1><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h1>
         <p>preview....</p>
-        <a class="button" href="<?php echo get_site_url( ) ?>/sdgs">Übersicht der Ziele für nachhaltige Entwicklung</a>
+        <a class="button" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
     </section>
 
     
@@ -134,7 +134,7 @@ get_header();
         if (count_query($pinned_pages)) {
             ?>
 
-                <h4>Wichtige Seiten</h4>
+                <h4><?php _e('Wichtige Seiten', 'quartiersplattform'); ?> </h4>
                 <?php card_list($pinned_pages); ?>
 
             <?php            

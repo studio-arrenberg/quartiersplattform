@@ -54,9 +54,10 @@ get_header();
                         pin_toggle();
                     ?>
                     
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Veranstaltung bearbeiten</a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Diese Veranstaltung entgültig löschen?')"
-                        href="<?php get_permalink(); ?>?action=delete">Veranstaltung löschen</a>
+                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Diese Veranstaltung endgültig löschen?', 'quartiersplattform'); ?>')"
+                        href="<?php get_permalink(); ?>?action=delete"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
+                        
                     <?php
                     }
                 ?>
@@ -217,7 +218,7 @@ get_header();
                             'field_603f4c75747e9', //Bilder
                             
                         ),
-                        'submit_value'=>'Änderungen speichern',
+                        'submit_value'=> __('Änderungen speichern','quartiersplattform'),
                         
                     )
                 );       

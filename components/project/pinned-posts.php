@@ -1,4 +1,4 @@
-<h4><?php _e('Gepinnte Beiträge:', 'quartiersplattform'); ?> </h4>
+
 <?php
 // pinned project posts
 $args_chronik = array(
@@ -19,10 +19,9 @@ $args_chronik = array(
 
 if (count_query($args_chronik)) {
 
-    echo "<h3>Pinned</h3>";
+    ?>
+    <h4><?php _e('Gepinnte Beiträge:', 'quartiersplattform'); ?> </h4>
+    <?php
     card_list($args_chronik);
-
 }
-
-
 ?>

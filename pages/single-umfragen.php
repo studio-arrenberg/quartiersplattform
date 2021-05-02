@@ -41,12 +41,13 @@ get_header();
                 if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
                 
                 ?>
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Umfrage bearbeiten</a>
+                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
                 <?php
                 }
                 ?>
 
-                <a class="button is-style-outline" onclick="return confirm('Umfrage permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Umfrage löschen</a>
+                <a class="button is-style-outline" onclick="return confirm('<?php _e('Umfrage permanent löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
+                <?php _e(' Umfrage löschen', 'quartiersplattform'); ?></a>
             
             <?php
             }
@@ -56,11 +57,11 @@ get_header();
             <?php $page_for_posts = get_option( 'page_for_posts' ); ?>
 
             <div class="share">
-                <h2>Umfrage teilen </h2>
+                <h2><?php _e('Umfrage teilen', 'quartiersplattform'); ?>  </h2>
 
                 <div class="copy-url">
                     <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
-                    <button class="copy is-style-outline" onclick="copy()">Kopieren</button>
+                    <button class="copy is-style-outline" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?></button>
 
                 </div>
 
@@ -77,7 +78,7 @@ get_header();
                     <a class="button is-style-outline" target="blank"
                         onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
                         href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>" target="_blank"
-                        rel="nofollow">Email</a>
+                        rel="nofollow">E-Mail</a>
 
                 </div>
             </div>
@@ -130,7 +131,7 @@ get_header();
                         array(
                             'form' => true,
                             'return' => '%post_url%',
-                            'submit_value' => 'Änderungen speichern',
+                            'submit_value' => __('Änderungen speichern','quartiersplattform'),
                             'post_title' => true,
                             'post_content' => false,    
                             'field_groups' => array('group_601855a265b19'), //Arrenberg App

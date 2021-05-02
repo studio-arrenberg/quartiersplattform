@@ -880,8 +880,8 @@ add_action('admin_init', function() {
 	# ACF Pro
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin <strong>Advaced Custom Fields,</strong> um vollständig funktionieren zu können.', 'quartiersplattform');
-			$link = '<strong>Advaced Custom Fields</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">Installiere ACF</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>Advanced Custom Fields</strong>".__(" um vollständig funktionieren zu können.", 'quartiersplattform');
+			$link = '<strong>'.__("Advaced Custom Fields",'quartiersplattform').'</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">'.__("Installiere ACF",'quartiersplattform').'</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}
@@ -889,8 +889,8 @@ add_action('admin_init', function() {
 	if (!class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin <strong>Ultimate Member,</strong> um vollständig funktionieren zu können.', 'quartiersplattform');
-			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Installiere Ultimate Member</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>Ultimate Member,</strong>".__(' um vollständig funktionieren zu können.', 'quartiersplattform');
+			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">'.__("Installiere Ultimate Member",'quartiersplattform').'</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}
@@ -898,7 +898,7 @@ add_action('admin_init', function() {
 	if (class_exists('acf_pro') && class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = "Gratulation, deine Quartiersplattform wurde erfolgreich aufgesetzt.";
+			$notice = __("Gratulation, deine Quartiersplattform wurde erfolgreich aufgesetzt.",'quartiersplattform');
 			reminder_backend('setup-finished', $notice, 'updated notice');
 		});
 
@@ -907,8 +907,8 @@ add_action('admin_init', function() {
 	if (class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = "Richte das Ultimate Member Plugin vollständig ein.";
-			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" class="button button-primary">Anleitung öffnen</a>';
+			$notice = __("Das Ultimate Member Plugin wurde noch nicht vollständig eingerichtet.",'quartiersplattform');
+			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" class="button button-primary">'.__("Anleitung öffnen",'quartiersplattform').'</a>';
 			reminder_backend('install-UM', $notice.'<br>'.$link, 'updated notice');
 		});
 
@@ -917,8 +917,8 @@ add_action('admin_init', function() {
 	if (class_exists('wp_mail_smtp')) {
 
 		add_action('admin_notices', function() {
-			$notice = "Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten.";
-			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/WP_Mail_SMTP.md" class="button button-primary" target="_blank">Anleitung öffnen</a>';
+			$notice = __("Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten.",'quartiersplattform');
+			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/WP_Mail_SMTP.md" class="button button-primary" target="_blank">'.__("Anleitung öffnen",'quartiersplattform').'</a>';
 			reminder_backend('wp_mail_smtp-setup', $notice.'<br>'.$link, 'updated notice');
 		});
 	}
@@ -926,8 +926,8 @@ add_action('admin_init', function() {
 	if (!get_privacy_policy_url() && class_exists('acf_pro') && class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform hat noch <strong>keine Datenschutzerklärung.</strong>', 'quartiersplattform');
-			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">Datenschutzerklärung erstellen</a>';
+			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" keine Datenschutzerklärung.",'quartiersplattform').'</strong>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">'.__("Datenschutzerklärung erstellen",'quartiersplattform').'</a>';
 			reminder_backend('datenschutz-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
 
@@ -938,7 +938,7 @@ add_action('admin_init', function() {
 
 		add_action('admin_notices', function() {
 			$notice = __('Richte das Logo sowie den Namen deiner Quartiersplattform ein ', 'quartiersplattform');
-			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">Zu den Einstellungen</a>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">'.__("Zu den Einstellungen",'quartiersplattform').'</a>';
 			reminder_backend('qp-settings-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
 
@@ -947,8 +947,8 @@ add_action('admin_init', function() {
 	if (!function_exists( 'wp_mail_smtp' )) {
 
 		add_action('admin_notices', function() {
-			$notice = __('Wir empfehlen das Plugin <strong>WP Mail SMTP</strong> zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten.', 'quartiersplattform');
-			$link = '<strong>WP Mail SMTP</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">installieren</a>';
+			$notice = __('Wir empfehlen das Plugin ','quartiersplattform')."<strong>WP Mail SMTP</strong>".__(" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten.", 'quartiersplattform');
+			$link = '<strong>WP Mail SMTP</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">'.__("installieren",'quartiersplattform').'</a>';
 			reminder_backend('qp-mail-smtp-suggestion', $notice.'<br>'.$link, 'updated notice');
 		});
 
@@ -2051,7 +2051,7 @@ function calendar_download($post) {
         die(); 
 	}
 	
-	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die('Datei kann nicht gespeichert werden!'); 
+	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die(__('Datei kann nicht gespeichert werden!','quartiersplattform')); 
         
     $eol = "\r\n";
 
@@ -2076,7 +2076,7 @@ function calendar_download($post) {
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
 
-	echo '<a class="button" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">Termin im Kalender speichern</a>';   
+	echo '<a class="button" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">'.__("Termin im Kalender speichern",'quartiersplattform').'</a>';   
 }
 
 /**
@@ -2135,7 +2135,7 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 						<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
 						</div>
 						<h3 class="heading-size-4">
-							Projekt erstellen    
+						 	<?php _e('Projekt erstellen', 'quartiersplattform'); ?>
 						</h3>
 					</a>
 
@@ -2433,15 +2433,15 @@ function qp_date( $date, $detail = false, $time = '' ) {
 
 	// tomorrow
 	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
-		$string = "Morgen";
+		$string = __("Morgen",'quartiersplattform');
 	}
 	// today
 	else if (date("Y-m-d") == date("Y-m-d", $date) ) {
-		$string = "Heute"; // am ..?
+		$string = __("Heute",'quartiersplattform'); // am ..?
 	}
 	// yesterday
 	else if (date("Y-m-d", (current_time('timestamp') - 86400)) == date("Y-m-d", $date) ) {
-		$string = "Gestern"; // am ..?
+		$string = __("Gestern",'quartiersplattform'); // am ..?
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
@@ -2472,30 +2472,30 @@ function qp_remaining( $date ) {
 
 	// minutes
 	if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 3600 ) {
-		$time = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0)." Minuten";
+		$time = __("noch ",'quartiersplattform'). round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/60), 0).__(" Minuten",'quartiersplattform');
 	}
 	// hours
 	else if (abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true)) < 10800 ) {
-		$time = "noch ". round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/3600), 0)." Stunden";
+		$time = __("noch ",'quartiersplattform'). round((abs(current_time('timestamp') - get_post_meta(get_the_ID(), 'expire_timestamp', true))/3600), 0).__(" Stunden",'quartiersplattform');
 	}
 	// today
 	else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-		$time = "bis um ".wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+		$time = __("bis um ",'quartiersplattform').wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
 	}
 	// tomorrow
 	else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-		$time = "bis Morgen";
+		$time = __("bis Morgen",'quartiersplattform');
 	}
 	// no data
 	else if (!get_post_meta(get_the_ID(), 'expire_timestamp', true)) {
-		$time = "vom ".get_the_date('j. M');
+		$time = __("vom ",'quartiersplattform').get_the_date('j. M');
 	}
 	else if (get_post_meta(get_the_ID(), 'expire_timestamp', true) < current_time('timestamp')) {
-		$time = "vom ".date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
+		$time = __("vom ",'quartiersplattform').date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
 	}
 	// other
 	else {
-		$time = "bis zum ".wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+		$time = __("bis zum ",'quartiersplattform').wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
 	}
 
 	return " ".$time;
@@ -2853,7 +2853,7 @@ function projekt_carousel( ) {
 				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
 				</div>
 				<h3 class="heading-size-4">
-					Projekt erstellen    
+					<?php _e('Projekt erstellen', 'quartiersplattform'); ?>
 				</h3>
 			</a>
 			<?php } ?>

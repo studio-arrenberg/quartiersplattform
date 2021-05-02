@@ -25,7 +25,7 @@ get_header();
             <?php 
                 if ($curauth->ID == get_current_user_id()) {
                     ?>
-                        <a class="button" href="<?php echo get_site_url(); ?>/profil/">Mein Profil bearbeiten</a>
+                        <a class="button" href="<?php echo get_site_url(); ?>/profil/"><?php _e('Mein Profil bearbeiten', 'quartiersplattform'); ?></a>
                     <?php 
                 }
             ?>
@@ -44,7 +44,7 @@ get_header();
             <?php if( get_field('about', $userid) ) { ?>
                 <br>
                 <br>
-                <h2>Über mich</h2>
+                <h2><?php _e('Über mich', 'quartiersplattform'); ?> </h2>
                 <div><?php the_field('about', $userid); ?></div>
             <?php } ?>
 
@@ -69,7 +69,7 @@ get_header();
             $my_query = new WP_Query($args4);
             if ($my_query->post_count > 0) {
                 
-                echo "<h2>Projekte</h2>";
+                echo "<h2>".__("Projekte",'quartiersplattform')."</h2>";
                 // slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');          
                 card_list($args4);      
                 
