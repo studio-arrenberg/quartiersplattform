@@ -104,14 +104,14 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_5c5de08e4b57c',
-	'title' => 'Projekt',
+	'title' => __('Projekt', "quartiersplattform"),
 	'fields' => array(
 		array(
 			'key' => 'field_5fc64834f0bf2',
 			'label' => 'Emoji',
 			'name' => 'emoji',
 			'type' => 'text',
-			'instructions' => 'Erkläre dein Projekt mit einem Emoji.',
+			'instructions' => __('Welches Emoji beschreibt dein Projekt am besten?',"quartiersplattform"),
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -127,10 +127,10 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5fc647f6f0bf0',
-			'label' => 'Kurzbeschreibung',
+			'label' => __('Kurzbeschreibung',"quartiersplattform"),
 			'name' => 'slogan',
 			'type' => 'text',
-			'instructions' => 'Beschreibe dein Projekt in wenigen Worten.',
+			'instructions' => __('Wie würdest du dein Projekt in wenigen Worten beschreiben?',"quartiersplattform"),
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -146,10 +146,10 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_5fc647e3f0bef',
-			'label' => 'Projektbeschreibung',
+			'label' => __('Projektbeschreibung', "quartiersplattform"),
 			'name' => 'text',
 			'type' => 'textarea',
-			'instructions' => 'Erkläre den Inhalt deines Projektes.',
+			'instructions' => __('Worum geht es in deinem Projekt?', "quartiersplattform"),
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -165,10 +165,10 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_600180493ab1a',
-			'label' => 'Bild',
+			'label' => __('Bild', "quartiersplattform"),
 			'name' => '_thumbnail_id',
 			'type' => 'image',
-			'instructions' => 'Gib deinem Projekt ein Bild!',
+			'instructions' => __('Welches Bild beschreibt dein Projekt am besten?', "quartiersplattform"),
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
