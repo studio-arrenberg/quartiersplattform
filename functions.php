@@ -2400,11 +2400,11 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 	// today
 	else if (date("Y-m-d") == date("Y-m-d", $date) ) {
-		$string = "Heute";
+		$string = "Heute"; // am ..?
 	}
 	// yesterday
 	else if (date("Y-m-d", (current_time('timestamp') - 86400)) == date("Y-m-d", $date) ) {
-		$string = "Gestern";
+		$string = "Gestern"; // am ..?
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
