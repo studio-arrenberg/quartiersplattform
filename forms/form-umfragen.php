@@ -3,6 +3,10 @@
 acf_form_head();
 get_header();
 
+if (is_user_logged_in(  )) {
+    exit(wp_redirect( home_url( ) ));
+}
+
 ?>
 
 <main id="site-content" role="main">
