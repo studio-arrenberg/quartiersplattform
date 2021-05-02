@@ -48,12 +48,12 @@
         <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
     <?php endif; ?>
 
-        <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/">Kontakt</a>
-        <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
+        <a class="footer-link" href="<?php echo get_site_url(); ?>/kontakt/"><?php _e('Kontakt', 'quartiersplattform'); ?></a>
+        <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
         <?php
             if (get_privacy_policy_url()) {
                 ?> 
-            <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>">Datenschutzerklärung</a>
+            <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>"><?php _e('Datenschutzerklärung', 'quartiersplattform'); ?> </a>
                 <?php
             } 
         ?>

@@ -42,7 +42,7 @@ get_header();
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                 ?>
                     <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Frage bearbeiten</a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Diese Frage entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Frage löschen</a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('Diese Frage endgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Frage löschen</a>
                 <?php
             }
         ?>
@@ -60,9 +60,9 @@ get_header();
 
         ?>
 
-        <h2>Deine Frage wurde gelöscht.</h2>
+        <h2><?php _e('Deine Frage wurde gelöscht.', 'quartiersplattform'); ?></h2>
         <br>
-        <a class="button" href="<?php echo get_site_url(); ?>/gemeinsam">Gemeinsam</a>
+        <a class="button" href="<?php echo get_site_url(); ?>/gemeinsam"><?php _e('Gemeinsam', 'quartiersplattform'); ?> </a>
 
 
         <?php 
@@ -75,7 +75,7 @@ get_header();
                 array(
                     'form' => true,
                     'return' => '%post_url%',
-                    'submit_value' => 'Änderungen speichern',
+                    'submit_value' => __('Änderungen speichern','quartiersplattform'),
                     'post_title' => false,
                     'post_content' => false,    
                     'field_groups' => array('group_5fcf56cd99219'), //Arrenberg App

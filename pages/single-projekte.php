@@ -83,15 +83,15 @@ get_header();
                 <div class="filters-wrapper <?php if ($current_user->ID == $post->post_author) { ?> tabs-3 <?php } ?>">
                     <div class="filter-tabs  ">
                         <button class="filter-button filter-active " data-value="summary" data-translate-value="0">
-                            Übersicht
+                            <?php _e('Übersicht', 'quartiersplattform'); ?>
                         </button>
                         <button class="filter-button" data-value="posts" data-translate-value="100%">
-                            Chronik
+                            <?php _e('Chronik', 'quartiersplattform'); ?>
                         </button>
 
                         <?php if ($current_user->ID == $post->post_author) { ?>
                             <button class="filter-button" data-value="settings" data-translate-value="200%">
-                                Einstellungen
+                                <?php _e('Einstellungen', 'quartiersplattform'); ?>
                             </button>
                         <?php } ?>
                     </div>
@@ -134,7 +134,7 @@ get_header();
                     <?php 
                     // project is not public
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
-                        reminder_card('warning', 'Dein Projekt ist nicht öffentlich', '');
+                        reminder_card('warning', __('Dein Projekt ist noch nicht öffentlich sichtbar.','quartiersplattform'), '');
                     }
 
                     // Toolbox
@@ -188,7 +188,7 @@ get_header();
 
 
                     <div class="publish-form">
-                        <h2>Bearbeite dein Projekt</h2>
+                        <h2><?php _e('Bearbeite dein Projekt', 'quartiersplattform'); ?> </h2>
                         <br>
 
                         <?php
@@ -196,7 +196,7 @@ get_header();
                                 array(
                                     'form' => true,
                                     'return' => '%post_url%',
-                                    'submit_value' => 'Änderungen speichern',
+                                    'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                     'post_title' => true,
                                     'post_content' => false,    
                                     'uploader' => 'basic',
@@ -215,7 +215,7 @@ get_header();
 
 
                     <div class="publish-form">
-                        <h2>SDGs bearbeiten</h2>
+                        <h2><?php _e('SDGs bearbeiten', 'quartiersplattform'); ?></h2>
                         <br>
 
                         <?php
@@ -223,7 +223,7 @@ get_header();
                                 array(
                                     'form' => true,
                                     'return' => '%post_url%',
-                                    'submit_value' => 'Änderungen speichern',
+                                    'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                     'post_title' => false,
                                     'post_content' => false,    
                                     'uploader' => 'basic',
@@ -237,9 +237,10 @@ get_header();
 
                     </div>
 
-                    <h2>Projekt Löschen</h2>
-                    <p>Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.</p>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
+                    <h2><?php _e('Projekt Löschen', 'quartiersplattform'); ?></h2>
+                    <p><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
+                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
+                    <?php _e('Projekt löschen', 'quartiersplattform'); ?></a>
                     
                     <!-- Backend edit link -->
                     <?php 
@@ -293,7 +294,7 @@ get_header();
                 ?>
 
                 <div class="publish-form">
-                    <h2>Bearbeite dein Projekt</h2>
+                    <h2><?php _e('Bearbeite dein Projekt', 'quartiersplattform'); ?></h2>
                     <br>
 
                     <?php
@@ -301,7 +302,7 @@ get_header();
                             array(
                                 'form' => true,
                                 'return' => '%post_url%',
-                                'submit_value' => 'Änderungen speichern',
+                                'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                 'post_title' => false,
                                 'post_content' => false,    
                                 'uploader' => 'basic',

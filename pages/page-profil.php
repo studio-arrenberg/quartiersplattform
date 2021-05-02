@@ -160,14 +160,14 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 );
                 ?>
 
-                <h2>Profil bearbeiten</h2>
+                <h2><?php _e('Profil bearbeiten', 'quartiersplattform'); ?> </h2>
                 <?php echo do_shortcode("[ultimatemember_account]"); ?>
 
-                <a class="button is-style-outline" href="<?php echo get_author_posts_url(get_current_user_id()); ?>">Mein öffentliches Profil ansehen</a>
+                <a class="button is-style-outline" href="<?php echo get_author_posts_url(get_current_user_id()); ?>">
+                <?php _e('Mein öffentliches Profil ansehen', 'quartiersplattform'); ?> </a>
 
                 <br>
-                
-                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
+                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Logout', 'quartiersplattform'); ?> </a>
         </div>
 
     </div>

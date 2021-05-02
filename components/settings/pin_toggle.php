@@ -3,10 +3,10 @@
 <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
     <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
     <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
-    <?php _e(' Dein Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
+    <?php _e(' Das Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
     </span>
     <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-    <?php _e('Dein Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
+    <?php _e('Das Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
     <span class="acf-spinner" style="display: inline-block;"></span>
 </label> 
 

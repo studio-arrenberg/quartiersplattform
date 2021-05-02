@@ -880,8 +880,8 @@ add_action('admin_init', function() {
 	# ACF Pro
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin <strong>Advaced Custom Fields,</strong> um vollständig funktionieren zu können.', 'quartiersplattform');
-			$link = '<strong>Advaced Custom Fields</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">Installiere ACF</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>".__("Advanced Custom Fields,",'quartiersplattform')."</strong>".__(" um vollständig funktionieren zu können.", 'quartiersplattform');
+			$link = '<strong>'.__("Advaced Custom Fields",'quartiersplattform').'</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">'.__("Installiere ACF",'quartiersplattform').'</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}

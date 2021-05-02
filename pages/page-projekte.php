@@ -20,9 +20,9 @@ get_header();
 
 	<div class="content">
 		<?php 
-			$text = 'Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
-			Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ';
-			reminder_card('projekte-intro', 'Entdecke alle Projekte aus deinem Quartier', $text );
+			$text = __('Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
+			Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ','quartiersplattform');
+			reminder_card('projekte-intro', __('Entdecke alle Projekte aus deinem Quartier','quartiersplattform'), $text );
 		?>
 
 		<?php
@@ -83,18 +83,13 @@ get_header();
 				// call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );
 			}
 			else {
-				$text = 'Registriere dich auf deiner <span class="highlight"> Quartiersplattform</span> und schöpfe dein volles Potenzial aus!<br>';
-				reminder_card('register', 'Werde Mitglied in deinem Quartier', $text, 'Jetzt Registieren', home_url( ).'/register' );
+				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
+				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
 			}
 		?>	
 	</div>
 
 </main><!-- #site-content -->
-
-
-
-
-
 
 <!-- </div> -->
 
