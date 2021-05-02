@@ -2094,6 +2094,22 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 
 
 			<?php
+				if (get_query_var( 'projekt_carousel_add')) { // !!! this is dirty
+					?>
+
+					<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
+						<div class="badge badge-button">
+						<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
+						</div>
+						<h3 class="heading-size-4">
+							Projekt erstellen    
+						</h3>
+					</a>
+
+
+					<?php
+				}
+
 				while ( $query2->have_posts() ) {
 					$query2->the_post();
 					echo "<div class='embrela-slide'>";
@@ -2791,11 +2807,13 @@ function projekt_carousel( ) {
 	);
 
 	set_query_var( 'highlight_display', true );
+	set_query_var( 'projekt_carousel_add', true );
 
 	?>  
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
 
+			<?php if (!wp_is_mobile(  )) { ?> 
 			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
 				<div class="badge badge-button">
 				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
@@ -2804,6 +2822,7 @@ function projekt_carousel( ) {
 					Projekt erstellen    
 				</h3>
 			</a>
+			<?php } ?>
 
 			<?php  
 			
@@ -2812,6 +2831,7 @@ function projekt_carousel( ) {
 			}
 			else {
 				card_list($args4, 'badge');
+				// slider($args4, 'badge', 4, 'false');
 			}
 			
 			?>
@@ -2820,6 +2840,7 @@ function projekt_carousel( ) {
 	<?php 
 
 	set_query_var( 'highlight_display', false );
+	set_query_var( 'projekt_carousel_add', false );
 }
 
 /**
