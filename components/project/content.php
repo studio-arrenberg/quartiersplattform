@@ -3,7 +3,7 @@
 <?php
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 ?>
-<a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+<a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Projekt bearbeiten', 'quartiersplattform'); ?> </a>
 
 <?php
 }
@@ -11,7 +11,7 @@ if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 
 <?php if (get_field('text')) { ?>
 <div class="single-content">
-    <h3 class="heading-size-3">Beschreibung</h3>
+    <h3 class="heading-size-3"><?php _e('Beschreibung', 'quartiersplattform'); ?> </h3>
     <p><?php extract_links(get_field('text')); ?></p>
 </div>
 <?php } ?>

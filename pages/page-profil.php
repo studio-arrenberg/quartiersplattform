@@ -29,7 +29,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             $current_user = wp_get_current_user();
             echo get_avatar( $current_user->user_email, 32 );
 
-            reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','', 'Jetzt Registieren', home_url( ).'/register' );
+            reminder_card('warning'.$current_user->ID, __('Dein Profil ist nicht sichtbar.','quartiersplattform'),'', __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
             // echo "<br>";
         ?>
 
@@ -41,7 +41,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
         
     </div>
 
-    <?php reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar (einzeiler...)','' ); ?>
+    <?php reminder_card('warning'.$current_user->ID, __('Dein Profil ist nicht sichtbar (einzeiler...)','quartiersplattform'),'' ); ?>
 
     <!-- bar -->
     <div class="filters-container">
@@ -49,12 +49,12 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             <ul class="filter-tabs">
                 <li>
                     <button class="filter-button filter-active" data-value="profil" data-translate-value="0">
-                        Profil
+                        <?php _e('Profil', 'quartiersplattform'); ?> 
                     </button>
                 </li>
                 <li>
                     <button class="filter-button" data-value="settings" data-translate-value="200%">
-                        Einstellungen
+                        <?php _e('Einstellungen', 'quartiersplattform'); ?> 
                     </button>
                 </li>
             </ul>
@@ -100,7 +100,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
             
             ?>
 
-            <h2>Deine Projekte</h2>
+            <h2><?php _e('Deine Projekte', 'quartiersplattform'); ?> </h2>
             <?php
                 $args4 = array(
                     'post_type'=> 'projekte', 
@@ -123,7 +123,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                 <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
 
-                <h4>Einstellungen</h4>
+                <h4><?php _e('Einstellungen', 'quartiersplattform'); ?> </h4>
                 <!-- Contact Information -->   
                 <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
                 <br>
@@ -134,7 +134,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                             'form' => true,
                             'post_id' => $userid,
                             'return' => get_site_url()."/profil"."/",
-                            'submit_value' => 'Änderungen speichern',
+                            'submit_value' => __('Änderungen speichern','quartiersplattform'),
                             'post_title' => false,
                             'post_content' => false,    
                             'field_groups' => array('group_6034e1d00f273'),
@@ -144,22 +144,22 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 <br>
                 <br>
                 <!-- Biography Information -->   
-                <!-- <h2>Erzähle etwas über dich</h2>
+                <h2>Erzähle etwas über dich</h2>
                 <br>
                 <?php
-                // $userid = "user_".$current_user->ID; 
-                // acf_form (
-                //     array(
-                //         'form' => true,
-                //         'post_id' => $userid,
-                //         'return' => get_site_url()."/profil"."/",
-                //         'submit_value' => 'Änderungen speichern',
-                //         'post_title' => false,
-                //         'post_content' => false,    
-                //         'field_groups' => array('group_605dc2bb690d9'),
-                //     )
-                // );
-                ?> -->
+                $userid = "user_".$current_user->ID; 
+                acf_form (
+                    array(
+                        'form' => true,
+                        'post_id' => $userid,
+                        'return' => get_site_url()."/profil"."/",
+                        'submit_value' => 'Änderungen speichern',
+                        'post_title' => false,
+                        'post_content' => false,    
+                        'field_groups' => array('group_605dc2bb690d9'),
+                    )
+                );
+                ?>
 
                 <h2>Profil bearbeiten</h2>
                 <?php echo do_shortcode("[ultimatemember_account]"); ?>

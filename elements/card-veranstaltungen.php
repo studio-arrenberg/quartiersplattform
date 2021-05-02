@@ -25,9 +25,9 @@ else {
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
                 <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
                 <span>
-                    <b>Veranstaltung</b>
+                    <b><?php _e('Veranstaltung', 'quartiersplattform'); ?> </b>
                     <br>
-                    von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php _e('von ', 'quartiersplattform'); ?><?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                 </span>
             </a>
         </div>

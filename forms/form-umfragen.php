@@ -30,7 +30,7 @@ get_header();
                     'post_content' => false,
                     'post_title' => true,
                     'field_groups' => array('group_601855a265b19'),
-                    'submit_value'=>'Umfrage veröffentlichen',
+                    'submit_value'=> __('Umfrage veröffentlichen','quartiersplattform'),
                     'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
                 )
             ); 

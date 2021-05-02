@@ -5,9 +5,9 @@
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
                 <span>
-                    <b>Umfrage</b>
+                    <b><?php _e('Umfrage', 'quartiersplattform'); ?> </b>
                     <br>
-                    Veröffentlicht von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php _e('veröffentlicht von ', 'quartiersplattform'); ?> <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                 </span>
             </a>
         </div>
@@ -59,7 +59,7 @@
                                 </label>
 
                                 <div id="poll<?php echo $i; ?>">
-                                    <?php if ($vote_state ) echo $array[$i]['count']." Stimmen"; ?>
+                                    <?php if ($vote_state ) echo $array[$i]['count'].__(" Stimmen",'quartiersplattform'); ?>
                                 </div>
 
                             </button>
@@ -87,12 +87,12 @@
                 if (!is_user_logged_in()) {
                 ?>
                     <div class="login-wall hidden">
-                        <p>Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen.</p>
+                        <p><?php _e('Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen.', 'quartiersplattform'); ?> </p>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/login">
-                            Anmelden
+                            <?php _e('Anmelden', 'quartiersplattform'); ?> 
                         </a>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/register">
-                            Registrieren
+                            <?php _e('Registrieren', 'quartiersplattform'); ?> 
                         </a>
                         <a class="close-card-link">
                             <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
@@ -115,7 +115,7 @@
                         // console.log(response);
                         $.each(response.data, function(k, v) {
                             // console.log(k+" : "+v['user']);
-                            $('form#poll-<?php echo get_the_ID(  ); ?> div#poll' + k).text(v['count'] + ' Stimmen');
+                            $('form#poll-<?php echo get_the_ID(  ); ?> div#poll' + k).text(v['count'] + '<?php _e(' Stimmen', 'quartiersplattform'); ?>');
                             $('form#poll-<?php echo get_the_ID(  ); ?> span#poll' + k).css('width', v['percentage'] + '%');
                             
                             if (v['user'] == 'true') {

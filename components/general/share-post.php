@@ -5,10 +5,10 @@
     if (get_post_status() == 'publish') {
 ?>
     <div class="share">
-        <h2> Projekt teilen </h2>
+        <h2><?php _e('Projekt teilen', 'quartiersplattform'); ?>  </h2>
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-            <button class="copy is-style-outline" onclick="copy()">Kopieren</button>
+            <button class="copy is-style-outline" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>
 
         </div>
 
@@ -25,7 +25,7 @@
             <a class="button is-style-outline" target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
             href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"
-            rel="nofollow">Email</a>
+            rel="nofollow">E-Mail</a>
 
         </div>
     </div>
@@ -43,8 +43,8 @@
 
 <?php 
 } else {
-    $text = "Du musst dein Projekt erst veröffentlichen bevor du dies teilen kannst.";
-    reminder_card('project-share'.get_the_ID(  ), 'Dein Projekt kann nicht geteilt werden', $text);
+    $text = __("Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde.",'quartiersplattform');
+    reminder_card('project-share'.get_the_ID(  ), __('Dein Projekt kann nicht geteilt werden','quartiersplattform'), $text);
 } 
 
 ?>

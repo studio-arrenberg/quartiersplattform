@@ -14,7 +14,7 @@ get_header();
 </div>
 
     <div class="publish-form">
-        <h2>Erstelle eine Nachricht</h2>
+        <h2><?php _e('Erstelle eine Nachricht', 'quartiersplattform'); ?> </h2>
         <br>
 
         <?php 
@@ -32,7 +32,7 @@ get_header();
                     'uploader' => 'basic',
                     'post_title' => true,
                     'field_groups' => array('group_5c5de02092e76'),
-                    'submit_value'=>'Nachricht veröffentlichen',
+                    'submit_value'=> __('Nachricht veröffentlichen','quartiersplattform'),
                     'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
                 )
             ); 

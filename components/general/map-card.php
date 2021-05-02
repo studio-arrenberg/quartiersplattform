@@ -29,7 +29,7 @@ if ( current_user_can('administrator') && get_field('map') ) { // new feature on
 
             <div class="card-footer">
                 <a class="button card-button" href="http://maps.apple.com/?daddr=<?php echo $location['lat'].",".$location['lng'];?>" target="_blank">In Karten öffenen</a>
-                <a class="button card-button" target="_blank" onclick="return map_confirm()" href="https://www.google.com/maps/dir/?api=1&origin=&destination=<?php echo $location['lat'].",".$location['lng']; ?>&travelmode=walking&basemap=roadmap">In Maps öffnen</a>
+                <a class="button card-button" target="_blank" onclick="return map_confirm()" href="https://www.google.com/maps/dir/?api=1&origin=&destination=<?php echo $location['lat'].",".$location['lng']; ?>&travelmode=walking&basemap=roadmap"><?php _e('In Maps öffnen', 'quartiersplattform'); ?> </a>
             </div>
 
         </div>
@@ -58,7 +58,7 @@ if ( current_user_can('administrator') && get_field('map') ) { // new feature on
 
 <script>
     function map_confirm() {
-        if (confirm("Zu Google Maps wechseln?")) {
+        if (confirm("<?php _e('Zu Google Maps wechseln?', 'quartiersplattform'); ?>")) {
         } else {
             return false;
         }

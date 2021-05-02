@@ -1,9 +1,11 @@
-<h4>Status</h4>
+<h4><?php _e('Projektsichtbarkeit', 'quartiersplattform'); ?></h4>
 
 <label class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>">
     <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >
-    <span class="slider toggle_a <?php if (get_post_status() != 'publish') echo "hidden"; ?>">Dein Projekt ist Öffentlich</span>
-    <span class="slider toggle_b <?php if (get_post_status() == 'publish') echo "hidden"; ?>">Dein Projekt ist Privat</span>
+    <span class="slider toggle_a <?php if (get_post_status() != 'publish') echo "hidden"; ?>">
+    <?php _e('Dein Projekt ist Öffentlich', 'quartiersplattform'); ?> </span>
+    <span class="slider toggle_b <?php if (get_post_status() == 'publish') echo "hidden"; ?>">
+    <?php _e('Dein Projekt ist nicht öffentlich', 'quartiersplattform'); ?> </span>
     <span class="acf-spinner" style="display: inline-block;"></span>
 </label> 
 

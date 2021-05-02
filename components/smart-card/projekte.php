@@ -52,8 +52,11 @@
                             </div>
                         </a>
                             <div class="card-footer">
-                                <a class="button card-button"  href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">Projektupdate</a>
-                                <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">Veranstaltung</a>
+                                <a class="button card-button"  href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">
+                                <?php _e('Projektupdate', 'quartiersplattform'); ?> </a>
+                                <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">
+                                <?php _e('Veranstaltung', 'quartiersplattform'); ?>
+                                </a>
                                 <!-- <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">+</a> -->
                             </div>
                     </div>

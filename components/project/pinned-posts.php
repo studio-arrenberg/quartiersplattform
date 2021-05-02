@@ -1,4 +1,4 @@
-<h4>Pinned:</h4>
+<h4><?php _e('Gepinnte Beiträge:', 'quartiersplattform'); ?> </h4>
 <?php
 // pinned project posts
 $args_chronik = array(

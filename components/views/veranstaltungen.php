@@ -23,7 +23,7 @@ if (count_query($veranstaltungen)) {
     set_query_var( 'additional_info', false);
     ?>
 
-        <h4>Anstehende Veranstaltungen</h4>
+        <h4><?php _e('Anstehende Veranstaltungen', 'quartiersplattform'); ?> </h4>
         <?php card_list($veranstaltungen); ?>
 
     <?php            
@@ -31,7 +31,7 @@ if (count_query($veranstaltungen)) {
 else {
     // keine veranstaltungen
     // funktion ..?
-    echo "keine veranstaltung";
+    _e('Hier gibt es leider noch keine Veranstaltungen.', 'quartiersplattform');
 }
 
 ?>

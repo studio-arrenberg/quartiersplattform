@@ -3,9 +3,8 @@
 	<p class="">
 		<?php echo get_query_var('reminder_card_html'); ?>
 	</p>
-
 	<button type="button" class="notice-dismiss" onclick="remove_reminder('<?php echo get_query_var('reminder_card_slug'); ?>')">
-		<span class="screen-reader-text">Diese Meldung ausblenden.</span>
+		<span class="screen-reader-text"><?php _e('Diese Meldung ausblenden.', 'quartiersplattform'); ?> </span>
 	</button>
 
 </div>

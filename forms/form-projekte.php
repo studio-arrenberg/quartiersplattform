@@ -9,11 +9,11 @@ get_header();
 
 
     <?php 
-        reminder_card(get_the_ID(  ).'draft', 'Projekt veröffentlichen', 'Dein Projekt ist noch nicht öffentlich. Du kannst dein Projekt in den Einstellungen veröffentlichen');
+        reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen.','quartiersplattform'));
 	?>
 
     <div class="publish-form">
-        <h2>Erstelle dein eigenes Projekt</h2>
+        <h2><?php _e('Erstelle dein eigenes Projekt', 'quartiersplattform'); ?> </h2>
         <br>
 
         <?php 
@@ -34,7 +34,7 @@ get_header();
                         'field_5fc64834f0bf2', // Emoji
                         'field_5fc647f6f0bf0', // Kurzbeschreibung
                     ),
-                    'submit_value'=>'Projekt veröffentlichen',
+                    'submit_value'=> __('Projekt veröffentlichen','quartiersplattform'),
                     'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
                 )
             ); 

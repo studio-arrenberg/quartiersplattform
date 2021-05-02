@@ -3,10 +3,10 @@
         <div class="card card-large reminder">
             <div class="content content-shrink">
                 <h1 class="card-title-large">
-                    🍪 Wir verwenden Cookies
+                    🍪 <?php _e("Wir verwenden Cookies", "quartiersplattform"); ?>
                 </h1>
                 <h3>
-                    Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten.
+                <?php _e("Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten.", "quartiersplattform"); ?>
                 </h3>
             </div>
             
@@ -16,14 +16,14 @@
                 if (get_privacy_policy_url()) {
 
                     ?> 
-                        <a class="button is-style-outline" href="<?php echo get_privacy_policy_url(); ?>">Datenschutzerklärung</a>
+                        <a class="button is-style-outline" href="<?php echo get_privacy_policy_url(); ?>"><?php _e("Datenschutzerklärung", "quartiersplattform"); ?></a>
                     <?php
 
                 }
                 else {
 
                     ?> 
-                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/impressum/">Impressum</a>
+                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
                     <?php
 
                 }
@@ -31,7 +31,7 @@
             ?>
 
 
-            <a class="button accept" >Zustimmen</a>
+            <a class="button accept" ><?php _e('Zustimmen', 'quartiersplattform'); ?> </a>
         </div>
     </div>
 </div>

@@ -42,7 +42,7 @@ get_header();
                         'field_608a6c2c1be28', // Sichtbar
                         'field_603f4c75747e9', //Bilder
                     ),
-                    'submit_value'=>'Veranstaltung veröffentlichen',
+                    'submit_value'=> __('Veranstaltung veröffentlichen','quartiersplattform'),
                     'html_before_fields' => '
                     <input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">
                     ',

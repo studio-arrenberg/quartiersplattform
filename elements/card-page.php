@@ -32,9 +32,9 @@ if (strlen($the_slug < 1 )) {
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
                 <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
                 <span>
-                    <b>Projektupdate</b>
+                    <b><?php _e('Projektupdate', 'quartiersplattform'); ?> </b>
                     <br>
-                    Veröffentlicht von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php _e('Veröffentlicht von ', 'quartiersplattform'); ?><?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                 </span>
             </a>
         </div>
