@@ -2953,8 +2953,8 @@ function count_query($query, $amount = 1) {
  * @param string $id id
  * @return string
  */
-function project_card($id, $type = "post") {
-
+function project_card($id, $type = "post") { 
+	
 	if (empty($id)) {
 		return false;
 	}
@@ -2962,12 +2962,13 @@ function project_card($id, $type = "post") {
 	if ($type == "post") {
 		// get project id
 		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) );
+		if (!$term_list) return false;
 		// query
 		$args = array(
 			'name'        => $term_list[0]->slug,
 			'post_type'   => 'projekte',
 			'post_status' => 'publish',
-			'numberposts' => '1'
+			'posts_per_page' => '1'
 		);
 
 	}
@@ -2977,7 +2978,7 @@ function project_card($id, $type = "post") {
 			'p'         => $id,
   			'post_type' => 'any',
 			'post_status' => 'publish',
-			'numberposts' => '1'
+			'posts_per_page' => '1'
 		);
 
 	}
@@ -2987,13 +2988,15 @@ function project_card($id, $type = "post") {
 			'name'        => $id,
 			'post_type'   => 'projekte',
 			'post_status' => 'publish',
-			'numberposts' => '1'
+			'posts_per_page' => '1'
 		);
 
 	}
 
-	// query and display
-	card_list( $args, 'card' );
+	if (count_query($args)) {
+		// query and display
+		card_list( $args, 'card' );
+	}
 	
 
 }

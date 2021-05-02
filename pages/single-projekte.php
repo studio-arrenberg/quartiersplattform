@@ -238,7 +238,7 @@ get_header();
                     </div>
 
                     <h2>Projekt Löschen</h2>
-                    <p>Danger zone</p>
+                    <p>Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.</p>
                     <a class="button is-style-outline button-red" onclick="return confirm('Dieses Projekt entgültig löschen?')" href="<?php get_permalink(); ?>?action=delete">Projekt löschen</a>
                     
                     <!-- Backend edit link -->
@@ -260,13 +260,28 @@ get_header();
 
         # projekt löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
-
-            # delete taxonomy (projekt)
-            $term = get_term_by('slug', $post->post_name, 'projekt');
-            wp_delete_term( $term->term_id, 'projekt');
+            
+            // delete all taxnomied posts
+            $p_posts = get_posts( array(
+                'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
+                'posts_per_page' => -1,
+                'order_by' => 'date',
+                'order' => 'DESC',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'projekt',
+                        'field' => 'slug',
+                        'terms' => ".$post->post_name."
+                    )
+                )
+            ) );
+ 
+            foreach ( $p_posts as $s_post ) {
+                wp_delete_post( $s_post->ID, true); // Set to False if you want to send them to Trash.
+            }
 
             # delete post
-            wp_delete_post(get_the_ID());
+            wp_delete_post( get_the_ID() );
             wp_redirect( get_site_url() );
 
         }

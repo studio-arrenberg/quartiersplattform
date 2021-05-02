@@ -12,7 +12,7 @@
 <?php
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 ?>
-<a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Projekt bearbeiten</a>
+<a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Beschreibung bearbeiten</a>
 
 <?php
 }
