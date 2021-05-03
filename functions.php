@@ -1210,6 +1210,8 @@ function qp_comment_author( $return, $author, $comment_ID ) {
  */
 function script_managment() {
 
+	// echo "<h1>HELLO WORLD</h1>";
+
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
 	$form_pages = array(
@@ -1252,7 +1254,8 @@ function script_managment() {
 				files_inc_emoji();
 			}
 			else {
-				files_minimum();
+				// echo "<br><br><br><br>! Hello"; 
+				files_edit();
 			}
 
 
@@ -1304,6 +1307,7 @@ function script_managment() {
 		files_minimum();
 	}
 	else {
+		// echo "<br><br><br><br>! ????? Page";
 		files_minimum();
 	}
 
@@ -1353,12 +1357,12 @@ function files_edit() {
 	// scripts for ajax
 	wp_enqueue_script( 'jquery-form' );
 
-	wp_deregister_script('jquery-ui-draggable');
-	wp_deregister_script('jquery-ui-mouse');
-	wp_deregister_script('jquery-ui-resizable');
-	wp_deregister_script('jquery-ui-sortable');
-	wp_deregister_script('jquery-ui-widget');
-	wp_deregister_script('jquery-ui-selectable');
+	// wp_deregister_script('jquery-ui-draggable');
+	// wp_deregister_script('jquery-ui-mouse');
+	// wp_deregister_script('jquery-ui-resizable');
+	// wp_deregister_script('jquery-ui-sortable');
+	// wp_deregister_script('jquery-ui-widget');
+	// wp_deregister_script('jquery-ui-selectable');
 
 	wp_deregister_script('twentytwenty-color-calculations');
 

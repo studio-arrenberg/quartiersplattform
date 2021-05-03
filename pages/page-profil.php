@@ -159,9 +159,6 @@ if (!is_user_logged_in()) {
                 <h2><?php _e('Profil bearbeiten', 'quartiersplattform'); ?> </h2>
                 <?php echo do_shortcode("[ultimatemember_account]"); ?>
 
-                <a class="button is-style-outline" href="<?php echo get_author_posts_url(get_current_user_id()); ?>">
-                <?php _e('Mein öffentliches Profil ansehen', 'quartiersplattform'); ?> </a>
-
                 <br>
                 <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
         </div>
