@@ -16,12 +16,27 @@ if (!is_user_logged_in(  )) {
 	</div>
 
 	<div class="main-content">
+
         <div class="small-projekt-card">
             <?php
                 // Projekt Kachel
                 project_card($_GET['project'], 'slug');
             ?>
         </div>
+
+        <?php 
+
+        $page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
+        $project_ID = $page->ID;
+
+        if ( get_post_status( $page->ID ) != 'publish') {
+            reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
+        }
+
+        ?>
+
+        
+
         <div class="publish-form">
             
             <br>

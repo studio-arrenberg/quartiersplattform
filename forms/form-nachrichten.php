@@ -11,12 +11,8 @@ if (!is_user_logged_in(  )) {
 ?>
 
 <main id="site-content" role="main">
-    <?php 
-        //Überprüfen ob das Projekt öffentlich ist
-        // echo get_post_status( $_GET['project'] );
-        
-        reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
-    ?>
+
+
     <div class="left-sidebar">
 		<?php projekt_carousel(); ?>
 	</div>
@@ -26,7 +22,20 @@ if (!is_user_logged_in(  )) {
         // Projekt Kachel
         project_card($_GET['project'], 'slug');
     ?>
-</div>
+    </div>
+
+    <?php 
+
+    $page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
+    $project_ID = $page->ID;
+
+    if ( get_post_status( $page->ID ) != 'publish') {
+        reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
+    }
+
+    ?>
+
+    
 
     <div class="publish-form">
 

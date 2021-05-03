@@ -134,7 +134,7 @@ get_header();
                     <?php 
                     // project is not public
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
-                        reminder_card('warning', __('Dein Projekt ist noch nicht öffentlich sichtbar.','quartiersplattform'), '');
+                        reminder_card('warning', __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
                     }
 
                     // Toolbox
