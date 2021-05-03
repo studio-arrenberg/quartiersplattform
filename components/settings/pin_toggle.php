@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 <div class="small-margin">
     <?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
+=======
+<?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
+<div class="small-margin">
+>>>>>>> 63d6191dddbd020495b61ea688a9d85bbfa0311d
 
         <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
 
@@ -13,7 +18,11 @@
             <span class="acf-spinner" style="display: inline-block;"></span>
         </label> 
 
+<<<<<<< HEAD
     <?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
+=======
+<?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
+>>>>>>> 63d6191dddbd020495b61ea688a9d85bbfa0311d
 
         <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
 
@@ -27,7 +36,11 @@
             <span class="acf-spinner" style="display: inline-block;"></span>
         </label> 
 
+<<<<<<< HEAD
     <?php } ?>
+=======
+<?php } ?>
+>>>>>>> 63d6191dddbd020495b61ea688a9d85bbfa0311d
 </div>
 
 <script>
