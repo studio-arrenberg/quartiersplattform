@@ -16,7 +16,13 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
+
+	<div class="main-content">
 
     <?php
 	if ( have_posts() ) {
@@ -228,6 +234,8 @@ get_header();
 }
     
 ?>
+
+</div>
 
 </main><!-- #site-content -->
 
