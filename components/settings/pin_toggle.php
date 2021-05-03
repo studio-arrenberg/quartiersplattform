@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
 <?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
-=======
 <div class="small-margin">
->>>>>>> Stashed changes
 
     <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
 
@@ -16,7 +13,6 @@
         <span class="acf-spinner" style="display: inline-block;"></span>
     </label> 
 
-<<<<<<< Updated upstream
 <?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
 
     <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
@@ -32,9 +28,7 @@
     </label> 
 
 <?php } ?>
-=======
 </div>
->>>>>>> Stashed changes
 
 <script>
     
