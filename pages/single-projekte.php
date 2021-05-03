@@ -140,7 +140,7 @@ get_header();
                     // Toolbox
                     get_template_part( 'components/project/toolbox' );
 
-                    // Anstehende Events
+                    // Aktuelle Events
                     get_template_part( 'components/project/coming-events' );
                     
                     // Pinned Posts
