@@ -243,13 +243,9 @@ get_header();
                     <p><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
                     <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
                     <?php _e('Projekt löschen', 'quartiersplattform'); ?></a>
+
                     
-                    <!-- Backend edit link -->
-                    <?php 
-                    if ( current_user_can('administrator') && !isset($_GET['action']) && !$_GET['action'] == 'edit') {
-                        edit_post_link(); // !!! simplify only function
-                    }
-                    ?>
+                    <?php qp_backend_edit_link(); ?>
 
 
                 </div>

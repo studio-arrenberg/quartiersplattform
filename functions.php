@@ -3141,6 +3141,40 @@ function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') 
 }
 
 
+/**
+ * Backend Edit Button
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return html
+ */
+function qp_backend_edit_link() {
+
+	if ( ! current_user_can('administrator') ) { 
+		return false;
+	}
+
+	$post = get_post( $id );
+    if ( ! $post ) {
+        return;
+    }
+ 
+    $url = get_edit_post_link( $post->ID );
+    if ( ! $url ) {
+        return;
+    }
+ 
+    if ( null === $text ) {
+        $text = __( 'Beitrag im Wordpress System bearbeiten', 'quartiersplattform' );
+    }
+ 
+    $link = '<a class="button is-style-outline ' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
+
+	echo $link;
+
+}
+
+
 
 
 /**
