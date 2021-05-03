@@ -2120,10 +2120,15 @@ button.toggle {
   color: #000;
   cursor: pointer;
   text-align: center;
+  border-radius: 22.5px;
+  padding: 5px;
+
 }
 
 .badge-link:hover, .badge-is-active {
   color: #0091ff;
+  padding:5px
+
 }
 
 .shadow-on-hover .badge {
@@ -2133,7 +2138,7 @@ button.toggle {
 
 .shadow-on-hover:hover,  .badge-is-active {
   box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
-
+  background-color:#fff
 }
 
 
