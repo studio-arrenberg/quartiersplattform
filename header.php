@@ -74,29 +74,15 @@ wp_maintenance_mode();
                 ?>
 
                 <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
-                    <?php
-                        if ( has_nav_menu( 'primary' ) ) {
 
-                            wp_nav_menu(
-                                array(
-                                    'container'  => '',
-                                    'items_wrap' => '%3$s',
-                                    'theme_location' => 'primary',
-                                )
-                            );
+                    <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home <?php if (is_page( 'Startseite' )) echo "current-menu-item"; ?> page_item page-item-17 current_page_item menu-item-48">
+                        <a href="<?php echo home_url( ); ?>" aria-current="page"><?php the_field('quartiersplattform-name','option'); ?></a>
+                    </li>
 
-                        } elseif ( ! has_nav_menu( 'expanded' ) ) {
-
-                            wp_list_pages(
-                                array(
-                                    'match_menu_classes' => true,
-                                    'show_sub_menu_icons' => true,
-                                    'title_li' => false,
-                                    'walker'   => new TwentyTwenty_Walker_Page(),
-                                )
-                            );
-                        }
-                    ?>
+                    <li id="menu-item-16" class="menu-item menu-item-type-post_type <?php if (is_page( 'Projekte' )) echo "current-menu-item"; ?> menu-item-object-page menu-item-16">
+                        <a title="Projekte" href="<?php echo home_url( ).'/projekte/'; ?>">Projekte</a>
+                    </li>
+                    
                 </ul>
 
                 <?php 
