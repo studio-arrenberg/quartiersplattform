@@ -172,7 +172,10 @@ get_header();
 
 
                 <div id="posts" class="bar bar-hidden">
-
+                    <?php 
+                        $text = "Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue immer mal wieder vorbei, um auf dem Laufenden zu bleiben.";
+		                no_content_card("􀌤", "In der Projektchronik wurde noch nichts veröffentlicht.", $text, $link_text = '', $link_url = '')
+	                ?>	
                     <?php get_template_part( 'components/project/history' ); ?>
                     
                 </div>
