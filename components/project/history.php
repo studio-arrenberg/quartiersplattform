@@ -16,9 +16,9 @@ $args_chronik = array(
 
 card_list($args_chronik);
 
-if(count_query($args4) == FALSE){
-    $text = "Es wurden bisher noch keine Projektupdates veröffentlicht. Schau öfter vorbei, um auf dem Laufenden zu bleiben.";
-    no_content_card("􀌤", "In der Projektchronik wurde noch nichts veröffentlicht.", $text, $link_text = '', $link_url = '');
+if(!count_query($args4)){
+    $text = __("Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später vorbei, um auf dem Laufenden zu bleiben.",'quartiersplattform');
+    no_content_card("􀌤", __("Es wurden noch keine Beiträge veröffentlicht",'quartiersplattform'), $text, $link_text = '', $link_url = '');
 }
 
 
