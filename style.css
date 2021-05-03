@@ -263,7 +263,7 @@ h3,
 
 h4,
 .heading-size-4 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 h5,
@@ -277,11 +277,24 @@ h6,
   text-transform: uppercase;
 }
 
-p {
+.text-size-1 {
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
+
+p, .text-size-2 {
   font-size: 1.7rem;
   line-height: 2rem;
   font-weight: 500;
 }
+
+.text-size-3 {
+  font-size: 1.55rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+}
+
+
 
 .highlight{
   color: #0091ff;
@@ -1455,6 +1468,7 @@ button.toggle {
 
   .left-sidebar{
     grid-area: left-sidebar;
+
   }
 
   .right-sidebar .card{
@@ -1976,6 +1990,7 @@ button.toggle {
   padding-left: 15px;
   padding-right: 15px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .quartier .section-full-width{
@@ -1993,8 +2008,20 @@ button.toggle {
 }
 
 .stage-center p{
-  max-width: 700px;
+  /* max-width: 700px; */
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-bottom: 20px;
 }
+
+
+.link-card-container .link-card p{
+  /* max-width: 700px; */
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+}
+
 
 .stage-center h2{
   text-align: center ;
@@ -2015,12 +2042,18 @@ button.toggle {
   text-align: left;
   background: #F5F5F5 !important;
   margin: 5px;
+  color: #000;
+
 }
+
 
 .link-card-container{
   display: flex;
   flex-wrap: wrap;
   min-width: 650px;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .link-card-container .card-group {
@@ -2038,26 +2071,9 @@ button.toggle {
   margin-bottom: 10px;
 }
 
-.projekt-card-container{
-  display: flex;
-  max-width: 1800px;
-  padding-left: 15px;
-  padding-right: 15px;
+.link-card-container  .card{
+  margin-bottom: 0px;
 }
-
-.projekt-card-container > div{
-  margin: 5px;
-  margin-top: 100px;
-}
-
-.projekt-card-container  .card{
-  margin: 0px;
-}
-
-.projekt-card-container > div:nth-of-type(2n){
-  margin-top: 0px;
-}
-
 
 .small-projekt-card .card img{
   height: 200px !important;
@@ -2074,33 +2090,19 @@ button.toggle {
   .link-card-container{
     min-width: 0px;
     width: 100%;
-
   }
 
   .link-card-container .landscape{
     width: 100%;
-    height: 300px;
+    /* height: 300px; */
   }
 
-
-
-  .projekt-card-container {
-    flex-wrap: wrap;
-    padding: 0px;
+  .stage-center p{
+    /* max-width: 700px; */
+    padding-left: 0%;
+    padding-right: 0%;
   }
 
-  .projekt-card-container > div{
-    width: calc( (100% - 20px) / 2 );
-    margin-top: 20px;
-  }
-  
-  .projekt-card-container  .card{
-    margin: 0px;
-  }
-
-  .projekt-card-container > div:nth-of-type(2n){
-    margin-top: 0px;
-  }
 }
 
 @media (max-width: 999px) {
@@ -5192,7 +5194,6 @@ font-weight: 700;
   padding: 20px;
   height: 200px;
   margin: 0px;
-  color: #000;
 }
 
 .grid-2col .landscape{

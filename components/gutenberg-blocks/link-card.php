@@ -20,7 +20,6 @@ $id = url_to_postid( $link );
 // print_r(get_field('post'));
 ?>
 
-
 <div class="card landscape shadow-on-hover link-card ">
     
     <?php 
@@ -54,3 +53,4 @@ $id = url_to_postid( $link );
         ?> -->
     </a>
 </div>
+
