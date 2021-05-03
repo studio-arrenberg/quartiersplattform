@@ -2937,7 +2937,7 @@ function projekt_carousel( ) {
 			<?php  
 			
 			if (wp_is_mobile(  )) {
-				slider($args4, 'badge', 4, 'false');
+				slider($args4, 'badge', 4, 'false', 'start');
 			}
 			else {
 				card_list($args4, 'badge');
@@ -3080,7 +3080,7 @@ function project_card($id, $type = "post") {
 		$args = array(
 			'name'        => $term_list[0]->slug,
 			'post_type'   => 'projekte',
-			'post_status' => 'publish',
+			'post_status' => array('publish', 'draft'),
 			'posts_per_page' => '1'
 		);
 
@@ -3090,7 +3090,7 @@ function project_card($id, $type = "post") {
 		$args = array(
 			'p'         => $id,
   			'post_type' => 'any',
-			'post_status' => 'publish',
+			'post_status' => array('publish', 'draft'),
 			'posts_per_page' => '1'
 		);
 
@@ -3100,7 +3100,7 @@ function project_card($id, $type = "post") {
 		$args = array(
 			'name'        => $id,
 			'post_type'   => 'projekte',
-			'post_status' => 'publish',
+			'post_status' => array('publish', 'draft'),
 			'posts_per_page' => '1'
 		);
 

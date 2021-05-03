@@ -1441,34 +1441,20 @@ button.toggle {
 
 
 @media (min-width: 782px) {
-
   html {
     overflow-x: inherit !important;
   }
-
   .page-grid{
     justify-content: unset; 
     display: grid;
     margin: 0 auto;
-    grid-template-columns: 100px minmax(400px, 1fr)  345px;
-    grid-gap: 45px;
-    grid-template-areas: "left-sidebar main-content right-sidebar ";
+    grid-template-columns: 100px minmax(450px, 700px);
+    grid-gap: 40px;
+    grid-template-areas: "left-sidebar main-content ";
   }
-
-  .right-sidebar{
-    display: block;
-    margin-top: 0px;
-    height: 100vh;
-    grid-area: right-sidebar;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 115px;
-  }
-
 
   .left-sidebar{
     grid-area: left-sidebar;
-
   }
 
   .right-sidebar .card{
@@ -1481,7 +1467,7 @@ button.toggle {
     }
 
   .main-content > div {
-    max-width: 600px;
+    max-width: 700px;
   }
 
   .newsfeed{
@@ -1489,30 +1475,55 @@ button.toggle {
       margin: 0px;
       transition: all 0.2s ease-in-out;
     }
-
-  
 }
 
 
+@media (min-width: 782px) {
+  .page-grid{
+    grid-template-columns: 70px minmax(400px, 700px)  ;
+    grid-gap: 30px;
+    grid-template-areas: "left-sidebar main-content ";
+  }
+}
 
-
-
-
-@media (min-width: 1045px) {
-
-  html {
-    overflow-x: inherit !important;
+@media (min-width: 900px) {
+  .page-grid{
+    grid-template-columns: 250px minmax(400px, 700px)  ;
+    grid-gap: 30px;
+    grid-template-areas: "left-sidebar main-content ";
   }
 
+  .badge-link{
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    max-width: 300px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .badge{
+    margin-right: 10px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .badge-link .heading-size-4{
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    max-height: none;
+    font-weight: 700;
+    overflow: hidden;
+  }
+}
+
+
+@media (min-width: 1335px) {
   .page-grid{
-    justify-content: unset; 
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: 300px minmax(400px, 1fr)  345px;
+    grid-template-columns: 300px minmax(400px, 700px)  345px;
     grid-gap: 45px;
     grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
-
   .right-sidebar{
     display: block;
     margin-top: 0px;
@@ -1522,31 +1533,6 @@ button.toggle {
     position: sticky;
     top: 115px;
   }
-
-
-  .left-sidebar{
-    grid-area: left-sidebar;
-
-  }
-
-  .right-sidebar .card{
-    max-width: none;
-  }
-
-  .main-content {
-      grid-area: main-content;
-      padding-top: 0px;
-    }
-
-  .main-content > div {
-    max-width: 600px;
-  }
-
-  .newsfeed{
-      width: 100%;
-      margin: 0px;
-      transition: all 0.2s ease-in-out;
-    }
 }
 
 
@@ -1982,7 +1968,7 @@ button.toggle {
 
 
 .quartier section {
-  min-height: 700px;
+  min-height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2003,7 +1989,19 @@ button.toggle {
 }
 
 .stage-center{
+  text-align: center;
+}
+
+.stage-center p{
   max-width: 700px;
+}
+
+.stage-center h2{
+  text-align: center ;
+  width: 100%;
+}
+
+.stage-center .has-text-align-left{
   text-align: center;
 }
 
@@ -2011,6 +2009,12 @@ button.toggle {
   /* max-width: 800px; */
   flex-grow: 1;
   padding-right: 25px;
+}
+
+.link-card {
+  text-align: left;
+  background: #F5F5F5 !important;
+  margin: 5px;
 }
 
 .link-card-container{
@@ -2030,7 +2034,6 @@ button.toggle {
 }
 
 .stage-title{
-   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -2121,27 +2124,14 @@ button.toggle {
   cursor: pointer;
   text-align: center;
   border-radius: 22.5px;
-  padding: 5px;
-
+  position: relative;
 }
 
-.badge-link:hover, .badge-is-active {
-  color: #0091ff;
-  padding:5px
-
-}
 
 .shadow-on-hover .badge {
   transition: box-shadow 0.2s ease-in-out;
   border-radius: 20px;
 }
-
-.shadow-on-hover:hover,  .badge-is-active {
-  box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
-  background-color:#fff
-}
-
-
 
 
 .badge{
@@ -2164,14 +2154,11 @@ button.toggle {
   background: #F4F4F4;
 }
 
-.yours::after {
-  position: absolute;
-  width: 72px;
-  height: 67px;
-  background: linear-gradient(180deg, #0091FF 0%, #68BEFF 100%);
-  content: '';
-  z-index: -1;
-  border-radius: 21px;
+.yours {
+  z-index: 1;
+  border: 2px solid;
+  border-color: linear-gradient(180deg, #0091FF 0%, #68BEFF 100%);
+  color: #0091ff;
 }
 
 
@@ -2190,6 +2177,14 @@ button.toggle {
     max-width: 300px;
     margin-bottom: 10px;
     text-align: left;
+    padding: 4px;
+
+  }
+
+
+  .badge-link:hover, .badge-is-active {
+    color: #0091ff;
+    padding:3px
   }
 
   .badge{
@@ -2198,22 +2193,14 @@ button.toggle {
     overflow: hidden;
   }
 
-  .badge-link .heading-size-4{
-    display: none;
-    font-size: 1.5rem;
-    line-height: 1.6rem;
-    max-height: none;
-    font-weight: 700;
-    overflow: hidden;
+
+  .shadow-on-hover:hover,  .badge-is-active {
+    box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
+    background-color:#fff
   }
+  
 }
 
-
- @media (min-width: 1045px) {
-  .badge-link .heading-size-4{
-    display: block;
-  }
-} 
 
 /* -------------------------------------------------------------------------- */
 
@@ -5205,6 +5192,7 @@ font-weight: 700;
   padding: 20px;
   height: 200px;
   margin: 0px;
+  color: #000;
 }
 
 .grid-2col .landscape{
@@ -5601,7 +5589,7 @@ a:hover .shadow{
 
 .embla__container {
   display: flex;
-  margin-left: -10px;
+  /* margin-left: -10px; */
 }
 
 /* Mobile - 1 slide in viewport */
