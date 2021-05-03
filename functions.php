@@ -937,8 +937,8 @@ add_action('admin_init', function() {
 	if (!get_the_content('','',$page_impressum->ID) && class_exists('acf_pro') && class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" keine Datenschutzerklärung.",'quartiersplattform').'</strong>';
-			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">'.__("Datenschutzerklärung erstellen",'quartiersplattform').'</a>';
+			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" kein Impressum.",'quartiersplattform').'</strong>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/edit.php?post_type=page">'.__("Impressum erstellen",'quartiersplattform').'</a>';
 			reminder_backend('impressum-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
 
@@ -2497,7 +2497,7 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 
 	if ($detail) {
-		$string = $string." um ".wp_date('H:i', $date);
+		$string = $string.__(" um ",'quartiersplattform').wp_date('H:i', $date);
 	}
 
 	return $string;

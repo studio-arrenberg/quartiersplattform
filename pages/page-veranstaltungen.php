@@ -22,7 +22,12 @@ get_header();
 	<?php 
 		$text = __('Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden.', "quartiersplattform");
 		reminder_card('veranstaltungen-intro', __('Veranstaltungen in deiner Nachbarschaft','quartiersplattform'), $text );
+	
+		$text = "Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu erhalten. Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream Link veröffentlichen.";
+		no_content_card("􀉊", "Hier gibt es leider noch keine Veranstaltungen.", $text, $link_text = 'Veranstaltung erstellen', $link_url = "");
 	?>
+	
+
 
 		<?php 
 		get_template_part('components/views/veranstaltungen');
