@@ -898,7 +898,7 @@ add_action('admin_init', function() {
 	if (class_exists('acf_pro') && class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __("Gratulation, deine Quartiersplattform wurde erfolgreich aufgesetzt.",'quartiersplattform');
+			$notice = __("Gratulation, deine Quartiersplattform wurde erfolgreich eingerichtet.",'quartiersplattform');
 			reminder_backend('setup-finished', $notice, 'updated notice');
 		});
 
@@ -932,12 +932,23 @@ add_action('admin_init', function() {
 		});
 
 	}
+	# Impressum reminder
+	$page_impressum = get_page_by_title( 'Impressum' );
+	if (!get_the_content('','',$page_impressum->ID) && class_exists('acf_pro') && class_exists('UM')) {
+
+		add_action('admin_notices', function() {
+			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" keine Datenschutzerklärung.",'quartiersplattform').'</strong>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">'.__("Datenschutzerklärung erstellen",'quartiersplattform').'</a>';
+			reminder_backend('impressum-reminder-setup', $notice.'<br>'.$link, 'updated notice');
+		});
+
+	}
 	# reminder for settings
 	if (class_exists('acf_pro') && class_exists('UM')) {
 
 
 		add_action('admin_notices', function() {
-			$notice = __('Richte das Logo sowie den Namen deiner Quartiersplattform ein ', 'quartiersplattform');
+			$notice = __('Hier kannst du das Logo sowie den Namen deiner Quartiersplattform einrichten. ', 'quartiersplattform');
 			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">'.__("Zu den Einstellungen",'quartiersplattform').'</a>';
 			reminder_backend('qp-settings-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
@@ -3004,6 +3015,9 @@ function count_query($query, $amount = 1) {
 	if ($my_query->post_count >= $amount) {
 		return true;
 	}
+	else {
+		return false;
+	}
     
 }
 
@@ -3063,6 +3077,36 @@ function project_card($id, $type = "post") {
 	
 
 }
+
+/**
+ * No Content Card Function
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $icon icon
+ * @param string $title title
+ * @param string $text text
+ * @param string $link_text link_text
+ * @param string $link_url link_url
+ * @return html
+ */
+function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') {
+
+	if (!$icon && !$title && !$text) {
+		return false;
+	}
+
+	set_query_var( 'qp_no_content_icon', $icon );
+	set_query_var( 'qp_no_content_title', $title );
+	set_query_var( 'qp_no_content_text', $text );
+	set_query_var( 'qp_no_content_link_text', $link_text );
+	set_query_var( 'qp_no_content_link_url', $link_url );
+
+	// get template part
+	get_template_part( 'components/general/no-content-card' );
+
+}
+
 
 
 

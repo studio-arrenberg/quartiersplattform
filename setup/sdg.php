@@ -126,13 +126,17 @@ function register_sdg() {
 	
 	for ($i = 0; $i < count($sdgs); $i++) {
 
+		$number = $i + 1;
+		if ($number < 10) $number = "0".$number;
+
 		$my_post = [];
 		$my_post = array(
 			'post_title'    => wp_strip_all_tags( $sdgs[$i]['title'] ),
 			'post_content'  => $sdgs[$i]['content'],
 			'post_status'   => 'publish',
 			'post_author'   => 1,
-			'post_type'		=> 'sdg'
+			'post_type'		=> 'sdg',
+			// 'post_slug'		=> $number
 		);
 
 		if(post_exists($sdgs[$i]['title']) === 0){
@@ -142,6 +146,8 @@ function register_sdg() {
 			add_post_meta( $post_id, 'class', $sdgs[$i]['class'], true );
 			# add number/goal meta
 			add_post_meta( $post_id, 'goal', $sdgs[$i]['goal'], true );
+			# add number/goal meta
+			add_post_meta( $post_id, 'number', $number, true );
 			# add color meta
 			add_post_meta( $post_id, 'color', $sdgs[$i]['color'], true );
 		}
@@ -158,13 +164,16 @@ function register_sdg() {
 			if ( ! add_post_meta( $mypost_id->ID, 'goal', $sdgs[$i]['goal'], true ) ) { 
 				update_post_meta ( $mypost_id->ID, 'goal', $sdgs[$i]['goal'] );
 			}
+			# add/update number/goal meta
+			if ( ! add_post_meta( $mypost_id->ID, 'number', $number, true ) ) { 
+				update_post_meta ( $mypost_id->ID, 'number', $number );
+			}
 			# add/update color meta
 			if ( ! add_post_meta( $mypost_id->ID, 'color', $sdgs[$i]['color'], true ) ) { 
 				update_post_meta ( $mypost_id->ID, 'color', $sdgs[$i]['color'] );
 			}
 			# create tax
-			$number = $i + 1;
-			if ($number < 10) $number = "0".$number;
+			
 			$post_slug = get_post_field( 'post_name', $mypost_id->ID );
 			wp_insert_term(
 				$number.". ".$sdgs[$i]['title'],

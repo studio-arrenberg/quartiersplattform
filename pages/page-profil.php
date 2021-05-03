@@ -39,7 +39,7 @@ if (!is_user_logged_in()) {
 
     
 
-    <!-- bar -->
+    <!-- menubar -->
     <div class="filters-container">
         <div class="filters-wrapper">
             <ul class="filter-tabs">
@@ -76,17 +76,17 @@ if (!is_user_logged_in()) {
 
             root.style.setProperty("--translate-filters-slider", targetTranslateValue);
 
-            document.querySelector(".bar.bar-active").classList.toggle('bar-active');
-            document.querySelector(".bar#" + event.target.dataset.value ).classList.toggle('bar-active');
+            document.querySelector(".menubar.menubar-active").classList.toggle('menubar-active');
+            document.querySelector(".menubar#" + event.target.dataset.value ).classList.toggle('menubar-active');
         });
 
     </script>
 
-    <!-- page bar content -->
+    <!-- page menubar content -->
     <div>
 
 
-        <div id="profil" class="bar bar-active">
+        <div id="profil" class="menubar menubar-active">
 
 
             <?php 
@@ -112,8 +112,8 @@ if (!is_user_logged_in()) {
 
         </div>
 
-
-        <div id="settings" class="bar bar-hidden">
+        <!-- bei menubar-hidden (nicht active) wird UM Disaabled -->
+        <div id="settings" class="menubar menubar-active">
 
 
                 <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
