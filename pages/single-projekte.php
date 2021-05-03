@@ -178,8 +178,6 @@ get_header();
                 </div>
 
 
-
-
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
 
