@@ -164,7 +164,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
                 <?php _e('Mein öffentliches Profil ansehen', 'quartiersplattform'); ?> </a>
 
                 <br>
-                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Logout', 'quartiersplattform'); ?> </a>
+                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
         </div>
 
     </div>
