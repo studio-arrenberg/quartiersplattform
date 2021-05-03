@@ -157,17 +157,15 @@ function create_pages() {
         0 => array('title' => __('Startseite',"quartiersplattform"), 'slug' => 'startseite'),
         1 => array('title' => __('Veranstaltungen', "quartiersplattform"), 'slug' => 'veranstaltungen'),
         2 => array('title' => __('Projektverzeichnis',"quartiersplattform"), 'slug' => 'projektverzeichnis'),
-        // 3 => array('title' => 'Gemeinsam', 'slug' => 'gemeinsam'),
-        // 4 => array('title' => 'Anmerkungen', 'slug' => 'anmerkung'),
-        5 => array('title' => __('Profil',"quartiersplattform"), 'slug' => 'profil'),
-        6 => array('title' => __('Impressum',"quartiersplattform"), 'slug' => 'impressum'),
-        // 7 => array('title' => 'Kontakt', 'slug' => 'kontakt'),
-        8 => array('title' => __('Veranstaltung erstellen',"quartiersplattform"), 'slug' => 'veranstaltung-erstellen'),
-        9 => array('title' => __('Nachricht erstellen',"quartiersplattform"), 'slug' => 'nachricht-erstellen'),
-        10 => array('title' => __('Angebot erstellen',"quartiersplattform"), 'slug' => 'angebot-erstellen'),
-        11 => array('title' => __('Frage erstellen',"quartiersplattform"), 'slug' => 'frage-erstellen'),
-        12 => array('title' => __('Projekt erstellen',"quartiersplattform"), 'slug' => 'projekt-erstellen'),
-        13 => array('title' => __('Projekte',"quartiersplattform"), 'slug' => 'projekte'),
+        3 => array('title' => __('Projekte',"quartiersplattform"), 'slug' => 'projekte'),
+        4 => array('title' => __('Profil',"quartiersplattform"), 'slug' => 'profil'),
+        5 => array('title' => __('Impressum',"quartiersplattform"), 'slug' => 'impressum'),
+        6 => array('title' => __('Veranstaltung erstellen',"quartiersplattform"), 'slug' => 'veranstaltung-erstellen'),
+        7 => array('title' => __('Nachricht erstellen',"quartiersplattform"), 'slug' => 'nachricht-erstellen'),
+        8 => array('title' => __('Angebot erstellen',"quartiersplattform"), 'slug' => 'angebot-erstellen'),
+        9 => array('title' => __('Frage erstellen',"quartiersplattform"), 'slug' => 'frage-erstellen'),
+        10 => array('title' => __('Projekt erstellen',"quartiersplattform"), 'slug' => 'projekt-erstellen'),
+        
     );
 
     for ($i = 0; $i < count($pages); $i++) {

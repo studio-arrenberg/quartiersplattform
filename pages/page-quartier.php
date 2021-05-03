@@ -37,6 +37,14 @@ get_header();
         </div>
     </section>
 
+    <?php 
+
+    if (current_user_can('administrator') && get_field('camilo!!','option')) {
+        reminder_card('no_quartiers_info', 'Bild und Text hinzufügen', 'Beschreibe dein Quartier...'); 
+    }
+
+    ?>
+
     <section>
         <div class="stage-left">
             <div class="pre-header highlight"><b><?php _e("Dein Quartier", "quartiersplattform"); ?></b></div>

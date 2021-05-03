@@ -101,7 +101,7 @@ if( function_exists('acf_add_local_field_group') ):
 					'class' => '',
 					'id' => '',
 				),
-				'default_value' => '',
+				'default_value' => 'Quartier',
 				'placeholder' => __('Name',"quartiersplattform"),
 				'prepend' => '',
 				'append' => '',

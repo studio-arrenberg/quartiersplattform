@@ -15,7 +15,7 @@
 
     <!-- main card -->
     <div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
-        <!-- <a class="flex-col card-link" href="<?php echo esc_url( get_permalink() ); ?>"> -->
+        <a class="flex-col card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
                 
                 <h3 class="card-title-large">
@@ -28,6 +28,7 @@
                     <?php if (!is_single( )) shorten(get_field('text'), '50'); else the_field('text'); ?>
                 </p>
             </div>
+        </a>
 
             <?php
             // get poll meta data

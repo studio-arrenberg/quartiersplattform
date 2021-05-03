@@ -5,7 +5,9 @@ global $current_user;
 if ( current_user_can('administrator') ) { 
 
     $terms = get_field('sdg');
-    // print_r($terms);
+    print_r($terms);
+    print_r(get_post_taxonomies());
+    print_r(wp_get_post_terms($post->ID, 'sdg'));
 
     if( $terms ) { ?>
 
@@ -27,7 +29,8 @@ if ( current_user_can('administrator') ) {
                 'meta_value' => $slug,
             );
 
-            slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
+            // slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
+            card_list($args, $type = 'badge');
 
         endforeach;
         ?>
