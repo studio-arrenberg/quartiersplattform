@@ -1,5 +1,7 @@
 <!-- Projekt Teilen -->
 <?php  
+
+    global $current_user;
     $page_for_posts = get_option( 'page_for_posts' );
 
     if (get_post_status() == 'publish') {
@@ -42,7 +44,7 @@
     </script>
 
 <?php 
-} else {
+} else if ($current_user->ID == $post->post_author) {
     $text = __("Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde.",'quartiersplattform');
     reminder_card('project-share'.get_the_ID(  ), __('Dein Projekt kann nicht geteilt werden','quartiersplattform'), $text);
 } 
