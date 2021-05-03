@@ -94,7 +94,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'label' => __('Über mich', "quartiersplattform"),
                     'name' => 'about',
                     'type' => 'textarea',
-                    'instructions' => __('Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen.🏘', "quartiersplattform"),
+                    'instructions' => __('Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen.', "quartiersplattform"),
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array(

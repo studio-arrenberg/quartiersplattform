@@ -93,7 +93,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'label' => __('Name',"quartiersplattform"),
 				'name' => 'quartiersplattform-name',
 				'type' => 'text',
-				'instructions' => __('Hier kannst du den Namen feslegen, der den Besuchern der Quartiersplattform angezeigt wird.',"quartiersplattform"),
+				'instructions' => __('Hier kannst du den Namen festlegen, der den Besuchern der Quartiersplattform angezeigt wird.',"quartiersplattform"),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
