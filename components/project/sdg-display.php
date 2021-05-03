@@ -25,7 +25,7 @@ if ( current_user_can('administrator') ) {
                 'meta_value' => $slug,
             );
 
-            slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
+            slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
 
         endforeach;
         ?>
