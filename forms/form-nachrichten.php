@@ -10,6 +10,11 @@ if (!is_user_logged_in(  )) {
 ?>
 
 <main id="site-content" role="main">
+
+    <div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
+
     <div class="small-projekt-card">
     <?php
         // Projekt Kachel
