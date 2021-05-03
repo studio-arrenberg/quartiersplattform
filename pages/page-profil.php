@@ -19,68 +19,88 @@ if (!is_user_logged_in()) {
     $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 ?>
 
-<main id="site-content" class="site-content-profil " role="main">
+<!-- site-content-profil -->
 
-    <div class="single-header profil">
-        
-        <?php 
-            // User Avatar
-            $current_user = wp_get_current_user();
-            echo get_avatar( $current_user->user_email, 32 );
-        ?>
+<main id="site-content" class="page-grid " role="main">
 
-        <!-- user name -->
-        <div class="single-header-content">
-            <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
+	<div class="left-sidebar">
+
+		<div class="hidden-small">
+			<?php 
+				$args4 = array(
+					'post_type'=> array('projekte'), 
+					'post_status'=>'publish', 
+					'posts_per_page'=> 20,
+					'orderby' => 'date'
+				);
+			?>  
+
+
+            <?php projekt_carousel(); ?>
+		</div>
+	</div>
+
+
+	<div class="main-content">
+
+        <div class="projekt-header">
+            <div class="projekt-header-emoji">
+                <?php 
+                    // User Avatar
+                    $current_user = wp_get_current_user();
+                    echo get_avatar( $current_user->user_email, 125 );
+                ?>
+            </div>
+            <!-- user name -->
+            <div class="projekt-header-content">
+                <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
+            </div>
         </div>
-
-        
-    </div>
 
     
 
-    <!-- menubar -->
-    <div class="filters-container">
-        <div class="filters-wrapper">
-            <ul class="filter-tabs">
-                <li>
-                    <button class="filter-button filter-active" data-value="profil" data-translate-value="0">
-                        <?php _e('Profil', 'quartiersplattform'); ?> 
-                    </button>
-                </li>
-                <li>
-                    <button class="filter-button" data-value="settings" data-translate-value="200%">
-                        <?php _e('Einstellungen', 'quartiersplattform'); ?> 
-                    </button>
-                </li>
-            </ul>
-        <div class="filter-slider" aria-hidden="true">
-            <div class="filter-slider-rect">&nbsp;</div>
-        </div>
-        </div>
-    </div>
+         <!-- bar -->
+            <div class="filters-container">
+                <div class="filters-wrapper">
+                    <div class="filter-tabs ">
+                        <button class="filter-button filter-active " data-value="summary" data-translate-value="0">
+                            <?php _e('Profil', 'quartiersplattform'); ?>
+                        </button>
+                            <button class="filter-button" data-value="settings" data-translate-value="100%">
+                                <?php _e('Einstellungen', 'quartiersplattform'); ?>
+                            </button>
+                    </div>
+                <div class="filter-slider" aria-hidden="true">
+                    <div class="filter-slider-rect">&nbsp;</div>
+                </div>
+            </div>
+        
 
-    <script>
+                       
 
-        const filterTabs = document.querySelector(".filter-tabs");
+           
+            <script>
 
-        filterTabs.addEventListener("click", (event) => {                
-            const root = document.documentElement;
-            const targetTranslateValue = event.target.dataset.translateValue;
-            // console.log(targetTranslateValue);
-            // console.log(event.target.dataset.value);
+                const filterTabs = document.querySelector(".filter-tabs");
 
-            if (targetTranslateValue == undefined) {
-                return false;
-            }
+                filterTabs.addEventListener("click", (event) => {                
+                    const root = document.documentElement;
+                    const targetTranslateValue = event.target.dataset.translateValue;
+                    // console.log(targetTranslateValue);
+                    // console.log(event.target.dataset.value);
 
-            root.style.setProperty("--translate-filters-slider", targetTranslateValue);
+                    if (targetTranslateValue == undefined) {
+                        return false;
+                    }
 
-            document.querySelector(".menubar.menubar-active").classList.toggle('menubar-active');
-            document.querySelector(".menubar#" + event.target.dataset.value ).classList.toggle('menubar-active');
-        });
+                    root.style.setProperty("--translate-filters-slider", targetTranslateValue);
 
-    </script>
+                    document.querySelector(".bar.bar-active").classList.toggle('bar-active');
+                    document.querySelector(".bar#" + event.target.dataset.value ).classList.toggle('bar-active');
+                });
+
+            </script>
+
 
     <!-- page menubar content -->
     <div>

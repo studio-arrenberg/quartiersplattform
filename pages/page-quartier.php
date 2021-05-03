@@ -20,7 +20,7 @@ get_header();
 
 <main class="quartier" role="main" data-track-content>
 
-    <section class="page-projekte" style="background: url('<?php 
+    <section class="quartier-header bg-image" style="background: url('<?php 
     $image = get_field('field_609021bb178d8', 'option');
     if( !empty( $image ) ){ ?>
         <?php echo esc_url($image['url']); ?>
@@ -34,8 +34,8 @@ get_header();
     <?php 
     }  // !!! define vaariable and maake editable with acf
     ?>')">
-        <div class="stage-center">
-            <div class="pre-header highlight"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div>
+        <div class="stage-center has-bg-blur">
+            <div class="heading-size-2"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div>
             <h1 class="heading-size-1"><?php _e("Willkommen am Arrenberg", "quartiersplattform"); ?></h1>
         </div>
     </section>
@@ -47,8 +47,6 @@ get_header();
     }
 
     ?>
-
-    
 
     <section>
         <div class="stage-center">

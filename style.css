@@ -1982,7 +1982,6 @@ button.toggle {
 /*	8. Landing quartier
 /* -------------------------------------------------------------------------- */
 
-
 .quartier section {
   min-height: 500px;
   display: flex;
@@ -2001,12 +2000,21 @@ button.toggle {
   
 }
 
-.quartier section:first-of-type{
-  margin-top: 100px;
+.quartier-header {
+  margin-top: 100px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
 }
 
 .stage-center{
   text-align: center;
+}
+
+
+.has-bg-blur{
+  color: #fff;
+  text-shadow: 0px 0px 10px black;
 }
 
 .stage-center .card{
@@ -5458,6 +5466,7 @@ margin-top: -30px;
 
 .card-sgd .card-link{
   color: #fff;
+  height: 100%;
 }
 
 .card-content-hidden{
