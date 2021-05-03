@@ -134,7 +134,7 @@ get_header();
         if (count_query($pinned_pages)) {
             ?>
 
-                <h4><?php _e('Wichtige Seiten', 'quartiersplattform'); ?> </h4>
+                 <h4 class="heading-size-3"><?php _e('Wichtige Seiten', 'quartiersplattform'); ?> </h4>
                 <?php card_list($pinned_pages); ?>
 
             <?php            

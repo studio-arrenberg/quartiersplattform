@@ -10,14 +10,13 @@
 if (!is_user_logged_in()) {
     header("Location: ".get_site_url());
     exit();
-}
+    }
 
-acf_form_head();
-wp_deregister_style( 'wp-admin' );
-get_header();
+    acf_form_head();
+    wp_deregister_style( 'wp-admin' );
+    get_header();
 
-$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-
+    $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 ?>
 
 <main id="site-content" class="site-content-profil " role="main">
@@ -119,7 +118,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                 <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
 
-                <h4><?php _e('Einstellungen', 'quartiersplattform'); ?> </h4>
+                 <h4 class="heading-size-3"><?php _e('Einstellungen', 'quartiersplattform'); ?> </h4>
                 <!-- Contact Information -->   
                 <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
                 <br>

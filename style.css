@@ -2056,7 +2056,7 @@ button.toggle {
 }
 
 
-.small-projekt-card .card{
+.small-projekt-card .card img{
   height: 200px !important;
 }
 
@@ -2118,12 +2118,25 @@ button.toggle {
   width: 70px !important;
   text-decoration: none;
   color: #000;
+  cursor: pointer;
   text-align: center;
 }
 
-.badge-link:hover{
+.badge-link:hover, .badge-is-active {
   color: #0091ff;
 }
+
+.shadow-on-hover .badge {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.shadow-on-hover:hover .badge,  .badge-is-active .badge{
+  box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
+
+}
+
+
+
 
 .badge{
   width: 70px;
@@ -2147,12 +2160,12 @@ button.toggle {
 
 .yours::after {
   position: absolute;
-  width: 77px;
-  height: 72px;
+  width: 72px;
+  height: 67px;
   background: linear-gradient(180deg, #0091FF 0%, #68BEFF 100%);
   content: '';
   z-index: -1;
-  border-radius: 22.5px;
+  border-radius: 21px;
 }
 
 
@@ -4908,7 +4921,8 @@ font-weight: 400;
   border-radius: 25px;
   width: 100%;
   background-color: #fff;
-  padding: 20px 15px
+  padding: 20px 15px;
+  margin-bottom: 15px;
 }
 
 .card {
@@ -4972,7 +4986,7 @@ a.card-link{
 
 .card .wp-post-image {
   border-radius: 15px;
-  background: #e7e7e7;
+  background: #fff;
   border: none;
   width: 100%;
   height: auto;
@@ -5533,16 +5547,6 @@ margin-top: -30px;
 
 a:hover .shadow{
   box-shadow: 0 1px  30px rgba(196, 196, 196, 0.9);
-}
-
-
-.shadow-on-hover .badge {
-  transition: box-shadow 0.2s ease-in-out;
-}
-
-.shadow-on-hover:hover .badge{
-  box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
-
 }
 
 
