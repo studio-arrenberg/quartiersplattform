@@ -2007,23 +2007,17 @@ button.toggle {
   text-align: center;
 }
 
+.stage-center .card{
+  text-align: left;
+}
+
 .stage-center p{
-  /* max-width: 700px; */
-  padding-left: 20%;
+  padding-left: 20%;  
   padding-right: 20%;
   margin-bottom: 20px;
 }
 
-
-.link-card-container .link-card p{
-  /* max-width: 700px; */
-  padding-left: 0px;
-  padding-right: 0px;
-  margin-bottom: 0px;
-}
-
-
-.stage-center h2{
+.stage-center > h2{
   text-align: center ;
   width: 100%;
 }
@@ -2031,6 +2025,15 @@ button.toggle {
 .stage-center .has-text-align-left{
   text-align: center;
 }
+
+.link-card-container .card p{
+  /* max-width: 700px; */
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-bottom: 0px;
+}
+
+
 
 .stage-left{
   /* max-width: 800px; */
@@ -2071,6 +2074,11 @@ button.toggle {
   margin-bottom: 10px;
 }
 
+.button-container{
+  width: 100%;
+  text-align: center;
+}
+
 .link-card-container  .card{
   margin-bottom: 0px;
 }
@@ -2079,12 +2087,40 @@ button.toggle {
   height: 200px !important;
 }
 
+.card-stack{
+  width: 510px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius:25px;
+}
+
+.card-stack .card{
+  width: 200px;
+  height: 200px;
+  margin-left: -100px;
+}
+
+
+.card-stack .card:first-of-type{
+  transform: translateX(0px);
+  margin-left: 0px;
+}
+
 
 @media (max-width: 650px) {
   .quartier section {
     flex-direction: column;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .quartier section:first-of-type{
+    min-height: unset;
+    max-height: 40vh;
   }
 
   .link-card-container{
@@ -2102,6 +2138,25 @@ button.toggle {
     padding-left: 0%;
     padding-right: 0%;
   }
+
+
+  .card-stack{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    border-radius:25px;
+  }
+
+  .card-stack .card{
+    width: calc( 50vw - 35px );
+    height: calc( 50vw - 35px );
+    margin-left: -25vw;
+  }
+
 
 }
 
@@ -2129,10 +2184,14 @@ button.toggle {
   position: relative;
 }
 
+.shadow-on-hover {
+  transition: box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
 
 .shadow-on-hover .badge {
-  transition: box-shadow 0.2s ease-in-out;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 
@@ -2199,6 +2258,7 @@ button.toggle {
   .shadow-on-hover:hover,  .badge-is-active {
     box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
     background-color:#fff
+
   }
   
 }
