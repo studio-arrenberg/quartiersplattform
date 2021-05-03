@@ -1210,6 +1210,8 @@ function qp_comment_author( $return, $author, $comment_ID ) {
  */
 function script_managment() {
 
+	// echo "<h1>HELLO WORLD</h1>";
+
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
 	$form_pages = array(
@@ -1252,6 +1254,7 @@ function script_managment() {
 				files_inc_emoji();
 			}
 			else {
+				// echo "<br><br><br><br>! Hello"; 
 				files_edit();
 			}
 
@@ -1304,6 +1307,7 @@ function script_managment() {
 		files_minimum();
 	}
 	else {
+		// echo "<br><br><br><br>! ????? Page";
 		files_minimum();
 	}
 
