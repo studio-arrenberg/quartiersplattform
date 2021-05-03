@@ -3078,6 +3078,36 @@ function project_card($id, $type = "post") {
 
 }
 
+/**
+ * No Content Card Function
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $icon icon
+ * @param string $title title
+ * @param string $text text
+ * @param string $link_text link_text
+ * @param string $link_url link_url
+ * @return html
+ */
+function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') {
+
+	if (!$icon && !$title && !$text) {
+		return false;
+	}
+
+	set_query_var( 'qp_no_content_icon', $icon );
+	set_query_var( 'qp_no_content_title', $title );
+	set_query_var( 'qp_no_content_text', $text );
+	set_query_var( 'qp_no_content_link_text', $link_text );
+	set_query_var( 'qp_no_content_link_url', $link_url );
+
+	// get template part
+	get_template_part( 'components/general/no-content-card' );
+
+}
+
+
 
 
 /**

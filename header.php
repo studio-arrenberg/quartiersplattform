@@ -61,10 +61,6 @@ wp_maintenance_mode();
         }
     ?>
 
-    <?php 
-$page_impressum = get_page_by_title( 'Impressum' );
-print_r($page_impressum);
-    ?>
 
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="site-header-content">
