@@ -105,7 +105,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'placeholder' => __('Name',"quartiersplattform"),
 				'prepend' => '',
 				'append' => '',
-				'maxlength' => '',
+				'maxlength' => '16',
 			),
 			// array(
 			// 	'key' => 'field_6024ef4c228a9',
