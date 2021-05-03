@@ -16,4 +16,10 @@ $args_chronik = array(
 
 card_list($args_chronik);
 
+if(count_query($args4) == FALSE){
+    $text = "Es wurden bisher noch keine Projektupdates veröffentlicht. Schau öfter vorbei, um auf dem Laufenden zu bleiben.";
+    no_content_card("􀌤", "In der Projektchronik wurde noch nichts veröffentlicht.", $text, $link_text = '', $link_url = '');
+}
+
+
 ?>

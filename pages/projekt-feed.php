@@ -43,8 +43,11 @@ get_header();
 	?> 
 
 	<?php 
+	
+	if(count_query($args4) == FALSE){
 		$text = "Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.";
-		no_content_card("􀌤", "Hier kannst du noch keine Projekte entdecken.", $text, $link_text = 'Projekt erstellen', $link_url = get_site_url().'/projekt-erstellen')
+		no_content_card("􀌤", "Hier kannst du noch keine Projekte entdecken.", $text, $link_text = 'Projekt erstellen', $link_url = get_site_url().'/projekt-erstellen');
+	}
 	?>	
 
 	<div class="newsfeed" data-grid>

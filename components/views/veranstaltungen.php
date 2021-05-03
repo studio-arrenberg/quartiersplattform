@@ -25,14 +25,15 @@ if (count_query($veranstaltungen)) {
 
         <h4 class="heading-size-3"><?php _e('Anstehende Veranstaltungen', 'quartiersplattform'); ?> </h4>
         <br>
-        <?php card_list($veranstaltungen); ?>
+        <?php card_list($veranstaltungen); 
+        
+        ?>
 
     <?php            
 }
 else {
-    // keine veranstaltungen
-    // funktion ..?
-    _e('Hier gibt es leider noch keine Veranstaltungen.', 'quartiersplattform');
+    $text = "Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu erhalten. Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream Link veröffentlichen.";
+    no_content_card("􀉊", "Hier gibt es leider noch keine Veranstaltungen.", $text, $link_text = 'Veranstaltung erstellen', $link_url = "");
 }
 
 ?>
