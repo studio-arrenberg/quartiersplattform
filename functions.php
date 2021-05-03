@@ -2930,7 +2930,7 @@ function projekt_carousel( ) {
 			<?php  
 			
 			if (wp_is_mobile(  )) {
-				slider($args4, 'badge', 4, 'false');
+				slider($args4, 'badge', 4, 'false', 'start');
 			}
 			else {
 				card_list($args4, 'badge');
