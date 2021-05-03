@@ -35,11 +35,28 @@ get_header();
             <h1 class="heading-size-1"><?php _e("Willkommen am Arrenberg", "quartiersplattform"); ?></h1>
         </div>
     </section>
+    
+    <?php 
+    $image = get_field('field_609021bb178d8', 'option');
+    if( !empty( $image ) ){ ?>
+        <img class="quartier-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+    <?php 
+    }  
+    else
+    {
+        ?>
+        <img class="quartier-image" src="<?php get_site_url()."/assets/images/quartier.png"; ?>" alt="" />
+        <?php 
+        echo get_site_url()."/assets/images/quartier.png";
+        ?>
+    <?php 
+    } 
+    ?>
 
     <?php 
 
-    if (current_user_can('administrator') && get_field('camilo!!','option')) {
-        reminder_card('no_quartiers_info', 'Bild und Text hinzufügen', 'Beschreibe dein Quartier...'); 
+    if (current_user_can('administrator') && get_field('field_609021bb178d8','option')) {
+        reminder_card('no_quartiers_info', 'Bild auf der Startseite hinzufügen', 'Beschreibe dein Quartier...'); 
     }
 
     ?>

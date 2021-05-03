@@ -89,6 +89,30 @@ if( function_exists('acf_add_local_field_group') ):
 				'mime_types' => '',
 			),
 			array(
+				'key' => 'field_609021bb178d8',
+				'label' => 'Bild für die Quartiersstartseite',
+				'name' => 'quartier_image',
+				'type' => 'image',
+				'instructions' => 'Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet wird.',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'medium',
+				'library' => 'uploadedTo',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+			array(
 				'key' => 'field_6024ebe66b644',
 				'label' => __('Name',"quartiersplattform"),
 				'name' => 'quartiersplattform-name',
@@ -503,3 +527,32 @@ if( function_exists('acf_add_local_field_group') ):
 			
 			endif;
 
+
+			// if( function_exists('acf_add_local_field_group') ):
+
+			// 	acf_add_local_field_group(array(
+			// 		'key' => 'group_609021b4e454f',
+			// 		'title' => 'Bild für die Quartiersstartseite',
+			// 		'fields' => array(
+						
+			// 		),
+			// 		'location' => array(
+			// 			array(
+			// 				array(
+			// 					'param' => 'options_page',
+			// 					'operator' => '==',
+			// 					'value' => 'theme-general-settings',
+			// 				),
+			// 			),
+			// 		),
+			// 		'menu_order' => 0,
+			// 		'position' => 'normal',
+			// 		'style' => 'default',
+			// 		'label_placement' => 'top',
+			// 		'instruction_placement' => 'label',
+			// 		'hide_on_screen' => '',
+			// 		'active' => true,
+			// 		'description' => '',
+			// 	));
+				
+			// 	endif;
