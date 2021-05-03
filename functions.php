@@ -932,6 +932,17 @@ add_action('admin_init', function() {
 		});
 
 	}
+	# Impressum reminder
+	$page_impressum = get_page_by_title( 'Impressum' );
+	if (!get_the_content('','',$page_impressum->ID) && class_exists('acf_pro') && class_exists('UM')) {
+
+		add_action('admin_notices', function() {
+			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" keine Datenschutzerklärung.",'quartiersplattform').'</strong>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">'.__("Datenschutzerklärung erstellen",'quartiersplattform').'</a>';
+			reminder_backend('impressum-reminder-setup', $notice.'<br>'.$link, 'updated notice');
+		});
+
+	}
 	# reminder for settings
 	if (class_exists('acf_pro') && class_exists('UM')) {
 

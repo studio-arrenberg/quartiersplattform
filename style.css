@@ -7087,12 +7087,12 @@ a.text-link:hover {
   
 }
 
-.bar {
+.menubar {
   display: none;
   opacity: 0;
 }
 
-.bar-active {
+.menubar-active {
   display: block;
   opacity: 1 !important;
   transition: opacity 1s; 
