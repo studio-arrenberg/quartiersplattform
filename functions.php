@@ -2836,12 +2836,40 @@ add_action( 'wp_ajax_nopriv_pin_toggle', 'pin_toggle_callback' );
  *
  * @since Quartiersplattform 1.7
  *
- * @param string $slug date
- * @param string $title title
- * @param string $body body
+ * @param id $id id of page post type
  * @return string html
  */
 function projekt_carousel( ) {
+
+
+	$postID = get_the_ID(  );
+	// echo "<br><br><br>ID:".$postID;
+
+	$cpts = array(
+		'veranstaltungen',
+		'umfragen',
+		'nachrichten'
+	);
+
+	if (in_array(get_post_type(), $cpts)) {
+		$project_ID = get_term_id(get_the_ID(  ));
+		// echo "<br><br><br>SEARCHED:".$project_ID;
+		// echo "<br>".get_the_title($project_ID);
+	}
+	else if (get_post_type() == 'projekte') {
+		$project_ID = $postID;
+		// echo "<br><br><br>OKAY:".$project_ID;
+	}
+	else if ($_GET['project']) {
+		// $tag = get_term_by('slug', $_GET['project'], 'projekte');
+		$page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
+		$project_ID = $page->ID;
+		// print_r($page);
+		// echo "<br><br><br>Form:".$_GET['project']."id: ".$project_ID;
+	}
+	else {
+		$project_ID = '';
+	}
 
 	$array = [];
 
@@ -2882,6 +2910,7 @@ function projekt_carousel( ) {
 
 	set_query_var( 'highlight_display', true );
 	set_query_var( 'projekt_carousel_add', true );
+	set_query_var( 'projekt_carousel_projekt_id', $project_ID );
 
 	?>  
 		<!-- projekt carousel -->
