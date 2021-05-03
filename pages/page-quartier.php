@@ -32,9 +32,17 @@ get_header();
     <section class="page-projekte" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.",".$map_zoom.",".$bearing.",".$pitch."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
         <div class="stage-center">
             <div class="pre-header highlight"><b><?php _e("Quartiersplattform", "quartiersplattform"); ?></b></div>
-            <h1 class="stage-title"><?php _e("Willkommen am Arrenberg", "quartiersplattform"); ?></h1>
+            <h1 class="heading-size-1"><?php _e("Willkommen am Arrenberg", "quartiersplattform"); ?></h1>
         </div>
     </section>
+
+    <?php 
+
+    if (current_user_can('administrator') && get_field('camilo!!','option')) {
+        reminder_card('no_quartiers_info', 'Bild und Text hinzufügen', 'Beschreibe dein Quartier...'); 
+    }
+
+    ?>
 
     <section>
         <div class="stage-center">
@@ -50,67 +58,81 @@ get_header();
             </div>
     </section>
 
-    <section class="section-full-width">
+    <section class="">
         <div class="stage-center">
-            <div class="pre-header highlight"><b><?php _e("Lokale Projekte", "quartiersplattform"); ?></b></div>
-            <h2 class="stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
+            <!-- <div class="pre-header highlight"><b><?php _e("Lokale Projekte", "quartiersplattform"); ?></b></div> -->
+            <h2 class="heading-size-2"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben! Veröffentliche eigene Projekte und finde Untersützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
-            <a class="button" href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Zu den Projekten", "quartiersplattform"); ?></a>
-            <a class="button" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Zur Projektübersicht", "quartiersplattform"); ?></a>
+           
         </div>
-        <div class="grid projekt-card-container">
-                    
-            <?php 
-                $pinned_projects = array(
-                    'post_type' => 'projekte',
-                    'posts_per_page' => -1,
-                    'order_by' => 'date',
-                    'order' => 'DESC',
-                    'meta_key'   => 'pin_main',
-                    'meta_value' => array(true, 'true')
-                );
-                card_list($pinned_projects);
-            ?>
+        <div class="link-card-container">            <?php 
+                    $pinned_projects = array(
+                        'post_type' => 'projekte',
+                        'posts_per_page' => -1,
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'meta_key'   => 'pin_main',
+                        'meta_value' => array(true, 'true')
+                    );
+                    card_list($pinned_projects);
+                ?>
         </div>
+        <a class="button  is-style-outline" href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Neuigkeiten & Projektupdates", "quartiersplattform"); ?></a>
+        <a class="button" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Alle Projekte anzeigen", "quartiersplattform"); ?></a>
     </section>
 
 
     <section>
-        <div class="stage-left">
-            <div class="pre-header highlight"><b><?php _e("Lokale Veranstaltungen", "quartiersplattform"); ?></b></div>
+        <div class="stage-center">
             <h2 class="stage-title"><?php _e("Save the date!", "quartiersplattform"); ?></h2>
             <p><?php _e("Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!", "quartiersplattform"); ?></p>
-            <a class="button" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
-        </div>
-        <div class="link-card-container">
-            <?php 
-                    $args4 = array(
-                        'post_type'=>'veranstaltungen', 
-                        'post_status'=>'publish', 
-                        'posts_per_page'=> 20,
-                        'meta_key' => 'event_date',
-                        'orderby' => 'meta_val',
-                        'order' => 'ASC',
-                        'offset' => '0', 
-                        'meta_query' => array(
-                            array(
-                                'key' => 'event_date', 
-                                'value' => date("Y-m-d"),
-                                'compare' => '>=', 
-                                'type' => 'DATE'
+            <div class="link-card-container">
+                <?php 
+                        $args4 = array(
+                            'post_type'=>'veranstaltungen', 
+                            'post_status'=>'publish', 
+                            'posts_per_page'=> 20,
+                            'meta_key' => 'event_date',
+                            'orderby' => 'meta_val',
+                            'order' => 'ASC',
+                            'offset' => '0', 
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'event_date', 
+                                    'value' => date("Y-m-d"),
+                                    'compare' => '>=', 
+                                    'type' => 'DATE'
+                                )
                             )
-                        )
-                    );
-                ?>  
+                        );
+                    ?>  
+                    <?php card_list($args4);?>
+                </div>
+            <a class="button" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+        <div class="stage-center">
+            <h1><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h1>
+
+            <div class="link-card-container">
+                <?php 
+                        $args4 = array(
+                            'post_type'=>'sdg', 
+                            'post_status'=>'publish', 
+                            'posts_per_page'=> -1,
+                            'orderby'   => 'meta_value_num',
+                            'meta_key'  => 'goal',
+                            'order'     => 'ASC',
+                        );
+                    ?>  
                     <?php card_list($args4);?>
             </div>
         </div>
-    </section>
-
-    <section>
-        <h1><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h1>
-        <p>
-        <?php _e('Die Vereinten Nationen haben 2015 im Rahmen der Agenda 2030 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?></p>
         <a class="button" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
     </section>
 
