@@ -47,7 +47,7 @@ else {
 
         <?php 
         if( !get_field('phone', $userid) && !get_field('mail', $userid) && $userid == get_current_user_id()) {
-            $text = __('Hier kannst du deine Kontaktdaten hinterlegen, <br> damit du kontaktiert werden kannst.','quartiersplattform');
+            $text = __('Hier kannst du deine Kontaktdaten hinterlegen,','quartiersplattform')."<br>".__(" damit du kontaktiert werden kannst.",'quartiersplattform');
             reminder_card('no-contact-information', 'Kontaktdaten hinterlegen', $text, 'Zum Profil', get_site_url().'/profil' );
         }
         

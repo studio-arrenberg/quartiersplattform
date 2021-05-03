@@ -20,7 +20,7 @@ $args_chronik = array(
 if (count_query($args_chronik)) {
 
     ?>
-    <h4><?php _e('Gepinnte Beiträge:', 'quartiersplattform'); ?> </h4>
+    <h4><?php _e('Gepinnte Beiträge', 'quartiersplattform'); ?> </h4>
     <?php
     card_list($args_chronik);
 }
