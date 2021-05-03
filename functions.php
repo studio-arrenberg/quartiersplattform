@@ -1658,6 +1658,9 @@ function cpt_save_worker( $post_id ) {
 
 		}
 
+		wp_redirect( get_post_permalink($post_id) ); 
+		exit;
+
 	}
 
 }
