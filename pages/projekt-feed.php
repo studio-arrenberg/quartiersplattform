@@ -31,7 +31,6 @@ get_header();
 		// 'Impressum', home_url( ).'/impressum'
 	?>
 
-
 	<?php // projekt_carousel(); ?>
 
 	<?php 
@@ -42,6 +41,11 @@ get_header();
 			'orderby' => 'date'
 		);
 	?> 
+
+	<?php 
+		$text = "Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.";
+		no_content_card("􀌤", "Hier kannst du noch keine Projekte entdecken.", $text, $link_text = 'Projekt erstellen', $link_url = get_site_url().'/projekt-erstellen')
+	?>	
 
 	<div class="newsfeed" data-grid>
 		<?php set_query_var( 'additional_info', true ); ?>

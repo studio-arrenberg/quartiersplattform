@@ -168,8 +168,6 @@ get_header();
 
                     ?>
                     
-
-
                 </div>
 
 
@@ -215,7 +213,7 @@ get_header();
 
                     <?php if ( current_user_can('administrator') ) { ?>
                         <div class="publish-form">
-                            <h2><?php _e('SDGs bearbeiten', 'quartiersplattform'); ?></h2>
+                            <h2><?php _e('Ziele für nachhaltige Entwicklung bearbeiten', 'quartiersplattform'); ?></h2>
                             <br>
 
                             <?php
