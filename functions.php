@@ -898,7 +898,7 @@ add_action('admin_init', function() {
 	if (class_exists('acf_pro') && class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __("Gratulation, deine Quartiersplattform wurde erfolgreich aufgesetzt.",'quartiersplattform');
+			$notice = __("Gratulation, deine Quartiersplattform wurde erfolgreich eingerichtet.",'quartiersplattform');
 			reminder_backend('setup-finished', $notice, 'updated notice');
 		});
 
@@ -937,7 +937,7 @@ add_action('admin_init', function() {
 
 
 		add_action('admin_notices', function() {
-			$notice = __('Richte das Logo sowie den Namen deiner Quartiersplattform ein ', 'quartiersplattform');
+			$notice = __('Hier kannst du das Logo sowie den Namen deiner Quartiersplattform einrichten. ', 'quartiersplattform');
 			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/admin.php?page=theme-general-settings">'.__("Zu den Einstellungen",'quartiersplattform').'</a>';
 			reminder_backend('qp-settings-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});

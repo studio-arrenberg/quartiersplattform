@@ -39,13 +39,13 @@ if (class_exists('acf_pro')) {
     $qp_name = get_field('quartiersplattform-name','option');
 }
 else {
-    $qp_name = "Quartier";
+    $qp_name = __("Quartier",'quartiersplattform');
 }
 
 // defined menus
 $defined_menu_item = array(
     0 => array ('title' => $qp_name, 'page_name' => 'Startseite', 'ID' => '100100', 'attr' => $qp_name),
-    1 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
+    1 => array ('title' => __('Projekte','quartiersplattform'), 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
     // 2 => array ('title' => 'Projekte', 'page_name' => 'Projekte', 'ID' => '100300', 'attr' => 'Projekte'),
     // 3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'Gemeinsam'),
     // 4 => array ('title' => 'Impressum', 'page_name' => 'Impressum', 'ID' => '100700', 'attr' => 'fifth'),
@@ -255,8 +255,8 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => '',
                 'default_value' => 0,
                 'ui' => 1,
-                'ui_on_text' => 'gepinnt',
-                'ui_off_text' => 'nicht gepinnt',
+                'ui_on_text' => __('Gepinnt','quartiersplattform'),
+                'ui_off_text' => __('Nicht gepinnt','quartiersplattform'),
             ),
         ),
         'location' => array(

@@ -47,17 +47,12 @@ get_header();
     </div>
 
     <?php 
-    
         emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
-    
     }
     else {
-
-        reminder_card('create-project', __('Einloggen bitte','quartiersplattform'), __('.....','quartiersplattform'), __('Login','quartiersplattform'), home_url().'/login/');
-
+        $text = __('Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
+		reminder_card('create-project', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Anmelden','quartiersplattform'), home_url().'/login/');
     }
-
-    
     ?>
 
 </main><!-- #site-content -->
