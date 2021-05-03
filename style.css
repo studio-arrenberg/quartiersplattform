@@ -7098,6 +7098,17 @@ a.text-link:hover {
   transition: opacity 1s; 
 }
 
+.bar {
+  display: none;
+  opacity: 0;
+}
+
+.bar-active {
+  display: block;
+  opacity: 1 !important;
+  transition: opacity 1s; 
+}
+
 /* acf toggle in form */
 div.acf-switch.-on span.acf-switch-on {
   display: block;
