@@ -58,6 +58,23 @@ get_header();
             </h2>
             <h1 class="heading-size-1"><?php the_title(); ?><br><br></h1>
 
+            <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+            <div class="site-content">
+                <?php extract_links(get_field('text')); ?>
+            </div>
+
+            <div class="gutenberg-content">
+                <?php
+                    // Gutenberg Editor Content
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
+                ?>
+            </div>
+
             <?php
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
 
@@ -74,25 +91,6 @@ get_header();
             <?php
             }
             ?>
-
-        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-
-        <div class="site-content">
-            <?php extract_links(get_field('text')); ?>
-
-        </div>
-
-        <div class="gutenberg-content">
-            <?php
-                // Gutenberg Editor Content
-                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                    the_excerpt();
-                } else {
-                    the_content( __( 'Continue reading', 'twentytwenty' ) );
-                }
-            ?>
-        </div>
         </div>
 
         <div class="small-projekt-card">

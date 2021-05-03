@@ -23,60 +23,53 @@ get_header();
 	</div>
 
 	<div class="main-content">
+        <div class="page-card shadow">
+            <a class="close-card-link" onclick="history.go(-1);">
+                <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+            </a>
+            <?php
+            if ( have_posts() ) {
+                while ( have_posts() ) {
+                the_post();
+                
+                if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
 
-    <?php
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-            the_post();
-            
-            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+                // prep image url
+                $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
-			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
+                if ( $image_url ) {
+                    $cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
+                    $cover_header_classes = ' bg-image';
+                }
+                
+                // get project by Term
+                $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+                $the_slug = $term_list[0]->slug;
+                $project_id = $term_list[0]->description;
+                ?>
+                <h2 class="heading-size-3 highlight">
+                    <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
+                </h2>
+                <h1 class="heading-size-1"><?php the_title(); ?><br><br></h1>
+                
+                
 
-			if ( $image_url ) {
-				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
-				$cover_header_classes = ' bg-image';
-            }
-            
-            // get project by Term
-            $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-            $the_slug = $term_list[0]->slug;
-            $project_id = $term_list[0]->description;
-            ?>
-
-            <div class="single-header">
-                <!-- post title -->
-                <div class="single-header-content">
-                    <h1><?php the_title(); ?></h1>
-                    <h3 class="single-header-slogan">
-                        <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> 
-                        <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
-                    </h3>
-
-                    <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                        // post_visibility_toggle( get_the_ID(  ) ); 
-                        pin_toggle();
-                    ?>
-                    
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Diese Veranstaltung endgültig löschen?', 'quartiersplattform'); ?>')"
-                        href="<?php get_permalink(); ?>?action=delete"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
-                        
-                    <?php
-                    }
+               
+                <?php
+                }
                 ?>
 
-                </div>
-
-                <!-- Bild -->
                 <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
-            </div>
+
+
+        <div class="site-content">
+            <?php extract_links(get_field('text')); ?>
+
+        </div>
+
 
             <!-- Eventtext felder gibt es noch nicht -->
-            <div class="site-content">
             
                 <?php 
                 // text
@@ -96,6 +89,20 @@ get_header();
 
                 ?>
 
+
+                <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                        pin_toggle(); 
+                   ?> 
+
+                    <div class="simple-card">
+                        <div class="button-group">
+                            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
+                            <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')"
+                                href="<?php get_permalink(); ?>?action=delete"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
+                        </div>
+                    </div>
+
             </div>
 
             <div class="gutenberg-content">
@@ -111,6 +118,15 @@ get_header();
 
             </div>
 
+            <?php 
+            // Projekt Kachel
+            project_card($post->ID);
+            ?>
+
+    
+
+
+
             <?php author_card(); ?>
 
             <?php 
@@ -118,44 +134,7 @@ get_header();
                 calendar_download($post); 
             ?>
 
-            <br>
-            <br>
-
-
-            <?php
-                // weitere Nachrichten
-                $args2 = array(
-                    'post_type'=> array('nachrichten', 'veranstaltungen'), 
-                    'post_status'=>'publish', 
-                    'posts_per_page'=> 6,
-                    'order' => 'DESC',
-                    'post__not_in' => array(get_the_ID()),
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'projekt',
-                            'field' => 'slug',
-                            'terms' => ".$the_slug."
-                        )
-                    )
-                );
-                
-                $my_query = new WP_Query($args2);
-                if ($my_query->post_count > 0) {
-                ?>
-                    <h2>Weitere Nachrichten & Veranstaltungen</h2>
-                <?php
-                    slider($args2,'card', '1','false');
-                }
-            ?>
-            <br>
-
-        <?php 
-        // Projekt Kachel
-        project_card($post->ID);
-        ?>
-
     
-
         <!-- Map -->
         <!-- not ready yet -->
         <?php if ( current_user_can('administrator') ) { // new feature only for admins 
@@ -235,6 +214,40 @@ get_header();
     
 ?>
 
+</div>
+</div>
+
+
+<div class="right-sidebar">
+        <?php
+        // weitere Nachrichten
+		$args2 = array(
+			'post_type'=> array('nachrichten', 'veranstaltungen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 6,
+            'order' => 'DESC',
+            'post__not_in' => array(get_the_ID()),
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$the_slug."
+                )
+            )
+        );
+        
+        $my_query = new WP_Query($args2);
+        if ($my_query->post_count > 0) {
+        ?>
+            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus dem Projekt', 'quartiersplattform'); ?> </h3>
+            <br>
+        <?php
+            card_list($args2);
+        }
+
+    ?>
+    <br>
+    </div>
 </div>
 
 </main><!-- #site-content -->

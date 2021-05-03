@@ -9,7 +9,9 @@ if (!is_user_logged_in(  )) {
 
 
 ?>
+<main id="site-content" class="page-grid" role="main">
 
+<<<<<<< Updated upstream
 <main id="site-content" role="main">
 
 
@@ -36,8 +38,29 @@ if (!is_user_logged_in(  )) {
     ?>
 
     
+=======
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
 
-    <div class="publish-form">
+	<div class="main-content">
+        
+        
+        <div class="small-projekt-card">
+            <?php
+                // Projekt Kachel
+                project_card($_GET['project'], 'slug');
+            ?>
+        </div>
+
+        <?php 
+            //Überprüfen ob das Projekt öffentlich ist
+            // echo get_post_status( $_GET['project'] );
+            reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
+        ?>
+>>>>>>> Stashed changes
+
+        <div class="publish-form">
 
         <h2><?php _e('Erstelle eine Nachricht', 'quartiersplattform'); ?> </h2>
         <br>

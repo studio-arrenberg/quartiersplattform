@@ -9,7 +9,18 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
+
+	<div class="main-content">
+
+    <div class="page-card shadow">
+        <a class="close-card-link" onclick="history.go(-1);">
+                <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+        </a>
 
     <?php
 
@@ -22,36 +33,46 @@ get_header();
 
             ?>
 
-            <div class="card-container card-container__center card-container__large ">
                 <?php get_template_part('elements/card', get_post_type()); ?>
-            </div>
-
             <br>
 
-
             <?php
-
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-
                 pin_toggle();
 
-                $array = get_post_meta(get_the_ID(), 'polls', true);
-                $array[$i]['total_voter'];
+            }
+            ?>
 
-                if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
-                
-                ?>
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
-                <?php
-                }
-                ?>
 
-                <a class="button is-style-outline" onclick="return confirm('<?php _e('Umfrage permanent löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
-                <?php _e(' Umfrage löschen', 'quartiersplattform'); ?></a>
-            
+            <div class="simple-card">
+                <div class="button-group">
+
+                    <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                        $array = get_post_meta(get_the_ID(), 'polls', true);
+                        $array[$i]['total_voter'];
+
+                        if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
+                        
+                        ?>
+                            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
+
+                        <?php
+                        }
+                        ?> 
+                        
+                        <a class="button is-style-outline button-red" onclick="return confirm('Dieses Umfrage endgültig löschen?')"
+                            href="<?php get_permalink(); ?>?action=delete"><?php _e('Umfrage löschen', 'quartiersplattform'); ?></a>
+                    </div>
+                </div>
             <?php
             }
             ?>
+
+            
+
+
+        </div>
 
             <!-- Projekt Teilen -->
             <?php $page_for_posts = get_option( 'page_for_posts' ); ?>
@@ -161,6 +182,8 @@ get_header();
 
 
 ?>
+
+</div>
 
 </main><!-- #site-content -->
 

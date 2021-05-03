@@ -529,7 +529,7 @@ img,
 embed,
 object {
   display: block;
-  /* height: auto; */
+  height: auto;
   max-width: 100%;
 }
 
@@ -1732,9 +1732,11 @@ button.toggle {
 
 .single-header-image {
   border-radius: 20px;
+  width: 100%;
   margin: 0px auto 20px auto;
   /* object-fit: contain; */
 }
+
 
 .single-header-content {
   margin: 20px 0px;
@@ -5004,7 +5006,6 @@ a.card-link{
   flex-grow: 1;
   color: #000;
   text-decoration: none !important;
-  min-height: 100px;
 }
 
 .call_to_action a.card-link{
@@ -5174,6 +5175,7 @@ font-weight: 700;
 .pre-card  a img{
   border-radius: 10px;
   margin-right: 5px;
+  height: intrinsic;
 }
 
 
@@ -5341,7 +5343,11 @@ margin-top: -30px;
 
   .landscape{
     height: unset;
-    max-height: 300px;
+    min-height: 150px;
+  }
+
+  .landscape .card-link {
+    min-height: 150px;
   }
 }
 
@@ -6754,6 +6760,8 @@ form.poll .answers{
   top: 5px;
   padding: 15px;
   border-radius: 15px;
+  z-index: 1;
+
 }
 
 .close-card-link:hover{
@@ -7180,6 +7188,10 @@ div.acf-switch span.acf-switch-off {
 }
 div.acf-switch span.acf-switch-on {
   display: none;
+}
+
+.small-margin{
+  margin: 15px 0px;
 }
 
 /* reminder card */
