@@ -1,11 +1,11 @@
 <?php
-// Anstehende Veranstaltungen
+// Aktuelle Veranstaltungen
 $args_chronik = array(
     'post_type'=>'veranstaltungen', 
     'post_status'=>'publish', 
     'posts_per_page'=> 2,
     'meta_key' => 'event_date',
-    'orderby' => 'meta_val',
+    'orderby' => 'rand',
     'order' => 'ASC',
     'offset' => '0', 
     'meta_query' => array(
@@ -26,11 +26,13 @@ $args_chronik = array(
 
 );
 
-if (count_query($args_chronik)) {
-
-    echo "<h3>Anstehende Veranstaltung</h3>";
-    card_list($args_chronik);
+$my_query = new WP_Query($args_chronik);
+if ($my_query->post_count > 0) {
+    ?>
+        <h2><?php _e('Aktuelle Veranstaltung', 'quartiersplattform'); ?> </h2>
+    <?php 
+    // slider($args_chronik,'card', '1','false'); 
+    get_template_part('elements/card', get_post_type());
 
 }
-
 ?>

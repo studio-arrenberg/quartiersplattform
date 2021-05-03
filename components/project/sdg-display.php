@@ -38,7 +38,8 @@ if ( current_user_can('administrator') ) {
     else if ($current_user->ID == $post->post_author) {
 
         $text = __("Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht genau was die nachhaligen Entwicklungsziele sind? Informiere dich auf der Seite SDGs worum es sich dabei handelt.",'quartiersplattform');
-        reminder_card('project-share'.get_the_ID(  ), __('Ziele für nachhaltige Entwicklung','quartiersplattform'), $text);
+        $link = get_site_url()."/sdgs";
+        reminder_card('project-share'.get_the_ID(  ), __('Ziele für nachhaltige Entwicklung','quartiersplattform'), $text, "Ziele für nachhaltige Entwicklung", $link ) ;
         
     }
     

@@ -56,7 +56,7 @@ get_header();
             <h2 class="stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben! Veröffentliche eigene Projekte und finde Untersützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
             <a class="button" href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Zu den Projekten", "quartiersplattform"); ?></a>
-            <a class="button" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Zur Projekt liste", "quartiersplattform"); ?></a>
+            <a class="button" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Zur Projektübersicht", "quartiersplattform"); ?></a>
         </div>
         <div class="grid projekt-card-container">
                     
