@@ -7,10 +7,16 @@ if (!is_user_logged_in(  )) {
     exit(wp_redirect( home_url( ) ));
 }
 
+
 ?>
 
 <main id="site-content" role="main">
-
+    <?php 
+        //Überprüfen ob das Projekt öffentlich ist
+        // echo get_post_status( $_GET['project'] );
+        
+        reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
+    ?>
     <div class="left-sidebar">
 		<?php projekt_carousel(); ?>
 	</div>
@@ -23,6 +29,7 @@ if (!is_user_logged_in(  )) {
 </div>
 
     <div class="publish-form">
+
         <h2><?php _e('Erstelle eine Nachricht', 'quartiersplattform'); ?> </h2>
         <br>
 
