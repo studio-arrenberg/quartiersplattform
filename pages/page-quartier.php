@@ -42,6 +42,7 @@ get_header();
     <?php 
 
     if (current_user_can('administrator') && !get_field('field_609021bb178d8','option') ) {
+        // !!! add link to backend!
         reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.'); 
     }
 

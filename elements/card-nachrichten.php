@@ -31,6 +31,7 @@ if (strlen($the_slug < 1 )) {
                     <b><?php _e('Nachricht', 'quartiersplattform'); ?> </b>
                     <br>
                     <?php _e('von ', 'quartiersplattform'); ?> <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), true);  ?>
                 </span>
             </a>
         </div>

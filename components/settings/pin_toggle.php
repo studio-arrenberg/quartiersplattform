@@ -1,40 +1,47 @@
-<<<<<<< Updated upstream
-<?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
-=======
+<<<<<<< HEAD
 <div class="small-margin">
->>>>>>> Stashed changes
-
-    <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
-
-    <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
-        <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
-        <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
-        <?php _e(' Das Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
-        </span>
-        <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-        <?php _e('Das Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
-        <span class="acf-spinner" style="display: inline-block;"></span>
-    </label> 
-
-<<<<<<< Updated upstream
-<?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
-
-    <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
-
-    <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
-        <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
-        <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
-        <?php _e(' Das Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
-        </span>
-        <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-        <?php _e('Das Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
-        <span class="acf-spinner" style="display: inline-block;"></span>
-    </label> 
-
-<?php } ?>
+    <?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
 =======
+<?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
+<div class="small-margin">
+>>>>>>> 63d6191dddbd020495b61ea688a9d85bbfa0311d
+
+        <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
+
+        <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
+            <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
+            <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
+            <?php _e(' Das Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
+            </span>
+            <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
+            <?php _e('Das Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
+            <span class="acf-spinner" style="display: inline-block;"></span>
+        </label> 
+
+<<<<<<< HEAD
+    <?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
+=======
+<?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
+>>>>>>> 63d6191dddbd020495b61ea688a9d85bbfa0311d
+
+        <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint', 'quartiersplattform'); ?></h4>
+
+        <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
+            <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
+            <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
+            <?php _e(' Das Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
+            </span>
+            <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
+            <?php _e('Das Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
+            <span class="acf-spinner" style="display: inline-block;"></span>
+        </label> 
+
+<<<<<<< HEAD
+    <?php } ?>
+=======
+<?php } ?>
+>>>>>>> 63d6191dddbd020495b61ea688a9d85bbfa0311d
 </div>
->>>>>>> Stashed changes
 
 <script>
     
