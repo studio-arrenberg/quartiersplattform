@@ -140,6 +140,8 @@ function register_sdg() {
 			add_post_meta( $post_id, 'number', $number, true );
 			# add color meta
 			add_post_meta( $post_id, 'color', $sdgs[$i]['color'], true );
+			# add color meta
+			add_post_meta( $post_id, 'slogan', $sdgs[$i]['slogan'], true );
 		}
 		else {
 			$mypost_id = get_page_by_title( $sdgs[$i]['title'], '', 'sdg' );
@@ -162,8 +164,12 @@ function register_sdg() {
 			if ( ! add_post_meta( $mypost_id->ID, 'color', $sdgs[$i]['color'], true ) ) { 
 				update_post_meta ( $mypost_id->ID, 'color', $sdgs[$i]['color'] );
 			}
+			# add/update color meta
+			if ( ! add_post_meta( $mypost_id->ID, 'slogan', $sdgs[$i]['slogan'], true ) ) { 
+				update_post_meta ( $mypost_id->ID, 'slogan', $sdgs[$i]['slogan'] );
+			}
+
 			# create tax
-			
 			$post_slug = get_post_field( 'post_name', $mypost_id->ID );
 			wp_insert_term(
 				$number.". ".$sdgs[$i]['title'],

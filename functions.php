@@ -937,8 +937,8 @@ add_action('admin_init', function() {
 	if (!get_the_content('','',$page_impressum->ID) && class_exists('acf_pro') && class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" keine Datenschutzerklärung.",'quartiersplattform').'</strong>';
-			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">'.__("Datenschutzerklärung erstellen",'quartiersplattform').'</a>';
+			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" kein Impressum.",'quartiersplattform').'</strong>';
+			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/edit.php?post_type=page">'.__("Impressum erstellen",'quartiersplattform').'</a>';
 			reminder_backend('impressum-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
 
@@ -1210,6 +1210,8 @@ function qp_comment_author( $return, $author, $comment_ID ) {
  */
 function script_managment() {
 
+	// echo "<h1>HELLO WORLD</h1>";
+
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
 	$form_pages = array(
@@ -1252,7 +1254,8 @@ function script_managment() {
 				files_inc_emoji();
 			}
 			else {
-				files_minimum();
+				// echo "<br><br><br><br>! Hello"; 
+				files_edit();
 			}
 
 
@@ -1304,6 +1307,7 @@ function script_managment() {
 		files_minimum();
 	}
 	else {
+		// echo "<br><br><br><br>! ????? Page";
 		files_minimum();
 	}
 
@@ -1353,12 +1357,12 @@ function files_edit() {
 	// scripts for ajax
 	wp_enqueue_script( 'jquery-form' );
 
-	wp_deregister_script('jquery-ui-draggable');
-	wp_deregister_script('jquery-ui-mouse');
-	wp_deregister_script('jquery-ui-resizable');
-	wp_deregister_script('jquery-ui-sortable');
-	wp_deregister_script('jquery-ui-widget');
-	wp_deregister_script('jquery-ui-selectable');
+	// wp_deregister_script('jquery-ui-draggable');
+	// wp_deregister_script('jquery-ui-mouse');
+	// wp_deregister_script('jquery-ui-resizable');
+	// wp_deregister_script('jquery-ui-sortable');
+	// wp_deregister_script('jquery-ui-widget');
+	// wp_deregister_script('jquery-ui-selectable');
 
 	wp_deregister_script('twentytwenty-color-calculations');
 
@@ -1653,6 +1657,9 @@ function cpt_save_worker( $post_id ) {
 			wp_update_post( $my_post ); // Update the post into the database
 
 		}
+
+		wp_redirect( get_post_permalink($post_id) ); 
+		exit;
 
 	}
 
@@ -2493,7 +2500,7 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 
 	if ($detail) {
-		$string = $string." um ".wp_date('H:i', $date);
+		$string = $string.__(" um ",'quartiersplattform').wp_date('H:i', $date);
 	}
 
 	return $string;
@@ -3073,7 +3080,7 @@ function project_card($id, $type = "post") {
 		$args = array(
 			'name'        => $term_list[0]->slug,
 			'post_type'   => 'projekte',
-			'post_status' => 'publish',
+			'post_status' => array('publish', 'draft'),
 			'posts_per_page' => '1'
 		);
 
@@ -3083,7 +3090,7 @@ function project_card($id, $type = "post") {
 		$args = array(
 			'p'         => $id,
   			'post_type' => 'any',
-			'post_status' => 'publish',
+			'post_status' => array('publish', 'draft'),
 			'posts_per_page' => '1'
 		);
 
@@ -3093,7 +3100,7 @@ function project_card($id, $type = "post") {
 		$args = array(
 			'name'        => $id,
 			'post_type'   => 'projekte',
-			'post_status' => 'publish',
+			'post_status' => array('publish', 'draft'),
 			'posts_per_page' => '1'
 		);
 
@@ -3133,6 +3140,40 @@ function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') 
 
 	// get template part
 	get_template_part( 'components/general/no-content-card' );
+
+}
+
+
+/**
+ * Backend Edit Button
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return html
+ */
+function qp_backend_edit_link() {
+
+	if ( ! current_user_can('administrator') ) { 
+		return false;
+	}
+
+	$post = get_post( $id );
+    if ( ! $post ) {
+        return;
+    }
+ 
+    $url = get_edit_post_link( $post->ID );
+    if ( ! $url ) {
+        return;
+    }
+ 
+    if ( null === $text ) {
+        $text = __( 'Beitrag im Wordpress System bearbeiten', 'quartiersplattform' );
+    }
+ 
+    $link = '<a class="button is-style-outline ' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
+
+	echo $link;
 
 }
 

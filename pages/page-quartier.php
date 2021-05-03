@@ -56,7 +56,7 @@ get_header();
             <h2 class="stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben! Veröffentliche eigene Projekte und finde Untersützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
             <a class="button" href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Zu den Projekten", "quartiersplattform"); ?></a>
-           
+            <a class="button" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Zur Projekt liste", "quartiersplattform"); ?></a>
         </div>
         <div class="grid projekt-card-container">
                     
@@ -109,7 +109,8 @@ get_header();
 
     <section>
         <h1><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h1>
-        <p>preview....</p>
+        <p>
+        <?php _e('Die Vereinten Nationen haben 2015 im Rahmen der Agenda 2030 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?></p>
         <a class="button" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
     </section>
 

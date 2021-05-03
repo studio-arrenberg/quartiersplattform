@@ -7,6 +7,9 @@ get_header();
 
 <main id="site-content" role="main">
 
+    <div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
 
 
     <?php 

@@ -31,7 +31,6 @@ get_header();
 		// 'Impressum', home_url( ).'/impressum'
 	?>
 
-
 	<?php // projekt_carousel(); ?>
 
 	<?php 
@@ -42,6 +41,14 @@ get_header();
 			'orderby' => 'date'
 		);
 	?> 
+
+	<?php 
+	
+	if(!count_query($args4)){
+		$text = __("Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.",'quartiersplattform');
+		no_content_card("􀌤", __("Hier kannst du noch keine Projekte entdecken",'quartiersplattform'), $text, $link_text = __('Projekt erstellen','quartiersplattform'), $link_url = get_site_url().'/projekt-erstellen');
+	}
+	?>	
 
 	<div class="newsfeed" data-grid>
 		<?php set_query_var( 'additional_info', true ); ?>

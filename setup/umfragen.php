@@ -124,7 +124,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => __('Fragen',"quartiersplattform"),
                 'name' => 'questions',
                 'type' => 'repeater',
-                'instructions' => __('Stelle die Auswahlmöglichkeiten für deine Umfrage ein.',"quartiersplattform"),
+                'instructions' => __('Hier kannst du die Auswahlmöglichkeiten für deine Umfrage festlegen.',"quartiersplattform"),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -136,7 +136,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'min' => 2,
                 'max' => 0,
                 'layout' => 'table',
-                'button_label' => '',
+                'button_label' => 'Weitere Auswahlmöglichkeit',
                 'sub_fields' => array(
                     array(
                         'key' => 'field_601855d3aa4c0',

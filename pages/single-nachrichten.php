@@ -96,7 +96,7 @@ get_header();
         </div>
 
         <div class="small-projekt-card">
-            <?php project_card($post->ID); ?>
+            <?php project_card($post->ID);?>
         </div>
         <?php author_card(); ?>
 
