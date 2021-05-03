@@ -8,7 +8,11 @@ get_header();
 <main id="site-content" role="main">
 
 
+
     <?php 
+    
+    if (is_user_logged_in(  )) {
+
         reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen.','quartiersplattform'));
 	?>
 
@@ -42,7 +46,19 @@ get_header();
 
     </div>
 
-    <?php emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker ?>
+    <?php 
+    
+        emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
+    
+    }
+    else {
+
+        reminder_card('create-project', __('Einloggen bitte','quartiersplattform'), __('.....','quartiersplattform'), __('Login','quartiersplattform'), home_url().'/login/');
+
+    }
+
+    
+    ?>
 
 </main><!-- #site-content -->
 

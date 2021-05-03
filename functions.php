@@ -1126,18 +1126,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 /**
- * Replace Core jQuery Version
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function replace_core_jquery_version() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
-} add_action( 'wp_enqueue_scripts', 'replace_core_jquery_version' );
-
-/**
  * Register Scripts & Stylesheets
  *
  * @since Quartiersplattform 1.0
@@ -1150,10 +1138,10 @@ function register_scripts() {
 
 	// create my own version codes
     // $my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
-    // $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
+    $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
      
     // wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
-    // wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
+    wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
     // wp_enqueue_style ( 'my_css' );
 
 } add_action('init', 'register_scripts', 9);
@@ -1205,103 +1193,180 @@ function qp_comment_author( $return, $author, $comment_ID ) {
 /**
  * Conditinally load jQuery and Emoji files
  *
- * @since Quartiersplattform 1.0
+ * @since Quartiersplattform 1.7
  *
  * @return void
  */
-function load_scripts() {
+function script_managment() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-    if (
-		!is_admin() 
-		// && is_front_page()
-		&& strpos($REQUEST_URI,'/profil/') === false
-		&& strpos($REQUEST_URI,'/frage-erstellen/') === false
-		&& strpos($REQUEST_URI,'/angebot-erstellen/') === false
-		&& strpos($REQUEST_URI,'/projekt-erstellen/') === false
-		&& strpos($REQUEST_URI,'/nachricht-erstellen/') === false
-		&& strpos($REQUEST_URI,'/umfrage-erstellen/') === false
-		&& strpos($REQUEST_URI,'/veranstaltung-erstellen/') === false
-		&& strpos($REQUEST_URI,'/register/') === false
-		&& !$_GET['action'] == 'edit'
-		&& $current_user->ID != $post->post_author
-	 ) {
+	$form_pages = array(
+		'/frage-erstellen/',
+		'/angebot-erstellen/',
+		'/projekt-erstellen/',
+		'/nachricht-erstellen/',
+		'/umfrage-erstellen/',
+		'/veranstaltung-erstellen/',
+	);
 
-		// jQuery min
-		wp_deregister_script('jquery-ui-draggable');
-		wp_deregister_script('jquery-ui-mouse');
-		wp_deregister_script('jquery-ui-resizable');
-		wp_deregister_script('jquery-ui-sortable');
-		wp_deregister_script('jquery-ui-widget');
-		wp_deregister_script('jquery-ui-selectable');
-		// wp_deregister_script('jquery-ui-core');
-		// wp_deregister_script( 'jquery-core' );
+	$um_pages = array(
+		'/profil/',
+		'/register/',
+		'/login/',
+	);
 
-		// initially called for ajax
-		// wp_deregister_script( 'jquery-core' );
+	$qp_pages = array(
+		'/sdgs/',
+	);
 
-		// jQuery
-        // wp_deregister_script('jquery');
-		wp_register_script('jquery', false, false, true);
+	$cpts = array(
+		'projekte',
+		'veranstaltungen',
+		'umfragen',
+		'nachrichten'
+	);
 
-		// emoji picker
-		wp_deregister_script('emoji_picker-config');
-		wp_deregister_script('emoji_picker-util');
-		wp_deregister_script('emoji_picker-emojiarea');
-		wp_deregister_script('emoji_picker-picker');
+	global $current_user;
+	global $post;
 
-		// wp customize scripts
-		wp_deregister_script('twentytwenty-color-calculations');
+	// check for Form pages
+	foreach ( $form_pages as $key => $um_url ) {
+		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
+			// return;
+			// echo "<br><br><br><br>! Hello"; 
 
-		// scripts for ajax
-		wp_enqueue_script( 'jquery-form' );
-		wp_enqueue_script( 'jquery-core' );
+			if ($um_url == '/projekt-erstellen/') {
+				// echo "<br><br><br><br>! Emojis please ;)";
+				files_inc_emoji();
+			}
+			else {
+				files_minimum();
+			}
 
-	 }
 
-}
-add_action('init', 'load_scripts', 11);
-
-/**
- * Register emoji picker script
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function emoji_picker() { 
-
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
-
-    if (
-		strpos($REQUEST_URI,'/frage-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/angebot-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
-		|| $_GET['action'] == 'edit'
-		// || strpos($REQUEST_URI,'/projekte/') !== false
-		// || is_front_page()
-		|| $current_user->ID == $post->post_author
-	 ) {
-		
-		wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
-		wp_enqueue_script('emoji_picker-config');
-		wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js',  false, false, false);
-		wp_enqueue_script('emoji_picker-util');
-		wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js',  false, false, true);
-		wp_enqueue_script('emoji_picker-emojiarea');
-		wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
-		wp_enqueue_script('emoji_picker-picker');
-		wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
-		wp_enqueue_style( 'emoji_picker-css' );
-
-		// wp_register_script('emoji-picker-init', get_template_directory_uri() .'/assets/js/emoji-picker-init.js', array('jQuery', 'emoji_picker-config'), false, true);
-		// wp_enqueue_script('emoji-picker-init');
-
+			return false;
+		}
 	}
-      
+	// check for UM Pages
+	foreach ( $um_pages as $key => $um_url ) {
+		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
+			// return;
+			// echo "<br><br><br><br>! Hello kjj"; 
+			files_minimum();
+			return false;
+		}
+	}
+	// check for QP Pages
+	foreach ( $qp_pages as $key => $um_url ) {
+		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
+			// return;
+			// echo "<br><br><br><br>! Hello kjj"; 
+			files_none();
+			return false;
+		}
+	}
+	// landing page
+	if (is_front_page()) {
+		// echo "<br><br><br><br>! Front Page";
+		files_none();
+	} 
+	// user is post owner
+	else if ($current_user->ID == $post->post_author && get_post_type() != 'projekte') {
+		// echo "<br><br><br><br>! Post Owner ;)";
+		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
+		files_edit();
+	}
+	else if ($current_user->ID == $post->post_author && get_post_type() == 'projekte') {
+		// echo "<br><br><br><br>! Projekt Owner ;)";
+		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
+		files_inc_emoji();
+	}
+	// projekt visitor
+	else if (in_array(get_post_type(),$cpts)) {
+		// echo "<br><br><br><br>! CPT Page visitor";
+		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
+		files_minimum();
+	}
+	else if (strpos($REQUEST_URI,'/projekte/')) {
+		// echo "<br><br><br><br>! Feed Page";
+		files_minimum();
+	}
+	else {
+		files_minimum();
+	}
+
+
 }
-add_action("wp_enqueue_scripts", "emoji_picker");
+add_action( 'wp_enqueue_scripts', 'script_managment' );
+
+function files_inc_emoji() {
+
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
+
+	wp_register_script('emoji_picker-config', get_template_directory_uri() .'/assets/emoji-picker/config.js',  false, false, true);
+	wp_enqueue_script('emoji_picker-config');
+	wp_register_script('emoji_picker-util', get_template_directory_uri() .'/assets/emoji-picker/util.js',  false, false, false);
+	wp_enqueue_script('emoji_picker-util');
+	wp_register_script('emoji_picker-emojiarea', get_template_directory_uri() .'/assets/emoji-picker/jquery.emojiarea.js',  false, false, true);
+	wp_enqueue_script('emoji_picker-emojiarea');
+	wp_register_script('emoji_picker-picker', get_template_directory_uri() .'/assets/emoji-picker/emoji-picker.js', false, false, true);
+	wp_enqueue_script('emoji_picker-picker');
+	wp_register_style( 'emoji_picker-css', get_template_directory_uri() .'/assets/emoji-picker/emoji.css' );
+	wp_enqueue_style( 'emoji_picker-css' );
+
+	// scripts for ajax
+	wp_enqueue_script( 'jquery-form' );
+
+}
+function files_minimum() {
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
+	// scripts for ajax
+	wp_enqueue_script( 'jquery-form' );
+
+	wp_deregister_script('jquery-ui-draggable');
+	wp_deregister_script('jquery-ui-mouse');
+	wp_deregister_script('jquery-ui-resizable');
+	wp_deregister_script('jquery-ui-sortable');
+	wp_deregister_script('jquery-ui-widget');
+	wp_deregister_script('jquery-ui-selectable');
+
+	wp_deregister_script('twentytwenty-color-calculations');
+}
+function files_edit() {
+
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
+	// scripts for ajax
+	wp_enqueue_script( 'jquery-form' );
+
+	wp_deregister_script('jquery-ui-draggable');
+	wp_deregister_script('jquery-ui-mouse');
+	wp_deregister_script('jquery-ui-resizable');
+	wp_deregister_script('jquery-ui-sortable');
+	wp_deregister_script('jquery-ui-widget');
+	wp_deregister_script('jquery-ui-selectable');
+
+	wp_deregister_script('twentytwenty-color-calculations');
+
+}
+function files_none() {
+
+	wp_deregister_script('jquery');
+
+	wp_deregister_script('jquery-ui-draggable');
+	wp_deregister_script('jquery-ui-mouse');
+	wp_deregister_script('jquery-ui-resizable');
+	wp_deregister_script('jquery-ui-sortable');
+	wp_deregister_script('jquery-ui-widget');
+	wp_deregister_script('jquery-ui-selectable');
+
+	wp_deregister_script('twentytwenty-color-calculations');
+
+}
+
 
 
 /**
@@ -2294,6 +2359,7 @@ function emoji_picker_init($id) {
 		?>
 
 		<script>
+// jQuery(function ($) {
 
 			// get element
 			var el = $("#<?php echo $id; ?>");
