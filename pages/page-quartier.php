@@ -19,16 +19,7 @@ get_header();
 ?>
 
 <main class="quartier" role="main" data-track-content>
-    <?php
-          # map picture variables
-          $location = get_field('map', 'option');
-          $latlong = "7.128,51.2485";
-          $map_zoom = 16.48; 
-          $bearing = 0;
-          $pitch = 60;
-          $width = 1280;
-          $height = 900;
-    ?>
+
     <section class="page-projekte" style="background: url('<?php 
     $image = get_field('field_609021bb178d8', 'option');
     if( !empty( $image ) ){ ?>
@@ -41,7 +32,7 @@ get_header();
         ?>
         <?php echo $image_url; ?>
     <?php 
-    } 
+    }  // !!! define vaariable and maake editable with acf
     ?>')">
         <div class="stage-center">
             <div class="pre-header highlight"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div>
@@ -50,7 +41,7 @@ get_header();
     </section>
     <?php 
 
-    if (current_user_can('administrator') && !get_field('field_609021bb178d8','option')) {
+    if (current_user_can('administrator') && !get_field('field_609021bb178d8','option') ) {
         reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.'); 
     }
 
