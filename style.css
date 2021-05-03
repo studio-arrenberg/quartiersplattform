@@ -2128,9 +2128,10 @@ button.toggle {
 
 .shadow-on-hover .badge {
   transition: box-shadow 0.2s ease-in-out;
+  border-radius: 20px;
 }
 
-.shadow-on-hover:hover .badge,  .badge-is-active .badge{
+.shadow-on-hover:hover,  .badge-is-active {
   box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
 
 }

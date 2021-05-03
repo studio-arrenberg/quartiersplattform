@@ -163,7 +163,7 @@ if (!is_user_logged_in()) {
                 <?php _e('Mein öffentliches Profil ansehen', 'quartiersplattform'); ?> </a>
 
                 <br>
-                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Logout', 'quartiersplattform'); ?> </a>
+                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
         </div>
 
     </div>
