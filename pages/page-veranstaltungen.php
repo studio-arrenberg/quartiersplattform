@@ -45,7 +45,7 @@ get_header();
 			if (is_user_logged_in(  )) {
 				get_template_part('components/smart-card/projekte');
 				
-				$text = __('Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und poste den Termin zu deiner Veranstaltung.','quartiersplattform');
+				$text = __('Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und veröffentliche eine Veranstaltung.','quartiersplattform');
 				reminder_card(__('Erstelle eine Veranstaltung','quartiersplattform'), 'Veröffentliche eine Veranstaltung', $text, '', '' );
 				
 				// call_to_action_card('bg_green', 'projekt-erstellen', 'Erstelle ein Projekt', 'Lege ein Projekt an, profitiere von der Community und verändere dein Quartier!' );

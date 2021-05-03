@@ -29,37 +29,34 @@ get_header();
           $width = 1280;
           $height = 900;
     ?>
-    <section class="page-projekte" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.",".$map_zoom.",".$bearing.",".$pitch."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
+    <section class="page-projekte" style="background: url('<?php 
+    $image = get_field('field_609021bb178d8', 'option');
+    if( !empty( $image ) ){ ?>
+        <?php echo esc_url($image['url']); ?>
+    <?php 
+    }  
+    else
+    {
+        $image_url = get_template_directory_uri()."/assets/images/quartier.png";
+        ?>
+        <?php echo $image_url; ?>
+    <?php 
+    } 
+    ?>')">
         <div class="stage-center">
             <div class="pre-header highlight"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div>
             <h1 class="heading-size-1"><?php _e("Willkommen am Arrenberg", "quartiersplattform"); ?></h1>
         </div>
     </section>
-    
-    <?php 
-    $image = get_field('field_609021bb178d8', 'option');
-    if( !empty( $image ) ){ ?>
-        <img class="quartier-image" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-    <?php 
-    }  
-    else
-    {
-        ?>
-        <img class="quartier-image" src="<?php get_site_url()."/assets/images/quartier.png"; ?>" alt="" />
-        <?php 
-        echo get_site_url()."/assets/images/quartier.png";
-        ?>
-    <?php 
-    } 
-    ?>
-
     <?php 
 
-    if (current_user_can('administrator') && get_field('field_609021bb178d8','option')) {
-        reminder_card('no_quartiers_info', 'Bild auf der Startseite hinzufügen', 'Beschreibe dein Quartier...'); 
+    if (current_user_can('administrator') && !get_field('field_609021bb178d8','option')) {
+        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.'); 
     }
 
     ?>
+
+    
 
     <section>
         <div class="stage-center">
@@ -106,7 +103,7 @@ get_header();
 
     <section>
         <div class="stage-center">
-            <h2 class="heading-size-1 stage-title"><?php _e("Save the date!", "quartiersplattform"); ?></h2>
+            <h2 class="heading-size-1 stage-title"><?php _e("Veranstaltungen in deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!", "quartiersplattform"); ?></p>
             <div class="link-card-container">
                 <?php 
