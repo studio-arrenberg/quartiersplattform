@@ -137,7 +137,7 @@ get_header();
     <section>
         <div class="stage-center">
             <h2 class="heading-size-1 stage-title"><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h2>
-            <p><?php _e("Die Vereinten Nationen haben 2015 im Rahmen der Agenda 2030 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.", "quartiersplattform"); ?></p>
+            <p><?php _e("Die Vereinten Nationen haben 2015 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.", "quartiersplattform"); ?></p>
             <div class="card-stack shadow-on-hover">
                 <?php 
                     $args = array(
