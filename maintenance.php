@@ -122,7 +122,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
           <div class="card shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://arrenberg.app">
-              <h4>Arrenberg</h4>
+               <h4 class="heading-size-3">Arrenberg</h4>
               <h5>Wuppertal</h5>
             </a>
           </div>
@@ -137,7 +137,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
           <div class="card  shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://langerfeld.app">
-              <h4>Langerfeld</h4>
+               <h4 class="heading-size-3">Langerfeld</h4>
               <h5>Wuppertal</h5>
             </a>
           </div>

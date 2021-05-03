@@ -61,7 +61,6 @@ wp_maintenance_mode();
         }
     ?>
 
-    
 
     <header id="site-header" class="<?php echo $menu; ?>">
         <div class="site-header-content">

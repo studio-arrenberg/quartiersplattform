@@ -1,4 +1,4 @@
-<h4><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint.', 'quartiersplattform'); ?></h4>
+ <h4 class="heading-size-3"><?php _e('Hier kannst du einstellen, ob das Projekt auf der Startseite erscheint.', 'quartiersplattform'); ?></h4>
 
 <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
     <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >

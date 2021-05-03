@@ -37,7 +37,7 @@ get_header();
 
         <br>
 
-        <h4>Kontakt</h4>
+         <h4 class="heading-size-3">Kontakt</h4>
 
         <?php author_card(true); ?>
 

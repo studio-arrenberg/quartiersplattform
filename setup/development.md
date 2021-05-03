@@ -31,6 +31,7 @@
 - Restrukturierte Quartiersseite
 - Cookie Disclaimer
 - Über Mich
+- Ziele für Nachhaltige Entwicklung 
 ### Bugs
 - Umfragen im Newsfeed
 - Ajax mit Nonce Sicherheit

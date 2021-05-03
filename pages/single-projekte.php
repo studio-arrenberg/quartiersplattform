@@ -213,29 +213,30 @@ get_header();
 
                     </div>
 
+                    <?php if ( current_user_can('administrator') ) { ?>
+                        <div class="publish-form">
+                            <h2><?php _e('SDGs bearbeiten', 'quartiersplattform'); ?></h2>
+                            <br>
 
-                    <div class="publish-form">
-                        <h2><?php _e('SDGs bearbeiten', 'quartiersplattform'); ?></h2>
-                        <br>
+                            <?php
+                                acf_form (
+                                    array(
+                                        'form' => true,
+                                        'return' => '%post_url%',
+                                        'submit_value' => __('Änderungen speichern','quartiersplattform'),
+                                        'post_title' => false,
+                                        'post_content' => false,    
+                                        'uploader' => 'basic',
+                                        // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                        'fields' => array(
+                                            'field_602e74121ff45',
+                                        ),
+                                    )
+                                );
+                            ?>
 
-                        <?php
-                            acf_form (
-                                array(
-                                    'form' => true,
-                                    'return' => '%post_url%',
-                                    'submit_value' => __('Änderungen speichern','quartiersplattform'),
-                                    'post_title' => false,
-                                    'post_content' => false,    
-                                    'uploader' => 'basic',
-                                    // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
-                                    'fields' => array(
-                                        'field_602e74121ff45',
-                                    ),
-                                )
-                            );
-                        ?>
-
-                    </div>
+                        </div>
+                    <?php } ?>
 
                     <h2><?php _e('Projekt Löschen', 'quartiersplattform'); ?></h2>
                     <p><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>

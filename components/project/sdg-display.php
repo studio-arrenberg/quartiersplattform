@@ -3,6 +3,7 @@
 if ( current_user_can('administrator') ) { 
 
     $terms = get_field('sdg');
+    // print_r($terms);
 
     if( $terms ) { ?>
 
@@ -14,14 +15,17 @@ if ( current_user_can('administrator') ) {
             $tax = get_term( $term, 'sdg' );
             $slug = $tax->slug;
 
+            // echo $slug;
+
             $args = array(
                 'post_type'=>'sdg', 
                 'post_status'=>'publish', 
                 'posts_per_page'=> -1,
-                'name'=> $tax->slug 
+                'meta_key'   => 'number',
+                'meta_value' => $slug,
             );
 
-            slider($args, $type = 'badge', $slides = '2', $dragfree = 'false');
+            slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
 
         endforeach;
         ?>
