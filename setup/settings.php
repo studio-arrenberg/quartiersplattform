@@ -526,33 +526,3 @@ if( function_exists('acf_add_local_field_group') ):
 			));
 			
 			endif;
-
-
-			// if( function_exists('acf_add_local_field_group') ):
-
-			// 	acf_add_local_field_group(array(
-			// 		'key' => 'group_609021b4e454f',
-			// 		'title' => 'Bild für die Quartiersstartseite',
-			// 		'fields' => array(
-						
-			// 		),
-			// 		'location' => array(
-			// 			array(
-			// 				array(
-			// 					'param' => 'options_page',
-			// 					'operator' => '==',
-			// 					'value' => 'theme-general-settings',
-			// 				),
-			// 			),
-			// 		),
-			// 		'menu_order' => 0,
-			// 		'position' => 'normal',
-			// 		'style' => 'default',
-			// 		'label_placement' => 'top',
-			// 		'instruction_placement' => 'label',
-			// 		'hide_on_screen' => '',
-			// 		'active' => true,
-			// 		'description' => '',
-			// 	));
-				
-			// 	endif;
