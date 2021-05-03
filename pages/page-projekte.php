@@ -33,7 +33,8 @@ get_header();
 		// get published posts
 		$args_public = array(
 			'post_type' => 'projekte',
-			'post_status' => array('publish')    
+			'post_status' => array('publish'),
+			'posts_per_page'=> -1,   
 		);
 		$args_public = new WP_Query($args_public);
 		while ( $args_public->have_posts() ) {
@@ -47,7 +48,8 @@ get_header();
 			$args_private = array(
 				'post_type' => 'projekte',
 				'author__in' => $current_user->ID,
-				'post_status' => array('pending', 'draft', 'auto-draft')    
+				'post_status' => array('pending', 'draft', 'auto-draft'),
+				'posts_per_page'=> -1,
 			);
 			$args_private = new WP_Query($args_private);
 			while ( $args_private->have_posts() ) {
@@ -60,16 +62,32 @@ get_header();
 		$args4 = array(
 			'post_type'=> array('projekte'), 
 			'post__in' => $array,
-			'post_status'=>'any', 
-			'posts_per_page'=> 50,
+			'post_status'=> 'any', 
+			'posts_per_page'=> -1,
 			'orderby' => 'modified'
 		);
 
+		if (count_query($args4)) {
+
+			?>
+
+			<div class="grid-4col" data-grid>
+				<?php card_list($args4);?>
+			</div>
+
+			<?php 
+
+		}
+		else {
+
+			$text = __("Camilo",'quartiersplattform');
+    		no_content_card("􀌤", __("Camilo",'quartiersplattform'), $text, $link_text = '', $link_url = '');
+
+		}
+
 		?>  
 		
-		<div class="grid-4col" data-grid>
-			<?php card_list($args4);?>
-		</div>
+		
 	
 	</div>
 

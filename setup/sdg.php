@@ -131,7 +131,7 @@ function register_sdg() {
 			# create post
 			$post_id = wp_insert_post( $my_post );
 
-			echo "<br><br><br><br>".$sdgs[$i]['content'].$title;
+			// echo "<br><br><br><br>".$sdgs[$i]['content'].$title;
 			# add class meta
 			add_post_meta( $post_id, 'class', $sdgs[$i]['class'], true );
 			# add number/goal meta
@@ -177,6 +177,7 @@ function register_sdg() {
 				array(
 					'description' => $sdgs[$i]['slogan'],
 					'slug'        => $number
+					// 'slug' => $sdgs[$i]['title']
 				) 
 			);
 		}

@@ -73,17 +73,23 @@ get_header();
 					$args4 = array(
 						'post_type'=> 'projekte', 
 						'post_status'=> 'publish', 
-						'posts_per_page'=> 6, 
+						'posts_per_page'=> -1, 
 						'order' => 'rand',
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'sdg',
 								'field' => 'slug',
-								'terms' => get_post_field( 'post_name' ),
+								'terms' => get_field('number'),
+								// 'field' => 'term_id',
+								// 'terms' => array('8',8, 10, 13),
+								// 'terms' => get_post_field( 'post_name' ),
+								// 'terms' => array('sgds',0,1,'0','1','06',8,19,'06. Sauberes Wasser und sanitäre Einrichtungen', 'Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten'),
 							)
 						)
 					);
+					
 					slider($args4, $type = 'badge', $slides = '1', $dragfree = 'false');
+					// list_card($args4, $type = 'badge');
 				?>
 
 

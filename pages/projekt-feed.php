@@ -46,20 +46,29 @@ get_header();
 	
 	if(!count_query($args4)){
 		$text = __("Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.",'quartiersplattform');
-		no_content_card("􀌤", __("Hier kannst du noch keine Projekte entdecken",'quartiersplattform'), $text, $link_text = __('Projekt erstellen','quartiersplattform'), $link_url = get_site_url().'/projekt-erstellen');
+		no_content_card("􀌤", __("Hier kannst du noch keine Inhalte entdecken",'quartiersplattform'), $text, $link_text = __('Projekt erstellen','quartiersplattform'), $link_url = get_site_url().'/projekt-erstellen');
+	}
+	else {
+		?>
+
+		<div class="newsfeed" data-grid>
+			<?php set_query_var( 'additional_info', true ); ?>
+			<?php card_list($args4); ?>
+			<?php set_query_var( 'additional_info', false ); ?>
+		</div>
+
+		<div class="newsfeed_loadmore">
+			<a onclick="more()" class="button"><?php _e('Mehr Projektinhalte laden', 'quartiersplattform'); ?> </a>
+			<span class="acf-spinner" style="display: inline-block;"></span>
+		</div>
+
+
+		<?php 
+
 	}
 	?>	
 
-	<div class="newsfeed" data-grid>
-		<?php set_query_var( 'additional_info', true ); ?>
-		<?php card_list($args4); ?>
-		<?php set_query_var( 'additional_info', false ); ?>
-    </div>
 
-	<div class="newsfeed_loadmore">
-		<a onclick="more()" class="button"><?php _e('Mehr Projektinhalte laden', 'quartiersplattform'); ?> </a>
-		<span class="acf-spinner" style="display: inline-block;"></span>
-	</div>
 	
 	<script>
 
