@@ -15,7 +15,6 @@ get_header();
     <?php 
     
     if (is_user_logged_in(  )) {
-
         reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen.','quartiersplattform'));
 	?>
 

@@ -33,8 +33,8 @@ if(!count_query($args_chronik) && $current_user->ID != $post->post_author){
 }
 else if (!count_query($args_chronik) && $current_user->ID == $post->post_author) {
     // card for project owner
-    $text = __("Camilo",'quartiersplattform');
-    no_content_card("􀌤", __("Camilo",'quartiersplattform'), $text, $link_text = '', $link_url = '');
+    $text = __("Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen in deinem Quartier über das Projekt zu informieren.",'quartiersplattform');
+    no_content_card("􀌤", __("Du hast noch keine Beiträge veröffentlicht",'quartiersplattform'), $text, $link_text = '', $link_url = '');
 }
 
 

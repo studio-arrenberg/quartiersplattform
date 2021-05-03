@@ -18,7 +18,6 @@ __('In der Projektchronik wurde noch nichts veröffentlicht.', 'quartiersplattfo
 __('Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.', 'quartiersplattform');
 
 
-
 // Projekt Update E-Mails
 
 // Projektupdate Mail

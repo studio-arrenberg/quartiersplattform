@@ -191,13 +191,13 @@ if (empty($phase_color)) {
         src="<?php echo get_template_directory_uri()?>/assets/vpp-animation/VPP_Stromampel_Animation_<?php echo $phase_color; ?>.svg" />
 </div>
 
-
+<!-- 
 <div class="card-container card-container__center">
 
     <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vppprojekt.jpg', '/wuppertal-spart-watt'); ?>
 
 </div>
-
+ -->
 
 
 <script>

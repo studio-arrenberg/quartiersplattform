@@ -10,7 +10,7 @@
 <?php 
 
 if (!get_field('text') && $current_user->ID == $post->post_author) {
-    $text = __('Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte besser zu erklären.','quartiersplattform');
+    $text = __('Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte noch besser zu erklären.','quartiersplattform');
     reminder_card('projekt-description-reminder'.get_the_ID(), __('Beschreibung hinzufügen','quartiersplattform'), $text);
 }
 
