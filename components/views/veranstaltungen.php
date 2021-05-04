@@ -32,7 +32,7 @@ if (count_query($veranstaltungen)) {
     <?php            
 }
 else {
-    $text = __("Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft veranstaltest, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen.",'quartiersplattform');
+    $text = __("Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten.",'quartiersplattform');
     no_content_card("", __("Momentan gibt es keine Veranstaltungen",'quartiersplattform'), $text, $link_text = __('Veranstaltung erstellen','quartiersplattform'), $link_url = "");
 }
 
