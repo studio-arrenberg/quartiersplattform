@@ -136,6 +136,7 @@ get_header();
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
                         reminder_card('warning', __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
                     }
+                    // echo get_the_ID(  );
 
                     // Toolbox
                     get_template_part( 'components/project/toolbox' );

@@ -1610,7 +1610,7 @@ function cpt_save_worker( $post_id ) {
 		// set projekt visibility
 		$visibilty_status = get_field('qp_visibility', $post_id);
 		if (empty($visibilty_status)) {
-			$status = 'publish';
+			$status = 'draft';
 		}
 		else if ($visibilty_status === true) {
 			$status = 'publish';
@@ -1619,10 +1619,10 @@ function cpt_save_worker( $post_id ) {
 			$status = 'draft';
 		}
 		// update post
-		$my_post = array();
-		$my_post['ID'] = $post_id;
-		$my_post['post_status'] = $status;
-		wp_update_post( $my_post );
+		// $my_post = array();
+		// $my_post['ID'] = $post_id;
+		// $my_post['post_status'] = $status;
+		// wp_update_post( $my_post );
 		
 		// assign post to project
 		$tax = $_POST['project_tax'];
@@ -2740,6 +2740,8 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
  */
 function visibility_toggle_callback() { // !!! naming => visibility_toggle_callback
 
+	// global $post;
+
 	check_ajax_referer('my_ajax_nonce');
 
 	$post_id = $_POST['post_id'];
@@ -2772,7 +2774,7 @@ function visibility_toggle_callback() { // !!! naming => visibility_toggle_callb
 		}
 
 		// write to array
-		$array[$post_id]=$status;
+		$array[ $post_id ] = $status;
 
 		// save array
 		update_post_meta( $term_list[0]->term_id, 'posts_visibility', $array );
@@ -2785,17 +2787,56 @@ function visibility_toggle_callback() { // !!! naming => visibility_toggle_callb
 
 	}
 	// if projekt
-	else {
+	else if (get_post_type( $post_id ) == 'projekte') {
 
-		
+		// if ($status == 'publish') {
 
-		// iterate all posts
-		// if publish or draft
+			// get array
+			$array = get_post_meta($post_id, 'posts_visibility', true);
+			// if not available create
+			if (!$array) {
+				$array = array();
+			}
 
-		// draft -> write to array -> set all to draft
-		// publish -> go through array -> publish all with previous publish
+			// toggle projekt status
+			$my_post = array();
+			$my_post['ID'] = $post_id;
+			$my_post['post_status'] = $status;
+			wp_update_post( $my_post );
 
-		// toggle projekt status
+			// get projekt slug
+			$post_retrieve = get_post($post_id); 
+			$slug = $post_retrieve->post_name;
+
+			// get posts by projekt slug
+			$p_posts = get_posts( array(
+                'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
+                'posts_per_page' => -1,
+				'post_status' => 'any',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'projekt',
+                        'field' => 'slug',
+                        'terms' => ".$slug."
+                    )
+                )
+            ) );
+ 
+			// update all posts
+            foreach ( $p_posts as $s_post ) {
+
+				$array[ $s_post->ID ] = $status;
+
+				$my_post = array();
+				$my_post['ID'] = $s_post->ID;
+				$my_post['post_status'] = $status;
+				wp_update_post( $my_post );
+
+            }
+
+			// print_r($array);
+
+			update_post_meta( $post_id, 'posts_visibility', $array );
 
 	}
 
@@ -2821,26 +2862,38 @@ function visibility_toggle( $id = '' ) {
 		$id = get_the_ID();
 	}
 
-	if (get_post_type( $id ) == 'projekte' && get_post_status( $id )) {
-		return false;
-	}
-
+	
+	// if (get_post_type( $id ) != 'projekte' && get_post_status( $id ) == '') {
+	// 	return false;
+	// }
+	
 	if ($current_user->ID != $post->post_author) {
 		return false;
 	}
 
+	// !!! privilages
+
+	// no projekt and project is private 
 	if (get_post_type( $id ) != 'projekte' ) {
 
-		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) );
+		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) ); // !!! unstable
+		// echo get_post_status($term_list[0]->description); 
 
-		if (get_post_status($term_list[0]->term_id) == 'draft') {
+		// print_r($term_list);
+
+		// check projekt visibility
+		if (get_post_status($term_list[0]->description) == 'draft') {
 			return false;
 		}
 
-		print_r(get_post_meta($term_list[0]->term_id, 'posts_visibility', true));
+		// for testing
+		// print_r(get_post_meta($term_list[0]->term_id, 'posts_visibility', true));
 	}
-
-	
+	// for testing
+	else if ( get_post_type( $id ) == 'projekte' ) {
+		// echo "hello";
+		// print_r(get_post_meta($id, 'posts_visibility', true));
+	}
 
 	get_template_part( 'components/settings/visibility_toggle' );
 

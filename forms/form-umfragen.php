@@ -29,7 +29,7 @@ if (!is_user_logged_in(  )) {
         $page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
         $project_ID = $page->ID;
         $status = get_post_status($page->ID);
-
+        echo $status;
         if ( get_post_status( $page->ID ) != 'publish') {
             reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
         }
