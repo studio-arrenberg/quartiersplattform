@@ -23,7 +23,7 @@
             <?php _e(' Der Beitrag wird auf die Übersichsseite gepinnt.', 'quartiersplattform'); ?>
             </span>
             <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-            <?php _e('Der Beitrag wird nicht auf die Übersichtsseite festgesetzt.', 'quartiersplattform'); ?> </span>
+            <?php _e('Der Beitrag wird nicht auf die Übersichtsseite gepinnt.', 'quartiersplattform'); ?> </span>
             <span class="acf-spinner" style="display: inline-block;"></span>
         </label> 
 
