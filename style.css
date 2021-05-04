@@ -1927,6 +1927,8 @@ button.toggle {
   display: flex;
   flex-direction: column;
   min-height: 90vh;
+  max-width: 700px;
+  margin: 100px auto;
 }
 
 .center-header-image {
@@ -1942,7 +1944,7 @@ button.toggle {
 @media (min-width: 782px) {
   .center-header-template {
     align-items: center;
-    font-size: 2rem;
+    margin-top: 200px;
   }
 
   .center-header {
