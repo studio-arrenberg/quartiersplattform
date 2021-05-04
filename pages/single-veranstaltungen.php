@@ -56,7 +56,7 @@ get_header();
 
                
                 <?php
-                }
+                // }
                 ?>
 
                 <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
@@ -73,7 +73,7 @@ get_header();
             
                 <?php 
                 // text
-                extract_links(get_field('text'));
+                // extract_links(get_field('text'));
 
                 // temp fix
                 echo "<br><br>";
@@ -102,6 +102,10 @@ get_header();
                                 href="<?php get_permalink(); ?>?action=delete"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
                         </div>
                     </div>
+
+                    <?php 
+                    }
+                    ?>
 
             </div>
 
@@ -211,6 +215,7 @@ get_header();
         }
     }
 }
+            // }
     
 ?>
 
@@ -239,7 +244,7 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
         ?>
-            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus dem Projekt', 'quartiersplattform'); ?> </h3>
+            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
             <br>
         <?php
             card_list($args2);

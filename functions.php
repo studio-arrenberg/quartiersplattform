@@ -2918,7 +2918,7 @@ function projekt_carousel( ) {
 		'post_status'=>'any', 
 		'posts_per_page'=> -1,
 		'orderby' => 'modified',
-		'orderby' => 'DESC'
+		// 'orderby' => 'DESC'
 	);
 
 	set_query_var( 'highlight_display', true );

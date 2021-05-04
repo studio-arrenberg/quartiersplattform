@@ -124,7 +124,7 @@ get_header();
             </script>
 
             <!-- page bar content -->
-            <div>
+            <div class="bar-content">
                 <div id="summary" class="bar bar-active">
 
                      <!-- Bild -->
