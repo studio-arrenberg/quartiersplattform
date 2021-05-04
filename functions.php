@@ -2851,6 +2851,7 @@ add_action( 'wp_ajax_nopriv_pin_toggle', 'pin_toggle_callback' );
  */
 function projekt_carousel( ) {
 
+	global $current_user;
 
 	$postID = get_the_ID(  );
 	// echo "<br><br><br>ID:".$postID;

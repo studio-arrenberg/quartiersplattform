@@ -37,6 +37,10 @@
 - Ajax mit Nonce Sicherheit
 - Löschung aller Projekt Posts beim Löschen des Projektes
 
+## v1.8
+- cookie disclaimer
+- notifications
+
 ## Theme Publication
 
 1.  [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)

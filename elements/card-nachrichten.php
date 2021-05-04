@@ -10,9 +10,9 @@ else {
 }
 
 // variable text length
-if (strlen($the_slug < 1 )) {
-    $char = 200;
-}
+// if (strlen($the_slug < 1 )) {
+//     $char = 200;
+// }
 
 ?>
 

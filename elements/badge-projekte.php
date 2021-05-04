@@ -9,8 +9,7 @@ global $current_user;
     <div class="badge shadow <?php if($current_user->ID == $post->post_author) echo ' yours'; ?>">
         <div class="emoji"><?php the_field('emoji'); ?></div> 
         
-        <?php 
-            
+        <?php
             if (empty(get_field('emoji'))) {
                 the_post_thumbnail( 'square_s' ); 
             }
