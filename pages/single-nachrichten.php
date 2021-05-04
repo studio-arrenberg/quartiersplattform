@@ -135,7 +135,7 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
         ?>
-            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus dem Projekt', 'quartiersplattform'); ?> </h3>
+            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
             <br>
         <?php
             card_list($args2);
