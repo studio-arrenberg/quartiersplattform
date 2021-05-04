@@ -237,11 +237,10 @@ get_header();
                     <div class="delete-box margin-bottom">
 
                     <h3><?php _e('Projekt löschen', 'quartiersplattform'); ?></h3>
-                    <p class="small-margin-bottom"><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
-                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
-                    <?php _e('Projekt löschen', 'quartiersplattform'); ?></a>
-
-                    </div>
+                        <p class="small-margin-bottom"><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
+                        <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
+                        <?php _e('Projekt löschen', 'quartiersplattform'); ?></a>
+                </div>
                     <?php qp_backend_edit_link(); ?>
 
 
