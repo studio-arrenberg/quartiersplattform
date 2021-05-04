@@ -1,7 +1,7 @@
 <div class="small-margin">
     <?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
 
-        <h4 class="heading-size-3"><?php _e('Sichtbarkeit auf der Quartiersseite', 'quartiersplattform'); ?></h4>
+        <h4 class="heading-size-3"><?php _e('Anheften', 'quartiersplattform'); ?></h4>
 
         <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
             <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
@@ -15,7 +15,7 @@
 
     <?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
 
-        <h4 class="heading-size-3"><?php _e('Sichtbarkeit auf der Projektseite', 'quartiersplattform'); ?></h4>
+        <h4 class="heading-size-3"><?php _e('Anheften', 'quartiersplattform'); ?></h4>
 
         <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
             <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
