@@ -2470,6 +2470,9 @@ function extract_links( $text ) {
  */
 function qp_date( $date, $detail = false, $time = '' ) {
 
+	date_default_timezone_set(get_option('timezone_string'));
+	// date_default_timezone_set("Europe/Berlin");
+
 	// get time
 	if ($time) {
 		$date = strtotime("$date $time");

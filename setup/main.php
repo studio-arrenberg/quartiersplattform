@@ -134,9 +134,14 @@ $wp_rewrite->flush_rules( true );
 function themename_after_setup_theme() {
 
     // set quartier placeholder name
-    if (empty(get_field('quartiersplattform-name','option'))) {
-        update_field( 'quartiersplattform-name', 'Quartier', 'option' );
+    if (class_exists('acf_pro')) {
+
+        if (empty(get_field('quartiersplattform-name','option'))) {
+            update_field( 'quartiersplattform-name', 'Quartier', 'option' );
+        }
+
     }
+    
     
     $site_type = get_option('show_on_front');
     $home = get_page_by_title( 'Startseite', OBJECT, 'page' );
