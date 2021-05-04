@@ -65,6 +65,23 @@ __('Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es reg
 
 __("Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der Bergischen Universität und dem Klimaquartier Arrenberg wurden diese Berechnungen in Raster übertragen und das hier sichtbare Energiewetter entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig von den eigenen finanziellen Möglichkeiten an der Energiewende und dem Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein smarter Schritt, den alle gehen können. ",'quartiersplattform');
 
-__("Energieampel",'quartiersplattform')
+__("Energieampel",'quartiersplattform');
+
+//Beiträge festpinnen
+__("Sichtbar",'quartiersplattform');
+__("Unsichtbar",'quartiersplattform');
+__("Gepinnt",'quartiersplattform');
+__("Nicht gepinnt",'quartiersplattform');
+__("Öffentlich",'quartiersplattform');
+__("Nicht öffentlicht",'quartiersplattform');
+__("Privat",'quartiersplattform');
+
+__("Pinnen",'quartiersplattform');
+__("Anheften",'quartiersplattform');
+__("Sichtbarkeit",'quartiersplattform');
+
+__("Hier kannst du die Seite auf die Quariersseite pinnen.",'quartiersplattform');
+__("Hier kannst du den Beitrag auf die Quariersseite pinnen.",'quartiersplattform');
+__("Hier kannst du den Akteur auf die Quariersseite pinnen.",'quartiersplattform');
 
 ?>

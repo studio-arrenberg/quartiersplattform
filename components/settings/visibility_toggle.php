@@ -1,11 +1,12 @@
 <h3><?php _e('Sichtbarkeit', 'quartiersplattform'); ?></h3>
+<p><?php _e('Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen.', 'quartiersplattform'); ?></p>
 
 <label class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>">
     <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >
     <span class="slider toggle_a <?php if (get_post_status() != 'publish') echo "hidden"; ?>">
-    <?php _e('Dein Projekt ist Öffentlich', 'quartiersplattform'); ?> </span>
+    <?php _e('Öffentlich', 'quartiersplattform'); ?> </span>
     <span class="slider toggle_b <?php if (get_post_status() == 'publish') echo "hidden"; ?>">
-    <?php _e('Dein Projekt ist nicht öffentlich', 'quartiersplattform'); ?> </span>
+    <?php _e('Privat', 'quartiersplattform'); ?> </span>
     <span class="acf-spinner" style="display: inline-block;"></span>
 </label> 
 

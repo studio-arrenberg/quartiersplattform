@@ -158,7 +158,9 @@ wp_maintenance_mode();
                 <a class="button header-button button-has-icon is-style-outline"
                     href="<?php echo get_site_url(); ?>/login">
                     <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-                    <span class="button-has-icon-label"><?php _e('Anmelden', 'quartiersplattform'); ?></span>
+                    <span class="button-has-icon-label">
+                        <!-- <?php _e('Anmelden', 'quartiersplattform'); ?> -->
+                    </span>
                 </a>
                 <?php 
             }
