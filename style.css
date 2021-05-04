@@ -1979,6 +1979,25 @@ button.toggle {
 /*	8. PROJEKT HEADER
 /* -------------------------------------------------------------------------- */
 
+.card.projekt, .card.projekt .content{
+  min-height: 150px;
+}
+
+.background-image{
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+
+
+.blur::after{
+  content: ' ';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #fff;
+}
 
 .projekt-header{
   display: flex;
@@ -5310,8 +5329,7 @@ a.card-link{
 }
 
 .landscape .content,
-.square .content,
-.background-image .content {
+.square .content{
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -5325,8 +5343,8 @@ a.card-link{
 }
 
 
-.background-image .content {
-  border-radius: 15px;
+.card.background-image  {
+  border: 5px solid #fff
 }
 
 .landscape .pre-title {

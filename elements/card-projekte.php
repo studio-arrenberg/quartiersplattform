@@ -51,19 +51,37 @@ fehlt:
         </div>
     <?php } ?>
 
-    <div class="projekt background-image blur <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>">
+        <div class="projekt  background-image 
+        
+        <?php
+                    if (empty(get_field('emoji'))) {
+                     echo 'blur' ;
+                    }
+                ?>
+                    <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>" style="background-image: url('<?php
+                    if (empty(get_field('emoji'))) {
+                        the_post_thumbnail_url('landscape_s' ); 
+                    }
+                ?>'); ">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content align-center">
                 <span class="emoji-large"><?php  shorten(get_field('emoji'), '200'); ?></span>
+                        
+                
+
                 <h3 class="heading-size-3">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
                 <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
             </div>
-            <?php the_post_thumbnail( 'landscape_s' ); ?>
+
+
+            
+
+
+            <!-- <div class="background-image-blur">
+                <?php the_post_thumbnail( 'landscape_s' ); ?>
+            </div> -->
         </a>
     </div>
-
-
-
 </div>

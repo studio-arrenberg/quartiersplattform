@@ -77,7 +77,7 @@ get_header();
             </div>
             </div>
     
-
+            
             <?php
                 // Projekte
                 $args4 = array(
@@ -91,12 +91,15 @@ get_header();
                 $my_query = new WP_Query($args4);
                 if ($my_query->post_count > 0) {
                     
-                    echo "<h2>".__("Projekte",'quartiersplattform')."</h2>";
-                    // slider($args4, $type = 'card', $slides = '1', $dragfree = 'false', $align = 'start');          
+                    echo "<h2  class='margin-bottom'>".__("Projekte von ",'quartiersplattform');
+                    echo $curauth->first_name." ".$curauth->last_name."</h2>";
+
                     card_list($args4);      
-                    
                 }
             ?>
+
+            <br>
+
 
             <?php
                 $args4 = array(
@@ -109,9 +112,9 @@ get_header();
                 );
                 $my_query = new WP_Query($args4);
                 if ($my_query->post_count > 0) {
-    
+                    echo "<h2 class='margin-bottom'>".__("Beiträge von ",'quartiersplattform');
+                    echo $curauth->first_name." ".$curauth->last_name."</h2>";
                     card_list($args4);      
-                    // get_template_part('elements/'.$type.'', get_post_type());
                     
                 }
             ?>
