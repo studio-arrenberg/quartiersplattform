@@ -43,7 +43,7 @@ get_header();
 
     if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {
         // !!! add link to backend!
-        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.', 'Zu den Einstellung',home_url().'/wp-admin/admin.php?page=theme-general-settings'); 
+        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.', 'Zu den Einstellungen',home_url().'/wp-admin/admin.php?page=theme-general-settings'); 
     }
 
     ?>
