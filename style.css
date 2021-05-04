@@ -1043,7 +1043,9 @@ button.toggle {
   margin: var(--gap) 0 0 var(--gap);
 }
 
-
+.button:hover svg path{
+  fill: #0091ff;
+}
 
 /* Hiding and Showing ------------------------ */
 
@@ -2062,7 +2064,8 @@ button.toggle {
 /* -------------------------------------------------------------------------- */
 
 .quartier section {
-  min-height: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2076,7 +2079,7 @@ button.toggle {
 
 .quartier section:first-of-type{
   margin-top: 100px;
-
+  height: 500px;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: cover !important;
