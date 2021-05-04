@@ -173,9 +173,7 @@ get_header();
 
 
                 <div id="posts" class="bar bar-hidden">
-                    
                     <?php get_template_part( 'components/project/history' ); ?>
-                    
                 </div>
 
 
@@ -186,7 +184,7 @@ get_header();
 
 
                     <div class="publish-form">
-                        <h2><?php _e('Bearbeite dein Projekt', 'quartiersplattform'); ?> </h2>
+                        <h3><?php _e('Bearbeite dein Projekt', 'quartiersplattform'); ?> </h3>
                         <br>
 
                         <?php
@@ -212,36 +210,38 @@ get_header();
                     </div>
 
                     <?php if ( current_user_can('administrator') ) { ?>
-                        <div class="publish-form">
-                            <h2><?php _e('Ziele für nachhaltige Entwicklung bearbeiten', 'quartiersplattform'); ?></h2>
+                        <div class="publish-form margin-bottom">
+                            <h3><?php _e('Ziele für nachhaltige Entwicklung bearbeiten', 'quartiersplattform'); ?></h3>
                             <br>
+                                <?php
+                                    acf_form (
+                                        array(
+                                            'form' => true,
+                                            'return' => '%post_url%',
+                                            'submit_value' => __('Änderungen speichern','quartiersplattform'),
+                                            'post_title' => false,
+                                            'post_content' => false,    
+                                            'uploader' => 'basic',
+                                            // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
+                                            'fields' => array(
+                                                'field_602e74121ff45',
+                                            ),
+                                        )
+                                    );
+                                ?>
+                            </div>
 
-                            <?php
-                                acf_form (
-                                    array(
-                                        'form' => true,
-                                        'return' => '%post_url%',
-                                        'submit_value' => __('Änderungen speichern','quartiersplattform'),
-                                        'post_title' => false,
-                                        'post_content' => false,    
-                                        'uploader' => 'basic',
-                                        // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
-                                        'fields' => array(
-                                            'field_602e74121ff45',
-                                        ),
-                                    )
-                                );
-                            ?>
-
-                        </div>
                     <?php } ?>
 
-                    <h2><?php _e('Projekt löschen', 'quartiersplattform'); ?></h2>
-                    <p><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
+
+                    <div class="delete-box margin-bottom">
+
+                    <h3><?php _e('Projekt löschen', 'quartiersplattform'); ?></h3>
+                    <p class="small-margin-bottom"><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
                     <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
                     <?php _e('Projekt löschen', 'quartiersplattform'); ?></a>
 
-                    
+                    </div>
                     <?php qp_backend_edit_link(); ?>
 
 
@@ -323,8 +323,8 @@ get_header();
         }
     }
 ?>
-</div>
 
+</div>
 </div>
 
 </main><!-- #site-content -->

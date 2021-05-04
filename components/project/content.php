@@ -1,7 +1,7 @@
 <?php global $current_user; ?>
 
 <?php if (get_field('text') || $current_user->ID == $post->post_author) { ?>
-    <div class="single-content">
+    <div class="margin-bottom">
         <h3 class="heading-size-3"><?php _e('Beschreibung', 'quartiersplattform'); ?> </h3>
         <p><?php extract_links(get_field('text')); ?></p>
     </div>

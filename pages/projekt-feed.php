@@ -128,5 +128,6 @@ get_header();
 		get_template_part('components/views/veranstaltungen');
 	?>	
 </div>
+		</main>
 
 <?php get_footer(); ?>

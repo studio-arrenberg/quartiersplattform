@@ -5,13 +5,20 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-grid" role="main">
 
-    <div class="left-sidebar">
-		<?php projekt_carousel(); ?>
+	<div class="left-sidebar">
+
+		<div class="hidden-small">
+            <?php projekt_carousel(); ?>
+
+		</div>
+
+		
 	</div>
 
 
+	<div class="main-content">
     <?php 
     
     if (is_user_logged_in(  )) {

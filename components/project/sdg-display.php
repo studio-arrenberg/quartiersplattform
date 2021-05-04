@@ -12,6 +12,9 @@ if ( current_user_can('administrator') ) {
     if( $terms ) { ?>
 
         <h3 class="heading-size-3"><?php _e('Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?></h3>
+        
+        
+        <div class="card-container">
 
         <?php 
         foreach( $terms as $term ): 
@@ -34,6 +37,8 @@ if ( current_user_can('administrator') ) {
 
         endforeach;
         ?>
+</div>
+
             <a class="button" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
         <?php 
 

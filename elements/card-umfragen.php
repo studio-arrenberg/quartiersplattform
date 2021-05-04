@@ -21,7 +21,7 @@
         <a class="card-link " href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
                 
-                <h3 class="card-title-large">
+                <h3 class="heading-size-3">
                     <?php  
                         if (!is_single( )) shorten(get_the_title(), '50'); 
                         else echo get_the_title(); 

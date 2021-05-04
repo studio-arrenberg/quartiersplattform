@@ -71,8 +71,9 @@ if (!is_user_logged_in()) {
                                 <?php _e('Einstellungen', 'quartiersplattform'); ?>
                             </button>
                     </div>
-                <div class="filter-slider" aria-hidden="true">
-                    <div class="filter-slider-rect">&nbsp;</div>
+                    <div class="filter-slider" aria-hidden="true">
+                        <div class="filter-slider-rect">&nbsp;</div>
+                    </div>
                 </div>
             </div>
         

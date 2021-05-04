@@ -45,7 +45,7 @@
 
                             <div class="content align-center ">
                                 <span class="emoji-large"><?php  shorten(get_field('emoji'), '200'); ?></span>
-                                <h3 class="card-title-large">
+                                <h3 class="heading-size-3">
                                     <?php shorten(get_the_title(), '60'); ?>
                                 </h3>
                                 <div class="highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div> 
