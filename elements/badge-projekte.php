@@ -18,5 +18,5 @@ global $current_user;
         
     </div>
     <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
-    <h5 class="heading-size-5"><?php echo get_post_modified_time('Y-m-d H:i:s'); ?></h5>
+    <!-- <h5 class="heading-size-5"><?php echo get_post_modified_time('Y-m-d H:i:s'); ?></h5> -->
 </a>
