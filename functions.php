@@ -2922,7 +2922,7 @@ function projekt_carousel( ) {
 		// 'orderby' => 'DESC'
 	);
 
-	print_r($array);
+	// print_r($array);
 
 	set_query_var( 'highlight_display', true );
 	set_query_var( 'projekt_carousel_add', true );
