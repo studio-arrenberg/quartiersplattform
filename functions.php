@@ -2916,11 +2916,13 @@ function projekt_carousel( ) {
 	$args4 = array(
 		'post_type'=> array('projekte'), 
 		'post__in' => $array,
-		'post_status'=>'any', 
+		'post_status'=> array('publish', 'draft', 'auto-draft'), 
 		'posts_per_page'=> -1,
 		'orderby' => 'modified',
 		// 'orderby' => 'DESC'
 	);
+
+	print_r($array);
 
 	set_query_var( 'highlight_display', true );
 	set_query_var( 'projekt_carousel_add', true );
