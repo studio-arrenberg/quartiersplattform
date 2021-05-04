@@ -60,7 +60,7 @@ get_header();
 		}
 
 		$args4 = array(
-			// 'post_type'=> array('projekte'), 
+			'post_type'=> array('projekte'), 
 			'post__in' => $array,
 			'post_status'=> 'any', 
 			'posts_per_page'=> -1,
