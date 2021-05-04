@@ -2721,12 +2721,12 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
  * @param string $status status
  * @return void
  */
-function post_visibility_toggle() { // !!! naming => visibility_toggle
+// function post_visibility_toggle() { // !!! naming => visibility_toggle
 
-	get_template_part( 'components/settings/visibility_toggle' );
+// 	get_template_part( 'components/settings/visibility_toggle' );
 
-	return;
-}
+// 	return;
+// }
 
 
 /**
@@ -2738,7 +2738,7 @@ function post_visibility_toggle() { // !!! naming => visibility_toggle
  * @param string $status status
  * @return void
  */
-function projekt_toggle_status_callback() { // !!! naming => visibility_toggle_callback
+function visibility_toggle_callback() { // !!! naming => visibility_toggle_callback
 
 	check_ajax_referer('my_ajax_nonce');
 
@@ -2754,27 +2754,98 @@ function projekt_toggle_status_callback() { // !!! naming => visibility_toggle_c
 		$status = 'draft';
 	}
 
-	$my_post = array();
-	$my_post['ID'] = $post_id;
-	$my_post['post_status'] = $status;
-	wp_update_post( $my_post ); // Update the post into the database
+	// if post 
+	if (get_post_type( $post_id ) != 'projekte') {
 
-	// if post type == projekte
-	// iterate all posts with tax projekte == projekte id
-	// write post_status in array
-	// turn draft or reset
+		// !!! check if projekt is public 
 
+		// get projekt id
+		$term_list = wp_get_post_terms( $post_id, 'projekt', array( 'fields' => 'all' ) );
+		$term_list[0]->term_id;
 
-	// post project cpt 
-	// if project privat 
-	// cpt = draft
+		// get array
+		$array = get_post_meta($term_list[0]->term_id, 'posts_visibility', true);
+
+		if (!$array) {
+			// create array
+			$array = array();
+		}
+
+		// write to array
+		$array[$post_id]=$status;
+
+		// save array
+		update_post_meta( $term_list[0]->term_id, 'posts_visibility', $array );
+
+		// update post status
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_status'] = $status;
+		wp_update_post( $my_post );
+
+	}
+	// if projekt
+	else {
+
+		// iterate all posts
+		// if publish or draft
+
+		// draft -> write to array -> set all to draft
+		// publish -> go through array -> publish all with previous publish
+
+		// toggle projekt status
+
+	}
 
 	return;
-	// echo $status." - ".$post_id;
 
 } 
-add_action( 'wp_ajax_projekt_toggle_status', 'projekt_toggle_status_callback' );
-add_action( 'wp_ajax_nopriv_projekt_toggle_status', 'projekt_toggle_status_callback' );
+add_action( 'wp_ajax_visibility_toggle', 'visibility_toggle_callback' );
+add_action( 'wp_ajax_nopriv_visibility_toggle', 'visibility_toggle_callback' );
+
+/**
+ * Projekt/Post Toggle Status Function
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $post_id id
+ * @param string $status status
+ * @return void
+ */
+
+function visibility_toggle( $id = '' ) {
+
+	if (empty($id)) {
+		$id = get_the_ID();
+	}
+
+	if (get_post_type( $id ) == 'projekte' && get_post_status( $id )) {
+		return false;
+	}
+
+	if ($current_user->ID != $post->post_author) {
+		return false;
+	}
+
+	if (get_post_type( $id ) != 'projekte' ) {
+
+		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) );
+
+		if (get_post_status($term_list[0]->term_id) == 'draft') {
+			return false;
+		}
+
+		print_r(get_post_meta($term_list[0]->term_id, 'posts_visibility', true));
+	}
+
+	
+
+	get_template_part( 'components/settings/visibility_toggle' );
+
+
+}
+
+
 
 
 /**

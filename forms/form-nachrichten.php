@@ -22,6 +22,7 @@ if (!is_user_logged_in(  )) {
         <?php
             // Projekt Kachel
             project_card($_GET['project'], 'slug');
+
         ?>
         </div>
 
@@ -29,8 +30,9 @@ if (!is_user_logged_in(  )) {
 
         $page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
         $project_ID = $page->ID;
+        $status = get_post_status($page->ID);
 
-        if ( get_post_status( $page->ID ) != 'publish') {
+        if ( $status != 'publish') {
             reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
         }
 
@@ -50,7 +52,7 @@ if (!is_user_logged_in(  )) {
                         'post_id'=>'new_post',
                         'new_post'=>array(
                             'post_type' => 'nachrichten',
-                            'post_status' => 'publish',
+                            'post_status' => $status,
                         ),
                         'return' => get_site_url().'/gemeinsam', 
                         'field_el' => 'div',

@@ -182,7 +182,7 @@ get_header();
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
 
-                    <?php post_visibility_toggle( get_the_ID(  ) ); ?>
+                    <?php visibility_toggle( get_the_ID(  ) ); ?>
 
 
                     <div class="publish-form">
