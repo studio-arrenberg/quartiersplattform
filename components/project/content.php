@@ -18,8 +18,17 @@ if (!get_field('text') && $current_user->ID == $post->post_author) {
 
 <?php
 if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+
+    // echo get_permalink();
+    if(strpos(get_permalink(), '?')) {
+        $link = get_permalink().'&action=edit';
+    }
+    else {
+        $link = get_permalink().'?action=edit';
+    }
+    // echo $link;
 ?>
-    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Beschreibung bearbeiten', 'quartiersplattform'); ?> </a>
+    <a class="button is-style-outline" href="<?php echo esc_url($link ); ?>"><?php _e('Beschreibung bearbeiten', 'quartiersplattform'); ?> </a>
 <?php
 }
 ?>
