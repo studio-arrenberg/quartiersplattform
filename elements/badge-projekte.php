@@ -11,7 +11,7 @@ global $current_user;
         
         <?php 
             
-            if (empty(get_field('emoji')) && get_the_post_thumbnail('square_s')) {
+            if (empty(get_field('emoji'))) {
                 the_post_thumbnail( 'square_s' ); 
             }
         ?>
