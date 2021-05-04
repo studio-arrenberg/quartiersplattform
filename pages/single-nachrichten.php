@@ -56,7 +56,7 @@ get_header();
                 <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - 
                 <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
             </h2>
-            <h1 class="heading-size-1"><?php the_title(); ?><br><br></h1>
+            <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
 
             <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 

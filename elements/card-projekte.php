@@ -71,9 +71,6 @@ fehlt:
                 <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
             </div>
 
-            <!-- <div class="background-image-blur">
-                <?php the_post_thumbnail( 'landscape_s' ); ?>
-            </div> -->
         </a>
     </div>
 </div>

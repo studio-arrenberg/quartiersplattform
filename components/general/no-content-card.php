@@ -1,8 +1,15 @@
-<div>
+<div class="no-content-card">
 
-    <div><?php echo get_query_var( 'qp_no_content_icon' ); ?> </div>
+    <div>
 
-    <h2><?php echo get_query_var( 'qp_no_content_title' ); ?></h2>
+    <?php if (get_query_var( 'qp_no_content_icon' ) == true ) { ?>
+        
+    <?php require get_template_directory() . '/assets/icons/'.get_query_var( 'qp_no_content_icon' ).'.svg'; ?>
+    
+    <?php }  ?>
+    </div>
+
+    <h2 class="small-margin-bottom"><?php echo get_query_var( 'qp_no_content_title' ); ?></h2>
     <p><?php echo get_query_var( 'qp_no_content_text' ); ?></p>
 
     <?php if (get_query_var( 'qp_no_content_link_text' ) && get_query_var( 'qp_no_content_link_url' )) { ?>

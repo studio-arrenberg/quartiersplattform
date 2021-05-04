@@ -20,7 +20,6 @@ get_header();
 
 <main class="quartier" role="main" data-track-content>
 
-
     <?php 
     $image = get_field('quartier_image', 'option');
     if (empty( $image )) {

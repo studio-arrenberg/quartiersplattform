@@ -533,6 +533,7 @@ object {
   display: block;
   height: auto;
   max-width: 100%;
+  margin: 0 auto;
 }
 
 figcaption,
@@ -1022,6 +1023,7 @@ button.toggle {
 
 .button-group .button, 
 .button-group button {
+  flex-direction: column;
   white-space: normal;
   flex: 1;
   display: flex;
@@ -2001,7 +2003,6 @@ button.toggle {
   background: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
 }
-
 
 .blur .content {
   z-index: 2;
@@ -4361,9 +4362,6 @@ font-weight: 400;
 
   /* Site Header --------------------------- */
 
-  #site-header {
-    z-index: 2;
-  }
 
   /* HEADER NAVIGATION */
 
@@ -5254,6 +5252,7 @@ a.card-link{
   border-radius: 10px;
   margin-right: 5px;
   height: intrinsic;
+  margin-left: 0px;
 }
 
 .pre-card a:hover, .after-card a:hover {
@@ -5411,6 +5410,24 @@ margin-top: -30px;
 
 .right-sidebar .reminder{
   padding: 10px;
+}
+
+.no-content-card {
+  color: #003054;
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.no-content-card p{
+  color: #000;
+  text-align: center;
+}
+.no-content-card svg {
+  width: 50px;
+  margin: 20px auto;
+}
+.no-content-card svg path{
+  fill: #003054;
 }
 
 
@@ -7322,4 +7339,8 @@ div.acf-switch span.acf-switch-on {
   background: #fff;
   border: 3px solid #FFCE20 !important;
   color: #FFCE20 !important;
+}
+
+.um-field-error{
+  color: red;
 }

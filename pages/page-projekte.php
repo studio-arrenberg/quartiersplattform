@@ -81,7 +81,7 @@ get_header();
 		else {
 
 			$text = __("Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du kannst selber aktiv werden und dein erstes eigenes Projekt anlegen.",'quartiersplattform');
-    		no_content_card("", __("Es wurde noch keine Projekte veröffentlicht",'quartiersplattform'), $text, $link_text = 'Projekt erstellen', $link_url = get_site_url().'/projekt-erstellen');
+    		no_content_card("doc-richtext", __("Es wurde noch keine Projekte veröffentlicht",'quartiersplattform'), $text, $link_text = 'Projekt erstellen', $link_url = get_site_url().'/projekt-erstellen');
 
 		}
 

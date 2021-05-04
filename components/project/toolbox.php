@@ -12,20 +12,24 @@
     </div>
     <div class="button-group ">
         <!-- Nachricht erstellen -->
-        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">
+        <a class="button is-style-outline " href="<?php echo get_site_url(); ?>/nachricht-erstellen/?project=<?php echo $post->post_name; ?>">
+        <?php require get_template_directory() . '/assets/icons/newspaper.svg'; ?>
+
             <?php _e(' Nachricht ', 'quartiersplattform'); ?>
         </a>
 
         <!-- Umfrage erstellen -->
-        <?php if ( current_user_can('administrator') ) { ?>
-            <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">
-                <?php _e('Umfrage ', 'quartiersplattform'); ?> 
-            </a>
-        <?php } ?>
+        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">
+        <?php require get_template_directory() . '/assets/icons/message.svg'; ?>
+
+            <?php _e('Umfrage ', 'quartiersplattform'); ?> 
+        </a>
 
         <!-- Veranstaltung erstellen -->
         <a class="button is-style-outline"
             href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">
+            <?php require get_template_directory() . '/assets/icons/calendar-badge-plus.svg'; ?>
+
             <?php _e('Veranstaltung ', 'quartiersplattform'); ?> 
         </a>
     </div>
