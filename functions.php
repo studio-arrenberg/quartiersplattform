@@ -2787,6 +2787,8 @@ function visibility_toggle_callback() { // !!! naming => visibility_toggle_callb
 	// if projekt
 	else {
 
+		
+
 		// iterate all posts
 		// if publish or draft
 
