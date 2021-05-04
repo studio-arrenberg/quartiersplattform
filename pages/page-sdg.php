@@ -24,7 +24,7 @@ get_header();
 				<?php _e(' Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?>
 			</h1>
 			<h2> 
-				<?php _e('Die Vereinten Nationen haben 2015 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?> 
+				<?php _e('Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?> 
 			</h2>
 		</div>
 

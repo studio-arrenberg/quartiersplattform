@@ -20,10 +20,10 @@
         <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
             <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
             <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
-            <?php _e(' Der Beitrag wird in der Chronik festgesetzt.', 'quartiersplattform'); ?>
+            <?php _e(' Der Beitrag wird auf die Übersichsseite gepinnt.', 'quartiersplattform'); ?>
             </span>
             <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-            <?php _e('Der Beitrag wird nicht in der Chronik festgesetzt.', 'quartiersplattform'); ?> </span>
+            <?php _e('Der Beitrag wird nicht auf die Übersichtsseite gepinnt.', 'quartiersplattform'); ?> </span>
             <span class="acf-spinner" style="display: inline-block;"></span>
         </label> 
 
