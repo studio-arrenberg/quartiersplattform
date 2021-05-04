@@ -26,13 +26,9 @@ $args_chronik = array(
 
 );
 
-$my_query = new WP_Query($args_chronik);
-if ($my_query->post_count > 0) {
-    ?>
-        <h2><?php _e('Aktuelle Veranstaltung', 'quartiersplattform'); ?> </h2>
-    <?php 
-    // slider($args_chronik,'card', '1','false'); 
-    get_template_part('elements/card', get_post_type());
-
+if (count_query($args_chronik)) {
+    echo "<h2>".__('Aktuelle Veranstaltung', 'quartiersplattform')."</h2>";
+    card_list($args_chronik);
 }
+
 ?>
