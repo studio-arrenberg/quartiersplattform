@@ -82,7 +82,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       <img class="top-bar-logo" src="<?php echo get_template_directory_uri()?>/assets/icons/quartiersplattform.svg" alt=""/>
       <div class="flex-push-end">
       <!-- <a class="btn btn-shadow" href="https://arrenberg.app/projekte/quartiersplattform/">Das Projekt</a> -->
-      <a class="btn btn-shadow" href="https://github.com/studio-arrenberg/quartiersplattform#readme"><?php _e('Zur Dokumentation', 'quartiersplattform'); ?> </a>
+      <a class="btn btn-shadow" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"><?php _e('Zur Dokumentation', 'quartiersplattform'); ?> </a>
       </div>
     </div>
       <img class="bg-logo" src="<?php echo get_template_directory_uri()?>/assets/icons/q.svg" alt=""/>
@@ -159,7 +159,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
         <h3><?php _e('Du musst noch folgende Schritte durchführen:', 'quartiersplattform'); ?> </h3>
 
         <!-- neu -->
-        <a class="button" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md"><?php _e('Dokumentation Lesen', 'quartiersplattform'); ?> </a>
+        <!-- <a class="button" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"><?php _e('Dokumentation Lesen', 'quartiersplattform'); ?> </a> -->
 
         <div class="flex">
       
