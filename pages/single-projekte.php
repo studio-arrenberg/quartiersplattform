@@ -323,8 +323,8 @@ get_header();
         }
     }
 ?>
-</div>
 
+</div>
 </div>
 
 </main><!-- #site-content -->

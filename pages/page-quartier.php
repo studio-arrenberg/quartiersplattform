@@ -34,35 +34,40 @@ get_header();
 
     <section class="quartier-header bg-image" style="background: url('<?php echo esc_url($image); ?>')">
         <div class="stage-center has-bg-blur">
-            <!-- <div class="heading-size-2"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div> -->
             <h1 class="heading-size-1"><?php the_field('welcome-title','option'); ?></h1>
         </div>
     </section>
 
-   
+    <?php 
+        if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {
+        ?>
+        <section>
+            <?php reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.', __('Zu den Einstellungen','quartiersplaattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
+        </section>
+    <?php } ?>
 
-    <section>
-        <div class="stage-center">
-        <?php 
 
-if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {
-    // !!! add link to backend!
-    reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.', __('Zu den Einstellungen','quartiersplaattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); 
-}
 
-?>
-            <p><?php the_field('welcome-text','option'); ?></p>
-            <div class="link-card-container">
-                <?php
-                    // Gutenberg Editor Content
-                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                        the_excerpt();
-                    } else {
-                        the_content( __( 'Continue reading', 'twentytwenty' ) );
-                    }
-                ?>
+    <?php 
+        if (get_field('quartier_image','option') == true || get_field('welcome-title','option') == true ) {
+                  
+    ?>
+        <section>
+            <div class="stage-center">
+                
+                <p><?php the_field('welcome-text','option'); ?></p>
+                <div class="link-card-container">
+                    <?php
+                        // Gutenberg Editor Content
+                        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                            the_excerpt();
+                        } else {
+                            the_content( __( 'Continue reading', 'twentytwenty' ) );
+                        }
+                    ?>
             </div>
-    </section>
+        </section>
+    <?php } ?>
 
     <section class="">
         <div class="stage-center">
@@ -151,26 +156,7 @@ if (current_user_can('administrator') && ( get_field('quartier_image','option') 
         </div>
     </section>
     
-    <?php
-        // pinned pages
-        $pinned_pages = array(
-            'post_type' => 'page',
-            'posts_per_page' => -1,
-            'order_by' => 'date',
-            'order' => 'DESC',
-            'meta_key'   => 'pin_main',
-            'meta_value' => array(true, 'true')
-        );
-
-        if (count_query($pinned_pages)) {
-            ?>
-
-                 <h4 class="heading-size-2 stage-title"><?php _e('Wichtige Seiten', 'quartiersplattform'); ?> </h4>
-                <?php card_list($pinned_pages); ?>
-
-            <?php            
-        }
-    ?>
+   
 
 
 </main><!-- #site-content -->
