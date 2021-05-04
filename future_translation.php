@@ -59,4 +59,12 @@ __('Nachricht von', 'quartiersplattform');
 __('Veranstaltung von', 'quartiersplattform');
 __('Neuigkeiten ansehen', 'quartiersplattform');
 
+
+//VPP Text
+__('Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. ','quartiersplattform');
+
+__("Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der Bergischen Universität und dem Klimaquartier Arrenberg wurden diese Berechnungen in Raster übertragen und das hier sichtbare Energiewetter entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig von den eigenen finanziellen Möglichkeiten an der Energiewende und dem Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein smarter Schritt, den alle gehen können. ",'quartiersplattform');
+
+__("Energieampel",'quartiersplattform')
+
 ?>
