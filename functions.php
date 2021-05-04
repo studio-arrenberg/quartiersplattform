@@ -2914,7 +2914,7 @@ function projekt_carousel( ) {
 	}
 
 	$args4 = array(
-		'post_type'=> array('projekte'), 
+		// 'post_type'=> array('projekte'), 
 		'post__in' => $array,
 		'post_status'=> array('publish', 'draft', 'auto-draft'), 
 		'posts_per_page'=> -1,
