@@ -2853,7 +2853,6 @@ function projekt_carousel( ) {
 
 	global $current_user;
 
-
 	$postID = get_the_ID(  );
 	// echo "<br><br><br>ID:".$postID;
 
