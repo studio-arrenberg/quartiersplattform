@@ -14,8 +14,20 @@ global $current_user;
                 the_post_thumbnail( 'square_s' ); 
             }
         ?>
-        
     </div>
-    <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
-    <!-- <h5 class="heading-size-5"><?php echo get_post_modified_time('Y-m-d H:i:s'); ?></h5> -->
+    <div class="badge-content">
+        <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
+        <!-- <h5 class="heading-size-5"><?php echo get_post_modified_time('Y-m-d H:i:s'); ?></h5> -->
+
+        <?php if($current_user->ID == $post->post_author) { ?>
+            <span class="blue-tag">Dein Projekt</span>
+        <?php } ?>
+
+        <?php if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) { ?>
+            <span class="yellow-tag">Nicht Sichtbar</span>
+        <?php } ?>
+
+     
+
+    </div>
 </a>

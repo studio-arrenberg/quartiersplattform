@@ -1014,7 +1014,6 @@ button.toggle {
   text-transform: none;
 }
 
-
 .button-group{
   display: flex;
   width: 100%;
@@ -1043,6 +1042,9 @@ button.toggle {
   margin: var(--gap) 0 0 var(--gap);
 }
 
+.button-group .button svg {
+  margin-bottom: 5px;
+}
 .button:hover svg path{
   fill: #0091ff;
 }
@@ -1471,6 +1473,7 @@ button.toggle {
   margin-bottom: 35px;
 }
 
+.blue-tag, .yellow-tag {display: none;}
 
 @media (min-width: 782px) {
   html {
@@ -1517,6 +1520,11 @@ button.toggle {
     grid-gap: 30px;
     grid-template-areas: "left-sidebar main-content ";
   }
+
+  .badge-content{
+    display: none;
+  }
+
 }
 
 @media (min-width: 900px) {
@@ -1541,12 +1549,37 @@ button.toggle {
     overflow: hidden;
   }
 
+
+  .badge-content{
+    display: block;
+  }
+
   .badge-link .heading-size-4{
     font-size: 1.5rem;
     line-height: 1.6rem;
     max-height: none;
     font-weight: 700;
     overflow: hidden;
+  }
+
+  .yellow-tag{
+    border: 1px solid #FFCE20;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #FFCE20 ;
+    background: #fff;
+    display: inline;
+    padding: 2px 4px;
+  }
+
+  .blue-tag{
+    border: 1px solid #0091ff;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #0091ff ;
+    background: #fff;
+    display: inline;
+    padding: 2px 4px;
   }
 }
 
@@ -2289,7 +2322,6 @@ button.toggle {
   cursor: pointer;
 }
 
-
 .badge{
   width: 70px;
   height: 65px;
@@ -2322,6 +2354,7 @@ button.toggle {
   max-height: 1.7rem;
   overflow: hidden;
 }
+
 
 
 
@@ -7275,7 +7308,6 @@ a.text-link:hover {
   transform: translateX(var(--translate-filters-slider));
 }
 
-
 .tabs-3 .filter-button, .tabs-3 .filter-tabs a   , .tabs-3 .filter-slider-rect {
   width: 33.33% !important;
   flex: 1 0 33.33% !important;
@@ -7338,11 +7370,12 @@ div.acf-switch span.acf-switch-on {
 }
 
 /* reminder card */
-.reminder.warning {
+.warning {
   background: #fff;
   border: 3px solid #FFCE20 !important;
   color: #FFCE20 !important;
 }
+
 
 .um-field-error{
   color: red;

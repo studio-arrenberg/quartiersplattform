@@ -16,28 +16,28 @@ if ( current_user_can('administrator') ) {
         
         <div class="card-container">
 
-        <?php 
-        foreach( $terms as $term ): 
+            <?php 
+            foreach( $terms as $term ): 
 
-            $tax = get_term( $term, 'sdg' );
-            $slug = $tax->slug;
+                $tax = get_term( $term, 'sdg' );
+                $slug = $tax->slug;
 
-            // echo $slug;
+                // echo $slug;
 
-            $args = array(
-                'post_type'=>'sdg', 
-                'post_status'=>'publish', 
-                'posts_per_page'=> -1,
-                'meta_key'   => 'number',
-                'meta_value' => $slug,
-            );
+                $args = array(
+                    'post_type'=>'sdg', 
+                    'post_status'=>'publish', 
+                    'posts_per_page'=> -1,
+                    'meta_key'   => 'number',
+                    'meta_value' => $slug,
+                );
 
-            // slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
-            card_list($args, $type = 'badge');
+                // slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
+                card_list($args, $type = 'badge');
 
-        endforeach;
-        ?>
-    </div>
+            endforeach;
+            ?>
+        </div>
             <a class="button" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
         <?php 
 
