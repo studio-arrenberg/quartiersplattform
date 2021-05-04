@@ -2923,6 +2923,9 @@ function projekt_carousel( ) {
 	);
 
 	// print_r($array);
+	if (!$array) {
+		//return false;
+	}
 
 	set_query_var( 'highlight_display', true );
 	set_query_var( 'projekt_carousel_add', true );
@@ -2945,10 +2948,10 @@ function projekt_carousel( ) {
 
 			<?php  
 			
-			if (wp_is_mobile(  )) {
+			if (wp_is_mobile(  ) && $array) {
 				slider($args4, 'badge', 4, 'false', 'start');
 			}
-			else {
+			else if ($array) {
 				card_list($args4, 'badge');
 				// slider($args4, 'badge', 4, 'false');
 			}

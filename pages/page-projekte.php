@@ -67,7 +67,7 @@ get_header();
 			'orderby' => 'modified'
 		);
 
-		if (count_query($args4)) {
+		if (count_query($args4) && $array) {
 
 			?>
 
