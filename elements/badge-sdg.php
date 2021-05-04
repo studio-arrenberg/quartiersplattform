@@ -18,7 +18,7 @@
             <span class="sdg-number">
 			    <?php the_field('goal'); ?>
 			</span >
-            <h3 class="card-title-large">
+            <h3 class="heading-size-3">
                 <?php the_title(); ?>
             </h3>
         </div>

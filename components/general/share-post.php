@@ -7,7 +7,7 @@
     if (get_post_status() == 'publish') {
 ?>
     <div class="share">
-        <h2><?php _e('Projekt teilen', 'quartiersplattform'); ?>  </h2>
+        <h3><?php _e('Projekt teilen', 'quartiersplattform'); ?>  </h3>
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
             <button class="copy is-style-outline" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>

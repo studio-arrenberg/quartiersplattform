@@ -41,8 +41,8 @@ else {
             <div class="content">
                 <div class="pre-title">
                 </div>
-                    <h3 class="card-title"><?php shorten(get_the_title(), '30'); ?></h3>
-                    <p class="preview-text">
+                    <h3 class="heading-size-3 "><?php shorten(get_the_title(), '30'); ?></h3>
+                    <p class="text-size-3">
                         <?php 
                         if (strlen(get_field('text')) > 2) {
                             shorten(get_field('text'), $char);

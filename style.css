@@ -252,7 +252,8 @@ h1,
 
 h2,
 .heading-size-2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  line-height: 2.3rem;
 }
 
 h3,
@@ -279,7 +280,7 @@ h6,
 
 .text-size-1 {
   font-size: 2rem;
-  line-height: 2.2rem;
+  line-height: 2.3rem;
   font-weight: 500;
 }
 
@@ -925,6 +926,19 @@ th {
   color: #fff;
 }
 
+.small-margin-bottom{
+  margin-bottom: 5px;
+}
+
+.margin-bottom{
+  margin-bottom: 10px;
+}
+
+.large-margin-bottom{
+  margin-bottom: 20px;
+}
+
+
 @media (max-width: 782px) {
   .admin-bar .screen-height {
     min-height: calc(100vh - 46px);
@@ -1122,7 +1136,7 @@ button.toggle {
   top: 0px;
   width: 100vw;
   z-index: 101;
-  background-color: rgba(255, 255, 250, 1);
+  background-color: #FFFFFF;
   border-bottom: 1px solid #dcf0ff;
   transition: all ease-in-out 0.2s; /* Animation */
 }
@@ -1153,7 +1167,7 @@ button.toggle {
     (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
   ) {
     #site-header {
-      background-color: rgba(252, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.9);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
     }
@@ -1599,7 +1613,7 @@ button.toggle {
   display: none;
 }
 
-.grid .card .card-title-large, .grid-4col .card .card-title-large{
+.grid .card .heading-size-3, .grid-4col .card .heading-size-3{
   font-size: 2rem;
   line-height: 2.3rem;
 }
@@ -2283,7 +2297,7 @@ button.toggle {
 
   .badge-link:hover, .badge-is-active {
     color: #0091ff;
-    padding:3px
+    transform: scale(1.01);
   }
 
   .badge{
@@ -5009,6 +5023,11 @@ font-weight: 400;
   padding: 5px 5px 5px 5px;
 }
 
+.simple-card .content{
+  padding: 5px 5px 5px 5px;
+}
+
+
 .page-card{
   position: relative;
   border-radius: 25px;
@@ -5060,20 +5079,8 @@ a.card-link{
 }
 
 .card .content {
-  padding: 12px 10px 7px 10px;
+  padding: 10px;
   width: 100%;
-}
-
-.card .content-flex{
-  padding: 12px 10px 7px 10px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-
-.card .content-flex p{
- flex: 1 1 260px; /* Flex x basis is 260px */
 }
 
 .card .wp-post-image {
@@ -5085,8 +5092,6 @@ a.card-link{
   object-fit: contain;
 }
 
-
-
 .card .avatar {
   min-width: inherit;
   max-width: inherit;
@@ -5095,6 +5100,7 @@ a.card-link{
   border-radius: 15px;
   align-self: start;
 }
+
 .card .avatar-default {
   display: none;
 }
@@ -5125,22 +5131,19 @@ a.card-link{
 }
 
 .card-title {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
-    sans-serif;
-font-weight: 700;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
   font-size: 1.8rem;
   line-height: 1.9rem;
   margin: 0px;
 }
 
-.card-title-large {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
-    sans-serif;
-font-weight: 700;
-font-size: 2.3rem;
-line-height: 2.6rem;
+/* .heading-size-3 {
+  font-weight: 700;
+  font-size: 2.3rem;
+  line-height: 2.6rem;
   margin-top: 3px;
-}
+} */
 
 .preview-text {
   font-size: 1.55rem;
@@ -5156,8 +5159,7 @@ line-height: 2.6rem;
 .card .pre-title {
   color: #0091ff;
   font-size: 1.4rem;
- font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
-font-weight: 700;
+  font-weight: 700;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -5181,14 +5183,13 @@ font-weight: 700;
   background: #fff;
   color: #0091ff;
   font-size: 1.4rem;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
   font-weight: 400;
   margin-bottom: 3px;
   white-space: nowrap;
 }
 
 .pre-card{
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .after-card{
@@ -5213,7 +5214,6 @@ font-weight: 700;
   margin-right: 5px;
   height: intrinsic;
 }
-
 
 .pre-card a:hover, .after-card a:hover {
   color: #0091ff;
@@ -5798,6 +5798,86 @@ a:hover .shadow{
   background: #0091ff;
 }
 
+.card-sgd {
+  border: 3px solid #fff;
+  position: relative;
+}
+
+.card-sgd .content {
+  position: relative;
+}
+
+.sdg-section{
+  position: relative;
+}
+.sdg-section::after{
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sdg-section .content{
+  padding: 30px 15px;
+}
+
+.sdg-number{
+  font-size: 9rem;
+  font-weight: 700;
+  position: absolute;
+  right: 15px;
+  bottom: 0px;
+  opacity: 0.4;
+}
+
+
+
+
+
+
+ @media (max-width: 782px) {
+
+  .card-container .card .content{
+    padding: 3px;
+    height: 100%;
+   }
+  .card-container .heading-size-3{
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .card-container .sdg-number{
+    font-size: 4rem;
+   }
+}
+
+
+
+.sdg-section .preview-text, .sdg-section p{
+  color: #000 !important;
+  margin-top: 10px;
+}
+
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+  position: relative;
+}
+
+.card-container > div{
+  width: calc( (100vw - 40px) / 3 );
+  height: calc( (100vw - 40px) / 3 );
+  margin-right: 5px;
+}
+
+.card-container > div:nth-of-type(3){
+  margin-right: 0px;
+}
+
+
 @media (min-width: 782px) {
   .card .card-button{
     font-size: 1.7rem;
@@ -5854,10 +5934,19 @@ a:hover .shadow{
     margin-bottom: 10px;
   }
 
-  p {
+
+  p, .text-size-2 {
     font-size: 2rem;
     line-height: 2.6rem;
   }
+
+
+  .text-size-3 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+
+
   
   .square {
     max-width: 100%;
@@ -5873,12 +5962,10 @@ a:hover .shadow{
     font-size: 2rem;
   }
 
-  .card-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 10px 0px;
-    position: relative;
+  .card-container > div{
+    width: 166px;
+    height: 166px;
+    margin-right: 5px;
   }
 
   .card-container-col-4 {
@@ -5892,6 +5979,8 @@ a:hover .shadow{
   .card-container-col-4 .card{
    width: calc( 25% - 5px);
   }
+
+
 }
 
 
@@ -6137,7 +6226,7 @@ a:hover .shadow{
   background-color: rgba(255, 255, 250, 1);
   z-index: 1;
   border-radius: 10px;
-  padding: 5px 10px 3px 10px;
+  padding: 3px 10px 3px 10px;
 }
 
 
@@ -6145,7 +6234,7 @@ a:hover .shadow{
   z-index: 100;
   background-color: rgba(255, 255, 250, 1);
   border-radius: 10px;
-  padding: 5px 10px 3px 10px;
+  padding: 3px 10px 3px 10px;
 }
 
 
@@ -6172,51 +6261,6 @@ a:hover .shadow{
 }
 
 /* ------ */
-
-
-.card-sgd {
-  border: 3px solid #fff;
-  position: relative;
-}
-
-.sdg-section{
-  position: relative;
-}
-.sdg-section::after{
-  content: ' ';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.sdg-section .content{
-  padding: 30px 15px;
-}
-
-.sdg-number{
-  font-size: 9rem;
-  font-weight: 700;
-  position: absolute;
-  right: 15px;
-  bottom: 0px;
-  opacity: 0.4;
-}
-
-
-.sdg-section .preview-text, .sdg-section p{
-  color: #000 !important;
-  margin-top: 10px;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -6773,7 +6817,7 @@ form.poll{
   width: 100%;
 }
 
-.content-shrink .card-title-large{
+.content-shrink .heading-size-3{
   width: calc( 100% - 30px ) 
 }
 
@@ -7217,25 +7261,17 @@ a.text-link:hover {
 }
 
 
-.profil-content {
-  overflow-x: hidden;
-}
-
 
 .profil-content > .bar {
-  /* display: none; */
-  /* opacity: 0; */
-  /* position: relative; */
   transform: translateX(-100%);
+  transition: transform ease-in-out 0.2s;
+  display: none;
 }
 
 .profil-content > .bar-active {
-  /* display: block; */
-  /* opacity: 1 !important; */
-  /* transition: opacity 1s;  */
   transform: translateX(0%);
-  /* position: relative; */
-  /* left:0px !important; */
+  display: block;
+
 }
 
 /* acf toggle in form */
@@ -7257,6 +7293,8 @@ div.acf-switch span.acf-switch-on {
 }
 
 /* reminder card */
-div.warning {
-  background-color: yellow !important;
+.reminder.warning {
+  background: #fff;
+  border: 3px solid #FFCE20 !important;
+  color: #FFCE20 !important;
 }

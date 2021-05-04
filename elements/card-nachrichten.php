@@ -41,14 +41,13 @@ if (strlen($the_slug < 1 )) {
     <div class="card shadow nachricht">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
-                <div class="pre-title">
-
+                <div class="highlight text-size-3 ">
                     <?php  echo qp_date(get_the_date('Y-m-d')); ?>
                 </div> 
-                <h3 class="card-title">
+                <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
-                <p class="preview-text">
+                <p class="text-size-2">
                     <?php  
                     if (strlen(get_field('text')) > 2) {
                         shorten(get_field('text'), $char);
@@ -60,7 +59,6 @@ if (strlen($the_slug < 1 )) {
                 </p>
             </div>
             <?php the_post_thumbnail( 'preview_m' ); ?>
-
         </a>
     </div>
 
@@ -72,5 +70,4 @@ if (strlen($the_slug < 1 )) {
             </a>
         </div>
     <?php } ?>
-
 </div>

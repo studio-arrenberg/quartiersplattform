@@ -3,9 +3,9 @@
 <!-- <?php print_r( get_user_option( 'qp_reminder_card', get_current_user_id( ) ) ); ?> -->
 
 	<div class="content content-shrink">
-		<h1 class="card-title-large">
+		<h2 class="heading-size-2">
 			<?php echo get_query_var('reminder_card_title'); ?>
-		</h1>
+		</h2>
 		<h3 class="text-size-1">
 			<?php echo get_query_var('reminder_card_text'); ?>
 		</h3>

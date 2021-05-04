@@ -2,7 +2,7 @@
     <div class="overlay-content">
         <div class="card card-large reminder">
             <div class="content content-shrink">
-                <h1 class="card-title-large">
+                <h1 class="heading-size-3">
                     🍪 <?php _e("Wir verwenden Cookies", "quartiersplattform"); ?>
                 </h1>
                 <h3>
