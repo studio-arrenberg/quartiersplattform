@@ -1975,8 +1975,8 @@ button.toggle {
 
 .projekt-header-content{
   display: flex;
-  align-items: center;
-
+  /* align-items: center; */
+  flex-direction: column;
 }
 
 
@@ -2018,17 +2018,19 @@ button.toggle {
   flex-wrap: wrap;
 }
 
+
+.quartier section:first-of-type{
+  margin-top: 100px;
+
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
 .quartier .section-full-width{
   max-width: none;
   flex-direction: column;
   
-}
-
-.quartier-header {
-  margin-top: 100px !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: cover !important;
 }
 
 .stage-center{
@@ -2153,6 +2155,7 @@ button.toggle {
   }
 
   .quartier section:first-of-type{
+    margin-top: 60px;
     min-height: unset;
     max-height: 40vh;
   }
