@@ -26,7 +26,7 @@ get_header();
 	<div class="main-content">
 
 	<?php
-		$text = __('Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt!', "quartiersplattform");
+		$text = __('Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt.', "quartiersplattform");
 		reminder_card('helloss', 'Neuigkeiten und Projektupdates', $text );
 		// 'Impressum', home_url( ).'/impressum'
 	?>

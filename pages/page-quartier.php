@@ -43,7 +43,7 @@ get_header();
 
     if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {
         // !!! add link to backend!
-        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.', __('Zu den Einstellungen','quartiersplaattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); 
+        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.', __('Zu den Einstellungen','quartiersplaattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); 
     }
 
     ?>
@@ -67,7 +67,7 @@ get_header();
         <div class="stage-center">
             <!-- <div class="pre-header highlight"><b><?php _e("Lokale Projekte", "quartiersplattform"); ?></b></div> -->
             <h2 class="heading-size-1 stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
-            <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben! Veröffentliche eigene Projekte und finde Untersützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
+            <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Untersützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
            
         </div>
         <div class="link-card-container">
