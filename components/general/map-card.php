@@ -7,7 +7,11 @@ $height = 300;
 
 if ( current_user_can('administrator') && get_field('map') ) { // new feature only for admins 
 
+
+    // Fehler (divs)
 ?>
+
+
 
 
 <div class="card landscape gardient ">
@@ -52,6 +56,7 @@ if ( current_user_can('administrator') && get_field('map') ) { // new feature on
         
          <img src="https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $location['lng'].",".$location['lat'].",".$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ" alt="Projekt Ort">
 
+        </div>
     </div>
 </div>
 
