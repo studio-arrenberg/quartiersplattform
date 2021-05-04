@@ -74,7 +74,7 @@ get_header();
 						'post_type'=> 'projekte', 
 						'post_status'=> 'publish', 
 						'posts_per_page'=> -1, 
-						'order' => 'rand',
+						'orderby'        => 'rand',
 						'tax_query' => array(
 							array(
 								'taxonomy' => 'sdg',
