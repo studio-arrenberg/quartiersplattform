@@ -43,8 +43,8 @@ if (!is_user_logged_in()) {
 
 	<div class="main-content">
 
-        <div class="projekt-header">
-            <div class="projekt-header-emoji">
+        <div class="profil-header">
+            <div class="profil-header-avatar">
                 <?php 
                     // User Avatar
                     $current_user = wp_get_current_user();
@@ -52,7 +52,7 @@ if (!is_user_logged_in()) {
                 ?>
             </div>
             <!-- user name -->
-            <div class="projekt-header-content">
+            <div class="profil-header-content">
                 <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
             </div>
         </div>

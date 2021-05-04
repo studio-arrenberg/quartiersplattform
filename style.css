@@ -1973,6 +1973,30 @@ button.toggle {
 }
 
 
+.projekt-header-content{
+  display: flex;
+  align-items: center;
+
+}
+
+
+.profil-header-content{
+  display: flex;
+  align-items: center;
+
+}
+
+.profil-header{
+  display: flex;
+}
+
+.profil-header-avatar img{
+  border-radius: 20px;
+  margin-right: 15px;
+
+}
+
+
 
 
 
