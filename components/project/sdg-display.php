@@ -37,8 +37,7 @@ if ( current_user_can('administrator') ) {
 
         endforeach;
         ?>
-</div>
-
+    </div>
             <a class="button" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
         <?php 
 
