@@ -159,7 +159,8 @@ get_header();
                     get_template_part( 'components/general/share-post' );
 
                     // Map
-                    get_template_part('components/map-card');
+                    get_template_part('components/general/map-card');
+
 
                     // Pin Project to Landing Page
                     if ( current_user_can('administrator') ) {

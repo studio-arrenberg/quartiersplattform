@@ -141,18 +141,10 @@ get_header();
     
         <!-- Map -->
         <!-- not ready yet -->
-        <?php if ( current_user_can('administrator') ) { // new feature only for admins 
-            
-            // the_field('map');
-            if (get_field('map')) {
-                get_template_part('components/map-card');
-            }    
-
-        } 
-        ?>
+        <?php get_template_part('components/general/map-card'); ?>
     
         <!-- Backend edit link -->
-        <?php edit_post_link(); ?>
+        <?php qp_backend_edit_link(); ?>
 
         <!-- kommentare -->
         <?php			

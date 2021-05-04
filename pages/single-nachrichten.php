@@ -101,7 +101,7 @@ get_header();
         
 
         <!-- Backend edit link -->
-        <?php edit_post_link(); ?>
+        <?php qp_backend_edit_link(); ?>
 
         <!-- kommentare -->
         <?php			
