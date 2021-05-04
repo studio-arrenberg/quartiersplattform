@@ -40,6 +40,8 @@ get_header();
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                 pin_toggle();
 
+                visibility_toggle(get_the_ID(  ));
+
             }
             ?>
 

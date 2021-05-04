@@ -136,6 +136,7 @@ get_header();
                     if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
                         reminder_card('warning', __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
                     }
+                    // echo get_the_ID(  );
 
                     // Toolbox
                     get_template_part( 'components/project/toolbox' );
@@ -180,7 +181,7 @@ get_header();
                 <?php if ($current_user->ID == $post->post_author) { ?>
                 <div id="settings" class="bar bar-hidden">
 
-                    <?php post_visibility_toggle( get_the_ID(  ) ); ?>
+                    <?php visibility_toggle( get_the_ID(  ) ); ?>
 
 
                     <div class="publish-form">

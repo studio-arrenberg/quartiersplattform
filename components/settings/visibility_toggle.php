@@ -21,7 +21,7 @@
         var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
     
         var data = {
-            'action': 'projekt_toggle_status', // !!! wording
+            'action': 'visibility_toggle', // !!! wording
             'post_id': id,
             'status': $('label.'+elementClass+' input').is(":checked"),
             'request': 1,
