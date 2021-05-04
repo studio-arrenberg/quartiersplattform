@@ -1045,9 +1045,20 @@ button.toggle {
 .button-group .button svg {
   margin-bottom: 5px;
 }
-.button:hover svg path{
+
+.button svg path{
+  fill: #fff;
+}
+
+
+.button.is-style-outline svg path{
+  fill: #003054;
+}
+
+.button.is-style-outline:hover svg path{
   fill: #0091ff;
 }
+
 
 /* Hiding and Showing ------------------------ */
 
