@@ -4,7 +4,7 @@
 $veranstaltungen = array(
     'post_type'=>'veranstaltungen', 
     'post_status'=>'publish', 
-    'posts_per_page'=> 20,
+    'posts_per_page'=> -1,
     'meta_key' => 'event_date',
     'orderby' => 'meta_value_num',
     'order' => 'ASC',

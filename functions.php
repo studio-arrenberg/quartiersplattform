@@ -2916,11 +2916,16 @@ function projekt_carousel( ) {
 	$args4 = array(
 		'post_type'=> array('projekte'), 
 		'post__in' => $array,
-		'post_status'=>'any', 
+		'post_status'=> array('publish', 'draft', 'auto-draft'), 
 		'posts_per_page'=> -1,
 		'orderby' => 'modified',
 		// 'orderby' => 'DESC'
 	);
+
+	// print_r($array);
+	if (!$array) {
+		//return false;
+	}
 
 	set_query_var( 'highlight_display', true );
 	set_query_var( 'projekt_carousel_add', true );
@@ -2943,10 +2948,10 @@ function projekt_carousel( ) {
 
 			<?php  
 			
-			if (wp_is_mobile(  )) {
+			if (wp_is_mobile(  ) && $array) {
 				slider($args4, 'badge', 4, 'false', 'start');
 			}
-			else {
+			else if ($array) {
 				card_list($args4, 'badge');
 				// slider($args4, 'badge', 4, 'false');
 			}
@@ -3184,6 +3189,19 @@ function qp_backend_edit_link() {
 
 }
 
+
+/**
+ * Hijack Default User Role
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return string
+ */
+add_filter('pre_option_default_role', function($default_role){
+    // You can also add conditional tags here and return whatever
+    return 'contributor'; // This is changed
+    return $default_role; // This allows default
+});
 
 
 
