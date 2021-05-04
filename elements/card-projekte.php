@@ -52,7 +52,6 @@ fehlt:
     <?php } ?>
 
         <div class="projekt  background-image 
-        
         <?php
                     if (empty(get_field('emoji'))) {
                      echo 'blur' ;
@@ -63,21 +62,14 @@ fehlt:
                         the_post_thumbnail_url('landscape_s' ); 
                     }
                 ?>'); ">
-        <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
+            <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content align-center">
                 <span class="emoji-large"><?php  shorten(get_field('emoji'), '200'); ?></span>
-                        
-                
-
                 <h3 class="heading-size-3">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
                 <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
             </div>
-
-
-            
-
 
             <!-- <div class="background-image-blur">
                 <?php the_post_thumbnail( 'landscape_s' ); ?>

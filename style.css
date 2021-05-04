@@ -1993,11 +1993,29 @@ button.toggle {
 
 .blur::after{
   content: ' ';
+  top: 0px;
+  left: 0px;
   height: 100%;
   width: 100%;
   position: absolute;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
 }
+
+
+.blur .content {
+  z-index: 2;
+}
+
+ @supports (
+  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px) )) {
+    .blur::after{ 
+      background: rgba(255, 255, 255, 0.6);
+      -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+  }
+}
+
 
 .projekt-header{
   display: flex;
@@ -5093,6 +5111,8 @@ a.card-link{
 }
 
 .align-center  {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   justify-content: center!important;
   align-items: center !important;
@@ -5690,21 +5710,6 @@ a:hover .shadow{
   padding-bottom: 15px !important;
   height: 100%;
   bottom: 0px;
-}
-
-
-.blur .content {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-/* if backdrop support: very transparent and blurred */
-@supports (
-  (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px) )) {
-    .blur .content {
-      background: rgba(255, 255, 255, 0.6);
-      -webkit-backdrop-filter: blur(7px);
-    backdrop-filter: blur(7px);
-  }
 }
 
 
