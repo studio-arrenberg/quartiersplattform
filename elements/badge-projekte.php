@@ -10,8 +10,8 @@ global $current_user;
         <div class="emoji"><?php the_field('emoji'); ?></div> 
         
         <?php 
-            if (empty(get_field('emoji'))) {
-                the_post_thumbnail( 'preview_m' ); 
+            if (empty(get_field('emoji')) && get_the_post_thumbnail('square_s')) {
+                the_post_thumbnail( 'square_s' ); 
             }
         ?>
         

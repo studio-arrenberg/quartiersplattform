@@ -7163,7 +7163,7 @@ a.text-link:hover {
   
 }
 
-.menubar {
+/* .menubar {
   display: none;
   opacity: 0;
 }
@@ -7172,17 +7172,40 @@ a.text-link:hover {
   display: block;
   opacity: 1 !important;
   transition: opacity 1s; 
-}
+} */
 
-.bar {
+
+.bar-content > .bar {
   display: none;
   opacity: 0;
 }
 
-.bar-active {
+.bar-content > .bar-active {
   display: block;
   opacity: 1 !important;
   transition: opacity 1s; 
+}
+
+
+.profil-content {
+  overflow-x: hidden;
+}
+
+
+.profil-content > .bar {
+  /* display: none; */
+  /* opacity: 0; */
+  /* position: relative; */
+  transform: translateX(-100%);
+}
+
+.profil-content > .bar-active {
+  /* display: block; */
+  /* opacity: 1 !important; */
+  /* transition: opacity 1s;  */
+  transform: translateX(0%);
+  /* position: relative; */
+  /* left:0px !important; */
 }
 
 /* acf toggle in form */

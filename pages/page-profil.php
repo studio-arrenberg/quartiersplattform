@@ -66,6 +66,7 @@ if (!is_user_logged_in()) {
                         <button class="filter-button filter-active " data-value="summary" data-translate-value="0">
                             <?php _e('Profil', 'quartiersplattform'); ?>
                         </button>
+
                             <button class="filter-button" data-value="settings" data-translate-value="100%">
                                 <?php _e('Einstellungen', 'quartiersplattform'); ?>
                             </button>
@@ -75,8 +76,6 @@ if (!is_user_logged_in()) {
                 </div>
             </div>
         
-
-                       
 
            
             <script>
@@ -103,10 +102,9 @@ if (!is_user_logged_in()) {
 
 
     <!-- page menubar content -->
-    <div>
+    <div class="profil-content">
 
-
-        <div id="profil" class="menubar menubar-active">
+        <div id="summary" class="bar bar-active">
 
 
             <?php 
@@ -133,7 +131,7 @@ if (!is_user_logged_in()) {
         </div>
 
         <!-- bei menubar-hidden (nicht active) wird UM Disaabled -->
-        <div id="settings" class="menubar menubar-active">
+        <div id="settings" class="bar bar-hidden">
 
 
                 <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
