@@ -40,6 +40,7 @@
 ## v1.8
 - cookie disclaimer
 - notifications
+- acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 
 ## Theme Publication
 
