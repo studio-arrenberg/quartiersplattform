@@ -135,8 +135,9 @@ get_header();
                         'post_type'=>'sdg', 
                         'post_status'=>'publish', 
                         'posts_per_page'=> 4,
-                        'meta_key'   => 'number',
-                        'meta_value' => $slug,
+                        // 'meta_key'   => 'number',
+                        // 'meta_value' => $slug,
+                        'orderby'        => 'rand',
                     );
                         
                     // slider($args, $type = 'badge', $slides = '2', $dragfree = 'false', $align = 'start');
