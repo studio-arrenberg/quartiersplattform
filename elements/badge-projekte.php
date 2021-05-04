@@ -10,8 +10,12 @@ global $current_user;
         <div class="emoji"><?php the_field('emoji'); ?></div> 
         
         <?php 
+<<<<<<< Updated upstream
             
             if (empty(get_field('emoji'))) {
+=======
+            if (empty(get_field('emoji')) && get_the_post_thumbnail('square_s')) {
+>>>>>>> Stashed changes
                 the_post_thumbnail( 'square_s' ); 
             }
         ?>

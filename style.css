@@ -280,6 +280,7 @@ h6,
 .text-size-1 {
   font-size: 2rem;
   line-height: 2.2rem;
+  font-weight: 500;
 }
 
 p, .text-size-2 {
@@ -5358,22 +5359,24 @@ margin-top: -30px;
    flex-direction: column;
 }
 
-.card-large{
+.reminder{
   padding: 10px;
   width: 100%;
   background: #f9fcff;
   border: 1px solid #dcf0ff;
   margin-bottom: 20px;
+  max-width: 700px;
+  margin: 0 auto 25px auto;
 }
 
-.right-sidebar .card-large{
+.right-sidebar .reminder{
   padding: 10px;
 }
 
 
 @media (min-width: 782px) {
-  .card-large{
-    padding: 25px;
+  .reminder{
+    padding: 20px;
   }
 
   .landscape{

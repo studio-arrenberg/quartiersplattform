@@ -1,4 +1,4 @@
-<div class="card card-large reminder <?php echo get_query_var('reminder_card_slug')." ".get_query_var('reminder_card_style'); ?>">
+<div class="card  reminder <?php echo get_query_var('reminder_card_slug')." ".get_query_var('reminder_card_style'); ?>">
 
 <!-- <?php print_r( get_user_option( 'qp_reminder_card', get_current_user_id( ) ) ); ?> -->
 
@@ -6,7 +6,7 @@
 		<h1 class="card-title-large">
 			<?php echo get_query_var('reminder_card_title'); ?>
 		</h1>
-		<h3>
+		<h3 class="text-size-1">
 			<?php echo get_query_var('reminder_card_text'); ?>
 		</h3>
 	</div>
