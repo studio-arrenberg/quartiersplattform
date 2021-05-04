@@ -2,28 +2,28 @@
     <?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
 
         <h4 class="heading-size-3"><?php _e('Anheften', 'quartiersplattform'); ?></h4>
-
+        <p><?php _e('Hier kannst du das Projekt auf die Quariersseite pinnen.', 'quartiersplattform'); ?></p>
         <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
             <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
             <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
-            <?php _e(' Das Projekt wird auf der Startseite angezeigt.', 'quartiersplattform'); ?>
+            <?php _e('Gepinnt', 'quartiersplattform'); ?>
             </span>
             <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-            <?php _e('Das Projekt wird nicht auf der Startseite angezeigt.', 'quartiersplattform'); ?> </span>
+            <?php _e('Nicht gepinnt', 'quartiersplattform'); ?> </span>
             <span class="acf-spinner" style="display: inline-block;"></span>
         </label> 
 
     <?php } else if ( get_query_var( 'pin_type' ) == 'pin_project') { ?>
 
         <h4 class="heading-size-3"><?php _e('Anheften', 'quartiersplattform'); ?></h4>
-
+        <p><?php _e('Hier kannst du den Beitrag auf deine Projektseite pinnen.', 'quartiersplattform'); ?></p>
         <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
             <input type="checkbox" <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "checked"; ?> onclick="pin_toggle('<?php echo get_the_ID(  ); ?>', '<?php echo get_query_var( 'pin_type' ) ?>', 'pin_toggle-<?php echo get_the_ID(  ); ?>')" >
             <span class="slider toggle_a <?php if (get_field(get_query_var( 'pin_type' )) != 'true') echo "hidden"; ?>">
-            <?php _e(' Der Beitrag wird auf die Projekt Übersichtsseite gepinnt.', 'quartiersplattform'); ?>
+            <?php _e('Gepinnt', 'quartiersplattform'); ?>
             </span>
             <span class="slider toggle_b <?php if (get_field(get_query_var( 'pin_type' )) == 'true') echo "hidden"; ?>">
-            <?php _e('Der Beitrag wird nicht auf die Projekt Übersichtsseite gepinnt.', 'quartiersplattform'); ?> </span>
+            <?php _e('Nicht gepinnt', 'quartiersplattform'); ?> </span>
             <span class="acf-spinner" style="display: inline-block;"></span>
         </label> 
 
