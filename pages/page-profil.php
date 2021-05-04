@@ -135,9 +135,23 @@ if (!is_user_logged_in()) {
         <div id="settings" class="bar bar-hidden">
 
 
+            <!-- Gutenberg Editor Content -->    
+            <div class="gutenberg-content ">
+                <?php
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
+                ?>
+            </div>
+
+
                 <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
 
-                 <h4 class="heading-size-3"><?php _e('Einstellungen', 'quartiersplattform'); ?> </h4>
+                 <!-- <h4 class="heading-size-3"><?php _e('Einstellungen', 'quartiersplattform'); ?> </h4> -->
+
+
                 <!-- Contact Information -->   
                 <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
                 <br>
