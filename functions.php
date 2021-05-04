@@ -3185,6 +3185,19 @@ function qp_backend_edit_link() {
 }
 
 
+/**
+ * Hijack Default User Role
+ *
+ * @since Quartiersplattform 1.7
+ * 
+ * @return string
+ */
+add_filter('pre_option_default_role', function($default_role){
+    // You can also add conditional tags here and return whatever
+    return 'contributor'; // This is changed
+    return $default_role; // This allows default
+});
+
 
 
 /**
