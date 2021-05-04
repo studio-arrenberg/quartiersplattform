@@ -2886,7 +2886,8 @@ function projekt_carousel( ) {
 	// get published posts
 	$args_public = array(
 		'post_type' => 'projekte',
-		'post_status' => array('publish')    
+		'post_status' => array('publish'),
+		'posts_per_page'=> -1,
 	);
 	$args_public = new WP_Query($args_public);
 	while ( $args_public->have_posts() ) {
@@ -2900,7 +2901,8 @@ function projekt_carousel( ) {
 		$args_private = array(
 			'post_type' => 'projekte',
 			'author__in' => $current_user->ID,
-			'post_status' => array('pending', 'draft', 'auto-draft')    
+			'post_status' => array('pending', 'draft', 'auto-draft'),
+			'posts_per_page'=> -1,   
 		);
 		$args_private = new WP_Query($args_private);
 		while ( $args_private->have_posts() ) {
@@ -2914,8 +2916,9 @@ function projekt_carousel( ) {
 		'post_type'=> array('projekte'), 
 		'post__in' => $array,
 		'post_status'=>'any', 
-		'posts_per_page'=> 50,
-		'orderby' => 'modified'
+		'posts_per_page'=> -1,
+		'orderby' => 'modified',
+		'orderby' => 'DESC'
 	);
 
 	set_query_var( 'highlight_display', true );

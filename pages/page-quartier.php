@@ -20,36 +20,37 @@ get_header();
 
 <main class="quartier" role="main" data-track-content>
 
-    <section class="quartier-header bg-image" style="background: url('<?php 
-    $image = get_field('field_609021bb178d8', 'option');
-    if( !empty( $image ) ){ ?>
-        <?php echo esc_url($image['url']); ?>
+
     <?php 
-    }  
-    else
-    {
-        $image_url = get_template_directory_uri()."/assets/images/quartier.png";
-        ?>
-        <?php echo $image_url; ?>
-    <?php 
-    }  // !!! define vaariable and maake editable with acf
-    ?>')">
+    $image = get_field('quartier_image', 'option');
+    if (empty( $image )) {
+        $image = get_template_directory_uri()."/assets/images/quartier.png";
+    }
+    else {
+        $image = $image['url'];
+    }
+
+    ?>
+
+    <section class="quartier-header bg-image" style="background: url('<?php echo esc_url($image); ?>')">
         <div class="stage-center has-bg-blur">
-            <div class="heading-size-2"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div>
-            <h1 class="heading-size-1"><?php _e("Willkommen am Arrenberg", "quartiersplattform"); ?></h1>
+            <!-- <div class="heading-size-2"><b><?php _e("Entdecke dein Quartier", "quartiersplattform"); ?></b></div> -->
+            <h1 class="heading-size-1"><?php the_field('welcome-title','option'); ?></h1>
         </div>
     </section>
+
     <?php 
 
-    if (current_user_can('administrator') && !get_field('field_609021bb178d8','option') ) {
+    if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {
         // !!! add link to backend!
-        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.'); 
+        reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Textfür die Startseite anpassen.', 'Zu den Einstellung',home_url().'/wp-admin/admin.php?page=theme-general-settings'); 
     }
 
     ?>
 
     <section>
         <div class="stage-center">
+            <p><?php the_field('welcome-text','option'); ?></p>
             <div class="link-card-container">
                 <?php
                     // Gutenberg Editor Content
