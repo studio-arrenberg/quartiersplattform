@@ -195,23 +195,49 @@ if (empty($phase_color)) {
 
 <script>
     function show() {
-        var element = document.getElementById("overlay");
-        element.classList.remove("hidden");
-        element.classList.add("visible");
 
-        _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
+        if (document.querySelector("a.energie-ampel-button").classList.contains('is-style-outline')) {
+        
+            var element = document.getElementById("overlay");
+            element.classList.remove("hidden");
+            element.classList.add("visible");
 
-        var htmlElement = document.getElementsByTagName("html")[0];
-        htmlElement.classList.add("no-scroll");
+            // _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
+
+            var htmlElement = document.getElementsByTagName("html")[0];
+            htmlElement.classList.add("no-scroll");
+
+
+            document.querySelector("a.energie-ampel-button").classList.remove('is-style-outline');
+            document.body.style.overflowY = "hidden";
+        
+        }
+        else {
+
+            var element = document.getElementById("overlay");
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+
+            var htmlElement = document.getElementsByTagName("html")[0];
+            htmlElement.classList.remove("no-scroll");
+
+            document.body.style.overflowY = "scroll";
+            document.querySelector("a.energie-ampel-button").classList.add('is-style-outline');
+
+        }
     }
 
-
     function hide() {
+
         var element = document.getElementById("overlay");
         element.classList.remove("visible");
         element.classList.add("hidden");
 
         var htmlElement = document.getElementsByTagName("html")[0];
         htmlElement.classList.remove("no-scroll");
+
+        document.body.style.overflowY = "scroll";
+        document.querySelector("a.energie-ampel").classList.add('is-style-outline');
+
     }
 </script>

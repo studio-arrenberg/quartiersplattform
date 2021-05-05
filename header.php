@@ -120,7 +120,7 @@ wp_maintenance_mode();
 
             <div class="push-right">
 
-                <a class="button header-button is-style-outline " onclick="show()">
+                <a class="button header-button is-style-outline energie-ampel-button" onclick="show()">
                     <?php require get_template_directory() . '/assets/icons/ampelmann.svg'; ?>
                 </a>
 
