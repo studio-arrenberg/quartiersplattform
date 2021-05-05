@@ -12,12 +12,10 @@
 
 
 
-
 <?php if ( current_user_can('administrator') ) {
 
-        
         ?>
-        
+<!--         
     <br>
     <br>
         <h3><?php _e('Sichtbarkeit', 'quartiersplattform'); ?></h3>
@@ -33,12 +31,11 @@
                 </button>
             </div>
             <span class="acf-spinner" style="display: inline-block;"></span>
-        </div> 
+        </div>  -->
         
         <?php } ?>
 
-
-<script>
+<script> 
 
     function visibility_toggle(id, elementClass) {
 

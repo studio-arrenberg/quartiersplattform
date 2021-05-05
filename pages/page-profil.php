@@ -114,7 +114,7 @@ if (!is_user_logged_in()) {
             
             ?>
 
-            <h2><?php _e('Deine Projekte', 'quartiersplattform'); ?> </h2>
+            
             <?php
                 $args4 = array(
                     'post_type'=> 'projekte', 
@@ -125,8 +125,13 @@ if (!is_user_logged_in()) {
                     'offset' => '0', 
                 );
                 // slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
-                card_list($args4);
 
+                ?>
+
+                    <h2><?php _e('Deine Projekte', 'quartiersplattform'); ?> </h2>
+                
+                <?php 
+                card_list($args4);
             ?>
 
         </div>
@@ -138,11 +143,11 @@ if (!is_user_logged_in()) {
             <!-- Gutenberg Editor Content -->    
             <div class="gutenberg-content ">
                 <?php
-                    // if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                    //     the_excerpt();
-                    // } else {
-                    //     the_content( __( 'Continue reading', 'twentytwenty' ) );
-                    // }
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
                 ?>
             </div>
 
