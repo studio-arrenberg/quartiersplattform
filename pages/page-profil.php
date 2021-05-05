@@ -128,7 +128,7 @@ if (!is_user_logged_in()) {
 
                 ?>
 
-                    <h2><?php _e('Deine Projekte', 'quartiersplattform'); ?> </h2>
+                <h2><?php _e('Deine Projekte', 'quartiersplattform'); ?> </h2>
                 
                 <?php 
                 card_list($args4);
