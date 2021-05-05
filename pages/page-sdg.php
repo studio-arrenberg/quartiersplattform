@@ -23,7 +23,7 @@ get_header();
 			<h1 class="page-title">
 				<?php _e(' Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?>
 			</h1>
-			<h2> 
+			<h2 class="text-size-1 large-margin-bottom"> 
 				<?php _e('Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?> 
 			</h2>
 		</div>
