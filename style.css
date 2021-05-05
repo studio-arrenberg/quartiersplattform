@@ -1571,6 +1571,11 @@ button.toggle {
     max-height: none;
     font-weight: 700;
     overflow: hidden;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    
   }
 
   .yellow-tag{
@@ -1609,6 +1614,12 @@ button.toggle {
     position: -webkit-sticky;
     position: sticky;
     top: 115px;
+  }
+
+
+  .badge-link .heading-size-4{
+  max-width: 220px;
+    
   }
 }
 
@@ -2347,6 +2358,7 @@ button.toggle {
 
 .badge img{
   height: auto  !important;
+  border-radius: 20px;
 }
 
 .badge-button{
@@ -6540,6 +6552,10 @@ font-weight: 700;
   left: 0px;
   max-height: 300px;
 }
+/* 
+.um-single-image-preview::before {
+  content: 'Lade die Seite neu um das Bild zu wechseln.';
+} */
 
 .um-single-image-preview img {
   width: 200px;
@@ -7351,18 +7367,28 @@ a.text-link:hover {
 
 
 .profil-content > .bar {
-  transform: translateX(-100%);
-  transition: transform ease-in-out 0.2s;
-  display: none;
+  top: 400px;
+  transition: opacity ease-in-out 0.2s;
+  opacity: 0%;
+  height: 0px;
+  overflow: hidden;
+  padding: 0px 15px;
+  margin: 0px -15px;
+  
 }
 
 .profil-content > .bar-active {
   transform: translateX(0%);
   display: block;
-
+  opacity: 100%;
+  height: auto;
 }
 
-/* acf toggle in form */
+.profil-content .gutenberg-content {
+  margin: 20px 0px;
+}
+
+/* acf toggle in form
 div.acf-switch.-on span.acf-switch-on {
   display: block;
 }
@@ -7374,7 +7400,41 @@ div.acf-switch span.acf-switch-off {
 }
 div.acf-switch span.acf-switch-on {
   display: none;
+} */
+
+
+.toggle-wrapper{
+  max-width: 300px;
+  background: #c2e4ff;
+  display: flex;
+  border-radius: 20px;
+  padding: 5px;
+  justify-content: space-between; 
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
+
+.toggle-button {
+  width: calc( 50% - 2.5px );
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: transparent;
+  box-shadow: none;
+  color: #000;
+} 
+
+.toggle-button:hover{
+  box-shadow: none;
+  color: #0091ff;
+}
+.toggle-button-active{
+  background-color: #0091ff;
+  color: #fff;
+}
+
+.toggle-wrapper:first-child{
+  margin-right: 5px;
+} 
 
 .small-margin{
   margin: 15px 0px;
@@ -7386,7 +7446,6 @@ div.acf-switch span.acf-switch-on {
   border: 3px solid #FFCE20 !important;
   color: #FFCE20 !important;
 }
-
 
 .um-field-error{
   color: red;
