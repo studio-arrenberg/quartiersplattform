@@ -4,6 +4,8 @@
     global $current_user;
     $page_for_posts = get_option( 'page_for_posts' );
 
+    // !!! check project and post
+
     if (get_post_status() == 'publish') {
 ?>
     <div class="share">
