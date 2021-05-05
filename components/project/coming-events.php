@@ -27,7 +27,8 @@ $args_chronik = array(
 );
 
 if (count_query($args_chronik)) {
-    echo "<h2>".__('Aktuelle Veranstaltung', 'quartiersplattform')."</h2>";
+    echo "<h3 class='margin-bottom'>".__('Aktuelle Veranstaltung', 'quartiersplattform')."</h3>";
+
     card_list($args_chronik);
 }
 
