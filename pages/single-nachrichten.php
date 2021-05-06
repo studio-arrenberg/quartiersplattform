@@ -96,7 +96,16 @@ get_header();
         </div>
 
         <div class="small-projekt-card">
-            <?php project_card($post->ID);?>
+            <?php 
+            
+            // project is not public
+            if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
+                reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+            }
+            
+            project_card($post->ID);
+            
+            ?>
         </div>
         <?php author_card(); ?>
 

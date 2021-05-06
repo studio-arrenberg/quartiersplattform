@@ -36,10 +36,12 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       ?>
     </title>
 
-    <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
+
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/maintenance.css">
-
-
 
     <link rel="apple-touch-icon" sizes="57x57"
         href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">

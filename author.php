@@ -103,7 +103,7 @@ get_header();
 
             <?php
                 $args4 = array(
-                    'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'), 
+                    'post_type'=> array('veranstaltungen', 'nachrichten','umfragen'), 
                     'post_status'=>'publish', 
                     'author' =>  $curauth->ID,
                     'posts_per_page'=> 20, 
