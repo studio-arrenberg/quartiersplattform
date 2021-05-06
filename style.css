@@ -125,7 +125,7 @@ body {
   background: #FCFCFE;  box-sizing: border-box;
   color: #000;
   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
-font-weight: 400;
+  font-weight: 400;
   font-size: 1.8rem;
   text-align: left;
 }
@@ -279,7 +279,7 @@ h6,
   text-transform: uppercase;
 }
 
-.text-size-1 {
+.big, .text-size-1 {
   font-size: 2rem;
   line-height: 2.3rem;
   font-weight: 500;
@@ -291,23 +291,26 @@ p, .text-size-2 {
   font-weight: 500;
 }
 
-.text-size-3 {
+small, .text-size-3 {
   font-size: 1.55rem;
   line-height: 1.6rem;
   font-weight: 500;
 }
 
+.text-size-4 {
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
 
+.text-size-5 {
+  font-size: 1.15rem;
+  line-height: 1.1rem;
+  font-weight: 500;
+}
 
 .highlight{
   color: #0091ff;
-}
-
-em,
-i,
-q,
-dfn {
-  font-style: italic;
 }
 
 em em,
@@ -315,26 +318,11 @@ em i,
 i em,
 i i,
 cite em,
-cite i {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
-    sans-serif;
-  font-weight: 700;
-}
-
-big {
-  font-size: 2rem;
-}
-
-small {
-  font-size: 1rem;
-}
-
+cite i,
 b,
 strong {
-  font-weight: 500;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica,
-    sans-serif;
-font-weight: 700;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 ins {
@@ -371,7 +359,7 @@ hr {
   border-style: solid;
   border-width: 0.1rem 0 0 0;
   border-color: #dcd7ca;
-  margin: 4rem 0;
+  margin: 20px 0;
 }
 
 a {
@@ -385,7 +373,6 @@ a:focus {
 }
 
 /* Lists ------------------------------------- */
-
 
 ul {
   list-style: disc;
@@ -415,8 +402,6 @@ li {
   line-height: 1.5;
   margin: 0.5rem 0 0 2rem;
 }
-
-
 
 .reset-list-style,
 .reset-list-style ul,
@@ -557,30 +542,10 @@ iframe.instagram-media {
   margin: auto !important;
 }
 
-/* GALLERIES */
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 3em 0 3em -0.8em;
-  width: calc(100% + 1.6em);
-}
-
-.gallery-item {
-  margin: 0.8em 0;
-  padding: 0 0.8em;
-  width: 100%;
-}
-
-.gallery-caption {
-  display: block;
-  margin-top: 0.8em;
-}
-
 /* Inputs ------------------------------------ */
 
 fieldset {
-  border: 0.2rem solid #dcd7ca;
+  border: 1px solid #dcd7ca;
   padding: 2rem;
 }
 
@@ -660,61 +625,6 @@ button,
   color: #000;
 }
 
-.button p {
-  display: inline;
-}
-
-code,
-input[type="url"],
-input[type="email"],
-input[type="tel"],
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius: 15px;
-  border: none;
-  box-shadow: none;
-  display: block;
-  font-size: 1.7rem;
-  max-width: 100%;
-  width: 100%;
-  padding: 15px 15px 13px 20px;
-  background: #f9fcff;
-  border: 1px solid #dcf0ff;
-}
-
-textarea {
-  min-height: 200px;
-  line-height: 1.5;
-  width: 100%;
-  white-space: normal;
-  word-wrap: normal;
-  word-break: keep-all;
-}
-
-
-textarea span{
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  resize: both;
-  min-height: 40px;
-  line-height: 20px;
-}
 
 
 button,
@@ -752,6 +662,65 @@ input[type="file"]::-webkit-file-upload-button {
     0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
     0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
     0 32px 64px rgba(0, 145, 255, 0.07);
+}
+
+
+.button p {
+  display: inline;
+}
+
+code,
+input[type="url"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 15px;
+  border: none;
+  box-shadow: none;
+  display: block;
+  font-size: 1.7rem;
+  max-width: 100%;
+  width: 100%;
+  padding: 15px 15px 13px 20px;
+  background: #f9fcff;
+  border: 1px solid #dcf0ff;
+}
+
+
+
+textarea {
+  min-height: 200px;
+  line-height: 1.5;
+  width: 100%;
+  white-space: normal;
+  word-wrap: normal;
+  word-break: keep-all;
+}
+
+
+textarea span{
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
 }
 
 button:focus,
@@ -1466,7 +1435,7 @@ button.toggle {
 
 
 .no-scroll{
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 
