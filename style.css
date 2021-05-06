@@ -125,7 +125,7 @@ body {
   background: #FCFCFE;  box-sizing: border-box;
   color: #000;
   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
-font-weight: 400;
+  font-weight: 400;
   font-size: 1.8rem;
   text-align: left;
 }
@@ -6103,10 +6103,12 @@ a:hover .shadow{
 }
 
 
-
+/* div.anmerkung h3 {
+  font-weight: 400 !important;
+} */
 
 .anmerkung .pre-title {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .anmerkung .content {
@@ -6115,12 +6117,14 @@ a:hover .shadow{
 }
 
 .in-bearbeitung .pre-title,
-.in-bearbeitung .date {
+.in-bearbeitung .date,
+.in-bearbeitung h3 {
   color: red !important;
 }
 
 .umgesetzt .pre-title,
-.umgesetzt .date {
+.umgesetzt .date,
+.umgesetzt h3 {
   color: rgb(12, 194, 171) !important;
 }
 
@@ -7254,7 +7258,7 @@ a.text-link:hover {
 	margin-top: -0.3em;
 	line-height: 1.5em;
 	vertical-align: text-bottom;
-  font-size: 28px;
+  font-size: 29.2px;
   position: relative;
   top: 8px;
   left: 5px;
