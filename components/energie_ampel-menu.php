@@ -209,7 +209,7 @@ if (empty($phase_color)) {
 
 
             document.querySelector("a.energie-ampel-button").classList.remove('is-style-outline');
-            document.body.style.overflowY = "hidden";
+            // document.body.style.overflowY = "hidden";
         
         }
         else {
@@ -221,7 +221,8 @@ if (empty($phase_color)) {
             var htmlElement = document.getElementsByTagName("html")[0];
             htmlElement.classList.remove("no-scroll");
 
-            document.body.style.overflowY = "scroll";
+            // document.body.style.overflowY = "scroll";
+            // document.body.classlist.add('no-scroll');
             document.querySelector("a.energie-ampel-button").classList.add('is-style-outline');
 
         }
