@@ -43,23 +43,6 @@ get_header();
         </section>
     <?php } ?>
 
-
-    <section>
-        <div class="stage-center">
-            <p><?php the_field('welcome-text','option'); ?></p>
-            <!-- <div class="link-card-container"> -->
-                <?php
-                    // Gutenberg Editor Content
-                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                        the_excerpt();
-                    } else {
-                        the_content( __( 'Continue reading', 'twentytwenty' ) );
-                    }
-                ?>
-            <!-- </div> -->
-        </div>
-    </section>
-
     <section>
         <div class="stage-center">
             <p><?php the_field('welcome-text','option'); ?></p>
@@ -74,6 +57,13 @@ get_header();
                         'meta_value' => array(true, 'true')
                     );
                     card_list($pinned_pages);
+
+                    // Gutenberg
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
                 ?>
             </div>
         </div>
