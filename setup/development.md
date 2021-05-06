@@ -21,6 +21,27 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## v1.7
+
+### Features
+- Beiträge verbergen
+- Pinned Posts (Projekt & Quartier)
+- Neue Menu Leiste
+- Neuer Footer
+- Restrukturierte Quartiersseite
+- Cookie Disclaimer
+- Über Mich
+- Ziele für Nachhaltige Entwicklung 
+### Bugs
+- Umfragen im Newsfeed
+- Ajax mit Nonce Sicherheit
+- Löschung aller Projekt Posts beim Löschen des Projektes
+
+## v1.8
+- cookie disclaimer
+- notifications
+- acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
+
 ## Theme Publication
 
 1.  [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)
@@ -53,6 +74,7 @@ landscape_card(null, 'Hallo Welt','Text....',get_template_directory_uri().'/asse
 landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Query and Manual
 ```
 #### List Card
+**🚨 deprechted**
 ```php 
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
@@ -100,4 +122,30 @@ echo qp_date( $date, $detail = false, $time = '' );
 #### Display Time remaining
 ```php
 echo qp_remaining( $date );
+```
+#### Reminder Card
+Logged in users can remove reminder cards (uses `ajax`).
+```php
+reminder_card( $slug, $title, $text, $button = '', $link = '' );
+// example
+reminder_card('unique_slug', 'Title', 'Text...', 'Impressum', home_url( ).'/impressum' );
+// warning without ID no close button
+reminder_card('warning', 'Dein Profil ist unsichtbar','' );
+// warning with ID with close button
+reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','' );
+// without close button
+reminder_card('', 'Dein Profil ist unsichtbar','' );
+```
+#### Visibility Toggle
+Toggle between `draft` and `pubish` for all post types.
+Can only be used in Loop
+```php
+post_visibility_toggle();
+```
+
+#### pin_toggle($type = 'pin_project')
+Pin Post or Pages on the Landing Page `pin_main` or Projekt Page `pin_project`
+Can only be used in Loop
+```php
+pin_toggle($type = 'pin_project');
 ```

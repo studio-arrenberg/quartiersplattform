@@ -5,22 +5,28 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
-<div class="card-container card-container__center card-container__large ">
-        <div class="card bg_green">
-            <div class="content white-text">
-                <h3 class="card-title-large">
-                    Veröffentliche dein Projekt auf der Quartiersplattform 
-                </h3>
-                <p class="preview-text-large">
-                    Profitiere von der Community! <br>
-                </p>
-            </div>
-        </div>
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+
+		<div class="hidden-small">
+            <?php projekt_carousel(); ?>
+
+		</div>
+
+		
 	</div>
-	
+
+
+	<div class="main-content">
+    <?php 
+    
+    if (is_user_logged_in(  )) {
+        reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen.','quartiersplattform'));
+	?>
+
     <div class="publish-form">
-        <h2>Erstelle dein eigenes Projekt</h2>
+        <h2><?php _e('Erstelle dein eigenes Projekt', 'quartiersplattform'); ?> </h2>
         <br>
 
         <?php 
@@ -37,15 +43,26 @@ get_header();
                     'post_content' => false,
                     'post_title' => true,
                     'return' => get_site_url().'/projekte',
-                    'field_groups' => array('group_5c5de08e4b57c'),
-                    'submit_value'=>'Projekt veröffentlichen',
+                    'fields' => array(
+                        'field_5fc64834f0bf2', // Emoji
+                        'field_5fc647f6f0bf0', // Kurzbeschreibung
+                    ),
+                    'submit_value'=> __('Projekt veröffentlichen','quartiersplattform'),
+                    'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
                 )
             ); 
         ?>
 
     </div>
 
-    <?php emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker ?>
+    <?php 
+        emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
+    }
+    else {
+        $text = __('Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
+		reminder_card('create-project', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Anmelden','quartiersplattform'), home_url().'/login/');
+    }
+    ?>
 
 </main><!-- #site-content -->
 
