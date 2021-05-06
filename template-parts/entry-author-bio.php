@@ -26,7 +26,7 @@ if ( (bool) get_the_author_meta( 'description' ) && (bool) get_theme_mod( 'show_
 	<div class="author-description">
 		<?php echo wp_kses_post( wpautop( get_the_author_meta( 'description' ) ) ); ?>
 		<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-			<?php _e( 'View Archive <span aria-hidden="true">&rarr;</span>', 'twentytwenty' ); ?>
+			<?php _e('View Archive ','twentytwenty').'<span aria-hidden="true">&rarr;</span>,'; ?>
 		</a>
 	</div><!-- .author-description -->
 </div><!-- .author-bio -->

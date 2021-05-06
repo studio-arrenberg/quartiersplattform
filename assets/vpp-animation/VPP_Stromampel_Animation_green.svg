@@ -107,6 +107,7 @@
                 -moz-animation: spin 3s linear infinite;
                 animation: spin 3s linear infinite;
                 transform-origin: 12.9934445% 44.9390476%;
+                fill: white
             }
 
             @-moz-keyframes spin {

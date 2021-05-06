@@ -58,6 +58,13 @@ img.emoji {
 }
 
 
+.emoji-wysiwyg-editor {
+  z-index: 200 !important;
+  background: #f9fcff;
+  border: 1px solid #dcf0ff;
+}
+
+
 .emoji-wysiwyg-editor img {
   position: relative !important;
   z-index: 200;
@@ -67,10 +74,6 @@ img.emoji {
   display: block !important;
 }
 
-.emoji-wysiwyg-editor {
-  background-color: #fff;
-  z-index: 200 !important;
-}
 
 .emoji-wysiwyg-editor:focus {
   outline: none;
@@ -141,7 +144,6 @@ img.emoji {
   border-radius: 15px;
   box-shadow: none;
   word-wrap: break-word;
-  background: #fff;
   pointer-events: none;
 
 
@@ -175,8 +177,12 @@ img.emoji {
 }
 
 .emoji-items-wrap1 {
-  background: #ffffff;
+  background: #f9fcff;
+  border-width: 0px 1px 1px 1px;
+  border-color: #dcf0ff;  
   padding: 5px 2px 5px 5px;
+  border-style: solid;
+  border-radius: 20px;
 }
 
 .emoji-items-wrap1 .emoji-menu-tabs {

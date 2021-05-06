@@ -22,7 +22,7 @@ if (has_post_thumbnail()) {
 ?>
 
 
-<main id="site-content" class="center-header-template <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>" role="main">
+<main class="center-header-template <?php if (!has_post_thumbnail()) echo "no-single-header-image"; ?>" role="main">
 
     <div class="center-header">
         <!-- Bild -->

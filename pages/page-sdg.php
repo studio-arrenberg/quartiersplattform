@@ -10,77 +10,93 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
-
-    <?php
-	// featured projekte
-	$args = array(
-		'post_type'=>'sdg', 
-		'post_status'=>'publish', 
-		'posts_per_page'=> -1,
-		'orderby' => 'ASC'
-	);
-
-	$args = new WP_Query($args);
-	while ( $args->have_posts() ) {
-		$args->the_post();
-		// get_template_part('elements/card', get_post_type());
-
-		?>
-			<div id="sdg-card" class="card card-sgd shadow bg_red">
-                <a class="card-link"  onclick="myFunction()">
-                    <div class="content">    
-						<h3 class="card-title">
-                        	<?php echo get_the_title(); ?>
-                        </h3>
-                        <p class="preview-text">
-                        	<?php
-                        		if (strlen(get_field('text')) > 2) {
-                            		get_excerpt(get_field('text'), '55');
-                            	}
-                                else {
-                                get_excerpt(get_the_content(), '55');
-                                }
-                                ?>
-                        </p>
-                    </div>
-                </a>
-            </div>
+<main id="site-content" class="full-width page-grid" role="main">
+	
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
 
 
-			<!-- <div id="sdg-projekts" class="card-content-hidden"> -->
+	<div class="main-content">
+
+		<div class="">
+			<h1 class="page-title">
+				<?php _e(' Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?>
+			</h1>
+			<h2 class="text-size-1 large-margin-bottom"> 
+				<?php _e('Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?> 
+			</h2>
+		</div>
+
+		<?php
+		// featured projekte
+		$args = array(
+			'post_type'=>'sdg', 
+			'post_status'=>'publish', 
+			'posts_per_page'=> -1,
+			'orderby'   => 'meta_value_num',
+			'meta_key'  => 'goal',
+			'order'     => 'ASC',
+		);
+
+		$args = new WP_Query($args);
+		while ( $args->have_posts() ) {
+			$args->the_post();
+
+			?>
+				<div class="sdg-section" id="sdg-card sdg-id-<?php the_field('goal'); ?>" 
+
+				style="
+					background: linear-gradient(<?php the_field('color'); ?>20, rgba(255,255,255,0));
+					color: <?php the_field('color'); ?>;">
+				
+						<div class="content">    
+							<span class="sdg-number">
+								<?php the_field('goal'); ?>
+							</span >
+							<h3 class="heading-size-3">
+								<?php the_title(); ?>
+							</h3>
+
+							<h4 class="preview-text-large">
+								<?php the_field('slogan'); ?>
+							</h4>
+							<p class="preview-text">
+								<?php the_content(); ?>
+							</p>
+						</div>
+					</a>
+				</div>
+
 
 				<?php
 					$args4 = array(
 						'post_type'=> 'projekte', 
 						'post_status'=> 'publish', 
-						'author' =>  $current_user->ID,
-						'posts_per_page'=> 10, 
-						'order' => 'DESC',
-						'offset' => '0', 
+						'posts_per_page'=> -1, 
+						'orderby'        => 'rand',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'sdg',
+								'field' => 'slug',
+								'terms' => get_field('number'),
+								// 'field' => 'term_id',
+								// 'terms' => array('8',8, 10, 13),
+								// 'terms' => get_post_field( 'post_name' ),
+								// 'terms' => array('sgds',0,1,'0','1','06',8,19,'06. Sauberes Wasser und sanitäre Einrichtungen', 'Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten'),
+							)
+						)
 					);
-					slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
+					
+					slider($args4, $type = 'badge', $slides = '1', $dragfree = 'false');
+					// list_card($args4, $type = 'badge');
 				?>
-
-			<!-- </div> -->
 
 
 		<?php
-
-	}
-	?>
-
-	<script>
-		function myFunction() {
-		var element = document.getElementById("sdg-projekts");
-		element.classList.add("card-content-visible");
-
-
-		var element = document.getElementById("sdg-card");
-		element.classList.remove("shadow");
 		}
-
-	</script>
+		?>
+	</div>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
