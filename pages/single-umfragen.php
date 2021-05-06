@@ -9,7 +9,18 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
+
+	<div class="main-content">
+
+    <div class="page-card shadow">
+        <a class="close-card-link" onclick="history.go(-1);">
+                <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+        </a>
 
     <?php
 
@@ -22,42 +33,58 @@ get_header();
 
             ?>
 
-            <div class="card-container card-container__center card-container__large ">
                 <?php get_template_part('elements/card', get_post_type()); ?>
-            </div>
-
             <br>
 
             <?php
-
             if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                pin_toggle();
 
-                $array = get_post_meta(get_the_ID(), 'polls', true);
-                $array[$i]['total_voter'];
+                visibility_toggle(get_the_ID(  ));
 
-                if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
-                
-                ?>
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Umfrage bearbeiten</a>
-                <?php
-                }
-                ?>
+            }
+            ?>
 
-                <a class="button is-style-outline" onclick="return confirm('Umfrage permanent löschen?')" href="<?php get_permalink(); ?>?action=delete">Umfrage löschen</a>
-            
+
+            <div class="simple-card">
+                <div class="button-group">
+
+                    <?php
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                        $array = get_post_meta(get_the_ID(), 'polls', true);
+                        $array[$i]['total_voter'];
+
+                        if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
+                        
+                        ?>
+                            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
+
+                        <?php
+                        }
+                        ?> 
+                        
+                        <a class="button is-style-outline button-red" onclick="return confirm('Dieses Umfrage endgültig löschen?')"
+                            href="<?php get_permalink(); ?>?action=delete"><?php _e('Umfrage löschen', 'quartiersplattform'); ?></a>
+                    </div>
+                </div>
             <?php
             }
             ?>
+
+            
+
+
+        </div>
 
             <!-- Projekt Teilen -->
             <?php $page_for_posts = get_option( 'page_for_posts' ); ?>
 
             <div class="share">
-                <h2>Umfrage teilen </h2>
+                <h2><?php _e('Umfrage teilen', 'quartiersplattform'); ?>  </h2>
 
                 <div class="copy-url">
                     <input type="text" value="<?php echo get_permalink(); ?>" id="myInput">
-                    <button class="copy" onclick="copy()">Kopieren</button>
+                    <button class="copy is-style-outline" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?></button>
 
                 </div>
 
@@ -74,7 +101,7 @@ get_header();
                     <a class="button is-style-outline" target="blank"
                         onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
                         href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>" target="_blank"
-                        rel="nofollow">Email</a>
+                        rel="nofollow">E-Mail</a>
 
                 </div>
             </div>
@@ -96,33 +123,9 @@ get_header();
 
             <?php
                 // Projekt Kachel
-                $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-                $the_slug = $term_list[0]->slug;
-                if ($the_slug) {
-                    $args = array(
-                        'name'        => $term_list[0]->slug,
-                        'post_type'   => 'projekte',
-                        'post_status' => 'publish',
-                        'numberposts' => '1'
-                    );
+                project_card($post->ID);
+            ?>
 
-                    $my_query = new WP_Query($args);
-                    if ($my_query->post_count > 0) {
-                    ?>
-
-
-                    <h2>Das Projekt</h2>
-
-                    <div class="card-container ">
-
-                    <?php
-                        landscape_card($args);
-                        } 
-            
-                    }
-                    ?>
-
-                    </div>
 
             <?php
             }
@@ -151,7 +154,7 @@ get_header();
                         array(
                             'form' => true,
                             'return' => '%post_url%',
-                            'submit_value' => 'Änderungen speichern',
+                            'submit_value' => __('Änderungen speichern','quartiersplattform'),
                             'post_title' => true,
                             'post_content' => false,    
                             'field_groups' => array('group_601855a265b19'), //Arrenberg App
@@ -181,6 +184,8 @@ get_header();
 
 
 ?>
+
+</div>
 
 </main><!-- #site-content -->
 

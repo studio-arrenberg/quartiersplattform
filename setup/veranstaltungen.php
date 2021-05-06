@@ -67,7 +67,7 @@ if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
         'key' => 'group_5c5ddec3cda85',
-        'title' => 'Veranstaltung',
+        'title' => __('Veranstaltung','quartiersplattform'),
         'fields' => array(
             array(
                 'key' => 'field_5c5ddf4e0e5f5',
@@ -105,10 +105,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d0b28edb0',
-                'label' => 'Beschreibung',
+                'label' => __('Beschreibung','quartiersplattform'),
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => 'Beschreibe deine Veranstaltung.',
+                'instructions' => __('Worum geht es bei deiner Veranstaltung?','quartiersplattform'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -124,10 +124,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d15b8765b',
-                'label' => 'Datum',
+                'label' => __('Datum','quartiersplattform'),
                 'name' => 'event_date',
                 'type' => 'date_picker',
-                'instructions' => 'Wann wird deine Veranstaltung stattfinden?',
+                'instructions' => __('Wann wird deine Veranstaltung stattfinden?','quartiersplattform'),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -141,10 +141,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d16e8765c',
-                'label' => 'Beginn',
+                'label' => __('Beginn','quartiersplattform'),
                 'name' => 'event_time',
                 'type' => 'time_picker',
-                'instructions' => 'Wann startet deine Veranstaltung?',
+                'instructions' => __('Wann startet deine Veranstaltung?','quartiersplattform'),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -158,11 +158,11 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d18b8765d',
-                'label' => 'Ende',
+                'label' => __('Ende','quartiersplattform'),
                 'name' => 'event_end_time',
                 'type' => 'time_picker',
-                'instructions' => 'Wann endet deine Veranstaltung?',
-                'required' => 1,
+                'instructions' => __('Wann endet deine Veranstaltung?','quartiersplattform'),
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -174,7 +174,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d1c4d15c8',
-                'label' => 'Website',
+                'label' => __('Website','quartiersplattform'),
                 'name' => 'website',
                 'type' => 'url',
                 'instructions' => '',
@@ -190,10 +190,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d1e0d15c9',
-                'label' => 'Livestream',
+                'label' => __('Livestream','quartiersplattform'),
                 'name' => 'livestream',
                 'type' => 'url',
-                'instructions' => 'Gib einen Link an, um deine Veranstaltung Live verfolgen zu können.',
+                'instructions' => __('Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link veröffentlichen, damit noch mehr Menschen daran teilhaben können.','quartiersplattform'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -206,7 +206,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d1f4d15ca',
-                'label' => 'Ticket',
+                'label' => __('Ticket','quartiersplattform'),
                 'name' => 'ticket',
                 'type' => 'url',
                 'instructions' => '',
@@ -220,9 +220,28 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => '',
                 'placeholder' => '',
             ),
+            // array(
+            //     'key' => 'field_608a6c2c1be28',
+            //     'label' => 'Sichtbar',
+            //     'name' => 'qp_visibility',
+            //     'type' => 'true_false',
+            //     'instructions' => 'Entscheide ob deine Veranstaltung direkt sichtbar sein soll.',
+            //     'required' => 0,
+            //     'conditional_logic' => 0,
+            //     'wrapper' => array(
+            //         'width' => '',
+            //         'class' => '',
+            //         'id' => '',
+            //     ),
+            //     'message' => '',
+            //     'default_value' => 1,
+            //     'ui' => 1,
+            //     'ui_on_text' => 'Sichtbar',
+            //     'ui_off_text' => 'Privat',
+            // ),
             array(
                 'key' => 'field_5fc8d20bd15cb',
-                'label' => 'Map',
+                'label' => __('Map','quartiersplattform'),
                 'name' => 'map',
                 'type' => 'google_map',
                 'instructions' => '',
@@ -240,10 +259,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_603f4c75747e9',
-                'label' => 'Bild',
+                'label' => __('Bild','quartiersplattform'),
                 'name' => '_thumbnail_id',
                 'type' => 'image',
-                'instructions' => 'Füge deiner Veranstaltung ein Bild hinzu.',
+                'instructions' => __('Welches Bild beschreibt deine Veranstaltung am besten?','quartiersplattform'),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(

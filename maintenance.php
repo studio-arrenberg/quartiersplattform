@@ -24,14 +24,14 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       <?php 
         if (class_exists('acf_pro')) {
           if (get_field('quartiersplattform-name', 'option')) {
-              echo get_field('quartiersplattform-name', 'option')." Update";
+              echo get_field('quartiersplattform-name', 'option').__(" Update",'quartiersplattform');
           }
           else {
-              echo "Hier entsteht deine Quatiersplattform";
+              _e("Hier entsteht deine Quatiersplattform",'quartiersplattform');
           }
         }
         else {
-          echo "Hier entsteht deine Quatiersplattform";
+          _e("Hier entsteht deine Quatiersplattform",'quartiersplattform');
         }
       ?>
     </title>
@@ -79,13 +79,13 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
     <canvas id="confetti"></canvas>
 
     <div class="top-bar">
-      <img class="top-bar-logo" src="<?php echo get_template_directory_uri()?>/assets/sponsoren/quartiersplattform.svg" alt=""/>
+      <img class="top-bar-logo" src="<?php echo get_template_directory_uri()?>/assets/icons/quartiersplattform.svg" alt=""/>
       <div class="flex-push-end">
       <!-- <a class="btn btn-shadow" href="https://arrenberg.app/projekte/quartiersplattform/">Das Projekt</a> -->
-      <a class="btn btn-shadow" href="https://github.com/studio-arrenberg/quartiersplattform#readme">Zur Dokumentation</a>
+      <a class="btn btn-shadow" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"><?php _e('Zur Dokumentation', 'quartiersplattform'); ?> </a>
       </div>
     </div>
-      <img class="bg-logo" src="<?php echo get_template_directory_uri()?>/assets/sponsoren/q.svg" alt=""/>
+      <img class="bg-logo" src="<?php echo get_template_directory_uri()?>/assets/icons/q.svg" alt=""/>
     </div>
 
     <div class="center-desktop">
@@ -95,22 +95,22 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       if (class_exists('acf_pro') && class_exists('UM')) {
       ?>
 
-        <h2 class="pre-title">Gestalte dein Viertel</h2>
-        <h1>Hier entsteht <br>deine Quartiersplattform</h1>
+        <h2 class="pre-title"><?php _e('Gestalte dein Viertel', 'quartiersplattform'); ?> </h2>
+        <h1><?php _e('Hier entsteht', 'quartiersplattform'); ?>  <br><?php _e(' deine Quartiersplattform', 'quartiersplattform'); ?> </h1>
 
         <p class="big">
-          Dein Viertel bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
+          <?php _e('Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.', 'quartiersplattform'); ?>
         </p>
 
         <!-- neu -->
-        <p>Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten? <br>Dann registriere dich jetzt!</p>
+        <p><?php _e('Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten?', 'quartiersplattform'); ?> <br><?php _e('Dann registriere dich jetzt!', 'quartiersplattform'); ?> </p>
         <div class="btn-container">
-          <a   class="btn btn-shadow" href="<?php echo get_site_url(); ?>/login/">Anmelden</a>
-          <a class="btn btn-shadow" href="<?php echo get_site_url(); ?>/register/">Registrieren</a>
+          <a   class="btn btn-shadow" href="<?php echo get_site_url(); ?>/login/"><?php _e('Anmelden', 'quartiersplattform'); ?> </a>
+          <a class="btn btn-shadow" href="<?php echo get_site_url(); ?>/register/"><?php _e('Registrieren', 'quartiersplattform'); ?> </a>
         </div>
 
 
-        <h3>Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:</h3>
+        <h3><?php _e('Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:', 'quartiersplattform'); ?></h3>
         <div class="flex">
           <?php
           # map picture variables
@@ -122,7 +122,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
           <div class="card shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://arrenberg.app">
-              <h4>Arrenberg</h4>
+               <h4 class="heading-size-3">Arrenberg</h4>
               <h5>Wuppertal</h5>
             </a>
           </div>
@@ -137,7 +137,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
           <div class="card  shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://langerfeld.app">
-              <h4>Langerfeld</h4>
+               <h4 class="heading-size-3">Langerfeld</h4>
               <h5>Wuppertal</h5>
             </a>
           </div>
@@ -151,15 +151,15 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       ?>
       
       <h2 class="pre-title">Erste Schritte</h2>
-        <h1>Plugins installieren</h1>
+        <h1><?php _e('Plugins installieren', 'quartiersplattform'); ?> </h1>
         <p class="big">
-          Dein Viertel  bekommt ein Update. Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.
+          <?php _e('Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen.', 'quartiersplattform'); ?>
         </p>
 
-        <h3>Du musst noch folgende Schritte durchführen:</h3>
+        <h3><?php _e('Du musst noch folgende Schritte durchführen:', 'quartiersplattform'); ?> </h3>
 
         <!-- neu -->
-        <a class="button" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/plugins.md">Dokumentation Lesen</a>
+        <!-- <a class="button" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"><?php _e('Dokumentation Lesen', 'quartiersplattform'); ?> </a> -->
 
         <div class="flex">
       
@@ -169,9 +169,9 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
           <div class="card bg_red white">
             <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
-              <h2>Bitte Advanced Custom fields installieren</h2>
+              <h2><?php _e('Bitte Advanced Custom Fields installieren', 'quartiersplattform'); ?> </h2>
               <p>
-                Bitte installieren sie das Plugin ACF durch die Wordpress Plugin Seite. 
+                <?php _e('Bitte installiere das Plugin ACF über die Wordpress Plugin Seite.', 'quartiersplattform'); ?> 
               </p>
             </a>
           </div>
@@ -183,9 +183,9 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
       <div class="card bg_red white">
         <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
-          <h2>Bitte Ultimate Member installieren</h2>
+          <h2><?php _e('Bitte Ultimate Member installieren', 'quartiersplattform'); ?> </h2>
           <p>
-            Bitte installieren sie das Plugin Ultimate Member durch die Wordpress Plugin Seite. Und stellen sie folgende einstellungen ein. (Auf Github erklären)
+            <?php _e('Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite und stelle die in der Dokumentation beschriebenen Einstellungen ein.', 'quartiersplattform'); ?> 
           </p>
         </a>
       </div>
@@ -198,9 +198,9 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       <div class="card bg_orange-light white">
         <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
 
-          <h2>Bitte WP Mail SMTP installieren</h2>
+          <h2><?php _e('Bitte WP Mail SMTP installieren', 'quartiersplattform'); ?></h2>
           <p>
-            Bitte installieren sie das Plugin WP Mail SMTP durch die Wordpress Plugin Seite. Und legen sie ihre email einstellungen an. (Auf Github erklären)
+            <?php _e(' Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein.', 'quartiersplattform'); ?>
           </p>
       </a>
 

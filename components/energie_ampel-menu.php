@@ -20,21 +20,21 @@ if (mysqli_connect_errno()) {
         <div class="energie-ampel">
             <div class="energie-ampel-titles">
                 <div>
-                    <h2>Energie Ampel Fall Back </h2>
+                    <h2><?php _e('Energie Ampel ', 'quartiersplattform'); ?> </h2>
 
-                    <h3 class="green">grüne Phase</h3>
+                    <h3 class="green"><?php _e('grüne Phase', 'quartiersplattform'); ?></h3>
                 </div>
 
                 <div>
                     <h2>230g</h2>
-                    <h3>CO2 pro kWh</h3>
+                    <h3><?php _e(' CO2 pro kWh', 'quartiersplattform'); ?></h3>
                     
                 </div>
             </div>
 
             <div class="strom_array-container">
                 <div class="strom_array">
-                    <div class="red"><label class="day">Jetzt</label></div>
+                    <div class="red"><label class="day"><?php _e('Jetzt', 'quartiersplattform'); ?> </label></div>
                     <div class="green"><label>14:00</label></div>
                     <div class="red"></div>
                     <div class="red"></div>
@@ -58,7 +58,7 @@ if (mysqli_connect_errno()) {
                     <div class="green"><label>14:00</label></div>
                     <div class="green"></div>
                     <div class="green"></div>
-                    <div class="green "><label class="midnight">Donnerstag</label></div>
+                    <div class="green "><label class="midnight"><?php _e('Donnerstag', 'quartiersplattform'); ?> </label></div>
                     <div class="yellow"><label>01:00</label></div>
                     <div class="yellow"></div>
                     <div class="yellow"></div>
@@ -138,14 +138,14 @@ else {
         <div class="energie-ampel">
             <div class="energie-ampel-titles">
                 <div>
-                    <h2>Energie Ampel</h2>
+                    <h2><?php _e('Energie Ampel', 'quartiersplattform'); ?> </h2>
 
-                    <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?>e Phase</h3>
+                    <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?><?php _e('e Phase', 'quartiersplattform'); ?></h3>
                 </div>
 
                 <div>
                     <h2><?php echo $phase_gramm; ?>g</h2>
-                    <h3>CO2 pro kWh</h3>
+                    <h3><?php _e('CO2 pro kWh', 'quartiersplattform'); ?> </h3>
                 </div>
             </div>
 
@@ -163,7 +163,7 @@ else {
                         if ($row['color'] == $color) $label = "";
 
                         if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
-                        if ($c == 1) $label = "<label class='day'>Jetzt</label>";
+                        if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
                             <div class="<?php echo $row['color']; ?>"><?php echo $label; ?></div>
@@ -192,33 +192,52 @@ if (empty($phase_color)) {
 </div>
 
 
-<div class="card-container card-container__center">
-
-    <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vppprojekt.jpg', '/wuppertal-spart-watt'); ?>
-
-</div>
-
-
 
 <script>
     function show() {
-        var element = document.getElementById("overlay");
-        element.classList.remove("hidden");
-        element.classList.add("visible");
 
-        _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
+        if (document.querySelector("a.energie-ampel-button").classList.contains('is-style-outline')) {
+        
+            var element = document.getElementById("overlay");
+            element.classList.remove("hidden");
+            element.classList.add("visible");
 
-        var htmlElement = document.getElementsByTagName("html")[0];
-        htmlElement.classList.add("no-scroll");
+            // _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
+
+            var htmlElement = document.getElementsByTagName("html")[0];
+            htmlElement.classList.add("no-scroll");
+
+
+            document.querySelector("a.energie-ampel-button").classList.remove('is-style-outline');
+            document.body.style.overflowY = "hidden";
+        
+        }
+        else {
+
+            var element = document.getElementById("overlay");
+            element.classList.remove("visible");
+            element.classList.add("hidden");
+
+            var htmlElement = document.getElementsByTagName("html")[0];
+            htmlElement.classList.remove("no-scroll");
+
+            document.body.style.overflowY = "scroll";
+            document.querySelector("a.energie-ampel-button").classList.add('is-style-outline');
+
+        }
     }
 
-
     function hide() {
+
         var element = document.getElementById("overlay");
         element.classList.remove("visible");
         element.classList.add("hidden");
 
         var htmlElement = document.getElementsByTagName("html")[0];
         htmlElement.classList.remove("no-scroll");
+
+        document.body.style.overflowY = "scroll";
+        document.querySelector("a.energie-ampel").classList.add('is-style-outline');
+
     }
 </script>
