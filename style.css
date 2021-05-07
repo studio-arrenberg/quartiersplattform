@@ -5120,10 +5120,15 @@ font-weight: 400;
   border-radius: 25px;
   width: 100%;
   background-color: #fff;
-  padding: 20px 15px;
+  padding: 10px 15px;
   margin-bottom: 15px;
 }
 
+@media (min-width: 782px) {
+  .page-card{
+    padding: 20px 15px;
+  }
+}
 .card {
   flex-wrap: wrap;
   position: relative;
