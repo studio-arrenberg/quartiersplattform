@@ -2,7 +2,7 @@
 
 global $current_user;
 
-if ( current_user_can('administrator') ) { 
+// if ( current_user_can('administrator') ) { 
 
     $terms = get_field('sdg');
     // print_r($terms);
@@ -17,7 +17,7 @@ if ( current_user_can('administrator') ) {
         <div class="card-container">
 
             <?php 
-            foreach( $terms as $term ): 
+            foreach( $terms as $term ):
 
                 $tax = get_term( $term, 'sdg' );
                 $slug = $tax->slug;
@@ -50,6 +50,6 @@ if ( current_user_can('administrator') ) {
         
     }
     
-} 
+// } 
 
 ?>
