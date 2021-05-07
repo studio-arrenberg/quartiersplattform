@@ -1603,25 +1603,6 @@ function cpt_save_worker( $post_id ) {
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
-
-		// // GENERATE MAIL CONTENT
-		// ob_start();
-		// // include(get_stylesheet_directory() . '/components/mail/example.php');
-		// get_template_part( 'components/mail/example' );
-		// $email_content = ob_get_contents();
-		// ob_end_clean();
-
-		// $obj = get_post_type_object( get_post_type($post_id) );
-		// echo $obj->labels->singular_name;
-
-		// // SEND MAIL
-		// $to = 'johann@arrenberg.studio';
-		// $subject = 'Jemand hat unter deiner '.$obj->labels->singular_name.' kommentiert';
-		// $body = $email_content;
-		// $headers = array('Content-Type: text/html; charset=UTF-8');
-		
-		// wp_mail( $to, $subject, $email_content, $headers );
-
 		
 		// assign post to project
 		$tax = $_POST['project_tax'];

@@ -79,7 +79,7 @@ get_header();
 		}
 		else {
 
-			$text = __("-",'quartiersplattform');
+			$text = __("",'quartiersplattform');
     		no_content_card("doc-richtext", __("Feedback zur Quartiersplattform",'quartiersplattform'), $text);
 
 		}

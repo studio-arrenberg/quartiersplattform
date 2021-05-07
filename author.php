@@ -60,16 +60,13 @@ get_header();
                 <?php 
                 
                 $userid = "user_".$curauth->ID; 
-                // echo $curauth->ID;
-                author_card(true, $curauth->ID);
+                author_card(true, $curauth->ID, false);
                 
                 ?>
 
                 
                 <!-- About -->
                 <?php if( get_field('about', $userid) ) { ?>
-                    <br>
-                    <br>
                     <h2><?php _e('Über mich', 'quartiersplattform'); ?> </h2>
                     <div><?php the_field('about', $userid); ?></div>
                 <?php } ?>
@@ -88,12 +85,8 @@ get_header();
                     'order' => 'DESC',
                     'offset' => '0', 
                 );
-                $my_query = new WP_Query($args4);
-                if ($my_query->post_count > 0) {
-                    
-                    echo "<h2  class='margin-bottom'>".__("Projekte von ",'quartiersplattform');
-                    echo $curauth->first_name." ".$curauth->last_name."</h2>";
-
+                if (count_query($args4)) {
+                    echo "<h2 class='margin-bottom'>".__("Projekte von ",'quartiersplattform').$curauth->first_name."</h2>";
                     card_list($args4);      
                 }
             ?>
@@ -110,12 +103,9 @@ get_header();
                     'order' => 'DESC',
                     'offset' => '0', 
                 );
-                $my_query = new WP_Query($args4);
-                if ($my_query->post_count > 0) {
-                    echo "<h2 class='margin-bottom'>".__("Beiträge von ",'quartiersplattform');
-                    echo $curauth->first_name." ".$curauth->last_name."</h2>";
+                if (count_query($args4)) {
+                    echo "<h2 class='margin-bottom'>".__("Beiträge von ",'quartiersplattform').$curauth->first_name."</h2>";
                     card_list($args4);      
-                    
                 }
             ?>
 
