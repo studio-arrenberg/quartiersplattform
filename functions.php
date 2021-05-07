@@ -1543,6 +1543,26 @@ function cpt_save_worker( $post_id ) {
 			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
 		}
 
+		// set query vars
+		set_query_var( 'qp_post_id', $post_id);
+		// prep mail to qp headquarter
+		ob_start();
+		// create mail content
+		get_template_part('components/mail/header');
+		get_template_part('components/mail/anmerkungen');
+		get_template_part('components/mail/footer');
+		// get_template_part( 'components/mail/example' );
+		$mail_html = ob_get_contents();
+		ob_end_clean();
+
+		// send mail to qp headquarter
+		$to = 'hallo@arrenberg.studio';
+		$subject = 'Jemand hat eine Anmerkung geschrieben.';
+		$body = $email_content;
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+		wp_mail( $to, $subject, $mail_html, $headers );
+
+
 	}
 	// Post type fragen & angebote 
 	else if ( get_post_type($post_id) == 'angebote' || get_post_type($post_id) == 'fragen' ) {
@@ -1583,6 +1603,25 @@ function cpt_save_worker( $post_id ) {
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
+
+		// // GENERATE MAIL CONTENT
+		// ob_start();
+		// // include(get_stylesheet_directory() . '/components/mail/example.php');
+		// get_template_part( 'components/mail/example' );
+		// $email_content = ob_get_contents();
+		// ob_end_clean();
+
+		// $obj = get_post_type_object( get_post_type($post_id) );
+		// echo $obj->labels->singular_name;
+
+		// // SEND MAIL
+		// $to = 'johann@arrenberg.studio';
+		// $subject = 'Jemand hat unter deiner '.$obj->labels->singular_name.' kommentiert';
+		// $body = $email_content;
+		// $headers = array('Content-Type: text/html; charset=UTF-8');
+		
+		// wp_mail( $to, $subject, $email_content, $headers );
+
 		
 		// assign post to project
 		$tax = $_POST['project_tax'];
