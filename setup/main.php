@@ -179,7 +179,7 @@ function create_pages() {
         8 => array('title' => __('Angebot erstellen',"quartiersplattform"), 'slug' => 'angebot-erstellen'),
         9 => array('title' => __('Frage erstellen',"quartiersplattform"), 'slug' => 'frage-erstellen'),
         10 => array('title' => __('Projekt erstellen',"quartiersplattform"), 'slug' => 'projekt-erstellen'),
-        
+        11 => array('title' => __('Feedback',"quartiersplattform"), 'slug' => 'feedback'),
     );
 
     for ($i = 0; $i < count($pages); $i++) {

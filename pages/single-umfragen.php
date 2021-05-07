@@ -122,6 +122,11 @@ get_header();
             <br><br>
 
             <?php
+
+            // project is not public
+            if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
+                reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+            }
                 // Projekt Kachel
                 project_card($post->ID);
             ?>

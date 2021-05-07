@@ -1120,6 +1120,9 @@ th {
   display: none !important;
 }
 
+
+
+
 /* Typography -------------------------------- */
 
 .no-select {
@@ -1507,6 +1510,7 @@ th {
     grid-gap: 45px;
     grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
+
   .right-sidebar{
     display: block;
     margin-top: 0px;
@@ -1517,10 +1521,12 @@ th {
     top: 115px;
   }
 
+  .right-sidebar .landscape{
+    height: 172px;
+  }
 
   .badge-link .heading-size-4{
-  max-width: 220px;
-    
+    max-width: 210px;
   }
 }
 
@@ -1699,8 +1705,8 @@ th {
   .single-header-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: flex-start; */
+    justify-content: center; 
+    padding-left: 20px;
     order: 2;
     min-width: 350px;
     max-width: 400px;
@@ -1822,6 +1828,7 @@ th {
 
 .projekt-header-content{
   display: flex;
+  flex-shrink: 2;
   flex-direction: column;
 }
 
@@ -2066,12 +2073,20 @@ th {
 }
 
 .badge img{
-  height: auto  !important;
+  height: 100%  !important;
   border-radius: 20px;
+}
+
+.badge img.emoji{
+  border-radius: 0px;
 }
 
 .badge-button{
   background: #F4F4F4;
+}
+
+.badge-button img {
+  height: 25px !important;
 }
 
 .yours {
@@ -4037,10 +4052,15 @@ font-weight: 700;
   border-radius: 25px;
   width: 100%;
   background-color: #fff;
-  padding: 20px 15px;
+  padding: 20px 10px;
   margin-bottom: 15px;
 }
 
+@media (min-width: 782px) {
+  .page-card{
+    padding: 20px 15px;
+  }
+}
 .card {
   flex-wrap: wrap;
   position: relative;
@@ -4171,8 +4191,8 @@ img.emoji {
 .card .date {
   position: absolute;
   border-radius: 10px;
-  top: 10px;
-  left: 10px;
+  top: 5px;
+left: 5px;
   padding: 7px 12px;
   background: #fff;
   color: #0091FF;
@@ -4226,15 +4246,13 @@ img.emoji {
 /* LANDSCAPE CARD */
 
 .landscape{
-  height: 200px;
   width: 100%;
   height: calc((100vw - 30px) / 2);
+  max-height: 350px;
 }
 
-.landscape a .content {
-  padding: 20px;
-  height: 200px;
-  margin: 0px;
+.landscape .card-link{
+  height: 100%;
 }
 
 .landscape{
@@ -4243,16 +4261,17 @@ img.emoji {
 }
 
 .landscape .content{
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
   padding: 10px;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+.card.background-image  {
+  border: 5px solid #fff
 }
 
 .landscape .pre-title {
@@ -4263,30 +4282,12 @@ img.emoji {
   border-radius: 20px;
 }
 
+/* 
 @media (min-width: 782px) {
   .landscape{
-    height: unset;
-    min-height: 150px;
+    min-height: 300px;
   }
-
-  .landscape .card-link {
-    min-height: 150px;
-  }
-}
-
-
-
-
-
-/* Card Backgroundimage */
-
-.card.background-image {
-  border: 5px solid #fff
-}
-
-
-
-
+} */
 
 
 /* Card Center */
@@ -4807,10 +4808,12 @@ a:hover .shadow{
 }
 
 
-
+/* div.anmerkung h3 {
+  font-weight: 400 !important;
+} */
 
 .anmerkung .pre-title {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 }
 
 .anmerkung .content {
@@ -4819,12 +4822,14 @@ a:hover .shadow{
 }
 
 .in-bearbeitung .pre-title,
-.in-bearbeitung .date {
+.in-bearbeitung .date,
+.in-bearbeitung h3 {
   color: red !important;
 }
 
 .umgesetzt .pre-title,
-.umgesetzt .date {
+.umgesetzt .date,
+.umgesetzt h3 {
   color: rgb(12, 194, 171) !important;
 }
 
@@ -5958,7 +5963,7 @@ a.text-link:hover {
 	margin-top: -0.3em;
 	line-height: 1.5em;
 	vertical-align: text-bottom;
-  font-size: 28px;
+  font-size: 29.2px;
   position: relative;
   top: 8px;
   left: 5px;

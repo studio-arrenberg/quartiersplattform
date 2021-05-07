@@ -1,5 +1,5 @@
 <?php 
-// old!
+// depreched
 $array = array(
     'pages' => array (
         0 => array('title' => 'Startseite', 'slug' => 'startseite'),

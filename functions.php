@@ -850,10 +850,10 @@ require_once dirname( __FILE__ ) .'/setup/projekte.php'; # Projekte
 require_once dirname( __FILE__ ) .'/setup/nachrichten.php'; # Nachrichten
 require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php'; # Veranstaltungen
 require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
-require_once dirname( __FILE__ ) .'/setup/fragen.php'; # Fragen
-require_once dirname( __FILE__ ) .'/setup/angebote.php'; # Angebote
+// require_once dirname( __FILE__ ) .'/setup/fragen.php'; # Fragen
+// require_once dirname( __FILE__ ) .'/setup/angebote.php'; # Angebote
 require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
-// require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
+require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
 
 /**
  * Call UM & ACF function files
@@ -1001,20 +1001,20 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Projekt erstellen';
 		$page_template= get_stylesheet_directory() . '/forms/form-projekte.php';
 	}
-	else if ($post->post_title == "Gemeinsam") {
-		$post_states[] = $prefix.'Gemeinsam';
-		$page_template= get_stylesheet_directory() . '/pages/page-gemeinsam.php';
-	}
-	else if ($post->post_title == "Frage erstellen") {
-		$post_states[] = $prefix.'Frage erstellen';
-		$page_template= get_stylesheet_directory() . '/forms/form-fragen.php';
-	}
-	else if ($post->post_title == "Angebot erstellen") {
-		$post_states[] = $prefix.'Angebot erstellen';
-		$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
-	}
-	else if ($post->post_title == "Anmerkungen") {
-		$post_states[] = $prefix.'Anmerkungen';
+	// else if ($post->post_title == "Gemeinsam") {
+	// 	$post_states[] = $prefix.'Gemeinsam';
+	// 	$page_template= get_stylesheet_directory() . '/pages/page-gemeinsam.php';
+	// }
+	// else if ($post->post_title == "Frage erstellen") {
+	// 	$post_states[] = $prefix.'Frage erstellen';
+	// 	$page_template= get_stylesheet_directory() . '/forms/form-fragen.php';
+	// }
+	// else if ($post->post_title == "Angebot erstellen") {
+	// 	$post_states[] = $prefix.'Angebot erstellen';
+	// 	$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
+	// }
+	else if ($post->post_title == "Feedback") {
+		$post_states[] = $prefix.'Feedback';
 		$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
 	}
 	else if ($post->post_title == "Profil") {
@@ -1083,12 +1083,12 @@ function single_template_hook() {
 	else if ( 'geschichten' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
     }
-	else if ( 'fragen' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
-    }
-	else if ( 'angebote' === $post->post_type ) {
-        $single_template = dirname( __FILE__ ) . '/pages/single-angebote.php';
-    }
+	// else if ( 'fragen' === $post->post_type ) {
+    //     $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
+    // }
+	// else if ( 'angebote' === $post->post_type ) {
+    //     $single_template = dirname( __FILE__ ) . '/pages/single-angebote.php';
+    // }
 	else if ( 'nachrichten' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-nachrichten.php';
     }
@@ -1155,7 +1155,8 @@ function register_scripts() {
     wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
     // wp_enqueue_style ( 'my_css' );
 
-} add_action('init', 'register_scripts', 9);
+} 
+// add_action('init', 'register_scripts', 9);
 
 /**
  * Control comment author URL
@@ -1246,27 +1247,19 @@ function script_managment() {
 	// check for Form pages
 	foreach ( $form_pages as $key => $um_url ) {
 		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
-			// return;
-			// echo "<br><br><br><br>! Hello"; 
 
 			if ($um_url == '/projekt-erstellen/') {
-				// echo "<br><br><br><br>! Emojis please ;)";
 				files_inc_emoji();
 			}
 			else {
-				// echo "<br><br><br><br>! Hello"; 
 				files_edit();
 			}
-
-
 			return false;
 		}
 	}
 	// check for UM Pages
 	foreach ( $um_pages as $key => $um_url ) {
 		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
-			// return;
-			// echo "<br><br><br><br>! Hello kjj"; 
 			files_minimum();
 			return false;
 		}
@@ -1274,40 +1267,31 @@ function script_managment() {
 	// check for QP Pages
 	foreach ( $qp_pages as $key => $um_url ) {
 		if ( strpos( $REQUEST_URI, $um_url ) !== FALSE ) {
-			// return;
-			// echo "<br><br><br><br>! Hello kjj"; 
 			files_none();
 			return false;
 		}
 	}
 	// landing page
 	if (is_front_page()) {
-		// echo "<br><br><br><br>! Front Page";
 		files_none();
 	} 
 	// user is post owner
 	else if ($current_user->ID == $post->post_author && get_post_type() != 'projekte') {
-		// echo "<br><br><br><br>! Post Owner ;)";
-		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
 		files_edit();
 	}
+	// author of project
 	else if ($current_user->ID == $post->post_author && get_post_type() == 'projekte') {
-		// echo "<br><br><br><br>! Projekt Owner ;)";
-		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
 		files_inc_emoji();
 	}
 	// projekt visitor
 	else if (in_array(get_post_type(),$cpts)) {
-		// echo "<br><br><br><br>! CPT Page visitor";
-		// echo "<br>user: ".$current_user->ID." post author: ".$post->post_author;
 		files_minimum();
 	}
+	// visiting projekt feed
 	else if (strpos($REQUEST_URI,'/projekte/')) {
-		// echo "<br><br><br><br>! Feed Page";
 		files_minimum();
 	}
 	else {
-		// echo "<br><br><br><br>! ????? Page";
 		files_minimum();
 	}
 
@@ -1356,13 +1340,6 @@ function files_edit() {
 	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 	// scripts for ajax
 	wp_enqueue_script( 'jquery-form' );
-
-	// wp_deregister_script('jquery-ui-draggable');
-	// wp_deregister_script('jquery-ui-mouse');
-	// wp_deregister_script('jquery-ui-resizable');
-	// wp_deregister_script('jquery-ui-sortable');
-	// wp_deregister_script('jquery-ui-widget');
-	// wp_deregister_script('jquery-ui-selectable');
 
 	wp_deregister_script('twentytwenty-color-calculations');
 
@@ -1566,6 +1543,26 @@ function cpt_save_worker( $post_id ) {
 			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
 		}
 
+		// set query vars
+		set_query_var( 'qp_post_id', $post_id);
+		// prep mail to qp headquarter
+		ob_start();
+		// create mail content
+		get_template_part('components/mail/header');
+		get_template_part('components/mail/anmerkungen');
+		get_template_part('components/mail/footer');
+		// get_template_part( 'components/mail/example' );
+		$mail_html = ob_get_contents();
+		ob_end_clean();
+
+		// send mail to qp headquarter
+		$to = 'hallo@arrenberg.studio';
+		$subject = 'Jemand hat eine Anmerkung geschrieben.';
+		$body = $email_content;
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+		wp_mail( $to, $subject, $mail_html, $headers );
+
+
 	}
 	// Post type fragen & angebote 
 	else if ( get_post_type($post_id) == 'angebote' || get_post_type($post_id) == 'fragen' ) {
@@ -1606,23 +1603,6 @@ function cpt_save_worker( $post_id ) {
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
-
-		// set projekt visibility
-		$visibilty_status = get_field('qp_visibility', $post_id);
-		if (empty($visibilty_status)) {
-			$status = 'draft';
-		}
-		else if ($visibilty_status === true) {
-			$status = 'publish';
-		}
-		else if ($visibilty_status === false) {
-			$status = 'draft';
-		}
-		// update post
-		// $my_post = array();
-		// $my_post['ID'] = $post_id;
-		// $my_post['post_status'] = $status;
-		// wp_update_post( $my_post );
 		
 		// assign post to project
 		$tax = $_POST['project_tax'];
@@ -1794,9 +1774,9 @@ function post_remove () {
 		 // 'core/image'
 	 ];
 	 // !!! dynaisch nicht statisch
-	 if ($post->post_title == "Überblick") {
-		 return $allowed;
-	 }
+	//  if ($post->post_title == "Startseite") {
+	// 	 return $allowed;
+	//  }
 	 return $block_types;
  }
  
@@ -2436,12 +2416,7 @@ function extract_links( $text ) {
 	# https://ihateregex.io/expr/email-2/
 	# https://regex101.com
 
-	// $pattern_url = '~[a-z]+://\S+~i';
-	// $pattern_url = '~www\S+~i';
 	$pattern_url = '/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()!@:%_\+.~#?&\/\/=]*)/';
-	
-	// $pattern_mail = '/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b/i';
-	// $pattern_mail = '/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n\s]+/';
 	$pattern_mail = '/(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))/';
 
 	preg_match_all($pattern_url, $text, $out);
@@ -2589,13 +2564,15 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 		set_query_var('reminder_card_button', $button);
 		set_query_var('reminder_card_link', $link);
 	}
-	if (!$slug || $slug == 'warning') {
+	if ($slug == 'warning') {
 		set_query_var('reminder_card_fix', true);
 		set_query_var('reminder_card_style', 'warning');
 	}
 	else if (strpos($slug, 'warning') !== false) {
-		set_query_var('reminder_card_style', 'warning');
-		
+		set_query_var('reminder_card_style', 'warning');	
+	}
+	if (!$slug) {
+		set_query_var('reminder_card_fix', true);
 	}
 	// template part
 	get_template_part( 'components/reminder-card/reminder-card' );
@@ -2687,48 +2664,6 @@ add_action( 'wp_ajax_reset_reminder_cards', 'reset_reminder_cards_callback' );
 add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callback' );
 
 
-
-
-/**
- * Call To Action Card function
- *
- * @since Quartiersplattform 1.7
- *
- * @param string $slug date
- * @param string $title title
- * @param string $body body
- * @return string html
- */
-
-// function call_to_action_card( $bg_color, $link, $title, $text) {
-
-// 	// define query vars 
-// 	set_query_var('call_to_action_bg_color', $bg_color);
-// 	set_query_var('call_to_action_link', $link);
-// 	set_query_var('call_to_action_title', $title);
-// 	set_query_var('call_to_action_text', $text);
-// 	// template part
-// 	get_template_part( 'components/call-to-action-card' );
-
-// }
-
-/**
- * Projekt Toggle Function
- *
- * @since Quartiersplattform 1.7
- * 
- * @param string $post_id id
- * @param string $status status
- * @return void
- */
-// function post_visibility_toggle() { // !!! naming => visibility_toggle
-
-// 	get_template_part( 'components/settings/visibility_toggle' );
-
-// 	return;
-// }
-
-
 /**
  * Projekt Toggle Status (ajax)
  *
@@ -2738,17 +2673,18 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
  * @param string $status status
  * @return void
  */
-function visibility_toggle_callback() { // !!! naming => visibility_toggle_callback
-
-	// global $post;
+function visibility_toggle_callback() {
 
 	check_ajax_referer('my_ajax_nonce');
 
 	$post_id = $_POST['post_id'];
 	$status = $_POST['status'];
 
-	// !!! check if logged in user has privilages
-
+	// check privilage
+	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
+		return false;
+	}
+	// set post status
 	if ($status == 'true') {
 		$status = 'publish';
 	}
@@ -2759,17 +2695,14 @@ function visibility_toggle_callback() { // !!! naming => visibility_toggle_callb
 	// if post 
 	if (get_post_type( $post_id ) != 'projekte') {
 
-		// !!! check if projekt is public 
-
 		// get projekt id
 		$term_list = wp_get_post_terms( $post_id, 'projekt', array( 'fields' => 'all' ) );
-		$term_list[0]->term_id;
 
 		// get array
 		$array = get_post_meta($term_list[0]->term_id, 'posts_visibility', true);
 
+		// create array
 		if (!$array) {
-			// create array
 			$array = array();
 		}
 
@@ -2789,54 +2722,51 @@ function visibility_toggle_callback() { // !!! naming => visibility_toggle_callb
 	// if projekt
 	else if (get_post_type( $post_id ) == 'projekte') {
 
-		// if ($status == 'publish') {
+		// get array
+		$array = get_post_meta($post_id, 'posts_visibility', true);
 
-			// get array
-			$array = get_post_meta($post_id, 'posts_visibility', true);
-			// if not available create
-			if (!$array) {
-				$array = array();
-			}
+		// if not available create
+		if (!$array) {
+			$array = array();
+		}
 
-			// toggle projekt status
+		// toggle projekt status
+		$my_post = array();
+		$my_post['ID'] = $post_id;
+		$my_post['post_status'] = $status;
+		wp_update_post( $my_post );
+
+		// get projekt slug
+		$post_retrieve = get_post($post_id); 
+		$slug = $post_retrieve->post_name;
+
+		// get posts by projekt slug
+		$p_posts = get_posts( array(
+			'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
+			'posts_per_page' => -1,
+			'post_status' => 'any',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'projekt',
+					'field' => 'slug',
+					'terms' => ".$slug."
+				)
+			)
+		) );
+
+		// update all posts
+		foreach ( $p_posts as $s_post ) {
+
+			$array[ $s_post->ID ] = $status;
+
 			$my_post = array();
-			$my_post['ID'] = $post_id;
+			$my_post['ID'] = $s_post->ID;
 			$my_post['post_status'] = $status;
 			wp_update_post( $my_post );
 
-			// get projekt slug
-			$post_retrieve = get_post($post_id); 
-			$slug = $post_retrieve->post_name;
+		}
 
-			// get posts by projekt slug
-			$p_posts = get_posts( array(
-                'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
-                'posts_per_page' => -1,
-				'post_status' => 'any',
-                'tax_query' => array(
-                    array(
-                        'taxonomy' => 'projekt',
-                        'field' => 'slug',
-                        'terms' => ".$slug."
-                    )
-                )
-            ) );
- 
-			// update all posts
-            foreach ( $p_posts as $s_post ) {
-
-				$array[ $s_post->ID ] = $status;
-
-				$my_post = array();
-				$my_post['ID'] = $s_post->ID;
-				$my_post['post_status'] = $status;
-				wp_update_post( $my_post );
-
-            }
-
-			// print_r($array);
-
-			update_post_meta( $post_id, 'posts_visibility', $array );
+		update_post_meta( $post_id, 'posts_visibility', $array );
 
 	}
 
@@ -2858,48 +2788,37 @@ add_action( 'wp_ajax_nopriv_visibility_toggle', 'visibility_toggle_callback' );
 
 function visibility_toggle( $id = '' ) {
 
+	// set id
 	if (empty($id)) {
 		$id = get_the_ID();
 	}
-
 	
-	// if (get_post_type( $id ) != 'projekte' && get_post_status( $id ) == '') {
-	// 	return false;
-	// }
-	
-	if ($current_user->ID != $post->post_author) {
+	// check privilagess
+	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
 		return false;
 	}
-
-	// !!! privilages
 
 	// no projekt and project is private 
 	if (get_post_type( $id ) != 'projekte' ) {
 
+		// get project id
 		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) ); // !!! unstable
-		// echo get_post_status($term_list[0]->description); 
-
-		// print_r($term_list);
 
 		// check projekt visibility
 		if (get_post_status($term_list[0]->description) == 'draft') {
 			return false;
 		}
 
-		// for testing
-		// print_r(get_post_meta($term_list[0]->term_id, 'posts_visibility', true));
 	}
 	// for testing
-	else if ( get_post_type( $id ) == 'projekte' ) {
+	// else if ( get_post_type( $id ) == 'projekte' ) {
 		// echo "hello";
 		// print_r(get_post_meta($id, 'posts_visibility', true));
-	}
+	// }
 
 	get_template_part( 'components/settings/visibility_toggle' );
 
-
 }
-
 
 
 
@@ -2924,7 +2843,9 @@ function pin_toggle($type = 'pin_project') {
 	return;
 }
 
+// note to self:
 // general toggle function (metafield, options array, name array)
+
 
 /**
  * Pin Toggle Status (ajax)
@@ -2943,24 +2864,24 @@ function pin_toggle_callback() {
 	$status = $_POST['status'];
 	$type = $_POST['pin_type']; // main_pin & project_pin
 
-	// !!! check if logged in user has privilages
-
+	// check privilagess
+	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
+		return false;
+	}
+	// check for wrong types
 	if ($status != 'true' && $status != 'false') {
-		// echo "nooo status";
 		return false;
 	}
 	// validate type
 	if ($type != 'pin_main' && $type != 'pin_project') { // !!! wording
-		// echo "nooo type";
 		return false;
 	}
-
+	// update post meta
 	if ( ! add_post_meta( $post_id, $type, $status, true ) ) { 
 		update_post_meta ( $post_id, $type, $status );
 	}
 
 	return;
-	// echo $status." - ".$post_id;
 
 } 
 add_action( 'wp_ajax_pin_toggle', 'pin_toggle_callback' );
@@ -2980,29 +2901,22 @@ function projekt_carousel( ) {
 	global $current_user;
 
 	$postID = get_the_ID(  );
-	// echo "<br><br><br>ID:".$postID;
 
+	// determine active project
 	$cpts = array(
 		'veranstaltungen',
 		'umfragen',
 		'nachrichten'
 	);
-
 	if (in_array(get_post_type(), $cpts)) {
 		$project_ID = get_term_id(get_the_ID(  ));
-		// echo "<br><br><br>SEARCHED:".$project_ID;
-		// echo "<br>".get_the_title($project_ID);
 	}
 	else if (get_post_type() == 'projekte') {
 		$project_ID = $postID;
-		// echo "<br><br><br>OKAY:".$project_ID;
 	}
 	else if ($_GET['project']) {
-		// $tag = get_term_by('slug', $_GET['project'], 'projekte');
 		$page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
 		$project_ID = $page->ID;
-		// print_r($page);
-		// echo "<br><br><br>Form:".$_GET['project']."id: ".$project_ID;
 	}
 	else {
 		$project_ID = '';
@@ -3048,11 +2962,6 @@ function projekt_carousel( ) {
 		// 'orderby' => 'DESC'
 	);
 
-	// print_r($array);
-	if (!$array) {
-		//return false;
-	}
-
 	set_query_var( 'highlight_display', true );
 	set_query_var( 'projekt_carousel_add', true );
 	set_query_var( 'projekt_carousel_projekt_id', $project_ID );
@@ -3079,7 +2988,6 @@ function projekt_carousel( ) {
 			}
 			else if ($array) {
 				card_list($args4, 'badge');
-				// slider($args4, 'badge', 4, 'false');
 			}
 			
 			?>
@@ -3108,7 +3016,7 @@ function projekt_feed_callback() {
 	$posts = $_POST['posts'];
 
 	$args = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
+		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'), 
 		'post_status'=>'publish', 
 		'posts_per_page'=> $posts,
 		'offset' => $offset,
@@ -3124,51 +3032,6 @@ function projekt_feed_callback() {
 }
 add_action( 'wp_ajax_projekt_feed', 'projekt_feed_callback' );
 add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
-
-/**
- * Add Project (ajax)
- *
- * @since Quartiersplattform 1.7
- * 
- * @return string
- */
-// function add_project_callback() {
-
-// 	check_ajax_referer('my_ajax_nonce');
-
-// 	echo "<h1>erstelle dein project</h1>";
-
-// 	acf_form(
-// 		array(
-// 			'id' => 'projekte-form',         
-// 			'post_id'=>'new_post',
-// 			'new_post'=>array(
-// 				'post_type' => 'projekte',
-// 				'post_status' => 'publish',
-// 			),
-// 			'field_el' => 'div',
-// 			'uploader' => 'basic',
-// 			'post_content' => false,
-// 			'post_title' => true,
-// 			'return' => get_site_url().'/projekte',
-// 			'fields' => array(
-// 				'field_5fc64834f0bf2', // Emoji
-// 				'field_5fc647f6f0bf0', // Kurzbeschreibung
-// 			),
-// 			'submit_value'=>'Projekt veröffentlichen',
-// 			'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
-// 		)
-// 	); 
-
-// 	emoji_picker_init('acf-field_5fc64834f0bf2');
-
-
-// 	wp_die(); 
-// 	return;
-
-// } 
-// add_action( 'wp_ajax_add_project', 'add_project_callback' );
-// add_action( 'wp_ajax_nopriv_add_project', 'add_project_callback' );
 
 
 /**
@@ -3252,6 +3115,7 @@ function project_card($id, $type = "post") {
 
 }
 
+
 /**
  * No Content Card Function
  *
@@ -3324,7 +3188,6 @@ function qp_backend_edit_link() {
  * @return string
  */
 add_filter('pre_option_default_role', function($default_role){
-    // You can also add conditional tags here and return whatever
     return 'contributor'; // This is changed
     return $default_role; // This allows default
 });
