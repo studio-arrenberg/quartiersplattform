@@ -1048,6 +1048,9 @@ button.toggle {
   display: none !important;
 }
 
+
+
+
 /* Typography -------------------------------- */
 
 .no-select {
@@ -1586,6 +1589,7 @@ button.toggle {
     grid-gap: 45px;
     grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
+
   .right-sidebar{
     display: block;
     margin-top: 0px;
@@ -1596,10 +1600,12 @@ button.toggle {
     top: 115px;
   }
 
+  .right-sidebar .landscape{
+    height: 172px;
+  }
 
   .badge-link .heading-size-4{
-  max-width: 220px;
-    
+    max-width: 210px;
   }
 }
 
@@ -1936,8 +1942,8 @@ button.toggle {
   .single-header-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: flex-start; */
+    justify-content: center; 
+    padding-left: 20px;
     order: 2;
     min-width: 350px;
     max-width: 400px;
@@ -2068,6 +2074,7 @@ button.toggle {
 .projekt-header-content{
   display: flex;
   /* align-items: center; */
+  flex-shrink: 2;
   flex-direction: column;
 }
 
@@ -2337,12 +2344,20 @@ button.toggle {
 }
 
 .badge img{
-  height: auto  !important;
+  height: 100%  !important;
   border-radius: 20px;
+}
+
+.badge img.emoji{
+  border-radius: 0px;
 }
 
 .badge-button{
   background: #F4F4F4;
+}
+
+.badge-button img {
+  height: 25px !important;
 }
 
 .yours {
@@ -5109,10 +5124,15 @@ font-weight: 400;
   border-radius: 25px;
   width: 100%;
   background-color: #fff;
-  padding: 20px 15px;
+  padding: 20px 10px;
   margin-bottom: 15px;
 }
 
+@media (min-width: 782px) {
+  .page-card{
+    padding: 20px 15px;
+  }
+}
 .card {
   flex-wrap: wrap;
   position: relative;
@@ -5255,8 +5275,8 @@ a.card-link{
 .card .date {
   position: absolute;
   border-radius: 10px;
-  top: 10px;
-  left: 10px;
+  top: 5px;
+left: 5px;
   padding: 7px 12px;
   background: #fff;
   color: #0091ff;
@@ -5344,33 +5364,15 @@ a.card-link{
 
 /* LANDSCAPE CARD */
 
-.square {
-  max-width: 210px;
-  max-height: 210px;
-  margin-right: 15px;
-  height: calc((100vw - 40px) / 2);
-}
-
-@media (min-width: 400px) {
-  .square {
-    height: calc((400px - 40px) / 2);
-  }
-}
-
-.square .preview-text {
-  display: none;
-}
 
 .landscape{
-  height: 200px;
   width: 100%;
   height: calc((100vw - 30px) / 2);
+  max-height: 350px;
 }
 
-.landscape a .content {
-  padding: 20px;
-  height: 200px;
-  margin: 0px;
+.landscape .card-link{
+  height: 100%;
 }
 
 .grid-2col .landscape{
@@ -5380,26 +5382,20 @@ a.card-link{
   transition: all 0.2s ease-in-out;
 }
 
-.landscape,
-.square {
+.landscape{
   position: relative;
   padding: 0px;
 }
 
-.landscape .content,
-.square .content{
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
+.landscape .content{
   padding: 10px;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
-
 
 .card.background-image  {
   border: 5px solid #fff
@@ -5412,6 +5408,14 @@ a.card-link{
 .landscape .wp-post-image {
   border-radius: 20px;
 }
+
+/* 
+@media (min-width: 782px) {
+  .landscape{
+    min-height: 300px;
+  }
+} */
+
 
 /* Card Center */
 
@@ -5475,14 +5479,8 @@ margin-top: -30px;
     padding: 20px;
   }
 
-  .landscape{
-    height: unset;
-    min-height: 150px;
-  }
+  
 
-  .landscape .card-link {
-    min-height: 150px;
-  }
 }
 
 

@@ -35,9 +35,9 @@ else {
     <?php } ?>
 
 
-    <div class="veranstaltung card landscape shadow gardient ">
+    <div class="veranstaltung card landscape background-image  shadow gardient"  style="background-image: url('<?php the_post_thumbnail_url('landscape_s') ?>')"> 
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-            <span class="date"><?php echo qp_date(get_field('event_date')); ?></span>
+            <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> - <?php echo qp_date(get_field('event_date')); ?></span>
             <div class="content">
                 <div class="pre-title">
                 </div>
@@ -54,7 +54,7 @@ else {
                     </p>
 
             </div>
-            <?php the_post_thumbnail( 'landscape_s' ); ?>
+            <!-- <?php the_post_thumbnail( 'landscape_s' ); ?> -->
         </a>
     </div>
 
