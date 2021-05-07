@@ -21,7 +21,7 @@ global $current_user;
 
 
         <?php if($current_user->ID != $post->post_author) { ?>
-            <h4 class="heading-size-5 highlight hide-mobile"><?php the_field('slogan'); ?></h4>
+            <h4 class="heading-size-5 highlight hidden-small"><?php the_field('slogan'); ?></h4>
 
 
         <?php } ?>
