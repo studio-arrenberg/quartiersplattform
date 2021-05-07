@@ -210,7 +210,6 @@ get_header();
 
                     </div>
 
-                    <?php if ( current_user_can('administrator') ) { ?>
                         <div class="publish-form margin-bottom">
                             <h3><?php _e('Ziele für nachhaltige Entwicklung bearbeiten', 'quartiersplattform'); ?></h3>
                             <br>
@@ -230,9 +229,8 @@ get_header();
                                         )
                                     );
                                 ?>
-                            </div>
+                        </div>
 
-                    <?php } ?>
 
 
                     <div class="delete-box margin-bottom">
