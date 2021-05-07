@@ -5357,22 +5357,15 @@ left: 5px;
 
 
 .landscape{
-  height: 200px;
   width: 100%;
   height: calc((100vw - 30px) / 2);
+  min-height: 300px;
+  max-height: 350px;
 }
-
 
 .landscape .card-link{
   height: 100%;
 }
-/* .landscape a .content {
-  padding: 20px;
-  height: 200px;
-  margin: 0px;
-  height: calc((100vw - 30px) / 2);
-
-} */
 
 .grid-2col .landscape{
   width: 100%;
@@ -5395,7 +5388,6 @@ left: 5px;
   flex-direction: column;
   justify-content: flex-end;
 }
-
 
 .card.background-image  {
   border: 5px solid #fff
@@ -5471,14 +5463,8 @@ margin-top: -30px;
     padding: 20px;
   }
 
-  .landscape{
-    height: unset;
-    min-height: 150px;
-  }
+  
 
-  .landscape .card-link {
-    min-height: 150px;
-  }
 }
 
 
