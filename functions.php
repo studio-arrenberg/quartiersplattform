@@ -2699,7 +2699,7 @@ function visibility_toggle_callback() {
 		$term_list = wp_get_post_terms( $post_id, 'projekt', array( 'fields' => 'all' ) );
 
 		// get array
-		$array = get_post_meta($term_list[0]->term_id, 'posts_visibility', true);
+		$array = get_post_meta($term_list[0]->description, 'posts_visibility', true);
 
 		// create array
 		if (!$array) {
@@ -2710,7 +2710,7 @@ function visibility_toggle_callback() {
 		$array[ $post_id ] = $status;
 
 		// save array
-		update_post_meta( $term_list[0]->term_id, 'posts_visibility', $array );
+		update_post_meta( $term_list[0]->description, 'posts_visibility', $array );
 
 		// update post status
 		$my_post = array();
@@ -2757,12 +2757,14 @@ function visibility_toggle_callback() {
 		// update all posts
 		foreach ( $p_posts as $s_post ) {
 
-			$array[ $s_post->ID ] = $status;
+			if ($status == 'draft' || ($status == 'publish' && $array[ $s_post->ID ] == 'publish')) {
 
-			$my_post = array();
-			$my_post['ID'] = $s_post->ID;
-			$my_post['post_status'] = $status;
-			wp_update_post( $my_post );
+				$my_post = array();
+				$my_post['ID'] = $s_post->ID;
+				$my_post['post_status'] = $status;
+				wp_update_post( $my_post );
+
+			}
 
 		}
 
@@ -2804,17 +2806,14 @@ function visibility_toggle( $id = '' ) {
 		// get project id
 		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) ); // !!! unstable
 
+		// echo print_r(get_post_meta($term_list[0]->description, 'posts_visibility', true));
+
 		// check projekt visibility
 		if (get_post_status($term_list[0]->description) == 'draft') {
 			return false;
 		}
 
 	}
-	// for testing
-	// else if ( get_post_type( $id ) == 'projekte' ) {
-		// echo "hello";
-		// print_r(get_post_meta($id, 'posts_visibility', true));
-	// }
 
 	get_template_part( 'components/settings/visibility_toggle' );
 
@@ -3192,6 +3191,7 @@ add_filter('pre_option_default_role', function($default_role){
     return $default_role; // This allows default
 });
 
+
 /**
  * QP Parameter Permalink
  * 
@@ -3211,6 +3211,7 @@ function qp_parameter_permalink($suffix) {
 
 	echo $link;
 }
+
 
 /**
  * QP Get Projekt Owners (works in Loop)

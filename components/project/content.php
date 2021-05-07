@@ -18,17 +18,8 @@ if (!get_field('text') && qp_project_owner()) {
 
 <?php
 if ( ( is_user_logged_in() && qp_project_owner() ) ) {
-
-    // echo get_permalink();
-    if(strpos(get_permalink(), '?')) {
-        $link = get_permalink().'&action=edit';
-    }
-    else {
-        $link = get_permalink().'?action=edit';
-    }
-    // echo $link;
 ?>
-    <a class="button is-style-outline" href="<?php echo esc_url($link ); ?>"><?php _e('Beschreibung bearbeiten', 'quartiersplattform'); ?> </a>
+    <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); echo esc_url($link ); ?>"><?php _e('Beschreibung bearbeiten', 'quartiersplattform'); ?> </a>
 <?php
 }
 ?>
