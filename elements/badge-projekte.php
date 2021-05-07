@@ -6,7 +6,7 @@ global $current_user;
 ?>
 
 <a class="badge-link <?php if (get_query_var( 'highlight_display') === true && get_query_var( 'projekt_carousel_projekt_id' ) ==  get_the_ID(  )) echo "badge-is-active" ?>" href="<?php echo esc_url( get_permalink() ); ?>">
-    <div class="badge shadow <?php if($current_user->ID == $post->post_author) echo ' yours'; ?>">
+    <div class="badge shadow <?php if(qp_project_owner()) echo ' yours'; ?>">
         <div class="emoji"><?php the_field('emoji'); ?></div> 
         
         <?php
@@ -29,11 +29,11 @@ global $current_user;
 
 
 
-        <?php if($current_user->ID == $post->post_author) { ?>
+        <?php if(qp_project_owner()) { ?>
             <span class="blue-tag">Dein Projekt</span>
         <?php } ?>
 
-        <?php if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) { ?>
+        <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
             <span class="yellow-tag">Nicht Sichtbar</span>
         <?php } ?>
 

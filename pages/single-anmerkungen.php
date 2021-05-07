@@ -27,21 +27,16 @@ get_header();
 			reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text );
 		?>
 
-
-        <!-- <h2>Feedback zur Quartiersplattform</h2> -->
-        <!-- <p>Teile uns dein Feedback oder Anmerkunge zur Quartiersplattform.</p> -->
+        <br>
         <br>
 
 
-        <br>
+		<div class="grid-4col" data-grid>
+			<?php get_template_part('elements/card-anmerkungen');?>
+		</div>
+		<a class="button" href="<?php echo home_url( ).'/feedback'; ?>">Zu allen Vorschlägen</a>
 
-
-                <div class="grid-4col" data-grid>
-                    <?php get_template_part('elements/card-anmerkungen');?>
-                </div>
-				<a class="button" href="<?php echo home_url( ).'/feedback'; ?>">Zu allen Vorschlägen</a>
-
-				<div class="comments-wrapper">
+		<div class="comments-wrapper">
             <?php comments_template('', true); ?>
         </div><!-- .comments-wrapper -->
 	

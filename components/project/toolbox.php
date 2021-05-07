@@ -1,6 +1,9 @@
-<?php global $current_user; ?>
+<?php global $current_user; 
+// echo $current_user->ID."<br>";
+// echo $post->post_author;
+?>
 
-<?php if ( is_user_logged_in() && $current_user->ID == $post->post_author ) { ?>
+<?php if ( is_user_logged_in() && qp_project_owner() ) { ?>
 <div class="simple-card large-margin-bottom">
     <div class="content">
         <h3 class="heading-size-3">

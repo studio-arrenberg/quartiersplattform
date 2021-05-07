@@ -1276,11 +1276,11 @@ function script_managment() {
 		files_none();
 	} 
 	// user is post owner
-	else if ($current_user->ID == $post->post_author && get_post_type() != 'projekte') {
+	else if (qp_project_owner() && get_post_type() != 'projekte') {
 		files_edit();
 	}
 	// author of project
-	else if ($current_user->ID == $post->post_author && get_post_type() == 'projekte') {
+	else if (qp_project_owner()&& get_post_type() == 'projekte') {
 		files_inc_emoji();
 	}
 	// projekt visitor
@@ -3191,6 +3191,58 @@ add_filter('pre_option_default_role', function($default_role){
     return 'contributor'; // This is changed
     return $default_role; // This allows default
 });
+
+/**
+ * QP Parameter Permalink
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $suffix
+ * @return string parmalink
+ */
+function qp_parameter_permalink($suffix) {
+
+	if(strpos(get_permalink(), '?')) {
+        $link = get_permalink().'&'.$suffix;
+    }
+    else {
+        $link = get_permalink().'?'.$suffix;
+    }
+
+	echo $link;
+}
+
+/**
+ * QP Get Projekt Owners (works in Loop)
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return boolean
+ */
+function qp_project_owner() {
+
+	global $current_user;
+	global $post;
+
+	if (!is_user_logged_in()) {
+		return false;
+	}
+	// get post projekt
+	$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+	$project_id = $term_list[0]->description;
+
+
+	if ($current_user->ID == $post->post_author) {
+		return true;
+	}
+	else if ($current_user->ID == get_post_field( 'post_author', $project_id)) {
+		return true;
+	}
+	else { 
+		return false;
+	}
+
+}
 
 
 

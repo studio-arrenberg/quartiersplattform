@@ -1,6 +1,6 @@
 <?php global $current_user; ?>
 
-<?php if (get_field('text') || $current_user->ID == $post->post_author) { ?>
+<?php if (get_field('text') || qp_project_owner()) { ?>
     <div class="margin-bottom">
         <h3 class="heading-size-3"><?php _e('Beschreibung', 'quartiersplattform'); ?> </h3>
         <p><?php extract_links(get_field('text')); ?></p>
@@ -9,7 +9,7 @@
 
 <?php 
 
-if (!get_field('text') && $current_user->ID == $post->post_author) {
+if (!get_field('text') && qp_project_owner()) {
     $text = __('Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte noch besser zu erklären.','quartiersplattform');
     reminder_card('projekt-description-reminder'.get_the_ID(), __('Beschreibung hinzufügen','quartiersplattform'), $text);
 }
@@ -17,7 +17,7 @@ if (!get_field('text') && $current_user->ID == $post->post_author) {
 ?>
 
 <?php
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+if ( ( is_user_logged_in() && qp_project_owner() ) ) {
 
     // echo get_permalink();
     if(strpos(get_permalink(), '?')) {

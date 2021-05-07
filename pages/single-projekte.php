@@ -7,7 +7,7 @@
  *
  */
 
-if (  is_user_logged_in() && $current_user->ID == $post->post_author  ) { // Execute code if user is logged in or user is the author
+if (  is_user_logged_in() && qp_project_owner() ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
@@ -22,22 +22,10 @@ get_header();
 
 		<div class="hidden-small">
 
-			<?php 
-				$args4 = array(
-					'post_type'=> array('projekte'), 
-					'post_status'=>'publish', 
-					'posts_per_page'=> 20,
-					'orderby' => 'date'
-				);
-			?>  
-
-			<?php // card_list($args4); ?>
-
             <?php projekt_carousel(); ?>
 
 		</div>
 
-		
 	</div>
 
 
@@ -80,7 +68,7 @@ get_header();
 
             <!-- bar -->
             <div class="filters-container">
-                <div class="filters-wrapper <?php if ($current_user->ID == $post->post_author) { ?> tabs-3 <?php } ?>">
+                <div class="filters-wrapper <?php if (qp_project_owner()) { ?> tabs-3 <?php } ?>">
                     <div class="filter-tabs  ">
                         <button class="filter-button filter-active " data-value="summary" data-translate-value="0">
                             <?php _e('Übersicht', 'quartiersplattform'); ?>
@@ -89,7 +77,7 @@ get_header();
                             <?php _e('Chronik', 'quartiersplattform'); ?>
                         </button>
 
-                        <?php if ($current_user->ID == $post->post_author) { ?>
+                        <?php if (qp_project_owner()) { ?>
                             <button class="filter-button" data-value="settings" data-translate-value="200%">
                                 <?php _e('Einstellungen', 'quartiersplattform'); ?>
                             </button>
@@ -133,7 +121,7 @@ get_header();
 
                     <?php 
                     // project is not public
-                    if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
+                    if (get_post_status() == 'draft' && qp_project_owner()) {
                         reminder_card('warning', __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
                     }
                     // echo get_the_ID(  );
@@ -178,7 +166,7 @@ get_header();
                 </div>
 
 
-                <?php if ($current_user->ID == $post->post_author) { ?>
+                <?php if (qp_project_owner()) { ?>
                 <div id="settings" class="bar bar-hidden">
 
                     <?php visibility_toggle( get_the_ID(  ) ); ?>
