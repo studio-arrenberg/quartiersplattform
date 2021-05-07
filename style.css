@@ -1589,6 +1589,7 @@ button.toggle {
     grid-gap: 45px;
     grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
+
   .right-sidebar{
     display: block;
     margin-top: 0px;
@@ -1599,10 +1600,12 @@ button.toggle {
     top: 115px;
   }
 
+  .right-sidebar .landscape{
+    height: 172px;
+  }
 
   .badge-link .heading-size-4{
-  max-width: 210px;
-    
+    max-width: 210px;
   }
 }
 
