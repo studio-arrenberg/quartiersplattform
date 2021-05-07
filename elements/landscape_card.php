@@ -53,11 +53,11 @@
         <?php
         if (get_query_var('link_card_bg')) {
             ?>
-            <img src="<?php echo get_query_var('link_card_bg'); ?>" alt="" />
+            <img src="<?php echo get_query_var('link_card_bg'); ?>" alt="test" />
             <?php
         }
         else {
-            the_post_thumbnail( 'landscape_s' );
+            the_post_thumbnail( 'landscape_m' );
         }
         ?>
     </a>
