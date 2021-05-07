@@ -5359,7 +5359,6 @@ left: 5px;
 .landscape{
   width: 100%;
   height: calc((100vw - 30px) / 2);
-  min-height: 300px;
   max-height: 350px;
 }
 
@@ -5400,6 +5399,14 @@ left: 5px;
 .landscape .wp-post-image {
   border-radius: 20px;
 }
+
+
+@media (min-width: 782px) {
+  .landscape{
+    min-height: 300px;
+  }
+}
+
 
 /* Card Center */
 
