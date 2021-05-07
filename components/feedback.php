@@ -34,6 +34,5 @@
 		)
     ); 
 	?>
-
-    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen">Zur Wunschliste</a>
+    <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/anmerkungen"><?php _e('Zur Wunschliste', 'quartiersplattform'); ?> </a>
 </div>

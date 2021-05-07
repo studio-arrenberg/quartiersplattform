@@ -12,13 +12,14 @@ Arial;font-size: 16px;background-color: white;display: inline-block;border-radiu
           font-weight: 600;
           color: #62b2f0;
           font-family: 'Open Sans', Helvetica, Arial;
-        ">Aktiviere dein Konto, {first_name}
+        ">
+        <?php _e('Aktiviere dein Konto,', 'quartiersplattform'); ?>  {first_name}
       </span>
     </div>
     <div> </div>
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;">
-        <span>Schön das du da bist! Klicke auf den Link, um dein Konto zu aktivieren.
+        <span><?php _e('Schön das du da bist! Klicke auf den Link, um dein Konto zu aktivieren.', 'quartiersplattform'); ?> 
       </span></div>
       <p></p>
       
@@ -30,17 +31,17 @@ Arial;font-size: 16px;background-color: white;display: inline-block;border-radiu
         <a class="shadow" style="background: #0091ff;color: #fff;padding: 20px 30px;text-decoration: none;border-radius: 20px;letter-spacing: 0.3px;font-family: &quot;Open Sans&quot;, Helvetica,
 Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0,
-0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 16px;" href="{account_activation_link}">Konto aktivieren
+0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 16px;" href="{account_activation_link}">
+<?php _e('Konto aktivieren', 'quartiersplattform'); ?> 
         </a>
       </div>
       <div style="padding: 20px">
-        Sollten Probleme auftreten wende dich bitte per Mail an uns.
+      <?php _e('Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden.', 'quartiersplattform'); ?>
         {admin_email}
       </div>
     </div>
     <div style="color: ; padding: 20px 30px">
-      <div>Vielen Dank!</div>
-      <div>Dein <?php the_field('quartiersplattform-description', 'option'); ?> Team.</div>
+      <div><?php _e('Vielen Dank!', 'quartiersplattform'); ?> </div>
     </div>
   </div>
   <div class="footer" style="text-align: center;margin-top: 5%;">
@@ -53,8 +54,8 @@ Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
 
     </p>
     <p class="footer" style="text-align: center; margin-top: 5%;">
-<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/">Impressum </a> 
-<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/">Datenschutz </a></p>
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?>  </a> 
+<a class="footer_link" style="text-decoration: none; color: #62b2f0; font-family: 'Open Sans', Helvetica,Arial; margin-top: 100px; padding: 20% 2%;" href="<?php echo get_site_url(); ?>/datenschutz/"><?php _e('Datenschutz', 'quartiersplattform'); ?>  </a></p>
     </p>
   </div>
 </div>
