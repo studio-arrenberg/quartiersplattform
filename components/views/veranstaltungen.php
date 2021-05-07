@@ -23,8 +23,7 @@ if (count_query($veranstaltungen)) {
     set_query_var( 'additional_info', false);
     ?>
 
-        <h4 class="heading-size-3 margin-bottom"><?php _e('Aktuelle Veranstaltungen', 'quartiersplattform'); ?> </h4>
-        <br>
+        <h1 class="heading-size-3 margin-bottom"><?php _e('Aktuelle Veranstaltungen', 'quartiersplattform'); ?> </h1>
         <?php card_list($veranstaltungen); 
         
         ?>

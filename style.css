@@ -2337,12 +2337,20 @@ button.toggle {
 }
 
 .badge img{
-  height: auto  !important;
+  height: 100%  !important;
   border-radius: 20px;
+}
+
+.badge img.emoji{
+  border-radius: 0px;
 }
 
 .badge-button{
   background: #F4F4F4;
+}
+
+.badge-button img {
+  height: 25px !important;
 }
 
 .yours {
@@ -5255,8 +5263,8 @@ a.card-link{
 .card .date {
   position: absolute;
   border-radius: 10px;
-  top: 10px;
-  left: 10px;
+  top: 5px;
+left: 5px;
   padding: 7px 12px;
   background: #fff;
   color: #0091ff;
@@ -5344,22 +5352,6 @@ a.card-link{
 
 /* LANDSCAPE CARD */
 
-.square {
-  max-width: 210px;
-  max-height: 210px;
-  margin-right: 15px;
-  height: calc((100vw - 40px) / 2);
-}
-
-@media (min-width: 400px) {
-  .square {
-    height: calc((400px - 40px) / 2);
-  }
-}
-
-.square .preview-text {
-  display: none;
-}
 
 .landscape{
   height: 200px;
@@ -5367,11 +5359,17 @@ a.card-link{
   height: calc((100vw - 30px) / 2);
 }
 
-.landscape a .content {
+
+.landscape .card-link{
+  height: 100%;
+}
+/* .landscape a .content {
   padding: 20px;
   height: 200px;
   margin: 0px;
-}
+  height: calc((100vw - 30px) / 2);
+
+} */
 
 .grid-2col .landscape{
   width: 100%;
@@ -5380,20 +5378,15 @@ a.card-link{
   transition: all 0.2s ease-in-out;
 }
 
-.landscape,
-.square {
+.landscape{
   position: relative;
   padding: 0px;
 }
 
-.landscape .content,
-.square .content{
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
+.landscape .content{
   padding: 10px;
   width: 100%;
-  max-width: 100%;
+  height: 100%;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;

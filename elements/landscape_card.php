@@ -9,7 +9,7 @@
 ?>
 
 
-<div class="card landscape shadow gardient ">
+<div class="card landscape shadow gardient">
     
     <?php 
     if (get_query_var('link_card_link')) {
