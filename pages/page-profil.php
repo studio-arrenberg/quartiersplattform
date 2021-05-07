@@ -124,14 +124,11 @@ if (!is_user_logged_in()) {
                     'order' => 'DESC',
                     'offset' => '0', 
                 );
-                // slider($args4, $type = 'card', $slides = '1', $dragfree = 'false');
-
-                ?>
-
-                <h2><?php _e('Deine Projekte', 'quartiersplattform'); ?> </h2>
+                if (count_query($args4)) {
+                    echo "<h2 class='margin-bottom'>".__('Deine Projekte', 'quartiersplattform')."</h2>";
+                    card_list($args4);
+                }
                 
-                <?php 
-                card_list($args4);
 
                 $args4 = array(
                     'post_type'=> array('veranstaltungen', 'nachrichten','umfragen'), 
@@ -141,11 +138,9 @@ if (!is_user_logged_in()) {
                     'order' => 'DESC',
                     'offset' => '0', 
                 );
-                $my_query = new WP_Query($args4);
-                if ($my_query->post_count > 0) {
-                    echo "<h2 class='margin-bottom'>".__("Deine Beiträge ",'quartiersplattform');
+                if (count_query($args4)) {
+                    echo "<h2 class='margin-bottom'>".__("Deine Beiträge ",'quartiersplattform')."</h2>";
                     card_list($args4);      
-                    
                 }
             ?>
 
