@@ -2071,6 +2071,7 @@ button.toggle {
 .projekt-header-content{
   display: flex;
   /* align-items: center; */
+  flex-shrink: 2;
   flex-direction: column;
 }
 
