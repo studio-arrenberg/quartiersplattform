@@ -2,7 +2,7 @@
 <?php
 
 global $current_user;
-if ($current_user->ID == $post->post_author) {
+if (qp_project_owner()) {
     $post_status = array('publish', 'draft');
 }
 else {

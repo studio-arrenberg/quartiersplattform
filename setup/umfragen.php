@@ -134,9 +134,9 @@ if( function_exists('acf_add_local_field_group') ):
                 ),
                 'collapsed' => 'field_601855d3aa4c0',
                 'min' => 2,
-                'max' => 0,
+                'max' => 10,
                 'layout' => 'table',
-                'button_label' => 'Weitere Auswahlmöglichkeit',
+                'button_label' => __('Weitere Auswahlmöglichkeit hinzufügen'),
                 'sub_fields' => array(
                     array(
                         'key' => 'field_601855d3aa4c0',

@@ -150,7 +150,7 @@ acf_add_local_field_group(array(
 			'name' => 'text',
 			'type' => 'textarea',
 			'instructions' => __('Worum geht es in deinem Projekt?', "quartiersplattform"),
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '',
