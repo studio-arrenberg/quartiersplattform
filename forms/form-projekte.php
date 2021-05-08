@@ -47,7 +47,7 @@ get_header();
                         'field_5fc64834f0bf2', // Emoji
                         'field_5fc647f6f0bf0', // Kurzbeschreibung
                     ),
-                    'submit_value'=> __('Projekt veröffentlichen','quartiersplattform'),
+                    'submit_value'=> __('Projekt erstellen','quartiersplattform'),
                     'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
                 )
             ); 

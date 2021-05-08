@@ -2445,15 +2445,15 @@ function extract_links( $text ) {
  */
 function qp_date( $date, $detail = false, $time = '' ) {
 
-	date_default_timezone_set(get_option('timezone_string'));
+	// date_default_timezone_set(get_option('timezone_string'));
 	// date_default_timezone_set("Europe/Berlin");
 
 	// get time
 	if ($time) {
-		$date = strtotime("$date $time");
+		$date = wp_strtotime("$date $time");
 	}
 	else {
-		$date = strtotime($date);
+		$date = wp_strtotime($date);
 	}
 
 	// tomorrow
@@ -2482,8 +2482,38 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 
 	return $string;
-
 }
+
+/**
+ * WP StrToTime helper function
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @param string $date date
+ * @return string text with html a tags
+ */
+function wp_strtotime($str) {
+	// This function behaves a bit like PHP's StrToTime() function, but taking into account the Wordpress site's timezone
+	// CAUTION: It will throw an exception when it receives invalid input - please catch it accordingly
+	// From https://mediarealm.com.au/
+	$tz_string = get_option('timezone_string');
+	$tz_offset = get_option('gmt_offset', 0);
+	if (!empty($tz_string)) {
+		// If site timezone option string exists, use it
+		$timezone = $tz_string;
+	} elseif ($tz_offset == 0) {
+		// get UTC offset, if it isn’t set then return UTC
+		$timezone = 'UTC';
+	} else {
+		$timezone = $tz_offset;
+		if(substr($tz_offset, 0, 1) != "-" && substr($tz_offset, 0, 1) != "+" && substr($tz_offset, 0, 1) != "U") {
+			$timezone = "+" . $tz_offset;
+		}
+	}
+	$datetime = new DateTime($str, new DateTimeZone($timezone));
+	return $datetime->format('U');
+}
+
 
 /**
  * Display Time Remaining 
