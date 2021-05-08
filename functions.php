@@ -1272,7 +1272,7 @@ function script_managment() {
 		}
 	}
 	// landing page
-	if (is_front_page()) {
+	if (is_front_page() && !is_user_logged_in()) {
 		files_none();
 	} 
 	// user is post owner
