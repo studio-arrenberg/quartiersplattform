@@ -1480,21 +1480,7 @@ th {
   }
 
   .badge-link .heading-size-4{
-    font-size: 1.5rem;
-    line-height: 1.6rem;
-    max-height: none;
-    font-weight: 700;
-    overflow: hidden;
     max-width: 160px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .badge-link .heading-size-5{
-    max-width: 160px;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .yellow-tag{
@@ -2091,6 +2077,11 @@ th {
   }
 }
 
+
+
+/* BADGE ---------------------------- */
+
+
 .badge-link{
   width: 70px !important;
   text-decoration: none;
@@ -2178,16 +2169,77 @@ th {
   }
 
   .badge{
+    flex-shrink: 0;
+    overflow: hidden;
+    margin: 0px 10px 0px 0px;
+  }
+}
+
+
+@media (min-width: 782px) {
+  .badge-content{
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .badge-link{
+    display: flex;
+    align-items: center;
+    width: auto !important;
+    max-width: 300px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .badge{
     margin-right: 10px;
     flex-shrink: 0;
     overflow: hidden;
+  }
+
+  .badge-content{
+    display: block;
+  }
+
+  .badge-link .heading-size-4{
+    max-width: 160px;
+    font-size: 1.3rem;
   }
 
   .shadow-on-hover:hover,  .badge-is-active {
     box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
     background-color:#fff;
   }
+
+  .yellow-tag{
+    border: 1px solid #FFCE20;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #FFCE20 ;
+    background: #fff;
+    display: inline;
+    padding: 2px 4px;
+  }
+
+  .blue-tag{
+    border: 1px solid #0091FF;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: #0091FF ;
+    background: #fff;
+    display: inline;
+    padding: 2px 4px;
+  }
 }
+
+
+@media (min-width: 1335px) {
+  .badge-link .heading-size-4{
+    max-width: 210px;
+  }
+}
+
 
 
 
