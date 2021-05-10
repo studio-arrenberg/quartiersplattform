@@ -48,7 +48,7 @@ get_header();
             <p><?php the_field('welcome-text','option'); ?></p>
 
 
-            <div class="link-card-container">
+            <div class="link-card-container margin-bottom">
                 <?php
                     $pinned_pages = array(
                         'post_type' => 'page',
@@ -66,7 +66,6 @@ get_header();
 
             <div class="link-card-container">
                 <?php
-
 
                     // Gutenberg
                     if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
