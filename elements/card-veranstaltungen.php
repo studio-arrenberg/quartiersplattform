@@ -43,22 +43,18 @@ else {
             <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
                 <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> - <?php echo qp_date(get_field('event_date')); ?></span>
                 <div class="content">
-                    <div class="pre-title">
-                    </div>
-                        <h3 class="heading-size-3 "><?php shorten(get_the_title(), '30'); ?></h3>
-                        <p class="text-size-3">
-                            <?php 
-                            if (strlen(get_field('text')) > 2) {
-                                shorten(get_field('text'), $char);
-                            }
-                            else {
-                                shorten(get_the_content(), $char);
-                            }
-                            ?> 
-                        </p>
-
+                    <h3 class="heading-size-3 "><?php shorten(get_the_title(), '30'); ?></h3>
+                    <p class="text-size-3">
+                        <?php 
+                        if (strlen(get_field('text')) > 2) {
+                            shorten(get_field('text'), $char);
+                        }
+                        else {
+                            shorten(get_the_content(), $char);
+                        }
+                        ?> 
+                    </p>
                 </div>
-                <!-- <?php the_post_thumbnail( 'landscape_s' ); ?> -->
             </a>
         </div>
 
@@ -72,7 +68,7 @@ else {
         <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> - <?php echo qp_date(get_field('event_date')); ?></span>
 
             <div class="content">
-                <h3 class="heading-size-2 small-margin-bottom">
+                <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
                 <p class="text-size-3">
