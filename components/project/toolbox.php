@@ -1,12 +1,12 @@
 <?php global $current_user; ?>
 
 <?php if ( is_user_logged_in() && $current_user->ID == $post->post_author ) { ?>
-<div class="simple-card large-margin-bottom">
+<div class="large-margin-bottom">
     <div class="content">
         <h3 class="heading-size-3">
             <?php _e('Was gibt es Neues?', 'quartiersplattform'); ?>
         </h3>
-        <p class="text-size-2 small-margin-bottom">
+        <p class="text-size-2 margin-bottom">
             <?php _e('Halte das Quartier auf dem Laufenden.', 'quartiersplattform'); ?>
         </p>
     </div>

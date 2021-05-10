@@ -206,7 +206,8 @@ wp_maintenance_mode();
 
         <div class="overlay-content">
             <button class="button header-button button-has-icon " onclick="hide()">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
+            
+            <?php require get_template_directory() . '/assets/icons/person.svg'; ?>
                 <span class="button-has-icon-label"><?php _e('Zurück', 'quartiersplattform'); ?></span>
             </button>
             <?php get_template_part('components/energie_ampel-menu'); ?>

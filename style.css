@@ -734,18 +734,30 @@ input[type="file"]::-webkit-file-upload-button {
   justify-content: center;
 
   padding: 5px 10px;
-  min-height: 35px;
+  min-height: 40px;
+  min-width: 40px;
 
-  font-size: 1.8rem;
-  line-height: 1.8rem;
+
+  font-size: 1.6rem;
+  line-height: 1.6rem;
 
   border-radius: 15px;
-  background-color: #E8F5FF;
+  background-color: #fff;
   color: #003054;
   
   text-align: center;
   transition: all 0.15s linear;
+
+  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.07),
+  0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
+  0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
+  0 32px 64px rgba(0, 145, 255, 0.07);
+
+  box-shadow: 0 4px 12px rgba(196, 196, 196, 0.75);
+
 }
+
+
 
 
 button:focus,
@@ -774,8 +786,13 @@ input[type="reset"]:focus,
 input[type="reset"]:hover,
 input[type="submit"]:focus,
 input[type="submit"]:hover {
-  background-color: #0091FF;
-  color: #fff;
+  background-color: #fff;
+  color: #0091FF;
+  box-shadow: 0 3px 20px rgba(0, 145, 255,0.3);
+  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.15),
+    0 2px 4px rgba(0, 145, 255, 0.15), 0 4px 8px rgba(0, 145, 255, 0.15),
+    0 8px 16px rgba(0, 145, 255, 0.15), 0 16px 32px rgba(0, 145, 255, 0.15),
+    0 32px 64px rgba(0, 145, 255, 0.15);
 }
 
 .button p {
@@ -809,17 +826,19 @@ button a {
 
 .button svg path{
   fill: #003054;
+  transition: fill 0.15s linear;
+
 }
 
 .button:hover svg path{
-  fill: #fff;
+  fill: #0091FF;
 }
 
 .header-button {
   margin: 5px 3px;
   padding: 0px;
-  min-width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
 }
 
 .header-button:last-of-type {
@@ -831,7 +850,7 @@ button a {
 }
 
 .button-has-image {
-  width: 35px;
+  width: 40px;
 }
 
 .button-image {
@@ -857,13 +876,13 @@ button a {
 .button-is-primary:focus{
   background: #003054;
   color: #fff;
+  box-shadow: 0 3px 15px rgba(196, 196, 196, 0.8);
+
 }
 
 .energie-ampel-button svg{
   height: 18px;
 }
-
-
 
 
 .button-red{
@@ -892,8 +911,9 @@ button a {
   input {
     padding: 5px 15px;
     min-height: 45px;
+    font-size: 1.6rem;
+    line-height: 1.6rem;    
   }
-
 
   .header-button {
     height: 45px;
@@ -906,17 +926,28 @@ button a {
     padding: 0px;
   }
 
+  .button-has-icon{
+    padding: 0px;
+  }
+
   .button-image {
     border-radius: 15px;
   }
 
-  .header-button .button-icon {
-    margin: 0px;
-    height: 25px;
-    width: 25px;
-    min-width: 25px;
-    display: block;
+  .button-has-icon svg{
+    height: 22px;
+    width: 22px;
   }
+
+
+  .energie-ampel-button {
+    padding: 0px;
+  }
+
+  .energie-ampel-button svg{
+    height: 22px;
+  }
+
 }
 
 
@@ -6140,6 +6171,7 @@ a.text-link:hover {
   box-shadow: none;
   margin: 0px;
   width: 50%;
+  padding: 0px;
 }
 
 .filter-button:hover {
@@ -6163,7 +6195,7 @@ a.text-link:hover {
 }
 
 .filter-slider-rect {
-  height: 35px;
+  height: 40px;
   width: 50%;
   border-radius: 15px;
   box-shadow: 0 1px 2px rgba(0, 145, 255, 0.15),
@@ -6178,6 +6210,15 @@ a.text-link:hover {
   width: 33.33% !important;
   flex: 1 0 33.33% !important;
   
+}
+
+
+@media (min-width: 782px) {
+  .filter-slider-rect {
+    height: 45px;
+  }
+
+
 }
 
 /* .menubar {
