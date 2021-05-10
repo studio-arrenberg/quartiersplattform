@@ -102,9 +102,9 @@
                 -webkit-animation: spin 3s linear infinite;
                 -moz-animation: spin 3s linear infinite;
                 animation: spin 3s linear infinite;
-                transform-origin: 12.9934445% 44.9390476%;
-       
-                fill: white !important;
+                <!-- transform-origin: 12.9934445% 44.9390476%; -->
+                transform-origin: 12.9834445% 44.77090476%;
+                <!-- fill: white !important; -->
             }
 
             @-moz-keyframes spin {

@@ -106,8 +106,8 @@
                 -webkit-animation: spin 3s linear infinite;
                 -moz-animation: spin 3s linear infinite;
                 animation: spin 3s linear infinite;
-                transform-origin: 12.9934445% 44.9390476%;
-                fill: white
+                transform-origin: 12.9834445% 44.77090476%;
+                <!-- fill: rgb(62,62,62); -->
             }
 
             @-moz-keyframes spin {
