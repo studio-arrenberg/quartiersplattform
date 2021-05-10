@@ -848,28 +848,21 @@ button a {
   color: #0091FF;
 }
 
+.button-is-primary{
+  background: #0091FF;
+  color:#fff;
+}
 
+.button-is-primary:hover,
+.button-is-primary:focus{
+  background: #003054;
+  color: #fff;
+}
 
 .energie-ampel-button svg{
   height: 18px;
 }
-/* 
 
-.is-style-outline,
-.is-style-outline a,
-.um-button {
-  color: #000;
-  background-color: #fff;
-}
-
-.is-style-outline:hover{
-  color:#0091FF
-}
-
-.is-style-outline .wp-block-button__link:not(.has-text-color) {
-  color: inherit;
-}
- */
 
 
 
@@ -885,6 +878,23 @@ button a {
 
 
 @media (min-width: 782px) {
+  button,
+  .button,
+  .um-button,
+  .um-modal-btn,
+  .um-manual-trigger,
+  .button-link,
+  .faux-button,
+  .pagination .next,
+  .pagination .prev,
+  .wp-block-file .wp-block-file__button,
+  .wp-block-button__link, 
+  input {
+    padding: 5px 15px;
+    min-height: 45px;
+  }
+
+
   .header-button {
     height: 45px;
     min-width: 45px;
@@ -2192,6 +2202,7 @@ th {
     text-align: left;
   }
 
+
   .badge{
     margin-right: 10px;
     flex-shrink: 0;
@@ -2204,7 +2215,7 @@ th {
 
   .badge-link .heading-size-4{
     max-width: 160px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   .shadow-on-hover:hover,  .badge-is-active {

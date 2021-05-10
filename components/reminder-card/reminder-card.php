@@ -12,7 +12,7 @@
 	</div>
 
 	<?php if ( !empty(get_query_var('reminder_card_button')) || !empty(get_query_var('reminder_card_link')) ) { ?>
-		<a href="<?php echo get_query_var('reminder_card_link'); ?>" class="button">
+		<a href="<?php echo get_query_var('reminder_card_link'); ?>" class="button button-is-primary">
 			<?php echo get_query_var('reminder_card_button'); ?>
 		</a>
 	<?php } ?>
