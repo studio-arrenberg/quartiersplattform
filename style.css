@@ -986,6 +986,10 @@ button.toggle {
   justify-content: center;
 }
 
+.button-group .button-has-icon{
+  height: 70px;
+}
+
 .button-group{
   --gap: 5px;
   display: inline-flex;
@@ -1922,6 +1926,10 @@ th {
   background: #F5F5F5 !important;
   margin: 5px;
   color: #000;
+}
+
+.link-card a.card-link{
+  color: #0091FF
 }
 
 .link-card-container{
@@ -4107,6 +4115,7 @@ a.card-link{
 .card .content {
   padding: 10px;
   width: 100%;
+  height: 100%;
 }
 
 .card .wp-post-image {
@@ -4282,12 +4291,15 @@ left: 5px;
   border-radius: 20px;
 }
 
-/* 
-@media (min-width: 782px) {
-  .landscape{
-    min-height: 300px;
-  }
-} */
+
+.veranstaltung-ohne-bild .date{
+  background: #0091FF;
+  color:#fff;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
 
 
 /* Card Center */
@@ -4613,13 +4625,6 @@ a:hover .shadow{
   color: #fff;
   background: #0091FF;
 }
-
-
-
-
-
-
-
 
 
 .card-sgd {

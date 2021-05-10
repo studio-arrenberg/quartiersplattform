@@ -50,7 +50,7 @@ get_header();
                 <h2 class="heading-size-3 highlight">
                     <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
                 </h2>
-                <h1 class="heading-size-1"><?php the_title(); ?><br><br></h1>
+                <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
                 
                 
 
@@ -59,17 +59,23 @@ get_header();
                 // }
                 ?>
 
-                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                <?php
+                        if ( !empty(get_post_thumbnail_id())) {
+                    ?>
+
+                    <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                
+                    <?php 
+                        }
+                        ?>
 
 
-
-        <div class="site-content">
-            <?php extract_links(get_field('text')); ?>
-
-        </div>
+                <div class="site-content">
+                    <?php extract_links(get_field('text')); ?>
+                </div>
 
 
-            <!-- Eventtext felder gibt es noch nicht -->
+                <!-- Eventtext felder gibt es noch nicht -->
             
                 <?php 
                 // text
@@ -90,12 +96,17 @@ get_header();
                 ?>
 
 
-                <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                        pin_toggle(); 
 
-                        visibility_toggle(get_the_ID(  ));
-                   ?> 
+                    <div class="gutenberg-content">
+                        <?php
+                        // Gutenberg Editor Content
+                        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                            the_excerpt();
+                        } else {
+                            the_content( __( 'Continue reading', 'twentytwenty' ) );
+                        }
+                        ?>
+                    </div>
 
                     <div class="simple-card">
                         <div class="button-group">
@@ -108,24 +119,14 @@ get_header();
                     <?php 
                     }
                     ?>
+                </div>
 
-            </div>
-
-            <div class="gutenberg-content">
 
                 <?php
-                // Gutenberg Editor Content
-                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                    the_excerpt();
-                } else {
-                    the_content( __( 'Continue reading', 'twentytwenty' ) );
-                }
-                ?>
-
-            </div>
-
-
-
+                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                        pin_toggle(); 
+                        visibility_toggle(get_the_ID(  ));
+                   ?> 
             <?php 
 
 

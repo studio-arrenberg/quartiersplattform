@@ -46,7 +46,7 @@ get_header();
     <section>
         <div class="stage-center">
             <p><?php the_field('welcome-text','option'); ?></p>
-            <div class="link-card-container">
+            
                 <?php
                     $pinned_pages = array(
                         'post_type' => 'page',
@@ -65,7 +65,6 @@ get_header();
                         the_content( __( 'Continue reading', 'twentytwenty' ) );
                     }
                 ?>
-            </div>
         </div>
     </section>
 
