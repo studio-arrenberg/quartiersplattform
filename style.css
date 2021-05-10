@@ -612,6 +612,8 @@ textarea{
   white-space: nowrap;
   word-wrap: none;
   word-break: keep-all;
+  background: #f9fcff;
+border: 1px solid #dcf0ff;
 }
 
 code,
@@ -636,7 +638,6 @@ textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 15px;
-  border: none;
   box-shadow: none;
   display: block;
   font-size: 1.8rem;
@@ -668,6 +669,11 @@ input[type="search"]:focus {
   outline: none;
   outline-offset: 0px;
   border: 1px solid #c2e4ff;
+}
+
+
+input[type="checkbox"] {
+  min-height: 0px !important;
 }
 
 .search-form {
