@@ -47,20 +47,7 @@ get_header();
         <div class="stage-center">
             <p><?php the_field('welcome-text','option'); ?></p>
 
-            <div class="link-card-container">
-                <?php
 
-
-                    // Gutenberg
-                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                        the_excerpt();
-                    } else {
-                        the_content( __( 'Continue reading', 'twentytwenty' ) );
-                    }
-                ?>
-            </div>
-
-            
             <div class="link-card-container">
                 <?php
                     $pinned_pages = array(
@@ -76,6 +63,21 @@ get_header();
                 ?>
             </div>
 
+
+            <div class="link-card-container">
+                <?php
+
+
+                    // Gutenberg
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
+                ?>
+            </div>
+
+            
             
         </div>
     </section>
