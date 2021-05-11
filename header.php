@@ -205,10 +205,10 @@ wp_maintenance_mode();
     <div id="overlay" class="overlay hidden">
 
         <div class="overlay-content">
-            <button class="button header-button button-has-icon " onclick="hide()">
+            <button class="button  " onclick="hide()">
             
-            <?php require get_template_directory() . '/assets/icons/person.svg'; ?>
-                <span class="button-has-icon-label"><?php _e('Zurück', 'quartiersplattform'); ?></span>
+            <!-- <?php require get_template_directory() . '/assets/icons/person.svg'; ?> -->
+                <?php _e('Zurück', 'quartiersplattform'); ?></span>
             </button>
             <?php get_template_part('components/energie_ampel-menu'); ?>
         </div>
