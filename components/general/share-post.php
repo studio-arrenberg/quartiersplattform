@@ -12,7 +12,7 @@
         <h3><?php _e('Projekt teilen', 'quartiersplattform'); ?>  </h3>
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-            <button class="copy button-is-primary" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>
+            <button class="copy is-primary" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>
 
         </div>
 

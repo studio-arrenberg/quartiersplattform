@@ -613,7 +613,7 @@ textarea{
   word-wrap: none;
   word-break: keep-all;
   background: #f9fcff;
-border: 1px solid #dcf0ff;
+  border: 1px solid #dcf0ff;
 }
 
 code,
@@ -646,7 +646,6 @@ textarea {
   padding: 15px 15px 13px 20px;
 }
 
-
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -671,7 +670,6 @@ input[type="search"]:focus {
   border: 1px solid #c2e4ff;
 }
 
-
 input[type="checkbox"] {
   min-height: 0px !important;
 }
@@ -679,7 +677,6 @@ input[type="checkbox"] {
 .search-form {
   display: flex;
 }
-
 
 .search-form label{
   flex-grow: 1;
@@ -703,9 +700,6 @@ textarea span{
   min-height: 40px;
   line-height: 20px;
 }
-
-
-
 
 
 /* Buttons ------------------------------------ */
@@ -873,23 +867,24 @@ button a {
   color: #0091FF;
 }
 
-.button-is-primary{
+.is-primary, 
+input[type="submit"]{
   background: #0091FF;
   color:#fff;
 }
 
-.button-is-primary:hover,
-.button-is-primary:focus{
+.is-primary:hover,
+.is-primary:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus{
   background: #003054;
   color: #fff;
   box-shadow: 0 3px 15px rgba(196, 196, 196, 0.8);
-
 }
 
 .energie-ampel-button svg{
   height: 18px;
 }
-
 
 .button-red{
   color: rgb(194, 12, 61);
@@ -898,6 +893,8 @@ button a {
 .button-red:hover{
   color: #fff;
   background: rgb(194, 12, 61);
+  box-shadow: 0 1px 2px rgb(194, 12, 61);
+   
 }
 
 
@@ -2052,7 +2049,7 @@ th {
     height: 150px;
   }
 
-  .force-landscape .card p{
+  .force-landscape .card.landscape p{
     max-height: 4rem !important;
     overflow: hidden !important;
     text-overflow: ellipsis;
@@ -4100,10 +4097,7 @@ font-weight: 700;
     margin: 0 2rem;
   }
 
-  .pagination .next,
-  .pagination .prev {
-    display: block;
-  }
+ 
 
   .pagination .prev {
     margin: 0 auto 0 0;
@@ -4738,11 +4732,6 @@ a:hover .shadow{
 }
 
 
-
-
-
-
-
 .card-footer{
   margin-top: 5px;
   margin-left: -2.5px;
@@ -4806,18 +4795,15 @@ a:hover .shadow{
   opacity: 0.4;
 }
 
-
-
-
  @media (max-width: 782px) {
   .card-container .card .content{
     padding: 3px;
     height: 100%;
    }
-  .card-container .heading-size-3{
+  /* .card-container .landscape .heading-size-3{
     font-size: 1.4rem;
     line-height: 1.6rem;
-  }
+  } */
 
   .card-container .sdg-number{
     font-size: 4rem;
@@ -4832,23 +4818,49 @@ a:hover .shadow{
 }
 
 
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
   margin: 10px 0px;
   position: relative;
+  justify-content: space-between;
 }
 
 .card-container > div{
-  width: calc( (100vw - 40px) / 3 );
-  height: calc( (100vw - 40px) / 3 );
-  margin-right: 5px;
+  width: 100%;
+  height: auto;
 }
 
-.card-container > div:nth-of-type(3){
-  margin-right: 0px;
+
+@media (min-width: 782px) {
+  .card-container > div{
+    width: calc( 100% / 2 - 10px ) ;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .card-container > div:nth-of-type(2n){
+    margin-right: 0px;
+  }
+
+  .card-container .card{
+    height: 200px;
+  }
 }
+
+@media (min-width: 1000px) {
+  .card-container > div{
+    width: calc( 100% / 3 - 10px ) ;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .card-container .card .wp-post-image {
+    height: 70px;
+    margin-right: 150px;
+    object-fit: cover;
+  }
+}
+
 
 
 @media (min-width: 782px) {
@@ -4934,34 +4946,9 @@ a:hover .shadow{
   .preview-text-large {
     font-size: 2rem;
   }
-
-  .card-container > div{
-    width: 166px;
-    height: 166px;
-    margin-right: 5px;
-  }
-
-  .card-container-col-4 {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 10px 0px;
-    position: relative;
-  }
-
-  .card-container-col-4 .card{
-   width: calc( 25% - 5px);
-  }
-
-
 }
 
 
-@media (min-width: 1000px) {
-  .square {
-    max-height: calc((1000px - 60px) / 4);
-  }
-}
 
 
 /* div.anmerkung h3 {

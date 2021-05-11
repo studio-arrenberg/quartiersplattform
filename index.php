@@ -61,7 +61,7 @@ get_header();
 	if ( have_posts() ) {
 
 		?>
-			<div class="card-container">
+			<div class="card-container force-landscape">
 			
 
 			<?php
