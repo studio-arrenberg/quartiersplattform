@@ -114,6 +114,9 @@ if (!is_user_logged_in()) {
             
             ?>
 
+            <br>
+            <br>
+
             
             <?php
                 $args4 = array(
@@ -125,8 +128,9 @@ if (!is_user_logged_in()) {
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<h2 class='margin-bottom'>".__('Deine Projekte', 'quartiersplattform')."</h2>";
+                    echo "<br><h2 class='margin-bottom'>".__('Deine Projekte', 'quartiersplattform')."</h2><br>";
                     card_list($args4);
+                    echo "<br>";
                 }
                 
 
@@ -139,8 +143,9 @@ if (!is_user_logged_in()) {
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<h2 class='margin-bottom'>".__("Deine Beiträge ",'quartiersplattform')."</h2>";
+                    echo "<br><h2 class='margin-bottom'>".__("Deine Beiträge ",'quartiersplattform')."</h2><br>";
                     card_list($args4);      
+                    // echo "<br>";
                 }
             ?>
 
@@ -161,54 +166,57 @@ if (!is_user_logged_in()) {
                 ?>
             </div>
 
-
-                <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
-
-                 <!-- <h4 class="heading-size-3"><?php _e('Einstellungen', 'quartiersplattform'); ?> </h4> -->
+            <br>
 
 
-                <!-- Contact Information -->   
-                <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
-                <br>
-                    <?php
-                    $userid = "user_".$current_user->ID; 
-                    acf_form (
-                        array(
-                            'form' => true,
-                            'post_id' => $userid,
-                            'return' => get_site_url()."/profil"."/",
-                            'submit_value' => __('Änderungen speichern','quartiersplattform'),
-                            'post_title' => false,
-                            'post_content' => false,    
-                            'field_groups' => array('group_6034e1d00f273'),
-                        )
-                    );
-                    ?>
-                <br>
-                <br>
-                <!-- Biography Information -->   
-                <h2>Erzähle etwas über dich</h2>
-                <br>
+            <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
+
+            <br><br>
+
+            <!-- Contact Information -->   
+            <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
+            <br>
                 <?php
                 $userid = "user_".$current_user->ID; 
                 acf_form (
                     array(
                         'form' => true,
                         'post_id' => $userid,
-                        'return' => get_site_url()."/profil/",
+                        'return' => get_site_url()."/profil"."/",
                         'submit_value' => __('Änderungen speichern','quartiersplattform'),
                         'post_title' => false,
                         'post_content' => false,    
-                        'field_groups' => array('group_605dc2bb690d9'),
+                        'field_groups' => array('group_6034e1d00f273'),
                     )
                 );
                 ?>
+            <br>
+            <br>
+            <!-- Biography Information -->   
+            <h2>Erzähle etwas über dich</h2>
+            <br>
+            <?php
+            $userid = "user_".$current_user->ID; 
+            acf_form (
+                array(
+                    'form' => true,
+                    'post_id' => $userid,
+                    'return' => get_site_url()."/profil/",
+                    'submit_value' => __('Änderungen speichern','quartiersplattform'),
+                    'post_title' => false,
+                    'post_content' => false,    
+                    'field_groups' => array('group_605dc2bb690d9'),
+                )
+            );
+            ?>
 
-                <h2><?php _e('Profil bearbeiten', 'quartiersplattform'); ?> </h2>
-                <?php echo do_shortcode("[ultimatemember_account]"); ?>
+            <br>
+            <br>
+            <h2><?php _e('Profil bearbeiten', 'quartiersplattform'); ?> </h2>
+            <?php echo do_shortcode("[ultimatemember_account]"); ?>
 
-                <br>
-                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
+            <br>
+            <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
         </div>
 
     </div>

@@ -47,39 +47,58 @@ get_header();
                 <h2 class="heading-size-3 highlight">
                     <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
                 </h2>
-                <h1 class="heading-size-1"><?php the_title(); ?><br><br></h1>
+                <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
+                <?php visibility_badge(); ?>
 
-                <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                    <?php
+                        if ( !empty(get_post_thumbnail_id())) {
+                    ?>
 
+                    <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                
+                    <?php 
+                        }
+                        ?>
 
-
-                <div class="site-content">
-                    <?php extract_links(get_field('text')); ?>
-                </div>
-
-
-                <?php 
-                // temp fix
-                echo "<br><br>";
-
-                // livestream
-                if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livestream</a>";
-
-                // Ticket
-                if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livestream</a>";
-
-                // Website
-                if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livestream</a>";
-
-                ?>
+                    <div class="site-content">
+                        <?php extract_links(get_field('text')); ?>
+                    </div>
 
 
-                <?php
+                    <!-- Eventtext felder gibt es noch nicht -->
+                
+                    <?php 
+                    // temp fix
+                    echo "<br><br>";
+
+                    // livestream
+                    if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livestream</a>";
+
+                    // Ticket
+                    if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livestream</a>";
+
+                    // Website
+                    if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livestream</a>";
+
+                    // calendar download
+                    calendar_download($post);
+
+                    ?>
+
+                    <div class="gutenberg-content">
+                        <?php
+                        // Gutenberg Editor Content
+                        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                            the_excerpt();
+                        } else {
+                            the_content( __( 'Continue reading', 'twentytwenty' ) );
+                        }
+                        ?>
+                    </div>
+
+                    <?php
                     if ( ( is_user_logged_in() && qp_project_owner() ) ) {
-                        pin_toggle(); 
-
-                        visibility_toggle(get_the_ID(  ));
-                   ?> 
+                    ?>
 
                     <div class="simple-card">
                         <div class="button-group">
@@ -91,43 +110,31 @@ get_header();
                     <?php 
                     }
                     ?>
+                </div>
 
-            </div>
-
-            <div class="gutenberg-content">
 
                 <?php
-                // Gutenberg Editor Content
-                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                    the_excerpt();
-                } else {
-                    the_content( __( 'Continue reading', 'twentytwenty' ) );
+
+                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                    pin_toggle(); 
+                    visibility_toggle(get_the_ID(  ));
                 }
+
+                // project is not public
+                if (get_post_status() == 'draft' && qp_project_owner() ) {
+                    reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+                }
+
+                get_template_part('components/general/share-post');
+
+                
+                // Projekt Kachel
+                project_card($post->ID);
+
+                // Author
+                author_card();
+
                 ?>
-
-            </div>
-
-
-
-            <?php 
-
-
-            // project is not public
-            if (get_post_status() == 'draft' && qp_project_owner() ) {
-                reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
-            }
-
-            
-            // Projekt Kachel
-            project_card($post->ID);
-
-            // Author
-            author_card();
-
-            // calendar download
-            calendar_download($post);
-
-            ?>
 
     
         <!-- Map -->
@@ -199,7 +206,6 @@ get_header();
         }
     }
 }
-            // }
     
 ?>
 

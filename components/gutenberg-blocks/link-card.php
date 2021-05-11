@@ -30,7 +30,7 @@ $id = url_to_postid( $link );
     // }
     // else {
         ?>
-            <a href="<?php echo esc_url( get_permalink($id) ); ?>">
+            <a class="card-link" href="<?php echo esc_url( get_permalink($id) ); ?>">
         <?php
     // }
     ?>

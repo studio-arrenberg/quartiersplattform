@@ -42,11 +42,12 @@ else {
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
                 <div class="highlight text-size-3 ">
-                    <?php  echo qp_date(get_the_date('Y-m-d')); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d')); ?>
                 </div> 
                 <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
+                <?php visibility_badge(); ?>
                 <p class="text-size-2">
                     <?php  
                     if (strlen(get_field('text')) > 2) {
