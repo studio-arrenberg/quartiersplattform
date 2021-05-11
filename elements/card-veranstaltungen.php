@@ -44,6 +44,9 @@ else {
                 <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> - <?php echo qp_date(get_field('event_date')); ?></span>
                 <div class="content">
                     <h3 class="heading-size-3 "><?php shorten(get_the_title(), '30'); ?></h3>
+                    <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
+                        <span class="yellow-tag">Nicht Sichtbar</span>
+                    <?php } ?>
                     <p class="text-size-3">
                         <?php 
                         if (strlen(get_field('text')) > 2) {
@@ -54,6 +57,7 @@ else {
                         }
                         ?> 
                     </p>
+                    
                 </div>
             </a>
         </div>
@@ -71,6 +75,7 @@ else {
                 <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
+                <?php visibility_badge(); ?>
                 <p class="text-size-3">
                     <?php shorten(get_field('text'), 300); ?>
                 </p>

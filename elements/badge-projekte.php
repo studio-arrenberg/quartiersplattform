@@ -33,9 +33,7 @@ global $current_user;
             <span class="blue-tag">Dein Projekt</span>
         <?php } ?>
 
-        <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
-            <span class="yellow-tag">Nicht Sichtbar</span>
-        <?php } ?>
+        <?php visibility_badge(); ?>
 
      
 

@@ -48,13 +48,7 @@ get_header();
                     <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
                 </h2>
                 <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
-                
-                
-
-               
-                <?php
-                // }
-                ?>
+                <?php visibility_badge(); ?>
 
                 <?php
                         if ( !empty(get_post_thumbnail_id())) {

@@ -27,6 +27,7 @@
                         else echo get_the_title(); 
                     ?>
                 </h3>
+                <?php visibility_badge(); ?>
                 <p class="preview-text">
                     <?php if (!is_single( )) shorten(get_field('text'), '50'); else the_field('text'); ?>
                 </p>

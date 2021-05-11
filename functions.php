@@ -2601,7 +2601,7 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	else if (strpos($slug, 'warning') !== false) {
 		set_query_var('reminder_card_style', 'warning');	
 	}
-	if (!$slug) {
+	if (strpos($slug, '!') !== false || !$slug ) {
 		set_query_var('reminder_card_fix', true);
 	}
 	// template part
@@ -2825,7 +2825,7 @@ function visibility_toggle( $id = '' ) {
 		$id = get_the_ID();
 	}
 	
-	// check privilagess
+	// check privilagess !!! use privalages function
 	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
 		return false;
 	}
@@ -3275,6 +3275,18 @@ function qp_project_owner() {
 
 }
 
+/**
+ * QP visibility badge
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return html
+ */
+function visibility_badge() {
+	if (get_post_status() == 'draft' && qp_project_owner()) {
+		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">Nicht Sichtbar</span>';
+	}
+}
 
 
 /**

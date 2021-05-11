@@ -60,6 +60,8 @@
             success: function(response){
                 $('label.'+elementClass+' span.slider').toggleClass('hidden');
                 $('label.'+elementClass+' span.acf-spinner').removeClass('is-active');
+                $('.visibilty-warning-'+ id).remove();
+                // alert('done remove: visibilty-warning-'+ id);
             }
         });
     }

@@ -57,6 +57,7 @@ get_header();
                 <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
             </h2>
             <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
+            <?php visibility_badge(); ?>
 
             <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 

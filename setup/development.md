@@ -35,7 +35,7 @@
 - Cookie Disclaimer
 - Über Mich
 - Ziele für Nachhaltige Entwicklung 
-- Extended Editing Privilages
+- Sichtbarkeitseinstellung von Beiträgen und Projekten
 ### Bugs
 - Umfragen im Newsfeed
 - Ajax mit Nonce Sicherheit
