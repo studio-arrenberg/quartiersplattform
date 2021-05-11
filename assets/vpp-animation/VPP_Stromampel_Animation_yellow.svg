@@ -13,7 +13,7 @@
 
              .white {
                 fill: white;
-                stroke: white;
+                <!-- stroke: white; -->
             }
             .cls-2 {
                 fill: #3e3e3f;
@@ -102,9 +102,9 @@
                 -webkit-animation: spin 3s linear infinite;
                 -moz-animation: spin 3s linear infinite;
                 animation: spin 3s linear infinite;
-                transform-origin: 12.9934445% 44.9390476%;
-       
-                fill: white !important;
+                <!-- transform-origin: 12.9934445% 44.9390476%; -->
+                transform-origin: 12.9834445% 44.77090476%;
+                <!-- fill: white !important; -->
             }
 
             @-moz-keyframes spin {
@@ -353,7 +353,7 @@
         <path id="Pfad_80" data-name="Pfad 80" class="cls-2" d="M67.75,158.65a7.23,7.23,0,0,1-4.22-1.44,7,7,0,0,0,1.12,1.32l-.91,36.14,2,.1.91-35.22a3.46,3.46,0,0,0,1,.1,4.17,4.17,0,0,0,1.12-.1l1,35.12,2-.1-1-36.14A12.22,12.22,0,0,0,72,157.21,6.82,6.82,0,0,1,67.75,158.65Z" />
     </g>
     <g id="Phase_color">
-        <circle id="Ellipse" class="white" cx="269.22" cy="67.44" r="27.05" />
+        <circle id="Ellipse" class="white" cx="267.79" cy="63.77" r="26.5" />
         <circle id="Ellipse-2" data-name="Ellipse" class="cls-6" cx="269.22" cy="67.44" r="27.05" />
         <circle id="Ellipse-2-2" data-name="Ellipse-2" class="cls-7" cx="269.22" cy="67.44" r="18.64" />
         <circle id="Ellipse-3" class="cls-8" cx="269.22" cy="67.44" r="10.46" />

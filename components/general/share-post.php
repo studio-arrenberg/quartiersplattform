@@ -1,4 +1,4 @@
-<!-- Projekt Teilen -->
+<!-- Teilen -->
 <?php  
 
     global $current_user;
@@ -9,24 +9,24 @@
     if (get_post_status() == 'publish') {
 ?>
     <div class="share">
-        <h3><?php _e('Projekt teilen', 'quartiersplattform'); ?>  </h3>
+        <h3><?php _e('Teilen', 'quartiersplattform'); ?>  </h3>
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-            <button class="copy is-style-outline" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>
+            <button class="copy is-primary" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>
 
         </div>
 
         <div class="share-button">
 
-            <a class="button is-style-outline " target="blank"
+            <a class="button " target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
             href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
         
-            <a class="button is-style-outline" target="blank"
+            <a class="button " target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Twitter', '<?php the_title(); ?>']);"
             href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
         
-            <a class="button is-style-outline" target="blank"
+            <a class="button" target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
             href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"
             rel="nofollow">E-Mail</a>

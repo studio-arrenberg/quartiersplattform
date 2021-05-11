@@ -107,7 +107,7 @@ wp_maintenance_mode();
                 ?>
                 
                 <!-- back button 
-                <button class="button header-button button-has-icon is-style-outline" onclick="history.go(-1);">
+                <button class="button header-button button-has-icon " onclick="history.go(-1);">
                     <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
                     <span class="button-has-icon-label">Zurück</span>
                 </button>
@@ -120,11 +120,11 @@ wp_maintenance_mode();
 
             <div class="push-right">
 
-                <a class="button header-button is-style-outline energie-ampel-button" onclick="show()">
+                <a class="button header-button  energie-ampel-button" onclick="show()">
                     <?php require get_template_directory() . '/assets/icons/ampelmann.svg'; ?>
                 </a>
 
-                <a class="button header-button  button-has-icon <?php if (!is_page( 'Veranstaltungen' )) echo "is-style-outline"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
+                <a class="button header-button button-has-icon <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
                     <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
                 </a>
 
@@ -137,7 +137,7 @@ wp_maintenance_mode();
                 // backend login button for admins
                 if(current_user_can('administrator')) {
                     ?>
-                        <a class="button header-button  button-has-icon is-style-outline "
+                        <a class="button header-button  button-has-icon  "
                             href="<?php echo get_site_url(); ?>/wp-admin">
                             <?php require get_template_directory() . '/assets/icons/gearshape.svg'; ?>
 
@@ -148,7 +148,7 @@ wp_maintenance_mode();
                 ?>
 
                 <!-- profil button -->
-                <a class="button header-button button-has-image is-style-outline" href="<?php echo get_site_url(); ?>/profil">
+                <a class="button header-button button-is-transparent button-has-image " href="<?php echo get_site_url(); ?>/profil">
                     <img class="button-image" src="<?php echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" />
                 </a>
                 <?php 
@@ -156,12 +156,8 @@ wp_maintenance_mode();
             // logged out user
             else {
                 ?>
-                <a class="button header-button button-has-icon is-style-outline"
-                    href="<?php echo get_site_url(); ?>/login">
-                    <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/profil.svg" />
-                    <span class="button-has-icon-label">
-                        <!-- <?php _e('Anmelden', 'quartiersplattform'); ?> -->
-                    </span>
+                <a class="button header-button button-has-icon" href="<?php echo get_site_url(); ?>/login">
+                    <?php require get_template_directory() . '/assets/icons/person.svg'; ?>
                 </a>
                 <?php 
             }
@@ -209,9 +205,10 @@ wp_maintenance_mode();
     <div id="overlay" class="overlay hidden">
 
         <div class="overlay-content">
-            <button class="button header-button button-has-icon is-style-outline" onclick="hide()">
-                <img class="button-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/back.svg" />
-                <span class="button-has-icon-label"><?php _e('Zurück', 'quartiersplattform'); ?></span>
+            <button class="button  " onclick="hide()">
+            
+            <!-- <?php require get_template_directory() . '/assets/icons/person.svg'; ?> -->
+                <?php _e('Zurück', 'quartiersplattform'); ?></span>
             </button>
             <?php get_template_part('components/energie_ampel-menu'); ?>
         </div>

@@ -32,7 +32,7 @@ if (strlen($the_slug < 1 )) {
     // }
     // else {
         ?>
-            <a href="<?php echo esc_url( get_permalink($id) ); ?>">
+            <a class="card-link" href="<?php echo esc_url( get_permalink($id) ); ?>">
         <?php
     // }
     ?>
