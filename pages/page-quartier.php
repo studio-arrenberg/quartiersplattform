@@ -47,8 +47,6 @@ get_header();
         <div class="stage-center">
             <p><?php the_field('welcome-text','option'); ?></p>
 
-
-            <div class="link-card-container large-margin-bottom">
                 <?php
                     $pinned_pages = array(
                         'post_type' => 'page',
@@ -58,27 +56,31 @@ get_header();
                         'meta_key'   => 'pin_main',
                         'meta_value' => array(true, 'true')
                     );
-                    card_list($pinned_pages);
+                    if (count_query($pinned_pages)) {
+                        echo '<div class="link-card-container large-margin-bottom">';
+                        card_list($pinned_pages);
+                        echo '</div>';
 
-                ?>
-            </div>
-
-
-            <div class="link-card-container">
-                <?php
-
-                    // Gutenberg
-                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                        the_excerpt();
-                    } else {
-                        the_content( __( 'Continue reading', 'twentytwenty' ) );
                     }
                 ?>
-            </div>
-
-            
             
         </div>
+        
+    </section>
+
+    <section>
+
+        <div class="gutenberg-content">
+            <?php
+                // Gutenberg
+                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                    the_excerpt();
+                } else {
+                    the_content( __( 'Continue reading', 'twentytwenty' ) );
+                }
+            ?>
+        </div>
+        
     </section>
 
     <section class="">
