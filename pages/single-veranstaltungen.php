@@ -50,7 +50,7 @@ get_header();
                 <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
                 <?php visibility_badge(); ?>
 
-                <?php
+                    <?php
                         if ( !empty(get_post_thumbnail_id())) {
                     ?>
 
@@ -60,32 +60,29 @@ get_header();
                         }
                         ?>
 
-                <div class="site-content">
-                    <?php extract_links(get_field('text')); ?>
-                </div>
+                    <div class="site-content">
+                        <?php extract_links(get_field('text')); ?>
+                    </div>
 
 
-                <!-- Eventtext felder gibt es noch nicht -->
-            
-                <?php 
-                // temp fix
-                echo "<br><br>";
+                    <!-- Eventtext felder gibt es noch nicht -->
+                
+                    <?php 
+                    // temp fix
+                    echo "<br><br>";
 
-                // livestream
-                if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livestream</a>";
+                    // livestream
+                    if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livestream</a>";
 
-                // Ticket
-                if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livestream</a>";
+                    // Ticket
+                    if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livestream</a>";
 
-                // Website
-                if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livestream</a>";
+                    // Website
+                    if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livestream</a>";
 
-                ?>
+                    // calendar download
+                    calendar_download($post);
 
-
-                <?php
-                    if ( ( is_user_logged_in() && qp_project_owner() ) ) {
-                        pin_toggle(); 
                     ?>
 
                     <div class="gutenberg-content">
@@ -98,6 +95,10 @@ get_header();
                         }
                         ?>
                     </div>
+
+                    <?php
+                    if ( ( is_user_logged_in() && qp_project_owner() ) ) {
+                    ?>
 
                     <div class="simple-card">
                         <div class="button-group">
@@ -113,29 +114,27 @@ get_header();
 
 
                 <?php
-                    if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                        pin_toggle(); 
-                        visibility_toggle(get_the_ID(  ));
-                    }
-                        ?> 
-                        <?php 
-            
-            // project is not public
-            if (get_post_status() == 'draft' && qp_project_owner() ) {
-                reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
-            }
 
-            
-            // Projekt Kachel
-            project_card($post->ID);
+                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+                    pin_toggle(); 
+                    visibility_toggle(get_the_ID(  ));
+                }
 
-            // Author
-            author_card();
+                // project is not public
+                if (get_post_status() == 'draft' && qp_project_owner() ) {
+                    reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+                }
 
-            // calendar download
-            calendar_download($post);
+                get_template_part('components/general/share-post');
 
-            ?>
+                
+                // Projekt Kachel
+                project_card($post->ID);
+
+                // Author
+                author_card();
+
+                ?>
 
     
         <!-- Map -->
@@ -207,7 +206,6 @@ get_header();
         }
     }
 }
-            // }
     
 ?>
 

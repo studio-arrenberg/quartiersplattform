@@ -2103,7 +2103,7 @@ function calendar_download($post) {
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
 
-	echo '<a class="button button-is-primary" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">'.__("Termin im Kalender speichern",'quartiersplattform').'</a>';   
+	echo '<a class="button is-primary" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">'.__("Termin im Kalender speichern",'quartiersplattform').'</a>';   
 }
 
 /**
