@@ -124,7 +124,7 @@ wp_maintenance_mode();
                     <?php require get_template_directory() . '/assets/icons/ampelmann.svg'; ?>
                 </a>
 
-                <a class="button header-button  button-has-icon <?php if (!is_page( 'Veranstaltungen' )) echo ""; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
+                <a class="button header-button button-has-icon <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
                     <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
                 </a>
 

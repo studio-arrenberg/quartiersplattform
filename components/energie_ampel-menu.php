@@ -211,7 +211,7 @@ if (empty($phase_color)) {
             var htmlElement = document.getElementsByTagName("html")[0];
             htmlElement.classList.add("no-scroll");
 
-            document.querySelector("a.energie-ampel-button").classList.remove('is-primary');
+            document.querySelector("a.energie-ampel-button").classList.add('is-primary');
 
             energieAmpel = true;
         
@@ -235,6 +235,6 @@ if (empty($phase_color)) {
         htmlElement.classList.remove("no-scroll");
 
         document.body.style.overflowY = "scroll";
-        document.querySelector("a.energie-ampel").classList.add('is-primary');
+        document.querySelector("a.energie-ampel-button").classList.remove('is-primary');
     }
 </script>

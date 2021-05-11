@@ -155,7 +155,11 @@
             
             ?>
             </script>
-
+            <?php if ($array[0]['total_voter'] >= 3) { ?>
+                <div class="content">
+                    <p class="preview-text"><?php echo $array[0]['total_voter']." ".__('Stimmen','quartiersplattform'); ?></p>
+                </div>
+            <?php } ?>
         <!-- </a> -->
     </div>
 
