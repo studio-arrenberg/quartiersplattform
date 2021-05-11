@@ -2445,16 +2445,25 @@ function extract_links( $text ) {
  */
 function qp_date( $date, $detail = false, $time = '' ) {
 
-	// date_default_timezone_set(get_option('timezone_string'));
-	// date_default_timezone_set("Europe/Berlin");
+	/**
+	 * Tested:
+	 * date_default_timezone_set("Europe/Berlin");
+	 * wp_date(); date(); wp_strtotime(); wp_strtotime("$date $time");
+	 * 
+	 * Solve: Missing Date
+	 */
 
-	// get time
-	if ($time) {
-		$date = wp_strtotime("$date $time");
+
+	if (!empty($time)) {
+		// echo "help: ". $date." t: ".$time;
+		$date = strtotime("$date $time");
 	}
 	else {
-		$date = wp_strtotime($date);
+
+		$date = strtotime($date);
 	}
+
+	// echo date_i18n("Y-m-d H:i:s", $date)." - ";
 
 	// tomorrow
 	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
@@ -2470,19 +2479,23 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
-		$string = wp_date('j. F Y', $date);
+		// $string = wp_date('j. F Y', $date);
+		$string = date_i18n('j. F Y', $date);
 	}
 	// default (just date)
 	else {
-		$string = wp_date('j. F', $date);
+		// $string = wp_date('j. F', $date);
+		$string = date_i18n('j. F', $date);
 	}
 
 	if ($detail) {
-		$string = $string.__(" um ",'quartiersplattform').wp_date('H:i', $date);
+		$string = $string.__(" um ",'quartiersplattform').date_i18n('H:i', $date);
 	}
 
 	return $string;
 }
+
+
 
 /**
  * WP StrToTime helper function
@@ -2493,6 +2506,7 @@ function qp_date( $date, $detail = false, $time = '' ) {
  * @return string text with html a tags
  */
 function wp_strtotime($str) {
+	// echo "!!!".$str;
 	// This function behaves a bit like PHP's StrToTime() function, but taking into account the Wordpress site's timezone
 	// CAUTION: It will throw an exception when it receives invalid input - please catch it accordingly
 	// From https://mediarealm.com.au/
@@ -2513,6 +2527,7 @@ function wp_strtotime($str) {
 	$datetime = new DateTime($str, new DateTimeZone($timezone));
 	return $datetime->format('U');
 }
+
 
 
 /**

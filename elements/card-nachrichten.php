@@ -42,7 +42,7 @@ else {
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
                 <div class="highlight text-size-3 ">
-                    <?php echo qp_date(get_the_date('Y-m-d')); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d'), false); ?>
                 </div> 
                 <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>

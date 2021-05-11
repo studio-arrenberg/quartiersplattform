@@ -8,9 +8,7 @@
                     <b><?php _e('Umfrage', 'quartiersplattform'); ?> </b>
                     <br>
                     <?php _e('veröffentlicht von ', 'quartiersplattform'); ?> <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), false); 
-                    // print_r( wp_timezone());  
-                    ?>
+                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), false); ?>
                 </span>
             </a>
         </div>
@@ -20,7 +18,9 @@
     <div class="card <?php if (!is_single()) echo 'shadow'; ?> ">
         <a class="card-link " href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
-                
+                <div class="highlight text-size-3 ">
+                    <?php echo qp_date(get_the_date('Y-m-d'), false); ?>
+                </div> 
                 <h3 class="heading-size-3">
                     <?php  
                         if (!is_single( )) shorten(get_the_title(), '50'); 
