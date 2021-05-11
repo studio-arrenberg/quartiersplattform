@@ -152,7 +152,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                // 'display_format' => 'g:i a',
+                // 'display_format' => 'g:i',
                 'display_format' => 'H:i',
                 'return_format' => 'H:i:s',
             ),
@@ -222,7 +222,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_5fc8d20bd15cb',
-                'label' => __('Map','quartiersplattform'),
+                'label' => __('Karte','quartiersplattform'),
                 'name' => 'map',
                 'type' => 'google_map',
                 'instructions' => '',

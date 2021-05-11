@@ -7,7 +7,7 @@
  * 
  */
 
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+if ( ( is_user_logged_in() && qp_project_owner() ) ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
@@ -43,9 +43,6 @@ get_header();
                 }
                 
                 // get project by Term
-                $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-                $the_slug = $term_list[0]->slug;
-                $project_id = $term_list[0]->description;
                 ?>
                 <h2 class="heading-size-3 highlight">
                     <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
@@ -69,7 +66,6 @@ get_header();
                         }
                         ?>
 
-
                 <div class="site-content">
                     <?php extract_links(get_field('text')); ?>
                 </div>
@@ -78,9 +74,6 @@ get_header();
                 <!-- Eventtext felder gibt es noch nicht -->
             
                 <?php 
-                // text
-                // extract_links(get_field('text'));
-
                 // temp fix
                 echo "<br><br>";
 
@@ -96,6 +89,10 @@ get_header();
                 ?>
 
 
+                <?php
+                    if ( ( is_user_logged_in() && qp_project_owner() ) ) {
+                        pin_toggle(); 
+                    ?>
 
                     <div class="gutenberg-content">
                         <?php
@@ -110,9 +107,8 @@ get_header();
 
                     <div class="simple-card">
                         <div class="button-group">
-                            <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
-                            <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')"
-                                href="<?php get_permalink(); ?>?action=delete"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
+                            <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
+                            <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
                         </div>
                     </div>
 
@@ -131,24 +127,20 @@ get_header();
 
 
             // project is not public
-            if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
+            if (get_post_status() == 'draft' && qp_project_owner() ) {
                 reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
             }
 
             
             // Projekt Kachel
             project_card($post->ID);
-            ?>
 
-    
+            // Author
+            author_card();
 
+            // calendar download
+            calendar_download($post);
 
-
-            <?php author_card(); ?>
-
-            <?php 
-                // calendar download
-                calendar_download($post); 
             ?>
 
     
@@ -174,27 +166,28 @@ get_header();
         }   # main loop 
 
         # post löschen
-        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && qp_project_owner() ) {
 
+            // get projekt link
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-            $the_slug = $term_list[0]->slug;
             $project_id = $term_list[0]->description;
 
+            // delete post
             wp_delete_post(get_the_ID());
-            
 
-            if ($project_id) {
-                wp_redirect( get_permalink($project_id) );
+            // redirect
+            if (!empty(get_permalink($project_id))) {
+                exit( wp_redirect( get_permalink($project_id) ) );
             }
             else {
-                wp_redirect( get_site_url() );
+                exit( wp_redirect( get_site_url() ) );
             }
             
         }
         # posst bearbeiten
         else {
             
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            if ( ( is_user_logged_in() && qp_project_owner() ) ) {
                 echo '<h2>Bearbeite deine Veranstaltung</h2><br>';
                 acf_form (
                     array(

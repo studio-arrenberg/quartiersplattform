@@ -46,7 +46,7 @@
     </script>
 
 <?php 
-} else if ($current_user->ID == $post->post_author) {
+} else if (qp_project_owner()) {
     $text = __("Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde.",'quartiersplattform');
     reminder_card('project-share'.get_the_ID(  ), __('Dein Projekt kann nicht geteilt werden','quartiersplattform'), $text);
 } 

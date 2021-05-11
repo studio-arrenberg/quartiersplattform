@@ -1272,15 +1272,15 @@ function script_managment() {
 		}
 	}
 	// landing page
-	if (is_front_page()) {
+	if (is_front_page() && !is_user_logged_in()) {
 		files_none();
 	} 
 	// user is post owner
-	else if ($current_user->ID == $post->post_author && get_post_type() != 'projekte') {
+	else if (qp_project_owner() && get_post_type() != 'projekte') {
 		files_edit();
 	}
 	// author of project
-	else if ($current_user->ID == $post->post_author && get_post_type() == 'projekte') {
+	else if (qp_project_owner()&& get_post_type() == 'projekte') {
 		files_inc_emoji();
 	}
 	// projekt visitor
@@ -2445,15 +2445,15 @@ function extract_links( $text ) {
  */
 function qp_date( $date, $detail = false, $time = '' ) {
 
-	date_default_timezone_set(get_option('timezone_string'));
+	// date_default_timezone_set(get_option('timezone_string'));
 	// date_default_timezone_set("Europe/Berlin");
 
 	// get time
 	if ($time) {
-		$date = strtotime("$date $time");
+		$date = wp_strtotime("$date $time");
 	}
 	else {
-		$date = strtotime($date);
+		$date = wp_strtotime($date);
 	}
 
 	// tomorrow
@@ -2482,8 +2482,38 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 
 	return $string;
-
 }
+
+/**
+ * WP StrToTime helper function
+ *
+ * @since Quartiersplattform 1.6
+ *
+ * @param string $date date
+ * @return string text with html a tags
+ */
+function wp_strtotime($str) {
+	// This function behaves a bit like PHP's StrToTime() function, but taking into account the Wordpress site's timezone
+	// CAUTION: It will throw an exception when it receives invalid input - please catch it accordingly
+	// From https://mediarealm.com.au/
+	$tz_string = get_option('timezone_string');
+	$tz_offset = get_option('gmt_offset', 0);
+	if (!empty($tz_string)) {
+		// If site timezone option string exists, use it
+		$timezone = $tz_string;
+	} elseif ($tz_offset == 0) {
+		// get UTC offset, if it isn’t set then return UTC
+		$timezone = 'UTC';
+	} else {
+		$timezone = $tz_offset;
+		if(substr($tz_offset, 0, 1) != "-" && substr($tz_offset, 0, 1) != "+" && substr($tz_offset, 0, 1) != "U") {
+			$timezone = "+" . $tz_offset;
+		}
+	}
+	$datetime = new DateTime($str, new DateTimeZone($timezone));
+	return $datetime->format('U');
+}
+
 
 /**
  * Display Time Remaining 
@@ -2699,7 +2729,7 @@ function visibility_toggle_callback() {
 		$term_list = wp_get_post_terms( $post_id, 'projekt', array( 'fields' => 'all' ) );
 
 		// get array
-		$array = get_post_meta($term_list[0]->term_id, 'posts_visibility', true);
+		$array = get_post_meta($term_list[0]->description, 'posts_visibility', true);
 
 		// create array
 		if (!$array) {
@@ -2710,7 +2740,7 @@ function visibility_toggle_callback() {
 		$array[ $post_id ] = $status;
 
 		// save array
-		update_post_meta( $term_list[0]->term_id, 'posts_visibility', $array );
+		update_post_meta( $term_list[0]->description, 'posts_visibility', $array );
 
 		// update post status
 		$my_post = array();
@@ -2757,12 +2787,14 @@ function visibility_toggle_callback() {
 		// update all posts
 		foreach ( $p_posts as $s_post ) {
 
-			$array[ $s_post->ID ] = $status;
+			if ($status == 'draft' || ($status == 'publish' && $array[ $s_post->ID ] == 'publish')) {
 
-			$my_post = array();
-			$my_post['ID'] = $s_post->ID;
-			$my_post['post_status'] = $status;
-			wp_update_post( $my_post );
+				$my_post = array();
+				$my_post['ID'] = $s_post->ID;
+				$my_post['post_status'] = $status;
+				wp_update_post( $my_post );
+
+			}
 
 		}
 
@@ -2804,17 +2836,14 @@ function visibility_toggle( $id = '' ) {
 		// get project id
 		$term_list = wp_get_post_terms( $id, 'projekt', array( 'fields' => 'all' ) ); // !!! unstable
 
+		// echo print_r(get_post_meta($term_list[0]->description, 'posts_visibility', true));
+
 		// check projekt visibility
 		if (get_post_status($term_list[0]->description) == 'draft') {
 			return false;
 		}
 
 	}
-	// for testing
-	// else if ( get_post_type( $id ) == 'projekte' ) {
-		// echo "hello";
-		// print_r(get_post_meta($id, 'posts_visibility', true));
-	// }
 
 	get_template_part( 'components/settings/visibility_toggle' );
 
@@ -3191,6 +3220,60 @@ add_filter('pre_option_default_role', function($default_role){
     return 'contributor'; // This is changed
     return $default_role; // This allows default
 });
+
+
+/**
+ * QP Parameter Permalink
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @param string $suffix
+ * @return string parmalink
+ */
+function qp_parameter_permalink($suffix) {
+
+	if(strpos(get_permalink(), '?')) {
+        $link = get_permalink().'&'.$suffix;
+    }
+    else {
+        $link = get_permalink().'?'.$suffix;
+    }
+
+	echo $link;
+}
+
+
+/**
+ * QP Get Projekt Owners (works in Loop)
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return boolean
+ */
+function qp_project_owner() {
+
+	global $current_user;
+	global $post;
+
+	if (!is_user_logged_in()) {
+		return false;
+	}
+	// get post projekt
+	$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+	$project_id = $term_list[0]->description;
+
+
+	if ($current_user->ID == $post->post_author) {
+		return true;
+	}
+	else if ($current_user->ID == get_post_field( 'post_author', $project_id)) {
+		return true;
+	}
+	else { 
+		return false;
+	}
+
+}
 
 
 

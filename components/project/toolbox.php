@@ -1,4 +1,7 @@
-<?php global $current_user; ?>
+<?php global $current_user; 
+// echo $current_user->ID."<br>";
+// echo $post->post_author;
+?>
 
 <?php if ( is_user_logged_in() && $current_user->ID == $post->post_author ) { ?>
 <div class="large-margin-bottom">

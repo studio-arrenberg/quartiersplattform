@@ -1,7 +1,7 @@
 <?php 
 // Projektverlauf
 global $current_user;
-if ($current_user->ID == $post->post_author) {
+if (qp_project_owner()) {
     $post_status = array('publish', 'draft');
 }
 else {
@@ -31,7 +31,7 @@ if(!count_query($args_chronik) && $current_user->ID != $post->post_author){
     $text = __("Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später vorbei, um auf dem Laufenden zu bleiben.",'quartiersplattform');
     no_content_card("doc-richtext", __("Es wurden noch keine Beiträge veröffentlicht",'quartiersplattform'), $text, $link_text = '', $link_url = '');
 }
-else if (!count_query($args_chronik) && $current_user->ID == $post->post_author) {
+else if (!count_query($args_chronik) && qp_project_owner()) {
     // card for project owner
     $text = __("Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen in deinem Quartier über das Projekt zu informieren.",'quartiersplattform');
     no_content_card("doc-richtext", __("Du hast noch keine Beiträge veröffentlicht",'quartiersplattform'), $text, $link_text = '', $link_url = '');

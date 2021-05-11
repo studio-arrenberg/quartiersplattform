@@ -7,7 +7,7 @@
  *
  */
 
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+if ( ( is_user_logged_in() && qp_project_owner() ) ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
@@ -76,7 +76,7 @@ get_header();
             </div>
 
             <?php
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            if ( ( is_user_logged_in() && qp_project_owner() ) ) {
 
                 pin_toggle();
 
@@ -99,7 +99,7 @@ get_header();
             <?php 
             
             // project is not public
-            if (get_post_status() == 'draft' && $current_user->ID == $post->post_author) {
+            if (get_post_status() == 'draft' && qp_project_owner()) {
                 reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
             }
             
@@ -160,7 +160,7 @@ get_header();
             }
         }
         # Post löschen
-        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && qp_project_owner()) {
 
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
             $the_slug = $term_list[0]->slug;
@@ -178,7 +178,7 @@ get_header();
         }
         # Post bearbeiten
         else {
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            if ( ( is_user_logged_in() && qp_project_owner() ) ) {
                 echo '<h2>Bearbeite deine Nachricht</h2><br>';
                 acf_form (
                     array(
