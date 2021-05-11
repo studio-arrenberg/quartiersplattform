@@ -880,7 +880,7 @@ input[type="submit"]:focus{
   background: #003054;
   color: #fff;
   box-shadow: 0 3px 15px rgba(196, 196, 196, 0.8);
-}
+}x
 
 .energie-ampel-button svg{
   height: 18px;
@@ -893,7 +893,12 @@ input[type="submit"]:focus{
 .button-red:hover{
   color: #fff;
   background:#ff004f;
-  box-shadow: 0 1px 2px rgba(255, 0, 79, 0.7);
+  box-shadow: 0 1px 2px rgba(255, 0, 79, 0.15),
+    0 2px 4px rgba(255, 0, 79, 0.15), 0 4px 8px rgba(255, 0, 79, 0.15),
+    0 8px 16px rgba(255, 0, 79, 0.15), 0 16px 32px rgba(255, 0, 79, 0.15),
+    0 32px 64px rgba(255, 0, 79, 0.15);
+
+
    
 }
 
@@ -4437,6 +4442,11 @@ left: 5px;
 .landscape .wp-post-image {
   border-radius: 20px;
 }
+
+
+/* .veranstaltung-ohne-bild {
+  min-height: 150px;
+} */
 
 .veranstaltung-ohne-bild .date{
   background: #0091FF;
