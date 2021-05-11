@@ -122,10 +122,10 @@ get_header();
                     if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
                         pin_toggle(); 
                         visibility_toggle(get_the_ID(  ));
-                   ?> 
-            <?php 
-
-
+                    }
+                        ?> 
+                        <?php 
+            
             // project is not public
             if (get_post_status() == 'draft' && qp_project_owner() ) {
                 reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
