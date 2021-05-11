@@ -727,6 +727,7 @@ input[type="file"]::-webkit-file-upload-button {
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
   font-weight: 700;
 
   display: inline-flex;
