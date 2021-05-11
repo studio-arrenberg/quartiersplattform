@@ -13,7 +13,7 @@
         </span>
         <span class="toggle-slider" style="display: inline-block;"></span>
     </div>
-    <span class="acf-spinner" style="display: inline-block;"></span>
+    <span class="acf-spinner " style="display: inline-block;"></span>
 </label> 
 
 <script> 

@@ -6104,17 +6104,18 @@ a.text-link:hover {
 	overflow: hidden;
 	height: 1.3em;
 	margin-top: -0.3em;
-	line-height: 1.5em;
+	line-height: 40px;
 	vertical-align: text-bottom;
-  font-size: 29.2px;
+  font-size: 30px;
   position: relative;
   top: 8px;
   left: 5px;
+  clear: both;
 }
 
 @keyframes spin12 {
 	to {
-		transform: translateY(-18.0em);
+		transform: translateY(-480px);
 	}
 }
 
@@ -6346,8 +6347,6 @@ div.acf-switch span.acf-switch-on {
 .toggle-input{
   display: none !important;
 }
-
-
 
 .toggle-wrapper:first-child{
   margin-right: 5px;
