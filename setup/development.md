@@ -41,6 +41,7 @@
 - Ajax mit Nonce Sicherheit
 - Löschung aller Projekt Posts beim Löschen des Projektes
 - CSS Editor
+- Archiv Darstellung
 - WP StrToDate Timezone
 
 ## v1.8
