@@ -16,8 +16,8 @@ global $current_user;
         ?>
     </div>
     <div class="badge-content">
-        <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
-        <!-- <h5 class="heading-size-5"><?php echo get_post_modified_time('Y-m-d H:i:s'); ?></h5> -->
+        <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); //echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
+        <!-- <h5 class="heading-size-5"><?php // echo get_post_modified_time('Y-m-d H:i:s'); ?></h5> -->
 
 
         <?php if($current_user->ID != $post->post_author) { ?>
@@ -33,9 +33,7 @@ global $current_user;
             <span class="blue-tag">Dein Projekt</span>
         <?php } ?>
 
-        <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
-            <span class="yellow-tag">Nicht Sichtbar</span>
-        <?php } ?>
+        <?php visibility_badge(); ?>
 
      
 

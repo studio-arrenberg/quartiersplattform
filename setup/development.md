@@ -23,6 +23,9 @@
 
 ## v1.7
 
+! gutenberg startseite
+! veranstaltungen
+
 ### Features
 - Beiträge verbergen
 - Pinned Posts (Projekt & Quartier)
@@ -32,10 +35,14 @@
 - Cookie Disclaimer
 - Über Mich
 - Ziele für Nachhaltige Entwicklung 
+- Sichtbarkeitseinstellung von Beiträgen und Projekten
 ### Bugs
 - Umfragen im Newsfeed
 - Ajax mit Nonce Sicherheit
 - Löschung aller Projekt Posts beim Löschen des Projektes
+- CSS Editor
+- Archiv Darstellung
+- WP StrToDate Timezone
 
 ## v1.8
 - cookie disclaimer

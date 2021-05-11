@@ -61,18 +61,16 @@ get_header();
 	if ( have_posts() ) {
 
 		?>
-			<div class="card-container">
+
+			<h1 class="large-margin-bottom"><?php the_archive_title(); ?></h1>
+
+			<div class="card-container force-landscape">
 			
 
 			<?php
 
-			$i = 0;
-
 			while ( have_posts() ) {
-				$i++;
-				if ( $i > 1 ) {
-					echo '';
-				}
+
 				the_post();
 
 				// get_template_part( 'template-parts/content', get_post_type() );

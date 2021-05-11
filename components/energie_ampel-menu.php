@@ -194,9 +194,13 @@ if (empty($phase_color)) {
 
 
 <script>
-    function show() {
 
-        if (document.querySelector("a.energie-ampel-button").classList.contains('is-style-outline')) {
+    energieAmpel = false;   
+    
+    function show() {
+        // alert('state: ' + energieAmpel);
+        // show
+        if (energieAmpel == false) {
         
             var element = document.getElementById("overlay");
             element.classList.remove("hidden");
@@ -207,28 +211,21 @@ if (empty($phase_color)) {
             var htmlElement = document.getElementsByTagName("html")[0];
             htmlElement.classList.add("no-scroll");
 
+            document.querySelector("a.energie-ampel-button").classList.add('is-primary');
 
-            document.querySelector("a.energie-ampel-button").classList.remove('is-style-outline');
-            // document.body.style.overflowY = "hidden";
+            energieAmpel = true;
         
         }
+        // hide
         else {
-
-            var element = document.getElementById("overlay");
-            element.classList.remove("visible");
-            element.classList.add("hidden");
-
-            var htmlElement = document.getElementsByTagName("html")[0];
-            htmlElement.classList.remove("no-scroll");
-
-            // document.body.style.overflowY = "scroll";
-            // document.body.classlist.add('no-scroll');
-            document.querySelector("a.energie-ampel-button").classList.add('is-style-outline');
-
+            
+            hide();
+            
         }
     }
 
     function hide() {
+        energieAmpel = false;
 
         var element = document.getElementById("overlay");
         element.classList.remove("visible");
@@ -238,7 +235,6 @@ if (empty($phase_color)) {
         htmlElement.classList.remove("no-scroll");
 
         document.body.style.overflowY = "scroll";
-        document.querySelector("a.energie-ampel").classList.add('is-style-outline');
-
+        document.querySelector("a.energie-ampel-button").classList.remove('is-primary');
     }
 </script>

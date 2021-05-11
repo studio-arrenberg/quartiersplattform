@@ -2,38 +2,19 @@
 <p><?php _e('Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen.', 'quartiersplattform'); ?></p>
 
 <label class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>">
-    <input type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >
-    <span class="slider toggle_a <?php if (get_post_status() != 'publish') echo "hidden"; ?>">
-    <?php _e('Öffentlich', 'quartiersplattform'); ?> </span>
-    <span class="slider toggle_b <?php if (get_post_status() == 'publish') echo "hidden"; ?>">
-    <?php _e('Privat', 'quartiersplattform'); ?> </span>
-    <span class="acf-spinner" style="display: inline-block;"></span>
+    <input class="toggle-input" type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >
+    
+    <div class="toggle-wrapper  <?php if (get_post_status() == 'publish') echo "is-checked"; ?> ">
+        <span class="button toggle-button slider toggle_a ">
+            <?php _e('Öffentlich', 'quartiersplattform'); ?> 
+        </span>
+        <span class="button toggle-button slider toggle_b <?php if (get_post_status() == 'publish') ?>">
+            <?php _e('Privat', 'quartiersplattform'); ?> 
+        </span>
+        <span class="toggle-slider" style="display: inline-block;"></span>
+    </div>
+    <span class="acf-spinner " style="display: inline-block;"></span>
 </label> 
-
-
-
-<?php if ( current_user_can('administrator') ) {
-
-        ?>
-<!--         
-    <br>
-    <br>
-        <h3><?php _e('Sichtbarkeit', 'quartiersplattform'); ?></h3>
-        <p><?php _e('Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen.', 'quartiersplattform'); ?></p>
-        
-        <div class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>" >
-            <div class="toggle-wrapper" onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')">
-                <button class="toggle-button <?php if (get_post_status() == 'publish') echo "toggle-button-active"; ?>"  >
-                    <?php _e('Öffentlich', 'quartiersplattform'); ?> </span>
-                </button>
-                <button class="toggle-button <?php if (get_post_status() != 'publish') echo "toggle-button-active"; ?>" >
-                    <?php _e('Privat', 'quartiersplattform'); ?> </span>
-                </button>
-            </div>
-            <span class="acf-spinner" style="display: inline-block;"></span>
-        </div>  -->
-        
-        <?php } ?>
 
 <script> 
 
@@ -59,8 +40,10 @@
             data: data,
             dataType: 'json',
             success: function(response){
-                $('label.'+elementClass+' span.slider').toggleClass('hidden');
+                $('label.'+elementClass+' div.toggle-wrapper').toggleClass('is-checked');
                 $('label.'+elementClass+' span.acf-spinner').removeClass('is-active');
+                $('.visibilty-warning-'+ id).remove();
+                // alert('done remove: visibilty-warning-'+ id);
             }
         });
     }
