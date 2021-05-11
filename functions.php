@@ -3292,7 +3292,7 @@ function quartiersplattform_translate_theme() {
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
-switch_to_locale( "en_GB" )
+switch_to_locale( "en_GB" );
 
 
 /**
