@@ -4438,7 +4438,6 @@ left: 5px;
   border-radius: 20px;
 }
 
-
 .veranstaltung-ohne-bild .date{
   background: #0091FF;
   color:#fff;
@@ -6279,13 +6278,15 @@ div.acf-switch span.acf-switch-on {
 
 .toggle-wrapper{
   max-width: 300px;
-  background: #c2e4ff;
+  background: #eef7ff;
   display: flex;
   border-radius: 20px;
   padding: 5px;
   justify-content: space-between; 
   margin-top: 10px;
   margin-bottom: 5px;
+  position: relative;
+
 }
 
 .toggle-button {
@@ -6295,16 +6296,58 @@ div.acf-switch span.acf-switch-on {
   background-color: transparent;
   box-shadow: none;
   color: #000;
+  z-index: 2;
 } 
 
 .toggle-button:hover{
   box-shadow: none;
   color: #0091FF;
+  background: transparent;
 }
-.toggle-button-active{
-  background-color: #0091FF;
-  color: #fff;
+
+.toggle-slider {
+  background: #fff;
+  position: absolute;
+  height: 45px;
+  top: 5px;
+  right: 5px;
+  width: calc( 50% - 5px );
+  z-index: 1;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.15),
+    0 2px 4px rgba(0, 145, 255, 0.15), 0 4px 8px rgba(0, 145, 255, 0.15),
+    0 8px 16px rgba(0, 145, 255, 0.15), 0 16px 32px rgba(0, 145, 255, 0.15),
+    0 32px 64px rgba(0, 145, 255, 0.15);
+
+    transition: all ease-in-out 0.2s;
 }
+
+.toggle_a {
+  color: #000;
+}
+
+.toggle_b {
+  color: #0091FF;
+}
+
+
+.is-checked .toggle_a {
+  color: #0091FF;
+}
+
+.is-checked .toggle_b {
+  color: #000;
+}
+
+.is-checked .toggle-slider {
+  transform: translateX(-100%);
+}
+
+.toggle-input{
+  display: none !important;
+}
+
+
 
 .toggle-wrapper:first-child{
   margin-right: 5px;
