@@ -106,7 +106,7 @@ get_header();
         
          <div class="button-container">
             <a class="button " href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Neuigkeiten & Projektupdates", "quartiersplattform"); ?></a>
-            <a class="button button-is-primary" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Alle Projekte anzeigen", "quartiersplattform"); ?></a>
+            <a class="button is-primary" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Alle Projekte anzeigen", "quartiersplattform"); ?></a>
         </div>
     </section>
 
@@ -137,7 +137,7 @@ get_header();
                     ?>  
                     <?php card_list($args4);?>
                 </div>
-                <a class="button button-is-primary" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
+                <a class="button is-primary" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
             </div>
         </div>
     </section>
@@ -158,7 +158,7 @@ get_header();
                     card_list($args, $type = 'badge');
 
                 ?>
-                <a class="button button-is-primary" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
+                <a class="button is-primary" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
             </div>
 
         </div>
