@@ -41,6 +41,10 @@
     <?php } ?>
 
     <div class="footer">
+        <p><?php _e('Sprache ändern', 'quartiersplattform'); ?></p>
+        <a class="button" href=""><?php _e('🏴󠁧󠁢󠁥󠁮󠁧󠁿  Englisch', 'quartiersplattform'); ?> </a>
+        <a class="button" href=""><?php _e('🇹🇷  Türkisch', 'quartiersplattform'); ?> </a>
+        <a class="button" href=""><?php _e('🇮🇹  Italienisch', 'quartiersplattform'); ?> </a>
 
     <?php 
     $image = get_field('logo', 'option');

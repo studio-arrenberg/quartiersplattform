@@ -3275,9 +3275,13 @@ function qp_project_owner() {
 
 }
 
-function my_theme_load_theme_textdomain() {
-    load_theme_textdomain( 'quartiersplattform', get_template_directory() . '/languages' );
-}
+/**
+ * QP register translation
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * 
+ */
 
 function quartiersplattform_translate_theme() {
     // Load Theme textdomain
@@ -3292,8 +3296,29 @@ function quartiersplattform_translate_theme() {
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
-switch_to_locale( "en_GB" );
+/**
+ * QP switch language
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * 
+ */
 
+function quartiersplattform_detect_language() {
+	if (!is_user_logged_in()) {
+		$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+		if($lang == "de-DE"){
+			switch_to_locale( "en-GB" );
+			
+			echo "<h1>Sprache erkannt!</h1>";
+		}
+		elseif($lang == "en-GB")
+		{
+			echo "Kein Englisch!";
+		}
+	} 
+}
+add_action( 'after_setup_theme', 'quartiersplattform_detect_language' );
 
 /**
  * 
