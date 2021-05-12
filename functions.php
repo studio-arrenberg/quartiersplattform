@@ -3306,19 +3306,20 @@ add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
 function quartiersplattform_detect_language() {
 	if (!is_user_logged_in()) {
-		$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
-		if($lang == "de-DE"){
-			switch_to_locale( "en-GB" );
-			
-			echo "<h1>Sprache erkannt!</h1>";
-		}
-		elseif($lang == "en-GB")
-		{
-			echo "Kein Englisch!";
-		}
-	} 
+		if(isset($_COOKIE['language'])) {     
+			if(!empty($_GET['lang'])){
+				setcookie('language',  $_GET['lang']);
+				return $_GET['lang'];
+			}
+			return $_COOKIE['language'];
+		}else{  	
+			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
+			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+		}	
+	}
+	
 }
-add_action( 'after_setup_theme', 'quartiersplattform_detect_language' );
+add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * 

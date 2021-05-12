@@ -67,8 +67,9 @@ get_header();
         
     </section>
     <?php 
-        $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
-        echo $lang;
+        $_COOKIE['language'];
+        echo "<h1>Cookie Wert ".$_COOKIE['language']."</h1>";
+        echo "<h1>Get Parameter ".$_GET['lang']."</h1>";
     ?>
 
     <section>
