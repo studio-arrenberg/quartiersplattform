@@ -4787,6 +4787,7 @@ a:hover .shadow{
 .card-sgd {
   border: 3px solid #fff;
   position: relative;
+  min-height: 100px;
 }
 
 .sdg-section{
