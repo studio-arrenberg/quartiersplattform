@@ -53,7 +53,7 @@ get_header();
                         <?php
                         }
                         ?> 
-                        <a class="button is-style-outline button-red" onclick="return confirm('Dieses Umfrage endgültig löschen?')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Umfrage löschen', 'quartiersplattform'); ?></a>
+                        <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Umfrage löschen', 'quartiersplattform'); ?></a>
                     </div>
                 </div>
             <?php } ?>

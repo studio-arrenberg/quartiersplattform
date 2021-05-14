@@ -103,7 +103,7 @@ get_header();
                     <div class="simple-card">
                         <div class="button-group">
                             <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
-                            <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
+                            <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
                         </div>
                     </div>
 

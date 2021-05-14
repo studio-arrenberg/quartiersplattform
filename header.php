@@ -18,7 +18,7 @@ wp_maintenance_mode();
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 
-    <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
+    <!-- <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css"> -->
 
     <?php wp_head(); ?>
 

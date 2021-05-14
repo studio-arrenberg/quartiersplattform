@@ -80,9 +80,8 @@ get_header();
 
             <div class="simple-card">
                 <div class="button-group">
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot endgültig löschen?')"
-                        href="<?php get_permalink(); ?>?action=delete"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
+                    <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
                 </div>
             </div>
             <?php } ?>
