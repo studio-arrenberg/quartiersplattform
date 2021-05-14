@@ -3317,6 +3317,12 @@ function quartiersplattform_detect_language() {
 			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
 		}	
 	}
+
+	// check user locale setting
+	// get_user_locale( get_current_user_id( ) );
+
+	// update user locale
+	update_user_meta(get_current_user_id( ), 'locale', 'en_GB'); // en_US
 	
 }
 add_filter( 'locale', 'quartiersplattform_detect_language' );
