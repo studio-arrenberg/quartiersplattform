@@ -26,10 +26,13 @@
 - [ ] cookie disclaimer
 - [ ] notifications
 - [ ] acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
+- [ ] Update note
+- [ ] Admin Settings
 
 ## v1.7.3
 - [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
 - [ ] Startseite Abstand der Inhalte
+- [ ] Cant login when login page is not set through UM...
 
 ## v1.7.2
 - Login Weiterleitung zu Projekten
