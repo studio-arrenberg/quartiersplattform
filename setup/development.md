@@ -21,6 +21,19 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## future
+- [ ] Energie Wetter API and Plugin
+
+## v1.7.3
+- [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
+- [ ] Startseite Abstand der Inhalte
+
+## v1.7.2
+- Login Weiterleitung zu Projekten
+- Sicherheitslücke Anheften und Sichtbarkeit Toggle behoben
+- Startseite ohne Inhalte nicht scrollbar
+- Authoren Card Namensfehler behoben
+
 ## v1.7
 
 ! gutenberg startseite

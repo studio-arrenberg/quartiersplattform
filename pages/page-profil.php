@@ -217,6 +217,7 @@ if (!is_user_logged_in()) {
 
             <br>
             <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
+            <br><br>
         </div>
 
     </div>

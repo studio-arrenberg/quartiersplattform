@@ -10,6 +10,13 @@ else {
 }
 
 // echo $user_id;
+// name to be displayed
+if ( empty(get_the_author_meta( 'first_name', $user_id )) && empty(get_the_author_meta( 'last_name', $user_id ))) {
+    $name = get_the_author_meta( 'display_name', $user_id );
+}
+else {
+    $name = get_the_author_meta( 'first_name', $user_id )." ".get_the_author_meta( 'last_name', $user_id );
+}
 
 ?>
 <div class="team">
@@ -19,7 +26,7 @@ else {
         <div class="team-member">	
                 <a href="<?php echo get_author_posts_url($user_id); ?>">
                 <?php echo get_avatar( $user_id, 100 ); // 32 or 100 = size ?>
-                <?php echo get_the_author_meta( 'display_name', $user_id ); ?>
+                <?php echo $name; ?>
             </a>
         </div>
     </div>

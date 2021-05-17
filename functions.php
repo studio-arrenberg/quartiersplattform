@@ -2263,7 +2263,7 @@ function card_list($args, $element = 'card') {
 
 
 /**
- * List Card - Multiple Cards in one Card
+ * List Card - Multiple Cards in one Card - ! Deprecated
  *
  * @since Quartiersplattform 1.2
  *
@@ -2835,13 +2835,14 @@ add_action( 'wp_ajax_nopriv_visibility_toggle', 'visibility_toggle_callback' );
 
 function visibility_toggle( $id = '' ) {
 
+	global $current_user;
+
 	// set id
 	if (empty($id)) {
 		$id = get_the_ID();
 	}
 	
-	// check privilagess !!! use privalages function
-	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
+	if (qp_project_owner() == false) {
 		return false;
 	}
 
@@ -2879,6 +2880,14 @@ function pin_toggle($type = 'pin_project') {
 
 	// pin_main :: pages, projects
 	// pin_project :: veranstaltungen, nachrichten, umfragen
+
+	if ($type == 'pin_main' && !current_user_can('administrator')) {
+		return false;
+	}
+
+	if ($type == 'pin_project' && !qp_project_owner()) {
+		return false;
+	}
 
 	set_query_var('pin_type', $type);
 

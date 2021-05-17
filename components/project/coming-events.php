@@ -3,7 +3,7 @@
 $args_chronik = array(
     'post_type'=>'veranstaltungen', 
     'post_status'=>'publish', 
-    'posts_per_page'=> 2,
+    'posts_per_page'=> 1,
     'meta_key' => 'event_date',
     'orderby' => 'rand',
     'order' => 'ASC',

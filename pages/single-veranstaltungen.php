@@ -115,10 +115,11 @@ get_header();
 
                 <?php
 
-                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    pin_toggle(); 
-                    visibility_toggle(get_the_ID(  ));
-                }
+                // anheften
+                pin_toggle(); 
+
+                // sichtbarkeit
+                visibility_toggle(get_the_ID(  ));
 
                 // project is not public
                 if (get_post_status() == 'draft' && qp_project_owner() ) {
