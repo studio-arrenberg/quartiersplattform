@@ -51,7 +51,7 @@ if (!is_user_logged_in(  )) {
                             'post_type' => 'umfragen',
                             'post_status' => $status,
                         ),
-                        // 'return' => get_site_url().'/gemeinsam',
+                        // 'return' => get_site_url(),
                         'field_el' => 'div',
                         'post_content' => false,
                         'post_title' => true,

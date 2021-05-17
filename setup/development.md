@@ -29,6 +29,12 @@
 - [ ] Update note
 - [ ] Admin Settings
 
+## dokumentation
+- troubleshooting
+  - 404 error => permalinks neu initieren
+- user kann seine deiträge nicht sehen
+  - check rolle => contributor / mitarbeiter
+
 ## v1.7.3
 - [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
 - [ ] Startseite Abstand der Inhalte
