@@ -23,6 +23,9 @@
 
 ## future
 - [ ] Energie Wetter API and Plugin
+- [ ] cookie disclaimer
+- [ ] notifications
+- [ ] acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 
 ## v1.7.3
 - [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
@@ -35,10 +38,6 @@
 - Authoren Card Namensfehler behoben
 
 ## v1.7
-
-! gutenberg startseite
-! veranstaltungen
-
 ### Features
 - Beiträge verbergen
 - Pinned Posts (Projekt & Quartier)
@@ -56,11 +55,6 @@
 - CSS Editor
 - Archiv Darstellung
 - WP StrToDate Timezone
-
-## v1.8
-- cookie disclaimer
-- notifications
-- acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 
 ## Theme Publication
 
