@@ -103,7 +103,7 @@ get_header();
                     <div class="simple-card">
                         <div class="button-group">
                             <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
-                            <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
+                            <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
                         </div>
                     </div>
 
@@ -115,10 +115,11 @@ get_header();
 
                 <?php
 
-                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                    pin_toggle(); 
-                    visibility_toggle(get_the_ID(  ));
-                }
+                // anheften
+                pin_toggle(); 
+
+                // sichtbarkeit
+                visibility_toggle(get_the_ID(  ));
 
                 // project is not public
                 if (get_post_status() == 'draft' && qp_project_owner() ) {

@@ -9,6 +9,8 @@
  * 	2. Maybe remove Ultimate Member CSS and JS
  * 	3. Remove widget styles
  * 	4. Deregister UM Styles
+ * 	5. Redirect User after Login
+ * 	6. Redirect User after Register
  * 
  */
 
@@ -161,7 +163,7 @@ function my_login_redirect_url( $url, $id ) {
 add_action( 'um_on_login_before_redirect', 'my_on_login_before_redirect', 10, 1 );
 function my_on_login_before_redirect( $user_id ) {
    // your code here
-   exit(wp_redirect( home_url(  ) ));
+   exit(wp_redirect( home_url(  ).'/projekte/' ));
 }
 
 
