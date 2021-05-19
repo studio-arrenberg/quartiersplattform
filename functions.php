@@ -3316,13 +3316,24 @@ function quartiersplattform_detect_language() {
 			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
 		}	
+	}else{
+		// check user locale setting
+		$luser_language = get_user_locale( get_current_user_id( ) );
+		if(!empty($_GET['lang'])){
+			setcookie('language',  $_GET['lang']);
+			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
+			return $_GET['lang'];
+		}
+		// update user locale
+		
+		return $luser_language;
 	}
 
-	// check user locale setting
-	// get_user_locale( get_current_user_id( ) );
 
-	// update user locale
-	update_user_meta(get_current_user_id( ), 'locale', 'en_GB'); // en_US
+	
+	
+
+	
 	
 }
 add_filter( 'locale', 'quartiersplattform_detect_language' );
