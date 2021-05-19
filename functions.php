@@ -964,6 +964,34 @@ add_action('admin_init', function() {
 		});
 
 	}
+	# Update Notes
+	// Compare Verrsions Git and Themen
+	// print_r(wp_get_theme());
+
+	// $url = "https://api.github.com/repos/studio-arrenberg/quartiersplattform/releases/latest";
+
+    // $curl = curl_init($url);
+    // curl_setopt($curl, CURLOPT_URL, $url);
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    
+    // $headers = array(
+    //    "Accept: application/vnd.github.v3+json",
+    //    "User-Agent: j0hannr",
+    // );
+    // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    // //for debug only!
+    // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
+    // $resp = curl_exec($curl);
+    // curl_close($curl);
+    // // var_dump($resp);
+
+	// // Reminder
+	// if (wp_get_theme()->version != $resp->tag_name) {
+
+	// }
+	
 });
 
 
