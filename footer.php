@@ -42,11 +42,17 @@
 
     <div class="footer">
         <?php 
+            //Get correct language
             if(!empty($_GET['lang'])){
                 $sprache = $_GET['lang'];
             }
             else{
-                $sprache = $_COOKIE['language'];
+                if (!is_user_logged_in()) {
+                    $sprache = $_COOKIE['language'];    	
+                }else{
+                    $sprache = get_user_locale( get_current_user_id() );
+                }
+               
             }
         ?>
 
