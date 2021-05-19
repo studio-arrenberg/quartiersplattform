@@ -3352,6 +3352,9 @@ function quartiersplattform_detect_language() {
 		
 		return $luser_language;
 	}
+
+}
+/**
  * QP visibility badge
  * 
  * @since Quartiersplattform 1.7
@@ -3364,13 +3367,6 @@ function visibility_badge() {
 	}
 }
 
-
-	
-	
-
-	
-	
-}
 add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
