@@ -51,10 +51,10 @@
         ?>
 
         <p><?php _e('Sprache ändern', 'quartiersplattform'); ?></p>
-        <a class="<?php if($sprache == "en_GB"){echo "button is-primary"; }else{echo "button";}?>" href="<?php echo get_page_link(); ?>?lang=en_GB"><?php _e('🏴󠁧󠁢󠁥󠁮󠁧󠁿  Englisch', 'quartiersplattform'); ?> </a>
-        <a class="<?php if($sprache == "tr_TR"){echo "button is-primary"; }else{echo "button";}?>" href="<?php echo get_page_link(); ?>?lang=tr_TR"><?php _e('🇹🇷  Türkisch', 'quartiersplattform'); ?> </a>
-        <a class="<?php if($sprache == "it_IT"){echo "button is-primary"; }else{echo "button";} ?>" href="<?php echo get_page_link(); ?>?lang=it_IT"><?php _e('🇮🇹  Italienisch', 'quartiersplattform'); ?> </a>
-        <a class="<?php if($sprache == "de_DE"){echo "button is-primary"; }else{echo "button";}  ?>" href="<?php echo get_page_link(); ?>?lang=de_DE"><?php _e('🇩🇪  Deutsch', 'quartiersplattform'); ?> </a>
+        <a class="<?php if($sprache == "en_GB"){echo "button is-primary"; }else{echo "button";}?>" href="<?php echo get_page_link(); ?>?lang=en_GB">🏴󠁧󠁢󠁥󠁮󠁧󠁿  <?php _e('Englisch', 'quartiersplattform'); ?> </a>
+        <a class="<?php if($sprache == "tr_TR"){echo "button is-primary"; }else{echo "button";}?>" href="<?php echo get_page_link(); ?>?lang=tr_TR">🇹🇷  <?php _e('Türkisch', 'quartiersplattform'); ?> </a>
+        <a class="<?php if($sprache == "it_IT"){echo "button is-primary"; }else{echo "button";} ?>" href="<?php echo get_page_link(); ?>?lang=it_IT">🇮🇹  <?php _e('Italienisch', 'quartiersplattform'); ?> </a>
+        <a class="<?php if($sprache == "de_DE"){echo "button is-primary"; }else{echo "button";}  ?>" href="<?php echo get_page_link(); ?>?lang=de_DE">🇩🇪  <?php _e('Deutsch', 'quartiersplattform'); ?> </a>
 
     <?php 
     $image = get_field('logo', 'option');

@@ -3320,13 +3320,13 @@ function quartiersplattform_translate_theme() {
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
-/**
- * QP switch language
- * 
- * @since Quartiersplattform 1.7
- * 
- * 
- */
+// /**
+//  * QP switch language
+//  * 
+//  * @since Quartiersplattform 1.7
+//  * 
+//  * 
+//  */
 
 function quartiersplattform_detect_language() {
 	if (!is_user_logged_in()) {
@@ -3342,18 +3342,20 @@ function quartiersplattform_detect_language() {
 		}	
 	}else{
 		// check user locale setting
-		$luser_language = get_user_locale( get_current_user_id( ) );
-		if(!empty($_GET['lang'])){
-			setcookie('language',  $_GET['lang']);
-			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
-			return $_GET['lang'];
-		}
-		// update user locale
+		$user_language = get_user_locale( get_current_user_id( ) );
+		// if(!empty($_GET['lang'])){
+		// 	setcookie('language',  $_GET['lang']);
+		// 	update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
+		// 	return $_GET['lang'];
+		// }
+		// // update user locale
 		
-		return $luser_language;
+		// return $user_language;
 	}
 
 }
+add_filter( 'locale', 'quartiersplattform_detect_language' );
+
 /**
  * QP visibility badge
  * 
@@ -3366,8 +3368,6 @@ function visibility_badge() {
 		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">Nicht Sichtbar</span>';
 	}
 }
-
-add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * 
