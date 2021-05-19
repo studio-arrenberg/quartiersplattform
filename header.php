@@ -18,7 +18,7 @@ wp_maintenance_mode();
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 
-    <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css">
+    <!-- <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css"> -->
 
     <?php wp_head(); ?>
 
@@ -123,7 +123,7 @@ wp_maintenance_mode();
                     <?php require get_template_directory() . '/assets/icons/ampelmann.svg'; ?>
                 </a>
 
-                <a class="button header-button  button-has-icon <?php if (!is_page( 'Veranstaltungen' )) echo ""; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
+                <a class="button header-button button-has-icon <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
                     <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
                 </a>
 
@@ -204,10 +204,10 @@ wp_maintenance_mode();
     <div id="overlay" class="overlay hidden">
 
         <div class="overlay-content">
-            <button class="button header-button button-has-icon " onclick="hide()">
+            <button class="button  " onclick="hide()">
             
-            <?php require get_template_directory() . '/assets/icons/person.svg'; ?>
-                <span class="button-has-icon-label"><?php _e('Zurück', 'quartiersplattform'); ?></span>
+            <!-- <?php require get_template_directory() . '/assets/icons/person.svg'; ?> -->
+                <?php _e('Zurück', 'quartiersplattform'); ?></span>
             </button>
             <?php get_template_part('components/energie_ampel-menu'); ?>
         </div>

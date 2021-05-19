@@ -89,7 +89,6 @@ get_header();
 					);
 					
 					slider($args4, $type = 'badge', $slides = '1', $dragfree = 'false');
-					// list_card($args4, $type = 'badge');
 				?>
 
 

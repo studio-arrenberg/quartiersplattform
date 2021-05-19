@@ -2103,7 +2103,7 @@ function calendar_download($post) {
     fwrite($kb_ical, $kb_ics_content);
     fclose($kb_ical);
 
-	echo '<a class="button button-is-primary" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">'.__("Termin im Kalender speichern",'quartiersplattform').'</a>';   
+	echo '<a class="button is-primary" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">'.__("Termin im Kalender speichern",'quartiersplattform').'</a>';   
 }
 
 /**
@@ -2263,7 +2263,7 @@ function card_list($args, $element = 'card') {
 
 
 /**
- * List Card - Multiple Cards in one Card
+ * List Card - Multiple Cards in one Card - ! Deprecated
  *
  * @since Quartiersplattform 1.2
  *
@@ -2445,16 +2445,25 @@ function extract_links( $text ) {
  */
 function qp_date( $date, $detail = false, $time = '' ) {
 
-	// date_default_timezone_set(get_option('timezone_string'));
-	// date_default_timezone_set("Europe/Berlin");
+	/**
+	 * Tested:
+	 * date_default_timezone_set("Europe/Berlin");
+	 * wp_date(); date(); wp_strtotime(); wp_strtotime("$date $time");
+	 * 
+	 * Solve: Missing Date
+	 */
 
-	// get time
-	if ($time) {
-		$date = wp_strtotime("$date $time");
+
+	if (!empty($time)) {
+		// echo "help: ". $date." t: ".$time;
+		$date = strtotime("$date $time");
 	}
 	else {
-		$date = wp_strtotime($date);
+
+		$date = strtotime($date);
 	}
+
+	// echo date_i18n("Y-m-d H:i:s", $date)." - ";
 
 	// tomorrow
 	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
@@ -2470,19 +2479,23 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
-		$string = wp_date('j. F Y', $date);
+		// $string = wp_date('j. F Y', $date);
+		$string = date_i18n('j. F Y', $date);
 	}
 	// default (just date)
 	else {
-		$string = wp_date('j. F', $date);
+		// $string = wp_date('j. F', $date);
+		$string = date_i18n('j. F', $date);
 	}
 
 	if ($detail) {
-		$string = $string.__(" um ",'quartiersplattform').wp_date('H:i', $date);
+		$string = $string.__(" um ",'quartiersplattform').date_i18n('H:i', $date);
 	}
 
 	return $string;
 }
+
+
 
 /**
  * WP StrToTime helper function
@@ -2493,6 +2506,7 @@ function qp_date( $date, $detail = false, $time = '' ) {
  * @return string text with html a tags
  */
 function wp_strtotime($str) {
+	// echo "!!!".$str;
 	// This function behaves a bit like PHP's StrToTime() function, but taking into account the Wordpress site's timezone
 	// CAUTION: It will throw an exception when it receives invalid input - please catch it accordingly
 	// From https://mediarealm.com.au/
@@ -2513,6 +2527,7 @@ function wp_strtotime($str) {
 	$datetime = new DateTime($str, new DateTimeZone($timezone));
 	return $datetime->format('U');
 }
+
 
 
 /**
@@ -2601,7 +2616,7 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	else if (strpos($slug, 'warning') !== false) {
 		set_query_var('reminder_card_style', 'warning');	
 	}
-	if (!$slug) {
+	if (strpos($slug, '!') !== false || !$slug ) {
 		set_query_var('reminder_card_fix', true);
 	}
 	// template part
@@ -2820,13 +2835,14 @@ add_action( 'wp_ajax_nopriv_visibility_toggle', 'visibility_toggle_callback' );
 
 function visibility_toggle( $id = '' ) {
 
+	global $current_user;
+
 	// set id
 	if (empty($id)) {
 		$id = get_the_ID();
 	}
 	
-	// check privilagess
-	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
+	if (qp_project_owner() == false) {
 		return false;
 	}
 
@@ -2864,6 +2880,14 @@ function pin_toggle($type = 'pin_project') {
 
 	// pin_main :: pages, projects
 	// pin_project :: veranstaltungen, nachrichten, umfragen
+
+	if ($type == 'pin_main' && !current_user_can('administrator')) {
+		return false;
+	}
+
+	if ($type == 'pin_project' && !qp_project_owner()) {
+		return false;
+	}
 
 	set_query_var('pin_type', $type);
 
@@ -3328,6 +3352,17 @@ function quartiersplattform_detect_language() {
 		
 		return $luser_language;
 	}
+ * QP visibility badge
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return html
+ */
+function visibility_badge() {
+	if (get_post_status() == 'draft' && qp_project_owner()) {
+		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">Nicht Sichtbar</span>';
+	}
+}
 
 
 	

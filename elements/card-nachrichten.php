@@ -17,8 +17,6 @@ else {
 ?>
 
 
-
-
 <div class="card-group">
 
     <!-- main card -->
@@ -31,7 +29,7 @@ else {
                     <b><?php _e('Nachricht', 'quartiersplattform'); ?> </b>
                     <br>
                     <?php _e('von ', 'quartiersplattform'); ?> <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
-                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), false); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), true); ?>
                 </span>
             </a>
         </div>
@@ -42,11 +40,12 @@ else {
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
                 <div class="highlight text-size-3 ">
-                    <?php  echo qp_date(get_the_date('Y-m-d')); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d'), false); ?>
                 </div> 
                 <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
+                <?php visibility_badge(); ?>
                 <p class="text-size-2">
                     <?php  
                     if (strlen(get_field('text')) > 2) {

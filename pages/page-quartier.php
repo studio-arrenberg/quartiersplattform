@@ -29,7 +29,6 @@ get_header();
     else {
         $image = $image['url'];
     }
-
     ?>
 
     <section class="quartier-header bg-image" style="background: url('<?php echo esc_url($image); ?>')">
@@ -75,7 +74,6 @@ get_header();
     ?>
 
     <section>
-
         <div class="gutenberg-content">
             <?php
                 // Gutenberg
@@ -86,7 +84,6 @@ get_header();
                 }
             ?>
         </div>
-        
     </section>
 
     <section class="">

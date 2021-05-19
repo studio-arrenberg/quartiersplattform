@@ -26,7 +26,7 @@ $args_chronik = array(
 
 card_list($args_chronik);
 
-if(!count_query($args_chronik) && $current_user->ID != $post->post_author){
+if(!count_query($args_chronik) && !qp_project_owner()){
     // card for visitors
     $text = __("Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später vorbei, um auf dem Laufenden zu bleiben.",'quartiersplattform');
     no_content_card("doc-richtext", __("Es wurden noch keine Beiträge veröffentlicht",'quartiersplattform'), $text, $link_text = '', $link_url = '');

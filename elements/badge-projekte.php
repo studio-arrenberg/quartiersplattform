@@ -16,7 +16,7 @@ global $current_user;
         ?>
     </div>
     <div class="badge-content">
-        <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
+        <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); //echo "<br>".get_post_modified_time('Y-m-d H:i:s'); ?></h3>
         <!-- <h5 class="heading-size-5"><?php // echo get_post_modified_time('Y-m-d H:i:s'); ?></h5> -->
 
 
@@ -36,6 +36,7 @@ global $current_user;
         <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
             <span class="yellow-tag"><?php _e('Nicht Sichtbar', 'quartiersplattform'); ?> </span>
         <?php } ?>
+        <?php visibility_badge(); ?>
 
      
 

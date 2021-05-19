@@ -57,6 +57,7 @@ get_header();
                 <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
             </h2>
             <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
+            <?php visibility_badge(); ?>
 
             <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
@@ -75,33 +76,30 @@ get_header();
                 ?>
             </div>
 
-            <?php
-            if ( ( is_user_logged_in() && qp_project_owner() ) ) {
-
-                pin_toggle();
-
-                visibility_toggle(get_the_ID(  ));
-            ?>
+            <?php if ( ( is_user_logged_in() && qp_project_owner() ) ) { ?>
 
             <div class="simple-card">
                 <div class="button-group">
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot endgültig löschen?')"
-                        href="<?php get_permalink(); ?>?action=delete"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
+                    <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
                 </div>
             </div>
-            <?php
-            }
-            ?>
+            <?php } ?>
         </div>
 
         <div class="small-projekt-card">
             <?php 
+
+            pin_toggle();
+
+            visibility_toggle(get_the_ID(  ));
             
             // project is not public
             if (get_post_status() == 'draft' && qp_project_owner()) {
-                reminder_card('warning', __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+                reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
             }
+
+            get_template_part('components/general/share-post');
             
             project_card($post->ID);
             

@@ -122,7 +122,7 @@ get_header();
                     <?php 
                     // project is not public
                     if (get_post_status() == 'draft' && qp_project_owner()) {
-                        reminder_card('warning', __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+                        reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
                     }
                     // echo get_the_ID(  );
 
@@ -225,7 +225,7 @@ get_header();
 
                     <h3><?php _e('Projekt löschen', 'quartiersplattform'); ?></h3>
                         <p class="small-margin-bottom"><?php _e('Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht.', 'quartiersplattform'); ?></p>
-                        <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php get_permalink(); ?>?action=delete">
+                        <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Dieses Projekt endgültig löschen?', 'quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>">
                         <?php _e('Projekt löschen', 'quartiersplattform'); ?></a>
                 </div>
                     <?php qp_backend_edit_link(); ?>
@@ -270,7 +270,7 @@ get_header();
         # post bearbeiten
         else {
             
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            if ( qp_project_owner() ) { 
 
                 ?>
 

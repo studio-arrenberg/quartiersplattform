@@ -3,7 +3,7 @@
 // echo $post->post_author;
 ?>
 
-<?php if ( is_user_logged_in() && $current_user->ID == $post->post_author ) { ?>
+<?php if ( qp_project_owner() ) { ?>
 <div class="large-margin-bottom">
     <div class="content">
         <h3 class="heading-size-3">

@@ -727,6 +727,7 @@ input[type="file"]::-webkit-file-upload-button {
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
   font-weight: 700;
 
   display: inline-flex;
@@ -778,6 +779,7 @@ button:hover,
 .pagination .prev:hover,
 .wp-block-button .wp-block-button__link:focus,
 .wp-block-button .wp-block-button__link:hover,
+.wp-block-button__link:active, .wp-block-button__link:focus, .wp-block-button__link:hover, .wp-block-button__link:visited,
 .wp-block-file .wp-block-file__button:focus,
 .wp-block-file .wp-block-file__button:hover,
 input[type="button"]:focus,
@@ -834,6 +836,7 @@ button a {
   fill: #0091FF;
 }
 
+
 .header-button {
   margin: 5px 3px;
   padding: 0px;
@@ -882,6 +885,13 @@ input[type="submit"]:focus{
   box-shadow: 0 3px 15px rgba(196, 196, 196, 0.8);
 }
 
+.is-primary svg path{
+  fill: #fff;
+}
+
+.is-primary:hover svg path{
+  fill: #fff;
+}
 .energie-ampel-button svg{
   height: 18px;
 }
@@ -893,8 +903,10 @@ input[type="submit"]:focus{
 .button-red:hover{
   color: #fff;
   background:#ff004f;
-  box-shadow: 0 1px 2px rgba(255, 0, 79, 0.7);
-   
+  box-shadow: 0 1px 2px rgba(255, 0, 79, 0.15),
+    0 2px 4px rgba(255, 0, 79, 0.15), 0 4px 8px rgba(255, 0, 79, 0.15),
+    0 8px 16px rgba(255, 0, 79, 0.15), 0 16px 32px rgba(255, 0, 79, 0.15),
+    0 32px 64px rgba(255, 0, 79, 0.15);
 }
 
 
@@ -1105,7 +1117,7 @@ th {
 /* -------------------------------------------------------------------------- */
 
 .admin-bar  {
-  position: fixed;
+  /* position: fixed; */
   top: 0px;
   left: 0px;
 }
@@ -4439,6 +4451,10 @@ left: 5px;
 }
 
 
+/* .veranstaltung-ohne-bild {
+  min-height: 150px;
+} */
+
 .veranstaltung-ohne-bild .date{
   background: #0091FF;
   color:#fff;
@@ -4771,6 +4787,7 @@ a:hover .shadow{
 .card-sgd {
   border: 3px solid #fff;
   position: relative;
+  min-height: 100px;
 }
 
 .sdg-section{
@@ -6105,17 +6122,18 @@ a.text-link:hover {
 	overflow: hidden;
 	height: 1.3em;
 	margin-top: -0.3em;
-	line-height: 1.5em;
+	line-height: 40px;
 	vertical-align: text-bottom;
-  font-size: 29.2px;
+  font-size: 30px;
   position: relative;
   top: 8px;
   left: 5px;
+  clear: both;
 }
 
 @keyframes spin12 {
 	to {
-		transform: translateY(-18.0em);
+		transform: translateY(-480px);
 	}
 }
 
@@ -6279,13 +6297,15 @@ div.acf-switch span.acf-switch-on {
 
 .toggle-wrapper{
   max-width: 300px;
-  background: #c2e4ff;
+  background: #eef7ff;
   display: flex;
   border-radius: 20px;
   padding: 5px;
   justify-content: space-between; 
   margin-top: 10px;
   margin-bottom: 5px;
+  position: relative;
+
 }
 
 .toggle-button {
@@ -6295,15 +6315,55 @@ div.acf-switch span.acf-switch-on {
   background-color: transparent;
   box-shadow: none;
   color: #000;
+  z-index: 2;
 } 
 
 .toggle-button:hover{
   box-shadow: none;
   color: #0091FF;
+  background: transparent;
 }
-.toggle-button-active{
-  background-color: #0091FF;
-  color: #fff;
+
+.toggle-slider {
+  background: #fff;
+  position: absolute;
+  height: 45px;
+  top: 5px;
+  right: 5px;
+  width: calc( 50% - 5px );
+  z-index: 1;
+  border-radius: 15px;
+  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.15),
+    0 2px 4px rgba(0, 145, 255, 0.15), 0 4px 8px rgba(0, 145, 255, 0.15),
+    0 8px 16px rgba(0, 145, 255, 0.15), 0 16px 32px rgba(0, 145, 255, 0.15),
+    0 32px 64px rgba(0, 145, 255, 0.15);
+
+    transition: all ease-in-out 0.2s;
+}
+
+.toggle_a {
+  color: #000;
+}
+
+.toggle_b {
+  color: #0091FF;
+}
+
+
+.is-checked .toggle_a {
+  color: #0091FF;
+}
+
+.is-checked .toggle_b {
+  color: #000;
+}
+
+.is-checked .toggle-slider {
+  transform: translateX(-100%);
+}
+
+.toggle-input{
+  display: none !important;
 }
 
 .toggle-wrapper:first-child{

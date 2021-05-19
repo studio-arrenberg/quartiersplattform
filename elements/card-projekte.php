@@ -46,6 +46,7 @@ fehlt:
                     <b><?php _e('Projekt', 'quartiersplattform'); ?> </b>
                     <br>
                     <?php _e('von ', 'quartiersplattform'); ?>  <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), false); ?>
                 </span>
             </a>
         </div>
@@ -68,6 +69,7 @@ fehlt:
                 <h3 class="heading-size-3">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
+                <?php visibility_badge(); ?>
                 <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
             </div>
 
