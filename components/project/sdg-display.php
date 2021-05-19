@@ -45,7 +45,7 @@ else if (qp_project_owner()) {
 
     $text = __("Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der Seite SDGs informieren, worum es sich dabei handelt.",'quartiersplattform');
     $link = get_site_url()."/sdgs";
-    reminder_card('project-share'.get_the_ID(  ), __('Ziele für nachhaltige Entwicklung','quartiersplattform'), $text, "Ziele für nachhaltige Entwicklung", $link ) ;
+    reminder_card('project-share'.get_the_ID(  ), __('Ziele für nachhaltige Entwicklung','quartiersplattform'), $text, __('Ziele für nachhaltige Entwicklung','quartiersplattform'), $link ) ;
     
 }
     
