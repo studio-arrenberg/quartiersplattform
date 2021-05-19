@@ -2481,6 +2481,23 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	 * Solve: Missing Date
 	 */
 
+	// update_user_meta(get_current_user_id( ), 'locale', 'de_DE');
+	// switch_to_locale('tr_TR');
+	// setlocale(LC_ALL, 'ro_RO','Romanian');
+	// echo get_locale();
+	// if (is_user_logged_in()) echo get_user_locale(get_current_user_id());
+	// echo date_i18n(get_option('date_format'));
+
+	// get locale
+	if (is_user_logged_in()) {
+		$lo = get_user_locale(get_current_user_id());
+	}
+	else {
+		$lo = get_locale();
+	}
+	// set php locale
+	setlocale(LC_TIME, $lo);
+	
 
 	if (!empty($time)) {
 		// echo "help: ". $date." t: ".$time;
@@ -2491,7 +2508,8 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		$date = strtotime($date);
 	}
 
-	// echo date_i18n("Y-m-d H:i:s", $date)." - ";
+	// test strfttime
+	// echo "-".strftime('%B', $date)."-".$lo;
 
 	// tomorrow
 	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
@@ -2508,12 +2526,14 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
 		// $string = wp_date('j. F Y', $date);
-		$string = date_i18n('j. F Y', $date);
+		// $string = date_i18n('j. F Y', $date);
+		$string = strftime('%e %b %Y', $date);
 	}
 	// default (just date)
 	else {
 		// $string = wp_date('j. F', $date);
-		$string = date_i18n('j. F', $date);
+		// $string = date_i18n('j. F', $date, true);
+		$string = strftime('%e %b', $date);
 	}
 
 	if ($detail) {
