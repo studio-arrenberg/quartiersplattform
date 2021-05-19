@@ -126,6 +126,9 @@ function qp_rewrite_permalink() {
     $wp_rewrite->flush_rules( true );
 
 } add_action( 'after_setup_theme', 'qp_rewrite_permalink' );
+add_action( 'after_switch_theme', 'qp_rewrite_permalink' );
+add_action( 'activated_plugin', 'qp_rewrite_permalink' );
+add_action( 'save_post_page', 'qp_rewrite_permalink' );
 
 /**
  *  --------------------------------------------------------

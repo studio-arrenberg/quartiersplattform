@@ -3310,10 +3310,12 @@ function qp_project_owner() {
 	if (!is_user_logged_in()) {
 		return false;
 	}
-	// get post projekt
-	$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-	$project_id = $term_list[0]->description;
 
+	// get post projekt
+	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  { // !!! clean iterate posttypes
+		$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+		$project_id = $term_list[0]->description;
+	}
 
 	if ($current_user->ID == $post->post_author) {
 		return true;
