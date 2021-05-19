@@ -17,10 +17,10 @@
         <div class="pre-card">
             <?php 
             if ($my_query->post_count > 1) {
-                echo '<h2>Deine Projekte</h2>';
+                echo '<h2>'._e("Deine Projekte",'quartiersplattform').'</h2>';
             }
             else {
-                echo '<h2>Dein Projekt</h2>';
+                echo '<h2>'._e("Dein Projekt",'quartiersplattform').'</h2>';
             }
             ?>
         </div>

@@ -108,7 +108,7 @@ acf_add_local_field_group(array(
 	'fields' => array(
 		array(
 			'key' => 'field_5fc64834f0bf2',
-			'label' => 'Emoji',
+			'label' => __('Emoji',"quartiersplattform"),
 			'name' => 'emoji',
 			'type' => 'text',
 			'instructions' => __('Welches Emoji beschreibt dein Projekt am besten?',"quartiersplattform"),

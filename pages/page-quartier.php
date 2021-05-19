@@ -19,6 +19,7 @@ get_header();
 ?>
 
 <main class="quartier" role="main" data-track-content>
+    
 
     <?php 
     $image = get_field('quartier_image', 'option');
@@ -59,13 +60,18 @@ get_header();
                         echo '<div class="link-card-container large-margin-bottom">';
                         card_list($pinned_pages);
                         echo '</div>';
-
                     }
                 ?>
-            
         </div>
         
     </section>
+    <?php 
+        $_COOKIE['language'];
+        echo "<h1>Cookie Wert ".$_COOKIE['language']."</h1>";
+        echo "<h1>Get Parameter ".$_GET['lang']."</h1>";
+        echo "<h1>User Locale ".get_user_locale( get_current_user_id( ) )."</h1>";
+        // print_r(get_user_meta(get_current_user_id()));
+    ?>
 
     <section>
         <div class="gutenberg-content">
