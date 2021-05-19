@@ -33,9 +33,6 @@ global $current_user;
             <span class="blue-tag"><?php _e('Dein Projekt', 'quartiersplattform'); ?> </span>
         <?php } ?>
 
-        <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
-            <span class="yellow-tag"><?php _e('Nicht Sichtbar', 'quartiersplattform'); ?> </span>
-        <?php } ?>
         <?php visibility_badge(); ?>
 
      
