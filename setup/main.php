@@ -112,17 +112,23 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
  *  --------------------------------------------------------
  */
 
+function qp_rewrite_permalink() {
+    
+    global $wp_rewrite; 
 
-global $wp_rewrite; 
+    //Write the rule
+    $wp_rewrite->set_permalink_structure('/%postname%/'); 
 
-//Write the rule
-$wp_rewrite->set_permalink_structure('/%postname%/'); 
+    //Set the option
+    update_option( "rewrite_rules", FALSE ); 
 
-//Set the option
-update_option( "rewrite_rules", FALSE ); 
+    //Flush the rules and tell it to write htaccess
+    $wp_rewrite->flush_rules( true );
 
-//Flush the rules and tell it to write htaccess
-$wp_rewrite->flush_rules( true );
+} add_action( 'after_setup_theme', 'qp_rewrite_permalink' );
+add_action( 'after_switch_theme', 'qp_rewrite_permalink' );
+add_action( 'activated_plugin', 'qp_rewrite_permalink' );
+add_action( 'save_post_page', 'qp_rewrite_permalink' );
 
 /**
  *  --------------------------------------------------------

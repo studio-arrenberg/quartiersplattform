@@ -23,10 +23,22 @@
 
 ## future
 - [ ] Energie Wetter API and Plugin
+- [ ] cookie disclaimer
+- [ ] notifications
+- [ ] acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
+- [ ] Update note
+- [ ] Admin Settings
+
+## dokumentation
+- troubleshooting
+  - 404 error => permalinks neu initieren
+- user kann seine deiträge nicht sehen
+  - check rolle => contributor / mitarbeiter
 
 ## v1.7.3
 - [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
 - [ ] Startseite Abstand der Inhalte
+- [ ] Cant login when login page is not set through UM...
 
 ## v1.7.2
 - Login Weiterleitung zu Projekten
@@ -35,10 +47,6 @@
 - Authoren Card Namensfehler behoben
 
 ## v1.7
-
-! gutenberg startseite
-! veranstaltungen
-
 ### Features
 - Beiträge verbergen
 - Pinned Posts (Projekt & Quartier)
@@ -56,11 +64,6 @@
 - CSS Editor
 - Archiv Darstellung
 - WP StrToDate Timezone
-
-## v1.8
-- cookie disclaimer
-- notifications
-- acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 
 ## Theme Publication
 
