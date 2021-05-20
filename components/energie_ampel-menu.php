@@ -100,7 +100,7 @@ else {
     " );
 
     $phase_name = $wpdb_b->get_var( "
-        SELECT ampel_status.name FROM `Ampel` 
+        SELECT ampel_status.name_plural FROM `Ampel` 
         join ampel_status on Ampel.status = ampel_status.id
         WHERE `timestamp` = '".$now.":00'
         Limit 0,1
@@ -139,13 +139,12 @@ else {
             <div class="energie-ampel-titles">
                 <div>
                     <h2><?php _e('Energie Ampel', 'quartiersplattform'); ?> </h2>
-
-                    <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?><?php _e('e Phase', 'quartiersplattform'); ?></h3>
+                    <h3 class="<?php echo $phase_color; ?>"><?php echo __($phase_name, 'quartiersplattform')." "; ?><?php _e('Phase', 'quartiersplattform'); ?></h3>
                 </div>
 
                 <div>
-                    <h2><?php echo $phase_gramm; ?>g</h2>
-                    <h3><?php _e('CO2 pro kWh', 'quartiersplattform'); ?> </h3>
+                    <h2><?php echo $phase_gramm.__('gramm', 'quartiersplattform'); ?></h2>
+                    <h3><?php echo "CO<sub>2</sub> ".__('pro kWh', 'quartiersplattform'); ?> </h3>
                 </div>
             </div>
 
@@ -161,8 +160,8 @@ else {
                         $label = "<label>".$time."</label>";
 
                         if ($row['color'] == $color) $label = "";
-
-                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
+                        // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
+                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".strftime('%b', $row['DATE'])."</label>";
                         if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
