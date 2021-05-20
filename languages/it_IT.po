@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-05-20 11:42+0200\n"
-"PO-Revision-Date: 2021-05-20 12:02+0200\n"
+"POT-Creation-Date: 2021-05-20 12:03+0200\n"
+"PO-Revision-Date: 2021-05-20 12:18+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: de_DE\n"
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Datenschutzerklärung"
 msgstr "Informativa sulla protezione dei dati"
 
-#: components/cookie/cookie-alert.php:26 footer.php:72 setup/main.php:176
+#: components/cookie/cookie-alert.php:26 footer.php:72 setup/main.php:182
 #: ultimate-member/email/changedpw_email.php:32
 #: ultimate-member/email/checkmail_email.php:57
 #: ultimate-member/email/resetpw_email.php:57
@@ -268,7 +268,7 @@ msgstr "e Phase"
 msgid "CO2 pro kWh"
 msgstr "CO2 pro kWh"
 
-#: components/feedback.php:37
+#: components/feedback.php:37 pages/page-quartier.php:165
 msgid "Zur Wunschliste"
 msgstr "Vai alla lista dei preferiti"
 
@@ -428,12 +428,12 @@ msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
 msgstr "Qui puoi appuntare il progetto sulla pagina del quartiere."
 
 #: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:31
-#: future_translation.php:73 setup/main.php:274
+#: future_translation.php:73 setup/main.php:280
 msgid "Gepinnt"
 msgstr "Fissato"
 
 #: components/settings/pin_toggle.php:15 components/settings/pin_toggle.php:34
-#: future_translation.php:74 setup/main.php:275
+#: future_translation.php:74 setup/main.php:281
 msgid "Nicht gepinnt"
 msgstr "Non fissato"
 
@@ -496,13 +496,13 @@ msgstr ""
 msgid "Momentan gibt es keine Veranstaltungen"
 msgstr "Al momento non ci sono eventi"
 
-#: components/views/veranstaltungen.php:35 setup/main.php:177
+#: components/views/veranstaltungen.php:35 setup/main.php:183
 msgid "Veranstaltung erstellen"
 msgstr "Crea evento"
 
-#: elements/badge-projekte.php:37 functions.php:3372
-msgid "Nicht Sichtbar"
-msgstr "Non visibile"
+#: elements/card-anmerkungen.php:25
+msgid "von"
+msgstr "von"
 
 #: elements/card-nachrichten.php:31 elements/card-projekte.php:48
 #: elements/card-veranstaltungen.php:30
@@ -568,13 +568,27 @@ msgstr "Deutsch"
 msgid "Kontakt"
 msgstr "Contatto"
 
-#: forms/form-nachrichten.php:36 forms/form-projekte.php:25
-#: forms/form-umfragen.php:34 forms/form-veranstaltungen.php:38
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25
+#: forms/form-veranstaltungen.php:29
+msgid "Projekt konnte nicht verknüpft werden"
+msgstr "Projekt konnte nicht verknüpft werden"
+
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25
+#: forms/form-veranstaltungen.php:29
+msgid ""
+"Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es "
+"noch mal."
+msgstr ""
+"Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es "
+"noch mal."
+
+#: forms/form-nachrichten.php:41 forms/form-projekte.php:25
+#: forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
 msgid "Projekt veröffentlichen"
 msgstr "Pubblica progetto"
 
-#: forms/form-nachrichten.php:36 forms/form-umfragen.php:34
-#: forms/form-veranstaltungen.php:38
+#: forms/form-nachrichten.php:41 forms/form-umfragen.php:39
+#: forms/form-veranstaltungen.php:43
 msgid ""
 "Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den "
 "Projekteinstellungen veröffentlichen musst. "
@@ -582,11 +596,11 @@ msgstr ""
 "Il tuo contenuto inizialmente non sarà visibile perché devi prima rendere "
 "pubblico il progetto nelle impostazioni del progetto. "
 
-#: forms/form-nachrichten.php:45
+#: forms/form-nachrichten.php:50
 msgid "Erstelle eine Nachricht"
 msgstr "Scrivi un messaggio"
 
-#: forms/form-nachrichten.php:63
+#: forms/form-nachrichten.php:68
 msgid "Nachricht veröffentlichen"
 msgstr "Pubblica messaggio"
 
@@ -604,8 +618,8 @@ msgstr ""
 msgid "Erstelle dein eigenes Projekt"
 msgstr "Crea il tuo progetto"
 
-#: forms/form-projekte.php:50 functions.php:2165 functions.php:3032
-#: pages/projekt-feed.php:49 setup/main.php:181
+#: forms/form-projekte.php:50 functions.php:2193 functions.php:3080
+#: pages/projekt-feed.php:49 setup/main.php:187
 msgid "Projekt erstellen"
 msgstr "Crea progetto"
 
@@ -627,11 +641,11 @@ msgstr "Diventa membro del quartiere"
 msgid "Jetzt Anmelden"
 msgstr "Iscriviti ora"
 
-#: forms/form-umfragen.php:59
+#: forms/form-umfragen.php:64
 msgid "Umfrage veröffentlichen"
 msgstr "Pubblica sondaggio"
 
-#: forms/form-veranstaltungen.php:73
+#: forms/form-veranstaltungen.php:78
 msgid "Veranstaltung veröffentlichen"
 msgstr "Pubblica evento"
 
@@ -826,65 +840,69 @@ msgstr " il plugin per garantire una consegna affidabile delle email."
 msgid "installieren"
 msgstr "installa"
 
-#: functions.php:1793
+#: functions.php:1821
 msgid "Copyright"
 msgstr "Copyright"
 
-#: functions.php:2081
+#: functions.php:2109
 msgid "Datei kann nicht gespeichert werden!"
 msgstr "Impossibile salvare il file!"
 
-#: functions.php:2106
+#: functions.php:2134
 msgid "Termin im Kalender speichern"
 msgstr "Salva l'appuntamento nel calendario"
 
-#: functions.php:2470
+#: functions.php:2516
 msgid "Morgen"
 msgstr "Domani"
 
-#: functions.php:2474
+#: functions.php:2520
 msgid "Heute"
 msgstr "Oggi"
 
-#: functions.php:2478
+#: functions.php:2524
 msgid "Gestern"
 msgstr "Ieri"
 
-#: functions.php:2492
+#: functions.php:2540
 msgid " um "
 msgstr " alle "
 
-#: functions.php:2545 functions.php:2549
+#: functions.php:2593 functions.php:2597
 msgid "noch "
 msgstr "ancora "
 
-#: functions.php:2545
+#: functions.php:2593
 msgid " Minuten"
 msgstr " minuti"
 
-#: functions.php:2549
+#: functions.php:2597
 msgid " Stunden"
 msgstr " ore"
 
-#: functions.php:2553
+#: functions.php:2601
 msgid "bis um "
 msgstr "fino alle "
 
-#: functions.php:2557
+#: functions.php:2605
 msgid "bis Morgen"
 msgstr "fino a domani"
 
-#: functions.php:2561 functions.php:2564
+#: functions.php:2609 functions.php:2612
 msgid "vom "
 msgstr "dal "
 
-#: functions.php:2568
+#: functions.php:2616
 msgid "bis zum "
 msgstr "fino al "
 
-#: functions.php:3226
+#: functions.php:3274
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr "Modifica il contenuto nel sistema Wordpress"
+
+#: functions.php:3422
+msgid "Nicht Sichtbar"
+msgstr "Non visibile"
 
 #: future_translation.php:8
 msgid "Hier kannst du noch keine Projekte entdecken."
@@ -1123,7 +1141,7 @@ msgstr "Bild auswählen"
 msgid "Horizontal"
 msgstr "Orizzontale"
 
-#: header.php:83 setup/main.php:50 setup/main.php:174 setup/projekte.php:27
+#: header.php:83 setup/main.php:50 setup/main.php:180 setup/projekte.php:27
 #: setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75
 #: ultimate-member/email/welcome_email.php:27
 msgid "Projekte"
@@ -1404,6 +1422,10 @@ msgstr ""
 msgid "Feedback zur Quartiersplattform"
 msgstr "Nome della piattaforma di quartiere"
 
+#: pages/page-anmerkungen.php:52
+msgid "Feedback senden"
+msgstr "Inviare un feedback"
+
 #: pages/page-anmerkungen.php:101 pages/page-projekte.php:101
 #: pages/page-veranstaltungen.php:47 pages/single-anmerkungen.php:53
 msgid ""
@@ -1418,7 +1440,7 @@ msgstr ""
 msgid "Jetzt Registieren"
 msgstr "Registrati ora"
 
-#: pages/page-profil.php:67 setup/main.php:175
+#: pages/page-profil.php:67 setup/main.php:181
 msgid "Profil"
 msgstr "Profilo"
 
@@ -1608,6 +1630,10 @@ msgstr "Non puoi ancora scoprire alcun contenuto qui"
 msgid "Mehr Projektinhalte laden"
 msgstr "Carica altri contenuti del progetto"
 
+#: pages/single-anmerkungen.php:37
+msgid " Zu allen Vorschlägen"
+msgstr " Zu allen Vorschlägen"
+
 #: pages/single-nachrichten.php:83
 msgid "Nachricht bearbeiten"
 msgstr "Modifica messaggio"
@@ -1699,13 +1725,13 @@ msgstr "Search"
 msgid "Anmerkung"
 msgstr "Anmerkung"
 
-#: setup/anmerkungen.php:31 setup/main.php:182
+#: setup/anmerkungen.php:31 setup/main.php:188
 msgid "Feedback"
 msgstr "Feedback"
 
 #: setup/anmerkungen.php:34
 msgid "Was wünschst du dir von der Quartiersplattform?"
-msgstr "Was wünschst du dir von der Quartiersplattform?"
+msgstr "Cosa volete dalla piattaforma di quartiere?"
 
 #: setup/anmerkungen.php:89 setup/anmerkungen.php:94
 msgid "Anmerkungen"
@@ -1765,32 +1791,32 @@ msgstr "Qui puoi raccontare un po’ di te e del rapporto con il tuo quartiere."
 msgid "Quartier"
 msgstr "Quartiere"
 
-#: setup/main.php:171
+#: setup/main.php:177
 msgid "Startseite"
 msgstr "Pagina iniziale"
 
-#: setup/main.php:172 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30
+#: setup/main.php:178 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30
 #: ultimate-member/email/welcome_email.php:33
 msgid "Veranstaltungen"
 msgstr "Eventi"
 
-#: setup/main.php:173
+#: setup/main.php:179
 msgid "Projektverzeichnis"
 msgstr "Elenco progetti"
 
-#: setup/main.php:178
+#: setup/main.php:184
 msgid "Nachricht erstellen"
 msgstr "Crea messaggio"
 
-#: setup/main.php:179
+#: setup/main.php:185
 msgid "Angebot erstellen"
 msgstr "Crea offerta"
 
-#: setup/main.php:180
+#: setup/main.php:186
 msgid "Frage erstellen"
 msgstr "Crea domanda"
 
-#: setup/main.php:256
+#: setup/main.php:262
 msgid "Seiten Pin"
 msgstr "Seiten Pin"
 
@@ -1810,6 +1836,10 @@ msgstr "Cosa c'è di nuovo nel tuo progetto?"
 #: setup/veranstaltungen.php:243
 msgid "Bild"
 msgstr "Immagine"
+
+#: setup/projekte.php:113
+msgid "Emoji"
+msgstr "Emoji"
 
 #: setup/projekte.php:116
 msgid "Welches Emoji beschreibt dein Projekt am besten?"
