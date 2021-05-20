@@ -161,7 +161,7 @@ else {
                     }
                     // set php locale
                     setlocale(LC_TIME, $lo);
-
+                    echo "<h3>".get_user_locale(get_current_user_id())."</h3>";
                     // creat timeline
                     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
