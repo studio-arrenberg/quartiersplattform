@@ -964,6 +964,34 @@ add_action('admin_init', function() {
 		});
 
 	}
+	# Update Notes
+	// Compare Verrsions Git and Themen
+	// print_r(wp_get_theme());
+
+	// $url = "https://api.github.com/repos/studio-arrenberg/quartiersplattform/releases/latest";
+
+    // $curl = curl_init($url);
+    // curl_setopt($curl, CURLOPT_URL, $url);
+    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    
+    // $headers = array(
+    //    "Accept: application/vnd.github.v3+json",
+    //    "User-Agent: j0hannr",
+    // );
+    // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    // //for debug only!
+    // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    
+    // $resp = curl_exec($curl);
+    // curl_close($curl);
+    // // var_dump($resp);
+
+	// // Reminder
+	// if (wp_get_theme()->version != $resp->tag_name) {
+
+	// }
+	
 });
 
 
@@ -2453,6 +2481,23 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	 * Solve: Missing Date
 	 */
 
+	// update_user_meta(get_current_user_id( ), 'locale', 'de_DE');
+	// switch_to_locale('tr_TR');
+	// setlocale(LC_ALL, 'ro_RO','Romanian');
+	// echo get_locale();
+	// if (is_user_logged_in()) echo get_user_locale(get_current_user_id());
+	// echo date_i18n(get_option('date_format'));
+
+	// get locale
+	if (is_user_logged_in()) {
+		$lo = get_user_locale(get_current_user_id());
+	}
+	else {
+		$lo = get_locale();
+	}
+	// set php locale
+	setlocale(LC_TIME, $lo);
+	
 
 	if (!empty($time)) {
 		// echo "help: ". $date." t: ".$time;
@@ -2463,7 +2508,10 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		$date = strtotime($date);
 	}
 
-	// echo date_i18n("Y-m-d H:i:s", $date)." - ";
+	// https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
+
+	// test strfttime
+	// echo "-".strftime('%B', $date)."-".$lo;
 
 	// tomorrow
 	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
@@ -2480,12 +2528,14 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
 		// $string = wp_date('j. F Y', $date);
-		$string = date_i18n('j. F Y', $date);
+		// $string = date_i18n('j. F Y', $date);
+		$string = strftime('%e %b %Y', $date);
 	}
 	// default (just date)
 	else {
 		// $string = wp_date('j. F', $date);
-		$string = date_i18n('j. F', $date);
+		// $string = date_i18n('j. F', $date, true);
+		$string = strftime('%e %b', $date);
 	}
 
 	if ($detail) {
@@ -3282,10 +3332,12 @@ function qp_project_owner() {
 	if (!is_user_logged_in()) {
 		return false;
 	}
-	// get post projekt
-	$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-	$project_id = $term_list[0]->description;
 
+	// get post projekt
+	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  { // !!! clean iterate posttypes
+		$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+		$project_id = $term_list[0]->description;
+	}
 
 	if ($current_user->ID == $post->post_author) {
 		return true;
@@ -3300,6 +3352,67 @@ function qp_project_owner() {
 }
 
 /**
+ * QP register translation
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * 
+ */
+
+function quartiersplattform_translate_theme() {
+    // Load Theme textdomain
+    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages');
+
+    // Include Theme text translation file
+    $locale = get_locale();
+    $locale_file = get_template_directory() . "/languages/$locale.php";
+    if ( is_readable( $locale_file ) ) {
+        require_once( $locale_file );
+    }
+}
+add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
+
+// /**
+//  * QP switch language
+//  * 
+//  * @since Quartiersplattform 1.7
+//  * 
+//  * 
+//  */
+
+function quartiersplattform_detect_language() {
+	if (!is_user_logged_in()) {
+		if(isset($_COOKIE['language'])) {     
+			if(!empty($_GET['lang'])){
+				setcookie('language',  $_GET['lang']);
+				return $_GET['lang'];
+			}
+			return $_COOKIE['language'];
+		}else{  	
+			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
+			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+		}	
+	}else{
+		// check user locale setting
+		if(!empty($_GET['lang'])){
+			setcookie('language',  $_GET['lang']);
+			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
+			return $_GET['lang'];
+		}else{
+			return get_user_locale( get_current_user_id() );
+		}	
+	}
+	
+	
+	// // update user locale
+	
+	// return $user_language;
+	
+
+}
+add_filter( 'locale', 'quartiersplattform_detect_language' );
+
+/**
  * QP visibility badge
  * 
  * @since Quartiersplattform 1.7
@@ -3308,10 +3421,9 @@ function qp_project_owner() {
  */
 function visibility_badge() {
 	if (get_post_status() == 'draft' && qp_project_owner()) {
-		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">Nicht Sichtbar</span>';
+		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">.'.__('Nicht Sichtbar', 'quartiersplattform').'</span>';
 	}
 }
-
 
 /**
  * 

@@ -19,6 +19,7 @@ get_header();
 ?>
 
 <main class="quartier" role="main" data-track-content>
+    
 
     <?php 
     $image = get_field('quartier_image', 'option');
@@ -38,7 +39,7 @@ get_header();
 
     <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
         <section>
-            <?php reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.', __('Zu den Einstellungen','quartiersplaattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
+            <?php reminder_card('no_quartiers_info', __('Bild und Text für die Startseite festlegen','quartiersplattform'), __('In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.','quartiersplattform'), __('Zu den Einstellungen','quartiersplattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
         </section>
     <?php } ?>
 
@@ -59,14 +60,12 @@ get_header();
                         echo '<div class="link-card-container large-margin-bottom">';
                         card_list($pinned_pages);
                         echo '</div>';
-
                     }
                 ?>
-            
         </div>
         
     </section>
-
+    
     <section>
         <div class="gutenberg-content">
             <?php
@@ -163,7 +162,7 @@ get_header();
     
     <?php 
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
-		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, 'Zur Wunschliste', home_url().'/feedback' );
+		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
 	?>
 
 

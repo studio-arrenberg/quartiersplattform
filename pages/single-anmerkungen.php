@@ -34,7 +34,7 @@ get_header();
 		<div class="grid-4col" data-grid>
 			<?php get_template_part('elements/card-anmerkungen');?>
 		</div>
-		<a class="button" href="<?php echo home_url( ).'/feedback'; ?>">Zu allen Vorschlägen</a>
+		<a class="button" href="<?php echo home_url( ).'/feedback'; ?>"><?php _e(' Zu allen Vorschlägen', 'quartiersplattform'); ?></a>
 
 		<div class="comments-wrapper">
             <?php comments_template('', true); ?>

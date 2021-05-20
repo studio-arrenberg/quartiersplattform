@@ -15,6 +15,9 @@
  *  --------------------------------------------------------
  */
 
+
+function qp_add_local_field_group() {
+	
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -129,4 +132,7 @@ if( function_exists('acf_add_local_field_group') ):
         ));
         
         endif;
+}
+add_action('init', 'qp_add_local_field_group');
+
 ?>

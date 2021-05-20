@@ -143,7 +143,7 @@ if (!is_user_logged_in()) {
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<br><h2 class='margin-bottom'>".__("Deine Beiträge ",'quartiersplattform')."</h2><br>";
+                    echo "<br><h2 class='margin-bottom'>".__('Deine Beiträge','quartiersplattform')." "."</h2><br>";
                     card_list($args4);      
                     // echo "<br>";
                 }

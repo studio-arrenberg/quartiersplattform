@@ -30,7 +30,7 @@ global $current_user;
 
 
         <?php if(qp_project_owner()) { ?>
-            <span class="blue-tag">Dein Projekt</span>
+            <span class="blue-tag"><?php _e('Dein Projekt', 'quartiersplattform'); ?> </span>
         <?php } ?>
 
         <?php visibility_badge(); ?>

@@ -84,4 +84,16 @@ __("Hier kannst du die Seite auf die Quariersseite pinnen.",'quartiersplattform'
 __("Hier kannst du den Beitrag auf die Quariersseite pinnen.",'quartiersplattform');
 __("Hier kannst du den Akteur auf die Quariersseite pinnen.",'quartiersplattform');
 
+//Anmerkungen
+__("Vorschlag",'quartiersplattform');
+__("Umgesetzt",'quartiersplattform');
+__("In Bearbeitung",'quartiersplattform');
+
+//Bild hochladen
+__("Bild auswählen",'quartiersplattform');
+
+//Energieampel
+__("grüne",'quartiersplattform');
+__("rote auswählen",'quartiersplattform');
+__("gelbe auswählen",'quartiersplattform');
 ?>

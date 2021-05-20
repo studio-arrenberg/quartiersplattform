@@ -100,7 +100,7 @@ else {
     " );
 
     $phase_name = $wpdb_b->get_var( "
-        SELECT ampel_status.name FROM `Ampel` 
+        SELECT ampel_status.name_plural FROM `Ampel` 
         join ampel_status on Ampel.status = ampel_status.id
         WHERE `timestamp` = '".$now.":00'
         Limit 0,1
@@ -139,13 +139,12 @@ else {
             <div class="energie-ampel-titles">
                 <div>
                     <h2><?php _e('Energie Ampel', 'quartiersplattform'); ?> </h2>
-
-                    <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?><?php _e('e Phase', 'quartiersplattform'); ?></h3>
+                    <h3 class="<?php echo $phase_color; ?>"><?php echo __($phase_name, 'quartiersplattform')." "; ?><?php _e('Phase', 'quartiersplattform'); ?></h3>
                 </div>
 
                 <div>
-                    <h2><?php echo $phase_gramm; ?>g</h2>
-                    <h3><?php _e('CO2 pro kWh', 'quartiersplattform'); ?> </h3>
+                    <h2><?php echo $phase_gramm." ".__('gramm', 'quartiersplattform'); ?></h2>
+                    <h3><?php echo "CO<sub>2</sub> ".__('pro kWh', 'quartiersplattform'); ?> </h3>
                 </div>
             </div>
 
@@ -153,16 +152,31 @@ else {
 
                 <div class="strom_array">
                     <?php
+                    // set locale
+                    if (is_user_logged_in()) {
+                        $lo = get_user_locale(get_current_user_id());
+                    }
+                    else {
+                        $lo = get_locale();
+                    }
+                    // set php locale
+                    setlocale(LC_TIME, $lo.".UTF8");
+                    // echo "<h3>".get_user_locale(get_current_user_id())." ".$lo."</h3>";
+                    // creat timeline
                     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
 
                         $c++;
                         $time = $row['time'];
+                        // echo $row['DATE'];
                         $label = "<label>".$time."</label>";
+                        // echo strftime('%A', $row['DATE']);
+
+                        // https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
 
                         if ($row['color'] == $color) $label = "";
-
-                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
+                        // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
+                        if (strftime('%A', $row['DATE']) != strftime('%A', $date)) $label = "<label class='midnight'>".strftime('%A', $row['DATE'])."</label>";
                         if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
@@ -183,6 +197,7 @@ else {
 if (empty($phase_color)) {
     $phase_color = 'green';
 }
+
 ?>
 
 

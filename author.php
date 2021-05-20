@@ -86,7 +86,7 @@ get_header();
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<h2 class='margin-bottom'>".__("Projekte von ",'quartiersplattform').$curauth->first_name."</h2>";
+                    echo "<h2 class='margin-bottom'>".__("Projekte von",'quartiersplattform')." ".$curauth->first_name."</h2>";
                     card_list($args4);      
                 }
             ?>
@@ -104,7 +104,7 @@ get_header();
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<h2 class='margin-bottom'>".__("Beiträge von ",'quartiersplattform').$curauth->first_name."</h2>";
+                    echo "<h2 class='margin-bottom'>".__("Beiträge von",'quartiersplattform')." ".$curauth->first_name."</h2>";
                     card_list($args4);      
                 }
             ?>
