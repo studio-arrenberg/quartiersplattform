@@ -152,6 +152,17 @@ else {
 
                 <div class="strom_array">
                     <?php
+                    // set locale
+                    if (is_user_logged_in()) {
+                        $lo = get_user_locale(get_current_user_id());
+                    }
+                    else {
+                        $lo = get_locale();
+                    }
+                    // set php locale
+                    setlocale(LC_TIME, $lo);
+
+                    // creat timeline
                     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
 
