@@ -49,7 +49,7 @@ get_header();
                 'post_title' => false,
                 'return' => get_site_url().'/feedback',
                 'field_groups' => array('group_5fb50c8393d52'),
-                'submit_value'=>'Feedback senden',
+                'submit_value'=> __('Feedback senden', 'quartiersplattform'),
             )
         ); 
         ?>
