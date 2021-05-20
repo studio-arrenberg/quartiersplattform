@@ -162,7 +162,7 @@ get_header();
     
     <?php 
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
-		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, 'Zur Wunschliste', home_url().'/feedback' );
+		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
 	?>
 
 
