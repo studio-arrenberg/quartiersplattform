@@ -143,7 +143,7 @@ else {
                 </div>
 
                 <div>
-                    <h2><?php echo $phase_gramm.__('gramm', 'quartiersplattform'); ?></h2>
+                    <h2><?php echo $phase_gramm." ".__('gramm', 'quartiersplattform'); ?></h2>
                     <h3><?php echo "CO<sub>2</sub> ".__('pro kWh', 'quartiersplattform'); ?> </h3>
                 </div>
             </div>
@@ -161,7 +161,7 @@ else {
 
                         if ($row['color'] == $color) $label = "";
                         // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
-                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".strftime('%b', $row['DATE'])."</label>";
+                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".strftime('%A', $row['DATE'])."</label>";
                         if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
