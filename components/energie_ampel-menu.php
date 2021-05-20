@@ -172,6 +172,8 @@ else {
                         $label = "<label>".$time."</label>";
                         // echo strftime('%A', $row['DATE']);
 
+                        // https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
+
                         if ($row['color'] == $color) $label = "";
                         // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
                         if (strftime('%A', $row['DATE']) != strftime('%A', $date)) $label = "<label class='midnight'>".strftime('%A', $row['DATE'])."</label>";

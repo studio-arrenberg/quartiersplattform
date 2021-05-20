@@ -2508,6 +2508,8 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		$date = strtotime($date);
 	}
 
+	// https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
+
 	// test strfttime
 	// echo "-".strftime('%B', $date)."-".$lo;
 
