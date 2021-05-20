@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
 "POT-Creation-Date: 2021-05-20 11:42+0200\n"
-"PO-Revision-Date: 2021-05-20 11:44+0200\n"
+"PO-Revision-Date: 2021-05-20 12:02+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: de_DE\n"
@@ -502,7 +502,7 @@ msgstr "Crea evento"
 
 #: elements/badge-projekte.php:37 functions.php:3372
 msgid "Nicht Sichtbar"
-msgstr ""
+msgstr "Non visibile"
 
 #: elements/card-nachrichten.php:31 elements/card-projekte.php:48
 #: elements/card-veranstaltungen.php:30
@@ -541,10 +541,8 @@ msgid "Registrieren"
 msgstr "Registrati"
 
 #: elements/card-umfragen.php:161
-#, fuzzy
-#| msgid " Stimmen"
 msgid "Stimmen"
-msgstr " Accetta"
+msgstr "Stimmen"
 
 #: footer.php:59
 msgid "Sprache"
@@ -552,19 +550,19 @@ msgstr "Lingua"
 
 #: footer.php:60
 msgid "Englisch"
-msgstr ""
+msgstr "Englisch"
 
 #: footer.php:61
 msgid "Türkisch"
-msgstr ""
+msgstr "Türkisch"
 
 #: footer.php:62
 msgid "Italienisch"
-msgstr ""
+msgstr "Italienisch"
 
 #: footer.php:63
 msgid "Deutsch"
-msgstr ""
+msgstr "Deutsch"
 
 #: footer.php:71
 msgid "Kontakt"
@@ -1107,19 +1105,19 @@ msgstr "Qui puoi fissare l’operatore sulla pagina del quartiere."
 
 #: future_translation.php:88
 msgid "Vorschlag"
-msgstr ""
+msgstr "Vorschlag"
 
 #: future_translation.php:89
 msgid "Umgesetzt"
-msgstr ""
+msgstr "Umgesetzt"
 
 #: future_translation.php:90
 msgid "In Bearbeitung"
-msgstr ""
+msgstr "In Bearbeitung"
 
 #: future_translation.php:93
 msgid "Bild auswählen"
-msgstr ""
+msgstr "Bild auswählen"
 
 #: header.php:76
 msgid "Horizontal"
@@ -1138,54 +1136,56 @@ msgstr "Indietro"
 #: inc/starter-content.php:39
 msgctxt "Theme starter content"
 msgid "The New UMoMA Opens its Doors"
-msgstr ""
+msgstr "The New UMoMA Opens its Doors"
 
 #: inc/starter-content.php:48
 msgid "The New UMoMA Opens its Doors"
-msgstr ""
+msgstr "The New UMoMA Opens its Doors"
 
 #: inc/starter-content.php:56
 msgid ""
 "The premier destination for modern art in Northern Sweden. Open from 10 AM "
 "to 6 PM every day during the summer months."
 msgstr ""
+"The premier destination for modern art in Northern Sweden. Open from 10 AM "
+"to 6 PM every day during the summer months."
 
 #: inc/starter-content.php:67
 msgid "Works and Days"
-msgstr ""
+msgstr "Works and Days"
 
 #: inc/starter-content.php:70 inc/starter-content.php:102
 msgid "August 1 -- December 1"
-msgstr ""
+msgstr "August 1 -- December 1"
 
 #: inc/starter-content.php:73 inc/starter-content.php:88
 #: inc/starter-content.php:105 inc/starter-content.php:120
 msgid "Read More"
-msgstr ""
+msgstr "Read More"
 
 #: inc/starter-content.php:82
-#, fuzzy
-#| msgid "Theme Options"
 msgid "Theatre of Operations"
-msgstr "Theme Options"
+msgstr "Theatre of Operations"
 
 #: inc/starter-content.php:85 inc/starter-content.php:117
 msgid "October 1 -- December 1"
-msgstr ""
+msgstr "October 1 -- December 1"
 
 #: inc/starter-content.php:99
 msgid "The Life I Deserve"
-msgstr ""
+msgstr "The Life I Deserve"
 
 #: inc/starter-content.php:114
 msgid "From Signac to Matisse"
-msgstr ""
+msgstr "From Signac to Matisse"
 
 #: inc/starter-content.php:130
 msgid ""
 "&#8220;Cyborgs, as the philosopher Donna Haraway established, are not "
 "reverent. They do not remember the cosmos.&#8221;"
 msgstr ""
+"&#8220;Cyborgs, as the philosopher Donna Haraway established, are not "
+"reverent. They do not remember the cosmos.&#8221;"
 
 #: inc/starter-content.php:134
 msgid ""
@@ -1195,6 +1195,11 @@ msgid ""
 "intrinsic to our programme. As visitor you are invited to guided tours "
 "artist talks, lectures, film screenings and other events with free admission"
 msgstr ""
+"With seven floors of striking architecture, UMoMA shows exhibitions of "
+"international contemporary art, sometimes along with art historical "
+"retrospectives. Existential, political and philosophical issues are "
+"intrinsic to our programme. As visitor you are invited to guided tours "
+"artist talks, lectures, film screenings and other events with free admission"
 
 #: inc/starter-content.php:137
 msgid ""
@@ -1204,26 +1209,31 @@ msgid ""
 "Year, and was among the top candidates for the Swedish Museum of the Year "
 "Award as well as for the Council of Europe Museum Prize."
 msgstr ""
+"The exhibitions are produced by UMoMA in collaboration with artists and "
+"museums around the world and they often attract international attention. "
+"UMoMA has received a Special Commendation from the European Museum of the "
+"Year, and was among the top candidates for the Swedish Museum of the Year "
+"Award as well as for the Council of Europe Museum Prize."
 
 #: inc/starter-content.php:145
 msgid "Become a Member and Get Exclusive Offers!"
-msgstr ""
+msgstr "Become a Member and Get Exclusive Offers!"
 
 #: inc/starter-content.php:148
 msgid ""
 "Members get access to exclusive exhibits and sales. Our memberships cost "
 "$99.99 and are billed annually."
 msgstr ""
+"Members get access to exclusive exhibits and sales. Our memberships cost "
+"$99.99 and are billed annually."
 
 #: inc/starter-content.php:151
 msgid "Join the Club"
-msgstr ""
+msgstr "Join the Club"
 
 #: inc/starter-content.php:197
-#, fuzzy
-#| msgid "Social Menu"
 msgid "Social Links Menu"
-msgstr "Social Menu"
+msgstr "Social Links Menu"
 
 #. translators: %s: Post title. Only visible to screen readers.
 #: inc/template-tags.php:207
@@ -1603,10 +1613,8 @@ msgid "Nachricht bearbeiten"
 msgstr "Modifica messaggio"
 
 #: pages/single-nachrichten.php:84 pages/single-umfragen.php:56
-#, fuzzy
-#| msgid "Dieses Projekt endgültig löschen?"
 msgid "Willst du diesen Beitrag endgültig löschen?"
-msgstr "Eliminare definitivamente questo progetto?"
+msgstr "Willst du diesen Beitrag endgültig löschen?"
 
 #: pages/single-nachrichten.php:84
 msgid "Nachricht löschen"
@@ -1614,10 +1622,8 @@ msgstr "Elimina messaggio"
 
 #: pages/single-nachrichten.php:99 pages/single-umfragen.php:77
 #: pages/single-veranstaltungen.php:126
-#, fuzzy
-#| msgid "Dein Projekt ist nicht öffentlich sichtbar."
 msgid "Dein Beitrag ist nicht öffentlich sichtbar."
-msgstr "Il tuo progetto non è visibile pubblicamente."
+msgstr "Dein Beitrag ist nicht öffentlich sichtbar."
 
 #: pages/single-nachrichten.php:147 pages/single-veranstaltungen.php:238
 msgid "Weitere Nachrichten und Veranstaltungen aus diesem Projekt"
@@ -1691,28 +1697,24 @@ msgstr "Search"
 
 #: setup/anmerkungen.php:27 setup/anmerkungen.php:90
 msgid "Anmerkung"
-msgstr ""
+msgstr "Anmerkung"
 
 #: setup/anmerkungen.php:31 setup/main.php:182
 msgid "Feedback"
-msgstr ""
+msgstr "Feedback"
 
 #: setup/anmerkungen.php:34
-#, fuzzy
-#| msgid "Hier entsteht deine Quatiersplattform"
 msgid "Was wünschst du dir von der Quartiersplattform?"
-msgstr "Qui c’è la tua piattaforma di quartiere"
+msgstr "Was wünschst du dir von der Quartiersplattform?"
 
 #: setup/anmerkungen.php:89 setup/anmerkungen.php:94
-#, fuzzy
-#| msgid "Anmelden"
 msgid "Anmerkungen"
-msgstr "Accedi"
+msgstr "Anmerkungen"
 
 #: setup/anmerkungen.php:135 setup/anmerkungen.php:136
 #: setup/anmerkungen.php:140
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: setup/blocks.php:34
 msgid "Link Block"
@@ -1723,10 +1725,8 @@ msgid "Link Post and Pages"
 msgstr "Link Post and Pages"
 
 #: setup/blocks.php:96
-#, fuzzy
-#| msgid "Link Block"
 msgid "Link-Block"
-msgstr "Link Block"
+msgstr "Link-Block"
 
 #: setup/kontakt.php:25
 msgid "Kontaktinformationen"
@@ -1792,7 +1792,7 @@ msgstr "Crea domanda"
 
 #: setup/main.php:256
 msgid "Seiten Pin"
-msgstr ""
+msgstr "Seiten Pin"
 
 #: setup/nachrichten.php:26 setup/nachrichten.php:31 setup/nachrichten.php:74
 msgid "Nachrichten"
@@ -2021,10 +2021,8 @@ msgstr ""
 "energetica deve essere raddoppiato."
 
 #: setup/sdg.php:101
-#, fuzzy
-#| msgid "Gute Arbeitsplätze und wirtschaftliches Waachstum"
 msgid "Gute Arbeitsplätze und wirtschaftliches Wachstum"
-msgstr "Lavoro dignitoso e crescita economica"
+msgstr "Gute Arbeitsplätze und wirtschaftliches Wachstum"
 
 #: setup/sdg.php:101
 msgid ""
@@ -2400,8 +2398,6 @@ msgid "Website"
 msgstr "Sito web"
 
 #: setup/settings.php:322
-#, fuzzy
-#| msgid "Wartungsmodus"
 msgctxt "quartiersplattform"
 msgid "Wartungsmodus"
 msgstr "Modalità manutenzione"
@@ -2460,7 +2456,7 @@ msgstr "Qui puoi definire le opzioni per il tuo sondaggio."
 
 #: setup/umfragen.php:139
 msgid "Weitere Auswahlmöglichkeit hinzufügen"
-msgstr ""
+msgstr "Weitere Auswahlmöglichkeit hinzufügen"
 
 #: setup/umfragen.php:143
 msgid "Frage"
@@ -2512,7 +2508,7 @@ msgstr "Biglietto"
 
 #: setup/veranstaltungen.php:225
 msgid "Karte"
-msgstr ""
+msgstr "Karte"
 
 #: setup/veranstaltungen.php:246
 msgid "Welches Bild beschreibt deine Veranstaltung am besten?"
