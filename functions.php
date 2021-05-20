@@ -3389,8 +3389,8 @@ function quartiersplattform_detect_language() {
 			}
 			return $_COOKIE['language'];
 		}else{  	
-			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
-			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+			// setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
+			// return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
 		}	
 	}else{
 		// check user locale setting
