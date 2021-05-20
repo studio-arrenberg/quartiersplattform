@@ -195,6 +195,15 @@ else {
 if (empty($phase_color)) {
     $phase_color = 'green';
 }
+if (is_user_logged_in()) {
+    $lo = get_user_locale(get_current_user_id());
+}
+else {
+    $lo = get_locale();
+}
+// set php locale
+setlocale(LC_TIME, $lo);
+echo strftime('%A %B');
 ?>
 
 
