@@ -161,18 +161,19 @@ else {
                     }
                     // set php locale
                     setlocale(LC_TIME, $lo);
-                    echo "<h3>".get_user_locale(get_current_user_id())."</h3>";
+                    echo "<h3>".get_user_locale(get_current_user_id())." ".$lo."</h3>";
                     // creat timeline
                     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
 
                         $c++;
                         $time = $row['time'];
+                        echo $row['DATE'];
                         $label = "<label>".$time."</label>";
 
                         if ($row['color'] == $color) $label = "";
                         // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
-                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".strftime('%b %a %A', $row['DATE'])."</label>";
+                        if (date('l', $row['DATE']) != date('l', $date)) $label = "<label class='midnight'>".strftime('%b %a %A', strtotime($row['DATE']))."</label>";
                         if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
