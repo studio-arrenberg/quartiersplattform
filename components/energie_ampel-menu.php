@@ -170,10 +170,11 @@ else {
                         $time = $row['time'];
                         echo $row['DATE'];
                         $label = "<label>".$time."</label>";
+                        echo strftime('%A', $row['DATE']);
 
                         if ($row['color'] == $color) $label = "";
                         // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
-                        if (date('l', $row['DATE']) != date('l', $date)) $label = "<label class='midnight'>".strftime('%b %a %A', strtotime($row['DATE']))."</label>";
+                        if (strftime('%A', $row['DATE']) != strftime('%A', $date)) $label = "<label class='midnight'>".strftime('%b %a %A', $row['DATE'])."</label>";
                         if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
