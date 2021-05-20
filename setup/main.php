@@ -251,11 +251,15 @@ if (!current_user_can('manage_options')) {
  *  8. Pins for Pages
  *  --------------------------------------------------------
  */
+
+add_action('init', 'qp_add_pins_field_group');
+function qp_add_pins_field_group() {
+	
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
         'key' => 'group_608a6c250869c',
-        'title' => 'Seiten Pin',
+        'title' => __('Seiten Pin','quartiersplattform'),
         'fields' => array(
             array(
                 'key' => 'field_608a6c2c1be48',
@@ -297,3 +301,6 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
+	
+	
+}

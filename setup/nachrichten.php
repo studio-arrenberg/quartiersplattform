@@ -64,6 +64,9 @@ add_action( 'init', 'cptui_register_my_cpts_nachrichten' );
  *  --------------------------------------------------------
  */
 
+add_action('init', 'qp_add_nachrichten_field_group');
+function qp_add_nachrichten_field_group() {
+	
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -149,3 +152,5 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
+}
+

@@ -93,7 +93,7 @@ if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
 		'key' => 'group_602f93914132e',
-		'title' => 'Link-Block',
+		'title' => __('Link-Block','quartiersplattform'),
 		'fields' => array(
 			array(
 				'key' => 'field_602f9399a7cfc',

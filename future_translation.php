@@ -84,4 +84,11 @@ __("Hier kannst du die Seite auf die Quariersseite pinnen.",'quartiersplattform'
 __("Hier kannst du den Beitrag auf die Quariersseite pinnen.",'quartiersplattform');
 __("Hier kannst du den Akteur auf die Quariersseite pinnen.",'quartiersplattform');
 
+//Anmerkungen
+__("Vorschlag",'quartiersplattform');
+__("Umgesetzt",'quartiersplattform');
+__("In Bearbeitung",'quartiersplattform');
+
+//Bild hochladne
+__("Bild auswählen",'quartiersplattform');
 ?>

@@ -3419,7 +3419,7 @@ add_filter( 'locale', 'quartiersplattform_detect_language' );
  */
 function visibility_badge() {
 	if (get_post_status() == 'draft' && qp_project_owner()) {
-		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">Nicht Sichtbar</span>';
+		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">.'.__('Nicht Sichtbar', 'quartiersplattform').'</span>';
 	}
 }
 
