@@ -39,7 +39,7 @@ get_header();
 
     <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
         <section>
-            <?php reminder_card('no_quartiers_info', 'Bild und Text für die Startseite festlegen', 'In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.', __('Zu den Einstellungen','quartiersplaattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
+            <?php reminder_card('no_quartiers_info', __('Bild und Text für die Startseite festlegen','quartiersplattform'), __('In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.','quartiersplattform'), __('Zu den Einstellungen','quartiersplattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
         </section>
     <?php } ?>
 
@@ -65,14 +65,7 @@ get_header();
         </div>
         
     </section>
-    <?php 
-        $_COOKIE['language'];
-        echo "<h1>Cookie Wert ".$_COOKIE['language']."</h1>";
-        echo "<h1>Get Parameter ".$_GET['lang']."</h1>";
-        echo "<h1>User Locale ".get_user_locale( get_current_user_id( ) )."</h1>";
-        // print_r(get_user_meta(get_current_user_id()));
-    ?>
-
+    
     <section>
         <div class="gutenberg-content">
             <?php
@@ -169,7 +162,7 @@ get_header();
     
     <?php 
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
-		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, 'Zur Wunschliste', home_url().'/feedback' );
+		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
 	?>
 
 

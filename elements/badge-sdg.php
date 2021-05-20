@@ -19,7 +19,7 @@
 			    <?php the_field('goal'); ?>
 			</span >
             <h3 class="heading-size-3">
-                <?php the_title(); ?>
+                <?php _e(get_the_title(),'quartiersplattform'); ?>
             </h3>
         </div>
     </a>

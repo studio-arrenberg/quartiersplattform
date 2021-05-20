@@ -2508,6 +2508,8 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		$date = strtotime($date);
 	}
 
+	// https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
+
 	// test strfttime
 	// echo "-".strftime('%B', $date)."-".$lo;
 
@@ -3419,7 +3421,7 @@ add_filter( 'locale', 'quartiersplattform_detect_language' );
  */
 function visibility_badge() {
 	if (get_post_status() == 'draft' && qp_project_owner()) {
-		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">Nicht Sichtbar</span>';
+		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">.'.__('Nicht Sichtbar', 'quartiersplattform').'</span>';
 	}
 }
 
