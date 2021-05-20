@@ -160,17 +160,17 @@ else {
                         $lo = get_locale();
                     }
                     // set php locale
-                    setlocale(LC_TIME, $lo);
-                    echo "<h3>".get_user_locale(get_current_user_id())." ".$lo."</h3>";
+                    setlocale(LC_TIME, $lo.".UTF8");
+                    // echo "<h3>".get_user_locale(get_current_user_id())." ".$lo."</h3>";
                     // creat timeline
                     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
 
                         $c++;
                         $time = $row['time'];
-                        echo $row['DATE'];
+                        // echo $row['DATE'];
                         $label = "<label>".$time."</label>";
-                        echo strftime('%A', $row['DATE']);
+                        // echo strftime('%A', $row['DATE']);
 
                         if ($row['color'] == $color) $label = "";
                         // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
@@ -195,15 +195,7 @@ else {
 if (empty($phase_color)) {
     $phase_color = 'green';
 }
-if (is_user_logged_in()) {
-    $lo = get_user_locale(get_current_user_id());
-}
-else {
-    $lo = get_locale();
-}
-// set php locale
-setlocale(LC_TIME, $lo);
-echo strftime('%A %B');
+
 ?>
 
 
