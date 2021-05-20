@@ -55,14 +55,15 @@ get_header();
 								<?php the_field('goal'); ?>
 							</span >
 							<h3 class="heading-size-3">
-								<?php the_title(); ?>
+								<?php 
+								_e(get_the_title(),'quartiersplattform'); ?>
 							</h3>
 
 							<h4 class="preview-text-large">
-								<?php the_field('slogan'); ?>
+								<?php _e(get_field('slogan'),'quartiersplattform'); ?>
 							</h4>
 							<p class="preview-text">
-								<?php the_content(); ?>
+								<?php _e(get_the_content(),'quartiersplattform'); ?>
 							</p>
 						</div>
 					</a>
