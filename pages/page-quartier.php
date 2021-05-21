@@ -44,7 +44,7 @@ get_header();
     <?php } ?>
 
     <?php 
-        //echo get_current_user_id();
+        echo get_current_user_id();
         $userid = get_current_user_id();
         echo get_user_locale(1);
     ?>
