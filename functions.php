@@ -3425,6 +3425,36 @@ function visibility_badge() {
 	}
 }
 
+
+// add_filter('acf/fields/taxonomy', 'my_acf_fields_taxonomy_result', 10, 4);
+// function my_acf_fields_taxonomy_result( $text, $term, $field, $post_id ) {
+//     $text .= ' (' . $term->slug .  ')';
+//     return $text."!";
+// }
+
+// add_filter('acf/fields/taxonomy/wp_list_categories', 'my_acf_fields_taxonomy_query', 10, 2);
+// function my_acf_fields_taxonomy_query( $args, $field ) {
+
+//     // Order by most used.
+//     $args['orderby'] = 'count';
+//     $args['order'] = 'DESC';
+
+//     return $args;
+
+// 	$field = $field."hi";
+
+// 	return $field;
+// }
+
+// add_filter('acf/fields/relationship/result', 'my_acf_fields_relationship_result', 10, 4);
+// function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
+//     $page_views = get_field( 'page_views', $post->ID );
+//     if( $page_views ) {
+//         $text .= ' ' . sprintf( '(%s views)', $page_views );
+//     }
+//     return $text;
+// }
+
 /**
  * 
  * End of File
