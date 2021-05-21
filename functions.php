@@ -3413,7 +3413,7 @@ function quartiersplattform_detect_language() {
 	
 
 }
-add_filter( 'locale', 'quartiersplattform_detect_language' );
+// add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * QP visibility badge
