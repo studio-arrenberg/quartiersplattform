@@ -3383,7 +3383,7 @@ add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 //  */
 
 function quartiersplattform_detect_language() {
-	// global $user;
+	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
 			if(!empty($_GET['lang'])){
@@ -3404,8 +3404,10 @@ function quartiersplattform_detect_language() {
 			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
 			return $_GET['lang'];
 		}
-		else{
-			return get_user_locale( get_current_user_id() );
+		else {
+			$user = wp_get_current_user();
+			echo $user->roles[0];
+			return get_user_locale( $user->roles[0] );
 		}	
 	}
 	
