@@ -3398,6 +3398,7 @@ function quartiersplattform_detect_language() {
 		}	
 	}
 	else{
+		debugToConsole("get user ID");
 		// check user locale setting
 		if(!empty($_GET['lang'])){
 			setcookie('language',  $_GET['lang']);
@@ -3405,9 +3406,10 @@ function quartiersplattform_detect_language() {
 			return $_GET['lang'];
 		}
 		else {
+			debugToConsole("user locale:".get_user_locale( $user->roles[0] ));
 			$user = wp_get_current_user();
 			echo $user->roles[0];
-			return get_user_locale( $user->roles[0] );
+			// return get_user_locale( $user->roles[0] );
 		}	
 	}
 	
