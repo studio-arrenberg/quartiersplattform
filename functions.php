@@ -3398,7 +3398,6 @@ function quartiersplattform_detect_language() {
 		}	
 	}
 	else {
-		debugToConsole("user locale: ".get_locale());
 		// // debugToConsole("get user ID");
 		// // check user locale setting
 		// if(!empty($_GET['lang'])){
