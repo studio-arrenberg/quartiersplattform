@@ -3397,7 +3397,8 @@ function quartiersplattform_detect_language() {
 			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
 		}	
 	}
-	else{
+	else {
+		debugToConsole("user locale: ".get_locale());
 		// // debugToConsole("get user ID");
 		// // check user locale setting
 		// if(!empty($_GET['lang'])){
