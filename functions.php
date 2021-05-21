@@ -3370,7 +3370,7 @@ function quartiersplattform_translate_theme() {
         require_once( $locale_file );
     }
 }
-add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
+// add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
 // /**
 //  * QP switch language
@@ -3410,7 +3410,7 @@ function quartiersplattform_detect_language() {
 	
 
 }
-add_filter( 'locale', 'quartiersplattform_detect_language' );
+// add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * QP visibility badge
