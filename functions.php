@@ -3383,14 +3383,16 @@ add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 //  */
 
 function quartiersplattform_detect_language() {
+	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
 			if(!empty($_GET['lang'])){
 				setcookie('language',  $_GET['lang']);
-				return $_GET['lang'];
+				// return $_GET['lang'];
 			}
-			return $_COOKIE['language'];
-		}else{  	
+			return $_GET['lang'];
+		}
+		else{  	
 			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
 		}	
@@ -3401,7 +3403,8 @@ function quartiersplattform_detect_language() {
 			setcookie('language',  $_GET['lang']);
 			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
 			return $_GET['lang'];
-		}else{
+		}
+		else{
 			return get_user_locale( get_current_user_id() );
 		}	
 	}
@@ -3413,7 +3416,7 @@ function quartiersplattform_detect_language() {
 	
 
 }
-// add_filter( 'locale', 'quartiersplattform_detect_language' );
+add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * QP visibility badge
