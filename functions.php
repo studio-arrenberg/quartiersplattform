@@ -3408,7 +3408,8 @@ function quartiersplattform_detect_language() {
 		else {
 			$user = wp_get_current_user();
 			echo $user->roles[0];
-			debugToConsole("user locale:".get_user_locale( $user->roles[0] ));
+			// debugToConsole("user locale: ".get_user_locale( $user->roles[0] ));
+			debugToConsole("user locale: ".get_locale());
 			
 			// return get_user_locale( $user->roles[0] );
 		}	
