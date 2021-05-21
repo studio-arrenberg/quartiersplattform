@@ -3398,21 +3398,21 @@ function quartiersplattform_detect_language() {
 		}	
 	}
 	else{
-		debugToConsole("get user ID");
-		// check user locale setting
-		if(!empty($_GET['lang'])){
-			setcookie('language',  $_GET['lang']);
-			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
-			return $_GET['lang'];
-		}
-		else {
-			$user = wp_get_current_user();
-			echo $user->roles[0];
-			// debugToConsole("user locale: ".get_user_locale( $user->roles[0] ));
-			debugToConsole("user locale: ".get_locale());
+		// // debugToConsole("get user ID");
+		// // check user locale setting
+		// if(!empty($_GET['lang'])){
+		// 	setcookie('language',  $_GET['lang']);
+		// 	update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
+		// 	return $_GET['lang'];
+		// }
+		// else {
+		// 	$user = wp_get_current_user();
+		// 	echo $user->roles[0];
+		// 	// debugToConsole("user locale: ".get_user_locale( $user->roles[0] ));
+		// 	debugToConsole("user locale: ".get_locale());
 			
-			// return get_user_locale( $user->roles[0] );
-		}	
+		// 	// return get_user_locale( $user->roles[0] );
+		// }	
 	}
 	
 	
