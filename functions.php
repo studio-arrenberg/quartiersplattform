@@ -3374,13 +3374,13 @@ function quartiersplattform_translate_theme() {
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
-// /**
-//  * QP switch language
-//  * 
-//  * @since Quartiersplattform 1.7
-//  * 
-//  * 
-//  */
+/**
+ * QP switch language
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * 
+ */
 
 function quartiersplattform_detect_language() {
 	global $user;
