@@ -45,9 +45,10 @@
 					font-size: 16px;
 					line-height: 1.6rem;
 					text-align: center;
-					text-decoration: none;
+					text-decoration: none;"
                     href="<?php echo get_permalink(get_query_var('qp_post_id')); ?>">Zur Anmerkung</a>
 
         </div>
     </td>
 </tr>
+
