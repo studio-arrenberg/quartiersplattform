@@ -322,6 +322,7 @@ small, .text-size-3 {
   .heading-size-2 {
     font-size: 2.4rem;
     line-height: 2.6rem;
+    margin-bottom: 15px;
   }
 
 
@@ -332,10 +333,9 @@ small, .text-size-3 {
   }
 
 
-
   .big, .text-size-1  {
-    font-size: 2.3rem;
-    line-height: 2.6rem;
+    font-size: 2.2rem;
+    line-height: 2.5rem;
   }
 
   p, .text-size-2 {
