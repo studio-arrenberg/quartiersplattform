@@ -3365,42 +3365,54 @@ function quartiersplattform_translate_theme() {
 
     // Include Theme text translation file
     $locale = get_locale();
-    $locale_file = get_template_directory() . "/languages/$locale.php";
-    if ( is_readable( $locale_file ) ) {
-        require_once( $locale_file );
-    }
+	if (!empty($locale)) {
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable( $locale_file ) ) {
+			require_once( $locale_file );
+		}
+	}
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
-// /**
-//  * QP switch language
-//  * 
-//  * @since Quartiersplattform 1.7
-//  * 
-//  * 
-//  */
+/**
+ * QP switch language
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * 
+ */
 
 function quartiersplattform_detect_language() {
+	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
 			if(!empty($_GET['lang'])){
 				setcookie('language',  $_GET['lang']);
-				return $_GET['lang'];
+				// return $_GET['lang'];
 			}
-			return $_COOKIE['language'];
-		}else{  	
+			return $_GET['lang'];
+		}
+		else{  	
 			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
 		}	
-	}else{
-		// check user locale setting
-		if(!empty($_GET['lang'])){
-			setcookie('language',  $_GET['lang']);
-			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
-			return $_GET['lang'];
-		}else{
-			return get_user_locale( get_current_user_id() );
-		}	
+	}
+	else {
+		// // debugToConsole("get user ID");
+		// // check user locale setting
+		// if(!empty($_GET['lang'])){
+		// 	setcookie('language',  $_GET['lang']);
+		// 	update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
+		// 	return $_GET['lang'];
+		// }
+		// else {
+		// 	$user = wp_get_current_user();
+		// 	echo $user->roles[0];
+		// 	// debugToConsole("user locale: ".get_user_locale( $user->roles[0] ));
+		// 	debugToConsole("user locale: ".get_locale());
+			
+		// 	// return get_user_locale( $user->roles[0] );
+		// }	
 	}
 	
 	

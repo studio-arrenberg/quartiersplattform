@@ -8,7 +8,7 @@
                       font-size: 16px;
                       letter-spacing: 0.5px;
                     ">
-            <span>Quartiersplattform</span> <span style="font-weight: 400;"><?php the_field('welcome-title','option'); ?></span>
+            <span>Quartiersplattform: <?php the_field('quartiersplattform-name','option'); ?></span> <span style="font-weight: 400;"><?php the_field('welcome-title','option'); ?></span>
             <br>
         </h2>
         <a style="
@@ -24,10 +24,10 @@
 					  -webkit-appearance: none;
 						-moz-appearance: none;
 						appearance: none;
-						cursor: pointer;
-
-                    ">
-            hallo@quartiersplattform.org
+						cursor: pointer;"
+                    href="<?php echo home_url(); ?>"
+                    >
+            contact page to be determined
         </a>
     </td>
 </tr>
