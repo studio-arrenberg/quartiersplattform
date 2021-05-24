@@ -28,7 +28,6 @@ get_header();
 		<?php
 		
 		$array = [];
-
 		
 		// get published posts
 		$args_public = array(

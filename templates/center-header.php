@@ -8,6 +8,15 @@
 get_header();
 ?>
 
+
+
+
+
+
+
+
+
+
 <?php
 
 if (has_post_thumbnail()) {
@@ -35,8 +44,6 @@ if (has_post_thumbnail()) {
             <h1><?php the_title(); ?></h1>
         </div>
     </div>
-
-
 
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
