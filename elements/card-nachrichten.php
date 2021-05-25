@@ -1,10 +1,5 @@
 <?php
 
-/**
- * 
- * Card => Nachrichten
- *
- */
 
 // variable text length
 if (strlen(get_the_title()) < 35 ) {
@@ -15,43 +10,43 @@ else {
 }
 
 // variable text length
-if (strlen($the_slug < 1 )) {
-    $char = 200;
-}
+// if (strlen($the_slug < 1 )) {
+//     $char = 200;
+// }
 
 ?>
 
 
-
-
 <div class="card-group">
-    
+
+    <!-- main card -->
     <?php if (get_query_var( 'additional_info') && get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' )) ) { ?>
         <div class="pre-card">
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
                 <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
                 <span>
-                    <b>Projektupdate</b>
+                    <b><?php _e('Nachricht', 'quartiersplattform'); ?> </b>
                     <br>
-                    Veröffentlicht von <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php _e('von ', 'quartiersplattform'); ?> <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo qp_date(get_the_date('Y-m-d H:i:s'), true); ?>
                 </span>
             </a>
         </div>
     <?php } ?>
-
-    <!-- main card -->
+    
+    
     <div class="card shadow nachricht">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             <div class="content">
-                <div class="pre-title">
-
-                    <?php  echo qp_date(get_the_date('Y-m-d')); ?>
+                <div class="highlight text-size-3 ">
+                    <?php echo qp_date(get_the_date('Y-m-d'), false); ?>
                 </div> 
-                <h3 class="card-title">
+                <h3 class="heading-size-3 small-margin-bottom">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
-                <p class="preview-text">
+                <?php visibility_badge(); ?>
+                <p class="text-size-2">
                     <?php  
                     if (strlen(get_field('text')) > 2) {
                         shorten(get_field('text'), $char);
@@ -63,7 +58,6 @@ if (strlen($the_slug < 1 )) {
                 </p>
             </div>
             <?php the_post_thumbnail( 'preview_m' ); ?>
-
         </a>
     </div>
 
@@ -75,5 +69,4 @@ if (strlen($the_slug < 1 )) {
             </a>
         </div>
     <?php } ?>
-
 </div>

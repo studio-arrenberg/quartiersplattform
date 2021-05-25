@@ -14,7 +14,6 @@
         <div class="pre-card">
             <a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>">
                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
-                <!-- ist es möglich 'Projektupdate' oberhalb des links anzuzeigen -->
                 <span>
                     <b>Frage</b>
                     <br>
@@ -28,26 +27,27 @@
         <?php if(!is_single()) { ?>
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <?php } ?>
-            <div class="content">
+            <div class="content-flex">
                 <div class="pre-title green-text">Frage
                     <?php if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "von"; ?>
                     <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                     <span class=" green-text"><?php echo " ".qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
                 </div>
-                <h3 class="card-title-large">
+                <p class="preview-text-large">
                 <?php  
-                    if (!is_single( )) shorten(get_field('text'), '50'); 
+                    if (!is_single( )) shorten(get_field('text'), '300'); 
                     else the_field('text'); 
                 ?>
-                </h3>
+                </p>
+                <div class="emoji">
+                <?php  shorten(get_field('emoji'), '200'); ?>
+                </div>
                 <div class="kommentare">
                     <?php echo comments_number('', 'Ein Kommentar', '% Kommentare'); ?>
                 </div>
             </div>
             <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
-            <div class="emoji">
-                <?php  shorten(get_field('emoji'), '200'); ?>
-            </div>
+            
         <?php if(!is_single()) { ?>
         </a>
         <?php } ?>

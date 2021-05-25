@@ -12,43 +12,64 @@
 wp_maintenance_mode();
 
 // redirect to intro page when new visitor
-redirect_visitor();
+// redirect_visitor();
 
 get_header();
 
 ?>
 
 <main class="quartier" role="main" data-track-content>
-    <?php
-          # map picture variables
-          $location = get_field('map', 'option');
-          $latlong = "7.128,51.2485,";
-          $map_zoom = 16.48; 
-          $bearing = 0;
-          $pitch = 60;
-          $width = 1280;
-          $height = 900;
+    
+
+    <?php 
+    $image = get_field('quartier_image', 'option');
+    if (empty( $image )) {
+        $image = get_template_directory_uri()."/assets/images/quartier.png";
+    }
+    else {
+        $image = $image['url'];
+    }
     ?>
 
-    <section class="section-full-width" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $location['lng'].",".($location['lat'] - 0.008).",".$map_zoom.",".$bearing.",".$pitch."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
-        <div class="stage-center">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Willkommen am digitalen Arrenberg</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+    <section class="quartier-header bg-image" style="background: url('<?php echo esc_url($image); ?>')">
+        <div class="stage-center has-bg-blur">
+            <h1 class="heading-size-1"><?php the_field('welcome-title','option'); ?></h1>
         </div>
     </section>
 
+    <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
+        <section>
+            <?php reminder_card('no_quartiers_info', __('Bild und Text für die Startseite festlegen','quartiersplattform'), __('In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.','quartiersplattform'), __('Zu den Einstellungen','quartiersplattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
+        </section>
+    <?php } ?>
+
     <section>
-        <div class="stage-left">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Lerne dein Quartier kennen</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+        <div class="stage-center">
+            <p><?php the_field('welcome-text','option'); ?></p>
+
+                <?php
+                    $pinned_pages = array(
+                        'post_type' => 'page',
+                        'posts_per_page' => -1,
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'meta_key'   => 'pin_main',
+                        'meta_value' => array(true, 'true')
+                    );
+                    if (count_query($pinned_pages)) {
+                        echo '<div class="link-card-container large-margin-bottom">';
+                        card_list($pinned_pages);
+                        echo '</div>';
+                    }
+                ?>
         </div>
-        <div class="link-card-container">
+        
+    </section>
+    
+    <section>
+        <div class="gutenberg-content">
             <?php
-                // Gutenberg Editor Content
+                // Gutenberg
                 if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
                     the_excerpt();
                 } else {
@@ -58,50 +79,91 @@ get_header();
         </div>
     </section>
 
-    <section class="section-full-width">
+    <section class="">
         <div class="stage-center">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Entdecke spannende Projekte aus deinem Quartier</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
+            <!-- <div class="pre-header highlight"><b><?php _e("Lokale Projekte", "quartiersplattform"); ?></b></div> -->
+            <h2 class="heading-size-1 stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
+            <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
            
         </div>
-        <div class="grid projekt-card-container">
-                    
+        <div class="link-card-container">
             <?php 
-                $args4 = array(
-                'post_type'=> array('projekte'), 
-                'post_status'=>'publish', 
-                'posts_per_page'=> 5,
-                'orderby' => 'modified'
-            );
-            ?>  
-                <?php card_list($args4);?>
+                    $pinned_projects = array(
+                        'post_type' => 'projekte',
+                        'posts_per_page' => -1,
+                        'order_by' => 'date',
+                        'order' => 'DESC',
+                        'meta_key'   => 'pin_main',
+                        'meta_value' => array(true, 'true')
+                    );
+                    card_list($pinned_projects);
+                ?>
+         </div>
+        
+         <div class="button-container">
+            <a class="button " href="<?php echo get_site_url()."/projekte"; ?>"><?php _e("Neuigkeiten & Projektupdates", "quartiersplattform"); ?></a>
+            <a class="button is-primary" href="<?php echo get_site_url()."/Projektverzeichnis"; ?>"><?php _e("Alle Projekte anzeigen", "quartiersplattform"); ?></a>
         </div>
     </section>
 
 
     <section>
-        <div class="stage-left">
-            <div class="pre-header highlight"><b>Quartiersplattform</b></div>
-            <h1 class="stage-title">Save the dates</h1>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. </p>
-            <a class="button">Zum Dashboard</a>
-        </div>
-        <div class="link-card-container">
-            <?php 
-                    $args4 = array(
-                    'post_type'=> array('veranstaltungen'), 
-                    'post_status'=>'publish', 
-                    'posts_per_page'=> 4,
-                    'orderby' => 'modified'
-                );
-                ?>  
+        <div class="stage-center">
+            <h2 class="heading-size-1 stage-title"><?php _e("Veranstaltungen in deinem Quartier", "quartiersplattform"); ?></h2>
+            <p><?php _e("Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!", "quartiersplattform"); ?></p>
+            <div class="link-card-container force-landscape">
+                <?php 
+                        $args4 = array(
+                            'post_type'=>'veranstaltungen', 
+                            'post_status'=>'publish', 
+                            'posts_per_page'=> 20,
+                            'meta_key' => 'event_date',
+                            'orderby' => 'meta_val',
+                            'order' => 'ASC',
+                            'offset' => '0', 
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'event_date', 
+                                    'value' => date("Y-m-d"),
+                                    'compare' => '>=', 
+                                    'type' => 'DATE'
+                                )
+                            )
+                        );
+                    ?>  
                     <?php card_list($args4);?>
+                </div>
+                <a class="button is-primary" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
             </div>
         </div>
     </section>
 
+    <section>
+        <div class="stage-center">
+            <h2 class="heading-size-1 stage-title"><?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </h2>
+            <p><?php _e("Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.", "quartiersplattform"); ?></p>
+            <div class="card-stack">
+                <?php 
+                    $args = array(
+                        'post_type'=>'sdg', 
+                        'post_status'=>'publish', 
+                        'posts_per_page'=> 4,
+                        'orderby'        => 'rand',
+                    );
+                        
+                    card_list($args, $type = 'badge');
+
+                ?>
+                <a class="button is-primary" href="<?php echo get_site_url( ) ?>/sdgs"><?php _e('Übersicht der Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?> </a>
+            </div>
+
+        </div>
+    </section>
+    
+    <?php 
+	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
+		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
+	?>
 
 
 </main><!-- #site-content -->

@@ -17,19 +17,21 @@
  *  1. ACF fields
  *  --------------------------------------------------------
  */
-
+add_action('init', 'qp_add_anmerkungen_field_group');
+function qp_add_anmerkungen_field_group() {
+    
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
         'key' => 'group_5fb50c8393d52',
-        'title' => 'Anmerkung',
+        'title' => __('Anmerkung','quartiersplattform'),
         'fields' => array(
             array(
                 'key' => 'field_5fb50c8a3e93d',
-                'label' => 'Feedback',
+                'label' => __('Feedback','quartiersplattform'),
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => 'Was wünschst du dir von der Quartiersplattform?',
+                'instructions' => __('Was wünschst du dir von der Quartiersplattform?','quartiersplattform'),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -64,6 +66,12 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
+}
+
+
+
+
+
 
 /**
  *  --------------------------------------------------------

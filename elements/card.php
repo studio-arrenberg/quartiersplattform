@@ -10,7 +10,6 @@
 
 
 <div class="card shadow ">
-
     <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
         <div class="content">
             <h3 class="card-title">

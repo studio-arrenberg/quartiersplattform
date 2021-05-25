@@ -42,8 +42,8 @@
         </div>
 
 	</div>
-	
-    
+
+
     <!-- Gutenberg Editor Content -->
     <div class="gutenberg-content">
     <?php
@@ -55,6 +55,7 @@
     ?>
 
     </div>
+
 
 
 	

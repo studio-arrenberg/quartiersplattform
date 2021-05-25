@@ -7,7 +7,7 @@
  *
  */
 
-if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) { // Execute code if user is logged in or user is the author
+if ( ( is_user_logged_in() && qp_project_owner() ) ) { // Execute code if user is logged in or user is the author
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
 }
@@ -16,7 +16,20 @@ get_header();
 
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-grid" role="main">
+
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
+
+	<div class="main-content">
+
+    <div class="page-card shadow">
+        <a class="close-card-link" onclick="history.go(-1);">
+                <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+        </a>
+
+  
 
     <?php
 	if ( have_posts() ) {
@@ -39,57 +52,79 @@ get_header();
 
 			?>
 
-
-        <div class="single-header">
-            <!-- post title -->
-            <div class="single-header-content">
-
-                <h1><?php the_title(); ?></h1>
-
-                <h3 class="single-header-slogan">
-                    <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>
-                    <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
-                </h3>
-
-                <?php
-                if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
-                ?>
-                    <a class="button is-style-outline" href="<?php get_permalink(); ?>?action=edit">Nachricht bearbeiten</a>
-                    <a class="button is-style-outline button-red" onclick="return confirm('Dieses Angebot entgültig löschen?')"
-                        href="<?php get_permalink(); ?>?action=delete">Nachricht löschen</a>
-                <?php
-                }
-            ?>
-
-            </div>
+            <h2 class="heading-size-3 highlight">
+                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - 
+                <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
+            </h2>
+            <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
+            <?php visibility_badge(); ?>
 
             <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
 
+            <div class="site-content">
+                <?php extract_links(get_field('text')); ?>
+            </div>
+
+            <div class="gutenberg-content">
+                <?php
+                    // Gutenberg Editor Content
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
+                ?>
+            </div>
+
+            <?php if ( ( is_user_logged_in() && qp_project_owner() ) ) { ?>
+
+            <div class="simple-card">
+                <div class="button-group">
+                    <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
+                    <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
+                </div>
+            </div>
+            <?php } ?>
         </div>
 
+        <div class="small-projekt-card">
+            <?php 
 
-    <div class="site-content">
+            pin_toggle();
 
-        <?php extract_links(get_field('text')); ?>
-
-    </div>
-
-    <div class="gutenberg-content">
-
-        <?php
-            // Gutenberg Editor Content
-            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                the_excerpt();
-            } else {
-                the_content( __( 'Continue reading', 'twentytwenty' ) );
+            visibility_toggle(get_the_ID(  ));
+            
+            // project is not public
+            if (get_post_status() == 'draft' && qp_project_owner()) {
+                reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
             }
+
+            get_template_part('components/general/share-post');
+            
+            project_card($post->ID);
+            
+            ?>
+        </div>
+        <?php author_card(); ?>
+
+        
+
+        <!-- Backend edit link -->
+        <?php qp_backend_edit_link(); ?>
+
+        <!-- kommentare -->
+        <?php			
+            if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
         ?>
 
+        <div class="comments-wrapper">
+            <?php comments_template('', true); ?>
+        </div><!-- .comments-wrapper -->
+
     </div>
 
-    <?php author_card(); ?>
-
-    <?php
+    <div class="right-sidebar">
+        <?php
         // weitere Nachrichten
 		$args2 = array(
 			'post_type'=> array('nachrichten', 'veranstaltungen'), 
@@ -109,62 +144,21 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0) {
         ?>
-            <h2>Weitere Nachrichten & Veranstaltungen</h2>
+            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
+            <br>
         <?php
-            slider($args2,'card', '1','false');
+            card_list($args2);
         }
 
     ?>
     <br>
-
-    <?php
-        // Projekt Kachel 
-        $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-        $the_slug = $term_list[0]->slug;
-        if ($the_slug) {
-            $args = array(
-                'name'        => $term_list[0]->slug,
-                'post_type'   => 'projekte',
-                'post_status' => 'publish',
-                'numberposts' => '1'
-            );
-
-
-            $my_query = new WP_Query($args);
-            if ($my_query->post_count > 0) {
-            ?>
-
-
-            <h2>Das Projekt</h2>
-
-            <div class="card-container ">
-
-            <?php
-                landscape_card($args);
-                } 
-            }
-            ?>
-
-            </div>
-
-
-    <!-- Backend edit link -->
-    <?php edit_post_link(); ?>
-
-    <!-- kommentare -->
-    <?php			
-		if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-	?>
-
-    <div class="comments-wrapper">
-        <?php comments_template('', true); ?>
-    </div><!-- .comments-wrapper -->
+    </div>
 
     <?php
             }
         }
         # Post löschen
-        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
+        else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && qp_project_owner()) {
 
             $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
             $the_slug = $term_list[0]->slug;
@@ -182,13 +176,13 @@ get_header();
         }
         # Post bearbeiten
         else {
-            if ( ( is_user_logged_in() && $current_user->ID == $post->post_author ) ) {
+            if ( ( is_user_logged_in() && qp_project_owner() ) ) {
                 echo '<h2>Bearbeite deine Nachricht</h2><br>';
                 acf_form (
                     array(
                         'form' => true,
                         'return' => '%post_url%',
-                        'submit_value' => 'Änderungen speichern',
+                        'submit_value' => __('Änderungen speichern','quartiersplattform'),
                         'post_title' => true,
                         'post_content' => false,    
                         'uploader' => 'basic',

@@ -21,6 +21,50 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## future
+- [ ] Energie Wetter API and Plugin
+- [ ] cookie disclaimer
+- [ ] notifications
+- [ ] acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
+- [ ] Update note
+- [ ] Admin Settings
+
+## dokumentation
+- troubleshooting
+  - 404 error => permalinks neu initieren
+- user kann seine deiträge nicht sehen
+  - check rolle => contributor / mitarbeiter
+
+## v1.7.3
+- [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
+- [ ] Startseite Abstand der Inhalte
+- [ ] Cant login when login page is not set through UM...
+
+## v1.7.2
+- Login Weiterleitung zu Projekten
+- Sicherheitslücke Anheften und Sichtbarkeit Toggle behoben
+- Startseite ohne Inhalte nicht scrollbar
+- Authoren Card Namensfehler behoben
+
+## v1.7
+### Features
+- Beiträge verbergen
+- Pinned Posts (Projekt & Quartier)
+- Neue Menu Leiste
+- Neuer Footer
+- Restrukturierte Quartiersseite
+- Cookie Disclaimer
+- Über Mich
+- Ziele für Nachhaltige Entwicklung 
+- Sichtbarkeitseinstellung von Beiträgen und Projekten
+### Bugs
+- Umfragen im Newsfeed
+- Ajax mit Nonce Sicherheit
+- Löschung aller Projekt Posts beim Löschen des Projektes
+- CSS Editor
+- Archiv Darstellung
+- WP StrToDate Timezone
+
 ## Theme Publication
 
 1.  [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)
@@ -53,6 +97,7 @@ landscape_card(null, 'Hallo Welt','Text....',get_template_directory_uri().'/asse
 landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Query and Manual
 ```
 #### List Card
+**🚨 deprechted**
 ```php 
 list_card($args3, get_site_url().'/veranstaltungen', 'title', 'subtitle');
 ```
@@ -107,4 +152,23 @@ Logged in users can remove reminder cards (uses `ajax`).
 reminder_card( $slug, $title, $text, $button = '', $link = '' );
 // example
 reminder_card('unique_slug', 'Title', 'Text...', 'Impressum', home_url( ).'/impressum' );
+// warning without ID no close button
+reminder_card('warning', 'Dein Profil ist unsichtbar','' );
+// warning with ID with close button
+reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','' );
+// without close button
+reminder_card('', 'Dein Profil ist unsichtbar','' );
+```
+#### Visibility Toggle
+Toggle between `draft` and `pubish` for all post types.
+Can only be used in Loop
+```php
+post_visibility_toggle();
+```
+
+#### pin_toggle($type = 'pin_project')
+Pin Post or Pages on the Landing Page `pin_main` or Projekt Page `pin_project`
+Can only be used in Loop
+```php
+pin_toggle($type = 'pin_project');
 ```

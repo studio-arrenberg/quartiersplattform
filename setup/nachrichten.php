@@ -64,19 +64,22 @@ add_action( 'init', 'cptui_register_my_cpts_nachrichten' );
  *  --------------------------------------------------------
  */
 
+add_action('init', 'qp_add_nachrichten_field_group');
+function qp_add_nachrichten_field_group() {
+	
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
         'key' => 'group_5c5de02092e76',
-        'title' => 'Nachrichten',
+        'title' => __('Nachrichten',"quartiersplattform"),
         'fields' => array(
             array(
                 'key' => 'field_5fc646e907fc1',
-                'label' => 'Deine Nachricht für dein Projekt',
+                'label' => __('Deine Nachricht für dein Projekt',"quartiersplattform"),
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => 'Berichte, was es neues in deinem Projekt gibt.',
-                'required' => 1,
+                'instructions' => __('Was gibt es Neues in deinem Projekt?',"quartiersplattform"),
+                'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
                     'width' => '',
@@ -91,7 +94,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_601420c25b316',
-                'label' => 'Bild',
+                'label' => __('Bild',"quartiersplattform"),
                 'name' => '_thumbnail_id',
                 'type' => 'image',
                 'instructions' => '',
@@ -149,3 +152,5 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
+}
+

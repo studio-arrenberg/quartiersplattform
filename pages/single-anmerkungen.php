@@ -2,66 +2,62 @@
 
 /**
  * 
- * Template Name: Anmerkung [Default]
- * Template Post Type: projekte
+ * Template Name: Anmerkungen
+ * Template Post Type: page
  * 
  */
-
+acf_form_head();
 get_header();
 
 ?>
 
-<main id="site-content" role="main">
-
-    <?php
-
-    if ( have_posts() ) {
-        while ( have_posts() ) {
-            the_post();
-
-    ?>
-
-    <div class="card-container card-container__center card-container__large ">
-
-        <?php get_template_part('elements/card', get_post_type()); ?>
-
-    </div>
+<main id="site-content" class="page-grid" role="main">
 
 
-    <?php author_card(); ?>
+	<div class="left-sidebar">
 
-    <?php edit_post_link(); ?>
+        <?php projekt_carousel(); ?>
 
-    <div class="gutenberg-content">
-        <?php
-            // Gutenberg Editor Content
-            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                the_excerpt();
-            } else {
-                the_content( __( 'Continue reading', 'twentytwenty' ) );
-            }
-        ?>
-    </div>
+	</div>
 
-    <!-- kommentare -->
-    <?php			
-    if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-    ?>
+	<div class="content">
 
-        <div class="comments-wrapper">
+		<?php 
+			$text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
+			reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text );
+		?>
+
+        <br>
+        <br>
+
+
+		<div class="grid-4col" data-grid>
+			<?php get_template_part('elements/card-anmerkungen');?>
+		</div>
+		<a class="button" href="<?php echo home_url( ).'/feedback'; ?>"><?php _e(' Zu allen Vorschlägen', 'quartiersplattform'); ?></a>
+
+		<div class="comments-wrapper">
             <?php comments_template('', true); ?>
         </div><!-- .comments-wrapper -->
+	
+	</div>
 
-    </div>
-
-    <?php			
-        }
-    }
-}
-
-?>
-
+	<div class="right-sidebar">
+		<?php 
+			// Projekte
+			if (is_user_logged_in(  )) {
+				get_template_part('components/smart-card/projekte');
+					
+			}
+			else {
+				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
+				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
+			}
+		?>	
+	</div>
 
 </main><!-- #site-content -->
+
+<!-- </div> -->
 
 <?php get_footer(); ?>
