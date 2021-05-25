@@ -35,7 +35,7 @@ global $current_user;
 
         <?php visibility_badge(); ?>
 
-     
+        <?php get_notification($post->post_name); ?>
 
     </div>
 </a>

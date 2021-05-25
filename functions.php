@@ -2768,11 +2768,13 @@ add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callbac
  * @return int
  */
 
-function get_notification($slug, $cpts, $update = false) {
+function get_notification($slug, $update = false) {
 
-	if (empty($slug) || empty($cpts) || !is_user_logged_in( ) ) {
+	if (empty($slug) || !is_user_logged_in( ) ) {
 		return false;
 	}
+
+	global $post;
 
 	// get user option
 	$array = get_user_option( 'qp_page_timestamp', get_current_user_id( ) );
@@ -2780,46 +2782,75 @@ function get_notification($slug, $cpts, $update = false) {
 	// create array if not available
 	if (!is_array($array)) {
 		$array = [];
-		return false;
+		// return false;
 	} 
 
 	// check for key
 	if ( array_key_exists($slug, $array) ) {
 		$timestamp = $array[$slug];
-		// upddate for this page
-		if ($update) {
-			$array[$slug] = time();
+		// update for this page
+		// echo "exists";
+		if ($update == true) {
+			$array[$slug] = date('U');
+			// echo "exists";
 		} 
 
 	}
 	// create timestamp if not exsistent
 	else {
-		$array[$slug] = time();
-		return false;
+		$array[$slug] = date('U');
+		// return false;
+	}
+	// echo get_post_type();
+	
+	// define query
+	if ($slug == 'feed') {
+		// echo $slug;
+		// assumed its a feed of all stuff
+		$args = array(
+			'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
+			'posts_per_page' => -1,
+			'post_status' => 'publish',
+			'order_by' => 'date',
+			'order' => 'DESC',
+			'date_query' => array(
+				array(
+					'after'	=> wp_date( 'Y-m-d H:i:s', $timestamp ),
+				),
+			),
+		);
+	}
+	else if (get_post_type() == 'projekte' && $slug != 'feed') {
+		$args = array(
+			'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
+			'posts_per_page' => -1,
+			'post_status' => 'publish',
+			'order_by' => 'date',
+			'order' => 'DESC',
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'projekt',
+					'field' => 'slug',
+					'terms' => ".$post->post_name."
+				)
+			),
+			'date_query' => array(
+				array(
+					'after'	=> wp_date( 'Y-m-d H:i:s', $timestamp ),
+				),
+			),
+		);
 	}
 
-	// get number of missed posts
-	$args = array(
-        'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'angebote', 'fragen', 'umfragen'), 
-        'post_status'=>'publish', 
-        'posts_per_page'=> -1,
-        'orderby' => 'post_date',
-        'date_query' => array(
-            array(
-                'after'	=> date( 'Y-m-d H:i:s', $timestamp ),
-            ),
-        ),
-    );
+	// slider($args);
+	
+	$my_query = new WP_Query($args);
+	$num_missed_posts = $my_query->post_count;
 
-	$thePosts = query_posts($args);
-    global $wp_query; 
-    $num_missed_posts = $wp_query->found_posts;
-
-	// debugging
-	echo "missed posts: ".$num_missed_posts."<br>";
-	print_r($array);
-	// echo date( 'Y-m-d H:i:s', $timestamp );
-
+	if ($num_missed_posts > 0) {
+		echo "<span style='color:red;'>".$num_missed_posts."</span>";
+	}
+	
 	// update user option
 	update_user_option( get_current_user_id( ), 'qp_page_timestamp', $array );
 	

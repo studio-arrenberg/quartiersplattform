@@ -60,6 +60,7 @@ get_header();
                     <h1 class="heading-size-1"><?php the_title(); ?></h1>
                     <h2 class="heading-size-3 highlight"><?php the_field('slogan'); ?></h2>
 
+                    <?php get_notification($post->post_name, true); ?>
 
                 </div>
             </div>
