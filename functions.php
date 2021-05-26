@@ -3399,7 +3399,8 @@ function quartiersplattform_detect_language() {
 			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
 			return $_GET['lang'];
 		}else{
-			return get_user_locale( 2);
+			$lang = get_user_meta($current_user->ID, 'user_lang');
+			return $lang;
 		}	
 	}
 	
