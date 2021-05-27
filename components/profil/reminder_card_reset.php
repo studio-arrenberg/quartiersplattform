@@ -1,4 +1,4 @@
-<h2><?php _e('Hinweise und Tipps', 'quartiersplattform'); ?> </h2>
+<h3><?php _e('Hinweise und Tipps', 'quartiersplattform'); ?> </h3>
 <p class="margin-bottom"><?php _e('Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder einblenden.', 'quartiersplattform'); ?> </p>
 <div class="reset_reminder_cards">
     <a class="button reset_reminder_cards" onclick="reset_reminder_cards()"><?php _e('Hinweise und Tipps zurücksetzen', 'quartiersplattform'); ?> </a>
@@ -25,7 +25,7 @@
             dataType: 'json',
             success: function(response){
                 console.log(response);
-                $('a.reset_reminder_cards').addClass('is-done');
+                $('a.reset_reminder_cards').addClass('button-is-green');
                 $('div.reset_reminder_cards span.acf-spinner').removeClass('is-active');
             }
         });

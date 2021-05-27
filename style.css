@@ -254,12 +254,15 @@ h2,
 .heading-size-2 {
   font-size: 2.2rem;
   line-height: 2.3rem;
+  margin-bottom: 15px;
 }
 
 h3,
 .heading-size-3 {
   font-size: 1.8rem;
   line-height: 2rem;
+  margin-bottom: 5px;
+
 }
 
 h4,
@@ -957,6 +960,20 @@ input[type="submit"]:focus{
     0 32px 64px rgba(255, 0, 79, 0.15);
 }
 
+
+.button-is-green{
+  color: #fff;
+  background:#00c453;
+}
+
+.button-is-green:hover{
+  color: #fff;
+  background:rgb(0, 196, 83);
+  box-shadow: 0 1px 2px rgba(0, 196, 83, 0.15),
+    0 2px 4px rgba(0, 196, 83, 0.15), 0 4px 8px rgba(0, 196, 83, 0.15),
+    0 8px 16px rgba(0, 196, 83, 0.15), 0 16px 32px rgba(0, 196, 83, 0.15),
+    0 32px 64px rgba(0, 196, 83, 0.15);
+}
 
 
 @media (min-width: 782px) {
@@ -5378,11 +5395,24 @@ a:hover .shadow{
 
 .um-account-heading,
 .um-field-image label {
-  font-size: 2rem;
+  font-size: 1.8rem;
+line-height: 2rem;
+margin-bottom: 5px;
+
  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 font-weight: 700;
   margin-top: 25px;
-  margin-bottom: 5px;
+}
+
+@media (min-width: 782px) {
+  .um-account-heading,
+  .um-field-image label {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-bottom: 15px;
+    display: block;
+
+  }
 }
 
 .um-field-label {

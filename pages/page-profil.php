@@ -107,16 +107,9 @@ if (!is_user_logged_in()) {
 
         <div id="summary" class="bar bar-active">
 
-
             <?php 
-            
-            author_card(true, $current_user->ID, false); 
-            
+                author_card(true, $current_user->ID, false); 
             ?>
-
-            <br>
-            <br>
-
             
             <?php
                 $args4 = array(
@@ -130,7 +123,6 @@ if (!is_user_logged_in()) {
                 if (count_query($args4)) {
                     echo "<br><h2 class='margin-bottom'>".__('Deine Projekte', 'quartiersplattform')."</h2><br>";
                     card_list($args4);
-                    echo "<br>";
                 }
                 
 
@@ -174,8 +166,7 @@ if (!is_user_logged_in()) {
             <br><br>
 
             <!-- Contact Information -->   
-            <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
-            <br>
+            <h3><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h3>
                 <?php
                 $userid = "user_".$current_user->ID; 
                 acf_form (
@@ -194,7 +185,6 @@ if (!is_user_logged_in()) {
             <br>
             <!-- Biography Information -->   
             <h2>Erzähle etwas über dich</h2>
-            <br>
             <?php
             $userid = "user_".$current_user->ID; 
             acf_form (
