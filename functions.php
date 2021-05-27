@@ -3365,10 +3365,12 @@ function quartiersplattform_translate_theme() {
 
     // Include Theme text translation file
     $locale = get_locale();
-    $locale_file = get_template_directory() . "/languages/$locale.php";
-    if ( is_readable( $locale_file ) ) {
-        require_once( $locale_file );
-    }
+	if (!empty($locale)) {
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable( $locale_file ) ) {
+			require_once( $locale_file );
+		}
+	}
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
@@ -3404,11 +3406,12 @@ function qp_detect_browser_language() {
  */
 
 function quartiersplattform_detect_language() {
+	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
 			if(!empty($_GET['lang'])){
 				setcookie('language',  $_GET['lang']);
-				return $_GET['lang'];
+				// return $_GET['lang'];
 			}
 			return $_COOKIE['language'];
 		}else{  	

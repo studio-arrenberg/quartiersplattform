@@ -210,7 +210,6 @@ get_header();
                                             'post_title' => false,
                                             'post_content' => false,    
                                             'uploader' => 'basic',
-                                            // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
                                             'fields' => array(
                                                 'field_602e74121ff45',
                                             ),
