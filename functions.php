@@ -3372,13 +3372,36 @@ function quartiersplattform_translate_theme() {
 }
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
-// /**
-//  * QP switch language
-//  * 
-//  * @since Quartiersplattform 1.7
-//  * 
-//  * 
-//  */
+/**
+ * QP detect browser language
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return browser language
+ */
+function qp_detect_browser_language() {
+	$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+	if(stripos($browser_language, "de") !== false ){
+		return "de_DE";
+	}elseif(stripos($browser_language, "it") !== false ){
+		return "it_IT";
+	}elseif(stripos($browser_language, "tr") !== false ){
+		return "tr_TR";
+	}elseif(stripos($browser_language, "en") !== false ){
+		return "en_GB";
+	}
+	else{
+		return "de_DE";
+	}
+}
+
+/**
+ * QP switch language
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return language string
+ */
 
 function quartiersplattform_detect_language() {
 	if (!is_user_logged_in()) {
@@ -3389,8 +3412,9 @@ function quartiersplattform_detect_language() {
 			}
 			return $_COOKIE['language'];
 		}else{  	
-			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
-			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+			
+			setcookie('language', qp_detect_browser_language());
+			return qp_detect_browser_language();
 		}	
 	}else{
 		// check user locale setting
@@ -3403,13 +3427,9 @@ function quartiersplattform_detect_language() {
 			return $lang;
 		}	
 	}
-	
-	
 	// // update user locale
 	
 	// return $user_language;
-	
-
 }
 add_filter( 'locale', 'quartiersplattform_detect_language' );
 
@@ -3425,6 +3445,9 @@ function visibility_badge() {
 		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">.'.__('Nicht Sichtbar', 'quartiersplattform').'</span>';
 	}
 }
+
+
+
 
 /**
  * 

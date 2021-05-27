@@ -43,12 +43,6 @@ get_header();
         </section>
     <?php } ?>
 
-    <?php 
-        echo get_current_user_id();
-        $userid = get_current_user_id();
-        echo get_user_locale(1);
-    ?>
-
     <section>
         <div class="stage-center">
             <p><?php the_field('welcome-text','option'); ?></p>

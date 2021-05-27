@@ -45,14 +45,12 @@
             //Get correct language
             if(!empty($_GET['lang'])){
                 $sprache = $_GET['lang'];
-            }
-            else{
+            }else{
                 if (!is_user_logged_in()) {
-                    $sprache = $_COOKIE['language'];    	
+                    $sprache = quartiersplattform_detect_language();
                 }else{
                     $sprache = get_user_locale( get_current_user_id() );
                 }
-               
             }
         ?>
 
