@@ -102,10 +102,10 @@ if( function_exists('acf_add_local_field_group') ):
         'fields' => array(
             array(
                 'key' => 'field_601855a9aa4be',
-                'label' => 'Beschreibung',
+                'label' => __('Beschreibung',"quartiersplattform"),
                 'name' => 'text',
                 'type' => 'textarea',
-                'instructions' => 'Beschreibe, worum es in deiner Umfrage geht.',
+                'instructions' => __('Worum geht es in deiner Umfrage?',"quartiersplattform"),
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -121,10 +121,10 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_601855baaa4bf',
-                'label' => 'Fragen',
+                'label' => __('Fragen',"quartiersplattform"),
                 'name' => 'questions',
                 'type' => 'repeater',
-                'instructions' => 'Stelle die Auswahlmöglichkeiten für deine Umfrage ein.',
+                'instructions' => __('Hier kannst du die Auswahlmöglichkeiten für deine Umfrage festlegen.',"quartiersplattform"),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -134,13 +134,13 @@ if( function_exists('acf_add_local_field_group') ):
                 ),
                 'collapsed' => 'field_601855d3aa4c0',
                 'min' => 2,
-                'max' => 0,
+                'max' => 10,
                 'layout' => 'table',
-                'button_label' => '',
+                'button_label' => __('Weitere Auswahlmöglichkeit hinzufügen'),
                 'sub_fields' => array(
                     array(
                         'key' => 'field_601855d3aa4c0',
-                        'label' => 'Frage',
+                        'label' => __('Frage',"quartiersplattform"),
                         'name' => 'item',
                         'type' => 'text',
                         'instructions' => '',

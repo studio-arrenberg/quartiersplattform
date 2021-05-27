@@ -3,46 +3,75 @@
 acf_form_head();
 get_header();
 
+if (!is_user_logged_in(  )) {
+    exit(wp_redirect( home_url( ) ));
+}
+
+
 ?>
+<main id="site-content" class="page-grid" role="main">
 
-<main id="site-content" role="main">
-    <div class="card-container card-container__center card-container__large ">
-        <div class="card bg_red">
-            <div class="content white-text">
-                <h3 class="card-title-large">
-                    Erstelle eine Nachricht <?php if ($_GET['project']) echo "für ".get_page_by_path( $_GET['project'], OBJECT, 'projekte' )->post_title; ?>
-                </h3>
-                <p class="preview-text-large">
-                    Halte deine Community auf dem Laufdenden und teile deine Neuigkeiten. <br>
-                </p>
-            </div>
+    <div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
+
+    <div class="main-content">
+
+
+        <div class="small-projekt-card">
+        <?php
+            // Projekt Kachel
+            project_card($_GET['project'], 'slug');
+            if (!isset($_GET['project'])) {
+                reminder_card('warning', __('Projekt konnte nicht verknüpft werden','quartiersplattform'), __('Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es noch mal.','quartiersplattform'), 'Projekte', home_url( ).'/projekte/');
+            }
+
+        ?>
         </div>
-    </div>
-
-    <div class="publish-form">
-        <h2>Erstelle eine Nachricht</h2>
-        <br>
 
         <?php 
-            acf_form(
-                array(
-                    'id' => 'nachrichten-form',
-                    'post_id'=>'new_post',
-                    'new_post'=>array(
-                        'post_type' => 'nachrichten',
-                        'post_status' => 'publish',
-                    ),
-                    'return' => get_site_url().'/gemeinsam', 
-                    'field_el' => 'div',
-                    'post_content' => false,
-                    'uploader' => 'basic',
-                    'post_title' => true,
-                    'field_groups' => array('group_5c5de02092e76'),
-                    'submit_value'=>'Nachricht veröffentlichen',
-                    'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
-                )
-            ); 
-        ?>
+
+        if (isset($_GET['project'])) {
+
+            $page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
+            $project_ID = $page->ID;
+            $status = get_post_status($page->ID);
+
+            if ( $status != 'publish') {
+                reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. ','quartiersplattform'));
+            }
+
+            ?>
+
+            
+
+                <div class="publish-form">
+
+                <h2><?php _e('Erstelle eine Nachricht', 'quartiersplattform'); ?> </h2>
+                <br>
+
+                <?php 
+                    acf_form(
+                        array(
+                            'id' => 'nachrichten-form',
+                            'post_id'=>'new_post',
+                            'new_post'=>array(
+                                'post_type' => 'nachrichten',
+                                'post_status' => $status,
+                            ),
+                            'return' => get_site_url().'/gemeinsam', 
+                            'field_el' => 'div',
+                            'post_content' => false,
+                            'uploader' => 'basic',
+                            'post_title' => true,
+                            'field_groups' => array('group_5c5de02092e76'),
+                            'submit_value'=> __('Nachricht veröffentlichen','quartiersplattform'),
+                            'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
+                        )
+                    ); 
+        }
+            ?>
+        </div>
     </div>
 
 </main><!-- #site-content -->

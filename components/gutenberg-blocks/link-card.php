@@ -20,8 +20,7 @@ $id = url_to_postid( $link );
 // print_r(get_field('post'));
 ?>
 
-
-<div class="card landscape shadow gardient ">
+<div class="card landscape shadow-on-hover link-card ">
     
     <?php 
     // if (get_query_var('link_card_link')) {
@@ -31,7 +30,7 @@ $id = url_to_postid( $link );
     // }
     // else {
         ?>
-            <a href="<?php echo esc_url( get_permalink($id) ); ?>">
+            <a class="card-link" href="<?php echo esc_url( get_permalink($id) ); ?>">
         <?php
     // }
     ?>
@@ -39,18 +38,19 @@ $id = url_to_postid( $link );
         <div class="content">
             <h3 class="card-title">
                 <?php 
-                        shorten_title(get_the_title($id), '60');
+                        shorten(get_the_title($id), '60');
                 ?>
             </h3>
             <p class="preview-text">
                 <?php
 
-                        get_excerpt(get_the_content(null,false,$id), '55');
+                        shorten(get_the_content(null,false,$id), '100');
                 ?>
             </p>
         </div>
-        <?php
+        <!-- <?php
             echo get_the_post_thumbnail( $id,'landscape_s' );
-        ?>
+        ?> -->
     </a>
 </div>
+

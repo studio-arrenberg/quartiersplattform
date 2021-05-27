@@ -20,21 +20,21 @@ if (mysqli_connect_errno()) {
         <div class="energie-ampel">
             <div class="energie-ampel-titles">
                 <div>
-                    <h2>Energie Ampel Fall Back </h2>
+                    <h2><?php _e('Energie Ampel ', 'quartiersplattform'); ?> </h2>
 
-                    <h3 class="green">grüne Phase</h3>
+                    <h3 class="green"><?php _e('grüne Phase', 'quartiersplattform'); ?></h3>
                 </div>
 
                 <div>
                     <h2>230g</h2>
-                    <h3>CO2 pro kWh</h3>
+                    <h3><?php _e(' CO2 pro kWh', 'quartiersplattform'); ?></h3>
                     
                 </div>
             </div>
 
             <div class="strom_array-container">
                 <div class="strom_array">
-                    <div class="red"><label class="day">Jetzt</label></div>
+                    <div class="red"><label class="day"><?php _e('Jetzt', 'quartiersplattform'); ?> </label></div>
                     <div class="green"><label>14:00</label></div>
                     <div class="red"></div>
                     <div class="red"></div>
@@ -58,7 +58,7 @@ if (mysqli_connect_errno()) {
                     <div class="green"><label>14:00</label></div>
                     <div class="green"></div>
                     <div class="green"></div>
-                    <div class="green "><label class="midnight">Donnerstag</label></div>
+                    <div class="green "><label class="midnight"><?php _e('Donnerstag', 'quartiersplattform'); ?> </label></div>
                     <div class="yellow"><label>01:00</label></div>
                     <div class="yellow"></div>
                     <div class="yellow"></div>
@@ -100,7 +100,7 @@ else {
     " );
 
     $phase_name = $wpdb_b->get_var( "
-        SELECT ampel_status.name FROM `Ampel` 
+        SELECT ampel_status.name_plural FROM `Ampel` 
         join ampel_status on Ampel.status = ampel_status.id
         WHERE `timestamp` = '".$now.":00'
         Limit 0,1
@@ -138,14 +138,13 @@ else {
         <div class="energie-ampel">
             <div class="energie-ampel-titles">
                 <div>
-                    <h2>Energie Ampel</h2>
-
-                    <h3 class="<?php echo $phase_color; ?>"><?php echo $phase_name; ?>e Phase</h3>
+                    <h2><?php _e('Energie Ampel', 'quartiersplattform'); ?> </h2>
+                    <h3 class="<?php echo $phase_color; ?>"><?php echo __($phase_name, 'quartiersplattform')." "; ?><?php _e('Phase', 'quartiersplattform'); ?></h3>
                 </div>
 
                 <div>
-                    <h2><?php echo $phase_gramm; ?>g</h2>
-                    <h3>CO2 pro kWh</h3>
+                    <h2><?php echo $phase_gramm." ".__('gramm', 'quartiersplattform'); ?></h2>
+                    <h3><?php echo "CO<sub>2</sub> ".__('pro kWh', 'quartiersplattform'); ?> </h3>
                 </div>
             </div>
 
@@ -153,17 +152,32 @@ else {
 
                 <div class="strom_array">
                     <?php
+                    // set locale
+                    if (is_user_logged_in()) {
+                        $lo = get_user_locale(get_current_user_id());
+                    }
+                    else {
+                        $lo = get_locale();
+                    }
+                    // set php locale
+                    setlocale(LC_TIME, $lo.".UTF8");
+                    // echo "<h3>".get_user_locale(get_current_user_id())." ".$lo."</h3>";
+                    // creat timeline
                     $timeline_r = mysqli_query($connection, $timeline) or die("could not perform query");
                     while($row = mysqli_fetch_assoc($timeline_r)) {
 
                         $c++;
                         $time = $row['time'];
+                        // echo $row['DATE'];
                         $label = "<label>".$time."</label>";
+                        // echo strftime('%A', $row['DATE']);
+
+                        // https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
 
                         if ($row['color'] == $color) $label = "";
-
-                        if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
-                        if ($c == 1) $label = "<label class='day'>Jetzt</label>";
+                        // if (wp_date('l', $row['DATE']) != wp_date('l', $date)) $label = "<label class='midnight'>".wp_date('l', $row['DATE'])."</label>";
+                        if (strftime('%A', $row['DATE']) != strftime('%A', $date)) $label = "<label class='midnight'>".strftime('%A', $row['DATE'])."</label>";
+                        if ($c == 1) $label = "<label class='day'>".__("Jetzt",'quartiersplattform')."</label>";
 
                         ?>
                             <div class="<?php echo $row['color']; ?>"><?php echo $label; ?></div>
@@ -183,6 +197,7 @@ else {
 if (empty($phase_color)) {
     $phase_color = 'green';
 }
+
 ?>
 
 
@@ -192,33 +207,49 @@ if (empty($phase_color)) {
 </div>
 
 
-<div class="card-container card-container__center">
-
-    <?php landscape_card(null, 'Wuppertal spart Watt','Hilf dabei Strom zu verlagern! ',get_template_directory_uri().'/assets/images/vppprojekt.jpg', '/wuppertal-spart-watt'); ?>
-
-</div>
-
-
 
 <script>
+
+    energieAmpel = false;   
+    
     function show() {
-        var element = document.getElementById("overlay");
-        element.classList.remove("hidden");
-        element.classList.add("visible");
+        // alert('state: ' + energieAmpel);
+        // show
+        if (energieAmpel == false) {
+        
+            var element = document.getElementById("overlay");
+            element.classList.remove("hidden");
+            element.classList.add("visible");
 
-        _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
+            // _paq.push(['trackEvent', 'Interaction', 'Energie Ampel', 'Overlay', '<?php echo get_page_template_slug(); ?>']);
 
-        var htmlElement = document.getElementsByTagName("html")[0];
-        htmlElement.classList.add("no-scroll");
+            var htmlElement = document.getElementsByTagName("html")[0];
+            htmlElement.classList.add("no-scroll");
+
+            document.querySelector("a.energie-ampel-button").classList.add('is-primary');
+
+            energieAmpel = true;
+        
+        }
+        // hide
+        else {
+            
+            hide();
+            
+        }
     }
 
-
     function hide() {
+        energieAmpel = false;
+
         var element = document.getElementById("overlay");
         element.classList.remove("visible");
         element.classList.add("hidden");
 
         var htmlElement = document.getElementsByTagName("html")[0];
         htmlElement.classList.remove("no-scroll");
+
+        document.body.style.overflowY = "scroll";
+        document.querySelector("a.energie-ampel-button").classList.remove('is-primary');
     }
 </script>

@@ -9,7 +9,7 @@
 ?>
 
 
-<div class="card landscape shadow gardient ">
+<div class="card landscape shadow gardient">
     
     <?php 
     if (get_query_var('link_card_link')) {
@@ -32,7 +32,7 @@
                         echo get_query_var('link_card_title');
                     }
                     else {
-                        shorten_title(get_the_title(), '60');
+                        shorten(get_the_title(), '60');
                     }
                 ?>
             </h3>
@@ -42,10 +42,10 @@
                         echo get_query_var('link_card_text');
                     }
                     else if (strlen(get_field('text')) > 2) {
-                        get_excerpt(get_field('text'), '55');
+                        shorten(get_field('text'), '55');
                     }
                     else {
-                        get_excerpt(get_the_content(), '55');
+                        shorten(get_the_content(), '55');
                     }
                 ?>
             </p>
@@ -53,11 +53,11 @@
         <?php
         if (get_query_var('link_card_bg')) {
             ?>
-            <img src="<?php echo get_query_var('link_card_bg'); ?>" alt="" />
+            <img src="<?php echo get_query_var('link_card_bg'); ?>" alt="test" />
             <?php
         }
         else {
-            the_post_thumbnail( 'landscape_s' );
+            the_post_thumbnail( 'landscape_m' );
         }
         ?>
     </a>

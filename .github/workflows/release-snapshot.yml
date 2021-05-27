@@ -6,13 +6,7 @@ name: Release Snapshot
 on: 
     release:
         types: [created]
-#on:
-#  push:
-    # Sequence of patterns matched against refs/tags
-#    tags:
-#    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
-#workflow_dispatch:
 jobs:
   
   screenshot:
@@ -22,7 +16,7 @@ jobs:
     strategy:
       matrix:
         # os: [ubuntu-latest, macos-latest, windows-latest]
-        page: ['',gemeinsam, projekte, veranstaltungen, frage-dein-quartier, anmelden, anmerkungen, nachrichten-archive, quartiersplattform, neues-modul-im-kreislauf, geschichten, register, projekt-erstellen]
+        page: ['', projekte, veranstaltungen, login, feedback, quartiersplattform, neues-modul-im-kreislauf, register, projekt-erstellen, farbreste-zu-verschenken-liebe, hallo-liebe-nachbarn-wisst-ihr-wo-man-hier-am, ich-brauche-meinen-reiskocher-nicht-und-wuerde, das-quartier, in-arbeit-2, projektverzeichnis, sdgs, impressum]
         # page: [gemeinsam]
         # width: [1200, 420]
         width: [420, 1200]
@@ -60,26 +54,16 @@ jobs:
         path: snapshots
         
     - name: Display structure of downloaded files $before$
-      run: ls -R
-      
-    - name: move artifacts
-      run: mv snapshots/*/*.jpeg snapshots/
-      
-    - name: delete folders  
-      run: rm -r snapshots/*/
-    
-    - run: mkdir -p snapshots/mobil
-    - run: mkdir -p snapshots/desktop
-    
-    - run: mv snapshots/*-1200.jpeg snapshots/desktop/
-    - run: mv snapshots/*-420.jpeg snapshots/mobil/
-    
-    - name: Display structure of downloaded files
-      run: ls -R
-
-    
-    - name: 'Tar files'
-      run: tar -cvf snapshots.tar snapshots
+      run: |
+        ls -R
+        mv snapshots/*/*.jpeg snapshots/
+        rm -r snapshots/*/
+        mkdir -p snapshots/mobil
+        mkdir -p snapshots/desktop
+        mv snapshots/*-1200.jpeg snapshots/desktop/
+        mv snapshots/*-420.jpeg snapshots/mobil/
+        ls -R
+        tar -cvf snapshots.tar snapshots
 
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
@@ -90,7 +74,6 @@ jobs:
     - name: Upload asset to release
       uses: gacts/upload-to-release@master
       env:
-        #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.RELEASESNAPSHOT }}
       with:
         file: './snapshots.tar'
