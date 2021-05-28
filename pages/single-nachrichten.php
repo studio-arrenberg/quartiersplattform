@@ -87,81 +87,48 @@ get_header();
             <?php } ?>
         </div>
 
-        <div class="small-projekt-card">
-            <?php 
+        <br>
 
-            pin_toggle();
+        <?php
 
-            visibility_toggle(get_the_ID(  ));
-            
-            // project is not public
-            if (get_post_status() == 'draft' && qp_project_owner()) {
-                reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
-            }
+        // anheften
+        pin_toggle(); 
 
-            get_template_part('components/general/share-post');
-            
-            project_card($post->ID);
-            
-            ?>
-        </div>
-        <?php author_card(); ?>
+        // sichtbarkeit
+        visibility_toggle(get_the_ID(  ));
 
-        
+        // project is not public
+        if (get_post_status() == 'draft' && qp_project_owner() ) {
+            reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+        }
 
-        <!-- Backend edit link -->
-        <?php qp_backend_edit_link(); ?>
+        get_template_part('components/general/share-post');
 
-        <!-- kommentare -->
-        <?php			
-            if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+        // Projekt Kachel
+        project_card($post->ID);
+
+        // Author
+        author_card();
+
+        // Map  Not ready jet
+        get_template_part('components/general/map-card'); 
+    
+        // Backend edit link
+         qp_backend_edit_link();
+
+
+        // Kommentare		
+        if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
         ?>
-
             <div class="comments-wrapper">
                 <?php comments_template('', true); ?>
             </div><!-- .comments-wrapper -->
-
-
-             <!-- kommentare -->
-        <?php			
-            }       
-        ?>
-    </div>
-
-    <div class="right-sidebar">
         <?php
-        // weitere Nachrichten
-		$args2 = array(
-			'post_type'=> array('nachrichten', 'veranstaltungen'), 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 6,
-            'order' => 'DESC',
-            'post__not_in' => array(get_the_ID()),
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'projekt',
-                    'field' => 'slug',
-                    'terms' => ".$the_slug."
-                )
-            )
-        );
-        
-        $my_query = new WP_Query($args2);
-        if ($my_query->post_count > 0) {
-        ?>
-            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
-            <br>
-        <?php
-            card_list($args2);
-        }
+        } # kommentare
 
-    ?>
-    <br>
-    </div>
+        }   # main loop 
 
-    <?php
-            }
-        }
+
         # Post löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && qp_project_owner()) {
 
@@ -198,8 +165,42 @@ get_header();
         }
     }
 }
-	?>
+        ?>  
+    </div>
 
+    <div class="right-sidebar">
+        <?php
+        // weitere Nachrichten
+		$args2 = array(
+			'post_type'=> array('nachrichten', 'veranstaltungen'), 
+			'post_status'=>'publish', 
+			'posts_per_page'=> 6,
+            'order' => 'DESC',
+            'post__not_in' => array(get_the_ID()),
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'projekt',
+                    'field' => 'slug',
+                    'terms' => ".$the_slug."
+                )
+            )
+        );
+        
+        $my_query = new WP_Query($args2);
+        if ($my_query->post_count > 0) {
+        ?>
+            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
+            <br>
+        <?php
+            card_list($args2);
+        }
+
+    ?>
+        </div>
+
+        </div>
+
+    </div>
 </main><!-- #site-content -->
 
 

@@ -8,7 +8,7 @@
 
     if (get_post_status() == 'publish') {
 ?>
-    <div class="share">
+    <div class="share small-margin">
         <h3><?php _e('Teilen', 'quartiersplattform'); ?>  </h3>
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
