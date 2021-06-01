@@ -1430,12 +1430,12 @@ function display_cookie_warning() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	if (strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false) {
-		// return false;
+	if (strpos($REQUEST_URI,'/impressum/') === true && strpos($REQUEST_URI,'/datenschutzerklaerung/') === true) {
+		return false;
 	}
 
 	if (is_user_logged_in()) {
-		// return false;
+		return false;
 	}
 
 	// if (isset($_COOKIE['visitor'])) {
@@ -1468,9 +1468,10 @@ function set_cookie_callback(){
 		}
 		// set guest cookie
 		$path = '/';
+		$path = parse_url(home_url(), PHP_URL_HOST);
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
-		setcookie('visitor', md5($counter), $expiry, '/');
+		setcookie('visitor', md5($counter), $expiry, $path);
 		// setcookie('visitor', md5(3456), 0, 5);
 		// setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 
@@ -3397,6 +3398,7 @@ add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
  */
 
 function quartiersplattform_detect_language() {
+	$expiry = strtotime('+1 year');
 	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
@@ -3407,8 +3409,8 @@ function quartiersplattform_detect_language() {
 			return $_GET['lang'];
 		}
 		else{  	
-			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
-			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], $expiry, 5));
+			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], $expiry, 5);
 		}	
 	}
 	else {
