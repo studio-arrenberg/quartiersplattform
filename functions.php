@@ -1431,7 +1431,7 @@ function display_cookie_warning() {
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
 	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
-		// get_template_part( 'components/cookie/cookie-alert' );
+		get_template_part( 'components/cookie/cookie-alert' );
 	}
 
 }
@@ -1462,7 +1462,8 @@ function set_cookie_callback(){
 		setcookie('visitor', md5($counter), $expiry, $path, $host);
 
 		return;
-    }  
+    }
+	return;  
 } 
 // add_action('init', 'set_user_cookie_inc_guest');
 add_action( 'wp_ajax_set_cookie', 'set_cookie_callback' );
