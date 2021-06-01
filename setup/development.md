@@ -28,6 +28,9 @@
 - [ ] acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 - [ ] Update note
 - [ ] Admin Settings
+- [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
+- [ ] Startseite Abstand der Inhalte
+- [ ] Cant login when login page is not set through UM...
 
 ## dokumentation
 - troubleshooting
@@ -35,18 +38,16 @@
 - user kann seine deiträge nicht sehen
   - check rolle => contributor / mitarbeiter
 
-## v1.7.3
-- [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
-- [ ] Startseite Abstand der Inhalte
-- [ ] Cant login when login page is not set through UM...
+## v1.7.3 🗓
 
-## v1.7.2
+
+## v1.7.2 🚀
 - Login Weiterleitung zu Projekten
 - Sicherheitslücke Anheften und Sichtbarkeit Toggle behoben
 - Startseite ohne Inhalte nicht scrollbar
 - Authoren Card Namensfehler behoben
 
-## v1.7
+## v1.7 🚀
 ### Features
 - Beiträge verbergen
 - Pinned Posts (Projekt & Quartier)
