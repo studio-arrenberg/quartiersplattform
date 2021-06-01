@@ -1430,9 +1430,20 @@ function display_cookie_warning() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
-		get_template_part( 'components/cookie/cookie-alert' );
+	if (strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false) {
+		return false;
 	}
+
+	if (is_user_logged_in()) {
+		return false;
+	}
+
+	if (isset($_COOKIE['visitor'])) {
+		return false;
+	}
+	// if (!isset($_COOKIE['visitor'])) {
+	get_template_part( 'components/cookie/cookie-alert' );
+	// }
 
 }
 
@@ -1459,7 +1470,9 @@ function set_cookie_callback(){
 		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
-		setcookie('visitor', md5($counter), $expiry, $path, $host);
+		// setcookie('visitor', md5($counter), $expiry, $path, $host);
+		setcookie('visitor', md5($counter), 0, 5);
+		// setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 
 		return;
     }
