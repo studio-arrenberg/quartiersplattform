@@ -1435,7 +1435,7 @@ function display_cookie_warning() {
 	}
 
 	if (is_user_logged_in()) {
-		return false;
+		// return false;
 	}
 
 	// if (isset($_COOKIE['visitor'])) {
