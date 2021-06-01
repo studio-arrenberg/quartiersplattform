@@ -18,7 +18,7 @@ $res = json_decode($resp, true);
 
     <div class="energie-ampel-titles">
         <div>
-            <h2><?php _e('Energie Ampel', 'quartiersplattform'); ?> </h2>
+            <h2><?php _e('Energie Ampel', 'quartiersplattform'); ?> <span>für Wuppertal</span></h2>
             <h3 class="<?php echo $res['current']['color']; ?>"><?php echo __($res['current']['label']['plural'], 'quartiersplattform')." "; ?><?php _e('Phase', 'quartiersplattform'); ?></h3>
         </div>
 
