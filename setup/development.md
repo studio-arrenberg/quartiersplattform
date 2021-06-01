@@ -160,6 +160,12 @@ reminder_card('warning'.$current_user->ID, 'Dein Profil ist unsichtbar','' );
 // without close button
 reminder_card('', 'Dein Profil ist unsichtbar','' );
 ```
+#### No Content Card
+Used as placeholder if there is no content displayed
+```php
+no_content_card($icon, $title, $text, $link_text = '', $link_url = '')
+```
+
 #### Visibility Toggle
 Toggle between `draft` and `pubish` for all post types.
 Can only be used in Loop
@@ -172,4 +178,68 @@ Pin Post or Pages on the Landing Page `pin_main` or Projekt Page `pin_project`
 Can only be used in Loop
 ```php
 pin_toggle($type = 'pin_project');
+```
+
+#### Visibility badge
+Post status of Project or Post, shown when invisible 
+Can only be used in Loop
+```php
+visibility_badge();
+```
+
+#### Project Owner
+Checks if User has privilages for Post or Project
+Can be used in if query
+```php
+qp_project_owner();
+```
+
+##### QP Permalink Parameter
+Creates Link to current page if added parameter. 
+```php
+qp_parameter_permalink($suffix);
+```
+
+#### QP Backend Link
+Creates Backend Link for admins
+```php
+qp_backend_edit_link();
+```
+
+#### Project Card
+Displays the Project of a Post as Card
+```php
+project_card($id, $type = "post") 
+```
+
+#### Count Query
+Counts the Query. Can be used in if query. `$amount` set threshold for *true*
+```php
+if (count_query($args, $amount))
+```
+
+
+## Actions
+
+### How to use
+```php 
+do_action('qp_menu_button'); // define location and slug
+
+add_action('qp_menu_button', 'energie_ampel_overlay', 10, 3); // add function to action with priority and variables 
+
+function energie_ampel_overlay() { // init function
+  // code ...
+}
+```
+
+#### QP filter for menu buttons 'qp_menu_button' 
+Used for buttons in the menu
+```php 
+do_action('qp_menu_button');
+```
+
+#### QP filter for overlays 'qp_overlays' 
+Used for Overlays
+```php 
+do_action('qp_overlays');
 ```

@@ -119,9 +119,11 @@ wp_maintenance_mode();
 
             <div class="push-right">
 
-                <a class="button header-button  energie-ampel-button" onclick="show()">
-                    <?php require get_template_directory() . '/assets/icons/ampelmann.svg'; ?>
-                </a>
+
+                <?php 
+                // QP filter for menu buttons 'qp_menu_button' 
+                do_action('qp_menu_button');
+                ?> 
 
                 <a class="button header-button button-has-icon <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
                     <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
@@ -200,16 +202,10 @@ wp_maintenance_mode();
 
 
 
-    <!-- energie ampel -->
-    <div id="overlay" class="overlay hidden">
+    <?php 
+    // QP filter for overlays 'qp_overlays' 
+    do_action('qp_overlays');
+    ?> 
 
-        <div class="overlay-content">
-            <button class="button  " onclick="hide()">
-            
-            <!-- <?php require get_template_directory() . '/assets/icons/person.svg'; ?> -->
-                <?php _e('Zurück', 'quartiersplattform'); ?></span>
-            </button>
-            <?php get_template_part('components/energie_ampel-menu'); ?>
-        </div>
 
-    </div>
+    
