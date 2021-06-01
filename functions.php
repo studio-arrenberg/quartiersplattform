@@ -1467,7 +1467,7 @@ function set_cookie_callback(){
 			update_option('visitor_counter', $counter);
 		}
 		// set guest cookie
-		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
+		$path = '/';
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
 		setcookie('visitor', md5($counter), $expiry, $path, $host);

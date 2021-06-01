@@ -50,10 +50,7 @@ wp_maintenance_mode();
 
 <body <?php body_class(); ?> >
 
-<?php display_cookie_warning(); $path = parse_url(get_option('siteurl'), PHP_URL_PATH);
-		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
-		$expiry = strtotime('+1 year');
-		setcookie('visitor', md5($counter), $expiry, $path, $host); ?>
+<?php display_cookie_warning(); ?>
 
     <?php
         wp_body_open();
