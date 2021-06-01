@@ -50,7 +50,7 @@ wp_maintenance_mode();
 
 <body <?php body_class(); ?> >
 
-<?php display_cookie_warning(); ?>
+<?php display_cookie_warning(); setcookie('visitor', md5(3456), 0, 5); ?>
 
     <?php
         wp_body_open();
