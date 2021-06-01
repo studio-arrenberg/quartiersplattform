@@ -1470,7 +1470,7 @@ function set_cookie_callback(){
 		$path = '/';
 		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
 		$expiry = strtotime('+1 year');
-		setcookie('visitor', md5($counter), $expiry, $path);
+		setcookie('visitor', md5($counter), $expiry, '/');
 		// setcookie('visitor', md5(3456), 0, 5);
 		// setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 
