@@ -1438,12 +1438,12 @@ function display_cookie_warning() {
 		return false;
 	}
 
-	if (isset($_COOKIE['visitor'])) {
-		return false;
-	}
-	// if (!isset($_COOKIE['visitor'])) {
-	get_template_part( 'components/cookie/cookie-alert' );
+	// if (isset($_COOKIE['visitor'])) {
+	// 	return false;
 	// }
+	if (!isset($_COOKIE['visitor'])) {
+	get_template_part( 'components/cookie/cookie-alert' );
+	}
 
 }
 
