@@ -1467,13 +1467,11 @@ function set_cookie_callback(){
 			update_option('visitor_counter', $counter);
 		}
 		// set guest cookie
-		$path = '/';
-		$path = parse_url(home_url(), PHP_URL_HOST);
-		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
-		$expiry = strtotime('+1 year');
+		// $path = '/';
+		// $path = parse_url(home_url(), PHP_URL_HOST);
+		// $host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		// $expiry = strtotime('+1 year');
 		setcookie('visitor', md5($counter), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-		// setcookie('visitor', md5(3456), 0, 5);
-		// setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
 
 		return;
     }
