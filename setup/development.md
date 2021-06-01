@@ -39,7 +39,8 @@
   - check rolle => contributor / mitarbeiter
 
 ## v1.7.3 🗓
-
+- QP WP Actions (Overlays, Menu Buttons)
+- Energie Ampel als Plugin
 
 ## v1.7.2 🚀
 - Login Weiterleitung zu Projekten
