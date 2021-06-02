@@ -82,7 +82,7 @@ wp_maintenance_mode();
                     <li id="menu-item-16" class="menu-item menu-item-type-post_type <?php if (is_page( 'Projekte' )) echo "current-menu-item"; ?> menu-item-object-page menu-item-16">
                         <a title="Projekte" href="<?php echo home_url( ).'/projekte/'; ?>"><?php _e('Projekte', 'quartiersplattform'); ?> </a>
                         <?php 
-                        if (is_page( 'Projekte' )) {
+                        if (is_page( 'Projekte' ) || get_post_type() == 'projekte') {
                             $update = true;
                         }
                         else {
