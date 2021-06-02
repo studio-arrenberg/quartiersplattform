@@ -116,7 +116,6 @@ get_header();
         // Backend edit link
          qp_backend_edit_link();
 
-
         // Kommentare		
         if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
         ?>
