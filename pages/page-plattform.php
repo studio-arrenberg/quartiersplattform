@@ -37,6 +37,10 @@ get_header();
     <?php 
     // Quartiersplattform Einstellungen
     if ( current_user_can('administrator') ) {
+
+        $text = __('Bearbeite die Einstellungen der Quartiersplattform. Den Seitennamen, Bild und Text','quartiersplattform');
+		reminder_card('settings', __('Einstellungen','quartiersplattform'), $text, __('Einstellungen','quartiersplattform'), home_url().'/einstellungen' );
+	
         ?>
             <a href="<?php echo home_url().'/einstellungen'; ?>" class="button">Quartierseinstellungen</a>
         <?php
