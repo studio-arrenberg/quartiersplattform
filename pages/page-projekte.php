@@ -27,9 +27,8 @@ get_header();
 
 		<?php
 		
+		// !!! function to list all projects for user (save 30 lines ;))
 		$array = [];
-
-		
 		// get published posts
 		$args_public = array(
 			'post_type' => 'projekte',

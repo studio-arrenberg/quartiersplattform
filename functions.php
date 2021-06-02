@@ -1017,6 +1017,14 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Projekte';
 		$page_template= get_stylesheet_directory() . '/pages/projekt-feed.php';
 	}
+	else if ($post->post_title == "Quartiersplattform") {
+		$post_states[] = $prefix.'Quartiersplattform';
+		$page_template= get_stylesheet_directory() . '/pages/page-plattform.php';
+	}
+	else if ($post->post_title == "Einstellungen") {
+		$post_states[] = $prefix.'Einstellungen';
+		$page_template= get_stylesheet_directory() . '/pages/page-einstellungen.php';
+	}
 	else if ($post->post_title == "Veranstaltungen") {
 		$post_states[] = $prefix.'Veranstaltungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
