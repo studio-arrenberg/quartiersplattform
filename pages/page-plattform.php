@@ -38,6 +38,29 @@ get_header();
     // Quartiersplattform Einstellungen
     if ( current_user_can('administrator') ) {
 
+        // warning if update available
+        // get data (latest version from api)
+        $url = "http://api.quartiersplattform.org";
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+
+        //for debug only!
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+        // var_dump($resp);
+        $res = json_decode($resp, true);
+        // display warning
+        // echo $res['general']['latest_version']['version']." - ".wp_get_theme()->version;
+        if (!empty($res['general']['latest_version']['version']) && $res['general']['latest_version']['version'] != wp_get_theme()->version) {
+            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quaartiersplattform und bringe neue features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben unter ','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
+        }
+
         $text = __('Bearbeite die Einstellungen der Quartiersplattform. Den Seitennamen, Bild und Text','quartiersplattform');
 		reminder_card('settings', __('Einstellungen','quartiersplattform'), $text, __('Einstellungen','quartiersplattform'), home_url().'/einstellungen' );
 	
