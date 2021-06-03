@@ -9,14 +9,6 @@ get_header();
 ?>
 
 
-
-
-
-
-
-
-
-
 <?php
 
 if (has_post_thumbnail()) {

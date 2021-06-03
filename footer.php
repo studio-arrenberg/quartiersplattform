@@ -23,43 +23,45 @@
 
 </div>
 
+<?php if ( is_front_page() || cms_is_in_menu( 'qp_menu') ) { ?>
+
+<div class="sponsoren">
+    <?php if( have_rows('sponsors', 'option') ): ?>    
+
+        <?php while( have_rows('sponsors', 'option') ): the_row();  
+            $image = get_sub_field('field_6024f5b43157e');
+            $link = get_sub_field('field_6036469e6db06');
+        ?>
+            <div class="shadow sponsor">
+
+                <?php
+                if(  !empty( $link ) ){
+                ?> 
+                    <a href="<?php echo $link; ?>">
+                <?php } ?>
+
+                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+            
+                <?php if( !empty( $link ) ){ ?> 
+                    </a>
+                <?php } ?>
+            </div>
+
+        <?php endwhile; ?>
+    <?php endif; ?>
+</div>
+
+<?php } ?>
+
+
 
 <footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
     <div class="site-footer-content">
-        <?php if ( is_front_page() || cms_is_in_menu( 'qp_menu') ) { ?>
-
-        <div class="sponsoren">
-            <?php if( have_rows('sponsors', 'option') ): ?>    
-
-                <?php while( have_rows('sponsors', 'option') ): the_row();  
-                    $image = get_sub_field('field_6024f5b43157e');
-                    $link = get_sub_field('field_6036469e6db06');
-                ?>
-                    <div class="shadow sponsor">
-
-                        <?php
-                        if(  !empty( $link ) ){
-                        ?> 
-                            <a href="<?php echo $link; ?>">
-                        <?php } ?>
-
-                        <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
-                    
-                        <?php if( !empty( $link ) ){ ?> 
-                            </a>
-                        <?php } ?>
-                    </div>
-
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </div>
-
-    <?php } ?>
-
+        
     <div class="footer">
   
         <div>
-            <h4 class="heading-size-3">Die Plattform für dein Viertel!</p>
+            <h4 class="heading-size-3">Die Plattform für dein Quartier!</p>
         </div>
 
         <div>
@@ -72,12 +74,29 @@
 
         <div>
             <h4 class="heading-size-3"><?php _e('Die Quartiersplattform', 'quartiersplattform'); ?></h4>
-            <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"> Die Quartiersplattform <?php _e('Englisch', 'quartiersplattform'); ?> </a>
-            <a class="footer-link " href="<?php echo  get_site_url(); ?>/impressum/"> Hilfe & FAQ <?php _e('Englisch', 'quartiersplattform'); ?> </a>
+               <?php if (current_user_can('administrator')) {?>
+                <a class="footer-link " href="<?php echo  get_site_url(); ?>/einstellungen/"><?php _e('Einstellungen', 'quartiersplattform'); ?> ⚙️ </a>
+                <a class="footer-link " href="<?php echo  get_site_url(); ?>/einstellungen/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
+
+    <?php } ?>
+            <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>
+            <a class="footer-link " href="<?php echo  get_site_url(); ?>/impressum/"><?php _e('Hilfe & FAQ', 'quartiersplattform'); ?> </a>
+            
+         
+        
         </div>
 
         <div>
-            <h4 class="heading-size-3">Jetzt registrieren</p>
+ 
+        <?php if (!is_user_logged_in()) {?>
+
+            <a class="heading-size-3 " href="<?php echo  get_site_url(); ?>/login/" ><?php _e('Jetzt registrieren', 'quartiersplattform'); ?></a>
+            <?php } ?>       
+
+            <?php if (is_user_logged_in()) {?>
+                <a class="heading-size-3 " href="<?php echo  get_site_url(); ?>/feedback/" ><?php _e('Feedback zur Quartiersplattform', 'quartiersplattform'); ?></a>
+           <?php } ?>       
+        
         </div>
     </div>
 
@@ -108,9 +127,9 @@
                 }
             ?>
             <a class="button <?php if($sprache == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🏴󠁧󠁢󠁥󠁮󠁧󠁿  <?php _e('Englisch', 'quartiersplattform'); ?></a>
-            <a class="button <?php if($sprache == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷  <?php _e('Türkisch', 'quartiersplattform'); ?> </a>
-            <a class="button <?php if($sprache == "it_IT") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=it_IT'); ?>">🇮🇹  <?php _e('Italienisch', 'quartiersplattform'); ?> </a>
-            <a class="button <?php if($sprache == "de_DE") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=de_DE'); ?>">🇩🇪  <?php _e('Deutsch', 'quartiersplattform'); ?> </a>
+            <a class="button <?php if($sprache == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷  <?php _e('Türkisch', 'quartiersplattform'); ?></a>
+            <a class="button <?php if($sprache == "it_IT") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=it_IT'); ?>">🇮🇹  <?php _e('Italienisch', 'quartiersplattform'); ?></a>
+            <a class="button <?php if($sprache == "de_DE") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=de_DE'); ?>">🇩🇪  <?php _e('Deutsch', 'quartiersplattform'); ?></a>
         </div>
 
         

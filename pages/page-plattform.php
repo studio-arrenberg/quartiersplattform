@@ -18,19 +18,18 @@ get_header();
 
 ?>
 
-<main class="quartier" role="main" data-track-content>
-
-    <br><br><br><br><br><br><br><br>
+<main id="site-content" class="template-left" role="main">
+    
     <!-- heading -->
-    <h1 class="heading-size-1"><?php echo __('Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></h1>
-    <p><?php _e('Allegemine Informationen zur Quartiersplattform', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
+    <h1 class="heading-size-1"><?php echo __('Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?> <span class="highlight"> <?php echo "v".wp_get_theme()->version; ?> </span>
+</h1>
+    <p class="text-size-1 margin-bottom"><?php _e('Allegemeine Informationen zu deiner Quartiersplattform', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
 
     <!-- general information -->
     <!-- qp version -->
     <?php 
     $wordpress_version = get_bloginfo( 'version' );
-    echo "<p>$wordpress_version</p>";
-    echo "<p>".wp_get_theme()->version."</p>";
+    echo "<p>Wordpress Version: $wordpress_version</p>";
     ?>
     <br><br>
 
@@ -62,6 +61,8 @@ get_header();
         <?php
     }
     ?>
+    <br><br>    <br><br>
+
 
     <!-- update reminder -->
     <!-- not ready yet -->
@@ -69,7 +70,7 @@ get_header();
 
     <!-- admins -->
     <h2 class="heading-size-1"><?php echo __('Admins der Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></h2>
-    <p><?php _e('Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p>
+    <p><?php _e('Die Quartiersplattform wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p>
 
     <?php 
     $user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
@@ -94,7 +95,7 @@ get_header();
     
     <!-- installed plugins -->
     <h2 class="heading-size-1"><?php echo __('Installierte Plugins','quartiersplattform'); ?></h2>
-    <p><?php _e('Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p>
+    <!-- <p><?php _e('Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p> -->
 
     <?php
 
@@ -111,11 +112,11 @@ get_header();
         $description = str_replace(array('<code>', '</code>'), '', $value['Description']) ;
         ?>
 
-        <div>
+        <div class="margin-bottom">
             <h3><?php echo $value['Name']; ?></h3>
             <p><?php echo $description; ?></p>
             <span><?php echo $value['Version']; ?></span>
-            <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span>
+            <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span><br>
         </div>
 
         <?php 
@@ -123,6 +124,7 @@ get_header();
 
 
     ?>
+    <br><br>
 
     <!-- features -->
     <!-- not ready yet -->

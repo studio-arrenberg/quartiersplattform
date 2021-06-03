@@ -415,11 +415,12 @@ hr {
 
 a {
   color: #0091FF;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:hover,
 a:focus {
+  color: #003054;
   text-decoration: none;
 }
 
@@ -987,7 +988,9 @@ input[type="submit"]:focus{
   .pagination .next,
   .pagination .prev,
   .wp-block-file .wp-block-file__button,
-  .wp-block-button__link, 
+  .wp-block-button__link,
+  input[type="submit"], 
+  input[type="submit" i]
   input {
     padding: 5px 15px;
     min-height: 45px;
@@ -1349,6 +1352,10 @@ th {
   padding-right: 0px;
 }
 
+#site-content.template-left > *{
+  max-width: 800px;
+  margin-left: 0px;
+}
 /*  BLURRY HEADER */
 
   @supports (
@@ -3462,14 +3469,13 @@ font-weight: 700;
 
 #site-footer {
   margin: 20px auto 0px auto;
-  padding: 20px 15px 20px 15px;
+  padding: 30px 15px 20px 15px;
   background-color: #FFFFFF;
   border-top: 1px solid #dcf0ff;
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
 .site-footer-content{
-  padding: 5px 10px 5px 10px;
   margin: 0 auto;
   max-width: 1440px;
 }
@@ -3491,22 +3497,26 @@ font-weight: 700;
   --gap: 10px;
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0px 40px 0px;
-  width: calc(100% + var(--gap));
+  justify-content: stretch;
+  margin: 20px 0px 40px calc( -1 * var(--gap));
+  width: calc( 100% + var(--gap));
+  max-width: 1440px;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex-flow: wrap;
 }
 
 .sponsor{
   margin: var(--gap) 0 0 var(--gap);
-  height: 70px;
+  height: 55px;
+  padding: 5px 10px;
   background: #fff;
-  min-width: 150px;  
-  max-width: 345px;
-  border-radius: 20px;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  flex-grow: 1;
+  }
 
 .sponsor a{
   height: 100%;
@@ -3517,12 +3527,11 @@ font-weight: 700;
 }
 
 .sponsoren-logo{
-  height: 50px;
+  height: 25px;
 }
 
-.footer{
-  display: flex;
-  justify-content: space-between;
+.footer > div {
+  margin-bottom: 20px;
 }
 
 .footer .footer-link {
@@ -3531,7 +3540,7 @@ font-weight: 700;
 }
 
 .footer-link {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 500;
   color: #2F353E;
   text-decoration: none;
@@ -3546,14 +3555,61 @@ font-weight: 700;
 .final-footer{
   margin-top: 50px;
   display: flex;
+  flex-direction: column-reverse;
 }
 
 .sprache{
   margin-left: auto;
 }
 
+.sprache > * {
+  margin-bottom: 5px;
+}
+
 @media (min-width: 782px) {
+  #site-footer{
+    padding-top: 50px;
+    margin-top: 100px;
+  }
+  .footer{
+    display: flex;
+    justify-content: space-between;
+  }
+  .sponsoren{
+    display: flex;
+  }
+  .sponsor {
+    height: 70px;
+    border-radius: 20px;
+
+  }
+  .sponsoren-logo{
+    height: 35px;
+  }
+
+  .final-footer{
+    flex-direction: row;
+  }
+  .footer-link{
+    font-size: 1.6rem;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  .sponsoren{
+    padding: 0px;
+    margin: 20px auto 40px;
+    width: 100%;
+  }
+
+  .sponsor:first-of-type {
+    margin-left: 0px;
+  }
+ 
   
+  
+
 }
 /* -------------------------------------------------------------------------- */
 
@@ -5688,7 +5744,51 @@ font-weight: 700;
 
 
 
+/* Sponsoren field acf */
 
+
+
+.acf-field[data-name = "sponsors"] .acf-image-uploader{
+  min-height: 100px;
+
+}
+
+
+
+.acf-field[data-name = "sponsors"] .acf-image-uploader img{
+  max-height: 100px !important;
+
+}
+
+
+
+.acf-field[data-name = "sponsors"] .acf-table thead{
+  display: table-header-group;
+  font-size: 1.8rem;
+  text-align: center;
+  padding-top: 25px;
+  font-weight: 700 !important;
+
+}
+
+
+.acf-field[data-name = "sponsors"] .acf-table th{
+
+  padding-top: 15px !important;
+  font-weight: 700 !important;
+
+}
+
+.acf-field[data-name = "sponsors"] .acf-row-handle{
+  display: none;
+  
+}
+
+
+.acf-field[data-name = "sponsors"] .acf-field-url {
+ padding-left: 15px;
+  
+}
 
 
 
@@ -5708,7 +5808,7 @@ font-weight: 700;
   margin-top: 25px;
 }
 
-.publish-form .acf-field {
+.acf-field {
   margin-bottom: 20px;
 }
 
@@ -6105,7 +6205,6 @@ padding: 5px 0px;
 
 }
 
-
  .acf-image-uploader{
    margin: 15px 0px;
    padding: 20px;
@@ -6133,6 +6232,10 @@ padding: 5px 0px;
   }
 }
 
+/* .hide-if-value p{
+  display: none;
+}
+ */
 
 .acf-image-uploader input {
   color: transparent;

@@ -75,6 +75,25 @@ if( function_exists('acf_add_local_field_group') ):
 		'title' => __('Quartierseinstellungen',"quartiersplattform"),
 		'fields' => array(
 			array(
+				'key' => 'field_6024ebe66b644',
+				'label' => __('Name',"quartiersplattform"),
+				'name' => 'quartiersplattform-name',
+				'type' => 'text',
+				'instructions' => __('Hier kannst du den Namen festlegen, welcher den Besuchern der Quartiersplattform angezeigt wird und im Menü angezeigt wird.',"quartiersplattform"),
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => 'Quartier',
+				'placeholder' => __('Name der Quartiersplattform',"quartiersplattform"),
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '16',
+			),
+			array(
 				'key' => 'field_6023eb94d4c72',
 				'label' => __('Logo', "quartiersplattform"),
 				'name' => 'logo',
@@ -98,25 +117,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'max_size' => '',
 				'mime_types' => '',
 			),
-			array(
-				'key' => 'field_6024ebe66b644',
-				'label' => __('Name',"quartiersplattform"),
-				'name' => 'quartiersplattform-name',
-				'type' => 'text',
-				'instructions' => __('Hier kannst du den Namen festlegen, welcher den Besuchern der Quartiersplattform angezeigt wird und im Menü angezeigt wird.',"quartiersplattform"),
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'default_value' => 'Quartier',
-				'placeholder' => __('Name der Quartiersplattform',"quartiersplattform"),
-				'prepend' => '',
-				'append' => '',
-				'maxlength' => '16',
-			),
+			// Hier trennen und zwei formulare draus machen ( Headline: Startseite anpassen)
 			array(
 				'key' => 'field_609021bb178d8',
 				'label' => __('Bild für die Quartiersstartseite','quartiersplattform'),

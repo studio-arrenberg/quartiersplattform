@@ -40,7 +40,7 @@ get_header();
 
     <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
         <section>
-            <?php reminder_card('no_quartiers_info', __('Bild und Text für die Startseite festlegen','quartiersplattform'), __('In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.','quartiersplattform'), __('Zu den Einstellungen','quartiersplattform'),home_url().'/wp-admin/admin.php?page=theme-general-settings'); ?>
+            <?php reminder_card('no_quartiers_info', __('Bild und Text für die Startseite festlegen','quartiersplattform'), __('In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.','quartiersplattform'), __('Zu den Einstellungen','quartiersplattform'),home_url().'/einstellungen'); ?>
         </section>
     <?php } ?>
 
@@ -165,6 +165,10 @@ get_header();
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
 		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
 	?>
+
+<?php if (current_user_can('administrator')) {?>
+            <?php $text = __('Allgemeine und öffentliche Informationen zu der Quartiersplattform.','quartiersplattform'); reminder_card('qp_info', __('Informationen zu deiner Quartiersplattform','quartiersplattform'), $text, __('Informationen','quartiersplattform'), home_url().'/quartiersplattform' );?>
+    <?php } ?>
 
 
 </main><!-- #site-content -->
