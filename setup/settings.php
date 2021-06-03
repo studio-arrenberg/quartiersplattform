@@ -119,10 +119,10 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_609021bb178d8',
-				'label' => 'Bild für die Quartiersstartseite',
+				'label' => __('Bild für die Quartiersstartseite','quartiersplattform'),
 				'name' => 'quartier_image',
 				'type' => 'image',
-				'instructions' => 'Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet wird.',
+				'instructions' => __('Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet wird.','quartiersplattform'),
 				'required' => 0,
 				'conditional_logic' => 0,
 				'wrapper' => array(
@@ -319,7 +319,7 @@ if( function_exists('acf_add_local_field_group') ):
     
 	acf_add_local_field_group(array(
 			'key' => 'group_60241960f114c',
-			'title' => _x('Wartungsmodus',"quartiersplattform"),
+			'title' => __('Wartungsmodus',"quartiersplattform"),
 			'fields' => array(
 				array(
 					'key' => 'field_6024196b56d53',
