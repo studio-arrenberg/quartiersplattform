@@ -1017,6 +1017,14 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Projekte';
 		$page_template= get_stylesheet_directory() . '/pages/projekt-feed.php';
 	}
+	else if ($post->post_title == "Quartiersplattform") {
+		$post_states[] = $prefix.'Quartiersplattform';
+		$page_template= get_stylesheet_directory() . '/pages/page-plattform.php';
+	}
+	else if ($post->post_title == "Einstellungen") {
+		$post_states[] = $prefix.'Einstellungen';
+		$page_template= get_stylesheet_directory() . '/pages/page-einstellungen.php';
+	}
 	else if ($post->post_title == "Veranstaltungen") {
 		$post_states[] = $prefix.'Veranstaltungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
@@ -1430,8 +1438,19 @@ function display_cookie_warning() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
-		// get_template_part( 'components/cookie/cookie-alert' );
+	if (strpos($REQUEST_URI,'/impressum/') === true && strpos($REQUEST_URI,'/datenschutzerklaerung/') === true) {
+		return false;
+	}
+
+	if (is_user_logged_in()) {
+		return false;
+	}
+
+	// if (isset($_COOKIE['visitor'])) {
+	// 	return false;
+	// }
+	if (!isset($_COOKIE['visitor'])) {
+		get_template_part( 'components/cookie/cookie-alert' );
 	}
 
 }
@@ -1456,13 +1475,15 @@ function set_cookie_callback(){
 			update_option('visitor_counter', $counter);
 		}
 		// set guest cookie
-		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
-		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
-		$expiry = strtotime('+1 year');
-		setcookie('visitor', md5($counter), $expiry, $path, $host);
+		// $path = '/';
+		// $path = parse_url(home_url(), PHP_URL_HOST);
+		// $host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		// $expiry = strtotime('+1 year');
+		setcookie('visitor', md5($counter), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 
 		return;
-    }  
+    }
+	return;  
 } 
 // add_action('init', 'set_user_cookie_inc_guest');
 add_action( 'wp_ajax_set_cookie', 'set_cookie_callback' );
@@ -3472,14 +3493,38 @@ function quartiersplattform_translate_theme() {
 add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
 
 /**
+ * QP detect browser language
+ * 
+ * @since Quartiersplattform 1.7
+ * 
+ * @return browser language
+ */
+function qp_detect_browser_language() {
+	$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+	if(stripos($browser_language, "de") !== false ){
+		return "de_DE";
+	}elseif(stripos($browser_language, "it") !== false ){
+		return "it_IT";
+	}elseif(stripos($browser_language, "tr") !== false ){
+		return "tr_TR";
+	}elseif(stripos($browser_language, "en") !== false ){
+		return "en_GB";
+	}
+	else{
+		return "de_DE";
+	}
+}
+
+/**
  * QP switch language
  * 
  * @since Quartiersplattform 1.7
  * 
- * 
+ * @return language string
  */
 
 function quartiersplattform_detect_language() {
+	$expiry = strtotime('+1 year');
 	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
@@ -3487,37 +3532,26 @@ function quartiersplattform_detect_language() {
 				setcookie('language',  $_GET['lang']);
 				// return $_GET['lang'];
 			}
+			return $_COOKIE['language'];
+		}else{  	
+			
+			setcookie('language', qp_detect_browser_language());
+			return qp_detect_browser_language();
+		}	
+	}else{
+		// check user locale setting
+		if(!empty($_GET['lang'])){
+			setcookie('language',  $_GET['lang']);
+			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
 			return $_GET['lang'];
-		}
-		else{  	
-			setcookie('language', substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5));
-			return substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+		}else{
+			$lang = get_user_meta($current_user->ID, 'user_lang');
+			return $lang;
 		}	
 	}
-	else {
-		// // debugToConsole("get user ID");
-		// // check user locale setting
-		// if(!empty($_GET['lang'])){
-		// 	setcookie('language',  $_GET['lang']);
-		// 	update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
-		// 	return $_GET['lang'];
-		// }
-		// else {
-		// 	$user = wp_get_current_user();
-		// 	echo $user->roles[0];
-		// 	// debugToConsole("user locale: ".get_user_locale( $user->roles[0] ));
-		// 	debugToConsole("user locale: ".get_locale());
-			
-		// 	// return get_user_locale( $user->roles[0] );
-		// }	
-	}
-	
-	
 	// // update user locale
 	
 	// return $user_language;
-	
-
 }
 // add_filter( 'locale', 'quartiersplattform_detect_language' );
 
@@ -3535,34 +3569,8 @@ function visibility_badge() {
 }
 
 
-// add_filter('acf/fields/taxonomy', 'my_acf_fields_taxonomy_result', 10, 4);
-// function my_acf_fields_taxonomy_result( $text, $term, $field, $post_id ) {
-//     $text .= ' (' . $term->slug .  ')';
-//     return $text."!";
-// }
 
-// add_filter('acf/fields/taxonomy/wp_list_categories', 'my_acf_fields_taxonomy_query', 10, 2);
-// function my_acf_fields_taxonomy_query( $args, $field ) {
 
-//     // Order by most used.
-//     $args['orderby'] = 'count';
-//     $args['order'] = 'DESC';
-
-//     return $args;
-
-// 	$field = $field."hi";
-
-// 	return $field;
-// }
-
-// add_filter('acf/fields/relationship/result', 'my_acf_fields_relationship_result', 10, 4);
-// function my_acf_fields_relationship_result( $text, $post, $field, $post_id ) {
-//     $page_views = get_field( 'page_views', $post->ID );
-//     if( $page_views ) {
-//         $text .= ' ' . sprintf( '(%s views)', $page_views );
-//     }
-//     return $text;
-// }
 
 /**
  * 

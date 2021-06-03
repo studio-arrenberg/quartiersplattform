@@ -69,35 +69,6 @@ _paq.push(['trackVisibleContentImpressions']);
 * List Card
 * Footer
 
-## Git Commands
-#### Get Rid of all untracked changes
-```bash
-git stash
-```
-
-#### Update public branch from master
-```s
-git fetch
-git checkout public
-git reset --hard main
-```
-
-#### Go back in timelin
-```bash
-git fetch
-git reset --hard *hash*
-git push --force
-```
-
-#### Trash commits ahead
-```bash
-git push --force
-```
-
-#### Checkout any commit
-```bash
-git checkout <commit-id> . 
-```
 
 ## Recources 
 - [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)

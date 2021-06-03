@@ -96,4 +96,13 @@ __("Bild auswählen",'quartiersplattform');
 __("grüne",'quartiersplattform');
 __("rote auswählen",'quartiersplattform');
 __("gelbe auswählen",'quartiersplattform');
+
+//Wochentage
+__("Montag",'quartiersplattform');
+__("Dienstag",'quartiersplattform');
+__("Mittwoch",'quartiersplattform');
+__("Donnerstag",'quartiersplattform');
+__("Freitag",'quartiersplattform');
+__("Samstag",'quartiersplattform');
+__("Sonntag",'quartiersplattform');
 ?>
