@@ -97,7 +97,7 @@ __("grüne",'quartiersplattform');
 __("rote auswählen",'quartiersplattform');
 __("gelbe auswählen",'quartiersplattform');
 
-//Wochentage
+//Wochentage (Energie Wetter)
 __("Montag",'quartiersplattform');
 __("Dienstag",'quartiersplattform');
 __("Mittwoch",'quartiersplattform');
@@ -105,4 +105,27 @@ __("Donnerstag",'quartiersplattform');
 __("Freitag",'quartiersplattform');
 __("Samstag",'quartiersplattform');
 __("Sonntag",'quartiersplattform');
+
+//Wochentage (date function)
+__("Montag",'quartiersplattform');
+__("Dienstag",'quartiersplattform');
+__("Mittwoch",'quartiersplattform');
+__("Donnerstag",'quartiersplattform');
+__("Freitag",'quartiersplattform');
+__("Samstag",'quartiersplattform');
+__("Sonntag",'quartiersplattform');
+
+//Monate (date function)
+__("January",'quartiersplattform');
+__("February",'quartiersplattform');
+__("March",'quartiersplattform');
+__("April",'quartiersplattform');
+__("May",'quartiersplattform');
+__("June",'quartiersplattform');
+__("July",'quartiersplattform');
+__("August",'quartiersplattform');
+__("September",'quartiersplattform');
+__("October",'quartiersplattform');
+__("November",'quartiersplattform');
+__("December",'quartiersplattform');
 ?>
