@@ -2550,13 +2550,15 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	else if (date("Y") != date("Y", $date) ) {
 		// $string = wp_date('j. F Y', $date);
 		// $string = date_i18n('j. F Y', $date);
-		$string = strftime('%e %b %Y', $date);
+		// $string = strftime('%e %b %Y', $date);
+		$string = strftime('%e', $date)." ".__(strftime('%B', $date))." ".strftime('%Y', $date);
 	}
 	// default (just date)
 	else {
 		// $string = wp_date('j. F', $date);
 		// $string = date_i18n('j. F', $date, true);
-		$string = strftime('%e %b', $date);
+		// $string = strftime('%e %b', $date);
+		$string = strftime('%e', $date)." ".__(strftime('%B', $date));
 	}
 
 	if ($detail) {
