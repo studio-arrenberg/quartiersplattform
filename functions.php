@@ -1017,6 +1017,14 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Projekte';
 		$page_template= get_stylesheet_directory() . '/pages/projekt-feed.php';
 	}
+	else if ($post->post_title == "Quartiersplattform") {
+		$post_states[] = $prefix.'Quartiersplattform';
+		$page_template= get_stylesheet_directory() . '/pages/page-plattform.php';
+	}
+	else if ($post->post_title == "Einstellungen") {
+		$post_states[] = $prefix.'Einstellungen';
+		$page_template= get_stylesheet_directory() . '/pages/page-einstellungen.php';
+	}
 	else if ($post->post_title == "Veranstaltungen") {
 		$post_states[] = $prefix.'Veranstaltungen';
 		$page_template= get_stylesheet_directory() . '/pages/page-veranstaltungen.php';
@@ -1430,8 +1438,19 @@ function display_cookie_warning() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	if (!isset($_COOKIE['visitor']) && !is_user_logged_in() && ( strpos($REQUEST_URI,'/impressum/') === false && strpos($REQUEST_URI,'/datenschutzerklaerung/') === false ) ) {
-		// get_template_part( 'components/cookie/cookie-alert' );
+	if (strpos($REQUEST_URI,'/impressum/') === true && strpos($REQUEST_URI,'/datenschutzerklaerung/') === true) {
+		return false;
+	}
+
+	if (is_user_logged_in()) {
+		return false;
+	}
+
+	// if (isset($_COOKIE['visitor'])) {
+	// 	return false;
+	// }
+	if (!isset($_COOKIE['visitor'])) {
+		get_template_part( 'components/cookie/cookie-alert' );
 	}
 
 }
@@ -1456,13 +1475,15 @@ function set_cookie_callback(){
 			update_option('visitor_counter', $counter);
 		}
 		// set guest cookie
-		$path = parse_url(get_option('siteurl'), PHP_URL_PATH);
-		$host = parse_url(get_option('siteurl'), PHP_URL_HOST);
-		$expiry = strtotime('+1 year');
-		setcookie('visitor', md5($counter), $expiry, $path, $host);
+		// $path = '/';
+		// $path = parse_url(home_url(), PHP_URL_HOST);
+		// $host = parse_url(get_option('siteurl'), PHP_URL_HOST);
+		// $expiry = strtotime('+1 year');
+		setcookie('visitor', md5($counter), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 
 		return;
-    }  
+    }
+	return;  
 } 
 // add_action('init', 'set_user_cookie_inc_guest');
 add_action( 'wp_ajax_set_cookie', 'set_cookie_callback' );
@@ -3406,6 +3427,7 @@ function qp_detect_browser_language() {
  */
 
 function quartiersplattform_detect_language() {
+	$expiry = strtotime('+1 year');
 	global $user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
@@ -3434,7 +3456,7 @@ function quartiersplattform_detect_language() {
 	
 	// return $user_language;
 }
-add_filter( 'locale', 'quartiersplattform_detect_language' );
+// add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * QP visibility badge
@@ -3448,6 +3470,7 @@ function visibility_badge() {
 		echo '<span class="visibilty-warning-'.get_the_ID(  ).' yellow-tag">.'.__('Nicht Sichtbar', 'quartiersplattform').'</span>';
 	}
 }
+
 
 
 
