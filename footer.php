@@ -107,7 +107,7 @@
             <?php
                 if (get_privacy_policy_url()) {
                     ?> 
-                <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>"><?php _e('Datenschutzerklärung', 'quartiersplattform'); ?> </a>
+                <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>"><?php _e('Datenschutz', 'quartiersplattform'); ?> </a>
                     <?php
                 } 
             ?>

@@ -912,12 +912,13 @@ button a {
   border-radius: 15px;
 }
 
-.button-is-transparent{
+.is-transparent{
   background: transparent;
+  box-shadow:none;
 }
 
-.button-is-transparent:hover,
-.button-is-transparent:focus{
+.is-transparent:hover,
+.is-transparent:focus{
   background: #fff;
   color: #0091FF;
 }
@@ -1475,6 +1476,10 @@ th {
 
 .overlay .energie-ampel{
   margin-top: 60px;
+}
+
+ .cookie-alert .reminder{
+  margin-top: 50px;
 }
 
 @media (min-width: 782px ) {
@@ -2161,8 +2166,8 @@ th {
   }
 
   .card-stack .card{
-    width: calc( 50vw - 35px);
-    height: calc( 50vw - 35px);
+    width: calc( 50vw - 8.25vw );
+  height: calc( 50vw - 8.25vw);
     margin-left: -25vw;
   }
 }
@@ -3540,7 +3545,7 @@ font-weight: 700;
 }
 
 .footer-link {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #2F353E;
   text-decoration: none;
@@ -3590,9 +3595,9 @@ font-weight: 700;
   .final-footer{
     flex-direction: row;
   }
-  .footer-link{
+  /* .footer-link{
     font-size: 1.6rem;
-  }
+  } */
 
 }
 
@@ -4580,10 +4585,6 @@ left: 5px;
   justify-content: flex-end;
 }
 
-/* .card.background-image  {
-  border: 5px solid #fff
-} */
-
 .landscape .pre-title {
   color: #fff
 }
@@ -4593,9 +4594,13 @@ left: 5px;
 }
 
 
-/* .veranstaltung-ohne-bild {
-  min-height: 150px;
-} */
+@media (min-width: 782px) {
+  .landscape{
+    height: 180px;
+  }
+}
+
+
 
 .veranstaltung-ohne-bild .date{
   background: #0091FF;
