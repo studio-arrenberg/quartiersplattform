@@ -1225,12 +1225,6 @@ th {
 /* Hiding and Showing ------------------------ */
 
 
-.hidden{
-  display: none;
-  opacity: 0;
-  transition: all ease-in-out 0.2s; /* Animation */
-}
-
 
 @media (max-width: 782px ) {
   .hidden-small{
@@ -1449,15 +1443,18 @@ th {
   position: fixed;
   top:60px;
   left: 0px;
-  display: hidden;
-  opacity: 0;
   width: 100%;
   height: 100%;
   z-index: 200000;
   padding: 15px;
-  transition: all ease-in-out 2s; /* Animation */
   overflow: scroll;
   background-color: rgba(255, 255, 250, 1);
+
+  opacity: 0;
+  visibility: hidden;  
+  transition: all ease-in-out 0.2s; /* Animation */
+
+ 
 }
 
 @media (min-width: 782px ) {
@@ -1466,12 +1463,28 @@ th {
   }
 }
 
+.visible{
+  opacity: 1;
+  visibility: visible;
+  transition: all ease-in-out 0.2s; /* Animation */
+}
+
+/* 
+.hidden{
+  opacity: 0;
+  display: none;
+
+  transition: all ease-in-out 0.2s; /* Animation */
+ 
+
+
+
 @supports (
   (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
   .overlay {
     background-color: rgba(95, 186, 255, 0.2);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
   }
 }
 
@@ -1508,14 +1521,6 @@ th {
     margin-top: 100px;
   }
 }
-
-.visible{
-  opacity: 1;
-  display: block;
-  transition: all ease-in-out 0.2s; /* Animation */
-}
-
-
 
 .no-scroll{
   overflow: hidden !important;
@@ -1978,7 +1983,7 @@ th {
 }
 
 .quartier section:first-of-type{
-  margin-top: 100px;
+  margin-top: 70px;
   height: 500px;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -2131,18 +2136,18 @@ th {
   }
 }
 
-@media (max-width: 650px) {
-  .quartier section {
-    flex-direction: column;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
+@media (max-width: 782px) {
   .quartier section:first-of-type{
     margin-top: 30px;
     min-height: unset;
     max-height: 40vh;
   }
+}
+
+
+@media (max-width: 650px) {
+
+ 
 
   .link-card-container{
     min-width: 0px;
