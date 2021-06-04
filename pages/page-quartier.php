@@ -38,13 +38,11 @@ get_header();
         </div>
     </section>
 
-    <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
-        <section>
+    <section class="">
+        <?php if (current_user_can('administrator') && ( get_field('quartier_image','option') == false || get_field('welcome-title','option') == false ) ) {?>
             <?php reminder_card('no_quartiers_info', __('Bild und Text für die Startseite festlegen','quartiersplattform'), __('In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen.','quartiersplattform'), __('Zu den Einstellungen','quartiersplattform'),home_url().'/einstellungen'); ?>
-        </section>
-    <?php } ?>
+        <?php } ?>
 
-    <section>
         <div class="stage-center">
             <p><?php the_field('welcome-text','option'); ?></p>
 
@@ -64,10 +62,8 @@ get_header();
                     }
                 ?>
         </div>
-        
-    </section>
-    
-    <section>
+
+        <?php if( '' !== get_post()->post_content ) { ?>
         <div class="gutenberg-content">
             <?php
                 // Gutenberg
@@ -78,7 +74,17 @@ get_header();
                 }
             ?>
         </div>
-    </section>
+            
+        <?php
+        } 
+        ?>
+
+        </section>
+
+    
+
+
+ 
 
     <section class="">
         <div class="stage-center">

@@ -1,5 +1,6 @@
 
 /*! This file is auto-generated */
+@media only screen and (min-width: 960px) {
 
 #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
   width: 200px!important;
@@ -9,4 +10,4 @@
 #wpcontent, #wpfooter{
   margin-left: 200px;
 }
-
+}
