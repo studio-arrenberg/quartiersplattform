@@ -3474,25 +3474,6 @@ function visibility_badge() {
 }
 
 
-
-
-function my_theme_load_theme_textdomain() {
-    load_theme_textdomain( 'quartiersplattform', get_template_directory() . '/languages' );
-}
-
-function quartiersplattform_translate_theme() {
-    // Load Theme textdomain
-    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages');
-
-    // Include Theme text translation file
-    $locale = get_locale();
-    $locale_file = get_template_directory() . "/languages/$locale.php";
-    if ( is_readable( $locale_file ) ) {
-        require_once( $locale_file );
-    }
-}
-add_action( 'after_setup_theme', 'quartiersplattform_translate_theme' );
-
 /**
  * 
  * End of File
