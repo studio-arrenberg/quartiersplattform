@@ -3435,7 +3435,7 @@ function quartiersplattform_detect_language() {
 		if(isset($_COOKIE['language'])) {     
 			if(!empty($_GET['lang'])){
 				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-				// return $_GET['lang'];
+				return $_GET['lang'];
 			}
 			return $_COOKIE['language'];
 		}else{  	
@@ -3458,7 +3458,7 @@ function quartiersplattform_detect_language() {
 	
 	// return $user_language;
 }
-// add_filter( 'locale', 'quartiersplattform_detect_language' );
+add_filter( 'locale', 'quartiersplattform_detect_language' );
 
 /**
  * QP visibility badge
