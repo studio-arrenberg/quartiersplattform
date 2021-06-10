@@ -23,8 +23,14 @@ get_header();
 
 ?>
 
-<main id="site-content" class="template-left" role="main">
-    
+<main id="site-content" class="page-grid" role="main">
+
+
+    <div class="left-sidebar">
+        <?php projekt_carousel(); ?>
+    </div>
+
+    <div class="content">
 
     <!-- heading -->
     <h1 class="heading-size-1"><?php echo __('Quartiersplattform Einstellungen','quartiersplattform'); ?></h1>
@@ -60,6 +66,9 @@ get_header();
     ); 
 
     ?>
+
+    </div>
+    
 
 
 </main><!-- #site-content -->
