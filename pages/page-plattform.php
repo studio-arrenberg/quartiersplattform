@@ -18,11 +18,16 @@ get_header();
 
 ?>
 
-<main id="site-content" class="template-left" role="main">
-    
+<main id="site-content" class="page-grid" role="main">
+
+
+    <div class="left-sidebar">
+        <?php projekt_carousel(); ?>
+    </div>
+
+    <div class="content">
     <!-- heading -->
-    <h1 class="heading-size-1"><?php echo __('Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?> <span class="highlight"> <?php echo "v".wp_get_theme()->version; ?> </span>
-</h1>
+    <h1 class="heading-size-1"><?php echo __('Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?> <span class="highlight"> <?php echo "v".wp_get_theme()->version; ?> </span></h1>
     <p class="text-size-1 margin-bottom"><?php _e('Allegemeine Informationen zu deiner Quartiersplattform', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
 
     <!-- general information -->
@@ -115,7 +120,7 @@ get_header();
             <p><?php echo $description; ?></p>
             <span><?php echo $value['Version']; ?></span>
             <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span><br>
-        </div>
+       
 
         <?php 
     }
@@ -132,7 +137,7 @@ get_header();
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
 		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
 	?>
-
+</div>
 
 </main><!-- #site-content -->
 
