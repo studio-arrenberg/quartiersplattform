@@ -39,7 +39,7 @@ get_header();
     <?php
 
     $text = __('Allgemeine und öffentliche Informationen zu der Quartiersplattform.','quartiersplattform');
-    reminder_card('qp_info', __('Plattform information','quartiersplattform'), $text, __('Informationen','quartiersplattform'), home_url().'/quartiersplattform' );
+    // reminder_card('qp_info', __('Plattform information','quartiersplattform'), $text, __('Informationen','quartiersplattform'), home_url().'/quartiersplattform' );
 
     acf_form(
         array(

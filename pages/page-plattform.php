@@ -58,20 +58,18 @@ get_header();
 	
         ?>
             <a href="<?php echo home_url().'/einstellungen'; ?>" class="button">Quartierseinstellungen</a>
+            <br><br>
         <?php
     }
     ?>
-    <br><br>    <br><br>
-
 
     <!-- update reminder -->
-    <!-- not ready yet -->
-    <!-- for admins -->
-
     <!-- admins -->
     <h2 class="heading-size-1"><?php echo __('Admins der Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></h2>
     <p><?php _e('Die Quartiersplattform wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p>
 
+
+    <!-- admins der quartiersplattform -->
     <?php 
     $user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
     // Get the results
