@@ -80,7 +80,7 @@
 
     <?php } ?>
             <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>
-            <a class="footer-link " href="<?php echo  get_site_url(); ?>/impressum/"><?php _e('Hilfe & FAQ', 'quartiersplattform'); ?> </a>
+            <!-- <a class="footer-link " href="<?php echo  get_site_url(); ?>/impressum/"><?php _e('Hilfe & FAQ', 'quartiersplattform'); ?> </a> -->
             
          
         
