@@ -10,7 +10,7 @@
 if (!is_user_logged_in()) {
     header("Location: ".get_site_url());
     exit();
-    }
+}
 
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
@@ -30,51 +30,41 @@ if (!is_user_logged_in()) {
         
         <?php 
             // User Avatar
-            $current_user = wp_get_current_user();
-            echo get_avatar( $current_user->user_email, 32 );
+            // $current_user = wp_get_current_user();
+            // echo get_avatar( $current_user->user_email, 32 );
         ?>
 
         <!-- user name -->
-        <div class="single-header-content">
+        <!-- <div class="single-header-content">
             <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
-        </div>
+        </div> -->
 
         
     </div>
     <?php 
         
-        $options = array(
-            'post_id' => 'user_'.$current_user->ID,
-            'field_groups' => array(77),
-            'form' => true, 
-            'return' => add_query_arg( 'updated', 'true', get_permalink() ), 
-            'html_before_fields' => '',
-            'html_after_fields' => '',
-            'submit_value' => 'Test' 
-        );
-        acf_form( $options );
-        echo $current_user->ID;
+        // $options = array(
+        //     'post_id' => 'user_'.$current_user->ID,
+        //     'field_groups' => array(77),
+        //     'form' => true, 
+        //     'return' => add_query_arg( 'updated', 'true', get_permalink() ), 
+        //     'html_before_fields' => '',
+        //     'html_after_fields' => '',
+        //     'submit_value' => 'Test' 
+        // );
+        // acf_form( $options );
+        // echo $current_user->ID;
 
-        if (user_can( $current_user, 'administrator')) {
-            echo do_shortcode('[avatar_upload user="'.$user->ID.'"]');
-        }
-        else {
-            echo do_shortcode('[avatar_upload]');
-        }
+        // if (user_can( $current_user, 'administrator')) {
+        //     echo do_shortcode('[avatar_upload user="'.$user->ID.'"]');
+        // }
+        // else {
+        //     echo do_shortcode('[avatar_upload]');
+        // }
         
     ?>
 
 		<div class="hidden-small">
-			<?php 
-				$args4 = array(
-					'post_type'=> array('projekte'), 
-					'post_status'=>'publish', 
-					'posts_per_page'=> 20,
-					'orderby' => 'date'
-				);
-			?>  
-
-
             <?php projekt_carousel(); ?>
 		</div>
 	</div>
@@ -115,8 +105,6 @@ if (!is_user_logged_in()) {
                     </div>
                 </div>
             </div>
-        
-
            
             <script>
 
@@ -125,8 +113,6 @@ if (!is_user_logged_in()) {
                 filterTabs.addEventListener("click", (event) => {                
                     const root = document.documentElement;
                     const targetTranslateValue = event.target.dataset.translateValue;
-                    // console.log(targetTranslateValue);
-                    // console.log(event.target.dataset.value);
 
                     if (targetTranslateValue == undefined) {
                         return false;
@@ -146,9 +132,20 @@ if (!is_user_logged_in()) {
 
         <div id="summary" class="bar bar-active">
 
-            <?php 
-                author_card(true, $current_user->ID, false); 
-            ?>
+
+            <h3><?php _e('Deine Kontaktinformationen', 'quartiersplattform'); ?></h3>
+            <p>
+                <?php 
+                if (current_user_can('administrator')) {
+                    _e('Als Administrator dieser Quartiersplattform werden deine Kontaktinformationen allen Besuchern angezeigt.');
+                }
+                else {
+                    _e('Deine Kontaktinformationen werden nur registieren Nutzer angezeigt und können daher nicht von Suchmaschienen gefunden werden.');
+                }
+                ?>
+            </p>
+                        
+            <?php author_card(true, $current_user->ID, false); ?>
             
             <?php
                 $args4 = array(
@@ -246,59 +243,8 @@ if (!is_user_logged_in()) {
 
             <br>
             <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
-            <br><br>
-                <?php get_template_part( 'components/profil/reminder_card_reset'); ?>
-
-                <h4>Einstellungen</h4>
-                <!-- Contact Information -->   
-                <h2>Bearbeite deine Kontaktinformationen</h2>
-                <br>
-                    <?php
-                    $userid = "user_".$current_user->ID; 
-                    acf_form (
-                        array(
-                            'form' => true,
-                            'post_id' => $userid,
-                            'return' => get_site_url()."/profil"."/",
-                            'submit_value' => 'Änderungen speichern',
-                            'post_title' => false,
-                            'post_content' => false,    
-                            'field_groups' => array('group_6034e1d00f273'),
-                        )
-                    );
-                    ?>
-                <br>
-                <br>
-                <!-- Biography Information -->   
-                <h2>Erzähle etwas über dich</h2>
-                <br>
-                    <?php
-                    $userid = "user_".$current_user->ID; 
-                    acf_form (
-                        array(
-                            'form' => true,
-                            'post_id' => $userid,
-                            'return' => get_site_url()."/profil"."/",
-                            'submit_value' => 'Änderungen speichern',
-                            'post_title' => false,
-                            'post_content' => false,    
-                            'field_groups' => array('group_605dc2bb690d9'),
-                        )
-                    );
-                    ?>
-                <?php echo do_shortcode('[avatar_upload id='.$user_id.']'); ?>
-                
-                <h2>Profil bearbeiten</h2>
-                <?php echo do_shortcode("[ultimatemember_account]"); ?>
-                
-
-
-
-                <a class="button is-style-outline" href="<?php echo get_author_posts_url(get_current_user_id()); ?>">Mein öffentliches Profil ansehen</a>
-
-                <br>
-                
-                <a class="button" href="<?php echo get_site_url().'/logout/'; ?>">Logout</a>
+            <br><br><br><!-- wichtig  -->
+            
         </div>
 
     </div>

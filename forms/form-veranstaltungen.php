@@ -76,9 +76,7 @@ if (!is_user_logged_in(  )) {
                                 'field_603f4c75747e9', //Bilder
                             ),
                             'submit_value'=> __('Veranstaltung veröffentlichen','quartiersplattform'),
-                            'html_before_fields' => '
-                            <input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">
-                            ',
+                            'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
                         )
                     ); 
         }
