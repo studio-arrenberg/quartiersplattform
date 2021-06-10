@@ -1336,6 +1336,7 @@ function script_managment() {
 add_action( 'wp_enqueue_scripts', 'script_managment' );
 
 function files_inc_emoji() {
+	echo "<script>console.log('Resources: All Files including Emoji Picker')</script>";
 
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
@@ -1356,6 +1357,8 @@ function files_inc_emoji() {
 
 }
 function files_minimum() {
+	echo "<script>console.log('Resources: Bare Minimum');</script>";
+
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 	// scripts for ajax
@@ -1372,6 +1375,8 @@ function files_minimum() {
 }
 function files_edit() {
 
+	echo "<script>console.log('Resources: Files to edit')</script>";
+
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 	// scripts for ajax
@@ -1381,6 +1386,8 @@ function files_edit() {
 
 }
 function files_none() {
+
+	echo "<script>console.log('Resources: None')</script>";
 
 	wp_deregister_script('jquery');
 
@@ -2417,7 +2424,7 @@ function emoji_picker_init($id) {
 			var alt;
 			$('div.emoji-picker-container').bind('DOMSubtreeModified', function() {
 
-				console.log($(".emoji-wysiwyg-editor").children().length);
+				// console.log($(".emoji-wysiwyg-editor").children().length);
 
 				if ($(".emoji-wysiwyg-editor").children().length > 1) {
 					// console.log('remove childs ' + alt);

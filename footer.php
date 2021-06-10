@@ -69,6 +69,7 @@
             <a class="footer-link" href="<?php echo get_site_url(); ?>/projektverzeichnis/">  <?php _e('Alle Projekte', 'quartiersplattform'); ?> </a>
             <a class="footer-link" href="<?php echo get_site_url(); ?>/projekte/">  <?php _e('Neuigkeiten & Projektupdates', 'quartiersplattform'); ?> </a>
             <a class="footer-link" href="<?php echo get_site_url(); ?>/veranstaltungen/"> <?php _e('Veranstaltungskalender', 'quartiersplattform'); ?> </a>
+            <a class="footer-link" href="<?php echo get_site_url(); ?>/sdgs/"> <?php _e('Ziele für nachhaltige Entwicklung im Quartier', 'quartiersplattform'); ?> </a>
         </div>
 
         <div>
@@ -79,9 +80,7 @@
                 <a class="footer-link " href="<?php echo  get_site_url(); ?>/quartiersplattform/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
 
     
-            <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>
-            
-         
+            <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>         
         
         </div>
 

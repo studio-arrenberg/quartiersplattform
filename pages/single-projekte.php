@@ -263,7 +263,7 @@ get_header();
 
             # delete post
             wp_delete_post( get_the_ID() );
-            wp_redirect( get_site_url() );
+            wp_redirect( get_site_url().'/projekte' );
 
         }
         # post bearbeiten

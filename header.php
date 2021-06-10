@@ -17,9 +17,6 @@ wp_maintenance_mode();
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
-
-    <!-- <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css"> -->
-
     <?php wp_head(); ?>
 
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">
@@ -37,50 +34,57 @@ wp_maintenance_mode();
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri()?>/assets/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage"
-        content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
    
-    <!-- SEO  --> 
-
-    <!-- Standart -->
-    <!-- <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
-    <title> </title>
-    <meta name="Description" content="" />
- -->
-
-    <!-- Startseite  - Projektfeed - SDGs - Veranstaltungen - Archive -->
-
-        <!-- Hier vielleicht:
-            Quartiersüberblick | Arrenberg App
-            Lerne deinen Stadtteil kennen, entdecke interesannte Projekte und partizipiere in der Gemeinschaft.
-
-            Neuigkeiten und Projektupdates |  Arrenberg App 
-            Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt.
-            
-            Veranstaltungen in deiner Nachbarschaft | Arrenberg App
-            Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden.
-
-            Ziele für nachhaltige Entwicklung | Arrenberg App
-            Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.
-        -->
-
-        
-        <meta property="og:title" content=" " />
-        <meta property="og:description" content="" />
-        <meta property="og:image" content="" />
-        <meta property="og:type" content="article" />
-
-
-
-
-    <!-- Beiträge/ Posts mit featured image --> 
-
-        <meta property="og:title" content="<?php _e(get_the_title(),'quartiersplattform'); ?>  |  <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - <?php  the_field('slogan'); ?>" />
-        <meta property="og:description" content="<?php shorten(get_field('text'), 200); ?>" />
-        <meta property="og:image" content="<?php the_post_thumbnail_url('landscape_s' ); ?> " />
-        <meta property="og:type" content="article" />
+    <!-- SEO Tags  --> 
+    <?php
+        // page specific
+        if (is_page( 'Startseite' )) {
+            $image = get_field('quartier_image', 'option');
+            ?>
+                <meta property="og:title" content="<?php echo 'Quartiersüberblick | '.get_field('quartiersplattform-name','option') ?>" />
+                <meta property="og:description" content="Lerne deinen Stadtteil kennen, entdecke interesannte Projekte und partizipiere in der Gemeinschaft." />
+                <meta property="og:image" content="<?php echo esc_url($image['url']); ?>" />
+                <meta property="og:type" content="website" />
+            <?php
+        }
+        else if (is_page( 'Projekte' )) {
+            ?>
+                <meta property="og:title" content="<?php echo 'Neuigkeiten und Projektupdates | '.get_field('quartiersplattform-name','option') ?>" />
+                <meta property="og:description" content="Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt." />
+                <meta property="og:image" content="<?php echo esc_url($image['url']); ?>" />
+                <meta property="og:type" content="website" />
+            <?php
+        }
+        else if (is_page( 'Veranstaltungen' )) {
+            ?>
+                <meta property="og:title" content="<?php echo 'Veranstaltungen in deiner Nachbarschaft | '.get_field('quartiersplattform-name','option') ?>" />
+                <meta property="og:description" content="Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden." />
+                <meta property="og:image" content="<?php echo esc_url($image['url']); ?>" />
+                <meta property="og:type" content="website" />
+            <?php
+        }
+        else if (is_page( 'SDGs' )) {
+            ?>
+                <meta property="og:title" content="<?php echo 'Ziele für nachhaltige Entwicklung | '.get_field('quartiersplattform-name','option') ?>" />
+                <meta property="og:description" content="Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle." />
+                <meta property="og:image" content="<?php echo esc_url($image['url']); ?>" />
+                <meta property="og:type" content="website" />
+            <?php
+        }
+        // page, post, project, ...
+        else {
+            ?>
+                <meta property="og:title" content="<?php echo get_the_title(); ?>  |  <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?><?php if (get_field('slogan')) echo " - ".get_field('slogan'); ?>" />
+                <meta property="og:description" content="<?php if (get_field('text')) { shorten(get_field('text'), 200); } else { shorten(get_the_content(), 200); } ?>" />
+                <meta property="og:image" content="<?php the_post_thumbnail_url('landscape_s' ); ?> " />
+                <meta property="og:type" content="article" />
+            <?php
+        }
+    ?>
+    <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
 
 
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> -->

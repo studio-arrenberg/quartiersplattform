@@ -170,11 +170,10 @@ get_header();
     <?php 
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
 		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
-	?>
 
-<?php if (current_user_can('administrator')) {?>
-            <?php $text = __('Allgemeine und öffentliche Informationen zu der Quartiersplattform.','quartiersplattform'); reminder_card('qp_info', __('Informationen zu deiner Quartiersplattform','quartiersplattform'), $text, __('Informationen','quartiersplattform'), home_url().'/quartiersplattform' );?>
-    <?php } ?>
+        $text = __('Allgemeine und öffentliche Informationen zu der Quartiersplattform.','quartiersplattform'); 
+        reminder_card('qp_info', __('Informationen zu deiner Quartiersplattform','quartiersplattform'), $text, __('Informationen','quartiersplattform'), home_url().'/quartiersplattform' );
+    ?>
 
 
 </main><!-- #site-content -->
