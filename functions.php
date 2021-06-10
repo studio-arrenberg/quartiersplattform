@@ -850,8 +850,6 @@ require_once dirname( __FILE__ ) .'/setup/projekte.php'; # Projekte
 require_once dirname( __FILE__ ) .'/setup/nachrichten.php'; # Nachrichten
 require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php'; # Veranstaltungen
 require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
-// require_once dirname( __FILE__ ) .'/setup/fragen.php'; # Fragen
-// require_once dirname( __FILE__ ) .'/setup/angebote.php'; # Angebote
 require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
 require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
 
@@ -959,38 +957,30 @@ add_action('admin_init', function() {
 
 		add_action('admin_notices', function() {
 			$notice = __('Wir empfehlen das Plugin ','quartiersplattform')."<strong>WP Mail SMTP</strong>".__(" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten.", 'quartiersplattform');
-			$link = '<strong>WP Mail SMTP</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">'.__("installieren",'quartiersplattform').'</a>';
+			$link = '<strong>WP Mail SMTP</strong> <a class="button button-primary" href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">'.__("installieren",'quartiersplattform').'</a>';
 			reminder_backend('qp-mail-smtp-suggestion', $notice.'<br>'.$link, 'updated notice');
 		});
 
 	}
 	# Update Notes
-	// Compare Verrsions Git and Themen
-	// print_r(wp_get_theme());
+	$url = "http://api.quartiersplattform.org";
+	$curl = curl_init($url);
+	curl_setopt($curl, CURLOPT_URL, $url);
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+	$resp = curl_exec($curl);
+	curl_close($curl);
+	// var_dump($resp);
+	$res = json_decode($resp, true);
+	// display warning
+	if (!empty($res['general']['latest_version']['version']) && $res['general']['latest_version']['version'] != wp_get_theme()->version) {
 
-	// $url = "https://api.github.com/repos/studio-arrenberg/quartiersplattform/releases/latest";
-
-    // $curl = curl_init($url);
-    // curl_setopt($curl, CURLOPT_URL, $url);
-    // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-    
-    // $headers = array(
-    //    "Accept: application/vnd.github.v3+json",
-    //    "User-Agent: j0hannr",
-    // );
-    // curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-    // //for debug only!
-    // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-    // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-    
-    // $resp = curl_exec($curl);
-    // curl_close($curl);
-    // // var_dump($resp);
-
-	// // Reminder
-	// if (wp_get_theme()->version != $resp->tag_name) {
-
-	// }
+		add_action('admin_notices', function() {
+			$notice = __('Installiere die neue Version der Quartiersplattform und bringe neue features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben.', 'quartiersplattform');
+			$link = '<a class="button button-primary" href="https://github.com/studio-arrenberg/quartiersplattform/releases">'.__("Link zum Download",'quartiersplattform').'</a>';
+			reminder_backend('qp-update', $notice.'<br>'.$link, 'updated notice');
+		});
+	}
 	
 });
 
@@ -1037,18 +1027,6 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Projekt erstellen';
 		$page_template= get_stylesheet_directory() . '/forms/form-projekte.php';
 	}
-	// else if ($post->post_title == "Gemeinsam") {
-	// 	$post_states[] = $prefix.'Gemeinsam';
-	// 	$page_template= get_stylesheet_directory() . '/pages/page-gemeinsam.php';
-	// }
-	// else if ($post->post_title == "Frage erstellen") {
-	// 	$post_states[] = $prefix.'Frage erstellen';
-	// 	$page_template= get_stylesheet_directory() . '/forms/form-fragen.php';
-	// }
-	// else if ($post->post_title == "Angebot erstellen") {
-	// 	$post_states[] = $prefix.'Angebot erstellen';
-	// 	$page_template= get_stylesheet_directory() . '/forms/form-angebote.php';
-	// }
 	else if ($post->post_title == "Feedback") {
 		$post_states[] = $prefix.'Feedback';
 		$page_template= get_stylesheet_directory() . '/pages/page-anmerkungen.php';
@@ -1119,12 +1097,6 @@ function single_template_hook() {
 	else if ( 'geschichten' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-geschichten.php';
     }
-	// else if ( 'fragen' === $post->post_type ) {
-    //     $single_template = dirname( __FILE__ ) . '/pages/single-fragen.php';
-    // }
-	// else if ( 'angebote' === $post->post_type ) {
-    //     $single_template = dirname( __FILE__ ) . '/pages/single-angebote.php';
-    // }
 	else if ( 'nachrichten' === $post->post_type ) {
         $single_template = dirname( __FILE__ ) . '/pages/single-nachrichten.php';
     }
@@ -1453,9 +1425,6 @@ function display_cookie_warning() {
 		return false;
 	}
 
-	// if (isset($_COOKIE['visitor'])) {
-	// 	return false;
-	// }
 	if (!isset($_COOKIE['visitor'])) {
 		get_template_part( 'components/cookie/cookie-alert' );
 	}
@@ -1482,10 +1451,6 @@ function set_cookie_callback(){
 			update_option('visitor_counter', $counter);
 		}
 		// set guest cookie
-		// $path = '/';
-		// $path = parse_url(home_url(), PHP_URL_HOST);
-		// $host = parse_url(get_option('siteurl'), PHP_URL_HOST);
-		// $expiry = strtotime('+1 year');
 		setcookie('visitor', md5($counter), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 
 		return;
@@ -1601,22 +1566,23 @@ function cpt_save_worker( $post_id ) {
 
 		// set query vars
 		set_query_var( 'qp_post_id', $post_id);
-		// prep mail to qp headquarter
-		ob_start();
-		// create mail content
-		get_template_part('components/mail/header');
-		get_template_part('components/mail/anmerkungen');
-		get_template_part('components/mail/footer');
-		// get_template_part( 'components/mail/example' );
-		$mail_html = ob_get_contents();
-		ob_end_clean();
 
-		// send mail to qp headquarter
-		$to = 'hallo@arrenberg.studio';
-		$subject = 'Jemand hat eine Anmerkung geschrieben.';
-		$body = $email_content;
-		$headers = array('Content-Type: text/html; charset=UTF-8');
-		wp_mail( $to, $subject, $mail_html, $headers );
+			// prep mail to qp headquarter
+			ob_start();
+			// create mail content
+			get_template_part('components/mail/header');
+			get_template_part('components/mail/anmerkungen');
+			get_template_part('components/mail/footer');
+			// get_template_part( 'components/mail/example' );
+			$mail_html = ob_get_contents();
+			ob_end_clean();
+
+			// send mail to qp headquarter
+			$to = 'hallo@arrenberg.studio';
+			$subject = 'Jemand hat eine Anmerkung geschrieben.';
+			$body = $email_content;
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			wp_mail( $to, $subject, $mail_html, $headers );
 
 
 	}
@@ -2045,7 +2011,7 @@ function author_card($contact = true, $user = '', $profile = true) {
 		return false;
 	}
 
-	get_template_part( 'components/author-card' );
+	get_template_part( 'components/general/author-card' );
 
 }
 
@@ -2090,76 +2056,8 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
  */
 function calendar_download($post) {
 	
-	// needed variabels
-	$date = get_field('event_date', $post);
-	$time = get_field('event_time', $post);
-	$time_end = get_field('event_end', $post);
-			
-    $title = get_the_title();
-    $start = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time"));
-    $ende = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time_end"));
+	get_template_part( 'components/calendar/calendar_download');
 
-	// directory
-	$links = get_template_directory_uri();
-	$destination_folder = $_SERVER['DOCUMENT_ROOT'];
-	$man_link = getcwd()."/wp-content/themes/".get_template();
-    
-    // get ort name
-    $taxonomies = get_object_taxonomies( $post );
-    $product_terms = wp_get_object_terms( $post->ID, $taxonomies[1]);
-    
-    if (!empty($product_terms[0]->name)) {
-        $ort = $product_terms[0]->name;
-    }
-    else {
-        $ort = "";
-    }
-    
-    $kurz = get_field( "kurzbeschreibung" );
-    $file_name = $post->post_name;
-    $dir = "/assets/generated/calendar-files/";
-
-    $kb_start = $start;
-    $kb_end = $ende;
-    $kb_current_time = $creation;
-    $kb_title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
-    $kb_location = preg_replace('/([\,;])/','\\\$1',$ort); 
-    $kb_location = html_entity_decode($kb_location, ENT_COMPAT, 'UTF-8');
-    $kb_description = html_entity_decode($kurz, ENT_COMPAT, 'UTF-8');
-    $kb_file_name = $file_name;
-
-    $kb_url = get_permalink($post);
-    
-    if($ende == '19700101T000000') {
-        die(); 
-	}
-	
-	$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die(__('Datei kann nicht gespeichert werden!','quartiersplattform')); 
-        
-    $eol = "\r\n";
-
-    $kb_ics_content =
-    'BEGIN:VCALENDAR'.$eol.
-    'VERSION:2.0'.$eol.
-    'PRODID:-//kulturbanause//kulturbanause.de//DE'.$eol.
-    'CALSCALE:GREGORIAN'.$eol.
-    'BEGIN:VEVENT'.$eol.
-    'DTSTART:'.$kb_start.$eol.
-    'DTEND:'.$kb_end.$eol.
-    'LOCATION:'.$kb_location.$eol.
-    'DTSTAMP:'.$kb_current_time.$eol.
-    // 'RRULE:FREQ='.$kb_freq.';UNTIL='.ende_der_widerholung.
-    'SUMMARY:'.$kb_title.$eol.
-    'URL;VALUE=URI:'.$kb_url.$eol.
-    'DESCRIPTION:'.$kb_description.$eol.
-    'UID:'.$kb_current_time.'-'.$kb_start.'-'.$kb_end.$eol.
-    'END:VEVENT'.$eol.
-    'END:VCALENDAR';
-    // header('HTTP/1.0 200 OK', true, 200);
-    fwrite($kb_ical, $kb_ics_content);
-    fclose($kb_ical);
-
-	echo '<a class="button is-primary" href="'.get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics" target="_self">'.__("Termin im Kalender speichern",'quartiersplattform').'</a>';   
 }
 
 /**
@@ -2186,28 +2084,6 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 	?>
 	<div class="embla <?php echo $style_class; ?>" id="<?php echo $slider_class; ?>">
     	<div class="embla__container">
-
-			<!-- Button back -->
-			<!-- <button class="embla__button embla__button--prev" type="button">
-				<svg
-				class="embla__button__svg"
-				viewBox="137.718 -1.001 366.563 643.999"
-				>
-				<path
-					d="M428.36 12.5c16.67-16.67 43.76-16.67 60.42 0 16.67 16.67 16.67 43.76 0 60.42L241.7 320c148.25 148.24 230.61 230.6 247.08 247.08 16.67 16.66 16.67 43.75 0 60.42-16.67 16.66-43.76 16.67-60.42 0-27.72-27.71-249.45-249.37-277.16-277.08a42.308 42.308 0 0 1-12.48-30.34c0-11.1 4.1-22.05 12.48-30.42C206.63 234.23 400.64 40.21 428.36 12.5z"
-				></path>
-				</svg>
-			</button> -->
-
-			<!-- Button forwards -->
-			<!-- <button class="embla__button embla__button--next" type="button">
-				<svg class="embla__button__svg" viewBox="0 0 238.003 238.003">
-				<path
-					d="M181.776 107.719L78.705 4.648c-6.198-6.198-16.273-6.198-22.47 0s-6.198 16.273 0 22.47l91.883 91.883-91.883 91.883c-6.198 6.198-6.198 16.273 0 22.47s16.273 6.198 22.47 0l103.071-103.039a15.741 15.741 0 0 0 4.64-11.283c0-4.13-1.526-8.199-4.64-11.313z"
-				></path>
-				</svg>
-			</button> -->
-
 
 			<?php
 				if (get_query_var( 'projekt_carousel_add')) { // !!! this is dirty
@@ -2265,15 +2141,9 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 			_paq.push(['trackEvent', 'Interaction', 'Slider', '<?php echo get_page_template_slug(); ?>']);
 		})
 
-		// const wrap = document.querySelector(".embla");
-		// const nextBtn = wrap.querySelector(".embla__button--next");
-		// const prevBtn = wrap.querySelector(".embla__button--prev");
-		// nextBtn.addEventListener('click', embla.scrollNext, false);
-		// prevBtn.addEventListener('click', embla.scrollPrev, false);
-
+		// prev & next button
 		// https://codesandbox.io/s/embla-carousel-arrows-dots-vanilla-twh0h?file=/src/js/prevAndNextButtons.js:64-126
 
-	
 		embla.on('resize', () => {
 			var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 			slidesToScroll = '<?php echo $slides; ?>';
@@ -2413,7 +2283,7 @@ function emoji_picker_init($id) {
 		?>
 
 		<script>
-// jQuery(function ($) {
+			// jQuery(function ($) {
 
 			// get element
 			var el = $("#<?php echo $id; ?>");
@@ -2504,17 +2374,13 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	/**
 	 * Tested:
 	 * date_default_timezone_set("Europe/Berlin");
-	 * wp_date(); date(); wp_strtotime(); wp_strtotime("$date $time");
+	 * wp_date(); date(); wp_strtotime(); wp_strtotime("$date $time"); date_i18n('H:i', $date);
+	 * setlocale(LC_ALL, 'ro_RO','Romanian');
 	 * 
 	 * Solve: Missing Date
+	 * 
+	 * https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
 	 */
-
-	// update_user_meta(get_current_user_id( ), 'locale', 'de_DE');
-	// switch_to_locale('tr_TR');
-	// setlocale(LC_ALL, 'ro_RO','Romanian');
-	// echo get_locale();
-	// if (is_user_logged_in()) echo get_user_locale(get_current_user_id());
-	// echo date_i18n(get_option('date_format'));
 
 	// get locale
 	if (is_user_logged_in()) {
@@ -2536,11 +2402,6 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		$date = strtotime($date);
 	}
 
-	// https://stackoverflow.com/questions/12565981/setlocale-and-strftime-not-translating-month <- read
-
-	// test strfttime
-	// echo "-".strftime('%B', $date)."-".$lo;
-
 	// tomorrow
 	if (date("Y-m-d", (current_time('timestamp') + 86400)) == date("Y-m-d", $date) ) {
 		$string = __("Morgen",'quartiersplattform');
@@ -2555,9 +2416,6 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
-		// $string = wp_date('j. F Y', $date);
-		// $string = date_i18n('j. F Y', $date);
-		// $string = strftime('%e %b %Y', $date);
 		$string = strftime('%e', $date)." ".__(strftime('%B', $date))." ".strftime('%Y', $date);
 	}
 	// default (just date)
@@ -2574,40 +2432,6 @@ function qp_date( $date, $detail = false, $time = '' ) {
 
 	return $string;
 }
-
-
-
-/**
- * WP StrToTime helper function
- *
- * @since Quartiersplattform 1.6
- *
- * @param string $date date
- * @return string text with html a tags
- */
-function wp_strtotime($str) {
-	// echo "!!!".$str;
-	// This function behaves a bit like PHP's StrToTime() function, but taking into account the Wordpress site's timezone
-	// CAUTION: It will throw an exception when it receives invalid input - please catch it accordingly
-	// From https://mediarealm.com.au/
-	$tz_string = get_option('timezone_string');
-	$tz_offset = get_option('gmt_offset', 0);
-	if (!empty($tz_string)) {
-		// If site timezone option string exists, use it
-		$timezone = $tz_string;
-	} elseif ($tz_offset == 0) {
-		// get UTC offset, if it isn’t set then return UTC
-		$timezone = 'UTC';
-	} else {
-		$timezone = $tz_offset;
-		if(substr($tz_offset, 0, 1) != "-" && substr($tz_offset, 0, 1) != "+" && substr($tz_offset, 0, 1) != "U") {
-			$timezone = "+" . $tz_offset;
-		}
-	}
-	$datetime = new DateTime($str, new DateTimeZone($timezone));
-	return $datetime->format('U');
-}
-
 
 
 /**
