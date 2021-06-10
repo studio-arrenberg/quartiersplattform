@@ -8,6 +8,10 @@
  */
 
 
+if (!current_user_can('administrator')) {
+    exit(wp_redirect( home_url().'/profil'));
+}
+
 # redirect before acf_form_head
 wp_maintenance_mode();
 

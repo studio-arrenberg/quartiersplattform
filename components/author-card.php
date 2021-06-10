@@ -33,7 +33,7 @@ else {
     <?php } ?>
 
     <?php 
-    if($contact && is_user_logged_in()){
+    if($contact && is_user_logged_in() || $contact && user_can($user_id, 'administrator')){
         // echo $user_id;
         $userid = "user_".$user_id; 
     ?>

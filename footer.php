@@ -74,11 +74,12 @@
 
         <div>
             <h4 class="heading-size-3"><?php _e('Die Quartiersplattform', 'quartiersplattform'); ?></h4>
-               <?php if (current_user_can('administrator')) {?>
-                <a class="footer-link " href="<?php echo  get_site_url(); ?>/einstellungen/"><?php _e('Einstellungen', 'quartiersplattform'); ?> ⚙️ </a>
+                <?php if (current_user_can('administrator')) {?>
+                    <a class="footer-link " href="<?php echo  get_site_url(); ?>/einstellungen/"><?php _e('Einstellungen', 'quartiersplattform'); ?> ⚙️ </a>
+                <?php } ?>
                 <a class="footer-link " href="<?php echo  get_site_url(); ?>/quartiersplattform/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
 
-    <?php } ?>
+    
             <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>
             <!-- <a class="footer-link " href="<?php echo  get_site_url(); ?>/impressum/"><?php _e('Hilfe & FAQ', 'quartiersplattform'); ?> </a> -->
             
@@ -90,7 +91,7 @@
  
         <?php if (!is_user_logged_in()) {?>
 
-            <a class="heading-size-3 " href="<?php echo  get_site_url(); ?>/login/" ><?php _e('Jetzt registrieren', 'quartiersplattform'); ?></a>
+            <a class="heading-size-3 " href="<?php echo  get_site_url(); ?>/register/" ><?php _e('Jetzt registrieren', 'quartiersplattform'); ?></a>
             <?php } ?>       
 
             <?php if (is_user_logged_in()) {?>
