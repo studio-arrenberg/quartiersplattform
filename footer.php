@@ -66,10 +66,9 @@
 
         <div>
             <h4 class="heading-size-3"><?php _e('Entdecke dein Viertel', 'quartiersplattform'); ?></h4>
-            <a class="footer-link" href="<?php echo  get_site_url(); ?>/projektverzeichnis/">  <?php _e('Alle Projekte', 'quartiersplattform'); ?> </a>
-            <a class="footer-link" href="<?php echo  get_site_url(); ?>/projekte/">  <?php _e('Neuigkeiten & Projektupdates', 'quartiersplattform'); ?> </a>
-            <a class="footer-link" href="<?php echo  get_site_url(); ?>/veranstaltungen/"> <?php _e('Veranstaltungskalender', 'quartiersplattform'); ?> </a>
-            <!-- <a class="footer-link" href="<?php echo  get_site_url(); ?>/nachrichten-archive/"> <?php _e('Nachrichten Archiv', 'quartiersplattform'); ?> </a> -->
+            <a class="footer-link" href="<?php echo get_site_url(); ?>/projektverzeichnis/">  <?php _e('Alle Projekte', 'quartiersplattform'); ?> </a>
+            <a class="footer-link" href="<?php echo get_site_url(); ?>/projekte/">  <?php _e('Neuigkeiten & Projektupdates', 'quartiersplattform'); ?> </a>
+            <a class="footer-link" href="<?php echo get_site_url(); ?>/veranstaltungen/"> <?php _e('Veranstaltungskalender', 'quartiersplattform'); ?> </a>
         </div>
 
         <div>
@@ -81,7 +80,6 @@
 
     
             <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>
-            <!-- <a class="footer-link " href="<?php echo  get_site_url(); ?>/impressum/"><?php _e('Hilfe & FAQ', 'quartiersplattform'); ?> </a> -->
             
          
         
