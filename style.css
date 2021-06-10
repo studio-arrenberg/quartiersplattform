@@ -1460,9 +1460,9 @@ th {
   top:60px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: calc( 100vh - 100px);
   z-index: 200000;
-  padding: 15px;
+  padding: 25px 15px 100px 15px;
   overflow: scroll;
   background-color: rgba(231, 245, 255, 0.95);
 
@@ -1470,14 +1470,15 @@ th {
   visibility: hidden;  
   transition: all ease-in-out 0.2s; /* Animation */
 
- 
 }
+
 
 @media (min-width: 782px ) {
   .overlay{
     top: 100px
   }
 }
+
 
 .visible{
   opacity: 1;
@@ -1488,7 +1489,7 @@ th {
 @supports (
   (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
   .overlay {
-    background-color: rgba(95, 186, 255, 0.2);
+    background-color: rgba(231, 245, 255, 0.6);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
   }
@@ -5289,143 +5290,6 @@ a:hover .shadow{
   flex-wrap: wrap;
 }
 
-/* Energie  Ampel */
-
-.energie-ampel {
-  overflow-y: hidden;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: -15px;
-  margin-right: -15px;
-  /* padding: 15px; */
-
-}
-
-.energie-ampel-titles h2,
-.energie-ampel-titles h3 {
-  margin: 0px;
-  font-size: 2rem;
-  text-transform: capitalize;
-}
-
-.energie-ampel-titles {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: -20px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.energie-ampel-titles div:last-of-type {
-  text-align: right;
-}
-.strom_array-container {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  position: relative;
-  padding: 60px 0px 30px  15px ;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.strom_array-container::-webkit-scrollbar {
-  display: none;
-}
-
-.strom_array {
-  position: relative;
-  display: block;
-  white-space: nowrap; /*Prevents Wrapping*/
-  height: 100px;
-}
-
-.strom_array div {
-  display: inline-block; /*Display inline and maintain block characteristics.*/
-  vertical-align: top; /*Makes sure all the divs are correctly aligned.*/
-  white-space: normal; /*Prevents child elements from inheriting nowrap.*/
-  height: 60px;
-  width: 25px;
-  border-radius: 8px;
-  margin-right: 2px;
-}
-
-.strom_array div:first-of-type {
-  width: 50px;
-  border-radius: 10px;
-  animation-name: stretch;
-  animation-duration: 1.2s; 
-  animation-timing-function: ease-out; 
-  animation-delay: 0;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-  animation-fill-mode: none;
-  animation-play-state: running;
-}
-
-@keyframes stretch {
-  0% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.strom_array .red {
-  background: #ef6363;
-}
-.strom_array .yellow {
-  background: #efd763;
-}
-.strom_array .green {
-  background: #40b82e;
-}
-
-.strom_array label {
-  position: absolute;
-  top: 65px;
-  font-size: 1.6rem;
-  word-break: keep-all;
-  word-wrap: normal;
-  white-space: nowrap;
-  background-color: rgba(255, 255, 250, 1);
-  z-index: 1;
-  border-radius: 10px;
-  padding: 3px 10px 3px 10px;
-}
-
-
-.strom_array label.day {
-  z-index: 100;
-  background-color: rgba(255, 255, 250, 1);
-  border-radius: 10px;
-  padding: 3px 10px 3px 10px;
-}
-
-
-
-.strom_array label.midnight{
-  top: -35px;
-  min-width: 50px;
-  margin-left: 30px;
-} 
-
-
-.red .time:first-of-type {
-  display: block;
-}
-
-.red {
-  color: #ef6363;
-}
-.yellow {
-  color: #efd763;
-}
-.green {
-  color: #40b82e;
-}
-
-/* ------ */
-
 
 
 
@@ -6642,7 +6506,7 @@ a.text-link:hover {
 .warning {
   background: #fff;
   border: 3px solid #FFCE20 !important;
-  color: #d2a915 !important;
+  color: #ffc800 !important;
 }
 
 .um-field-error{
