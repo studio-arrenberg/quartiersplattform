@@ -1464,7 +1464,7 @@ th {
   z-index: 200000;
   padding: 15px;
   overflow: scroll;
-  background-color: rgba(255, 255, 250, 1);
+  background-color: rgba(231, 245, 255, 0.95);
 
   opacity: 0;
   visibility: hidden;  
@@ -1485,7 +1485,6 @@ th {
   transition: all ease-in-out 0.2s; /* Animation */
 }
 
-
 @supports (
   (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
   .overlay {
@@ -1493,7 +1492,7 @@ th {
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
   }
-}
+} 
 
 .overlay .header-button{
   position: absolute;
@@ -4562,8 +4561,9 @@ left: 5px;
 .pre-card  a img{
   border-radius: 10px;
   margin-right: 5px;
-  height: intrinsic;
   margin-left: 0px;
+  height: 32px;
+  width: 32px;
 }
 
 .pre-card a:hover, .after-card a:hover {
@@ -5809,10 +5809,39 @@ font-weight: 700;
 
 }
 
-.acf-field[data-name = "sponsors"] .acf-row-handle{
+
+.acf-field[data-name = "sponsors"] th.acf-row-handle{
   display: none;
-  
 }
+
+.acf-field[data-name = "sponsors"] .acf-row-handle.order{
+  display: none;
+}
+
+
+.acf-field[data-name = "sponsors"] .acf-row-handle.-minus{
+  display: block;
+}
+
+.acf-field[data-name = "sponsors"] .acf-row-handle.minus .-minus {
+  display: block;
+}
+
+.acf-field[data-name = "sponsors"] .acf-row-handle.remove .-minus::after {
+  background-image: url('assets/icons/trash.svg');
+  content:  ' ';
+  width: 30px;
+  margin-left: auto;
+  height: 35px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.acf-field[data-name = "sponsors"] .acf-row-handle.remove .-minus:hover:after {
+  background-image: url('assets/icons/trash-red.svg');
+}
+
 
 
 .acf-field[data-name = "sponsors"] .acf-field-url {

@@ -29,7 +29,6 @@ function qp_add_option_pages() {
 			'redirect'		=> false,
 			'update_button' => __('Aktualisieren', 'acf'),
 			'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
-
 		));
 		
 		acf_add_options_sub_page(array(

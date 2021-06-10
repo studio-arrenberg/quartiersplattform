@@ -18,8 +18,6 @@ wp_maintenance_mode();
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 
-    <!-- <link rel="preload stylesheet" href="<?php echo get_template_directory_uri(); ?>/first.css"> -->
-
     <?php wp_head(); ?>
 
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri()?>/assets/favicon/apple-icon-57x57.png">
@@ -37,12 +35,52 @@ wp_maintenance_mode();
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri()?>/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri()?>/assets/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage"
-        content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Emoji Picker -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+
+    <!-- SEO  --> 
+
+    <!-- Standart -->
+    <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
+    <title> </title>
+    <meta name="Description" content="" />
+
+
+    <!-- Startseite  - Projektfeed - SDGs - Veranstaltungen - Archive -->
+
+        <!-- Hier vielleicht:
+            Quartiersüberblick | Arrenberg App
+            Lerne deinen Stadtteil kennen, entdecke interesannte Projekte und partizipiere in der Gemeinschaft.
+
+            Neuigkeiten und Projektupdates |  Arrenberg App 
+            Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt.
+            
+            Veranstaltungen in deiner Nachbarschaft | Arrenberg App
+            Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden.
+
+            Ziele für nachhaltige Entwicklung | Arrenberg App
+            Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.
+        -->
+
+        
+        <meta property="og:title" content=" " />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:type" content="article" />
+
+
+
+
+    <!-- Beiträge/ Posts mit featured image --> 
+
+        <meta property="og:title" content="<?php _e(get_the_title(),'quartiersplattform'); ?>  |  <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - <?php  the_field('slogan'); ?>" />
+        <meta property="og:description" content="<?php shorten(get_field('text'), 200); ?>" />
+        <meta property="og:image" content="<?php the_post_thumbnail_url('landscape_s' ); ?> " />
+        <meta property="og:type" content="article" />
+
+
 
     <!-- Matomo Tracking API Key -->
     <?php the_field('matomo_api', 'option'); ?>
