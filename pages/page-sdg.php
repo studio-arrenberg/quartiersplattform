@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="site-content" class="full-width page-grid" role="main">
+<main id="site-content" class=" page-grid" role="main">
 	
 	<div class="left-sidebar">
 		<?php projekt_carousel(); ?>

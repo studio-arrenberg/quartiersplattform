@@ -20,7 +20,7 @@ get_header();
 
 	</div>
 
-	<div class="content">
+	<div class="main-content">
 
 		<?php 
 			$text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');

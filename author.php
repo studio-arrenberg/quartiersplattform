@@ -43,7 +43,7 @@ get_header();
 
         <div class="profil-header">
             <div class="profil-header-avatar">
-                <img class="center-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
+                <img class="" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
 
             </div>
             <!-- user name -->

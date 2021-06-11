@@ -25,7 +25,7 @@ get_header();
         <?php projekt_carousel(); ?>
     </div>
 
-    <div class="content">
+    <div class="main-content">
     <!-- heading -->
     <h1 class="heading-size-1"><?php echo __('Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?> <span class="highlight"> <?php echo "v".wp_get_theme()->version; ?> </span></h1>
     <p class="text-size-1 margin-bottom"><?php _e('Allegemeine Informationen zu deiner Quartiersplattform', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
