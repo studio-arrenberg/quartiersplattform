@@ -194,7 +194,7 @@ wp_maintenance_mode();
                 ?>
 
                 <!-- profil button -->
-                <a class="button header-button button-is-transparent button-has-image " href="<?php echo get_site_url(); ?>/profil">
+                <a class="button profil-button header-button button-is-transparent button-has-image " href="<?php echo get_site_url(); ?>/profil">
                     <img class="button-image" src="<?php echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" />
                 </a>
                 <?php 

@@ -11,6 +11,7 @@
  * 	4. Deregister UM Styles
  * 	5. Redirect User after Login
  * 	6. Redirect User after Register
+ * 	7. UM Profile Image upload helper
  * 
  */
 
@@ -208,3 +209,19 @@ if (UM()->options()->get('members_page') == true) {
 }
 // Mail settings
 // ...
+
+
+/**
+ * UM Profile Image upload helper
+ * 
+ */
+function qp_um_profile_image_upload_helper() {
+
+	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+
+	if (strpos($REQUEST_URI,'/profil/') !== false) {
+		wp_register_script('qp-um-profil-image-upload-helper', get_template_directory_uri() .'/assets/js/qp-um-profil-image-upload-helper.js', false, false, true);
+		wp_enqueue_script('qp-um-profil-image-upload-helper');
+	}
+
+} add_action('wp_footer', 'qp_um_profile_image_upload_helper');
