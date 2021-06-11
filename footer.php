@@ -80,7 +80,7 @@
                 <a class="footer-link " href="<?php echo  get_site_url(); ?>/quartiersplattform/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
 
     
-            <a class="footer-link " href="https://www.quartiersplattform.org" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>         
+            <a class="footer-link " href="https://github.com/studio-arrenberg/quartiersplattform" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>         
         
         </div>
 

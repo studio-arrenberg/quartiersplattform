@@ -22,15 +22,16 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
 ## future
-- [ ] Energie Wetter API and Plugin
-- [ ] cookie disclaimer
+- [x] Energie Wetter API and Plugin
+- [x] cookie disclaimer
 - [ ] notifications
 - [ ] acf [avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
-- [ ] Update note
-- [ ] Admin Settings
-- [ ] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
-- [ ] Startseite Abstand der Inhalte
+- [x] Update note
+- [x] Admin Settings
+- [x] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
+- [x] Startseite Abstand der Inhalte
 - [ ] Cant login when login page is not set through UM...
+- [ ] Multi Image upload preview!
 
 ## dokumentation
 - troubleshooting
