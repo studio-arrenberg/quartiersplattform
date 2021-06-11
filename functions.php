@@ -3263,7 +3263,6 @@ function qp_detect_browser_language() {
 function quartiersplattform_detect_language() {
 	$expiry = strtotime('+1 year');
 	global $user;
-	global $current_user;
 	if (!is_user_logged_in()) {
 		if(isset($_COOKIE['language'])) {     
 			if(!empty($_GET['lang'])){
