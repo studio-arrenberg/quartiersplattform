@@ -2871,7 +2871,7 @@ function projekt_carousel( ) {
 	else if (get_post_type() == 'projekte') {
 		$project_ID = $postID;
 	}
-	else if ($_GET['project']) {
+	else if (!empty($_GET['project'])) {
 		$page = get_page_by_path($_GET['project'], OBJECT, 'projekte');
 		$project_ID = $page->ID;
 	}
@@ -3182,6 +3182,7 @@ function qp_project_owner() {
 
 	global $current_user;
 	global $post;
+	$project_id = '';
 
 	if (!is_user_logged_in()) {
 		return false;
@@ -3281,6 +3282,8 @@ function quartiersplattform_detect_language() {
 			update_user_meta(get_current_user_id( ), 'locale', $_GET['lang']);
 			return $_GET['lang'];
 		}else{
+			// Notice: Undefined variable: current_user
+			// Notice: Trying to get property 'ID' of non-object
 			$lang = get_user_meta($current_user->ID, 'user_lang');
 			return $lang;
 		}	

@@ -41,6 +41,16 @@
 ## v1.7.3 🗓
 - QP WP Actions (Overlays, Menu Buttons)
 - Energie Ampel als Plugin
+- Cookie Disclaimer
+- Update Note für Admins
+- Seite über den Status der Quartiersplattform
+- Einstellungen der Quartiersplattform
+- Redesign der Mails
+- Verbesserung der Übersetzungen
+- UM Profile Image Upload Helper
+### Bugs
+- ACF Loading Spinner
+- 
 
 ## v1.7.2 🚀
 - Login Weiterleitung zu Projekten
