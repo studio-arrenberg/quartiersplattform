@@ -2193,7 +2193,7 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
  * @param string $element element type
  * @return string
  */
-function qp_date($args, $element = 'card') {
+function card_list($args, $element = 'card') {
 
 	$query2 = new WP_Query($args);
 	// The Loop
