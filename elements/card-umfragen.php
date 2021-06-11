@@ -38,6 +38,7 @@
             // get poll meta data
             $array = get_post_meta(get_the_ID(), 'polls', true);
             // set vote state 
+            $vote_state = false;
             for ($i = 0; $i < count($array); $i++) if(in_array(get_current_user_id(),$array[$i]['user'])) $vote_state = true;
 
             $randId = md5(rand());
@@ -156,7 +157,7 @@
             
             ?>
             </script>
-            <?php if ($array[0]['total_voter'] >= 3) { ?>
+            <?php if (!empty($array[0]['total_voter']) && $array[0]['total_voter'] >= 3) { ?>
                 <div class="content">
                     <p class="preview-text"><?php echo $array[0]['total_voter']." ".__('Stimmen','quartiersplattform'); ?></p>
                 </div>

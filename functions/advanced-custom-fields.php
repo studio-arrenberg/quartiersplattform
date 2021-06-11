@@ -52,7 +52,7 @@ function acf_form_show_image_uploaded(){
 		strpos($REQUEST_URI,'/nachricht-erstellen/') !== false /* '/angebot-erstellen/' */
 		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
 		|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') !== false
-		|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
+		|| (!empty($_GET['action']) && $_GET['action'] == 'edit') /* || isset($_GET['action']) */
 	) {
 		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false, true);
 		wp_enqueue_script('image-upload-preview');
