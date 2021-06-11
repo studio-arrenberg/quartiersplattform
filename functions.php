@@ -2438,14 +2438,14 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		// $string = wp_date('j. F Y', $date);
 		// $string = date_i18n('j. F Y', $date);
 		// $string = strftime('%e %b %Y', $date);
-		$string = strftime('%e', $date)." ".__(strftime('%B', $date), "twentytwenty")." ".strftime('%Y', $date);
+		$string = date_i18n('j.', $date)." ".__(date_i18n('F', $date), "twentytwenty")." ".date_i18n('Y', $date);
 	}
 	// default (just date)
 	else {
 		// $string = wp_date('j. F', $date);
 		// $string = date_i18n('j. F', $date, true);
 		// $string = strftime('%e %b', $date);
-		$string = strftime('%e', $date)." ".__(strftime('%B', $date), "twentytwenty");
+		$string = date_i18n('j.', $date)." ".__(date_i18n('F', $date), "twentytwenty");
 	}
 
 	if ($detail) {
