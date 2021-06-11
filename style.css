@@ -1525,7 +1525,7 @@ th {
   }
   
   .overlay .energie-ampel{
-    margin-top: 100px;
+    margin-top: 25px;
   }
 }
 
@@ -3523,7 +3523,7 @@ font-weight: 700;
   --gap: 10px;
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: stretch;
+  justify-content: center;
   margin: 20px 0px 40px calc( -1 * var(--gap));
   width: calc( 100% + var(--gap));
   max-width: 1440px;
@@ -3542,6 +3542,8 @@ font-weight: 700;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
+  box-sizing: content-box;
+  max-width: 280px;
   }
 
 .sponsor a{
