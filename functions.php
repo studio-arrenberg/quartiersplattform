@@ -1622,6 +1622,25 @@ function cpt_save_worker( $post_id ) {
 		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
 			update_post_meta ( $post_id, 'polls', $array );
     	}
+
+		// set query vars
+		set_query_var( 'qp_post_id', $post_id);
+		// prep mail to qp headquarter
+		ob_start();
+		// create mail content
+		get_template_part('components/mail/header');
+		get_template_part('components/mail/umfragen');
+		get_template_part('components/mail/footer');
+		// get_template_part( 'components/mail/example' );
+		$mail_html = ob_get_contents();
+		ob_end_clean();
+
+		// send mail to qp headquarter
+		$to = 'camilo@arrenberg.studio';
+		$subject = 'Jemand hat eine Anmerkung geschrieben.';
+		$body = $email_content;
+		$headers = array('Content-Type: text/html; charset=UTF-8');
+		wp_mail( $to, $subject, $mail_html, $headers );
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
@@ -2174,7 +2193,7 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
  * @param string $element element type
  * @return string
  */
-function card_list($args, $element = 'card') {
+function qp_date($args, $element = 'card') {
 
 	$query2 = new WP_Query($args);
 	// The Loop
@@ -2416,14 +2435,17 @@ function qp_date( $date, $detail = false, $time = '' ) {
 	}
 	// date + year
 	else if (date("Y") != date("Y", $date) ) {
-		$string = strftime('%e', $date)." ".__(strftime('%B', $date))." ".strftime('%Y', $date);
+		// $string = wp_date('j. F Y', $date);
+		// $string = date_i18n('j. F Y', $date);
+		// $string = strftime('%e %b %Y', $date);
+		$string = strftime('%e', $date)." ".__(strftime('%B', $date), "twentytwenty")." ".strftime('%Y', $date);
 	}
 	// default (just date)
 	else {
 		// $string = wp_date('j. F', $date);
 		// $string = date_i18n('j. F', $date, true);
 		// $string = strftime('%e %b', $date);
-		$string = strftime('%e', $date)." ".__(strftime('%B', $date));
+		$string = strftime('%e', $date)." ".__(strftime('%B', $date), "twentytwenty");
 	}
 
 	if ($detail) {
