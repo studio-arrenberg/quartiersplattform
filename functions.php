@@ -1417,7 +1417,7 @@ function display_cookie_warning() {
 
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-	if (strpos($REQUEST_URI,'/impressum/') === true && strpos($REQUEST_URI,'/datenschutzerklaerung/') === true) {
+	if (strpos($REQUEST_URI,'/impressum/') !== false || strpos($REQUEST_URI,'/datenschutzerklaerung/') !== false) {
 		return false;
 	}
 
