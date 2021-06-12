@@ -1,23 +1,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-05-04 15:52+0200\n"
-"PO-Revision-Date: 2021-05-04 15:53+0200\n"
+"POT-Creation-Date: 2021-05-31 16:57+0200\n"
+"PO-Revision-Date: 2021-06-12 11:15+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ../../../../../../../../Entwicklung/quartiersplattform/wp-content/themes/quartiersplattform\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -26,9 +24,7 @@ msgid "Page Not Found"
 msgstr "Page Not Found"
 
 #: 404.php:19
-msgid ""
-"The page you were looking for could not be found. It might have been "
-"removed, renamed, or did not exist in the first place."
+msgid "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
 msgstr "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
 
 #: 404.php:29
@@ -39,24 +35,24 @@ msgstr "404 not found"
 msgid "Mein Profil bearbeiten"
 msgstr "Profilimi düzenle"
 
-#: author.php:73 setup/kontakt.php:94
+#: author.php:70 setup/kontakt.php:97
 msgid "Über mich"
 msgstr "Hakkımda"
 
-#: author.php:94 setup/main.php:50 setup/main.php:174 setup/projekte.php:27
-#: setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75
-#: ultimate-member/email/welcome_email.php:27
-msgid "Projekte"
-msgstr "Projeler"
+#: author.php:89
+msgid "Projekte von"
+msgstr "Proje güncellemesi yapan:"
+
+#: author.php:107
+msgid "Beiträge von"
+msgstr "Yazıyı yazan:"
 
 #: classes/class-twentytwenty-customize.php:81
 msgid "Retina logo"
 msgstr "Retina logo"
 
 #: classes/class-twentytwenty-customize.php:82
-msgid ""
-"Scales the logo to half its uploaded size, making it sharp on high-res "
-"screens."
+msgid "Scales the logo to half its uploaded size, making it sharp on high-res screens."
 msgstr "Scales the logo to half its uploaded size, making it sharp on high-res screens."
 
 #: classes/class-twentytwenty-customize.php:101
@@ -108,9 +104,7 @@ msgid "Cover Template"
 msgstr "Cover Template"
 
 #: classes/class-twentytwenty-customize.php:283
-msgid ""
-"Settings for the \"Cover Template\" page template. Add a featured image to "
-"use as background."
+msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
 msgstr "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
 
 #: classes/class-twentytwenty-customize.php:305
@@ -142,8 +136,7 @@ msgid "Overlay Opacity"
 msgstr "Overlay Opacity"
 
 #: classes/class-twentytwenty-customize.php:396
-msgid ""
-"Make sure that the contrast is high enough so that the text is readable."
+msgid "Make sure that the contrast is high enough so that the text is readable."
 msgstr "Make sure that the contrast is high enough so that the text is readable."
 
 #: classes/class-twentytwenty-walker-comment.php:65
@@ -190,11 +183,11 @@ msgstr "Comments"
 msgid "Comments are closed."
 msgstr "Comments are closed."
 
-#: components/author-card.php:50
+#: components/author-card.php:57
 msgid "Hier kannst du deine Kontaktdaten hinterlegen,"
 msgstr "Buraya, seninle bağlantı kurulabilmesi için"
 
-#: components/author-card.php:50
+#: components/author-card.php:57
 msgid " damit du kontaktiert werden kannst."
 msgstr " iletişim bilgilerini kaydedebilirsin."
 
@@ -203,20 +196,14 @@ msgid "Wir verwenden Cookies"
 msgstr "Biz çerez kullanıyoruz"
 
 #: components/cookie/cookie-alert.php:9
-msgid ""
-"Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du "
-"der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
+msgid "Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
 msgstr "Mahalle platformunda çerezler kullanıyoruz. Platformu kullanarak bunların kullanımını onaylamış oluyorsun, ancak üçüncü tarafların çerezlerini kullanmıyoruz."
 
-#: components/cookie/cookie-alert.php:19 footer.php:56
+#: components/cookie/cookie-alert.php:19 footer.php:74
 msgid "Datenschutzerklärung"
 msgstr "Veri Gizliliği Beyanı"
 
-#: components/cookie/cookie-alert.php:26 footer.php:52 setup/main.php:176
-#: ultimate-member/email/changedpw_email.php:32
-#: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email.php:57
-#: ultimate-member/email/welcome_email.php:68
+#: components/cookie/cookie-alert.php:26 footer.php:70 setup/main.php:182 ultimate-member/email/changedpw_email.php:32 ultimate-member/email/checkmail_email.php:57 ultimate-member/email/resetpw_email.php:57 ultimate-member/email/welcome_email.php:68
 msgid "Impressum"
 msgstr "Künye"
 
@@ -236,7 +223,7 @@ msgstr "yeşil aşama"
 msgid " CO2 pro kWh"
 msgstr " kWh başına CO2"
 
-#: components/energie_ampel-menu.php:37 components/energie_ampel-menu.php:166
+#: components/energie_ampel-menu.php:37 components/energie_ampel-menu.php:180
 msgid "Jetzt"
 msgstr "Şimdi"
 
@@ -248,53 +235,51 @@ msgstr "Perşembe"
 msgid "Energie Ampel"
 msgstr "Enerji lambası"
 
-#: components/energie_ampel-menu.php:143
-msgid "e Phase"
+#: components/energie_ampel-menu.php:142
+msgid "Phase"
 msgstr "e aşaması"
 
-#: components/energie_ampel-menu.php:148
-msgid "CO2 pro kWh"
+#: components/energie_ampel-menu.php:146
+msgid "gramm"
+msgstr "gram"
+
+#: components/energie_ampel-menu.php:147
+msgid "pro kWh"
 msgstr "kWh başına CO2"
 
-#: components/feedback.php:37
-msgid "Zur Wunschliste"
-msgstr "İstek listesine ekle"
-
-#: components/general/map-card.php:32
+#: components/general/map-card.php:36
 msgid "In Maps öffnen"
 msgstr "Haritalarda aç"
 
-#: components/general/map-card.php:61
+#: components/general/map-card.php:66
 msgid "Zu Google Maps wechseln?"
 msgstr "Google Haritalara geçilsin mi?"
 
-#: components/general/share-post.php:10
-msgid "Projekt teilen"
-msgstr "Projeyi böl"
+#: components/general/share-post.php:12
+msgid "Teilen"
+msgstr "Paylaş"
 
-#: components/general/share-post.php:13 pages/single-umfragen.php:85
+#: components/general/share-post.php:15
 msgid "Kopieren"
 msgstr "Kopyala"
 
-#: components/general/share-post.php:48
+#: components/general/share-post.php:50
 msgid "Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde."
 msgstr "Projen ancak yayınlandıktan sonra paylaşılabilir."
 
-#: components/general/share-post.php:49
+#: components/general/share-post.php:51
 msgid "Dein Projekt kann nicht geteilt werden"
 msgstr "Projen paylaşılamaz"
 
-#: components/profil/reminder_card_reset.php:2
+#: components/profil/reminder_card_reset.php:1
 msgid "Hinweise und Tipps"
 msgstr "Notlar ve Öneriler"
 
-#: components/profil/reminder_card_reset.php:3
-msgid ""
-"Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder "
-"einblenden."
+#: components/profil/reminder_card_reset.php:2
+msgid "Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder einblenden."
 msgstr "Burada mahalle platformundaki tüm notları ve önerileri tekrar görüntüleyebilirsin."
 
-#: components/profil/reminder_card_reset.php:5
+#: components/profil/reminder_card_reset.php:4
 msgid "Hinweise und Tipps zurücksetzen"
 msgstr "Notları ve önerileri sıfırla"
 
@@ -302,35 +287,28 @@ msgstr "Notları ve önerileri sıfırla"
 msgid "Aktuelle Veranstaltung"
 msgstr "Güncel Etkinlik"
 
-#: components/project/content.php:5 setup/umfragen.php:105
-#: setup/veranstaltungen.php:108
+#: components/project/content.php:5 setup/umfragen.php:105 setup/veranstaltungen.php:108
 msgid "Beschreibung"
 msgstr "Tarif"
 
 #: components/project/content.php:13
-msgid ""
-"Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und "
-"Inhalte noch besser zu erklären."
+msgid "Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte noch besser zu erklären."
 msgstr "Hedefleri ve içerikleri daha iyi açıklamak için projene bir tarif ekleyebilirsin."
 
 #: components/project/content.php:14
 msgid "Beschreibung hinzufügen"
 msgstr "Tarif ekle"
 
-#: components/project/content.php:31
+#: components/project/content.php:22
 msgid "Beschreibung bearbeiten"
 msgstr "Tarifi düzenle"
 
-#: components/project/content.php:44 pages/page-quartier.php:61
-#: pages/single-nachrichten.php:73 pages/single-veranstaltungen.php:119
-#: template-parts/content.php:53 templates/center-header.php:47
+#: components/project/content.php:35 pages/page-profil.php:164 pages/page-quartier.php:76 pages/single-nachrichten.php:74 pages/single-veranstaltungen.php:94 template-parts/content.php:53 templates/center-header.php:47
 msgid "Continue reading"
 msgstr "Continue reading"
 
 #: components/project/history.php:31
-msgid ""
-"Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später "
-"vorbei, um auf dem Laufenden zu bleiben."
+msgid "Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später vorbei, um auf dem Laufenden zu bleiben."
 msgstr "Şimdiye kadar proje güncellemesi yayınlanmadı. Haberdar olmak için daha sonra tekrar uğra."
 
 #: components/project/history.php:32
@@ -338,53 +316,46 @@ msgid "Es wurden noch keine Beiträge veröffentlicht"
 msgstr "Henüz yazı yayınlanmadı"
 
 #: components/project/history.php:36
-msgid ""
-"Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst "
-"Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen "
-"in deinem Quartier über das Projekt zu informieren."
+msgid "Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen in deinem Quartier über das Projekt zu informieren."
 msgstr "Şimdiye kadar henüz hiç proje güncellemesi yayınlamadın. Mahallendeki insanları proje hakkında bilgilendirmek için mesajlar, etkinlikler ve anketler yayınlayabilirsin."
 
 #: components/project/history.php:37
 msgid "Du hast noch keine Beiträge veröffentlicht"
 msgstr "Henüz hiç yazı yayınlamadın"
 
-#: components/project/pinned-posts.php:23
+#: components/project/pinned-posts.php:33
 msgid "Gepinnte Beiträge"
 msgstr "Tahtaya asılan yazılar"
 
-#: components/project/sdg-display.php:14 components/project/sdg-display.php:50
+#: components/project/sdg-display.php:13 components/project/sdg-display.php:48
 msgid "Ziele für nachhaltige Entwicklung"
 msgstr "Sürdürülebilir gelişimle ilgili hedefler"
 
-#: components/project/sdg-display.php:42 pages/page-quartier.php:148
+#: components/project/sdg-display.php:40 pages/page-quartier.php:157
 msgid "Übersicht der Ziele für nachhaltige Entwicklung"
 msgstr "Sürdürülebilir gelişimle ilgili hedeflere toplu bakış"
 
-#: components/project/sdg-display.php:48
-msgid ""
-"Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen "
-"kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht "
-"genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der "
-"Seite SDGs informieren, worum es sich dabei handelt."
+#: components/project/sdg-display.php:46
+msgid "Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der Seite SDGs informieren, worum es sich dabei handelt."
 msgstr "Projen sürdürülebilirlik hedefleri takip ediyor mu? Proje ayarlarında, projenin hangi hedefleri desteklediğini belirleyebilirsin. Sürdürülebilir gelişim hedeflerinin ne olduğunu tam olarak bilmiyor musun? SDG’lerin sayfasında bunun neyle ilgili olduğu hakkında bilgi alabilirsin."
 
-#: components/project/toolbox.php:7
+#: components/project/toolbox.php:10
 msgid "Was gibt es Neues?"
 msgstr "Yenilikler neler?"
 
-#: components/project/toolbox.php:10
+#: components/project/toolbox.php:13
 msgid "Halte das Quartier auf dem Laufenden."
 msgstr "Mahalleyi gündemden haberdar et."
 
-#: components/project/toolbox.php:16
+#: components/project/toolbox.php:20
 msgid " Nachricht "
 msgstr " Mesaj "
 
-#: components/project/toolbox.php:22
+#: components/project/toolbox.php:27
 msgid "Umfrage "
 msgstr "Anket "
 
-#: components/project/toolbox.php:29
+#: components/project/toolbox.php:35
 msgid "Veranstaltung "
 msgstr "Etkinlik "
 
@@ -392,8 +363,7 @@ msgstr "Etkinlik "
 msgid "Diese Meldung ausblenden."
 msgstr "Bu bildirimi gizle."
 
-#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:18
-#: future_translation.php:80
+#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:24 future_translation.php:80
 msgid "Anheften"
 msgstr "Tuttur"
 
@@ -401,17 +371,15 @@ msgstr "Tuttur"
 msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
 msgstr "Burada projeyi mahalle sayfasına tutturabilirsin."
 
-#: components/settings/pin_toggle.php:9 components/settings/pin_toggle.php:23
-#: future_translation.php:73 setup/main.php:270
+#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:31 future_translation.php:73 setup/main.php:280
 msgid "Gepinnt"
 msgstr "Tutturuldu"
 
-#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:26
-#: future_translation.php:74 setup/main.php:271
+#: components/settings/pin_toggle.php:15 components/settings/pin_toggle.php:34 future_translation.php:74 setup/main.php:281
 msgid "Nicht gepinnt"
 msgstr "Tutturulmadı"
 
-#: components/settings/pin_toggle.php:19
+#: components/settings/pin_toggle.php:25
 msgid "Hier kannst du den Beitrag auf deine Projektseite pinnen."
 msgstr "Burada yazıyı proje sayfana tutturabilirsin."
 
@@ -420,25 +388,30 @@ msgid "Sichtbarkeit"
 msgstr "Görünürlük"
 
 #: components/settings/visibility_toggle.php:2
-msgid ""
-"Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
+msgid "Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
 msgstr "Burada yazının mahalle sayfasındaki görünürlüğünü belirleyebilirsin."
 
-#: components/settings/visibility_toggle.php:7 future_translation.php:75
+#: components/settings/visibility_toggle.php:9 future_translation.php:75
 msgid "Öffentlich"
 msgstr "Herkese açık"
 
-#: components/settings/visibility_toggle.php:9 future_translation.php:77
+#: components/settings/visibility_toggle.php:12 future_translation.php:77
 msgid "Privat"
 msgstr "Özel"
 
-#: components/smart-card/projekte.php:56 elements/card-nachrichten.php:31
-#: setup/nachrichten.php:27
+#: components/smart-card/projekte.php:20 pages/page-profil.php:131
+msgid "Deine Projekte"
+msgstr "Projelerin"
+
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+msgid "Dein Projekt"
+msgstr "Projelerin"
+
+#: components/smart-card/projekte.php:56 elements/card-nachrichten.php:29 setup/nachrichten.php:27
 msgid "Nachricht"
 msgstr "Mesaj"
 
-#: components/smart-card/projekte.php:58 elements/card-veranstaltungen.php:28
-#: setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
+#: components/smart-card/projekte.php:58 elements/card-veranstaltungen.php:28 elements/card-veranstaltungen.php:44 elements/card-veranstaltungen.php:72 setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
 msgid "Veranstaltung"
 msgstr "Etkinlik"
 
@@ -446,28 +419,27 @@ msgstr "Etkinlik"
 msgid "Aktuelle Veranstaltungen"
 msgstr "Güncel etkinlikler"
 
-#: components/views/veranstaltungen.php:35
-msgid ""
-"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
-"organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner "
-"Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
+#: components/views/veranstaltungen.php:34
+msgid "Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
 msgstr "Mahallende bir kültür etkinliği ya da kutlama düzenlediğinde, mahallendeki insanlarla tanışmak ve bunlarla iletişime geçmek için bunu burada yayınlayabilirsin."
 
-#: components/views/veranstaltungen.php:36
+#: components/views/veranstaltungen.php:35
 msgid "Momentan gibt es keine Veranstaltungen"
 msgstr "Şu anda hiç etkinlik yok"
 
-#: components/views/veranstaltungen.php:36 setup/main.php:177
+#: components/views/veranstaltungen.php:35 setup/main.php:183
 msgid "Veranstaltung erstellen"
 msgstr "Etkinlik oluştur"
 
-#: elements/card-nachrichten.php:33 elements/card-projekte.php:48
-#: elements/card-veranstaltungen.php:30
+#: elements/card-anmerkungen.php:25
+msgid "von"
+msgstr "başlangıç"
+
+#: elements/card-nachrichten.php:31 elements/card-projekte.php:48 elements/card-veranstaltungen.php:30
 msgid "von "
 msgstr "başlangıç "
 
-#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71
-#: setup/projekte.php:107
+#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71 setup/projekte.php:109
 msgid "Projekt"
 msgstr "Proje"
 
@@ -479,67 +451,91 @@ msgstr "Anket"
 msgid "veröffentlicht von "
 msgstr "yayınlayan: "
 
-#: elements/card-umfragen.php:68 elements/card-umfragen.php:124
+#: elements/card-umfragen.php:69 elements/card-umfragen.php:125
 msgid " Stimmen"
 msgstr " Oylar"
 
-#: elements/card-umfragen.php:96
-msgid ""
-"Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
+#: elements/card-umfragen.php:97
+msgid "Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
 msgstr "Ankete katılmak için mahalle platformuna kaydol."
 
-#: elements/card-umfragen.php:98 header.php:162 maintenance.php:108
+#: elements/card-umfragen.php:99 maintenance.php:110
 msgid "Anmelden"
 msgstr "Giriş yap"
 
-#: elements/card-umfragen.php:101 maintenance.php:109
+#: elements/card-umfragen.php:102 maintenance.php:111
 msgid "Registrieren"
 msgstr "Kaydol"
 
-#: footer.php:51
+#: elements/card-umfragen.php:161
+msgid "Stimmen"
+msgstr "Oylar"
+
+#: footer.php:57
+msgid "Sprache"
+msgstr "Dil"
+
+#: footer.php:58
+msgid "Englisch"
+msgstr "İngilizce"
+
+#: footer.php:59
+msgid "Türkisch"
+msgstr "Türkçe"
+
+#: footer.php:60
+msgid "Italienisch"
+msgstr "İtalyanca"
+
+#: footer.php:61
+msgid "Deutsch"
+msgstr "Almanca"
+
+#: footer.php:69
 msgid "Kontakt"
 msgstr "İletişim"
 
-#: forms/form-nachrichten.php:34 forms/form-projekte.php:25
-#: forms/form-projekte.php:50 forms/form-umfragen.php:33
-#: forms/form-veranstaltungen.php:37
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25 forms/form-veranstaltungen.php:29
+msgid "Projekt konnte nicht verknüpft werden"
+msgstr "Projen paylaşılamaz"
+
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25 forms/form-veranstaltungen.php:29
+msgid "Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es noch mal."
+msgstr "Form bir projeyle ilişkilendirilemedi. Tekrar dene."
+
+#: forms/form-nachrichten.php:41 forms/form-projekte.php:25 forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
 msgid "Projekt veröffentlichen"
 msgstr "Proje yayınla"
 
-#: forms/form-nachrichten.php:34 forms/form-umfragen.php:33
-#: forms/form-veranstaltungen.php:37
-msgid ""
-"Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den "
-"Projekteinstellungen veröffentlichen musst. "
+#: forms/form-nachrichten.php:41 forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
+msgid "Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. "
 msgstr "Önce projeyi proje ayarlarında yayınlaman gerektiği için yazın şimdilik görülmüyor. "
 
-#: forms/form-nachrichten.php:43
+#: forms/form-nachrichten.php:50
 msgid "Erstelle eine Nachricht"
 msgstr "Bir mesaj yaz"
 
-#: forms/form-nachrichten.php:61
+#: forms/form-nachrichten.php:68
 msgid "Nachricht veröffentlichen"
 msgstr "Mesajı yayınla"
 
 #: forms/form-projekte.php:25
-msgid ""
-"Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte "
-"einstellen kannst. Wenn du soweit bist, kannst du es in den "
-"Projekteinstellungen veröffentlichen."
+msgid "Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen."
 msgstr "Sakince içeriklerini girebilmen için projen şimdilik yayınlanmadı. Hazır olduğunda yazını proje ayarlarından yayınlayabilirsin."
 
 #: forms/form-projekte.php:29
 msgid "Erstelle dein eigenes Projekt"
 msgstr "Kendi projeni oluştur"
 
+#: forms/form-projekte.php:50 functions.php:2193 functions.php:3082 pages/projekt-feed.php:49 setup/main.php:187
+msgid "Projekt erstellen"
+msgstr "Proje oluştur"
+
 #: forms/form-projekte.php:62
-msgid ""
-"Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, "
-"Umfragen und Veranstaltungen zu erstellen."
+msgid "Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen."
 msgstr "Kendi projelerini, anketlerini ve etkinliklerini oluşturmak için mahalle platformuna kaydol."
 
-#: forms/form-projekte.php:63 pages/page-projekte.php:105
-#: pages/page-veranstaltungen.php:55
+#: forms/form-projekte.php:63 pages/page-anmerkungen.php:102 pages/page-projekte.php:102 pages/page-veranstaltungen.php:48 pages/single-anmerkungen.php:54
 msgid "Mitglied werden im Quartier"
 msgstr "Mahalleye üye ol"
 
@@ -547,11 +543,11 @@ msgstr "Mahalleye üye ol"
 msgid "Jetzt Anmelden"
 msgstr "Şimdi kaydol"
 
-#: forms/form-umfragen.php:58
+#: forms/form-umfragen.php:64
 msgid "Umfrage veröffentlichen"
 msgstr "Anketi yayınla"
 
-#: forms/form-veranstaltungen.php:72
+#: forms/form-veranstaltungen.php:78
 msgid "Veranstaltung veröffentlichen"
 msgstr "Etkinliği yayınla"
 
@@ -584,8 +580,7 @@ msgid "Footer #1"
 msgstr "Footer #1"
 
 #: functions.php:399
-msgid ""
-"Widgets in this area will be displayed in the first column in the footer."
+msgid "Widgets in this area will be displayed in the first column in the footer."
 msgstr "Widgets in this area will be displayed in the first column in the footer."
 
 #: functions.php:409
@@ -593,8 +588,7 @@ msgid "Footer #2"
 msgstr "Footer #2"
 
 #: functions.php:411
-msgid ""
-"Widgets in this area will be displayed in the second column in the footer."
+msgid "Widgets in this area will be displayed in the second column in the footer."
 msgstr "Widgets in this area will be displayed in the second column in the footer."
 
 #: functions.php:515
@@ -690,9 +684,7 @@ msgid "Anleitung öffnen"
 msgstr "Kılavuzu aç"
 
 #: functions.php:920
-msgid ""
-"Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-"
-"Zustellung zu gewährleisten."
+msgid "Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten."
 msgstr "E-postaların güvenilir bir şekilde teslim edilmesi için WP Mail SMTP Plugin’i tam olarak kur."
 
 #: functions.php:929 functions.php:940
@@ -716,12 +708,10 @@ msgid "Impressum erstellen"
 msgstr "Künye oluştur"
 
 #: functions.php:951
-msgid ""
-"Hier kannst du das Logo sowie den Namen deiner Quartiersplattform "
-"einrichten. "
+msgid "Hier kannst du das Logo sowie den Namen deiner Quartiersplattform einrichten. "
 msgstr "Buradan logoyu ve mahalle platformunun adını oluşturabilirsin. "
 
-#: functions.php:952 pages/page-quartier.php:50
+#: functions.php:952 pages/page-quartier.php:42
 msgid "Zu den Einstellungen"
 msgstr "Ayarlara git"
 
@@ -730,87 +720,83 @@ msgid "Wir empfehlen das Plugin "
 msgstr "Eklentiyi kurmanı "
 
 #: functions.php:961
-msgid ""
-" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
+msgid " zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
 msgstr " tavsiye ederiz, böylece e-postaların güvenilir bir şekilde teslim edilmesini sağlayabilirsin."
 
 #: functions.php:962
 msgid "installieren"
 msgstr "Kur"
 
-#: functions.php:1813
+#: functions.php:1821
 msgid "Copyright"
 msgstr "Telif hakkı"
 
-#: functions.php:2101
+#: functions.php:2109
 msgid "Datei kann nicht gespeichert werden!"
 msgstr "Dosya kaydedilemiyor!"
 
-#: functions.php:2126
+#: functions.php:2134
 msgid "Termin im Kalender speichern"
 msgstr "Randevuyu takvime kaydet"
 
-#: functions.php:2185 functions.php:2939 pages/projekt-feed.php:49
-#: setup/main.php:181
-msgid "Projekt erstellen"
-msgstr "Proje oluştur"
-
-#: functions.php:2486
+#: functions.php:2518
 msgid "Morgen"
 msgstr "Yarın"
 
-#: functions.php:2490
+#: functions.php:2522
 msgid "Heute"
 msgstr "Bugün"
 
-#: functions.php:2494
+#: functions.php:2526
 msgid "Gestern"
 msgstr "Dün"
 
-#: functions.php:2506
+#: functions.php:2542
 msgid " um "
 msgstr " saat "
 
-#: functions.php:2525 functions.php:2529
+#: functions.php:2595 functions.php:2599
 msgid "noch "
 msgstr "kalan: "
 
-#: functions.php:2525
+#: functions.php:2595
 msgid " Minuten"
 msgstr " Dakika"
 
-#: functions.php:2529
+#: functions.php:2599
 msgid " Stunden"
 msgstr " Saat"
 
-#: functions.php:2533
+#: functions.php:2603
 msgid "bis um "
 msgstr "bitiş "
 
-#: functions.php:2537
+#: functions.php:2607
 msgid "bis Morgen"
 msgstr "yarına kadar"
 
-#: functions.php:2541 functions.php:2544
+#: functions.php:2611 functions.php:2614
 msgid "vom "
 msgstr "başlangıç "
 
-#: functions.php:2548
+#: functions.php:2618
 msgid "bis zum "
 msgstr "bitiş "
 
-#: functions.php:3178
+#: functions.php:3276
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr "Yazıyı Wordpress sisteminde düzenle"
+
+#: functions.php:3448
+msgid "Nicht Sichtbar"
+msgstr "Görünür"
 
 #: future_translation.php:8
 msgid "Hier kannst du noch keine Projekte entdecken."
 msgstr "Burada henüz proje keşfedemezsin."
 
 #: future_translation.php:9 future_translation.php:18 pages/projekt-feed.php:48
-msgid ""
-"Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern "
-"willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
+msgid "Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
 msgstr "Başka insanlarla birlikte mahallende bir şey değiştirmek istiyorsan, kendi projeni yayınlayabilir ve bunun üzerinde çalışabilirsin."
 
 #: future_translation.php:12
@@ -819,12 +805,10 @@ msgstr "Maalesef burada henüz etkinlik yok."
 
 #: future_translation.php:13
 msgid ""
-"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
-"veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu "
-"erhalten.\n"
-"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream "
-"Link veröffentlichen."
-msgstr "Mahallende bir kültür etkinliği ya da bir kutlama düzenliyorsan, daha fazla ziyaretçi gelmesi için bunu burada yayınlayabilirsin.\n"
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu erhalten.\n"
+"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream Link veröffentlichen."
+msgstr ""
+"Mahallende bir kültür etkinliği ya da bir kutlama düzenliyorsan, daha fazla ziyaretçi gelmesi için bunu burada yayınlayabilirsin.\n"
 "Etkinliğin yalnızca çevrimiçi olarak gerçekleşiyorsa, bir canlı akış linki yayınlayabilirsin."
 
 #: future_translation.php:17
@@ -836,9 +820,7 @@ msgid "Es gibt ein neues Projektupdate."
 msgstr "Yeni bir proje güncellemesi var."
 
 #: future_translation.php:25
-msgid ""
-"Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei "
-"deinen Lieblingsprojekten."
+msgid "Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei deinen Lieblingsprojekten."
 msgstr "Burada yeni proje güncellemesini görebilir ve favori projelerinin gündemini takip edebilirsin."
 
 #: future_translation.php:26 future_translation.php:56
@@ -857,18 +839,15 @@ msgstr "Birisi mesajına yorum yaptığında."
 msgid "hat deine Nachricht kommentiert."
 msgstr "mesajına yorum yaptı."
 
-#: future_translation.php:32 future_translation.php:40
-#: future_translation.php:48
+#: future_translation.php:32 future_translation.php:40 future_translation.php:48
 msgid "Hier kannst du dir den Kommentar ansehen."
 msgstr "Buradan yorumu görebilirsin."
 
-#: future_translation.php:33 future_translation.php:41
-#: future_translation.php:49
+#: future_translation.php:33 future_translation.php:41 future_translation.php:49
 msgid "Kommentar von"
 msgstr "Yorum yapan:"
 
-#: future_translation.php:34 future_translation.php:42
-#: future_translation.php:50
+#: future_translation.php:34 future_translation.php:42 future_translation.php:50
 msgid "Zum Kommentar"
 msgstr "Yoruma git"
 
@@ -901,9 +880,7 @@ msgid "Es gibt Neuigkeiten in deinem Quartier."
 msgstr "Mahallenle ilgili haberler var."
 
 #: future_translation.php:55
-msgid ""
-"Sie dir die neuen Beiträge an und bleibe informiert bei deinen "
-"Lieblingsprojekten."
+msgid "Sie dir die neuen Beiträge an und bleibe informiert bei deinen Lieblingsprojekten."
 msgstr "Yeni yazıları gör ve favori projelerinle ilgili gündemi takip et."
 
 #: future_translation.php:57
@@ -923,35 +900,13 @@ msgid "Neuigkeiten ansehen"
 msgstr "Haberleri gör"
 
 #: future_translation.php:64
-msgid ""
-"Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es "
-"regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch "
-"Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das "
-"Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der "
-"einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, "
-"Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu "
-"lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
+msgid "Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
 msgstr "Hava soğukken mont giyiyor musun? Ya da yağmur yağdığında kapüşonunu takıyor musun? İklimi korumak da hava durumuna göre hareket etmek kadar kolay ve pratik olmalı. Bu nasıl olabilir? Enerji hava durumu yeşili gösterdiğinde elektriğini harcaman yeterli. Bu, herkesin uygulayabileceği bir iklim koruması. Çünkü CO2 emisyonunu düşürmenin en kolay yolu, çamaşır makinesini, bulaşık makinesini, kurutucuyu ve diğer cihazları yeşil aşamada çalıştırmak. Bu aşamalarda %70’e kadar daha az CO2 çıkışı oluyor. "
 
 #: future_translation.php:66
 msgid ""
-"Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen "
-"unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und "
-"regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der "
-"gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft "
-"aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion "
-"geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler "
-"Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen "
-"CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der "
-"Bergischen Universität und dem Klimaquartier Arrenberg wurden diese "
-"Berechnungen in Raster übertragen und das hier sichtbare Energiewetter "
-"entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob "
-"der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch "
-"oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt "
-"sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig "
-"von den eigenen finanziellen Möglichkeiten an der Energiewende und dem "
-"Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein "
-"smarter Schritt, den alle gehen können. "
+"Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der Bergischen Universität und dem Klimaquartier Arrenberg wurden diese Berechnungen in Raster übertragen und das hier sichtbare Energiewetter entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig von den eigenen finanziellen Möglichkeiten an der Energiewende und dem Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein smarter "
+"Schritt, den alle gehen können. "
 msgstr "Tükettiğimiz elektrik günün ve gecenin her saatinde farklı miktarda bir CO2 emisyonuna sahiptir. Bu, o anda şebekede reel olarak ne kadar yerel ve yenilenebilir olarak üretilen elektrik aktığına ve şehrin tamamındaki tüketimin ne kadar yüksek olduğuna göre değişir. Örneğin o sırada Kuzey Almanya’dan çok rüzgar enerjisi, güneyden ya da kişisel üretimden çok güneş enerjisi sağlanıyorsa, o andaki CO2 emisyonu düşer. Wuppertal Elektrik İdaresi birkaç yıldır, tükettiğimiz elektriğin arkasında yatan bu reel ve saatlik CO2 emisyonunu hesaplıyor. Bu hesaplamalar Bergische Universität ve Klimaquartier Arrenberg’le birlikte tablolara aktarıldı ve burada görülebilen enerji hava durumu geliştirildi. Burada, yeşil, sarı ve kırmızı aşamalarda, üç basamak halinde CO2 emisyonunun o anda ya da önümüzdeki saatlerde ve günlerde yüksek mi, düşük mü olduğunu gösteriyor. Feragat yerine kaydırma. Hemen yenisi almak zorunda kalmak yerine mevcut cihazları kullanmak. Bu yolla her hane, kendi maddi imkanlarından bağımsız olarak enerji dönüşümüne ve iklimin korunmasına katkıda bulunabilir. Her ne kadar bu şekilde tüm sorunlar çözülmese de herkesin atabileceği akıllı bir adım. "
 
 #: future_translation.php:68
@@ -986,11 +941,43 @@ msgstr "Buradan yazıyı mahalle sayfasına tutturabilirsin."
 msgid "Hier kannst du den Akteur auf die Quariersseite pinnen."
 msgstr "Buradan aktörü mahalle sayfasına tutturabilirsin."
 
+#: future_translation.php:88
+msgid "Vorschlag"
+msgstr "Öneri"
+
+#: future_translation.php:89
+msgid "Umgesetzt"
+msgstr "Dönüştürüldü"
+
+#: future_translation.php:90
+msgid "In Bearbeitung"
+msgstr "İşlem yapılıyor"
+
+#: future_translation.php:93
+msgid "Bild auswählen"
+msgstr "Resim seç"
+
+#: future_translation.php:96
+msgid "grüne"
+msgstr "yeşil aşama"
+
+#: future_translation.php:97
+msgid "rote auswählen"
+msgstr "kırmızı seç"
+
+#: future_translation.php:98
+msgid "gelbe auswählen"
+msgstr "sarı seç"
+
 #: header.php:76
 msgid "Horizontal"
 msgstr "Yatay"
 
-#: header.php:213
+#: header.php:83 setup/main.php:50 setup/main.php:180 setup/projekte.php:27 setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75 ultimate-member/email/welcome_email.php:27
+msgid "Projekte"
+msgstr "Projeler"
+
+#: header.php:210
 msgid "Zurück"
 msgstr "Geri"
 
@@ -1013,8 +1000,7 @@ msgstr "By %s"
 msgid "Post date"
 msgstr "Post date"
 
-#: inc/template-tags.php:398 template-parts/content-cover.php:70
-#: template-parts/entry-header.php:36
+#: inc/template-tags.php:398 template-parts/content-cover.php:70 template-parts/entry-header.php:36
 msgid "Categories"
 msgstr "Categories"
 
@@ -1043,16 +1029,14 @@ msgstr[0] "We found %s result for your search."
 msgstr[1] "We found %s results for your search."
 
 #: index.php:48
-msgid ""
-"We could not find any results for your search. You can give it another try "
-"through the search form below."
+msgid "We could not find any results for your search. You can give it another try through the search form below."
 msgstr "We could not find any results for your search. You can give it another try through the search form below."
 
 #: index.php:51
 msgid "Nothing Found"
 msgstr "Nothing Found"
 
-#: index.php:97
+#: index.php:95
 msgid "search again"
 msgstr "search again"
 
@@ -1064,120 +1048,128 @@ msgstr " Update"
 msgid "Hier entsteht deine Quatiersplattform"
 msgstr "Burada senin mahalle platformun oluşturuluyor"
 
-#: maintenance.php:85
+#: maintenance.php:87
 msgid "Zur Dokumentation"
 msgstr "Dokümantasyona git"
 
-#: maintenance.php:98
+#: maintenance.php:100
 msgid "Gestalte dein Viertel"
 msgstr "Mahalleni şekillendir"
 
-#: maintenance.php:99
+#: maintenance.php:101
 msgid "Hier entsteht"
 msgstr "Burada"
 
-#: maintenance.php:99
+#: maintenance.php:101
 msgid " deine Quartiersplattform"
 msgstr " senin mahalle platformun oluşturuluyor"
 
-#: maintenance.php:102 maintenance.php:156
-msgid ""
-"Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an "
-"Umfragen teilnehmen und eigene Projekte über die Plattform planen."
+#: maintenance.php:104 maintenance.php:158
+msgid "Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen."
 msgstr "Yakında burada mahalle projeleriyle ilgili heyecanlı haberler bulacak, anketlere katılabilecek ve platform üzerinden kendi projelerini planlayabileceksin."
 
-#: maintenance.php:106
+#: maintenance.php:108
 msgid "Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten?"
 msgstr "Mahalle platformunun hazırlanmasına yardım mı etmek istiyorsun?"
 
-#: maintenance.php:106
+#: maintenance.php:108
 msgid "Dann registriere dich jetzt!"
 msgstr "Öyleyse hemen kaydol!"
 
-#: maintenance.php:113
+#: maintenance.php:115
 msgid "Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:"
 msgstr "Mahalle platformu şu mahallelerde kullanılmaya başladı bile:"
 
-#: maintenance.php:154
+#: maintenance.php:156
 msgid "Plugins installieren"
 msgstr "Eklentileri kur"
 
-#: maintenance.php:159
+#: maintenance.php:161
 msgid "Du musst noch folgende Schritte durchführen:"
 msgstr "Şu adımları tamamlaman gerekiyor:"
 
-#: maintenance.php:162
+#: maintenance.php:164
 msgid "Dokumentation Lesen"
 msgstr "Dokümantasyonu oku"
 
-#: maintenance.php:172
+#: maintenance.php:174
 msgid "Bitte Advanced Custom Fields installieren"
 msgstr "Lütfen Advanced Custom Fields’i kur"
 
-#: maintenance.php:174
+#: maintenance.php:176
 msgid "Bitte installiere das Plugin ACF über die Wordpress Plugin Seite."
 msgstr "Lütfen Wordpress eklenti sayfası üzerinden ACF eklentisini kur."
 
-#: maintenance.php:186
+#: maintenance.php:188
 msgid "Bitte Ultimate Member installieren"
 msgstr "Lütfen Ultimate Member’i kur"
 
-#: maintenance.php:188
-msgid ""
-"Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite "
-"und stelle die in der Dokumentation beschriebenen Einstellungen ein."
+#: maintenance.php:190
+msgid "Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite und stelle die in der Dokumentation beschriebenen Einstellungen ein."
 msgstr "Lütfen Wordpress eklenti sayfası üzerinden Ultimate Member eklentisini kur ve dokümantasyonda tarif edilen ayarları yap."
 
-#: maintenance.php:201
+#: maintenance.php:203
 msgid "Bitte WP Mail SMTP installieren"
 msgstr "Lütfen WP Mail SMTP’yi kur"
 
-#: maintenance.php:203
-msgid ""
-" Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite "
-"stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
+#: maintenance.php:205
+msgid " Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
 msgstr " Lütfen Wordpress eklenti sayfası üzerinden WP Mail SMTP eklentisini kur ve dokümantasyonda tarif edilen e-posta ayarları yap."
 
-#: pages/page-profil.php:67 setup/main.php:175
+#: pages/page-anmerkungen.php:26 pages/page-quartier.php:164 pages/single-anmerkungen.php:26
+msgid "Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung."
+msgstr "Mahalle platformuyla ilgili geribildirimini veya önerilerini bizimle paylaş. Bir şey çalışmıyor mu veya geliştirmeyle ilgili bir fikrin mi var."
+
+#: pages/page-anmerkungen.php:27 pages/page-anmerkungen.php:83 pages/page-quartier.php:165 pages/single-anmerkungen.php:27
+msgid "Feedback zur Quartiersplattform"
+msgstr "Mahalle platformuyla ilgili geribildirim"
+
+#: pages/page-anmerkungen.php:52
+msgid "Feedback senden"
+msgstr "Geribildirim gönder"
+
+#: pages/page-anmerkungen.php:101 pages/page-projekte.php:101 pages/page-veranstaltungen.php:47 pages/single-anmerkungen.php:53
+msgid "Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen."
+msgstr "Mahalle platformuna kaydolarak kendi projelerini, anketlerini ve etkinliklerini oluştur."
+
+#: pages/page-anmerkungen.php:102 pages/page-projekte.php:102 pages/page-veranstaltungen.php:48 pages/single-anmerkungen.php:54
+msgid "Jetzt Registieren"
+msgstr "Şimdi kaydol"
+
+#: pages/page-profil.php:67 setup/main.php:181
 msgid "Profil"
 msgstr "Profil"
 
-#: pages/page-profil.php:71 pages/page-profil.php:140
-#: pages/single-projekte.php:94
+#: pages/page-profil.php:71 pages/single-projekte.php:82
 msgid "Einstellungen"
 msgstr "Ayarlar"
 
-#: pages/page-profil.php:117
-msgid "Deine Projekte"
-msgstr "Projelerin"
+#: pages/page-profil.php:146
+msgid "Deine Beiträge"
+msgstr "Tahtaya asılan yazılar"
 
-#: pages/page-profil.php:142
+#: pages/page-profil.php:177
 msgid "Bearbeite deine Kontaktinformationen"
 msgstr "İletişim bilgilerini düzenle"
 
-#: pages/page-profil.php:151 pages/page-profil.php:170
-#: pages/single-fragen.php:78 pages/single-nachrichten.php:176
-#: pages/single-projekte.php:195 pages/single-projekte.php:221
-#: pages/single-projekte.php:300 pages/single-umfragen.php:155
-#: pages/single-veranstaltungen.php:202
+#: pages/page-profil.php:186 pages/page-profil.php:205 pages/single-nachrichten.php:185 pages/single-projekte.php:184 pages/single-projekte.php:209 pages/single-projekte.php:285 pages/single-umfragen.php:112 pages/single-veranstaltungen.php:202
 msgid "Änderungen speichern"
 msgstr "Değişiklikleri kaydet"
 
-#: pages/page-profil.php:178
+#: pages/page-profil.php:215
 msgid "Profil bearbeiten"
 msgstr "Profili düzenle"
 
-#: pages/page-profil.php:182
+#: pages/page-profil.php:219
 msgid "Abmelden"
 msgstr "Çıkış yap"
 
 #: pages/page-projekte.php:23
 msgid ""
-"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das "
-"Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
-"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche "
-"es und halte deine Nachbarn auf dem Laufenden.  "
-msgstr "Projeler mahallendeki odak noktasıdır. Mahallede olup bitenleri araştır, heyecanlı kampanyaları bul ve katıl. \n"
+"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
+"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  "
+msgstr ""
+"Projeler mahallendeki odak noktasıdır. Mahallede olup bitenleri araştır, heyecanlı kampanyaları bul ve katıl. \n"
 "\t\t\tYerel bir projenin muhatabı mısın? Bunu yayınla ve komşularını gündemden haberdar et.  "
 
 #: pages/page-projekte.php:25
@@ -1185,117 +1177,100 @@ msgid "Entdecke alle Projekte aus deinem Quartier"
 msgstr "Mahallendeki bütün projeleri keşfet"
 
 #: pages/page-projekte.php:83
-msgid ""
-"Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du "
-"kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
+msgid "Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
 msgstr "Mahalle platformunda şimdiye kadar hiç proje yayınlanmadı. Kendin harekete geçebilir ve kendine ait ilk projeyi oluşturabilirsin."
 
 #: pages/page-projekte.php:84
 msgid "Es wurde noch keine Projekte veröffentlicht"
 msgstr "Henüz hiç proje yayınlanmadı"
 
-#: pages/page-projekte.php:104 pages/page-veranstaltungen.php:54
-msgid ""
-"Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen "
-"und Veranstaltungen zu erstellen."
-msgstr "Mahalle platformuna kaydolarak kendi projelerini, anketlerini ve etkinliklerini oluştur."
+#: pages/page-quartier.php:42
+msgid "Bild und Text für die Startseite festlegen"
+msgstr "Ana sayfa için resim ve metnin belirlenmesi"
 
-#: pages/page-projekte.php:105 pages/page-veranstaltungen.php:55
-msgid "Jetzt Registieren"
-msgstr "Şimdi kaydol"
+#: pages/page-quartier.php:42
+msgid "In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen."
+msgstr "Mahalle ayarlarında ana sayfaya yönelik resmi ve metni uyarlayabilirsin."
 
-#: pages/page-quartier.php:37
-msgid "Entdecke dein Quartier"
-msgstr "Mahalleni keşfet"
-
-#: pages/page-quartier.php:69
+#: pages/page-quartier.php:84
 msgid "Lokale Projekte"
 msgstr "Yerel projeler"
 
-#: pages/page-quartier.php:70
+#: pages/page-quartier.php:85
 msgid "Entdecke spannende Projekte aus deinem Quartier"
 msgstr "Mahallendeki heyecanlı projeleri keşfet"
 
-#: pages/page-quartier.php:71
-msgid ""
-"Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am "
-"Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in "
-"deiner Nachbarschaft."
+#: pages/page-quartier.php:86
+msgid "Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in deiner Nachbarschaft."
 msgstr "Mahallendeki projelere bak ve mahalle hayatına katıl. Kendi projelerini yayınla ve komşularının desteğini al."
 
-#: pages/page-quartier.php:90
+#: pages/page-quartier.php:104
 msgid "Neuigkeiten & Projektupdates"
 msgstr "Haberler ve Proje Güncellemeleri"
 
-#: pages/page-quartier.php:91
+#: pages/page-quartier.php:105
 msgid "Alle Projekte anzeigen"
 msgstr "Bütün projeleri göster"
 
-#: pages/page-quartier.php:98
+#: pages/page-quartier.php:112
 msgid "Veranstaltungen in deinem Quartier"
 msgstr "Mahallendeki etkinlikler"
 
-#: pages/page-quartier.php:99
-msgid ""
-"Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste "
-"Konzert oder die nächste Party in deiner Nachbarschaft - mit der "
-"Quartiersplattform bist du immer auf dem Laufenden!"
+#: pages/page-quartier.php:113
+msgid "Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!"
 msgstr "Bundan sonra mahallendeki hiçbir etkinliği kaçırma. İster mahallede düzenlenen bir sonraki konser ya da parti olsun; mahalle platformu sayesinde gündemi asla kaçırmazsın!"
 
-#: pages/page-quartier.php:122
+#: pages/page-quartier.php:136
 msgid "Zu den Veranstaltungen"
 msgstr "Etkinliklere git"
 
-#: pages/page-quartier.php:131
+#: pages/page-quartier.php:143
 msgid "Ziele für nachhaltige Entwicklung im Quartier"
 msgstr "Mahallede sürdürülebilir gelişimle ilgili hedeflerler"
 
-#: pages/page-quartier.php:132 pages/page-sdg.php:27
-msgid ""
-"Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung "
-"(Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht "
-"nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
+#: pages/page-quartier.php:144 pages/page-sdg.php:27
+msgid "Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
 msgstr "Birleşmiş Milletler 2016’da sürdürülebilir bir gelişim için hedefler (Sustainable Development Goals, SDG’ler) yayınladı. SDG’ler uluslararası değil, yerel olarak da mahallende de önemli bir rol oynuyor."
 
-#: pages/page-quartier.php:168
-msgid "Wichtige Seiten"
-msgstr "Önemli sayfalar"
+#: pages/page-quartier.php:165
+msgid "Zur Wunschliste"
+msgstr "İstek listesine ekle"
 
 #: pages/page-sdg.php:24
 msgid " Ziele für nachhaltige Entwicklung"
 msgstr " Sürdürülebilir gelişimle ilgili hedefler"
 
 #: pages/page-veranstaltungen.php:23
-msgid ""
-"Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So "
-"verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer "
-"auf dem Laufenden."
+msgid "Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden."
 msgstr "Burada mahallendeki yerel etkinlikleri keşfedebilirsin. Böylece artık mahallendeki etkinlikleri kaçırmazsın ve her zaman gündemi yakalarsın."
 
 #: pages/page-veranstaltungen.php:24
 msgid "Veranstaltungen in deiner Nachbarschaft"
 msgstr "Mahallendeki etkinlikler"
 
-#: pages/page-veranstaltungen.php:38
+#: pages/page-veranstaltungen.php:32
 msgid "Archiv"
 msgstr "Arşiv"
 
-#: pages/page-veranstaltungen.php:48
-msgid ""
-"Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? "
-"Erstelle ein Projekt und veröffentliche eine Veranstaltung."
+#: pages/page-veranstaltungen.php:42
+msgid "Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und veröffentliche eine Veranstaltung."
 msgstr "Mahalle platformunda bir etkinlik tanıtmak mı istiyorsun? Bir proje oluştur ve bir etkinlik yayınla."
 
-#: pages/page-veranstaltungen.php:49
+#: pages/page-veranstaltungen.php:43
 msgid "Erstelle eine Veranstaltung"
 msgstr "Bir etkinlik oluştur"
 
+#: pages/page-veranstaltungen.php:43
+msgid "Veröffentliche eine Veranstaltung"
+msgstr "Bir etkinlik oluştur"
+
 #: pages/projekt-feed.php:29
-msgid ""
-"Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem "
-"Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte "
-"kennen oder erstelle selbst ein eigenes Projekt."
+msgid "Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt."
 msgstr "Burada mahallendeki bütün haberleri, anketleri ve etkinlikleri bulabilirsin. Mahallendeki insanları ve projelerini tanı ya da kendin bir proje oluştur."
+
+#: pages/projekt-feed.php:30
+msgid "Neuigkeiten und Projektupdates"
+msgstr "Haberler ve Proje Güncellemeleri"
 
 #: pages/projekt-feed.php:49
 msgid "Hier kannst du noch keine Inhalte entdecken"
@@ -1305,77 +1280,75 @@ msgstr "Burada henüz herhangi bir içerik keşfedemezsin"
 msgid "Mehr Projektinhalte laden"
 msgstr "Daha fazla proje içeriği yükle"
 
-#: pages/single-fragen.php:63
-msgid "Deine Frage wurde gelöscht."
-msgstr "Sorun silindi."
+#: pages/single-anmerkungen.php:37
+msgid " Zu allen Vorschlägen"
+msgstr " Tüm önerilere git"
 
-#: pages/single-fragen.php:65
-msgid "Gemeinsam"
-msgstr "Birlikte"
-
-#: pages/single-nachrichten.php:86
+#: pages/single-nachrichten.php:83
 msgid "Nachricht bearbeiten"
 msgstr "Mesajı düzenle"
 
-#: pages/single-nachrichten.php:88
+#: pages/single-nachrichten.php:84 pages/single-umfragen.php:56
+msgid "Willst du diesen Beitrag endgültig löschen?"
+msgstr "Bu projeler kalıcı olarak silinsin mi?"
+
+#: pages/single-nachrichten.php:84
 msgid "Nachricht löschen"
 msgstr "Mesajı sil"
 
-#: pages/single-nachrichten.php:138 pages/single-veranstaltungen.php:239
+#: pages/single-nachrichten.php:99 pages/single-umfragen.php:77 pages/single-veranstaltungen.php:126
+msgid "Dein Beitrag ist nicht öffentlich sichtbar."
+msgstr "Projen herkese açık olarak görünmüyor."
+
+#: pages/single-nachrichten.php:147 pages/single-veranstaltungen.php:238
 msgid "Weitere Nachrichten und Veranstaltungen aus diesem Projekt"
 msgstr "Bu projeyle ilgili diğer haberler ve etkinlikler"
 
-#: pages/single-projekte.php:86
+#: pages/single-projekte.php:74
 msgid "Übersicht"
 msgstr "Toplu bakış"
 
-#: pages/single-projekte.php:89
+#: pages/single-projekte.php:77
 msgid "Chronik"
 msgstr "Geçmiş"
 
-#: pages/single-projekte.php:137
+#: pages/single-projekte.php:125
 msgid "Dein Projekt ist nicht öffentlich sichtbar."
 msgstr "Projen herkese açık olarak görünmüyor."
 
-#: pages/single-projekte.php:187 pages/single-projekte.php:292
+#: pages/single-projekte.php:176 pages/single-projekte.php:277
 msgid "Bearbeite dein Projekt"
 msgstr "Projeni düzenle"
 
-#: pages/single-projekte.php:214
+#: pages/single-projekte.php:202
 msgid "Ziele für nachhaltige Entwicklung bearbeiten"
 msgstr "Sürdürülebilir gelişim için hedefleri düzenle"
 
-#: pages/single-projekte.php:239 pages/single-projekte.php:242
+#: pages/single-projekte.php:225 pages/single-projekte.php:228
 msgid "Projekt löschen"
 msgstr "Projeyi sil"
 
-#: pages/single-projekte.php:240
-msgid ""
-"Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
-"unwiederruflich gelöscht."
+#: pages/single-projekte.php:226
+msgid "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht."
 msgstr "Yalnızca herkese açık projeler silinebilir. Tüm proje içerikleri geri alınamayacak şekilde silinecek."
 
-#: pages/single-projekte.php:241
+#: pages/single-projekte.php:227
 msgid "Dieses Projekt endgültig löschen?"
 msgstr "Bu projeler kalıcı olarak silinsin mi?"
 
-#: pages/single-umfragen.php:58
+#: pages/single-umfragen.php:51
 msgid "Umfrage bearbeiten"
 msgstr "Anketi düzenle"
 
-#: pages/single-umfragen.php:65
+#: pages/single-umfragen.php:56
 msgid "Umfrage löschen"
 msgstr "Anketi sil"
 
-#: pages/single-umfragen.php:81
-msgid "Umfrage teilen"
-msgstr "Anketi paylaş"
-
-#: pages/single-veranstaltungen.php:100
+#: pages/single-veranstaltungen.php:105
 msgid "Veranstaltung bearbeiten"
 msgstr "Etkinliği düzenle"
 
-#: pages/single-veranstaltungen.php:102
+#: pages/single-veranstaltungen.php:106
 msgid "Veranstaltung löschen"
 msgstr "Etkinliği sil"
 
@@ -1393,13 +1366,25 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Search"
 
-#: setup/angebote.php:26 setup/angebote.php:31
-msgid "Angebote"
-msgstr "Seçenekler"
+#: setup/anmerkungen.php:27 setup/anmerkungen.php:90
+msgid "Anmerkung"
+msgstr "Not"
 
-#: setup/angebote.php:27
-msgid "Angebot"
-msgstr "Seçenek"
+#: setup/anmerkungen.php:31 setup/main.php:188
+msgid "Feedback"
+msgstr "Geribildirim"
+
+#: setup/anmerkungen.php:34
+msgid "Was wünschst du dir von der Quartiersplattform?"
+msgstr "Burada senin mahalle platformun oluşturuluyor"
+
+#: setup/anmerkungen.php:89 setup/anmerkungen.php:94
+msgid "Anmerkungen"
+msgstr "Giriş yap"
+
+#: setup/anmerkungen.php:135 setup/anmerkungen.php:136 setup/anmerkungen.php:140
+msgid "Status"
+msgstr "Durum"
 
 #: setup/blocks.php:34
 msgid "Link Block"
@@ -1409,110 +1394,107 @@ msgstr "Link Block"
 msgid "Link Post and Pages"
 msgstr "Link Post and Pages"
 
-#: setup/fragen.php:25 setup/fragen.php:30 setup/umfragen.php:124
-msgid "Fragen"
-msgstr "Sorular"
+#: setup/blocks.php:96
+msgid "Link-Block"
+msgstr "Link Block"
 
-#: setup/fragen.php:26 setup/umfragen.php:143
-msgid "Frage"
-msgstr "Soru"
-
-#: setup/kontakt.php:22
+#: setup/kontakt.php:25
 msgid "Kontaktinformationen"
 msgstr "İletişim bilgileri"
 
-#: setup/kontakt.php:26
+#: setup/kontakt.php:29
 msgid "Telefonnummer"
 msgstr "Telefon numarası"
 
-#: setup/kontakt.php:29
-msgid ""
-"Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder "
-"kontaktieren können."
+#: setup/kontakt.php:32
+msgid "Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder kontaktieren können."
 msgstr "Diğer üyelerin seninle bağlantı kurabilmesi için buraya telefon numaranı girebilirsin."
 
-#: setup/kontakt.php:47
+#: setup/kontakt.php:50
 msgid "E-Mail"
 msgstr "E-posta"
 
-#: setup/kontakt.php:50
-msgid ""
-"Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer "
-"kontaktieren können."
+#: setup/kontakt.php:53
+msgid "Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer kontaktieren können."
 msgstr "Diğer kullanıcıların seninle bağlantı kurabilmesi için e-posta adresini buraya girebilirsin."
 
-#: setup/kontakt.php:97
-msgid ""
-"Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
+#: setup/kontakt.php:100
+msgid "Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
 msgstr "Burada biraz kendinden ve mahalleyle ilişkinden söz edebilirsin."
 
 #: setup/main.php:44
 msgid "Quartier"
 msgstr "Mahalle"
 
-#: setup/main.php:171
+#: setup/main.php:177
 msgid "Startseite"
 msgstr "Ana sayfa"
 
-#: setup/main.php:172 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email.php:33
+#: setup/main.php:178 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30 ultimate-member/email/welcome_email.php:33
 msgid "Veranstaltungen"
 msgstr "Etkinlikler"
 
-#: setup/main.php:173
+#: setup/main.php:179
 msgid "Projektverzeichnis"
 msgstr "Proje dizini"
 
-#: setup/main.php:178
+#: setup/main.php:184
 msgid "Nachricht erstellen"
 msgstr "Mesaj oluştur"
 
-#: setup/main.php:179
+#: setup/main.php:185
 msgid "Angebot erstellen"
 msgstr "Teklif oluştur"
 
-#: setup/main.php:180
+#: setup/main.php:186
 msgid "Frage erstellen"
 msgstr "Soru oluştur"
 
-#: setup/nachrichten.php:26 setup/nachrichten.php:31 setup/nachrichten.php:71
+#: setup/main.php:262
+msgid "Seiten Pin"
+msgstr "Sayfa tutturma"
+
+#: setup/nachrichten.php:26 setup/nachrichten.php:31 setup/nachrichten.php:74
 msgid "Nachrichten"
 msgstr "Mesajlar"
 
-#: setup/nachrichten.php:75
+#: setup/nachrichten.php:78
 msgid "Deine Nachricht für dein Projekt"
 msgstr "Projenle ilgili mesajın"
 
-#: setup/nachrichten.php:78
+#: setup/nachrichten.php:81
 msgid "Was gibt es Neues in deinem Projekt?"
 msgstr "Projende ne gibi yenilikler var?"
 
-#: setup/nachrichten.php:94 setup/projekte.php:168
-#: setup/veranstaltungen.php:262
+#: setup/nachrichten.php:97 setup/projekte.php:170 setup/veranstaltungen.php:243
 msgid "Bild"
 msgstr "Resim"
 
-#: setup/projekte.php:114
+#: setup/projekte.php:113
+msgid "Emoji"
+msgstr "Emoji"
+
+#: setup/projekte.php:116
 msgid "Welches Emoji beschreibt dein Projekt am besten?"
 msgstr "Hangi emoji projeni en iyi şekilde tarif ediyor?"
 
-#: setup/projekte.php:130
+#: setup/projekte.php:132
 msgid "Kurzbeschreibung"
 msgstr "Kısa tarif"
 
-#: setup/projekte.php:133
+#: setup/projekte.php:135
 msgid "Wie würdest du dein Projekt in wenigen Worten beschreiben?"
 msgstr "Projeni birkaç kelimeyle nasıl anlatırsın?"
 
-#: setup/projekte.php:149
+#: setup/projekte.php:151
 msgid "Projektbeschreibung"
 msgstr "Proje tarifi"
 
-#: setup/projekte.php:152
+#: setup/projekte.php:154
 msgid "Worum geht es in deinem Projekt?"
 msgstr "Projenin konusu ne?"
 
-#: setup/projekte.php:171
+#: setup/projekte.php:173
 msgid "Welches Bild beschreibt dein Projekt am besten?"
 msgstr "Hangi resim projene en iyi şekilde tarif ediyor?"
 
@@ -1524,462 +1506,332 @@ msgstr "SDG’ler"
 msgid "SDG"
 msgstr "SDG"
 
-#: setup/sdg.php:94
+#: setup/sdg.php:225
 msgid "Keine Armut"
 msgstr "Fakirliğe hayır"
 
-#: setup/sdg.php:94
+#: setup/sdg.php:225
 msgid "Armut in all ihren Formen und überall beenden"
 msgstr "Fakirliğin her biçimini ve her yerde bitirelim"
 
-#: setup/sdg.php:94
-msgid ""
-"Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf "
-"der Welt zu beseitigen. Allerdings wird extreme Armut mit einem "
-"gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur "
-"Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu "
-"niedrig."
+#: setup/sdg.php:225
+msgid "Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf der Welt zu beseitigen. Allerdings wird extreme Armut mit einem gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu niedrig."
 msgstr "Merkezi gelişim hedefleri arasında, 2030’a kadar dünyadaki aşırı fakirliği ortadan kaldırmak bulunuyor. Ancak aşırı fakirlik, günde kişi başı elde edilen şu andaki 1,25 USD’lık limitle tanımlanıyor. Eleştirmenler bu değeri kesinlikle çok düşük buluyor."
 
-#: setup/sdg.php:95
+#: setup/sdg.php:226
 msgid "Keine Hungersnot"
 msgstr "Açlığa hayır"
 
-#: setup/sdg.php:95
-msgid ""
-"Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung "
-"erreichen und eine nachhaltige Landwirtschaft fördern"
+#: setup/sdg.php:226
+msgid "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern"
 msgstr "Açlığı bitirmek, gıda güvenliği ve daha iyi bir beslenmeye ulaşmak ve sürdürülebilir bir tarımı teşvik etmek"
 
-#: setup/sdg.php:95
-msgid ""
-"Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, "
-"nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits "
-"heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht "
-"alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung "
-"beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der "
-"kleinen Nahrungsmittelproduzenten verdoppelt werden."
+#: setup/sdg.php:226
+msgid "Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der kleinen Nahrungsmittelproduzenten verdoppelt werden."
 msgstr "2030’a kadar tüm insanların “yıl boyunca güvenli, besin maddesi açısından zengin ve yeterli gıda maddelerine erişimi olması” hedefleniyor. Bugün bile yeterince gıda maddesi bulunduğu halde, her insan bunlara erişemiyor. Aynı şekilde yetersiz beslenmenin bütün biçimlerinin ortadan kaldırılması ve tarımsal verimliliğin ve küçük gıda üreticilerinin gelirlerinin iki katına çıkarılması hedefleniyor."
 
-#: setup/sdg.php:96
+#: setup/sdg.php:227
 msgid "Gute Gesundheitsversorgung"
 msgstr "İyi sağlık hizmetleri"
 
-#: setup/sdg.php:96
-msgid ""
-"Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr "
-"Wohlergehen fördern"
+#: setup/sdg.php:227
+msgid "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern"
 msgstr "Her yaştan tüm insanlar için sağlıklı bir hayat ve refahı teşvik etmek"
 
-#: setup/sdg.php:96
-msgid ""
-"Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 "
-"Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern "
-"unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die "
-"Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der "
-"vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der "
-"Zugang zu einer Gesundheitsversorgung für alle."
+#: setup/sdg.php:227
+msgid "Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der Zugang zu einer Gesundheitsversorgung für alle."
 msgstr "2030’a kadar tüm dünyada anne ölümlerinin 100.000’de 70’in altına inmesi hedefleniyor. Yenidoğanlarda ve beş yaş altı çocuklarda önlenebilir ölüm vakalarının engellenmesi isteniyor. Belirlenen hedeflerde Aids, tüberküloz ve malarya salgınlarının yanı sıra ihmal edilen tropik hastalıkların ortadan kaldırılması ve herkes için sağlık hizmetine erişim özel bir önem taşıyor."
 
-#: setup/sdg.php:97
+#: setup/sdg.php:228
 msgid "Hochwertige Bildung"
 msgstr "Kaliteli eğitim"
 
-#: setup/sdg.php:97
-msgid ""
-"Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten "
-"lebenslangen Lernens für alle fördern"
+#: setup/sdg.php:228
+msgid "Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten lebenslangen Lernens für alle fördern"
 msgstr "Herkes için eşit ve kaliteli eğitim ve ömür boyu öğrenme olanaklarının teşvik edilmesi"
 
-#: setup/sdg.php:97
-msgid ""
-"Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, "
-"„dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und "
-"hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren "
-"Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und "
-"Berufsbildung formuliert."
+#: setup/sdg.php:228
+msgid "Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, „dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und Berufsbildung formuliert."
 msgstr "Belirlenen en önemli hedef, 2030’a kadar “bütün kızların ve erkeklerin eşit haklarla ücretsiz ve kaliteli bir ilk ve ortaokul eğitimini tamamlamasının” garanti edilmesi gerektiğini ifade ediyor. Diğer hedeflerde, okul öncesi eğitimin yanı sıra yüksekokul ve meslek eğitimiyle ilgili hedefler formüle ediliyor."
 
-#: setup/sdg.php:98
+#: setup/sdg.php:229
 msgid "Gleichberechtigung der Geschlechter"
 msgstr "Cinsiyetler arası eşitlik"
 
-#: setup/sdg.php:98
-msgid ""
-"Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur "
-"Selbstbestimmung befähigen"
+#: setup/sdg.php:229
+msgid "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen"
 msgstr "Cinsiyetler arasında eşitliğe ulaşmak ve tüm kadınlara ve kızlara kendi kaderini belirleme becerisi kazandırmak"
 
-#: setup/sdg.php:98
-msgid ""
-"Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von "
-"Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. "
-"Weitere Zielvorgaben befassen sich mit individuellen Formen der "
-"geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, "
-"fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und "
-"ungleiche Rechte auf wirtschaftliche Ressourcen."
+#: setup/sdg.php:229
+msgid "Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. Weitere Zielvorgaben befassen sich mit individuellen Formen der geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und ungleiche Rechte auf wirtschaftliche Ressourcen."
 msgstr "Başlıca amaçlar arasında kadınlara ve kızlara yönelik ayrımcılığın tüm biçimlerini sona erdirmek ve bunlara uygulanan şiddeti ortadan kaldırmak bulunuyor. Belirlenen diğer hedefler cinsiyete özgü ayrımcılığın, örneğin zorla evlendirme, yöneticilik pozisyonlarının elde edilmesinde yetersiz fırsat eşitliği ve ekonomik kaynaklar konusunda eşit olmayan haklar gibi bireysel biçimlerini ele alıyor."
 
-#: setup/sdg.php:99
+#: setup/sdg.php:230
 msgid "Sauberes Wasser und sanitäre Einrichtungen"
 msgstr "Temiz su ve sıhhi tesisatlar"
 
-#: setup/sdg.php:99
-msgid ""
-"Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und "
-"Sanitärversorgung für alle gewährleisten"
+#: setup/sdg.php:230
+msgid "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten"
 msgstr "Herkes için su ve sıhhi ikmale erişimin ve sürdürülebilir idaresinin garanti edilmesi"
 
-#: setup/sdg.php:99
-msgid ""
-"Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie "
-"einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht "
-"werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der "
-"Wasserqualität, die Effizienz der Wassernutzung und den Schutz "
-"wasserverbundener Ökosysteme."
+#: setup/sdg.php:230
+msgid "Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der Wasserqualität, die Effizienz der Wassernutzung und den Schutz wasserverbundener Ökosysteme."
 msgstr "2030’a kadar herkes için sorunsuz ve ödenebilir içme suyunun yanı sıra makul ve adil sıhhi tesisatlara erişimin gerçekleştirilmesi amaçlanıyor. Belirlenen diğer hedeflerde, su kalitesinin iyileştirilmesi, su kullanımının verimliliği ve suyla bağlantılı ekosistemlerin korunması gibi konular da ele alınıyor."
 
-#: setup/sdg.php:100
+#: setup/sdg.php:231
 msgid "Erneuerbare Energien"
 msgstr "Yenilenebilir enerjiler"
 
-#: setup/sdg.php:100
-msgid ""
-"Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für "
-"alle sichern"
+#: setup/sdg.php:231
+msgid "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern"
 msgstr "Herkesin ödenebilir, güvenilir, sürdürülebilir ve modern enerjiye erişimini garanti etmek"
 
-#: setup/sdg.php:100
-msgid ""
-"Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert "
-"werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. "
-"Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
+#: setup/sdg.php:231
+msgid "Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
 msgstr "Enerji hizmetlerine genel erişimin 2030’a kadar garantiye alınması hedefleniyor. Bunu yaparken yenilenebilir enerjilerin payının belirgin bir şekilde artırılması isteniyor. Aynı zamanda enerji verimliliğinin artış oranının ikiye katlanması hedefleniyor."
 
-#: setup/sdg.php:101
-msgid "Gute Arbeitsplätze und wirtschaftliches Waachstum"
+#: setup/sdg.php:232
+msgid "Gute Arbeitsplätze und wirtschaftliches Wachstum"
 msgstr "İyi iş yerleri ve ekonomik büyüme"
 
-#: setup/sdg.php:101
-msgid ""
-"Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, "
-"produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
+#: setup/sdg.php:232
+msgid "Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
 msgstr "Herkes için sürekli, geniş etkili ve sürdürülebilir ekonomik büyüme, verimli tam zamanlı istihdam ve insan onuruna uygun işin teşvik edilmesi"
 
-#: setup/sdg.php:101
-msgid ""
-"Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der "
-"Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am "
-"wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im "
-"Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und "
-"Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit "
-"menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der "
-"Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz "
-"der Arbeitsrechte."
+#: setup/sdg.php:232
+msgid "Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz der Arbeitsrechte."
 msgstr "Sürdürülebilir ekonomik büyüme ve istihdam konularına büyük ağırlık veriliyor. Yıllık en az %7’yle, özellikle en az gelişmiş ülkelerde yüksek bir ekonomik büyüme gerekli görülüyor. Tüm ülkeler için daha yüksek bir ekonomik verimlilik ve kaynakların verimli kullanımı hedefleniyor. Belirlenen diğer hedefler insan onuruna uygun işler, verimli bir tam zamanlı çalışma, çalışmaya zorlamanın, köleliğin ve insan ticaretinin sona erdirilmesi ve iş haklarının korunmasını ele alıyor."
 
-#: setup/sdg.php:102
+#: setup/sdg.php:233
 msgid "Innovation und Infrastruktur"
 msgstr "Yenilikçilik ve altyapı"
 
-#: setup/sdg.php:102
-msgid ""
-"Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und "
-"nachhaltige Industrialisierung fördern und Innovation unterstützen"
+#: setup/sdg.php:233
+msgid "Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und nachhaltige Industrialisierung fördern und Innovation unterstützen"
 msgstr "Dayanıklı bir altyapı kurmak, geniş etkili ve sürdürülebilir sanayileşmeyi teşvik etmek ve yenilikçiliği desteklemek"
 
-#: setup/sdg.php:102
-msgid ""
-"Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und "
-"widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche "
-"Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in "
-"Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu "
-"Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
+#: setup/sdg.php:233
+msgid "Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
 msgstr "Kaliteli, güvenilir, sürdürülebilir ve dayanıklı bir altyapı kurarak ekonomik gelişimi ve insani refahı desteklemek hedefleniyor. Özellikle gelişmekte olan ülkelerde küçük sanayi işletmelerinin mali hizmetlere, artı değer zincirlerine ve pazarlara daha iyi erişebilmesi isteniyor."
 
-#: setup/sdg.php:103
+#: setup/sdg.php:234
 msgid "Weniger Ungleichheiten"
 msgstr "Daha az eşitsizlik"
 
-#: setup/sdg.php:103
+#: setup/sdg.php:234
 msgid "Ungleichheit in und zwischen Ländern verringern"
 msgstr "Ülkelerin içindeki ve ülkeler arasındaki eşitsizliğin azaltılması"
 
-#: setup/sdg.php:103
-msgid ""
-"Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen "
-"Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der "
-"Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte "
-"Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den "
-"globalen internationalen Wirtschafts- und Finanzinstitutionen“."
+#: setup/sdg.php:234
+msgid "Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den globalen internationalen Wirtschafts- und Finanzinstitutionen“."
 msgstr "Belirlenen önemli hedeflerden biri şöyle: “2030’a kadar nüfusun en fakir yüzde kırkının gelirinin ulusal ortalamanın üzerinde bir artış elde etmek.“ Ayrıca hedefler arasında “gelişmekte olan ülkelerin küresel, uluslararası ekonomi ve finans kuruluşlarında karar verme aşamalarında daha fazla söz sahibi olması” hedefleniyor."
 
-#: setup/sdg.php:104
+#: setup/sdg.php:235
 msgid "Nachhaltige Städte und Gemeinden"
 msgstr "Sürdürülebilir şehirler ve topluluklar"
 
-#: setup/sdg.php:104
-msgid ""
-"Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig "
-"gestalten"
+#: setup/sdg.php:235
+msgid "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten"
 msgstr "Şehirlerin ve yerleşimlerin kapsayıcı, güvenli, dayanıklı ve sürdürülebilir olarak şekillendirilmesi"
 
-#: setup/sdg.php:104
-msgid ""
-"„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und "
-"zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören "
-"u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein "
-"verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und "
-"eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
+#: setup/sdg.php:235
+msgid "„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
 msgstr "“2030’a kadar herkes için makul, güvenli ve ödenebilir konutları ve temel geliri garanti etmek ve gecekondu mahallelerinin ıslahı.” Buna herkes için bir trafik sistemi, katılımcı bir yerleşim planlaması, daha iyi bir afet koruması, çevre yükünün azaltılması ve iklim değişikliğinin sonuçlarına karşı daha büyük bir dayanıklılık da dahil."
 
-#: setup/sdg.php:105
+#: setup/sdg.php:236
 msgid "Nachhaltiger Konsum und Produktion"
 msgstr "Sürdürülebilir tüketim ve üretim"
 
-#: setup/sdg.php:105
+#: setup/sdg.php:236
 msgid "Nachhaltige Konsum- und Produktionsmuster sicherstellen"
 msgstr "Sürdürülebilir tüketim ve üretim şablonlarının garantiye alınması"
 
-#: setup/sdg.php:105
-msgid ""
-"Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ "
-"gefordert, während die Entwicklungsländer entsprechend ihrem "
-"Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als "
-"wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und "
-"effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der "
-"Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit "
-"Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche "
-"Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
+#: setup/sdg.php:236
+msgid "Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ gefordert, während die Entwicklungsländer entsprechend ihrem Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
 msgstr "Bu hedefin hayata geçirilmesi için “en başta gelişmiş ülkelerden” talepte bulunulurken, gelişmekte olan ülkelerin gelişim seviyelerine ve kapasitelerine göre önlemler alması gerekiyor. Burada önemli konular olarak doğal kaynakların sürdürülebilir ve verimli kullanımı, gıda israfının yarıya indirilmesi ve kimyasalların ve çöplerin çevreye zarar vermeden kullanılması sayılıyor. Fosil yakıtlara yönelik zararlı sübvansiyonların da yavaş yavaş kaldırılması hedefleniyor."
 
-#: setup/sdg.php:106
+#: setup/sdg.php:237
 msgid "Maßnahmen zum Klimaschutz"
 msgstr "İklim koruma önlemleri"
 
-#: setup/sdg.php:106
-msgid ""
-"Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen "
-"ergreifen"
+#: setup/sdg.php:237
+msgid "Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen ergreifen"
 msgstr "İklim değişimiyle ve etkileriyle mücadele için derhal önlemler alınması"
 
-#: setup/sdg.php:106
-msgid ""
-"Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die "
-"Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen "
-"in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die "
-"nationalen Politiken, Strategien und Planungen einbezogen werden. "
-"Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab "
-"2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in "
-"Entwicklungsländern aufzubringen."
+#: setup/sdg.php:237
+msgid "Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die nationalen Politiken, Strategien und Planungen einbezogen werden. Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab 2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in Entwicklungsländern aufzubringen."
 msgstr "Belirlenen hedefte formüle edildiği gibi “tüm ülkelerde iklim kaynaklı tehlikelere ve doğal afetlere karşı dayanıklılığı uyum yeteneğini” güçlendirmek gerekiyor. Bunun için iklim koruma önlemlerinin ulusal politikalara, stratejilere ve planlamalara dahil edilmesi gerekiyor. Gelişmiş ülkelerin 2020’den itibaren gelişmekte olan ülkelerdeki iklim koruması için yılda 100 milyar USD ayırma yükümlülüğü açıkça hatırlatılıyor."
 
-#: setup/sdg.php:107
+#: setup/sdg.php:238
 msgid "Leben unter dem Wasser"
 msgstr "Suyun altındaki yaşam"
 
-#: setup/sdg.php:107
-msgid ""
-"Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung "
-"erhalten und nachhaltig nutzen"
+#: setup/sdg.php:238
+msgid "Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung erhalten und nachhaltig nutzen"
 msgstr "Sürdürülebilir gelişim anlamında okyanuslar, denizler ve deniz kaynakları korumak ve sürdürülebilir olarak kullanmak"
 
-#: setup/sdg.php:107
-msgid ""
-"Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich "
-"verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme "
-"nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. "
-"Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die "
-"Beendigung der Überfischung."
+#: setup/sdg.php:238
+msgid "Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die Beendigung der Überfischung."
 msgstr "2025’e kadar her tür deniz kirletilmesinin durdurulması ya da önemli ölçüde azaltılması amaçlanıyor. Ayrıca deniz ve kıyı ekosistemlerinin sürdürülebilir olarak kullanılması ve okyanusların asitlenmesiyle mücadele edilmesi gerekiyor. Aynı zamanda balık avlama faaliyetinin etkili bir şekilde düzenlenmesi ve aşırı avlanmasının bitirilmesi hedefleniyor."
 
-#: setup/sdg.php:108
+#: setup/sdg.php:239
 msgid "Leben an Land"
 msgstr "Karada yaşam"
 
-#: setup/sdg.php:108
-msgid ""
-"Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung "
-"fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, "
-"Bodendegradation beenden und umkehren und dem Verlust der biologischen "
-"Vielfalt ein Ende setzen"
+#: setup/sdg.php:239
+msgid "Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen"
 msgstr "Karasal ekosistemleri korumak ve bunların teşvik etmek, ormanları sürdürülebilir olarak kullanmak, çölleşmeyle mücadele , toprağın kalite kaybını bitirmek ve tersine çevirmek ve biyolojik çeşitliliğin kaybına bir son vermek"
 
-#: setup/sdg.php:108
-msgid ""
-"Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-"
-"Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung "
-"der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den "
-"Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten "
-"geschützt und ihr Aussterben verhindert werden."
+#: setup/sdg.php:239
+msgid "Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten geschützt und ihr Aussterben verhindert werden."
 msgstr "2020’ye kadar karasal ve iç tatlı su ekosistemlerinin yanı sıra ormanların sürdürülebilir kullanımına ulaşılması amaçlanıyor. Aynı şekilde çölleşmeyle mücadele ve dağ ekosistemlerinin korunması hedefleniyor. Biyolojik çeşitliliğin kaybını bitirmek için tehdit altındaki türlerin korunması ve tükenmesinin engellenmesi isteniyor."
 
-#: setup/sdg.php:109
+#: setup/sdg.php:240
 msgid "Frieden und Gerechtigkeit"
 msgstr "Barış ve adalet"
 
-#: setup/sdg.php:109
-msgid ""
-"Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung "
-"fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, "
-"rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
+#: setup/sdg.php:240
+msgid "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
 msgstr "Sürdürülebilir bir gelişim için barışçı ve kapsayıcı toplumların teşvik edilmesi, tüm insanların adalete ulaşımının erişiminin sağlanması ve her düzeyde yüksek performanslı, hesap verme yükümlülüğü olan ve kapsayıcı kurumların oluşturulması"
 
-#: setup/sdg.php:109
-msgid ""
-"Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und "
-"Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau "
-"leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die "
-"illegalen Finanz- und Waffenströme deutlich zu verringern."
+#: setup/sdg.php:240
+msgid "Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die illegalen Finanz- und Waffenströme deutlich zu verringern."
 msgstr "Bu hedefe ulaşmak için şiddetin tüm biçimlerinin azaltılması ve hukuk devletinin sağlanması isteniyor, yüksek performanslı kurumların oluşturulması da bunun bir parçası. Aynı şekilde 2030’a kadar yasadışı finans ve silah akışlarının belirgin bir şekilde azaltılması gerekiyor."
 
-#: setup/sdg.php:110
+#: setup/sdg.php:241
 msgid "Partnerschaften zur Erreichung der Ziele"
 msgstr "Hedeflere ulaşmak için ortaklıklar"
 
-#: setup/sdg.php:110
-msgid ""
-"Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige "
-"Entwicklung stärken"
+#: setup/sdg.php:241
+msgid "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung stärken"
 msgstr "Sürdürülebilir gelişim için uygulama araçlarının ve küresel ortaklığın güçlendirilmesi"
 
-#: setup/sdg.php:110
-msgid ""
-"Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher "
-"Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % "
-"ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll "
-"eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich "
-"Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es "
-"auch, ein gerechtes multilaterales Handelssystem unter dem Dach der "
-"Welthandelsorganisation zu schaffen."
+#: setup/sdg.php:241
+msgid "Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es auch, ein gerechtes multilaterales Handelssystem unter dem Dach der Welthandelsorganisation zu schaffen."
 msgstr "Sanayileşmiş devletlerden, kamuya yönelik gelişim yardımlarıyla ilgili olarak verdikleri sözleri, özellikle de brüt milli gelirlerinin %0,7’sini bu görevler için ayırma sözlerini tutmaları isteniyor. Ekonomi, teknoloji ve yenilikçilik alanlarında daha güçlü bir kuzey-güney ve güney-güney işbirliğinin teşvik edilmesi isteniyor. Belirlenen hedeflerin arasında dünya ticaret örgütü çatısı altında adil bir bölgeler arası ticaret sistemi oluşturulması da bulunuyor.."
 
-#: setup/settings.php:23
+#: setup/settings.php:25
 msgid "Einstellungen für die Quartiersplattform"
 msgstr "Mahalle platformuyla ilgili ayarlar"
 
 #. Theme Name of the plugin/theme
-#: setup/settings.php:24
+#: setup/settings.php:26
 msgid "Quartiersplattform"
 msgstr "Mahalle platformu"
 
-#: setup/settings.php:28 setup/settings.php:37 setup/settings.php:40
-#: setup/settings.php:47 setup/settings.php:50
+#: setup/settings.php:30 setup/settings.php:39 setup/settings.php:42 setup/settings.php:49 setup/settings.php:52
 msgid "Aktualisieren"
 msgstr "Güncelle"
 
-#: setup/settings.php:29 setup/settings.php:41 setup/settings.php:51
+#: setup/settings.php:31 setup/settings.php:43 setup/settings.php:53
 msgid "Die Einstellungen wurden gespeichert."
 msgstr "Ayarlar kaydedildi."
 
-#: setup/settings.php:34 setup/settings.php:35 setup/settings.php:312
-#: setup/settings.php:316
+#: setup/settings.php:36 setup/settings.php:37 setup/settings.php:322 setup/settings.php:326
 msgid "Wartungsmodus"
 msgstr "Bakım modu"
 
-#: setup/settings.php:44 setup/settings.php:45
+#: setup/settings.php:46 setup/settings.php:47
 msgid "API-Schlüssel"
 msgstr "API anahtarı"
 
-#: setup/settings.php:65
+#: setup/settings.php:75
 msgid "Quartierseinstellungen"
 msgstr "Mahalle ayarları"
 
-#: setup/settings.php:69 setup/settings.php:231
+#: setup/settings.php:79 setup/settings.php:241
 msgid "Logo"
 msgstr "Logo"
 
-#: setup/settings.php:72
-msgid ""
-"Hier kannst du das Logo von deinem Quartier oder deiner Organisation "
-"einfügen, welches unter jeder Seite eingeblendet wird."
+#: setup/settings.php:82
+msgid "Hier kannst du das Logo von deinem Quartier oder deiner Organisation einfügen, welches unter jeder Seite eingeblendet wird."
 msgstr "Buraya, her sayfanın altında gösterilecek olan, mahallenin ya da organizasyonunun logosunu ekleyebilirsin."
 
-#: setup/settings.php:93
+#: setup/settings.php:103
 msgid "Name"
 msgstr "Ad"
 
-#: setup/settings.php:96
-msgid ""
-"Hier kannst du den Namen festlegen, welcher den Besuchern der "
-"Quartiersplattform angezeigt wird und im Menü angezeigt wird."
+#: setup/settings.php:106
+msgid "Hier kannst du den Namen festlegen, welcher den Besuchern der Quartiersplattform angezeigt wird und im Menü angezeigt wird."
 msgstr "Burada, mahalle platformunun ziyaretçilerine ve menüde gösterilecek olan adı belirleyebilirsin."
 
-#: setup/settings.php:105
+#: setup/settings.php:115
 msgid "Name der Quartiersplattform"
 msgstr "Mahalle platformunun adı"
 
-#: setup/settings.php:136
+#: setup/settings.php:122
+msgid "Bild für die Quartiersstartseite"
+msgstr "Mahalle ana sayfası için tarif"
+
+#: setup/settings.php:125
+msgid "Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet wird."
+msgstr "Buradan sayfayı mahalle sayfasına tutturabilirsin."
+
+#: setup/settings.php:146
 msgid "Überschrift für die Quartiersstartseite"
 msgstr "Mahalle ana sayfasının başlığı"
 
-#: setup/settings.php:139
-msgid ""
-"Hier kannst du die Überschrift festlegen, welche den Besuchern der "
-"Quartiersplattform auf der Startseite ."
+#: setup/settings.php:149
+msgid "Hier kannst du die Überschrift festlegen, welche den Besuchern der Quartiersplattform auf der Startseite ."
 msgstr "Burada mahalle platformunun ziyaretçilerine ana sayfada gösterilecek olan başlığı belirleyebilirsin."
 
-#: setup/settings.php:148 setup/settings.php:355
+#: setup/settings.php:158 setup/settings.php:365
 msgid "Überschrift"
 msgstr "Başlık"
 
-#: setup/settings.php:155
+#: setup/settings.php:165
 msgid "Beschreibung für die Quartiersstartseite"
 msgstr "Mahalle ana sayfası için tarif"
 
-#: setup/settings.php:158
-msgid ""
-"Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher "
-"auf der Startseite eingeblendet wird."
+#: setup/settings.php:168
+msgid "Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher auf der Startseite eingeblendet wird."
 msgstr "Buraya, ana sayfanın ziyaretçilerinin görebileceği bir tarif yazısı girebilirsin."
 
-#: setup/settings.php:167
+#: setup/settings.php:177
 msgid "Beschreibungstext"
 msgstr "Tarif yazısı"
 
-#: setup/settings.php:212
+#: setup/settings.php:222
 msgid "Sponsoren"
 msgstr "Sponsorlar"
 
-#: setup/settings.php:215
+#: setup/settings.php:225
 msgid "Hier kannst du die Partner deiner Quartiersplattform eintragen."
 msgstr "Buraya mahalle platformunun ortaklarını girebilirsin."
 
-#: setup/settings.php:274 setup/veranstaltungen.php:177
+#: setup/settings.php:284 setup/veranstaltungen.php:177
 msgid "Website"
 msgstr "Web sitesi"
 
-#: setup/settings.php:319
+#: setup/settings.php:329
 msgid "Schalte hier den Wartungsmodus für die Quartiersseite ein."
 msgstr "Buradan mahalle sayfasının bakım modunu çalıştır."
 
-#: setup/settings.php:358
+#: setup/settings.php:368
 msgid "Hier kannst du eine Überschrift für die Wartungsseite eintragen."
 msgstr "Buraya bakım sayfası için bir başlık girebilirsin."
 
-#: setup/settings.php:366
+#: setup/settings.php:376
 msgid "Deine Quatiersplattform wird aktualisiert."
 msgstr "Mahalle platformun güncelleniyor."
 
-#: setup/settings.php:374
+#: setup/settings.php:384
 msgid "Text"
 msgstr "Metin"
 
-#: setup/settings.php:377
+#: setup/settings.php:387
 msgid "Hier kannst du einen Beschreibungstext für den Wartungsmodus einfügen."
 msgstr "Buraya bakım modu için bir tarif metni ekleyebilirsin."
 
-#: setup/settings.php:385
-msgid ""
-"Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier "
-"mit zugestalten. Wir sind bald wieder online."
+#: setup/settings.php:395
+msgid "Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten. Wir sind bald wieder online."
 msgstr "Mahallenin şekillendirilmesine katılmak için kullanabileceğin yeni işlevleri heyecanla bekle. Yakında tekrar çevrimiçi olacağız."
 
-#: setup/settings.php:460
+#: setup/settings.php:470
 msgid "Matomo API Schlüssel"
 msgstr "Matomo API anahtarı"
 
-#: setup/settings.php:463
+#: setup/settings.php:473
 msgid "Trage hier deinen Matomo API-Schlüssel ein."
 msgstr "Buraya Matomo API anahtarını gir."
 
@@ -1991,9 +1843,21 @@ msgstr "Anketler"
 msgid "Worum geht es in deiner Umfrage?"
 msgstr "Bu anketin konusu ne?"
 
+#: setup/umfragen.php:124
+msgid "Fragen"
+msgstr "Sorular"
+
 #: setup/umfragen.php:127
 msgid "Hier kannst du die Auswahlmöglichkeiten für deine Umfrage festlegen."
 msgstr "Burada anketin için seçim olanaklarını belirleyebilirsin."
+
+#: setup/umfragen.php:139
+msgid "Weitere Auswahlmöglichkeit hinzufügen"
+msgstr "Başka seçim olanağı ekle"
+
+#: setup/umfragen.php:143
+msgid "Frage"
+msgstr "Soru"
 
 #: setup/veranstaltungen.php:111
 msgid "Worum geht es bei deiner Veranstaltung?"
@@ -2028,20 +1892,18 @@ msgid "Livestream"
 msgstr "Canlı akış"
 
 #: setup/veranstaltungen.php:196
-msgid ""
-"Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link "
-"veröffentlichen, damit noch mehr Menschen daran teilhaben können."
+msgid "Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link veröffentlichen, damit noch mehr Menschen daran teilhaben können."
 msgstr "Etkinliğin canlı olarak aktarılacak mı? Burada, daha fazla insanın katılabilmesi için bir link yayınlayabilirsin."
 
 #: setup/veranstaltungen.php:209
 msgid "Ticket"
 msgstr "Bilet"
 
-#: setup/veranstaltungen.php:244
-msgid "Map"
+#: setup/veranstaltungen.php:225
+msgid "Karte"
 msgstr "Harita"
 
-#: setup/veranstaltungen.php:265
+#: setup/veranstaltungen.php:246
 msgid "Welches Bild beschreibt deine Veranstaltung am besten?"
 msgstr "Hangi resim etkinliğini en iyi şekilde tarif ediyor?"
 
@@ -2082,33 +1944,22 @@ msgid "Dein Passwort wurde geändert."
 msgstr "Şifren değiştirildi."
 
 #: ultimate-member/email/changedpw_email.php:8
-msgid ""
-"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
-"gewesen sein, kontaktiere uns bitte umgehend."
+msgid "Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir gewesen sein, kontaktiere uns bitte umgehend."
 msgstr "Kısa süre önce şifren değiştirildi. Bu değişikliği sen yapmadıysan lütfen hemen bizimle bağlantı kur."
 
 #: ultimate-member/email/changedpw_email.php:14
 msgid "Sieh dir dein Konto an"
 msgstr "Hesabını incele"
 
-#: ultimate-member/email/changedpw_email.php:16
-#: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email.php:39
-#: ultimate-member/email/welcome_email.php:51
+#: ultimate-member/email/changedpw_email.php:16 ultimate-member/email/checkmail_email.php:39 ultimate-member/email/resetpw_email.php:39 ultimate-member/email/welcome_email.php:51
 msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
 msgstr "Sorun çıkarsa, bize posta yoluyla başvurabilirsin."
 
-#: ultimate-member/email/changedpw_email.php:20
-#: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email.php:44
-#: ultimate-member/email/welcome_email.php:56
+#: ultimate-member/email/changedpw_email.php:20 ultimate-member/email/checkmail_email.php:44 ultimate-member/email/resetpw_email.php:44 ultimate-member/email/welcome_email.php:56
 msgid "Vielen Dank!"
 msgstr "Çok teşekkürler!"
 
-#: ultimate-member/email/changedpw_email.php:33
-#: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email.php:58
-#: ultimate-member/email/welcome_email.php:69
+#: ultimate-member/email/changedpw_email.php:33 ultimate-member/email/checkmail_email.php:58 ultimate-member/email/resetpw_email.php:58 ultimate-member/email/welcome_email.php:69
 msgid "Datenschutz"
 msgstr "Veri koruma"
 
@@ -2125,9 +1976,7 @@ msgid "Konto aktivieren"
 msgstr "Hesabı etkinleşir"
 
 #: ultimate-member/email/resetpw_email.php:22
-msgid ""
-"Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
-"Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
+msgid "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
 msgstr "Aşağıdaki linki kullanarak kendine yeni bir şifre oluşturabilirsin. Bunu istemediysen lütfen bu postayı yok say."
 
 #: ultimate-member/email/resetpw_email.php:35
@@ -2139,22 +1988,15 @@ msgid "Willkommen im Quartier, "
 msgstr "Mahalleye hoş geldin, "
 
 #: ultimate-member/email/welcome_email.php:21
-msgid ""
-"Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
-"Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
-"und dein Quartier nachhaltig entwickeln und verbessern."
+msgid "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen und dein Quartier nachhaltig entwickeln und verbessern."
 msgstr "Gelmen çok güzel! Mahalle platformunda mahallenle ilgili her türlü bilgiyi bulabilirsin. Böylece çevrendeki insanları tanıyabilir, mahalleni sürdürülebilir şekilde geliştirebilir ve iyileştirebilirsin."
 
 #: ultimate-member/email/welcome_email.php:29
-msgid ""
-"Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
-"Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
+msgid "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
 msgstr "Projeleri keşfet ve kendi projelerini oluştur. En sevdiğin parkta seni rahatsız eden bir şey mi var? Bunu bir proje haline getir ve destekçiler bul!"
 
 #: ultimate-member/email/welcome_email.php:35
-msgid ""
-"Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
-"alles was du wissen musst, um bei nächsten mal dabei zu sein."
+msgid "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein."
 msgstr "Bir daha asla mahallendeki harika etkinlikleri kaçırma. Burada, bir dahaki sefere katılabilmek için bilmen gereken her şeyi bulabilirsin."
 
 #: ultimate-member/email/welcome_email.php:47
@@ -2166,11 +2008,7 @@ msgid "https://github.com/studio-arrenberg/quartiersplattform"
 msgstr "https://github.com/studio-arrenberg/quartiersplattform"
 
 #. Description of the plugin/theme
-msgid ""
-"Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner "
-"Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & "
-"lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz "
-"erstrahlen."
+msgid "Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz erstrahlen."
 msgstr "Mahallende etkin ol ve şehrinde mahalle platformunu kabullenilmesini sağla! Projelerin görünür hale gelir ve sen de toplulukta ve yerel aktörlerden yararlanırsın. Temalarımızdan yararlan ve mahallene yeni bir parıltı kazandır."
 
 #. Author of the plugin/theme
@@ -2180,3 +2018,27 @@ msgstr "Studio Arrenberg"
 #. Author URI of the plugin/theme
 msgid "https://arrenberg.studio"
 msgstr "https://arrenberg.studio"
+
+#~ msgid "Projekt teilen"
+#~ msgstr "Projeyi böl"
+
+#~ msgid "Entdecke dein Quartier"
+#~ msgstr "Mahalleni keşfet"
+
+#~ msgid "Wichtige Seiten"
+#~ msgstr "Önemli sayfalar"
+
+#~ msgid "Deine Frage wurde gelöscht."
+#~ msgstr "Sorun silindi."
+
+#~ msgid "Gemeinsam"
+#~ msgstr "Birlikte"
+
+#~ msgid "Umfrage teilen"
+#~ msgstr "Anketi paylaş"
+
+#~ msgid "Angebote"
+#~ msgstr "Seçenekler"
+
+#~ msgid "Angebot"
+#~ msgstr "Seçenek"

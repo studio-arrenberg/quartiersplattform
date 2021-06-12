@@ -1,23 +1,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-05-04 15:52+0200\n"
-"PO-Revision-Date: 2021-05-04 15:53+0200\n"
+"POT-Creation-Date: 2021-05-31 16:45+0200\n"
+"PO-Revision-Date: 2021-06-12 11:13+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.2\n"
-"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ../../../../../../../../Entwicklung/quartiersplattform/wp-content/themes/quartiersplattform\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
@@ -26,9 +24,7 @@ msgid "Page Not Found"
 msgstr "Page Not Found"
 
 #: 404.php:19
-msgid ""
-"The page you were looking for could not be found. It might have been "
-"removed, renamed, or did not exist in the first place."
+msgid "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
 msgstr "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
 
 #: 404.php:29
@@ -39,24 +35,24 @@ msgstr "404 not found"
 msgid "Mein Profil bearbeiten"
 msgstr "Edit my profile"
 
-#: author.php:73 setup/kontakt.php:94
+#: author.php:70 setup/kontakt.php:97
 msgid "Über mich"
 msgstr "About me"
 
-#: author.php:94 setup/main.php:50 setup/main.php:174 setup/projekte.php:27
-#: setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75
-#: ultimate-member/email/welcome_email.php:27
-msgid "Projekte"
-msgstr "Projects"
+#: author.php:89
+msgid "Projekte von"
+msgstr "Project update from"
+
+#: author.php:107
+msgid "Beiträge von"
+msgstr "Posts from"
 
 #: classes/class-twentytwenty-customize.php:81
 msgid "Retina logo"
 msgstr "Retina logo"
 
 #: classes/class-twentytwenty-customize.php:82
-msgid ""
-"Scales the logo to half its uploaded size, making it sharp on high-res "
-"screens."
+msgid "Scales the logo to half its uploaded size, making it sharp on high-res screens."
 msgstr "Scales the logo to half its uploaded size, making it sharp on high-res screens."
 
 #: classes/class-twentytwenty-customize.php:101
@@ -108,9 +104,7 @@ msgid "Cover Template"
 msgstr "Cover template"
 
 #: classes/class-twentytwenty-customize.php:283
-msgid ""
-"Settings for the \"Cover Template\" page template. Add a featured image to "
-"use as background."
+msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
 msgstr "Settings for the \"cover template\" page template. Add a featured image to use as background."
 
 #: classes/class-twentytwenty-customize.php:305
@@ -142,8 +136,7 @@ msgid "Overlay Opacity"
 msgstr "Overlay opacity"
 
 #: classes/class-twentytwenty-customize.php:396
-msgid ""
-"Make sure that the contrast is high enough so that the text is readable."
+msgid "Make sure that the contrast is high enough so that the text is readable."
 msgstr "Make sure that the contrast is high enough so that the text is readable."
 
 #: classes/class-twentytwenty-walker-comment.php:65
@@ -190,11 +183,11 @@ msgstr "Comments"
 msgid "Comments are closed."
 msgstr "Comments are closed."
 
-#: components/author-card.php:50
+#: components/author-card.php:57
 msgid "Hier kannst du deine Kontaktdaten hinterlegen,"
 msgstr "You can add your contact details here"
 
-#: components/author-card.php:50
+#: components/author-card.php:57
 msgid " damit du kontaktiert werden kannst."
 msgstr "so that you can be contacted."
 
@@ -203,20 +196,14 @@ msgid "Wir verwenden Cookies"
 msgstr "We use cookies"
 
 #: components/cookie/cookie-alert.php:9
-msgid ""
-"Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du "
-"der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
+msgid "Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
 msgstr "We use cookies on the district platform. By using the platform, you agree to their use. Wo do not use third-party cookies."
 
-#: components/cookie/cookie-alert.php:19 footer.php:56
+#: components/cookie/cookie-alert.php:19 footer.php:74
 msgid "Datenschutzerklärung"
 msgstr "Privacy policy"
 
-#: components/cookie/cookie-alert.php:26 footer.php:52 setup/main.php:176
-#: ultimate-member/email/changedpw_email.php:32
-#: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email.php:57
-#: ultimate-member/email/welcome_email.php:68
+#: components/cookie/cookie-alert.php:26 footer.php:70 setup/main.php:182 ultimate-member/email/changedpw_email.php:32 ultimate-member/email/checkmail_email.php:57 ultimate-member/email/resetpw_email.php:57 ultimate-member/email/welcome_email.php:68
 msgid "Impressum"
 msgstr "Legal notice"
 
@@ -236,7 +223,7 @@ msgstr "green phase"
 msgid " CO2 pro kWh"
 msgstr " CO2 per kWh"
 
-#: components/energie_ampel-menu.php:37 components/energie_ampel-menu.php:166
+#: components/energie_ampel-menu.php:37 components/energie_ampel-menu.php:180
 msgid "Jetzt"
 msgstr "Now"
 
@@ -248,53 +235,51 @@ msgstr "Thursday"
 msgid "Energie Ampel"
 msgstr "Energy traffic light"
 
-#: components/energie_ampel-menu.php:143
-msgid "e Phase"
+#: components/energie_ampel-menu.php:142
+msgid "Phase"
 msgstr "e phase"
 
-#: components/energie_ampel-menu.php:148
-msgid "CO2 pro kWh"
-msgstr "CO2 per kWh"
+#: components/energie_ampel-menu.php:146
+msgid "gramm"
+msgstr "grammes"
 
-#: components/feedback.php:37
-msgid "Zur Wunschliste"
-msgstr "Go to wish list"
+#: components/energie_ampel-menu.php:147
+msgid "pro kWh"
+msgstr "per kWh"
 
-#: components/general/map-card.php:32
+#: components/general/map-card.php:36
 msgid "In Maps öffnen"
 msgstr "Open in maps"
 
-#: components/general/map-card.php:61
+#: components/general/map-card.php:66
 msgid "Zu Google Maps wechseln?"
 msgstr "Switch to Google Maps?"
 
-#: components/general/share-post.php:10
-msgid "Projekt teilen"
-msgstr "Share project"
+#: components/general/share-post.php:12
+msgid "Teilen"
+msgstr "Share"
 
-#: components/general/share-post.php:13 pages/single-umfragen.php:85
+#: components/general/share-post.php:15
 msgid "Kopieren"
 msgstr "Copy"
 
-#: components/general/share-post.php:48
+#: components/general/share-post.php:50
 msgid "Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde."
 msgstr "You can only share your project once it has been published."
 
-#: components/general/share-post.php:49
+#: components/general/share-post.php:51
 msgid "Dein Projekt kann nicht geteilt werden"
 msgstr "You cannot share your project"
 
-#: components/profil/reminder_card_reset.php:2
+#: components/profil/reminder_card_reset.php:1
 msgid "Hinweise und Tipps"
 msgstr "Notes and tips"
 
-#: components/profil/reminder_card_reset.php:3
-msgid ""
-"Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder "
-"einblenden."
+#: components/profil/reminder_card_reset.php:2
+msgid "Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder einblenden."
 msgstr "Here you can set all the notes and tips on the district platform to visible again."
 
-#: components/profil/reminder_card_reset.php:5
+#: components/profil/reminder_card_reset.php:4
 msgid "Hinweise und Tipps zurücksetzen"
 msgstr "Remove notes and tips"
 
@@ -302,35 +287,28 @@ msgstr "Remove notes and tips"
 msgid "Aktuelle Veranstaltung"
 msgstr "Current event"
 
-#: components/project/content.php:5 setup/umfragen.php:105
-#: setup/veranstaltungen.php:108
+#: components/project/content.php:5 setup/umfragen.php:105 setup/veranstaltungen.php:108
 msgid "Beschreibung"
 msgstr "Description"
 
 #: components/project/content.php:13
-msgid ""
-"Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und "
-"Inhalte noch besser zu erklären."
+msgid "Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte noch besser zu erklären."
 msgstr "You can add a description to your project to better explain its goals and content."
 
 #: components/project/content.php:14
 msgid "Beschreibung hinzufügen"
 msgstr "Add description"
 
-#: components/project/content.php:31
+#: components/project/content.php:22
 msgid "Beschreibung bearbeiten"
 msgstr "Edit description"
 
-#: components/project/content.php:44 pages/page-quartier.php:61
-#: pages/single-nachrichten.php:73 pages/single-veranstaltungen.php:119
-#: template-parts/content.php:53 templates/center-header.php:47
+#: components/project/content.php:35 pages/page-profil.php:164 pages/page-quartier.php:76 pages/single-nachrichten.php:74 pages/single-veranstaltungen.php:94 template-parts/content.php:53 templates/center-header.php:47
 msgid "Continue reading"
 msgstr "Continue reading"
 
 #: components/project/history.php:31
-msgid ""
-"Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später "
-"vorbei, um auf dem Laufenden zu bleiben."
+msgid "Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später vorbei, um auf dem Laufenden zu bleiben."
 msgstr "No project updates have yet been published. Check back again later to see what’s new."
 
 #: components/project/history.php:32
@@ -338,53 +316,46 @@ msgid "Es wurden noch keine Beiträge veröffentlicht"
 msgstr "No posts have yet been published"
 
 #: components/project/history.php:36
-msgid ""
-"Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst "
-"Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen "
-"in deinem Quartier über das Projekt zu informieren."
+msgid "Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen in deinem Quartier über das Projekt zu informieren."
 msgstr "You have not yet published any project updates. You can publish messages, events and surveys in order to keep the people in your district informed about your project."
 
 #: components/project/history.php:37
 msgid "Du hast noch keine Beiträge veröffentlicht"
 msgstr "You have not yet published any posts"
 
-#: components/project/pinned-posts.php:23
+#: components/project/pinned-posts.php:33
 msgid "Gepinnte Beiträge"
 msgstr "Pinned posts"
 
-#: components/project/sdg-display.php:14 components/project/sdg-display.php:50
+#: components/project/sdg-display.php:13 components/project/sdg-display.php:48
 msgid "Ziele für nachhaltige Entwicklung"
 msgstr "Sustainable development goals"
 
-#: components/project/sdg-display.php:42 pages/page-quartier.php:148
+#: components/project/sdg-display.php:40 pages/page-quartier.php:157
 msgid "Übersicht der Ziele für nachhaltige Entwicklung"
 msgstr "Overview of sustainable development goals"
 
-#: components/project/sdg-display.php:48
-msgid ""
-"Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen "
-"kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht "
-"genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der "
-"Seite SDGs informieren, worum es sich dabei handelt."
+#: components/project/sdg-display.php:46
+msgid "Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der Seite SDGs informieren, worum es sich dabei handelt."
 msgstr "Is your project pursuing sustainability goals? In the project settings you can define which goals your project supports. Not sure exactly what the sustainable development goals (SDGs) are? Find out about them on the SDGs page."
 
-#: components/project/toolbox.php:7
+#: components/project/toolbox.php:10
 msgid "Was gibt es Neues?"
 msgstr "What’s new?"
 
-#: components/project/toolbox.php:10
+#: components/project/toolbox.php:13
 msgid "Halte das Quartier auf dem Laufenden."
 msgstr "Keep the district up to date."
 
-#: components/project/toolbox.php:16
+#: components/project/toolbox.php:20
 msgid " Nachricht "
 msgstr " Message "
 
-#: components/project/toolbox.php:22
+#: components/project/toolbox.php:27
 msgid "Umfrage "
 msgstr "Survey "
 
-#: components/project/toolbox.php:29
+#: components/project/toolbox.php:35
 msgid "Veranstaltung "
 msgstr "Event "
 
@@ -392,8 +363,7 @@ msgstr "Event "
 msgid "Diese Meldung ausblenden."
 msgstr "Hide this notification."
 
-#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:18
-#: future_translation.php:80
+#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:24 future_translation.php:80
 msgid "Anheften"
 msgstr "Attach"
 
@@ -401,17 +371,15 @@ msgstr "Attach"
 msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
 msgstr "You can pin the project to the district page here."
 
-#: components/settings/pin_toggle.php:9 components/settings/pin_toggle.php:23
-#: future_translation.php:73 setup/main.php:270
+#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:31 future_translation.php:73 setup/main.php:280
 msgid "Gepinnt"
 msgstr "Pinned"
 
-#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:26
-#: future_translation.php:74 setup/main.php:271
+#: components/settings/pin_toggle.php:15 components/settings/pin_toggle.php:34 future_translation.php:74 setup/main.php:281
 msgid "Nicht gepinnt"
 msgstr "Not pinned"
 
-#: components/settings/pin_toggle.php:19
+#: components/settings/pin_toggle.php:25
 msgid "Hier kannst du den Beitrag auf deine Projektseite pinnen."
 msgstr "You can pin the post to the project page here."
 
@@ -420,25 +388,30 @@ msgid "Sichtbarkeit"
 msgstr "Visibility"
 
 #: components/settings/visibility_toggle.php:2
-msgid ""
-"Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
+msgid "Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
 msgstr "You can set the post’s visibility on the district page here."
 
-#: components/settings/visibility_toggle.php:7 future_translation.php:75
+#: components/settings/visibility_toggle.php:9 future_translation.php:75
 msgid "Öffentlich"
 msgstr "Public"
 
-#: components/settings/visibility_toggle.php:9 future_translation.php:77
+#: components/settings/visibility_toggle.php:12 future_translation.php:77
 msgid "Privat"
 msgstr "Private"
 
-#: components/smart-card/projekte.php:56 elements/card-nachrichten.php:31
-#: setup/nachrichten.php:27
+#: components/smart-card/projekte.php:20 pages/page-profil.php:131
+msgid "Deine Projekte"
+msgstr "Your projects"
+
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+msgid "Dein Projekt"
+msgstr "Your projects"
+
+#: components/smart-card/projekte.php:56 elements/card-nachrichten.php:29 setup/nachrichten.php:27
 msgid "Nachricht"
 msgstr "Message"
 
-#: components/smart-card/projekte.php:58 elements/card-veranstaltungen.php:28
-#: setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
+#: components/smart-card/projekte.php:58 elements/card-veranstaltungen.php:28 elements/card-veranstaltungen.php:44 elements/card-veranstaltungen.php:72 setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
 msgid "Veranstaltung"
 msgstr "Event"
 
@@ -446,28 +419,27 @@ msgstr "Event"
 msgid "Aktuelle Veranstaltungen"
 msgstr "Current events"
 
-#: components/views/veranstaltungen.php:35
-msgid ""
-"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
-"organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner "
-"Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
+#: components/views/veranstaltungen.php:34
+msgid "Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
 msgstr "If you're organizing a cultural event or celebration in your district, you can post it here in order to meet and connect with people in your district."
 
-#: components/views/veranstaltungen.php:36
+#: components/views/veranstaltungen.php:35
 msgid "Momentan gibt es keine Veranstaltungen"
 msgstr "The are currently no events"
 
-#: components/views/veranstaltungen.php:36 setup/main.php:177
+#: components/views/veranstaltungen.php:35 setup/main.php:183
 msgid "Veranstaltung erstellen"
 msgstr "Create an event"
 
-#: elements/card-nachrichten.php:33 elements/card-projekte.php:48
-#: elements/card-veranstaltungen.php:30
+#: elements/card-anmerkungen.php:25
+msgid "von"
+msgstr "of "
+
+#: elements/card-nachrichten.php:31 elements/card-projekte.php:48 elements/card-veranstaltungen.php:30
 msgid "von "
 msgstr "of "
 
-#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71
-#: setup/projekte.php:107
+#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71 setup/projekte.php:109
 msgid "Projekt"
 msgstr "Project"
 
@@ -479,67 +451,91 @@ msgstr "Survey"
 msgid "veröffentlicht von "
 msgstr "Published by "
 
-#: elements/card-umfragen.php:68 elements/card-umfragen.php:124
+#: elements/card-umfragen.php:69 elements/card-umfragen.php:125
 msgid " Stimmen"
 msgstr " Comments"
 
-#: elements/card-umfragen.php:96
-msgid ""
-"Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
+#: elements/card-umfragen.php:97
+msgid "Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
 msgstr "Sign up to the district platform to take part in the survey."
 
-#: elements/card-umfragen.php:98 header.php:162 maintenance.php:108
+#: elements/card-umfragen.php:99 maintenance.php:110
 msgid "Anmelden"
 msgstr "Sign up"
 
-#: elements/card-umfragen.php:101 maintenance.php:109
+#: elements/card-umfragen.php:102 maintenance.php:111
 msgid "Registrieren"
 msgstr "Register"
 
-#: footer.php:51
+#: elements/card-umfragen.php:161
+msgid "Stimmen"
+msgstr " Comments"
+
+#: footer.php:57
+msgid "Sprache"
+msgstr "Language"
+
+#: footer.php:58
+msgid "Englisch"
+msgstr "English"
+
+#: footer.php:59
+msgid "Türkisch"
+msgstr "Turkish"
+
+#: footer.php:60
+msgid "Italienisch"
+msgstr "Italian"
+
+#: footer.php:61
+msgid "Deutsch"
+msgstr "German"
+
+#: footer.php:69
 msgid "Kontakt"
 msgstr "Contact"
 
-#: forms/form-nachrichten.php:34 forms/form-projekte.php:25
-#: forms/form-projekte.php:50 forms/form-umfragen.php:33
-#: forms/form-veranstaltungen.php:37
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25 forms/form-veranstaltungen.php:29
+msgid "Projekt konnte nicht verknüpft werden"
+msgstr "You cannot share your project"
+
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25 forms/form-veranstaltungen.php:29
+msgid "Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es noch mal."
+msgstr "The form was not linked to a project. Please try again."
+
+#: forms/form-nachrichten.php:41 forms/form-projekte.php:25 forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
 msgid "Projekt veröffentlichen"
 msgstr "Publish project"
 
-#: forms/form-nachrichten.php:34 forms/form-umfragen.php:33
-#: forms/form-veranstaltungen.php:37
-msgid ""
-"Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den "
-"Projekteinstellungen veröffentlichen musst. "
+#: forms/form-nachrichten.php:41 forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
+msgid "Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. "
 msgstr "Your post is not visible yet because you first have to publish the project in the project settings. "
 
-#: forms/form-nachrichten.php:43
+#: forms/form-nachrichten.php:50
 msgid "Erstelle eine Nachricht"
 msgstr "Write a message"
 
-#: forms/form-nachrichten.php:61
+#: forms/form-nachrichten.php:68
 msgid "Nachricht veröffentlichen"
 msgstr "Publish message"
 
 #: forms/form-projekte.php:25
-msgid ""
-"Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte "
-"einstellen kannst. Wenn du soweit bist, kannst du es in den "
-"Projekteinstellungen veröffentlichen."
+msgid "Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen."
 msgstr "Your project is not public yet so that you can adjust your content in peace. When you're ready, you can publish it in the project settings."
 
 #: forms/form-projekte.php:29
 msgid "Erstelle dein eigenes Projekt"
 msgstr "Create your own project"
 
+#: forms/form-projekte.php:50 functions.php:2193 functions.php:3082 pages/projekt-feed.php:49 setup/main.php:187
+msgid "Projekt erstellen"
+msgstr "Create project"
+
 #: forms/form-projekte.php:62
-msgid ""
-"Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, "
-"Umfragen und Veranstaltungen zu erstellen."
+msgid "Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen."
 msgstr "Sign up to your district platform to create your own projects, surveys and events."
 
-#: forms/form-projekte.php:63 pages/page-projekte.php:105
-#: pages/page-veranstaltungen.php:55
+#: forms/form-projekte.php:63 pages/page-anmerkungen.php:102 pages/page-projekte.php:102 pages/page-veranstaltungen.php:48 pages/single-anmerkungen.php:54
 msgid "Mitglied werden im Quartier"
 msgstr "Become a member of the district"
 
@@ -547,11 +543,11 @@ msgstr "Become a member of the district"
 msgid "Jetzt Anmelden"
 msgstr "Sign up now"
 
-#: forms/form-umfragen.php:58
+#: forms/form-umfragen.php:64
 msgid "Umfrage veröffentlichen"
 msgstr "Publish survey"
 
-#: forms/form-veranstaltungen.php:72
+#: forms/form-veranstaltungen.php:78
 msgid "Veranstaltung veröffentlichen"
 msgstr "Publish event"
 
@@ -584,8 +580,7 @@ msgid "Footer #1"
 msgstr "Footer #1"
 
 #: functions.php:399
-msgid ""
-"Widgets in this area will be displayed in the first column in the footer."
+msgid "Widgets in this area will be displayed in the first column in the footer."
 msgstr "Widgets in this area will be displayed in the first column in the footer."
 
 #: functions.php:409
@@ -593,8 +588,7 @@ msgid "Footer #2"
 msgstr "Footer #2"
 
 #: functions.php:411
-msgid ""
-"Widgets in this area will be displayed in the second column in the footer."
+msgid "Widgets in this area will be displayed in the second column in the footer."
 msgstr "Widgets in this area will be displayed in the second column in the footer."
 
 #: functions.php:515
@@ -690,9 +684,7 @@ msgid "Anleitung öffnen"
 msgstr "Open guide"
 
 #: functions.php:920
-msgid ""
-"Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-"
-"Zustellung zu gewährleisten."
+msgid "Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten."
 msgstr "Set up the WP Mail SMTP plugin completely to ensure reliable email delivery."
 
 #: functions.php:929 functions.php:940
@@ -716,12 +708,10 @@ msgid "Impressum erstellen"
 msgstr "Create legal notice"
 
 #: functions.php:951
-msgid ""
-"Hier kannst du das Logo sowie den Namen deiner Quartiersplattform "
-"einrichten. "
+msgid "Hier kannst du das Logo sowie den Namen deiner Quartiersplattform einrichten. "
 msgstr "Here you can set up the name and logo for your district platform. "
 
-#: functions.php:952 pages/page-quartier.php:50
+#: functions.php:952 pages/page-quartier.php:42
 msgid "Zu den Einstellungen"
 msgstr "Go to settings"
 
@@ -730,87 +720,83 @@ msgid "Wir empfehlen das Plugin "
 msgstr "We recommend installing the plugin "
 
 #: functions.php:961
-msgid ""
-" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
+msgid " zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
 msgstr " to ensure reliable email delivery."
 
 #: functions.php:962
 msgid "installieren"
 msgstr "Install"
 
-#: functions.php:1813
+#: functions.php:1821
 msgid "Copyright"
 msgstr "Copyright"
 
-#: functions.php:2101
+#: functions.php:2109
 msgid "Datei kann nicht gespeichert werden!"
 msgstr "The file cannot be saved!"
 
-#: functions.php:2126
+#: functions.php:2134
 msgid "Termin im Kalender speichern"
 msgstr "Save date in calendar"
 
-#: functions.php:2185 functions.php:2939 pages/projekt-feed.php:49
-#: setup/main.php:181
-msgid "Projekt erstellen"
-msgstr "Create project"
-
-#: functions.php:2486
+#: functions.php:2518
 msgid "Morgen"
 msgstr "Tomorrow"
 
-#: functions.php:2490
+#: functions.php:2522
 msgid "Heute"
 msgstr "Today"
 
-#: functions.php:2494
+#: functions.php:2526
 msgid "Gestern"
 msgstr "Yesterday"
 
-#: functions.php:2506
+#: functions.php:2542
 msgid " um "
 msgstr " at "
 
-#: functions.php:2525 functions.php:2529
+#: functions.php:2595 functions.php:2599
 msgid "noch "
 msgstr "still "
 
-#: functions.php:2525
+#: functions.php:2595
 msgid " Minuten"
 msgstr " minutes"
 
-#: functions.php:2529
+#: functions.php:2599
 msgid " Stunden"
 msgstr " hours"
 
-#: functions.php:2533
+#: functions.php:2603
 msgid "bis um "
 msgstr "until "
 
-#: functions.php:2537
+#: functions.php:2607
 msgid "bis Morgen"
 msgstr "until tomorrow"
 
-#: functions.php:2541 functions.php:2544
+#: functions.php:2611 functions.php:2614
 msgid "vom "
 msgstr "from "
 
-#: functions.php:2548
+#: functions.php:2618
 msgid "bis zum "
 msgstr "until "
 
-#: functions.php:3178
+#: functions.php:3276
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr "Edit post in Wordpress system"
+
+#: functions.php:3448
+msgid "Nicht Sichtbar"
+msgstr "Visible"
 
 #: future_translation.php:8
 msgid "Hier kannst du noch keine Projekte entdecken."
 msgstr "You cannot discover any projects here yet."
 
 #: future_translation.php:9 future_translation.php:18 pages/projekt-feed.php:48
-msgid ""
-"Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern "
-"willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
+msgid "Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
 msgstr "If you want to change something in collaboration with other people in your district, you can publish your own project and work on it together."
 
 #: future_translation.php:12
@@ -819,12 +805,10 @@ msgstr "Unfortunately there are no events here yet."
 
 #: future_translation.php:13
 msgid ""
-"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
-"veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu "
-"erhalten.\n"
-"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream "
-"Link veröffentlichen."
-msgstr "If you're hosting a cultural event or celebration in your district, post it here to get more visitors.\n"
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu erhalten.\n"
+"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream Link veröffentlichen."
+msgstr ""
+"If you're hosting a cultural event or celebration in your district, post it here to get more visitors.\n"
 "If your event is only taking place online, you can publish a livestream link."
 
 #: future_translation.php:17
@@ -836,9 +820,7 @@ msgid "Es gibt ein neues Projektupdate."
 msgstr "There is a new project update."
 
 #: future_translation.php:25
-msgid ""
-"Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei "
-"deinen Lieblingsprojekten."
+msgid "Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei deinen Lieblingsprojekten."
 msgstr "View the new project update here and stay informed about your favourite projects."
 
 #: future_translation.php:26 future_translation.php:56
@@ -857,18 +839,15 @@ msgstr "Someone has commented on your message."
 msgid "hat deine Nachricht kommentiert."
 msgstr "has commented on your message."
 
-#: future_translation.php:32 future_translation.php:40
-#: future_translation.php:48
+#: future_translation.php:32 future_translation.php:40 future_translation.php:48
 msgid "Hier kannst du dir den Kommentar ansehen."
 msgstr "You can view the comment here."
 
-#: future_translation.php:33 future_translation.php:41
-#: future_translation.php:49
+#: future_translation.php:33 future_translation.php:41 future_translation.php:49
 msgid "Kommentar von"
 msgstr "Comment by"
 
-#: future_translation.php:34 future_translation.php:42
-#: future_translation.php:50
+#: future_translation.php:34 future_translation.php:42 future_translation.php:50
 msgid "Zum Kommentar"
 msgstr "Go to comment"
 
@@ -901,9 +880,7 @@ msgid "Es gibt Neuigkeiten in deinem Quartier."
 msgstr "There is news in your district."
 
 #: future_translation.php:55
-msgid ""
-"Sie dir die neuen Beiträge an und bleibe informiert bei deinen "
-"Lieblingsprojekten."
+msgid "Sie dir die neuen Beiträge an und bleibe informiert bei deinen Lieblingsprojekten."
 msgstr "Check out the new posts and stay informed about your favourite projects."
 
 #: future_translation.php:57
@@ -923,35 +900,11 @@ msgid "Neuigkeiten ansehen"
 msgstr "See what’s new"
 
 #: future_translation.php:64
-msgid ""
-"Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es "
-"regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch "
-"Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das "
-"Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der "
-"einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, "
-"Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu "
-"lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
+msgid "Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
 msgstr "Do you put on a jacket when it's cold? Or put up your hood when it rains? Climate protection should be as simple and practical as how we deal with the weather. But what does this mean? Simply use your electricity when the “energy weather” is green. This is climate protection that everyone can get involved with, because the easiest way to reduce your own CO2 emissions is to use your washing machine, dishwasher, dryer and other devices during green phases. During these phases, up to 70% less CO2 is emitted. "
 
 #: future_translation.php:66
-msgid ""
-"Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen "
-"unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und "
-"regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der "
-"gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft "
-"aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion "
-"geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler "
-"Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen "
-"CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der "
-"Bergischen Universität und dem Klimaquartier Arrenberg wurden diese "
-"Berechnungen in Raster übertragen und das hier sichtbare Energiewetter "
-"entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob "
-"der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch "
-"oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt "
-"sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig "
-"von den eigenen finanziellen Möglichkeiten an der Energiewende und dem "
-"Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein "
-"smarter Schritt, den alle gehen können. "
+msgid "Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der Bergischen Universität und dem Klimaquartier Arrenberg wurden diese Berechnungen in Raster übertragen und das hier sichtbare Energiewetter entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig von den eigenen finanziellen Möglichkeiten an der Energiewende und dem Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein smarter Schritt, den alle gehen können. "
 msgstr "The electricity we use creates different levels of CO2 emissions at different times of the day and night. This depends on how much regionally and regeneratively produced electricity is actually flowing in the grid and how high city-wide consumption is. For example, if the grid is currently being supplied with a lot of wind energy from northern Germany, solar energy from the south or energy produced by individual households, the current, real CO2 emissions will decrease. Wuppertal’s public utilities have been calculating the actual hourly CO2 emissions behind the electricity we consume for several years. In collaboration with the Bergische University and the Arrenberg Climate District, these were transferred to grids and the “energy weather” concept was developed and made visible. It divides CO2 emissions into three levels and shows them in red, yellow and green to indicate whether they are currently high or low and how they are likely to evolve in the coming hours and days. So you can reschedule your usage instead of cutting down. Use existing devices instead of always buying new ones. These are ways in which every household can contribute to the energy transition and climate protection, regardless of financial resources. It won’t solve all our problems, but it’s a smart step that everyone can take. "
 
 #: future_translation.php:68
@@ -986,11 +939,43 @@ msgstr "You can pin the post to the district page here."
 msgid "Hier kannst du den Akteur auf die Quariersseite pinnen."
 msgstr "You can pin the participant to the district page here."
 
+#: future_translation.php:88
+msgid "Vorschlag"
+msgstr "Suggestion"
+
+#: future_translation.php:89
+msgid "Umgesetzt"
+msgstr "Implemented"
+
+#: future_translation.php:90
+msgid "In Bearbeitung"
+msgstr "In progress"
+
+#: future_translation.php:93
+msgid "Bild auswählen"
+msgstr "Select image"
+
+#: future_translation.php:96
+msgid "grüne"
+msgstr "green phase"
+
+#: future_translation.php:97
+msgid "rote auswählen"
+msgstr "select red"
+
+#: future_translation.php:98
+msgid "gelbe auswählen"
+msgstr "select yellow"
+
 #: header.php:76
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: header.php:213
+#: header.php:83 setup/main.php:50 setup/main.php:180 setup/projekte.php:27 setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75 ultimate-member/email/welcome_email.php:27
+msgid "Projekte"
+msgstr "Projects"
+
+#: header.php:210
 msgid "Zurück"
 msgstr "Back"
 
@@ -1013,8 +998,7 @@ msgstr "By %s"
 msgid "Post date"
 msgstr "Post date"
 
-#: inc/template-tags.php:398 template-parts/content-cover.php:70
-#: template-parts/entry-header.php:36
+#: inc/template-tags.php:398 template-parts/content-cover.php:70 template-parts/entry-header.php:36
 msgid "Categories"
 msgstr "Categories"
 
@@ -1043,16 +1027,14 @@ msgstr[0] "We found %s result for your search."
 msgstr[1] "We found %s results for your search."
 
 #: index.php:48
-msgid ""
-"We could not find any results for your search. You can give it another try "
-"through the search form below."
+msgid "We could not find any results for your search. You can give it another try through the search form below."
 msgstr "We could not find any results for your search. You can give it another try through the search form below."
 
 #: index.php:51
 msgid "Nothing Found"
 msgstr "Nothing found"
 
-#: index.php:97
+#: index.php:95
 msgid "search again"
 msgstr "search again"
 
@@ -1064,120 +1046,128 @@ msgstr " Update"
 msgid "Hier entsteht deine Quatiersplattform"
 msgstr "This is where your district platform will be created"
 
-#: maintenance.php:85
+#: maintenance.php:87
 msgid "Zur Dokumentation"
 msgstr "Go to documentation"
 
-#: maintenance.php:98
+#: maintenance.php:100
 msgid "Gestalte dein Viertel"
 msgstr "Design your district"
 
-#: maintenance.php:99
+#: maintenance.php:101
 msgid "Hier entsteht"
 msgstr "This is where your"
 
-#: maintenance.php:99
+#: maintenance.php:101
 msgid " deine Quartiersplattform"
 msgstr " district platform will be created"
 
-#: maintenance.php:102 maintenance.php:156
-msgid ""
-"Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an "
-"Umfragen teilnehmen und eigene Projekte über die Plattform planen."
+#: maintenance.php:104 maintenance.php:158
+msgid "Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen."
 msgstr "Here you will soon be able to discover exciting updates about district projects, take part in surveys and plan your own projects using the platform."
 
-#: maintenance.php:106
+#: maintenance.php:108
 msgid "Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten?"
 msgstr "Want to help set up the district platform?"
 
-#: maintenance.php:106
+#: maintenance.php:108
 msgid "Dann registriere dich jetzt!"
 msgstr "Then register now!"
 
-#: maintenance.php:113
+#: maintenance.php:115
 msgid "Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:"
 msgstr "The district platform is already being used in the following neighbourhoods:"
 
-#: maintenance.php:154
+#: maintenance.php:156
 msgid "Plugins installieren"
 msgstr "Install plugins"
 
-#: maintenance.php:159
+#: maintenance.php:161
 msgid "Du musst noch folgende Schritte durchführen:"
 msgstr "You must complete the next steps as follows:"
 
-#: maintenance.php:162
+#: maintenance.php:164
 msgid "Dokumentation Lesen"
 msgstr "Read documentation"
 
-#: maintenance.php:172
+#: maintenance.php:174
 msgid "Bitte Advanced Custom Fields installieren"
 msgstr "Install Advanced Custom Fields"
 
-#: maintenance.php:174
+#: maintenance.php:176
 msgid "Bitte installiere das Plugin ACF über die Wordpress Plugin Seite."
 msgstr "Install the ACF plugin via the Wordpress plugin page."
 
-#: maintenance.php:186
+#: maintenance.php:188
 msgid "Bitte Ultimate Member installieren"
 msgstr "Install Ultimate Member"
 
-#: maintenance.php:188
-msgid ""
-"Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite "
-"und stelle die in der Dokumentation beschriebenen Einstellungen ein."
+#: maintenance.php:190
+msgid "Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite und stelle die in der Dokumentation beschriebenen Einstellungen ein."
 msgstr "Please install the Ultimate Member plugin via the Wordpress plugin page and adjust the settings as described in the documentation."
 
-#: maintenance.php:201
+#: maintenance.php:203
 msgid "Bitte WP Mail SMTP installieren"
 msgstr "Install WP Mail SMTP"
 
-#: maintenance.php:203
-msgid ""
-" Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite "
-"stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
+#: maintenance.php:205
+msgid " Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
 msgstr " Please install the WP Mail SMTP plugin via the Wordpress plugin page and adjust the settings as described in the documentation."
 
-#: pages/page-profil.php:67 setup/main.php:175
+#: pages/page-anmerkungen.php:26 pages/page-quartier.php:164 pages/single-anmerkungen.php:26
+msgid "Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung."
+msgstr "Share your feedback or suggestions about the district platform. Is something not working? Or do you have ideas for developing it further?"
+
+#: pages/page-anmerkungen.php:27 pages/page-anmerkungen.php:83 pages/page-quartier.php:165 pages/single-anmerkungen.php:27
+msgid "Feedback zur Quartiersplattform"
+msgstr "Feedback on the district platform"
+
+#: pages/page-anmerkungen.php:52
+msgid "Feedback senden"
+msgstr "Send feedback"
+
+#: pages/page-anmerkungen.php:101 pages/page-projekte.php:101 pages/page-veranstaltungen.php:47 pages/single-anmerkungen.php:53
+msgid "Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen."
+msgstr "Register on your district platform to create your own projects, surveys and events."
+
+#: pages/page-anmerkungen.php:102 pages/page-projekte.php:102 pages/page-veranstaltungen.php:48 pages/single-anmerkungen.php:54
+msgid "Jetzt Registieren"
+msgstr "Register now"
+
+#: pages/page-profil.php:67 setup/main.php:181
 msgid "Profil"
 msgstr "Profile"
 
-#: pages/page-profil.php:71 pages/page-profil.php:140
-#: pages/single-projekte.php:94
+#: pages/page-profil.php:71 pages/single-projekte.php:82
 msgid "Einstellungen"
 msgstr "Settings"
 
-#: pages/page-profil.php:117
-msgid "Deine Projekte"
-msgstr "Your projects"
+#: pages/page-profil.php:146
+msgid "Deine Beiträge"
+msgstr "Pinned posts"
 
-#: pages/page-profil.php:142
+#: pages/page-profil.php:177
 msgid "Bearbeite deine Kontaktinformationen"
 msgstr "Edit your contact details"
 
-#: pages/page-profil.php:151 pages/page-profil.php:170
-#: pages/single-fragen.php:78 pages/single-nachrichten.php:176
-#: pages/single-projekte.php:195 pages/single-projekte.php:221
-#: pages/single-projekte.php:300 pages/single-umfragen.php:155
-#: pages/single-veranstaltungen.php:202
+#: pages/page-profil.php:186 pages/page-profil.php:205 pages/single-nachrichten.php:185 pages/single-projekte.php:184 pages/single-projekte.php:209 pages/single-projekte.php:285 pages/single-umfragen.php:112 pages/single-veranstaltungen.php:202
 msgid "Änderungen speichern"
 msgstr "Save changes"
 
-#: pages/page-profil.php:178
+#: pages/page-profil.php:215
 msgid "Profil bearbeiten"
 msgstr "Edit profile"
 
-#: pages/page-profil.php:182
+#: pages/page-profil.php:219
 msgid "Abmelden"
 msgstr "Logout"
 
 #: pages/page-projekte.php:23
 msgid ""
-"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das "
-"Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
-"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche "
-"es und halte deine Nachbarn auf dem Laufenden.  "
-msgstr "Projects are the focal point in your district. Explore what's going on in the district, find exciting activities and get involved.\n"
+"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
+"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  "
+msgstr ""
+"Projects are the focal point in your district. Explore what's going on in the district, find exciting activities and get involved.\n"
 "\t\t\tAre you already a point of contact for a local project? Post it and keep your neighbours informed.  "
 
 #: pages/page-projekte.php:25
@@ -1185,117 +1175,100 @@ msgid "Entdecke alle Projekte aus deinem Quartier"
 msgstr "Discover all the projects in your district"
 
 #: pages/page-projekte.php:83
-msgid ""
-"Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du "
-"kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
+msgid "Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
 msgstr "No projects have yet been published on the district platform. You can become active yourself and set up a project for yourself."
 
 #: pages/page-projekte.php:84
 msgid "Es wurde noch keine Projekte veröffentlicht"
 msgstr "No projects have yet been published"
 
-#: pages/page-projekte.php:104 pages/page-veranstaltungen.php:54
-msgid ""
-"Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen "
-"und Veranstaltungen zu erstellen."
-msgstr "Register on your district platform to create your own projects, surveys and events."
+#: pages/page-quartier.php:42
+msgid "Bild und Text für die Startseite festlegen"
+msgstr "Specify image and text for the home page"
 
-#: pages/page-projekte.php:105 pages/page-veranstaltungen.php:55
-msgid "Jetzt Registieren"
-msgstr "Register now"
+#: pages/page-quartier.php:42
+msgid "In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen."
+msgstr "In the district platform settings, you can specify the image and text for the home page."
 
-#: pages/page-quartier.php:37
-msgid "Entdecke dein Quartier"
-msgstr "Discover your district"
-
-#: pages/page-quartier.php:69
+#: pages/page-quartier.php:84
 msgid "Lokale Projekte"
 msgstr "Local projects"
 
-#: pages/page-quartier.php:70
+#: pages/page-quartier.php:85
 msgid "Entdecke spannende Projekte aus deinem Quartier"
 msgstr "Discover exciting projects in your district"
 
-#: pages/page-quartier.php:71
-msgid ""
-"Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am "
-"Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in "
-"deiner Nachbarschaft."
+#: pages/page-quartier.php:86
+msgid "Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in deiner Nachbarschaft."
 msgstr "Take a look at the projects in your neighbourhood and get involved in district life. Publish your own projects and find support in your district."
 
-#: pages/page-quartier.php:90
+#: pages/page-quartier.php:104
 msgid "Neuigkeiten & Projektupdates"
 msgstr "News & project updates"
 
-#: pages/page-quartier.php:91
+#: pages/page-quartier.php:105
 msgid "Alle Projekte anzeigen"
 msgstr "Display all projects"
 
-#: pages/page-quartier.php:98
+#: pages/page-quartier.php:112
 msgid "Veranstaltungen in deinem Quartier"
 msgstr "Events in your district"
 
-#: pages/page-quartier.php:99
-msgid ""
-"Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste "
-"Konzert oder die nächste Party in deiner Nachbarschaft - mit der "
-"Quartiersplattform bist du immer auf dem Laufenden!"
+#: pages/page-quartier.php:113
+msgid "Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!"
 msgstr "Never miss an event in your district again. Whether it's the next concert or the next party, the district platform makes sure that you’re informed about local events!"
 
-#: pages/page-quartier.php:122
+#: pages/page-quartier.php:136
 msgid "Zu den Veranstaltungen"
 msgstr "Go to events"
 
-#: pages/page-quartier.php:131
+#: pages/page-quartier.php:143
 msgid "Ziele für nachhaltige Entwicklung im Quartier"
 msgstr "Sustainable development goals in your district"
 
-#: pages/page-quartier.php:132 pages/page-sdg.php:27
-msgid ""
-"Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung "
-"(Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht "
-"nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
+#: pages/page-quartier.php:144 pages/page-sdg.php:27
+msgid "Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
 msgstr "In 2016, the United Nations adopted a range of sustainable development goals (SDGs). SDGs play an important role internationally, but also locally in your district."
 
-#: pages/page-quartier.php:168
-msgid "Wichtige Seiten"
-msgstr "Important websites"
+#: pages/page-quartier.php:165
+msgid "Zur Wunschliste"
+msgstr "Go to wish list"
 
 #: pages/page-sdg.php:24
 msgid " Ziele für nachhaltige Entwicklung"
 msgstr " Sustainable development goals"
 
 #: pages/page-veranstaltungen.php:23
-msgid ""
-"Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So "
-"verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer "
-"auf dem Laufenden."
+msgid "Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden."
 msgstr "Here you can discover local events in your district. This way you won't miss out on any local events and will always be up to date."
 
 #: pages/page-veranstaltungen.php:24
 msgid "Veranstaltungen in deiner Nachbarschaft"
 msgstr "Events in your neighbourhood"
 
-#: pages/page-veranstaltungen.php:38
+#: pages/page-veranstaltungen.php:32
 msgid "Archiv"
 msgstr "Archive"
 
-#: pages/page-veranstaltungen.php:48
-msgid ""
-"Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? "
-"Erstelle ein Projekt und veröffentliche eine Veranstaltung."
+#: pages/page-veranstaltungen.php:42
+msgid "Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und veröffentliche eine Veranstaltung."
 msgstr "Want to advertise an event on your district platform? Create a project and publish an event."
 
-#: pages/page-veranstaltungen.php:49
+#: pages/page-veranstaltungen.php:43
 msgid "Erstelle eine Veranstaltung"
 msgstr "Create an event"
 
+#: pages/page-veranstaltungen.php:43
+msgid "Veröffentliche eine Veranstaltung"
+msgstr "Create an event"
+
 #: pages/projekt-feed.php:29
-msgid ""
-"Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem "
-"Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte "
-"kennen oder erstelle selbst ein eigenes Projekt."
+msgid "Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt."
 msgstr "Here you can find all the news, surveys and events in your district."
+
+#: pages/projekt-feed.php:30
+msgid "Neuigkeiten und Projektupdates"
+msgstr "News & project updates"
 
 #: pages/projekt-feed.php:49
 msgid "Hier kannst du noch keine Inhalte entdecken"
@@ -1305,77 +1278,75 @@ msgstr "You cannot discover any content here yet"
 msgid "Mehr Projektinhalte laden"
 msgstr "Load more project content"
 
-#: pages/single-fragen.php:63
-msgid "Deine Frage wurde gelöscht."
-msgstr "Your question was deleted."
+#: pages/single-anmerkungen.php:37
+msgid " Zu allen Vorschlägen"
+msgstr " Go to suggestions"
 
-#: pages/single-fragen.php:65
-msgid "Gemeinsam"
-msgstr "Together"
-
-#: pages/single-nachrichten.php:86
+#: pages/single-nachrichten.php:83
 msgid "Nachricht bearbeiten"
 msgstr "Edit message"
 
-#: pages/single-nachrichten.php:88
+#: pages/single-nachrichten.php:84 pages/single-umfragen.php:56
+msgid "Willst du diesen Beitrag endgültig löschen?"
+msgstr "Delete this project permanently?"
+
+#: pages/single-nachrichten.php:84
 msgid "Nachricht löschen"
 msgstr "Delete message"
 
-#: pages/single-nachrichten.php:138 pages/single-veranstaltungen.php:239
+#: pages/single-nachrichten.php:99 pages/single-umfragen.php:77 pages/single-veranstaltungen.php:126
+msgid "Dein Beitrag ist nicht öffentlich sichtbar."
+msgstr "Your project is not publicly visible."
+
+#: pages/single-nachrichten.php:147 pages/single-veranstaltungen.php:238
 msgid "Weitere Nachrichten und Veranstaltungen aus diesem Projekt"
 msgstr "More messages and event from this project"
 
-#: pages/single-projekte.php:86
+#: pages/single-projekte.php:74
 msgid "Übersicht"
 msgstr "Overview"
 
-#: pages/single-projekte.php:89
+#: pages/single-projekte.php:77
 msgid "Chronik"
 msgstr "Timeline"
 
-#: pages/single-projekte.php:137
+#: pages/single-projekte.php:125
 msgid "Dein Projekt ist nicht öffentlich sichtbar."
 msgstr "Your project is not publicly visible."
 
-#: pages/single-projekte.php:187 pages/single-projekte.php:292
+#: pages/single-projekte.php:176 pages/single-projekte.php:277
 msgid "Bearbeite dein Projekt"
 msgstr "Edit your project"
 
-#: pages/single-projekte.php:214
+#: pages/single-projekte.php:202
 msgid "Ziele für nachhaltige Entwicklung bearbeiten"
 msgstr "Edit sustainable development goals"
 
-#: pages/single-projekte.php:239 pages/single-projekte.php:242
+#: pages/single-projekte.php:225 pages/single-projekte.php:228
 msgid "Projekt löschen"
 msgstr "Delete project"
 
-#: pages/single-projekte.php:240
-msgid ""
-"Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
-"unwiederruflich gelöscht."
+#: pages/single-projekte.php:226
+msgid "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht."
 msgstr "Only public projects can be deleted. All project content will be irretrievably deleted."
 
-#: pages/single-projekte.php:241
+#: pages/single-projekte.php:227
 msgid "Dieses Projekt endgültig löschen?"
 msgstr "Delete this project permanently?"
 
-#: pages/single-umfragen.php:58
+#: pages/single-umfragen.php:51
 msgid "Umfrage bearbeiten"
 msgstr "Edit survey"
 
-#: pages/single-umfragen.php:65
+#: pages/single-umfragen.php:56
 msgid "Umfrage löschen"
 msgstr "Delete survey"
 
-#: pages/single-umfragen.php:81
-msgid "Umfrage teilen"
-msgstr "Share survey"
-
-#: pages/single-veranstaltungen.php:100
+#: pages/single-veranstaltungen.php:105
 msgid "Veranstaltung bearbeiten"
 msgstr "Edit event"
 
-#: pages/single-veranstaltungen.php:102
+#: pages/single-veranstaltungen.php:106
 msgid "Veranstaltung löschen"
 msgstr "Delete event"
 
@@ -1393,13 +1364,25 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Search"
 
-#: setup/angebote.php:26 setup/angebote.php:31
-msgid "Angebote"
-msgstr "Offers"
+#: setup/anmerkungen.php:27 setup/anmerkungen.php:90
+msgid "Anmerkung"
+msgstr "Comment"
 
-#: setup/angebote.php:27
-msgid "Angebot"
-msgstr "Offer"
+#: setup/anmerkungen.php:31 setup/main.php:188
+msgid "Feedback"
+msgstr "Feedback"
+
+#: setup/anmerkungen.php:34
+msgid "Was wünschst du dir von der Quartiersplattform?"
+msgstr "This is where your district platform will be created"
+
+#: setup/anmerkungen.php:89 setup/anmerkungen.php:94
+msgid "Anmerkungen"
+msgstr "Sign up"
+
+#: setup/anmerkungen.php:135 setup/anmerkungen.php:136 setup/anmerkungen.php:140
+msgid "Status"
+msgstr "Status"
 
 #: setup/blocks.php:34
 msgid "Link Block"
@@ -1409,110 +1392,107 @@ msgstr "Link block"
 msgid "Link Post and Pages"
 msgstr "Link post and pages"
 
-#: setup/fragen.php:25 setup/fragen.php:30 setup/umfragen.php:124
-msgid "Fragen"
-msgstr "Questions"
+#: setup/blocks.php:96
+msgid "Link-Block"
+msgstr "Link block"
 
-#: setup/fragen.php:26 setup/umfragen.php:143
-msgid "Frage"
-msgstr "Question"
-
-#: setup/kontakt.php:22
+#: setup/kontakt.php:25
 msgid "Kontaktinformationen"
 msgstr "Contact information"
 
-#: setup/kontakt.php:26
+#: setup/kontakt.php:29
 msgid "Telefonnummer"
 msgstr "Telephone number"
 
-#: setup/kontakt.php:29
-msgid ""
-"Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder "
-"kontaktieren können."
+#: setup/kontakt.php:32
+msgid "Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder kontaktieren können."
 msgstr "You can add your telephone number here so that other members can contact you."
 
-#: setup/kontakt.php:47
+#: setup/kontakt.php:50
 msgid "E-Mail"
 msgstr "Email"
 
-#: setup/kontakt.php:50
-msgid ""
-"Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer "
-"kontaktieren können."
+#: setup/kontakt.php:53
+msgid "Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer kontaktieren können."
 msgstr "You can add your email address here so that other users can contact you."
 
-#: setup/kontakt.php:97
-msgid ""
-"Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
+#: setup/kontakt.php:100
+msgid "Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
 msgstr "Here you can write a little bit about yourself and your connection to the district."
 
 #: setup/main.php:44
 msgid "Quartier"
 msgstr "District"
 
-#: setup/main.php:171
+#: setup/main.php:177
 msgid "Startseite"
 msgstr "Home page"
 
-#: setup/main.php:172 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email.php:33
+#: setup/main.php:178 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30 ultimate-member/email/welcome_email.php:33
 msgid "Veranstaltungen"
 msgstr "Events"
 
-#: setup/main.php:173
+#: setup/main.php:179
 msgid "Projektverzeichnis"
 msgstr "Project directory"
 
-#: setup/main.php:178
+#: setup/main.php:184
 msgid "Nachricht erstellen"
 msgstr "Create message"
 
-#: setup/main.php:179
+#: setup/main.php:185
 msgid "Angebot erstellen"
 msgstr "Create offer"
 
-#: setup/main.php:180
+#: setup/main.php:186
 msgid "Frage erstellen"
 msgstr "Create question"
 
-#: setup/nachrichten.php:26 setup/nachrichten.php:31 setup/nachrichten.php:71
+#: setup/main.php:262
+msgid "Seiten Pin"
+msgstr "Pin pages"
+
+#: setup/nachrichten.php:26 setup/nachrichten.php:31 setup/nachrichten.php:74
 msgid "Nachrichten"
 msgstr "Messages"
 
-#: setup/nachrichten.php:75
+#: setup/nachrichten.php:78
 msgid "Deine Nachricht für dein Projekt"
 msgstr "Your message for your project"
 
-#: setup/nachrichten.php:78
+#: setup/nachrichten.php:81
 msgid "Was gibt es Neues in deinem Projekt?"
 msgstr "What’s new in your project?"
 
-#: setup/nachrichten.php:94 setup/projekte.php:168
-#: setup/veranstaltungen.php:262
+#: setup/nachrichten.php:97 setup/projekte.php:170 setup/veranstaltungen.php:243
 msgid "Bild"
 msgstr "Image"
 
-#: setup/projekte.php:114
+#: setup/projekte.php:113
+msgid "Emoji"
+msgstr "Emoji"
+
+#: setup/projekte.php:116
 msgid "Welches Emoji beschreibt dein Projekt am besten?"
 msgstr "Which emoji best describes your project?"
 
-#: setup/projekte.php:130
+#: setup/projekte.php:132
 msgid "Kurzbeschreibung"
 msgstr "Brief description"
 
-#: setup/projekte.php:133
+#: setup/projekte.php:135
 msgid "Wie würdest du dein Projekt in wenigen Worten beschreiben?"
 msgstr "How would you describe your project in a few words?"
 
-#: setup/projekte.php:149
+#: setup/projekte.php:151
 msgid "Projektbeschreibung"
 msgstr "Project description"
 
-#: setup/projekte.php:152
+#: setup/projekte.php:154
 msgid "Worum geht es in deinem Projekt?"
 msgstr "What is your project about?"
 
-#: setup/projekte.php:171
+#: setup/projekte.php:173
 msgid "Welches Bild beschreibt dein Projekt am besten?"
 msgstr "Which image best describes your project?"
 
@@ -1524,462 +1504,332 @@ msgstr "SDGs"
 msgid "SDG"
 msgstr "SDG"
 
-#: setup/sdg.php:94
+#: setup/sdg.php:225
 msgid "Keine Armut"
 msgstr "No poverty"
 
-#: setup/sdg.php:94
+#: setup/sdg.php:225
 msgid "Armut in all ihren Formen und überall beenden"
 msgstr "End poverty in all its forms everywhere"
 
-#: setup/sdg.php:94
-msgid ""
-"Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf "
-"der Welt zu beseitigen. Allerdings wird extreme Armut mit einem "
-"gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur "
-"Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu "
-"niedrig."
+#: setup/sdg.php:225
+msgid "Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf der Welt zu beseitigen. Allerdings wird extreme Armut mit einem gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu niedrig."
 msgstr "Eradicating extreme poverty from the world by 2030 is one of the central development goals. However, extreme poverty is currently defined as less that $ 1.25 per person per day. Critics consider this value to be far too low."
 
-#: setup/sdg.php:95
+#: setup/sdg.php:226
 msgid "Keine Hungersnot"
 msgstr "Zero hunger"
 
-#: setup/sdg.php:95
-msgid ""
-"Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung "
-"erreichen und eine nachhaltige Landwirtschaft fördern"
+#: setup/sdg.php:226
+msgid "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern"
 msgstr "End hunger, achieve food security and improved nutrition and promote sustainable agriculture"
 
-#: setup/sdg.php:95
-msgid ""
-"Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, "
-"nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits "
-"heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht "
-"alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung "
-"beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der "
-"kleinen Nahrungsmittelproduzenten verdoppelt werden."
+#: setup/sdg.php:226
+msgid "Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der kleinen Nahrungsmittelproduzenten verdoppelt werden."
 msgstr "By 2030, everyone should have “year-round access to safe, nutritious and sufficient food”. Although there is enough food available to feed the world’s population today, not everyone has access to it. Other goals include eliminating all forms of malnutrition and doubling the agricultural productivity and incomes of small-scale food producers."
 
-#: setup/sdg.php:96
+#: setup/sdg.php:227
 msgid "Gute Gesundheitsversorgung"
 msgstr "Good health and well-being"
 
-#: setup/sdg.php:96
-msgid ""
-"Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr "
-"Wohlergehen fördern"
+#: setup/sdg.php:227
+msgid "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern"
 msgstr "Ensure healthy lives and promote well-being for all at all ages"
 
-#: setup/sdg.php:96
-msgid ""
-"Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 "
-"Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern "
-"unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die "
-"Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der "
-"vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der "
-"Zugang zu einer Gesundheitsversorgung für alle."
+#: setup/sdg.php:227
+msgid "Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der Zugang zu einer Gesundheitsversorgung für alle."
 msgstr "By 2030, the goal is to reduce the global maternal mortality rate to below 70 per 100,000 live births and to prevent avoidable deaths in newborns and children under five. The eradication of the AIDS, tuberculosis and malaria epidemics, as well as neglected tropical diseases, are also given particular importance, as is access to health care for all."
 
-#: setup/sdg.php:97
+#: setup/sdg.php:228
 msgid "Hochwertige Bildung"
 msgstr "Quality education"
 
-#: setup/sdg.php:97
-msgid ""
-"Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten "
-"lebenslangen Lernens für alle fördern"
+#: setup/sdg.php:228
+msgid "Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten lebenslangen Lernens für alle fördern"
 msgstr "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all"
 
-#: setup/sdg.php:97
-msgid ""
-"Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, "
-"„dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und "
-"hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren "
-"Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und "
-"Berufsbildung formuliert."
+#: setup/sdg.php:228
+msgid "Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, „dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und Berufsbildung formuliert."
 msgstr "The main target is to ensure that by 2030 “all girls and boys complete free, equitable and quality primary and secondary education”. Other objectives set standards for pre-school education, higher education and vocational training."
 
-#: setup/sdg.php:98
+#: setup/sdg.php:229
 msgid "Gleichberechtigung der Geschlechter"
 msgstr "Gender equality"
 
-#: setup/sdg.php:98
-msgid ""
-"Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur "
-"Selbstbestimmung befähigen"
+#: setup/sdg.php:229
+msgid "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen"
 msgstr "Achieve gender equality and empower all women and girls"
 
-#: setup/sdg.php:98
-msgid ""
-"Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von "
-"Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. "
-"Weitere Zielvorgaben befassen sich mit individuellen Formen der "
-"geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, "
-"fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und "
-"ungleiche Rechte auf wirtschaftliche Ressourcen."
+#: setup/sdg.php:229
+msgid "Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. Weitere Zielvorgaben befassen sich mit individuellen Formen der geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und ungleiche Rechte auf wirtschaftliche Ressourcen."
 msgstr "Key concerns here include ending all forms of discrimination against women and girls and eliminating all forms of violence against them. Further targets deal with specific forms of gender-specific discrimination, such as forced marriage, the lack of equal opportunities in attaining management positions and unequal rights to economic resources."
 
-#: setup/sdg.php:99
+#: setup/sdg.php:230
 msgid "Sauberes Wasser und sanitäre Einrichtungen"
 msgstr "Water and sanitation"
 
-#: setup/sdg.php:99
-msgid ""
-"Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und "
-"Sanitärversorgung für alle gewährleisten"
+#: setup/sdg.php:230
+msgid "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten"
 msgstr "Ensure availability and sustainable management of water and sanitation for all"
 
-#: setup/sdg.php:99
-msgid ""
-"Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie "
-"einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht "
-"werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der "
-"Wasserqualität, die Effizienz der Wassernutzung und den Schutz "
-"wasserverbundener Ökosysteme."
+#: setup/sdg.php:230
+msgid "Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der Wasserqualität, die Effizienz der Wassernutzung und den Schutz wasserverbundener Ökosysteme."
 msgstr "By 2030, there should be universal and equitable access to safe and affordable drinking water for all, as well as adequate, fair sanitation for all. Other objectives include improving water quality and efficiency of water use, and the protection of water-related ecosystems."
 
-#: setup/sdg.php:100
+#: setup/sdg.php:231
 msgid "Erneuerbare Energien"
 msgstr "Affordable and clean energy"
 
-#: setup/sdg.php:100
-msgid ""
-"Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für "
-"alle sichern"
+#: setup/sdg.php:231
+msgid "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern"
 msgstr "Ensure access to affordable, reliable, sustainable and modern energy for all"
 
-#: setup/sdg.php:100
-msgid ""
-"Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert "
-"werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. "
-"Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
+#: setup/sdg.php:231
+msgid "Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
 msgstr "By 2030, the aims include securing universal access to energy services, substantially increasing the share of renewable energy in the energy mix, and doubling the global rate of improvement in energy efficiency."
 
-#: setup/sdg.php:101
-msgid "Gute Arbeitsplätze und wirtschaftliches Waachstum"
+#: setup/sdg.php:232
+msgid "Gute Arbeitsplätze und wirtschaftliches Wachstum"
 msgstr "Decent work and economic growth"
 
-#: setup/sdg.php:101
-msgid ""
-"Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, "
-"produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
+#: setup/sdg.php:232
+msgid "Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
 msgstr "Promote sustained, inclusive and sustainable economic growth, full and productive employment, and decent work for all"
 
-#: setup/sdg.php:101
-msgid ""
-"Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der "
-"Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am "
-"wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im "
-"Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und "
-"Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit "
-"menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der "
-"Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz "
-"der Arbeitsrechte."
+#: setup/sdg.php:232
+msgid "Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz der Arbeitsrechte."
 msgstr "Great emphasis is placed on issues of sustainable economic growth and employment. High economic growth is considered necessary, especially in the least developed countries (at least 7% per year). The aim is to achieve higher economic productivity and resource efficiency in all countries. Other targets include the creation of decent jobs, full and productive employment, an end to forced labour, slavery and human trafficking, and the protection of labour rights."
 
-#: setup/sdg.php:102
+#: setup/sdg.php:233
 msgid "Innovation und Infrastruktur"
 msgstr "Industry, innovation and infrastructure"
 
-#: setup/sdg.php:102
-msgid ""
-"Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und "
-"nachhaltige Industrialisierung fördern und Innovation unterstützen"
+#: setup/sdg.php:233
+msgid "Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und nachhaltige Industrialisierung fördern und Innovation unterstützen"
 msgstr "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation"
 
-#: setup/sdg.php:102
-msgid ""
-"Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und "
-"widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche "
-"Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in "
-"Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu "
-"Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
+#: setup/sdg.php:233
+msgid "Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
 msgstr "The aim is to develop quality, reliable, sustainable and resilient infrastructure in order to support economic development and human well-being. In developing countries in particular, small-scale industrial operations should have better access to financial services, value chains and markets."
 
-#: setup/sdg.php:103
+#: setup/sdg.php:234
 msgid "Weniger Ungleichheiten"
 msgstr "Reduced inequalities"
 
-#: setup/sdg.php:103
+#: setup/sdg.php:234
 msgid "Ungleichheit in und zwischen Ländern verringern"
 msgstr "Reduce inequality within and among countries"
 
-#: setup/sdg.php:103
-msgid ""
-"Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen "
-"Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der "
-"Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte "
-"Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den "
-"globalen internationalen Wirtschafts- und Finanzinstitutionen“."
+#: setup/sdg.php:234
+msgid "Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den globalen internationalen Wirtschafts- und Finanzinstitutionen“."
 msgstr "By 2030, one important target is “to progressively achieve and sustain income growth of the bottom 40 per cent of the population at a rate higher than the national average.” Another aim is to ensure enhanced representation and voice for developing countries in decision-making in global international economic and financial institutions."
 
-#: setup/sdg.php:104
+#: setup/sdg.php:235
 msgid "Nachhaltige Städte und Gemeinden"
 msgstr "Sustainable cities and communities"
 
-#: setup/sdg.php:104
-msgid ""
-"Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig "
-"gestalten"
+#: setup/sdg.php:235
+msgid "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten"
 msgstr "Make cities and human settlements inclusive, safe, resilient and sustainable"
 
-#: setup/sdg.php:104
-msgid ""
-"„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und "
-"zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören "
-"u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein "
-"verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und "
-"eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
+#: setup/sdg.php:235
+msgid "„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
 msgstr "\"By 2030, ensure access to appropriate, safe and affordable housing and basic services for all, and rehabilitate slums.” Further goals include transport systems for all, participatory settlement planning, improved disaster relief, reduced environmental pollution and greater mitigation of and adaptation to the consequences of climate change."
 
-#: setup/sdg.php:105
+#: setup/sdg.php:236
 msgid "Nachhaltiger Konsum und Produktion"
 msgstr "Sustainable consumption and production"
 
-#: setup/sdg.php:105
+#: setup/sdg.php:236
 msgid "Nachhaltige Konsum- und Produktionsmuster sicherstellen"
 msgstr "Ensure sustainable consumption and production patterns"
 
-#: setup/sdg.php:105
-msgid ""
-"Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ "
-"gefordert, während die Entwicklungsländer entsprechend ihrem "
-"Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als "
-"wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und "
-"effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der "
-"Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit "
-"Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche "
-"Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
+#: setup/sdg.php:236
+msgid "Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ gefordert, während die Entwicklungsländer entsprechend ihrem Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
 msgstr "To implement this goal, all countries need to take action with developed countries taking the lead, taking into account the development and capabilities of developing countries. Other aims include the sustainable management and efficient use of natural resources, halving food waste and the environmentally friendly handling of chemicals and waste. Harmful fossil fuel subsidies should also be phased out."
 
-#: setup/sdg.php:106
+#: setup/sdg.php:237
 msgid "Maßnahmen zum Klimaschutz"
 msgstr "Climate action"
 
-#: setup/sdg.php:106
-msgid ""
-"Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen "
-"ergreifen"
+#: setup/sdg.php:237
+msgid "Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen ergreifen"
 msgstr "Take urgent action to combat climate change and its impacts"
 
-#: setup/sdg.php:106
-msgid ""
-"Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die "
-"Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen "
-"in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die "
-"nationalen Politiken, Strategien und Planungen einbezogen werden. "
-"Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab "
-"2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in "
-"Entwicklungsländern aufzubringen."
+#: setup/sdg.php:237
+msgid "Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die nationalen Politiken, Strategien und Planungen einbezogen werden. Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab 2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in Entwicklungsländern aufzubringen."
 msgstr "The target is to strengthen resilience and adaptive capacity to climate-related hazards and natural disasters in all countries. This will require the Integration of climate change measures into national policies, strategies and planning. Developed countries are expressly reminded of their obligation to raise 100 billion US dollars annually from 2020 onwards for climate protection in developing countries."
 
-#: setup/sdg.php:107
+#: setup/sdg.php:238
 msgid "Leben unter dem Wasser"
 msgstr "Life below water"
 
-#: setup/sdg.php:107
-msgid ""
-"Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung "
-"erhalten und nachhaltig nutzen"
+#: setup/sdg.php:238
+msgid "Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung erhalten und nachhaltig nutzen"
 msgstr "Conserve and sustainably use the oceans, seas and marine resources for sustainable development"
 
-#: setup/sdg.php:107
-msgid ""
-"Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich "
-"verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme "
-"nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. "
-"Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die "
-"Beendigung der Überfischung."
+#: setup/sdg.php:238
+msgid "Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die Beendigung der Überfischung."
 msgstr "By 2025, the aim is to prevent and/or significantly reduce marine pollution of all kinds. In addition, we need to manage marine and coastal ecosystems sustainably and combat the acidification of the oceans. Other goals include the effective regulation of fishing activities and an end to overfishing."
 
-#: setup/sdg.php:108
+#: setup/sdg.php:239
 msgid "Leben an Land"
 msgstr "Life on land"
 
-#: setup/sdg.php:108
-msgid ""
-"Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung "
-"fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, "
-"Bodendegradation beenden und umkehren und dem Verlust der biologischen "
-"Vielfalt ein Ende setzen"
+#: setup/sdg.php:239
+msgid "Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen"
 msgstr "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss"
 
-#: setup/sdg.php:108
-msgid ""
-"Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-"
-"Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung "
-"der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den "
-"Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten "
-"geschützt und ihr Aussterben verhindert werden."
+#: setup/sdg.php:239
+msgid "Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten geschützt und ihr Aussterben verhindert werden."
 msgstr "By 2020 the aim was to ensure the sustainable use of terrestrial and inland freshwater ecosystems and forests. Other goals include combating desertification and the preservation of mountain ecosystems. In order to halt the loss of biological diversity, we need to protect endangered species and protect their extinction."
 
-#: setup/sdg.php:109
+#: setup/sdg.php:240
 msgid "Frieden und Gerechtigkeit"
 msgstr "Peace, justice and strong institutions"
 
-#: setup/sdg.php:109
-msgid ""
-"Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung "
-"fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, "
-"rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
+#: setup/sdg.php:240
+msgid "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
 msgstr "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels"
 
-#: setup/sdg.php:109
-msgid ""
-"Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und "
-"Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau "
-"leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die "
-"illegalen Finanz- und Waffenströme deutlich zu verringern."
+#: setup/sdg.php:240
+msgid "Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die illegalen Finanz- und Waffenströme deutlich zu verringern."
 msgstr "The goals here include significantly reducing all forms of violence and guaranteeing the rule of law, which includes the development of efficient institutions. By 2030, the illegal flow of finance and arms should also be significantly reduced."
 
-#: setup/sdg.php:110
+#: setup/sdg.php:241
 msgid "Partnerschaften zur Erreichung der Ziele"
 msgstr "Partnerships for the goals"
 
-#: setup/sdg.php:110
-msgid ""
-"Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige "
-"Entwicklung stärken"
+#: setup/sdg.php:241
+msgid "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung stärken"
 msgstr "Strengthen the means of implementation and revitalize the global partnership for sustainable development"
 
-#: setup/sdg.php:110
-msgid ""
-"Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher "
-"Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % "
-"ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll "
-"eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich "
-"Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es "
-"auch, ein gerechtes multilaterales Handelssystem unter dem Dach der "
-"Welthandelsorganisation zu schaffen."
+#: setup/sdg.php:241
+msgid "Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es auch, ein gerechtes multilaterales Handelssystem unter dem Dach der Welthandelsorganisation zu schaffen."
 msgstr "Developed countries are urged to keep their ODA/GNI pledges, in particular the provision of 0.7% of their gross national income for these tasks. Other goals include increased North-South and South-South cooperation in the fields of science, technology and innovation, and the creation of an equitable multilateral trading system under the umbrella of the World Trade Organization."
 
-#: setup/settings.php:23
+#: setup/settings.php:25
 msgid "Einstellungen für die Quartiersplattform"
 msgstr "Settings for the district platform"
 
 #. Theme Name of the plugin/theme
-#: setup/settings.php:24
+#: setup/settings.php:26
 msgid "Quartiersplattform"
 msgstr "District platform"
 
-#: setup/settings.php:28 setup/settings.php:37 setup/settings.php:40
-#: setup/settings.php:47 setup/settings.php:50
+#: setup/settings.php:30 setup/settings.php:39 setup/settings.php:42 setup/settings.php:49 setup/settings.php:52
 msgid "Aktualisieren"
 msgstr "Update"
 
-#: setup/settings.php:29 setup/settings.php:41 setup/settings.php:51
+#: setup/settings.php:31 setup/settings.php:43 setup/settings.php:53
 msgid "Die Einstellungen wurden gespeichert."
 msgstr "The settings have been saved."
 
-#: setup/settings.php:34 setup/settings.php:35 setup/settings.php:312
-#: setup/settings.php:316
+#: setup/settings.php:36 setup/settings.php:37 setup/settings.php:322 setup/settings.php:326
 msgid "Wartungsmodus"
 msgstr "Maintenance mode"
 
-#: setup/settings.php:44 setup/settings.php:45
+#: setup/settings.php:46 setup/settings.php:47
 msgid "API-Schlüssel"
 msgstr "API key"
 
-#: setup/settings.php:65
+#: setup/settings.php:75
 msgid "Quartierseinstellungen"
 msgstr "District settings"
 
-#: setup/settings.php:69 setup/settings.php:231
+#: setup/settings.php:79 setup/settings.php:241
 msgid "Logo"
 msgstr "Logo"
 
-#: setup/settings.php:72
-msgid ""
-"Hier kannst du das Logo von deinem Quartier oder deiner Organisation "
-"einfügen, welches unter jeder Seite eingeblendet wird."
+#: setup/settings.php:82
+msgid "Hier kannst du das Logo von deinem Quartier oder deiner Organisation einfügen, welches unter jeder Seite eingeblendet wird."
 msgstr "Here you can insert your district or organization’s logo, which will be displayed at the bottom of every page."
 
-#: setup/settings.php:93
+#: setup/settings.php:103
 msgid "Name"
 msgstr "Name"
 
-#: setup/settings.php:96
-msgid ""
-"Hier kannst du den Namen festlegen, welcher den Besuchern der "
-"Quartiersplattform angezeigt wird und im Menü angezeigt wird."
+#: setup/settings.php:106
+msgid "Hier kannst du den Namen festlegen, welcher den Besuchern der Quartiersplattform angezeigt wird und im Menü angezeigt wird."
 msgstr "Here you can specify the name that will be displayed to visitors to the district platform and shown in the menu."
 
-#: setup/settings.php:105
+#: setup/settings.php:115
 msgid "Name der Quartiersplattform"
 msgstr "Name of the district platform"
 
-#: setup/settings.php:136
+#: setup/settings.php:122
+msgid "Bild für die Quartiersstartseite"
+msgstr "Description of the district home page"
+
+#: setup/settings.php:125
+msgid "Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet wird."
+msgstr "You can pin the page to the district page here."
+
+#: setup/settings.php:146
 msgid "Überschrift für die Quartiersstartseite"
 msgstr "Title for the district home page"
 
-#: setup/settings.php:139
-msgid ""
-"Hier kannst du die Überschrift festlegen, welche den Besuchern der "
-"Quartiersplattform auf der Startseite ."
+#: setup/settings.php:149
+msgid "Hier kannst du die Überschrift festlegen, welche den Besuchern der Quartiersplattform auf der Startseite ."
 msgstr "Here you can specify the title that visitors to the district platform will see on the home page."
 
-#: setup/settings.php:148 setup/settings.php:355
+#: setup/settings.php:158 setup/settings.php:365
 msgid "Überschrift"
 msgstr "Title"
 
-#: setup/settings.php:155
+#: setup/settings.php:165
 msgid "Beschreibung für die Quartiersstartseite"
 msgstr "Description of the district home page"
 
-#: setup/settings.php:158
-msgid ""
-"Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher "
-"auf der Startseite eingeblendet wird."
+#: setup/settings.php:168
+msgid "Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher auf der Startseite eingeblendet wird."
 msgstr "Here you can add a descriptive text that visitors to the home page will see."
 
-#: setup/settings.php:167
+#: setup/settings.php:177
 msgid "Beschreibungstext"
 msgstr "Text for description"
 
-#: setup/settings.php:212
+#: setup/settings.php:222
 msgid "Sponsoren"
 msgstr "Sponsors"
 
-#: setup/settings.php:215
+#: setup/settings.php:225
 msgid "Hier kannst du die Partner deiner Quartiersplattform eintragen."
 msgstr "Here you can add your district platform’s partners/sponsors."
 
-#: setup/settings.php:274 setup/veranstaltungen.php:177
+#: setup/settings.php:284 setup/veranstaltungen.php:177
 msgid "Website"
 msgstr "Website"
 
-#: setup/settings.php:319
+#: setup/settings.php:329
 msgid "Schalte hier den Wartungsmodus für die Quartiersseite ein."
 msgstr "Here you can switch on district platform’s maintenance mode."
 
-#: setup/settings.php:358
+#: setup/settings.php:368
 msgid "Hier kannst du eine Überschrift für die Wartungsseite eintragen."
 msgstr "You can enter a heading for the maintenance page here."
 
-#: setup/settings.php:366
+#: setup/settings.php:376
 msgid "Deine Quatiersplattform wird aktualisiert."
 msgstr "Your district platform has been updated."
 
-#: setup/settings.php:374
+#: setup/settings.php:384
 msgid "Text"
 msgstr "Text"
 
-#: setup/settings.php:377
+#: setup/settings.php:387
 msgid "Hier kannst du einen Beschreibungstext für den Wartungsmodus einfügen."
 msgstr "Here you can insert a descriptive text about the maintenance mode."
 
-#: setup/settings.php:385
-msgid ""
-"Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier "
-"mit zugestalten. Wir sind bald wieder online."
+#: setup/settings.php:395
+msgid "Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten. Wir sind bald wieder online."
 msgstr "Coming soon, exciting new features that you can use to help design your district. We'll be back online soon."
 
-#: setup/settings.php:460
+#: setup/settings.php:470
 msgid "Matomo API Schlüssel"
 msgstr "Matomo API key"
 
-#: setup/settings.php:463
+#: setup/settings.php:473
 msgid "Trage hier deinen Matomo API-Schlüssel ein."
 msgstr "Enter your Matomo API key here."
 
@@ -1991,9 +1841,21 @@ msgstr "Surveys"
 msgid "Worum geht es in deiner Umfrage?"
 msgstr "What is your survey about?"
 
+#: setup/umfragen.php:124
+msgid "Fragen"
+msgstr "Questions"
+
 #: setup/umfragen.php:127
 msgid "Hier kannst du die Auswahlmöglichkeiten für deine Umfrage festlegen."
 msgstr "You can define the options for your survey here."
+
+#: setup/umfragen.php:139
+msgid "Weitere Auswahlmöglichkeit hinzufügen"
+msgstr "Add another option"
+
+#: setup/umfragen.php:143
+msgid "Frage"
+msgstr "Question"
 
 #: setup/veranstaltungen.php:111
 msgid "Worum geht es bei deiner Veranstaltung?"
@@ -2028,20 +1890,18 @@ msgid "Livestream"
 msgstr "Livestream"
 
 #: setup/veranstaltungen.php:196
-msgid ""
-"Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link "
-"veröffentlichen, damit noch mehr Menschen daran teilhaben können."
+msgid "Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link veröffentlichen, damit noch mehr Menschen daran teilhaben können."
 msgstr "Will your event be livestreamed? You can post a link here so that even more people can take part."
 
 #: setup/veranstaltungen.php:209
 msgid "Ticket"
 msgstr "Ticket"
 
-#: setup/veranstaltungen.php:244
-msgid "Map"
+#: setup/veranstaltungen.php:225
+msgid "Karte"
 msgstr "Map"
 
-#: setup/veranstaltungen.php:265
+#: setup/veranstaltungen.php:246
 msgid "Welches Bild beschreibt deine Veranstaltung am besten?"
 msgstr "Which image best describes your event?"
 
@@ -2082,33 +1942,22 @@ msgid "Dein Passwort wurde geändert."
 msgstr "Your password has been changed."
 
 #: ultimate-member/email/changedpw_email.php:8
-msgid ""
-"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
-"gewesen sein, kontaktiere uns bitte umgehend."
+msgid "Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir gewesen sein, kontaktiere uns bitte umgehend."
 msgstr "Your password was recently changed. If you did not change your password, please contact us immediately."
 
 #: ultimate-member/email/changedpw_email.php:14
 msgid "Sieh dir dein Konto an"
 msgstr "Check out your account"
 
-#: ultimate-member/email/changedpw_email.php:16
-#: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email.php:39
-#: ultimate-member/email/welcome_email.php:51
+#: ultimate-member/email/changedpw_email.php:16 ultimate-member/email/checkmail_email.php:39 ultimate-member/email/resetpw_email.php:39 ultimate-member/email/welcome_email.php:51
 msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
 msgstr "If you have any problems, please feel free to contact us by email."
 
-#: ultimate-member/email/changedpw_email.php:20
-#: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email.php:44
-#: ultimate-member/email/welcome_email.php:56
+#: ultimate-member/email/changedpw_email.php:20 ultimate-member/email/checkmail_email.php:44 ultimate-member/email/resetpw_email.php:44 ultimate-member/email/welcome_email.php:56
 msgid "Vielen Dank!"
 msgstr "Thank you very much!"
 
-#: ultimate-member/email/changedpw_email.php:33
-#: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email.php:58
-#: ultimate-member/email/welcome_email.php:69
+#: ultimate-member/email/changedpw_email.php:33 ultimate-member/email/checkmail_email.php:58 ultimate-member/email/resetpw_email.php:58 ultimate-member/email/welcome_email.php:69
 msgid "Datenschutz"
 msgstr "Privacy policy"
 
@@ -2125,9 +1974,7 @@ msgid "Konto aktivieren"
 msgstr "Activate account"
 
 #: ultimate-member/email/resetpw_email.php:22
-msgid ""
-"Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
-"Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
+msgid "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
 msgstr "You can create a new password using the link below. If you did not request this, please ignore this email."
 
 #: ultimate-member/email/resetpw_email.php:35
@@ -2139,22 +1986,15 @@ msgid "Willkommen im Quartier, "
 msgstr "Welcome to the district, "
 
 #: ultimate-member/email/welcome_email.php:21
-msgid ""
-"Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
-"Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
-"und dein Quartier nachhaltig entwickeln und verbessern."
+msgid "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen und dein Quartier nachhaltig entwickeln und verbessern."
 msgstr "Thanks for joining us! You can find all the relevant information about your district on the district platform. This will help you to meet new people and get involved in the sustainable development and improvement of the district."
 
 #: ultimate-member/email/welcome_email.php:29
-msgid ""
-"Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
-"Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
+msgid "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
 msgstr "Discover and create your own projects. Is there something you’d like to change about your favourite park? Turn it into a project and find fellow campaigners!"
 
 #: ultimate-member/email/welcome_email.php:35
-msgid ""
-"Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
-"alles was du wissen musst, um bei nächsten mal dabei zu sein."
+msgid "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein."
 msgstr "Never miss out on great events in your district again. Here you will find everything you need to know to be involved next time."
 
 #: ultimate-member/email/welcome_email.php:47
@@ -2166,11 +2006,7 @@ msgid "https://github.com/studio-arrenberg/quartiersplattform"
 msgstr "https://github.com/studio-arrenberg/quartiersplattform"
 
 #. Description of the plugin/theme
-msgid ""
-"Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner "
-"Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & "
-"lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz "
-"erstrahlen."
+msgid "Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz erstrahlen."
 msgstr "Get active in your district and set up a district platform in your city! Your projects become visible and you benefit from the community and local participants. Use our theme and show off your district in all its splendour."
 
 #. Author of the plugin/theme
@@ -2180,3 +2016,35 @@ msgstr "Studio Arrenberg"
 #. Author URI of the plugin/theme
 msgid "https://arrenberg.studio"
 msgstr "https://arrenberg.studio"
+
+#~| msgid "Theme Options"
+#~ msgid "Theatre of Operations"
+#~ msgstr "Theme options"
+
+#~| msgid "Social Menu"
+#~ msgid "Social Links Menu"
+#~ msgstr "Social menu"
+
+#~ msgid "Projekt teilen"
+#~ msgstr "Share project"
+
+#~ msgid "Entdecke dein Quartier"
+#~ msgstr "Discover your district"
+
+#~ msgid "Wichtige Seiten"
+#~ msgstr "Important websites"
+
+#~ msgid "Deine Frage wurde gelöscht."
+#~ msgstr "Your question was deleted."
+
+#~ msgid "Gemeinsam"
+#~ msgstr "Together"
+
+#~ msgid "Umfrage teilen"
+#~ msgstr "Share survey"
+
+#~ msgid "Angebote"
+#~ msgstr "Offers"
+
+#~ msgid "Angebot"
+#~ msgstr "Offer"
