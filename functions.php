@@ -3282,7 +3282,7 @@ function qp_detect_browser_language() {
  * @return language string
  */
 
-function quartiersplattform_detect_language() {
+function qp_detect_language() {
 	$expiry = strtotime('+1 year');
 	global $user;
 	if (!is_user_logged_in()) {
@@ -3314,7 +3314,7 @@ function quartiersplattform_detect_language() {
 	
 	// return $user_language;
 }
-add_filter( 'locale', 'quartiersplattform_detect_language' );
+add_filter( 'locale', 'qp_detect_language' );
 
 /**
  * QP visibility badge

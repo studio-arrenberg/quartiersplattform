@@ -113,17 +113,17 @@
               
         <div class="sprache">
             <?php 
-                // //Get correct language
-                // if(!empty($_GET['lang'])){
-                //     $sprache = $_GET['lang'];
-                // }else{
-                //     if (!is_user_logged_in()) {
-                //         $sprache = quartiersplattform_detect_language();
-                //     }else{
-                //         $sprache = get_user_locale( get_current_user_id() );
-                //     }
-                // }
-                $sprache = quartiersplattform_detect_language();
+                //Get correct language
+                if(!empty($_GET['lang'])){
+                    $sprache = $_GET['lang'];
+                }else{
+                    if (!is_user_logged_in()) {
+                        $sprache = quartiersplattform_detect_language();
+                    }else{
+                        $sprache = get_user_locale( get_current_user_id() );
+                    }
+                }
+                // $sprache = quartiersplattform_detect_language();
             ?>
             <a class="button <?php if($sprache == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🏴󠁧󠁢󠁥󠁮󠁧󠁿&nbsp;<?php _e('Englisch', 'quartiersplattform'); ?></a>
             <a class="button <?php if($sprache == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkisch', 'quartiersplattform'); ?></a>
