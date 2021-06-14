@@ -2438,18 +2438,18 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		// $string = wp_date('j. F Y', $date);
 		// $string = date_i18n('j. F Y', $date);
 		// $string = strftime('%e %b %Y', $date);
-		$string = date_i18n('j.', $date)." ".__(date_i18n('F', $date), "twentytwenty")." ".date_i18n('Y', $date);
+		$string = date('j.', $date)." ".__(date('F', $date), "quartiersplattform")." ".date('Y', $date);
 	}
 	// default (just date)
 	else {
 		// $string = wp_date('j. F', $date);
 		// $string = date_i18n('j. F', $date, true);
 		// $string = strftime('%e %b', $date);
-		$string = date_i18n('j.', $date)." ".__(date_i18n('F', $date), "twentytwenty");
+		$string = date('j.', $date)." ".__(date('F', $date), "quartiersplattform");
 	}
 
 	if ($detail) {
-		$string = $string.__(" um ",'quartiersplattform').date_i18n('H:i', $date);
+		$string = $string.__(" um ",'quartiersplattform').date('H:i', $date);
 	}
 
 	return $string;
@@ -3301,7 +3301,6 @@ function qp_detect_language() {
 	}else{
 		// check user locale setting
 		if(!empty($_GET['lang'])){
-			setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
 			return $_GET['lang'];
 		}else{
