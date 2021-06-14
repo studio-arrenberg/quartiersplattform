@@ -3317,7 +3317,12 @@ function qp_detect_language() {
 add_filter( 'locale', 'qp_detect_language' );
 
 //Ultimate Member Translation
-add_filter( 'um_language_locale', 'qp_detect_language', 10, 1 );
+
+function my_language_locale() {
+	$locale = "de_DE";
+	return $locale;
+}
+add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
 // add_filter( 'um_language_file', 'my_language_file', 10, 1 );
 
 
