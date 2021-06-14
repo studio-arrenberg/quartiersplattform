@@ -124,7 +124,7 @@
                     }
                 }
             ?>
-            <a class="button <?php if($sprache == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🏴󠁧󠁢󠁥󠁮󠁧󠁿&nbsp;<?php _e('Englisch', 'quartiersplattform'); ?></a>
+            <a class="button <?php if($sprache == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🇬🇧&nbsp;<?php _e('Englisch', 'quartiersplattform'); ?></a>
             <a class="button <?php if($sprache == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkisch', 'quartiersplattform'); ?></a>
             <a class="button <?php if($sprache == "it_IT") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=it_IT'); ?>">🇮🇹&nbsp;<?php _e('Italienisch', 'quartiersplattform'); ?></a>
             <a class="button <?php if($sprache == "de_DE") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=de_DE'); ?>">🇩🇪&nbsp;<?php _e('Deutsch', 'quartiersplattform'); ?></a>
