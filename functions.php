@@ -3290,8 +3290,10 @@ function qp_detect_language() {
 			if(!empty($_GET['lang'])){
 				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 				return $_GET['lang'];
+			}else{
+				return $_COOKIE['language'];
 			}
-			return $_COOKIE['language'];
+			
 		}else{  	
 			
 			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
@@ -3314,7 +3316,7 @@ function qp_detect_language() {
 	
 	// return $user_language;
 }
-// add_filter( 'locale', 'qp_detect_language' );
+add_filter( 'locale', 'qp_detect_language' );
 
 /**
  * QP visibility badge
