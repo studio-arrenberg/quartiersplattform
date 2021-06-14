@@ -2438,7 +2438,7 @@ function qp_date( $date, $detail = false, $time = '' ) {
 		// $string = wp_date('j. F Y', $date);
 		// $string = date_i18n('j. F Y', $date);
 		// $string = strftime('%e %b %Y', $date);
-		$string = date_i18n('j.', $date)." ".__(date_i18n('F', $date), "twentytwenty")." ".date_i18n('Y', $date);
+		$string = date_i18n('j.', $date)." ".__(date_i18n('F', $date), "quartiersplattform")." ".date_i18n('Y', $date);
 	}
 	// default (just date)
 	else {
@@ -3286,18 +3286,18 @@ function qp_detect_language() {
 	$expiry = strtotime('+1 year');
 	global $user;
 	if (!is_user_logged_in()) {
-		if(isset($_COOKIE['language'])) {     
-			if(!empty($_GET['lang'])){
-				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-				return $_GET['lang'];
-			}else{
-				return $_COOKIE['language'];
-			}
+		// if(isset($_COOKIE['language'])) {     
+		// 	if(!empty($_GET['lang'])){
+		// 		setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+		// 		return $_GET['lang'];
+		// 	}else{
+		// 		return $_COOKIE['language'];
+		// 	}
 			
-		}else{  	
-			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-			return qp_detect_browser_language();
-		}	
+		// }else{  	
+		// 	setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+		// 	return qp_detect_browser_language();
+		// }	
 	}else{
 		// check user locale setting
 		if(!empty($_GET['lang'])){
