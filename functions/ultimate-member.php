@@ -225,3 +225,32 @@ function qp_um_profile_image_upload_helper() {
 	}
 
 } add_action('wp_footer', 'qp_um_profile_image_upload_helper');
+
+
+/**
+ * 
+ * UM Secondary Button
+ * 
+ */
+add_filter( 'um_register_form_button_two', 'my_register_form_button_two', 10, 2 );
+function my_register_form_button_two( $secondary_btn_word, $args ) {
+    // your code here
+	$secondary_btn_word = __('Login','quartiersplattform');
+	return $secondary_btn_word;
+}
+
+add_filter( 'um_register_form_button_two_url', 'my_register_form_button_two_url', 10, 2 );
+function my_register_form_button_two_url( $secondary_btn_url, $args ) {
+    // your code here
+	$secondary_btn_url = home_url().'/login/';
+
+
+	// debugToConsole($args);
+
+	// active secondary button if form is register
+	if ($args['core'] == 'register' && $args['mode'] == 'register') {
+		update_post_meta($args['form_id'], '_um_register_secondary_btn', 1);
+	}
+
+	return $secondary_btn_url;
+}
