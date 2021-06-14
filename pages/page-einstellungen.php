@@ -34,7 +34,7 @@ get_header();
 
     <!-- heading -->
     <h1 class="heading-size-1"><?php echo __('Quartiersplattform Einstellungen','quartiersplattform'); ?></h1>
-    <p><?php _e('Hier kannst du Einstellung für die Quartiersplattform vorhnehmen. Alle Einstellungen treten direkt in kraft und gelten für die gesamte Quartiersseite.', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
+    <p><?php _e('Hier kannst du die Einstellungen für die Quartiersplattform festlegen. Alle Einstellungen treten direkt in Kraft und gelten für die gesamte Quartiersseite.', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
     <br>
     <a href="<?php echo home_url().'/wp-admin/admin.php?page=theme-general-settings' ?>" class="button">Wordpress Einstellungen</a>
     

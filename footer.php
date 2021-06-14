@@ -61,7 +61,7 @@
     <div class="footer">
   
         <div>
-            <h4 class="heading-size-3">Die Plattform für dein Quartier!</p>
+            <h4 class="heading-size-3"><?php _e('Die Plattform für dein Quartier!', 'quartiersplattform'); ?> </p>
         </div>
 
         <div>

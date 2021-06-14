@@ -28,7 +28,7 @@ get_header();
     <div class="main-content">
     <!-- heading -->
     <h1 class="heading-size-1"><?php echo __('Quartiersplattform','quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?> <span class="highlight"> <?php echo "v".wp_get_theme()->version; ?> </span></h1>
-    <p class="text-size-1 margin-bottom"><?php _e('Allegemeine Informationen zu deiner Quartiersplattform', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
+    <p class="text-size-1 margin-bottom"><?php _e('Allgemeine Informationen zu deiner Quartiersplattform', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
 
     <!-- general information -->
     <!-- qp version -->
@@ -55,10 +55,10 @@ get_header();
         $res = json_decode($resp, true);
         // display warning
         if (!empty($res['general']['latest_version']['version']) && $res['general']['latest_version']['version'] != wp_get_theme()->version) {
-            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quartiersplattform und bringe neue features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben unter ','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
+            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quartiersplattform und bringe neue Features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben unter ','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
         }
         // Reminder Card Einstellungen
-        $text = __('Bearbeite die Einstellungen der Quartiersplattform. Den Seitennamen, Bild und Text','quartiersplattform');
+        $text = __('Bearbeite die Einstellungen der Quartiersplattform. Hier kannst du den Seitennamen, das Bild sowie den Text für die Quartiersstartseite festlegen.','quartiersplattform');
 		reminder_card('settings', __('Einstellungen','quartiersplattform'), $text, __('Einstellungen','quartiersplattform'), home_url().'/einstellungen' );
 	
         ?>

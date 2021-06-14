@@ -1,49 +1,56 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-05-31 16:52+0200\n"
-"PO-Revision-Date: 2021-06-12 11:14+0200\n"
+"POT-Creation-Date: 2021-06-14 10:56+0200\n"
+"PO-Revision-Date: 2021-06-14 10:58+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
-"Language: de_DE\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.4.3\n"
-"X-Poedit-Basepath: ../../../../../../../../Entwicklung/quartiersplattform/wp-content/themes/quartiersplattform\n"
+"X-Poedit-Basepath: ../../../../../../../Entwicklung/quartiersplattform/wp-"
+"content/themes/quartiersplattform\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 
 #: 404.php:17
 msgid "Page Not Found"
-msgstr "Page Not Found"
+msgstr "Pagina non trovata"
 
 #: 404.php:19
-msgid "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
-msgstr "The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place."
+msgid ""
+"The page you were looking for could not be found. It might have been "
+"removed, renamed, or did not exist in the first place."
+msgstr ""
+"La pagina che stavi cercando non è stata trovata. Potrebbe essere stato "
+"rimosso, rinominato o non essere mai esistito."
 
 #: 404.php:29
 msgid "404 not found"
-msgstr "404 not found"
+msgstr "404 non trovato"
 
-#: author.php:54
+#: author.php:59
 msgid "Mein Profil bearbeiten"
 msgstr "Modifica il mio profilo"
 
-#: author.php:70 setup/kontakt.php:97
+#: author.php:75 setup/kontakt.php:97
 msgid "Über mich"
 msgstr "Chi sono"
 
-#: author.php:89
+#: author.php:92
 msgid "Projekte von"
 msgstr "Aggiornamento del progetto di"
 
-#: author.php:107
+#: author.php:111
 msgid "Beiträge von"
 msgstr "Contributi di"
 
@@ -52,8 +59,12 @@ msgid "Retina logo"
 msgstr "Logo Retina"
 
 #: classes/class-twentytwenty-customize.php:82
-msgid "Scales the logo to half its uploaded size, making it sharp on high-res screens."
-msgstr "Scales the logo to half its uploaded size, making it sharp on high-res screens."
+msgid ""
+"Scales the logo to half its uploaded size, making it sharp on high-res "
+"screens."
+msgstr ""
+"Scales the logo to half its uploaded size, making it sharp on high-res "
+"screens."
 
 #: classes/class-twentytwenty-customize.php:101
 msgid "Header &amp; Footer Background Color"
@@ -104,8 +115,12 @@ msgid "Cover Template"
 msgstr "Cover Template"
 
 #: classes/class-twentytwenty-customize.php:283
-msgid "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
-msgstr "Settings for the \"Cover Template\" page template. Add a featured image to use as background."
+msgid ""
+"Settings for the \"Cover Template\" page template. Add a featured image to "
+"use as background."
+msgstr ""
+"Settings for the \"Cover Template\" page template. Add a featured image to "
+"use as background."
 
 #: classes/class-twentytwenty-customize.php:305
 msgid "Fixed Background Image"
@@ -136,8 +151,10 @@ msgid "Overlay Opacity"
 msgstr "Overlay Opacity"
 
 #: classes/class-twentytwenty-customize.php:396
-msgid "Make sure that the contrast is high enough so that the text is readable."
-msgstr "Make sure that the contrast is high enough so that the text is readable."
+msgid ""
+"Make sure that the contrast is high enough so that the text is readable."
+msgstr ""
+"Make sure that the contrast is high enough so that the text is readable."
 
 #: classes/class-twentytwenty-walker-comment.php:65
 msgid "says:"
@@ -183,69 +200,53 @@ msgstr "Comments"
 msgid "Comments are closed."
 msgstr "Comments are closed."
 
-#: components/author-card.php:57
-msgid "Hier kannst du deine Kontaktdaten hinterlegen,"
-msgstr "Qui puoi inserire i tuoi recapiti,"
+#: components/calendar/calendar_download.php:47
+msgid "Datei kann nicht gespeichert werden!"
+msgstr "Impossibile salvare il file!"
 
-#: components/author-card.php:57
-msgid " damit du kontaktiert werden kannst."
-msgstr " per poter essere contattato."
+#: components/calendar/calendar_download.php:75
+msgid "Termin im Kalender speichern"
+msgstr "Salva l'appuntamento nel calendario"
 
 #: components/cookie/cookie-alert.php:6
 msgid "Wir verwenden Cookies"
 msgstr "Utilizziamo i cookie"
 
-#: components/cookie/cookie-alert.php:9
-msgid "Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
-msgstr "Adoperiamo i cookie sulla piattaforma di quartiere. Utilizzandola, acconsenti al loro impiego, ma non usiamo cookie di terze parti."
+#: components/cookie/cookie-alert.php:10
+msgid ""
+"Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du "
+"der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
+msgstr ""
+"Adoperiamo i cookie sulla piattaforma di quartiere. Utilizzandola, "
+"acconsenti al loro impiego, ma non usiamo cookie di terze parti."
 
-#: components/cookie/cookie-alert.php:19 footer.php:74
-msgid "Datenschutzerklärung"
-msgstr "Informativa sulla protezione dei dati"
+#: components/cookie/cookie-alert.php:23 footer.php:108
+#: ultimate-member/email/changedpw_email.php:33
+#: ultimate-member/email/checkmail_email.php:58
+#: ultimate-member/email/resetpw_email.php:58
+#: ultimate-member/email/welcome_email.php:69
+msgid "Datenschutz"
+msgstr "Protezione dei dati"
 
-#: components/cookie/cookie-alert.php:26 footer.php:70 setup/main.php:182 ultimate-member/email/changedpw_email.php:32 ultimate-member/email/checkmail_email.php:57 ultimate-member/email/resetpw_email.php:57 ultimate-member/email/welcome_email.php:68
+#: components/cookie/cookie-alert.php:30 footer.php:104 setup/main.php:182
+#: ultimate-member/email/changedpw_email.php:32
+#: ultimate-member/email/checkmail_email.php:57
+#: ultimate-member/email/resetpw_email.php:57
+#: ultimate-member/email/welcome_email.php:68
 msgid "Impressum"
 msgstr "Impressum"
 
-#: components/cookie/cookie-alert.php:34
+#: components/cookie/cookie-alert.php:38
 msgid "Zustimmen"
 msgstr "Accetta"
 
-#: components/energie_ampel-menu.php:23
-msgid "Energie Ampel "
-msgstr "Semaforo energetico "
+#: components/general/author-card.php:57
+msgid "Hier kannst du deine Kontaktdaten hinterlegen,"
+msgstr "Qui puoi inserire i tuoi recapiti,"
 
-#: components/energie_ampel-menu.php:25
-msgid "grüne Phase"
-msgstr "fase verde"
-
-#: components/energie_ampel-menu.php:30
-msgid " CO2 pro kWh"
-msgstr " CO2 per kWh"
-
-#: components/energie_ampel-menu.php:37 components/energie_ampel-menu.php:180
-msgid "Jetzt"
-msgstr "Adesso"
-
-#: components/energie_ampel-menu.php:61
-msgid "Donnerstag"
-msgstr "Giovedì"
-
-#: components/energie_ampel-menu.php:141
-msgid "Energie Ampel"
-msgstr "Semaforo energetico"
-
-#: components/energie_ampel-menu.php:142
-msgid "Phase"
-msgstr "e Phase"
-
-#: components/energie_ampel-menu.php:146
-msgid "gramm"
-msgstr "grammi"
-
-#: components/energie_ampel-menu.php:147
-msgid "pro kWh"
-msgstr "CO2 pro kWh"
+#: components/general/author-card.php:57
+msgid " damit du kontaktiert werden kannst."
+msgstr " per poter essere contattato."
 
 #: components/general/map-card.php:36
 msgid "In Maps öffnen"
@@ -276,8 +277,12 @@ msgid "Hinweise und Tipps"
 msgstr "Indicazioni e consigli"
 
 #: components/profil/reminder_card_reset.php:2
-msgid "Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder einblenden."
-msgstr "Qui puoi inserire di nuovo tutte le indicazioni e consigli sulla piattaforma di quartiere."
+msgid ""
+"Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder "
+"einblenden."
+msgstr ""
+"Qui puoi inserire di nuovo tutte le indicazioni e consigli sulla piattaforma "
+"di quartiere."
 
 #: components/profil/reminder_card_reset.php:4
 msgid "Hinweise und Tipps zurücksetzen"
@@ -287,13 +292,18 @@ msgstr "Reimposta indicazioni e consigli"
 msgid "Aktuelle Veranstaltung"
 msgstr "Evento corrente"
 
-#: components/project/content.php:5 setup/umfragen.php:105 setup/veranstaltungen.php:108
+#: components/project/content.php:5 setup/umfragen.php:105
+#: setup/veranstaltungen.php:108
 msgid "Beschreibung"
 msgstr "Descrizione"
 
 #: components/project/content.php:13
-msgid "Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte noch besser zu erklären."
-msgstr "Puoi aggiungere una descrizione al tuo progetto per spiegare meglio gli obiettivi e i contenuti."
+msgid ""
+"Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und "
+"Inhalte noch besser zu erklären."
+msgstr ""
+"Puoi aggiungere una descrizione al tuo progetto per spiegare meglio gli "
+"obiettivi e i contenuti."
 
 #: components/project/content.php:14
 msgid "Beschreibung hinzufügen"
@@ -303,21 +313,34 @@ msgstr "Aggiungi descrizione"
 msgid "Beschreibung bearbeiten"
 msgstr "Modifica descrizione"
 
-#: components/project/content.php:35 pages/page-profil.php:164 pages/page-quartier.php:76 pages/single-nachrichten.php:74 pages/single-veranstaltungen.php:94 template-parts/content.php:53 templates/center-header.php:47
+#: components/project/content.php:35 pages/page-profil.php:192
+#: pages/page-quartier.php:73 pages/single-nachrichten.php:74
+#: pages/single-veranstaltungen.php:94 template-parts/content.php:59
+#: templates/center-header.php:46
 msgid "Continue reading"
 msgstr "Continue reading"
 
 #: components/project/history.php:31
-msgid "Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später vorbei, um auf dem Laufenden zu bleiben."
-msgstr "Non è stato ancora pubblicato alcun aggiornamento del progetto. Ricontrolla più tardi per tenerti aggiornato."
+msgid ""
+"Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später "
+"vorbei, um auf dem Laufenden zu bleiben."
+msgstr ""
+"Non è stato ancora pubblicato alcun aggiornamento del progetto. Ricontrolla "
+"più tardi per tenerti aggiornato."
 
 #: components/project/history.php:32
 msgid "Es wurden noch keine Beiträge veröffentlicht"
 msgstr "Non è stato ancora pubblicato alcun contenuto"
 
 #: components/project/history.php:36
-msgid "Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen in deinem Quartier über das Projekt zu informieren."
-msgstr "Non hai ancora pubblicato alcun aggiornamento del progetto. Puoi pubblicare notizie, eventi e sondaggi per informare le persone del tuo quartiere riguardo il progetto."
+msgid ""
+"Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst "
+"Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen "
+"in deinem Quartier über das Projekt zu informieren."
+msgstr ""
+"Non hai ancora pubblicato alcun aggiornamento del progetto. Puoi pubblicare "
+"notizie, eventi e sondaggi per informare le persone del tuo quartiere "
+"riguardo il progetto."
 
 #: components/project/history.php:37
 msgid "Du hast noch keine Beiträge veröffentlicht"
@@ -331,13 +354,21 @@ msgstr "Contenuti in bacheca"
 msgid "Ziele für nachhaltige Entwicklung"
 msgstr "Obiettivi per lo sviluppo sostenibile"
 
-#: components/project/sdg-display.php:40 pages/page-quartier.php:157
+#: components/project/sdg-display.php:40 pages/page-quartier.php:164
 msgid "Übersicht der Ziele für nachhaltige Entwicklung"
 msgstr "Panoramica degli obiettivi per lo sviluppo sostenibile"
 
 #: components/project/sdg-display.php:46
-msgid "Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der Seite SDGs informieren, worum es sich dabei handelt."
-msgstr "Il tuo progetto persegue obiettivi di sostenibilità? Nelle impostazioni del progetto puoi definire quali sono gli obiettivi che il tuo progetto supporta. Non sai esattamente quali sono gli obiettivi dello sviluppo sostenibile? Puoi scoprire di cosa si tratta nella pagina OSS."
+msgid ""
+"Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen "
+"kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht "
+"genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der "
+"Seite SDGs informieren, worum es sich dabei handelt."
+msgstr ""
+"Il tuo progetto persegue obiettivi di sostenibilità? Nelle impostazioni del "
+"progetto puoi definire quali sono gli obiettivi che il tuo progetto "
+"supporta. Non sai esattamente quali sono gli obiettivi dello sviluppo "
+"sostenibile? Puoi scoprire di cosa si tratta nella pagina OSS."
 
 #: components/project/toolbox.php:10
 msgid "Was gibt es Neues?"
@@ -363,7 +394,8 @@ msgstr "Evento "
 msgid "Diese Meldung ausblenden."
 msgstr "Nascondi questa notifica."
 
-#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:24 future_translation.php:80
+#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:24
+#: future_translation.php:80
 msgid "Anheften"
 msgstr "Appunta"
 
@@ -371,11 +403,13 @@ msgstr "Appunta"
 msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
 msgstr "Qui puoi appuntare il progetto sulla pagina del quartiere."
 
-#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:31 future_translation.php:73 setup/main.php:280
+#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:31
+#: future_translation.php:73 setup/main.php:282
 msgid "Gepinnt"
 msgstr "Fissato"
 
-#: components/settings/pin_toggle.php:15 components/settings/pin_toggle.php:34 future_translation.php:74 setup/main.php:281
+#: components/settings/pin_toggle.php:15 components/settings/pin_toggle.php:34
+#: future_translation.php:74 setup/main.php:283
 msgid "Nicht gepinnt"
 msgstr "Non fissato"
 
@@ -388,8 +422,10 @@ msgid "Sichtbarkeit"
 msgstr "Visibilità"
 
 #: components/settings/visibility_toggle.php:2
-msgid "Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
-msgstr "Qui puoi impostare la visibilità del contenuto sulla pagina del quartiere."
+msgid ""
+"Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
+msgstr ""
+"Qui puoi impostare la visibilità del contenuto sulla pagina del quartiere."
 
 #: components/settings/visibility_toggle.php:9 future_translation.php:75
 msgid "Öffentlich"
@@ -399,7 +435,7 @@ msgstr "Pubblico"
 msgid "Privat"
 msgstr "Privato"
 
-#: components/smart-card/projekte.php:20 pages/page-profil.php:131
+#: components/smart-card/projekte.php:20 pages/page-profil.php:160
 msgid "Deine Projekte"
 msgstr "I tuoi progetti"
 
@@ -407,11 +443,14 @@ msgstr "I tuoi progetti"
 msgid "Dein Projekt"
 msgstr "I tuoi progetti"
 
-#: components/smart-card/projekte.php:56 elements/card-nachrichten.php:29 setup/nachrichten.php:27
+#: components/smart-card/projekte.php:55 elements/card-nachrichten.php:29
+#: setup/nachrichten.php:27
 msgid "Nachricht"
 msgstr "Messaggio"
 
-#: components/smart-card/projekte.php:58 elements/card-veranstaltungen.php:28 elements/card-veranstaltungen.php:44 elements/card-veranstaltungen.php:72 setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
+#: components/smart-card/projekte.php:57 elements/card-veranstaltungen.php:28
+#: elements/card-veranstaltungen.php:44 elements/card-veranstaltungen.php:72
+#: setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
 msgid "Veranstaltung"
 msgstr "Evento"
 
@@ -420,8 +459,14 @@ msgid "Aktuelle Veranstaltungen"
 msgstr "Eventi correnti"
 
 #: components/views/veranstaltungen.php:34
-msgid "Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
-msgstr "Se stai organizzando un evento culturale o una festa nel tuo quartiere, puoi pubblicarlo qui per conoscere e entrare in contatto con le persone del tuo quartiere."
+msgid ""
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
+"organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner "
+"Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
+msgstr ""
+"Se stai organizzando un evento culturale o una festa nel tuo quartiere, puoi "
+"pubblicarlo qui per conoscere e entrare in contatto con le persone del tuo "
+"quartiere."
 
 #: components/views/veranstaltungen.php:35
 msgid "Momentan gibt es keine Veranstaltungen"
@@ -435,11 +480,13 @@ msgstr "Crea evento"
 msgid "von"
 msgstr "di"
 
-#: elements/card-nachrichten.php:31 elements/card-projekte.php:48 elements/card-veranstaltungen.php:30
+#: elements/card-nachrichten.php:31 elements/card-projekte.php:48
+#: elements/card-veranstaltungen.php:30
 msgid "von "
 msgstr "di "
 
-#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71 setup/projekte.php:109
+#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71
+#: setup/projekte.php:109
 msgid "Projekt"
 msgstr "Progetto"
 
@@ -451,65 +498,120 @@ msgstr "Sondaggio"
 msgid "veröffentlicht von "
 msgstr "pubblicato da "
 
-#: elements/card-umfragen.php:69 elements/card-umfragen.php:125
+#: elements/card-umfragen.php:70 elements/card-umfragen.php:126
 msgid " Stimmen"
 msgstr " Accetta"
 
-#: elements/card-umfragen.php:97
-msgid "Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
-msgstr "Registrati sulla piattaforma di quartiere per partecipare al sondaggio."
+#: elements/card-umfragen.php:98
+msgid ""
+"Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
+msgstr ""
+"Registrati sulla piattaforma di quartiere per partecipare al sondaggio."
 
-#: elements/card-umfragen.php:99 maintenance.php:110
+#: elements/card-umfragen.php:100 maintenance.php:110
 msgid "Anmelden"
 msgstr "Accedi"
 
-#: elements/card-umfragen.php:102 maintenance.php:111
+#: elements/card-umfragen.php:103 maintenance.php:111
 msgid "Registrieren"
 msgstr "Registrati"
 
-#: elements/card-umfragen.php:161
+#: elements/card-umfragen.php:162
 msgid "Stimmen"
 msgstr "Accetta"
 
-#: footer.php:57
-msgid "Sprache"
-msgstr "Lingua"
+#: footer.php:64
+msgid "Die Plattform für dein Quartier!"
+msgstr "La piattaforma per il tuo quartiere!"
 
-#: footer.php:58
+#: footer.php:68
+msgid "Entdecke dein Viertel"
+msgstr "Scopri il tuo quartiere"
+
+#: footer.php:69
+msgid "Alle Projekte"
+msgstr "Tutti i progetti"
+
+#: footer.php:70 pages/page-quartier.php:111
+msgid "Neuigkeiten & Projektupdates"
+msgstr "Novità e aggiornamenti sui progetti"
+
+#: footer.php:71
+msgid "Veranstaltungskalender"
+msgstr "Calendario degli eventi"
+
+#: footer.php:72 pages/page-quartier.php:150
+msgid "Ziele für nachhaltige Entwicklung im Quartier"
+msgstr "Obiettivi per lo sviluppo sostenibile nel quartiere"
+
+#: footer.php:76
+msgid "Die Quartiersplattform"
+msgstr "La piattaforma di quartiere"
+
+#: footer.php:78 pages/page-plattform.php:62 pages/page-profil.php:100
+#: pages/single-projekte.php:82 setup/main.php:190
+msgid "Einstellungen"
+msgstr "Impostazioni"
+
+#: footer.php:80
+msgid "Informationen zum Status deiner Plattform"
+msgstr "Informazioni sullo stato della vostra piattaforma"
+
+#: footer.php:83
+msgid "Die Quartiersplattform "
+msgstr "La piattaforma di quartiere"
+
+#: footer.php:91
+msgid "Jetzt registrieren"
+msgstr "Registrati ora"
+
+#: footer.php:95 pages/page-anmerkungen.php:27 pages/page-anmerkungen.php:83
+#: pages/page-plattform.php:138 pages/page-quartier.php:172
+#: pages/single-anmerkungen.php:27
+msgid "Feedback zur Quartiersplattform"
+msgstr "Nome della piattaforma di quartiere"
+
+#: footer.php:127
 msgid "Englisch"
 msgstr "Inglese"
 
-#: footer.php:59
+#: footer.php:128
 msgid "Türkisch"
 msgstr "Turco"
 
-#: footer.php:60
+#: footer.php:129
 msgid "Italienisch"
 msgstr "Italiano"
 
-#: footer.php:61
+#: footer.php:130
 msgid "Deutsch"
 msgstr "Tedesco"
 
-#: footer.php:69
-msgid "Kontakt"
-msgstr "Contatto"
-
-#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25 forms/form-veranstaltungen.php:29
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25
+#: forms/form-veranstaltungen.php:29
 msgid "Projekt konnte nicht verknüpft werden"
 msgstr "Il tuo progetto non può essere condiviso"
 
-#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25 forms/form-veranstaltungen.php:29
-msgid "Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es noch mal."
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25
+#: forms/form-veranstaltungen.php:29
+msgid ""
+"Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es "
+"noch mal."
 msgstr "Impossibile collegare il modulo a un progetto. Riprovare."
 
-#: forms/form-nachrichten.php:41 forms/form-projekte.php:25 forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
+#: forms/form-nachrichten.php:41 forms/form-projekte.php:25
+#: forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
 msgid "Projekt veröffentlichen"
 msgstr "Pubblica progetto"
 
-#: forms/form-nachrichten.php:41 forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
-msgid "Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den Projekteinstellungen veröffentlichen musst. "
-msgstr "Il tuo contenuto inizialmente non sarà visibile perché devi prima rendere pubblico il progetto nelle impostazioni del progetto. "
+#: forms/form-nachrichten.php:41 forms/form-umfragen.php:39
+#: forms/form-veranstaltungen.php:43
+msgid ""
+"Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den "
+"Projekteinstellungen veröffentlichen musst. "
+msgstr ""
+"Il tuo contenuto inizialmente non sarà visibile perché devi prima rendere "
+"pubblico il progetto nelle impostazioni del progetto. "
 
 #: forms/form-nachrichten.php:50
 msgid "Erstelle eine Nachricht"
@@ -520,22 +622,34 @@ msgid "Nachricht veröffentlichen"
 msgstr "Pubblica messaggio"
 
 #: forms/form-projekte.php:25
-msgid "Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen."
-msgstr "Il tuo progetto inizialmente non sarà pubblico, così potrai pubblicare i tuoi contenuti in pace. Quando sarai pronto, puoi renderlo pubblico nelle impostazioni del progetto."
+msgid ""
+"Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte "
+"einstellen kannst. Wenn du soweit bist, kannst du es in den "
+"Projekteinstellungen veröffentlichen."
+msgstr ""
+"Il tuo progetto inizialmente non sarà pubblico, così potrai pubblicare i "
+"tuoi contenuti in pace. Quando sarai pronto, puoi renderlo pubblico nelle "
+"impostazioni del progetto."
 
 #: forms/form-projekte.php:29
 msgid "Erstelle dein eigenes Projekt"
 msgstr "Crea il tuo progetto"
 
-#: forms/form-projekte.php:50 functions.php:2193 functions.php:3082 pages/projekt-feed.php:49 setup/main.php:187
+#: forms/form-projekte.php:50 functions.php:2116 functions.php:2958
+#: pages/projekt-feed.php:49 setup/main.php:187
 msgid "Projekt erstellen"
 msgstr "Crea progetto"
 
 #: forms/form-projekte.php:62
-msgid "Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen."
-msgstr "Registrati sulla tua piattaforma di quartiere per creare i tuoi progetti, sondaggi ed eventi."
+msgid ""
+"Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, "
+"Umfragen und Veranstaltungen zu erstellen."
+msgstr ""
+"Registrati sulla tua piattaforma di quartiere per creare i tuoi progetti, "
+"sondaggi ed eventi."
 
-#: forms/form-projekte.php:63 pages/page-anmerkungen.php:102 pages/page-projekte.php:102 pages/page-veranstaltungen.php:48 pages/single-anmerkungen.php:54
+#: forms/form-projekte.php:63 pages/page-anmerkungen.php:102
+#: pages/single-anmerkungen.php:54
 msgid "Mitglied werden im Quartier"
 msgstr "Diventa membro del quartiere"
 
@@ -580,22 +694,26 @@ msgid "Footer #1"
 msgstr "Footer #1"
 
 #: functions.php:399
-msgid "Widgets in this area will be displayed in the first column in the footer."
-msgstr "Widgets in this area will be displayed in the first column in the footer."
+msgid ""
+"Widgets in this area will be displayed in the first column in the footer."
+msgstr ""
+"Widgets in this area will be displayed in the first column in the footer."
 
 #: functions.php:409
 msgid "Footer #2"
 msgstr "Footer #2"
 
 #: functions.php:411
-msgid "Widgets in this area will be displayed in the second column in the footer."
-msgstr "Widgets in this area will be displayed in the second column in the footer."
+msgid ""
+"Widgets in this area will be displayed in the second column in the footer."
+msgstr ""
+"Widgets in this area will be displayed in the second column in the footer."
 
 #: functions.php:515
 msgid "Accent Color"
 msgstr "Accent Color"
 
-#: functions.php:520
+#: functions.php:520 inc/starter-content.php:177 inc/starter-content.php:187
 msgid "Primary"
 msgstr "Primary"
 
@@ -651,143 +769,162 @@ msgctxt "Short name of the larger font size in the block editor."
 msgid "XL"
 msgstr "XL"
 
-#: functions.php:883 functions.php:892
+#: functions.php:881 functions.php:890
 msgid "Deine Quartiersplattform benötigt das Plugin"
 msgstr "La tua piattaforma di quartiere ha bisogno del plugin"
 
-#: functions.php:883 functions.php:892
+#: functions.php:881 functions.php:890
 msgid " um vollständig funktionieren zu können."
 msgstr " per poter funzionare completamente."
 
-#: functions.php:884
+#: functions.php:882
 msgid "Advanced Custom Fields"
 msgstr "Advanced Custom Fields"
 
-#: functions.php:884
+#: functions.php:882
 msgid "Installiere ACF"
 msgstr "Installa ACF"
 
-#: functions.php:893
+#: functions.php:891
 msgid "Installiere Ultimate Member"
 msgstr "Installa Ultimate Member"
 
-#: functions.php:901
+#: functions.php:899
 msgid "Gratulation, deine Quartiersplattform wurde erfolgreich eingerichtet."
-msgstr "Congratulazioni, la tua piattaforma di quartiere è stata configurata con successo."
+msgstr ""
+"Congratulazioni, la tua piattaforma di quartiere è stata configurata con "
+"successo."
 
-#: functions.php:910
+#: functions.php:908
 msgid "Das Ultimate Member Plugin wurde noch nicht vollständig eingerichtet."
-msgstr "Il plugin Ultimate Member non è stato ancora completamente configurato."
+msgstr ""
+"Il plugin Ultimate Member non è stato ancora completamente configurato."
 
-#: functions.php:911 functions.php:921
+#: functions.php:909 functions.php:919
 msgid "Anleitung öffnen"
 msgstr "Apri le istruzioni"
 
-#: functions.php:920
-msgid "Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten."
-msgstr "Configura completamente il plugin WP Mail SMTP per garantire una consegna affidabile delle email."
+#: functions.php:918
+msgid ""
+"Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-"
+"Zustellung zu gewährleisten."
+msgstr ""
+"Configura completamente il plugin WP Mail SMTP per garantire una consegna "
+"affidabile delle email."
 
-#: functions.php:929 functions.php:940
+#: functions.php:927 functions.php:938
 msgid "Deine Quartiersplattform hat noch"
 msgstr "La tua piattaforma di quartiere non ha ancora"
 
-#: functions.php:929
+#: functions.php:927
 msgid " keine Datenschutzerklärung."
 msgstr " nessuna informativa sulla protezione dei dati."
 
-#: functions.php:930
+#: functions.php:928
 msgid "Datenschutzerklärung erstellen"
 msgstr "Crea informativa sulla protezione dei dati"
 
-#: functions.php:940
+#: functions.php:938
 msgid " kein Impressum."
 msgstr " nessun Impressum."
 
-#: functions.php:941
+#: functions.php:939
 msgid "Impressum erstellen"
 msgstr "Crea Impressum"
 
-#: functions.php:951
-msgid "Hier kannst du das Logo sowie den Namen deiner Quartiersplattform einrichten. "
-msgstr "Qui puoi impostare il logo e il nome della tua piattaforma di quartiere. "
+#: functions.php:949
+msgid ""
+"Hier kannst du das Logo sowie den Namen deiner Quartiersplattform "
+"einrichten. "
+msgstr ""
+"Qui puoi impostare il logo e il nome della tua piattaforma di quartiere. "
 
-#: functions.php:952 pages/page-quartier.php:42
+#: functions.php:950 pages/page-quartier.php:43
 msgid "Zu den Einstellungen"
 msgstr "Vai alle impostazioni"
 
-#: functions.php:961
+#: functions.php:959
 msgid "Wir empfehlen das Plugin "
 msgstr "Consigliamo di installare"
 
-#: functions.php:961
-msgid " zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
+#: functions.php:959
+msgid ""
+" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
 msgstr "il plugin per garantire una consegna affidabile delle email."
 
-#: functions.php:962
+#: functions.php:960
 msgid "installieren"
 msgstr "installa"
 
-#: functions.php:1821
+#: functions.php:979
+msgid ""
+"Installiere die neue Version der Quartiersplattform und bringe neue features "
+"in dein Quartier. Der genaue ablauf wird in der <a href=\"https://github.com/"
+"studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"
+"\">Dokumentation</a> beschrieben."
+msgstr ""
+"Installa la nuova versione della piattaforma di quartiere e porta nuove "
+"funzionalità al tuo quartiere. La procedura esatta è descritta nella <a href="
+"\"https://github.com/studio-arrenberg/quartiersplattform/blob/main/"
+"documentation/documentation.md\">documentazione</a>."
+
+#: functions.php:980
+msgid "Link zum Download"
+msgstr "Link per scaricare"
+
+#: functions.php:1834
 msgid "Copyright"
 msgstr "Copyright"
 
-#: functions.php:2109
-msgid "Datei kann nicht gespeichert werden!"
-msgstr "Impossibile salvare il file!"
-
-#: functions.php:2134
-msgid "Termin im Kalender speichern"
-msgstr "Salva l'appuntamento nel calendario"
-
-#: functions.php:2518
+#: functions.php:2426
 msgid "Morgen"
 msgstr "Domani"
 
-#: functions.php:2522
+#: functions.php:2430
 msgid "Heute"
 msgstr "Oggi"
 
-#: functions.php:2526
+#: functions.php:2434
 msgid "Gestern"
 msgstr "Ieri"
 
-#: functions.php:2542
+#: functions.php:2452
 msgid " um "
 msgstr " alle "
 
-#: functions.php:2595 functions.php:2599
+#: functions.php:2471 functions.php:2475
 msgid "noch "
 msgstr "ancora "
 
-#: functions.php:2595
+#: functions.php:2471
 msgid " Minuten"
 msgstr " minuti"
 
-#: functions.php:2599
+#: functions.php:2475
 msgid " Stunden"
 msgstr " ore"
 
-#: functions.php:2603
+#: functions.php:2479
 msgid "bis um "
 msgstr "fino alle "
 
-#: functions.php:2607
+#: functions.php:2483
 msgid "bis Morgen"
 msgstr "fino a domani"
 
-#: functions.php:2611 functions.php:2614
+#: functions.php:2487 functions.php:2490
 msgid "vom "
 msgstr "dal "
 
-#: functions.php:2618
+#: functions.php:2494
 msgid "bis zum "
 msgstr "fino al "
 
-#: functions.php:3276
+#: functions.php:3152
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr "Modifica il contenuto nel sistema Wordpress"
 
-#: functions.php:3448
+#: functions.php:3329
 msgid "Nicht Sichtbar"
 msgstr "Visibile"
 
@@ -796,8 +933,12 @@ msgid "Hier kannst du noch keine Projekte entdecken."
 msgstr "Qui non puoi ancora scoprire alcun progetto."
 
 #: future_translation.php:9 future_translation.php:18 pages/projekt-feed.php:48
-msgid "Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
-msgstr "Se vuoi cambiare qualcosa insieme ad altre persone nel tuo quartiere, puoi rendere pubblico il tuo progetto e lavorarci sopra."
+msgid ""
+"Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern "
+"willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
+msgstr ""
+"Se vuoi cambiare qualcosa insieme ad altre persone nel tuo quartiere, puoi "
+"rendere pubblico il tuo progetto e lavorarci sopra."
 
 #: future_translation.php:12
 msgid "Hier gibt es leider noch keine Veranstaltungen."
@@ -805,11 +946,16 @@ msgstr "Purtroppo qui non ci sono ancora eventi."
 
 #: future_translation.php:13
 msgid ""
-"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu erhalten.\n"
-"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream Link veröffentlichen."
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
+"veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu "
+"erhalten.\n"
+"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream "
+"Link veröffentlichen."
 msgstr ""
-"Se stai ospitando un evento culturale o una festa nel tuo quartiere, puoi pubblicarlo qui per attirare più visitatori.\n"
-"Se il tuo evento è solo online, puoi pubblicare un link per il live streaming."
+"Se stai ospitando un evento culturale o una festa nel tuo quartiere, puoi "
+"pubblicarlo qui per attirare più visitatori.\n"
+"Se il tuo evento è solo online, puoi pubblicare un link per il live "
+"streaming."
 
 #: future_translation.php:17
 msgid "In der Projektchronik wurde noch nichts veröffentlicht."
@@ -820,8 +966,12 @@ msgid "Es gibt ein neues Projektupdate."
 msgstr "C'è un nuovo aggiornamento del progetto."
 
 #: future_translation.php:25
-msgid "Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei deinen Lieblingsprojekten."
-msgstr "Qui puoi visualizzare il nuovo aggiornamento del progetto e rimanere informato sui tuoi progetti preferiti."
+msgid ""
+"Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei "
+"deinen Lieblingsprojekten."
+msgstr ""
+"Qui puoi visualizzare il nuovo aggiornamento del progetto e rimanere "
+"informato sui tuoi progetti preferiti."
 
 #: future_translation.php:26 future_translation.php:56
 msgid "Projektupdate von"
@@ -839,15 +989,18 @@ msgstr "Qualcuno ha commentato il tuo messaggio."
 msgid "hat deine Nachricht kommentiert."
 msgstr "ha commentato il tuo messaggio."
 
-#: future_translation.php:32 future_translation.php:40 future_translation.php:48
+#: future_translation.php:32 future_translation.php:40
+#: future_translation.php:48
 msgid "Hier kannst du dir den Kommentar ansehen."
 msgstr "Puoi vedere il commento qui."
 
-#: future_translation.php:33 future_translation.php:41 future_translation.php:49
+#: future_translation.php:33 future_translation.php:41
+#: future_translation.php:49
 msgid "Kommentar von"
 msgstr "Commento di"
 
-#: future_translation.php:34 future_translation.php:42 future_translation.php:50
+#: future_translation.php:34 future_translation.php:42
+#: future_translation.php:50
 msgid "Zum Kommentar"
 msgstr "Vai al commento"
 
@@ -880,8 +1033,12 @@ msgid "Es gibt Neuigkeiten in deinem Quartier."
 msgstr "Ci sono novità nel tuo quartiere."
 
 #: future_translation.php:55
-msgid "Sie dir die neuen Beiträge an und bleibe informiert bei deinen Lieblingsprojekten."
-msgstr "Dai un'occhiata ai nuovi contenuti e resta informato sui tuoi progetti preferiti."
+msgid ""
+"Sie dir die neuen Beiträge an und bleibe informiert bei deinen "
+"Lieblingsprojekten."
+msgstr ""
+"Dai un'occhiata ai nuovi contenuti e resta informato sui tuoi progetti "
+"preferiti."
 
 #: future_translation.php:57
 msgid "Umfrage von"
@@ -900,12 +1057,61 @@ msgid "Neuigkeiten ansehen"
 msgstr "Visualizza novità"
 
 #: future_translation.php:64
-msgid "Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
-msgstr "Indossi una giacca quando fa freddo? O un cappuccio quando piove? La protezione del clima deve essere semplice e pratica quanto affrontare il tempo. Come funziona? Usa semplicemente la tua elettricità quando il clima energetico è verde. Questa è la protezione del clima che tutti possono attuare. Perché il modo più semplice per ridurre le proprie emissioni di C02 è far funzionare lavatrice, lavastoviglie, asciugatrice e altri dispositivi durante le fasi verdi. Durante queste fasi viene emesso fino al 70% in meno di CO2. "
+msgid ""
+"Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es "
+"regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch "
+"Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das "
+"Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der "
+"einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, "
+"Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu "
+"lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
+msgstr ""
+"Indossi una giacca quando fa freddo? O un cappuccio quando piove? La "
+"protezione del clima deve essere semplice e pratica quanto affrontare il "
+"tempo. Come funziona? Usa semplicemente la tua elettricità quando il clima "
+"energetico è verde. Questa è la protezione del clima che tutti possono "
+"attuare. Perché il modo più semplice per ridurre le proprie emissioni di C02 "
+"è far funzionare lavatrice, lavastoviglie, asciugatrice e altri dispositivi "
+"durante le fasi verdi. Durante queste fasi viene emesso fino al 70% in meno "
+"di CO2. "
 
 #: future_translation.php:66
-msgid "Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der Bergischen Universität und dem Klimaquartier Arrenberg wurden diese Berechnungen in Raster übertragen und das hier sichtbare Energiewetter entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig von den eigenen finanziellen Möglichkeiten an der Energiewende und dem Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein smarter Schritt, den alle gehen können. "
-msgstr "L'elettricità che utilizziamo ha diversi livelli di emissioni di CO2 in qualsiasi momento del giorno e della notte. A seconda di quanta elettricità prodotta a livello regionale e rigenerativo circola effettivamente nella rete e di quanto è alto il consumo in tutta la città. Ad esempio, se al momento viene fornita molta energia eolica dalla Germania settentrionale, energia solare dal sud o dalla propria produzione, la corrente emissione reale di CO2 diminuisce. I servizi pubblici di Wuppertal calcolano questa reale e oraria emissione di CO2 dell'elettricità che consumiamo da diversi anni. Insieme alla Bergische Universität e al Klimaquartier Arrenberg, questi calcoli sono stati trasferiti alle reti ed è stato sviluppato il clima energetico visibile qui. Mostra nelle fasi verde, giallo e rosso su tre livelli se le emissioni di CO2 sono alte o basse ora o nelle prossime ore e giorni. Rimandare piuttosto che rinunciare. Utilizza i dispositivi esistenti invece di acquistarne subito di nuovi. In questo modo ogni famiglia può contribuire alla transizione energetica e alla protezione del clima, indipendentemente dalle proprie risorse finanziarie. Questo non risolve tutti i problemi, ma è un passo intelligente che tutti possono fare. "
+msgid ""
+"Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen "
+"unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und "
+"regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der "
+"gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft "
+"aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion "
+"geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler "
+"Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen "
+"CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der "
+"Bergischen Universität und dem Klimaquartier Arrenberg wurden diese "
+"Berechnungen in Raster übertragen und das hier sichtbare Energiewetter "
+"entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob "
+"der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch "
+"oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt "
+"sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig "
+"von den eigenen finanziellen Möglichkeiten an der Energiewende und dem "
+"Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein "
+"smarter Schritt, den alle gehen können. "
+msgstr ""
+"L'elettricità che utilizziamo ha diversi livelli di emissioni di CO2 in "
+"qualsiasi momento del giorno e della notte. A seconda di quanta elettricità "
+"prodotta a livello regionale e rigenerativo circola effettivamente nella "
+"rete e di quanto è alto il consumo in tutta la città. Ad esempio, se al "
+"momento viene fornita molta energia eolica dalla Germania settentrionale, "
+"energia solare dal sud o dalla propria produzione, la corrente emissione "
+"reale di CO2 diminuisce. I servizi pubblici di Wuppertal calcolano questa "
+"reale e oraria emissione di CO2 dell'elettricità che consumiamo da diversi "
+"anni. Insieme alla Bergische Universität e al Klimaquartier Arrenberg, "
+"questi calcoli sono stati trasferiti alle reti ed è stato sviluppato il "
+"clima energetico visibile qui. Mostra nelle fasi verde, giallo e rosso su "
+"tre livelli se le emissioni di CO2 sono alte o basse ora o nelle prossime "
+"ore e giorni. Rimandare piuttosto che rinunciare. Utilizza i dispositivi "
+"esistenti invece di acquistarne subito di nuovi. In questo modo ogni "
+"famiglia può contribuire alla transizione energetica e alla protezione del "
+"clima, indipendentemente dalle proprie risorse finanziarie. Questo non "
+"risolve tutti i problemi, ma è un passo intelligente che tutti possono fare. "
 
 #: future_translation.php:68
 msgid "Energieampel"
@@ -967,17 +1173,177 @@ msgstr "selezionare il verde"
 msgid "gelbe auswählen"
 msgstr "selezionare il giallo"
 
-#: header.php:76
+#: future_translation.php:101 future_translation.php:110
+msgid "Montag"
+msgstr "Lunedì"
+
+#: future_translation.php:102 future_translation.php:111
+msgid "Dienstag"
+msgstr "Martedì"
+
+#: future_translation.php:103 future_translation.php:112
+msgid "Mittwoch"
+msgstr "Mercoledì"
+
+#: future_translation.php:104 future_translation.php:113
+msgid "Donnerstag"
+msgstr "Giovedì"
+
+#: future_translation.php:105 future_translation.php:114
+msgid "Freitag"
+msgstr "Venerdì"
+
+#: future_translation.php:106 future_translation.php:115
+msgid "Samstag"
+msgstr "Sabato"
+
+#: future_translation.php:107 future_translation.php:116
+msgid "Sonntag"
+msgstr "Domenica"
+
+#: future_translation.php:119
+msgid "January"
+msgstr "Gennaio"
+
+#: future_translation.php:120
+msgid "February"
+msgstr "Febbraio"
+
+#: future_translation.php:121
+msgid "March"
+msgstr "Marzo"
+
+#: future_translation.php:122
+msgid "April"
+msgstr "Aprile"
+
+#: future_translation.php:123
+msgid "May"
+msgstr "Maggio"
+
+#: future_translation.php:124
+msgid "June"
+msgstr "Giugno"
+
+#: future_translation.php:125
+msgid "July"
+msgstr "Luglio"
+
+#: future_translation.php:126
+msgid "August"
+msgstr "Agosto"
+
+#: future_translation.php:127
+msgid "September"
+msgstr "Settembre"
+
+#: future_translation.php:128
+msgid "October"
+msgstr "Ottobre"
+
+#: future_translation.php:129
+msgid "November"
+msgstr "Novembre"
+
+#: future_translation.php:130
+msgid "December"
+msgstr "Dicembre"
+
+#: header.php:121
 msgid "Horizontal"
 msgstr "Orizzontale"
 
-#: header.php:83 setup/main.php:50 setup/main.php:180 setup/projekte.php:27 setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75 ultimate-member/email/welcome_email.php:27
+#: header.php:128 setup/main.php:50 setup/main.php:180 setup/projekte.php:27
+#: setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75
+#: ultimate-member/email/welcome_email.php:27
 msgid "Projekte"
 msgstr "Progetti"
 
-#: header.php:210
-msgid "Zurück"
-msgstr "Indietro"
+#: inc/starter-content.php:39
+msgctxt "Theme starter content"
+msgid "The New UMoMA Opens its Doors"
+msgstr ""
+
+#: inc/starter-content.php:48
+msgid "The New UMoMA Opens its Doors"
+msgstr ""
+
+#: inc/starter-content.php:56
+msgid ""
+"The premier destination for modern art in Northern Sweden. Open from 10 AM "
+"to 6 PM every day during the summer months."
+msgstr ""
+
+#: inc/starter-content.php:67
+msgid "Works and Days"
+msgstr ""
+
+#: inc/starter-content.php:70 inc/starter-content.php:102
+msgid "August 1 -- December 1"
+msgstr ""
+
+#: inc/starter-content.php:73 inc/starter-content.php:88
+#: inc/starter-content.php:105 inc/starter-content.php:120
+msgid "Read More"
+msgstr ""
+
+#: inc/starter-content.php:82
+msgid "Theatre of Operations"
+msgstr "Teatro delle operazioni"
+
+#: inc/starter-content.php:85 inc/starter-content.php:117
+msgid "October 1 -- December 1"
+msgstr ""
+
+#: inc/starter-content.php:99
+msgid "The Life I Deserve"
+msgstr ""
+
+#: inc/starter-content.php:114
+msgid "From Signac to Matisse"
+msgstr ""
+
+#: inc/starter-content.php:130
+msgid ""
+"&#8220;Cyborgs, as the philosopher Donna Haraway established, are not "
+"reverent. They do not remember the cosmos.&#8221;"
+msgstr ""
+
+#: inc/starter-content.php:134
+msgid ""
+"With seven floors of striking architecture, UMoMA shows exhibitions of "
+"international contemporary art, sometimes along with art historical "
+"retrospectives. Existential, political and philosophical issues are "
+"intrinsic to our programme. As visitor you are invited to guided tours "
+"artist talks, lectures, film screenings and other events with free admission"
+msgstr ""
+
+#: inc/starter-content.php:137
+msgid ""
+"The exhibitions are produced by UMoMA in collaboration with artists and "
+"museums around the world and they often attract international attention. "
+"UMoMA has received a Special Commendation from the European Museum of the "
+"Year, and was among the top candidates for the Swedish Museum of the Year "
+"Award as well as for the Council of Europe Museum Prize."
+msgstr ""
+
+#: inc/starter-content.php:145
+msgid "Become a Member and Get Exclusive Offers!"
+msgstr ""
+
+#: inc/starter-content.php:148
+msgid ""
+"Members get access to exclusive exhibits and sales. Our memberships cost "
+"$99.99 and are billed annually."
+msgstr ""
+
+#: inc/starter-content.php:151
+msgid "Join the Club"
+msgstr ""
+
+#: inc/starter-content.php:197
+msgid "Social Links Menu"
+msgstr "Menu dei link sociali"
 
 #. translators: %s: Post title. Only visible to screen readers.
 #: inc/template-tags.php:207
@@ -998,7 +1364,8 @@ msgstr "By %s"
 msgid "Post date"
 msgstr "Post date"
 
-#: inc/template-tags.php:398 template-parts/content-cover.php:70 template-parts/entry-header.php:36
+#: inc/template-tags.php:398 template-parts/content-cover.php:70
+#: template-parts/entry-header.php:36
 msgid "Categories"
 msgstr "Categories"
 
@@ -1027,8 +1394,12 @@ msgstr[0] "We found %s result for your search."
 msgstr[1] "We found %s results for your search."
 
 #: index.php:48
-msgid "We could not find any results for your search. You can give it another try through the search form below."
-msgstr "We could not find any results for your search. You can give it another try through the search form below."
+msgid ""
+"We could not find any results for your search. You can give it another try "
+"through the search form below."
+msgstr ""
+"We could not find any results for your search. You can give it another try "
+"through the search form below."
 
 #: index.php:51
 msgid "Nothing Found"
@@ -1063,8 +1434,12 @@ msgid " deine Quartiersplattform"
 msgstr " la tua piattaforma di quartiere"
 
 #: maintenance.php:104 maintenance.php:158
-msgid "Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an Umfragen teilnehmen und eigene Projekte über die Plattform planen."
-msgstr "Presto troverai qui notizie interessanti sui progetti di quartiere, potrai partecipare a sondaggi e pianificare i tuoi progetti tramite la piattaforma."
+msgid ""
+"Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an "
+"Umfragen teilnehmen und eigene Projekte über die Plattform planen."
+msgstr ""
+"Presto troverai qui notizie interessanti sui progetti di quartiere, potrai "
+"partecipare a sondaggi e pianificare i tuoi progetti tramite la piattaforma."
 
 #: maintenance.php:108
 msgid "Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten?"
@@ -1096,151 +1471,306 @@ msgstr "Si prega di installare Advanced Custom Fields"
 
 #: maintenance.php:176
 msgid "Bitte installiere das Plugin ACF über die Wordpress Plugin Seite."
-msgstr "Si prega di installare il plugin ACF tramite la pagina plugin di Wordpress."
+msgstr ""
+"Si prega di installare il plugin ACF tramite la pagina plugin di Wordpress."
 
 #: maintenance.php:188
 msgid "Bitte Ultimate Member installieren"
 msgstr "Si prega di installare Ultimate Member"
 
 #: maintenance.php:190
-msgid "Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite und stelle die in der Dokumentation beschriebenen Einstellungen ein."
-msgstr "Si prega di installare il plugin Ultimate Member tramite la pagina plugin di Wordpress e configurare le impostazioni descritte nella documentazione."
+msgid ""
+"Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite "
+"und stelle die in der Dokumentation beschriebenen Einstellungen ein."
+msgstr ""
+"Si prega di installare il plugin Ultimate Member tramite la pagina plugin di "
+"Wordpress e configurare le impostazioni descritte nella documentazione."
 
 #: maintenance.php:203
 msgid "Bitte WP Mail SMTP installieren"
 msgstr "Si prega di installare WP Mail SMTP"
 
 #: maintenance.php:205
-msgid " Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
-msgstr " Si prega di installare il plugin WP Mail SMTP tramite la pagina plugin di Wordpress e configurare le impostazioni di posta elettronica descritte nella documentazione."
+msgid ""
+" Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite "
+"stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
+msgstr ""
+" Si prega di installare il plugin WP Mail SMTP tramite la pagina plugin di "
+"Wordpress e configurare le impostazioni di posta elettronica descritte nella "
+"documentazione."
 
-#: pages/page-anmerkungen.php:26 pages/page-quartier.php:164 pages/single-anmerkungen.php:26
-msgid "Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung."
-msgstr "Condividi i tuoi commenti o suggerimenti sulla piattaforma di quartiere. Qualcosa non funziona o hai un'idea per un ulteriore sviluppo?"
-
-#: pages/page-anmerkungen.php:27 pages/page-anmerkungen.php:83 pages/page-quartier.php:165 pages/single-anmerkungen.php:27
-msgid "Feedback zur Quartiersplattform"
-msgstr "Nome della piattaforma di quartiere"
+#: pages/page-anmerkungen.php:26 pages/page-plattform.php:137
+#: pages/page-quartier.php:171 pages/single-anmerkungen.php:26
+msgid ""
+"Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert "
+"etwas nicht oder hast du eine Idee zur weiterentwicklung."
+msgstr ""
+"Condividi i tuoi commenti o suggerimenti sulla piattaforma di quartiere. "
+"Qualcosa non funziona o hai un'idea per un ulteriore sviluppo?"
 
 #: pages/page-anmerkungen.php:52
 msgid "Feedback senden"
 msgstr "Invia il feedback"
 
-#: pages/page-anmerkungen.php:101 pages/page-projekte.php:101 pages/page-veranstaltungen.php:47 pages/single-anmerkungen.php:53
-msgid "Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen."
-msgstr "Registrati sulla tua piattaforma di quartiere per creare i tuoi progetti, sondaggi ed eventi."
+#: pages/page-anmerkungen.php:101 pages/single-anmerkungen.php:53
+msgid ""
+"Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen "
+"und Veranstaltungen zu erstellen."
+msgstr ""
+"Registrati sulla tua piattaforma di quartiere per creare i tuoi progetti, "
+"sondaggi ed eventi."
 
-#: pages/page-anmerkungen.php:102 pages/page-projekte.php:102 pages/page-veranstaltungen.php:48 pages/single-anmerkungen.php:54
+#: pages/page-anmerkungen.php:102 pages/single-anmerkungen.php:54
 msgid "Jetzt Registieren"
 msgstr "Registrati ora"
 
-#: pages/page-profil.php:67 setup/main.php:181
+#: pages/page-einstellungen.php:36
+msgid "Quartiersplattform Einstellungen"
+msgstr "Impostazioni della piattaforma di vicinato"
+
+#: pages/page-einstellungen.php:37
+msgid ""
+"Hier kannst du die Einstellungen für die Quartiersplattform festlegen. Alle "
+"Einstellungen treten direkt in Kraft und gelten für die gesamte "
+"Quartiersseite."
+msgstr ""
+"Qui puoi definire le impostazioni per la piattaforma del trimestre. Tutte le "
+"impostazioni hanno effetto immediato e si applicano all'intera pagina del "
+"quartiere."
+
+#: pages/page-einstellungen.php:47 pages/page-quartier.php:174
+msgid "Allgemeine und öffentliche Informationen zu der Quartiersplattform."
+msgstr "Informazioni generali e pubbliche sulla piattaforma di quartiere."
+
+#: pages/page-einstellungen.php:64
+msgid "Einstellungen speichern"
+msgstr "Salvare le impostazioni"
+
+#. Theme Name of the plugin/theme
+#: pages/page-plattform.php:30 setup/main.php:189 setup/settings.php:26
+msgid "Quartiersplattform"
+msgstr "Piattaforma di quartiere"
+
+#: pages/page-plattform.php:31
+msgid "Allgemeine Informationen zu deiner Quartiersplattform"
+msgstr "Informazioni generali sulla piattaforma del tuo trimestre"
+
+#: pages/page-plattform.php:58
+msgid "Es gibt eine neue Version"
+msgstr "C'è una nuova versione"
+
+#: pages/page-plattform.php:58
+msgid ""
+"Installiere die neue Version der Quartiersplattform und bringe neue Features "
+"in dein Quartier. Der genaue ablauf wird in der <a href=\"https://github.com/"
+"studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"
+"\">Dokumentation</a> beschrieben unter "
+msgstr ""
+"Installa la nuova versione della piattaforma di quartiere e porta nuove "
+"funzionalità al tuo quartiere. La procedura esatta è descritta nella <a href="
+"\"https://github.com/studio-arrenberg/quartiersplattform/blob/main/"
+"documentation/documentation.md\">documentazione</a> sotto "
+
+#: pages/page-plattform.php:61
+msgid ""
+"Bearbeite die Einstellungen der Quartiersplattform. Hier kannst du den "
+"Seitennamen, das Bild sowie den Text für die Quartiersstartseite festlegen."
+msgstr ""
+"Modifica le impostazioni della piattaforma di quartiere. Qui puoi impostare "
+"il nome della pagina, l'immagine e il testo per la pagina iniziale del "
+"quartiere."
+
+#: pages/page-plattform.php:73
+msgid "Admins der Quartiersplattform"
+msgstr "Amministratori della piattaforma del trimestre"
+
+#: pages/page-plattform.php:74
+msgid ""
+"Die Quartiersplattform wird von folgenden Personen und Vereinen gehostet. "
+"Wenn du Fragen hast oder Probleme wende dich bitte an uns."
+msgstr ""
+"La piattaforma di vicinato è ospitata dalle seguenti persone e associazioni. "
+"Se avete domande o problemi, contattateci."
+
+#: pages/page-plattform.php:100
+msgid "Installierte Plugins"
+msgstr "Plugin installati"
+
+#: pages/page-plattform.php:101
+msgid ""
+"Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen "
+"gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns."
+msgstr ""
+"La Quartiersplaattform Moabit-West è ospitata dalle seguenti persone e "
+"associazioni. Se avete domande o problemi, contattateci."
+
+#: pages/page-plattform.php:122
+msgid "Dieses Plugin ist Aktiv"
+msgstr "Questo plugin è attivo"
+
+#: pages/page-plattform.php:138 pages/page-quartier.php:172
+msgid "Zur Wunschliste"
+msgstr "Vai alla lista dei preferiti"
+
+#: pages/page-profil.php:96 setup/main.php:181
 msgid "Profil"
 msgstr "Profilo"
 
-#: pages/page-profil.php:71 pages/single-projekte.php:82
-msgid "Einstellungen"
-msgstr "Impostazioni"
+#: pages/page-profil.php:136
+msgid "Deine Kontaktinformationen"
+msgstr "Le sue informazioni di contatto"
 
-#: pages/page-profil.php:146
+#: pages/page-profil.php:140
+msgid ""
+"Als Administrator dieser Quartiersplattform werden deine "
+"Kontaktinformationen allen Besuchern angezeigt."
+msgstr ""
+"Come amministratore di questa piattaforma di alloggi, le tue informazioni di "
+"contatto saranno mostrate a tutti i visitatori."
+
+#: pages/page-profil.php:143
+msgid ""
+"Deine Kontaktinformationen werden nur registrierten Nutzern angezeigt und "
+"können daher nicht von Suchmaschinen gefunden werden."
+msgstr ""
+"Le tue informazioni di contatto saranno mostrate solo agli utenti registrati "
+"e quindi non potranno essere trovate dai motori di ricerca."
+
+#: pages/page-profil.php:174
 msgid "Deine Beiträge"
 msgstr "Contenuti in bacheca"
 
-#: pages/page-profil.php:177
+#: pages/page-profil.php:205
 msgid "Bearbeite deine Kontaktinformationen"
 msgstr "Modifica le tue informazioni di contatto"
 
-#: pages/page-profil.php:186 pages/page-profil.php:205 pages/single-nachrichten.php:185 pages/single-projekte.php:184 pages/single-projekte.php:209 pages/single-projekte.php:285 pages/single-umfragen.php:112 pages/single-veranstaltungen.php:202
+#: pages/page-profil.php:213 pages/page-profil.php:231
+#: pages/single-nachrichten.php:156 pages/single-projekte.php:184
+#: pages/single-projekte.php:209 pages/single-projekte.php:285
+#: pages/single-umfragen.php:112 pages/single-veranstaltungen.php:202
 msgid "Änderungen speichern"
 msgstr "Salva le modifiche"
 
-#: pages/page-profil.php:215
+#: pages/page-profil.php:241
 msgid "Profil bearbeiten"
 msgstr "Modifica il profilo"
 
-#: pages/page-profil.php:219
+#: pages/page-profil.php:245
 msgid "Abmelden"
 msgstr "Cancella iscrizione"
 
 #: pages/page-projekte.php:23
 msgid ""
-"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
-"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  "
+"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das "
+"Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
+"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche "
+"es und halte deine Nachbarn auf dem Laufenden.  "
 msgstr ""
-"I progetti sono il punto focale nel tuo quartiere. Esplora cosa sta succedendo nel quartiere, trova attività entusiasmanti e lasciati coinvolgere.\n"
-"\t\t\tSei già il referente di un progetto locale? Pubblicalo e tieni informati i tuoi vicini.  "
+"I progetti sono il punto focale nel tuo quartiere. Esplora cosa sta "
+"succedendo nel quartiere, trova attività entusiasmanti e lasciati "
+"coinvolgere.\n"
+"\t\t\tSei già il referente di un progetto locale? Pubblicalo e tieni "
+"informati i tuoi vicini.  "
 
 #: pages/page-projekte.php:25
 msgid "Entdecke alle Projekte aus deinem Quartier"
 msgstr "Scopri tutti i progetti nel tuo quartiere"
 
-#: pages/page-projekte.php:83
-msgid "Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
-msgstr "Sulla piattaforma di quartiere non è stato ancora pubblicato alcun progetto. Puoi attivarti, tu stesso, e creare il tuo primo progetto."
+#: pages/page-projekte.php:82
+msgid ""
+"Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du "
+"kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
+msgstr ""
+"Sulla piattaforma di quartiere non è stato ancora pubblicato alcun progetto. "
+"Puoi attivarti, tu stesso, e creare il tuo primo progetto."
 
-#: pages/page-projekte.php:84
+#: pages/page-projekte.php:83
 msgid "Es wurde noch keine Projekte veröffentlicht"
 msgstr "Non è stato ancora pubblicato alcun progetto"
 
-#: pages/page-quartier.php:42
+#: pages/page-quartier.php:43
 msgid "Bild und Text für die Startseite festlegen"
 msgstr "Imposta immagine e testo per la pagina iniziale"
 
-#: pages/page-quartier.php:42
-msgid "In den Quartierseinstellungen kannst du das Bild sowie den Text für die Startseite anpassen."
-msgstr "Nelle impostazioni del quartiere è possibile regolare l’immagine e il testo per la pagina iniziale."
+#: pages/page-quartier.php:43
+msgid ""
+"In den Quartierseinstellungen kannst du das Bild sowie den Text für die "
+"Startseite anpassen."
+msgstr ""
+"Nelle impostazioni del quartiere è possibile regolare l’immagine e il testo "
+"per la pagina iniziale."
 
-#: pages/page-quartier.php:84
+#: pages/page-quartier.php:91
 msgid "Lokale Projekte"
 msgstr "Progetti locali"
 
-#: pages/page-quartier.php:85
+#: pages/page-quartier.php:92
 msgid "Entdecke spannende Projekte aus deinem Quartier"
 msgstr "Scopri i progetti entusiasmanti del tuo quartiere"
 
-#: pages/page-quartier.php:86
-msgid "Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in deiner Nachbarschaft."
-msgstr "Dai un'occhiata ai progetti nel tuo vicinato e lasciati coinvolgere dalla vita del quartiere. Pubblica i tuoi progetti e trova sostegno nel tuo quartiere."
+#: pages/page-quartier.php:93
+msgid ""
+"Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am "
+"Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in "
+"deiner Nachbarschaft."
+msgstr ""
+"Dai un'occhiata ai progetti nel tuo vicinato e lasciati coinvolgere dalla "
+"vita del quartiere. Pubblica i tuoi progetti e trova sostegno nel tuo "
+"quartiere."
 
-#: pages/page-quartier.php:104
-msgid "Neuigkeiten & Projektupdates"
-msgstr "Novità e aggiornamenti sui progetti"
-
-#: pages/page-quartier.php:105
+#: pages/page-quartier.php:112
 msgid "Alle Projekte anzeigen"
 msgstr "Visualizza tutti i progetti"
 
-#: pages/page-quartier.php:112
+#: pages/page-quartier.php:119
 msgid "Veranstaltungen in deinem Quartier"
 msgstr "Eventi nel tuo quartiere"
 
-#: pages/page-quartier.php:113
-msgid "Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!"
-msgstr "Non perdere mai più un evento nel tuo quartiere. Indipendentemente dal fatto che si tratti del prossimo concerto o della prossima festa nel tuo vicinato, con la piattaforma di quartiere sei sempre aggiornato!"
+#: pages/page-quartier.php:120
+msgid ""
+"Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste "
+"Konzert oder die nächste Party in deiner Nachbarschaft - mit der "
+"Quartiersplattform bist du immer auf dem Laufenden!"
+msgstr ""
+"Non perdere mai più un evento nel tuo quartiere. Indipendentemente dal fatto "
+"che si tratti del prossimo concerto o della prossima festa nel tuo vicinato, "
+"con la piattaforma di quartiere sei sempre aggiornato!"
 
-#: pages/page-quartier.php:136
+#: pages/page-quartier.php:143
 msgid "Zu den Veranstaltungen"
 msgstr "Vai agli eventi"
 
-#: pages/page-quartier.php:143
-msgid "Ziele für nachhaltige Entwicklung im Quartier"
-msgstr "Obiettivi per lo sviluppo sostenibile nel quartiere"
+#: pages/page-quartier.php:151 pages/page-sdg.php:26
+msgid ""
+"Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung "
+"(Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht "
+"nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
+msgstr ""
+"Nel 2016, le Nazioni Unite hanno stabilito gli obiettivi per uno sviluppo "
+"sostenibile (Sustainable Development Goals, SDGs). Gli OSS non svolgono solo "
+"un ruolo importante a livello internazionale, ma anche a livello locale nel "
+"tuo quartiere."
 
-#: pages/page-quartier.php:144 pages/page-sdg.php:27
-msgid "Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
-msgstr "Nel 2016, le Nazioni Unite hanno stabilito gli obiettivi per uno sviluppo sostenibile (Sustainable Development Goals, SDGs). Gli OSS non svolgono solo un ruolo importante a livello internazionale, ma anche a livello locale nel tuo quartiere."
+#: pages/page-quartier.php:175
+msgid "Informationen zu deiner Quartiersplattform"
+msgstr "Informazioni sulla piattaforma del tuo quartiere"
 
-#: pages/page-quartier.php:165
-msgid "Zur Wunschliste"
-msgstr "Vai alla lista dei preferiti"
+#: pages/page-quartier.php:175
+msgid "Informationen"
+msgstr "Information"
 
-#: pages/page-sdg.php:24
+#: pages/page-sdg.php:23
 msgid " Ziele für nachhaltige Entwicklung"
 msgstr " Obiettivi per lo sviluppo sostenibile"
 
 #: pages/page-veranstaltungen.php:23
-msgid "Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden."
-msgstr "Qui puoi scoprire gli eventi locali nel tuo quartiere. Così non ti perderai nessuna attività nel tuo quartiere e rimarrai sempre aggiornato."
+msgid ""
+"Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So "
+"verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer "
+"auf dem Laufenden."
+msgstr ""
+"Qui puoi scoprire gli eventi locali nel tuo quartiere. Così non ti perderai "
+"nessuna attività nel tuo quartiere e rimarrai sempre aggiornato."
 
 #: pages/page-veranstaltungen.php:24
 msgid "Veranstaltungen in deiner Nachbarschaft"
@@ -1250,21 +1780,15 @@ msgstr "Eventi nel tuo vicinato"
 msgid "Archiv"
 msgstr "Archivio"
 
-#: pages/page-veranstaltungen.php:42
-msgid "Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und veröffentliche eine Veranstaltung."
-msgstr "Vorresti pubblicizzare un evento sulla tua piattaforma di quartiere? Crea un progetto e pubblica un evento."
-
-#: pages/page-veranstaltungen.php:43
-msgid "Erstelle eine Veranstaltung"
-msgstr "Crea un evento"
-
-#: pages/page-veranstaltungen.php:43
-msgid "Veröffentliche eine Veranstaltung"
-msgstr "Crea un evento"
-
 #: pages/projekt-feed.php:29
-msgid "Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt."
-msgstr "Qui puoi trovare tutte le notizie, i sondaggi e gli eventi nel tuo quartiere. Conosci le persone nel tuo quartiere e i loro progetti oppure crea il tuo progetto."
+msgid ""
+"Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem "
+"Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte "
+"kennen oder erstelle selbst ein eigenes Projekt."
+msgstr ""
+"Qui puoi trovare tutte le notizie, i sondaggi e gli eventi nel tuo "
+"quartiere. Conosci le persone nel tuo quartiere e i loro progetti oppure "
+"crea il tuo progetto."
 
 #: pages/projekt-feed.php:30
 msgid "Neuigkeiten und Projektupdates"
@@ -1294,11 +1818,12 @@ msgstr "Eliminare definitivamente questo progetto?"
 msgid "Nachricht löschen"
 msgstr "Elimina messaggio"
 
-#: pages/single-nachrichten.php:99 pages/single-umfragen.php:77 pages/single-veranstaltungen.php:126
+#: pages/single-nachrichten.php:102 pages/single-umfragen.php:77
+#: pages/single-veranstaltungen.php:126
 msgid "Dein Beitrag ist nicht öffentlich sichtbar."
 msgstr "Il tuo progetto non è visibile pubblicamente."
 
-#: pages/single-nachrichten.php:147 pages/single-veranstaltungen.php:238
+#: pages/single-nachrichten.php:191 pages/single-veranstaltungen.php:238
 msgid "Weitere Nachrichten und Veranstaltungen aus diesem Projekt"
 msgstr "Altre notizie ed eventi di questo progetto"
 
@@ -1327,8 +1852,12 @@ msgid "Projekt löschen"
 msgstr "Elimina progetto"
 
 #: pages/single-projekte.php:226
-msgid "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden unwiederruflich gelöscht."
-msgstr "È possibile eliminare solo i progetti pubblici. Tutti i contenuti del progetto verranno eliminati irrevocabilmente."
+msgid ""
+"Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
+"unwiederruflich gelöscht."
+msgstr ""
+"È possibile eliminare solo i progetti pubblici. Tutti i contenuti del "
+"progetto verranno eliminati irrevocabilmente."
 
 #: pages/single-projekte.php:227
 msgid "Dieses Projekt endgültig löschen?"
@@ -1380,7 +1909,8 @@ msgstr "Qui c’è la tua piattaforma di quartiere"
 msgid "Anmerkungen"
 msgstr "Accedi"
 
-#: setup/anmerkungen.php:135 setup/anmerkungen.php:136 setup/anmerkungen.php:140
+#: setup/anmerkungen.php:135 setup/anmerkungen.php:136
+#: setup/anmerkungen.php:140
 msgid "Status"
 msgstr "Stato"
 
@@ -1405,19 +1935,28 @@ msgid "Telefonnummer"
 msgstr "Numero di telefono"
 
 #: setup/kontakt.php:32
-msgid "Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder kontaktieren können."
-msgstr "Qui puoi inserire il tuo numero di telefono in modo che altri membri possano contattarti."
+msgid ""
+"Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder "
+"kontaktieren können."
+msgstr ""
+"Qui puoi inserire il tuo numero di telefono in modo che altri membri possano "
+"contattarti."
 
 #: setup/kontakt.php:50
 msgid "E-Mail"
 msgstr "Email"
 
 #: setup/kontakt.php:53
-msgid "Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer kontaktieren können."
-msgstr "Qui puoi inserire il tuo indirizzo email in modo che altri utenti possano contattarti."
+msgid ""
+"Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer "
+"kontaktieren können."
+msgstr ""
+"Qui puoi inserire il tuo indirizzo email in modo che altri utenti possano "
+"contattarti."
 
 #: setup/kontakt.php:100
-msgid "Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
+msgid ""
+"Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
 msgstr "Qui puoi raccontare un po’ di te e del rapporto con il tuo quartiere."
 
 #: setup/main.php:44
@@ -1428,7 +1967,8 @@ msgstr "Quartiere"
 msgid "Startseite"
 msgstr "Pagina iniziale"
 
-#: setup/main.php:178 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30 ultimate-member/email/welcome_email.php:33
+#: setup/main.php:178 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30
+#: ultimate-member/email/welcome_email.php:33
 msgid "Veranstaltungen"
 msgstr "Eventi"
 
@@ -1448,7 +1988,7 @@ msgstr "Crea offerta"
 msgid "Frage erstellen"
 msgstr "Crea domanda"
 
-#: setup/main.php:262
+#: setup/main.php:264
 msgid "Seiten Pin"
 msgstr "Pin pagine"
 
@@ -1464,7 +2004,8 @@ msgstr "Il tuo messaggio per il tuo progetto"
 msgid "Was gibt es Neues in deinem Projekt?"
 msgstr "Cosa c'è di nuovo nel tuo progetto?"
 
-#: setup/nachrichten.php:97 setup/projekte.php:170 setup/veranstaltungen.php:243
+#: setup/nachrichten.php:97 setup/projekte.php:170
+#: setup/veranstaltungen.php:243
 msgid "Bild"
 msgstr "Immagine"
 
@@ -1513,104 +2054,230 @@ msgid "Armut in all ihren Formen und überall beenden"
 msgstr "Porre fine alla povertà in tutte le sue forme e ovunque"
 
 #: setup/sdg.php:225
-msgid "Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf der Welt zu beseitigen. Allerdings wird extreme Armut mit einem gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu niedrig."
-msgstr "L'eliminazione della povertà estrema nel mondo è uno dei principali obiettivi di sviluppo entro il 2030. Tuttavia, la povertà estrema è definita con un limite attuale di 1,25 dollari a persona al giorno. I critici considerano questo valore troppo basso."
+msgid ""
+"Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf "
+"der Welt zu beseitigen. Allerdings wird extreme Armut mit einem "
+"gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur "
+"Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu "
+"niedrig."
+msgstr ""
+"L'eliminazione della povertà estrema nel mondo è uno dei principali "
+"obiettivi di sviluppo entro il 2030. Tuttavia, la povertà estrema è definita "
+"con un limite attuale di 1,25 dollari a persona al giorno. I critici "
+"considerano questo valore troppo basso."
 
 #: setup/sdg.php:226
 msgid "Keine Hungersnot"
 msgstr "Sconfiggere la fame"
 
 #: setup/sdg.php:226
-msgid "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern"
-msgstr "Porre fine alla fame, raggiungere la sicurezza alimentare, migliorare la nutrizione e promuovere un'agricoltura sostenibile"
+msgid ""
+"Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung "
+"erreichen und eine nachhaltige Landwirtschaft fördern"
+msgstr ""
+"Porre fine alla fame, raggiungere la sicurezza alimentare, migliorare la "
+"nutrizione e promuovere un'agricoltura sostenibile"
 
 #: setup/sdg.php:226
-msgid "Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der kleinen Nahrungsmittelproduzenten verdoppelt werden."
-msgstr "Entro il 2030, tutti dovrebbero \"garantire un accesso a cibo nutriente e sufficiente per tutto l’anno\". Sebbene oggi ci sia abbastanza cibo disponibile, non tutte le persone hanno accesso ad esso. Allo stesso modo, bisogna porre fine a tutte le forme di malnutrizione e raddoppiare la produttività agricola e il reddito dei produttori di cibo su piccola scala."
+msgid ""
+"Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, "
+"nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits "
+"heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht "
+"alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung "
+"beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der "
+"kleinen Nahrungsmittelproduzenten verdoppelt werden."
+msgstr ""
+"Entro il 2030, tutti dovrebbero \"garantire un accesso a cibo nutriente e "
+"sufficiente per tutto l’anno\". Sebbene oggi ci sia abbastanza cibo "
+"disponibile, non tutte le persone hanno accesso ad esso. Allo stesso modo, "
+"bisogna porre fine a tutte le forme di malnutrizione e raddoppiare la "
+"produttività agricola e il reddito dei produttori di cibo su piccola scala."
 
 #: setup/sdg.php:227
 msgid "Gute Gesundheitsversorgung"
 msgstr "Buona assistenza sanitaria"
 
 #: setup/sdg.php:227
-msgid "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern"
-msgstr "Garantire una vita sana e promuovere il benessere di tutti a tutte le età"
+msgid ""
+"Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr "
+"Wohlergehen fördern"
+msgstr ""
+"Garantire una vita sana e promuovere il benessere di tutti a tutte le età"
 
 #: setup/sdg.php:227
-msgid "Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der Zugang zu einer Gesundheitsversorgung für alle."
-msgstr "Entro il 2030 bisogna ridurre il tasso di mortalità materna globale a meno di 70 per ogni 100.000 bambini nati vivi. Porre fine alle morti prevenibili di neonati e bambini sotto i 5 anni di età. Tra gli obiettivi rivestono particolare importanza l’eliminazione delle epidemie di AIDS, tubercolosi, malaria e malattie tropicali trascurate, così come l'accesso all'assistenza sanitaria per tutti."
+msgid ""
+"Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 "
+"Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern "
+"unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die "
+"Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der "
+"vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der "
+"Zugang zu einer Gesundheitsversorgung für alle."
+msgstr ""
+"Entro il 2030 bisogna ridurre il tasso di mortalità materna globale a meno "
+"di 70 per ogni 100.000 bambini nati vivi. Porre fine alle morti prevenibili "
+"di neonati e bambini sotto i 5 anni di età. Tra gli obiettivi rivestono "
+"particolare importanza l’eliminazione delle epidemie di AIDS, tubercolosi, "
+"malaria e malattie tropicali trascurate, così come l'accesso all'assistenza "
+"sanitaria per tutti."
 
 #: setup/sdg.php:228
 msgid "Hochwertige Bildung"
 msgstr "Istruzione di qualità"
 
 #: setup/sdg.php:228
-msgid "Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten lebenslangen Lernens für alle fördern"
-msgstr "Fornire un’educazione di qualità, equa ed inclusiva, e opportunità di apprendimento per tutti"
+msgid ""
+"Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten "
+"lebenslangen Lernens für alle fördern"
+msgstr ""
+"Fornire un’educazione di qualità, equa ed inclusiva, e opportunità di "
+"apprendimento per tutti"
 
 #: setup/sdg.php:228
-msgid "Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, „dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und Berufsbildung formuliert."
-msgstr "L'obiettivo principale è garantire che entro il 2030 \"tutte le ragazze e i ragazzi completino un'istruzione primaria e secondaria paritaria, gratuita e di alta qualità\". In altri obiettivi vengono formulati standard per l'istruzione prescolare, nonché per l'istruzione superiore e la formazione professionale."
+msgid ""
+"Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, "
+"„dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und "
+"hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren "
+"Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und "
+"Berufsbildung formuliert."
+msgstr ""
+"L'obiettivo principale è garantire che entro il 2030 \"tutte le ragazze e i "
+"ragazzi completino un'istruzione primaria e secondaria paritaria, gratuita e "
+"di alta qualità\". In altri obiettivi vengono formulati standard per "
+"l'istruzione prescolare, nonché per l'istruzione superiore e la formazione "
+"professionale."
 
 #: setup/sdg.php:229
 msgid "Gleichberechtigung der Geschlechter"
 msgstr "Uguaglianza di genere"
 
 #: setup/sdg.php:229
-msgid "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen"
-msgstr "Raggiungere l’uguaglianza di genere ed emancipare tutte le donne e le ragazze"
+msgid ""
+"Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur "
+"Selbstbestimmung befähigen"
+msgstr ""
+"Raggiungere l’uguaglianza di genere ed emancipare tutte le donne e le ragazze"
 
 #: setup/sdg.php:229
-msgid "Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. Weitere Zielvorgaben befassen sich mit individuellen Formen der geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und ungleiche Rechte auf wirtschaftliche Ressourcen."
-msgstr "Tra le principali preoccupazioni c’è quella di porre fine a tutte le forme di discriminazione contro donne e ragazze ed eliminare la violenza contro di loro. Ulteriori obiettivi riguardano le forme individuali di discriminazione di genere, come il matrimonio forzato, la mancanza di pari opportunità nel raggiungimento di posizioni dirigenziali e la disparità di diritti alle risorse economiche."
+msgid ""
+"Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von "
+"Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. "
+"Weitere Zielvorgaben befassen sich mit individuellen Formen der "
+"geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, "
+"fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und "
+"ungleiche Rechte auf wirtschaftliche Ressourcen."
+msgstr ""
+"Tra le principali preoccupazioni c’è quella di porre fine a tutte le forme "
+"di discriminazione contro donne e ragazze ed eliminare la violenza contro di "
+"loro. Ulteriori obiettivi riguardano le forme individuali di discriminazione "
+"di genere, come il matrimonio forzato, la mancanza di pari opportunità nel "
+"raggiungimento di posizioni dirigenziali e la disparità di diritti alle "
+"risorse economiche."
 
 #: setup/sdg.php:230
 msgid "Sauberes Wasser und sanitäre Einrichtungen"
 msgstr "Acqua pulita e servizi igienico sanitari"
 
 #: setup/sdg.php:230
-msgid "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten"
-msgstr "Garantire a tutti la disponibilità e la gestione sostenibile dell’acqua e delle strutture igienico sanitarie"
+msgid ""
+"Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und "
+"Sanitärversorgung für alle gewährleisten"
+msgstr ""
+"Garantire a tutti la disponibilità e la gestione sostenibile dell’acqua e "
+"delle strutture igienico sanitarie"
 
 #: setup/sdg.php:230
-msgid "Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der Wasserqualität, die Effizienz der Wassernutzung und den Schutz wasserverbundener Ökosysteme."
-msgstr "Entro il 2030, è necessario raggiungere per tutti l'accesso ad acqua potabile sicura e accessibile, nonché a servizi igienico sanitari adeguati ed equi. Altri obiettivi includono, inoltre, il miglioramento della qualità dell'acqua, l'efficienza dell'utilizzo dell'acqua e la protezione degli ecosistemi legati all'acqua."
+msgid ""
+"Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie "
+"einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht "
+"werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der "
+"Wasserqualität, die Effizienz der Wassernutzung und den Schutz "
+"wasserverbundener Ökosysteme."
+msgstr ""
+"Entro il 2030, è necessario raggiungere per tutti l'accesso ad acqua "
+"potabile sicura e accessibile, nonché a servizi igienico sanitari adeguati "
+"ed equi. Altri obiettivi includono, inoltre, il miglioramento della qualità "
+"dell'acqua, l'efficienza dell'utilizzo dell'acqua e la protezione degli "
+"ecosistemi legati all'acqua."
 
 #: setup/sdg.php:231
 msgid "Erneuerbare Energien"
 msgstr "Energie rinnovabili"
 
 #: setup/sdg.php:231
-msgid "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern"
-msgstr "Assicurare a tutti l’accesso a sistemi di energia accessibili, sicuri, sostenibili e moderni"
+msgid ""
+"Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für "
+"alle sichern"
+msgstr ""
+"Assicurare a tutti l’accesso a sistemi di energia accessibili, sicuri, "
+"sostenibili e moderni"
 
 #: setup/sdg.php:231
-msgid "Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
-msgstr "L'accesso generale ai servizi energetici deve essere garantito entro il 2030. La quota di energia rinnovabile deve essere aumentata in modo significativo. Allo stesso tempo, il tasso di aumento dell'efficienza energetica deve essere raddoppiato."
+msgid ""
+"Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert "
+"werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. "
+"Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
+msgstr ""
+"L'accesso generale ai servizi energetici deve essere garantito entro il "
+"2030. La quota di energia rinnovabile deve essere aumentata in modo "
+"significativo. Allo stesso tempo, il tasso di aumento dell'efficienza "
+"energetica deve essere raddoppiato."
 
 #: setup/sdg.php:232
 msgid "Gute Arbeitsplätze und wirtschaftliches Wachstum"
 msgstr "Lavoro dignitoso e crescita economica"
 
 #: setup/sdg.php:232
-msgid "Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
-msgstr "Incentivare una crescita economica duratura, inclusiva e sostenibile, un’occupazione piena e produttiva ed un lavoro dignitoso per tutti"
+msgid ""
+"Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, "
+"produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
+msgstr ""
+"Incentivare una crescita economica duratura, inclusiva e sostenibile, "
+"un’occupazione piena e produttiva ed un lavoro dignitoso per tutti"
 
 #: setup/sdg.php:232
-msgid "Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz der Arbeitsrechte."
-msgstr "Grande enfasi è posta sulle questioni della crescita economica sostenibile e dell'occupazione. Un'elevata crescita economica è considerata necessaria soprattutto nei paesi meno sviluppati, almeno il 7 % all'anno. L'obiettivo è ottenere una maggiore produttività economica ed efficienza delle risorse in tutti i paesi. Altri obiettivi riguardano posti di lavoro dignitosi, occupazione piena e produttiva, cessazione del lavoro forzato, schiavitù e tratta di esseri umani e protezione dei diritti dei lavoratori."
+msgid ""
+"Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der "
+"Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am "
+"wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im "
+"Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und "
+"Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit "
+"menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der "
+"Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz "
+"der Arbeitsrechte."
+msgstr ""
+"Grande enfasi è posta sulle questioni della crescita economica sostenibile e "
+"dell'occupazione. Un'elevata crescita economica è considerata necessaria "
+"soprattutto nei paesi meno sviluppati, almeno il 7 % all'anno. L'obiettivo è "
+"ottenere una maggiore produttività economica ed efficienza delle risorse in "
+"tutti i paesi. Altri obiettivi riguardano posti di lavoro dignitosi, "
+"occupazione piena e produttiva, cessazione del lavoro forzato, schiavitù e "
+"tratta di esseri umani e protezione dei diritti dei lavoratori."
 
 #: setup/sdg.php:233
 msgid "Innovation und Infrastruktur"
 msgstr "Innovazione e infrastrutture"
 
 #: setup/sdg.php:233
-msgid "Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und nachhaltige Industrialisierung fördern und Innovation unterstützen"
-msgstr "Costruire un’infrastruttura resiliente e promuovere l’innovazione ed una industrializzazione equa, responsabile e sostenibile"
+msgid ""
+"Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und "
+"nachhaltige Industrialisierung fördern und Innovation unterstützen"
+msgstr ""
+"Costruire un’infrastruttura resiliente e promuovere l’innovazione ed una "
+"industrializzazione equa, responsabile e sostenibile"
 
 #: setup/sdg.php:233
-msgid "Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
-msgstr "L'obiettivo è costruire infrastrutture di alta qualità, affidabili, sostenibili e resilienti per sostenere lo sviluppo economico e il benessere umano. In particolare nei paesi in via di sviluppo, le piccole imprese industriali dovrebbero avere un migliore accesso ai servizi finanziari, alle catene del valore e ai mercati."
+msgid ""
+"Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und "
+"widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche "
+"Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in "
+"Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu "
+"Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
+msgstr ""
+"L'obiettivo è costruire infrastrutture di alta qualità, affidabili, "
+"sostenibili e resilienti per sostenere lo sviluppo economico e il benessere "
+"umano. In particolare nei paesi in via di sviluppo, le piccole imprese "
+"industriali dovrebbero avere un migliore accesso ai servizi finanziari, alle "
+"catene del valore e ai mercati."
 
 #: setup/sdg.php:234
 msgid "Weniger Ungleichheiten"
@@ -1621,20 +2288,46 @@ msgid "Ungleichheit in und zwischen Ländern verringern"
 msgstr "Ridurre l’ineguaglianza all’interno di e fra le nazioni"
 
 #: setup/sdg.php:234
-msgid "Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den globalen internationalen Wirtschafts- und Finanzinstitutionen“."
-msgstr "Un obiettivo importante è: \"Entro il 2030 raggiungere la crescita del reddito del 40% della popolazione nello strato sociale più basso ad un tasso superiore rispetto alla media nazionale\". L'obiettivo è anche, tra le altre cose, “migliore rappresentanza che dia voce ai paesi in via di sviluppo nelle istituzioni responsabili delle decisioni in materia di economia e finanza globale e internazionale”."
+msgid ""
+"Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen "
+"Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der "
+"Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte "
+"Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den "
+"globalen internationalen Wirtschafts- und Finanzinstitutionen“."
+msgstr ""
+"Un obiettivo importante è: \"Entro il 2030 raggiungere la crescita del "
+"reddito del 40% della popolazione nello strato sociale più basso ad un tasso "
+"superiore rispetto alla media nazionale\". L'obiettivo è anche, tra le altre "
+"cose, “migliore rappresentanza che dia voce ai paesi in via di sviluppo "
+"nelle istituzioni responsabili delle decisioni in materia di economia e "
+"finanza globale e internazionale”."
 
 #: setup/sdg.php:235
 msgid "Nachhaltige Städte und Gemeinden"
 msgstr "Città e comunità sostenibili"
 
 #: setup/sdg.php:235
-msgid "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten"
-msgstr "Rendere le città e gli insediamenti umani inclusivi, sicuri, duraturi e sostenibili"
+msgid ""
+"Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig "
+"gestalten"
+msgstr ""
+"Rendere le città e gli insediamenti umani inclusivi, sicuri, duraturi e "
+"sostenibili"
 
 #: setup/sdg.php:235
-msgid "„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
-msgstr "“Entro il 2030, garantire a tutti l’accesso ad alloggi adeguati, sicuri e convenienti e ai servizi di base e riqualificare i quartieri poveri.” Sono inclusi un sistema di trasporto per tutti, una pianificazione partecipata degli insediamenti, una migliore protezione civile, una riduzione dell'inquinamento ambientale e una maggiore capacità di recupero riguardo le conseguenze del cambiamento climatico."
+msgid ""
+"„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und "
+"zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören "
+"u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein "
+"verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und "
+"eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
+msgstr ""
+"“Entro il 2030, garantire a tutti l’accesso ad alloggi adeguati, sicuri e "
+"convenienti e ai servizi di base e riqualificare i quartieri poveri.” Sono "
+"inclusi un sistema di trasporto per tutti, una pianificazione partecipata "
+"degli insediamenti, una migliore protezione civile, una riduzione "
+"dell'inquinamento ambientale e una maggiore capacità di recupero riguardo le "
+"conseguenze del cambiamento climatico."
 
 #: setup/sdg.php:236
 msgid "Nachhaltiger Konsum und Produktion"
@@ -1645,191 +2338,306 @@ msgid "Nachhaltige Konsum- und Produktionsmuster sicherstellen"
 msgstr "Garantire modelli sostenibili di produzione e di consumo"
 
 #: setup/sdg.php:236
-msgid "Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ gefordert, während die Entwicklungsländer entsprechend ihrem Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
-msgstr "Per realizzare questo obiettivo, \"i paesi sviluppati sono in prima linea\", mentre i paesi in via di sviluppo dovrebbero adottare misure in base al loro livello di sviluppo e alle loro capacità. Argomenti importanti includono la gestione sostenibile e l'uso efficiente delle risorse naturali, il dimezzamento dei rifiuti alimentari e la gestione ecocompatibile di sostanze chimiche e rifiuti. L’obiettivo è anche razionalizzare i sussidi inefficienti per i combustibili fossili."
+msgid ""
+"Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ "
+"gefordert, während die Entwicklungsländer entsprechend ihrem "
+"Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als "
+"wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und "
+"effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der "
+"Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit "
+"Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche "
+"Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
+msgstr ""
+"Per realizzare questo obiettivo, \"i paesi sviluppati sono in prima linea\", "
+"mentre i paesi in via di sviluppo dovrebbero adottare misure in base al loro "
+"livello di sviluppo e alle loro capacità. Argomenti importanti includono la "
+"gestione sostenibile e l'uso efficiente delle risorse naturali, il "
+"dimezzamento dei rifiuti alimentari e la gestione ecocompatibile di sostanze "
+"chimiche e rifiuti. L’obiettivo è anche razionalizzare i sussidi "
+"inefficienti per i combustibili fossili."
 
 #: setup/sdg.php:237
 msgid "Maßnahmen zum Klimaschutz"
 msgstr "Misure per far fronte ai cambiamenti climatici"
 
 #: setup/sdg.php:237
-msgid "Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen ergreifen"
-msgstr "Promuovere azioni per combattere il cambiamento climatico e i suoi effetti"
+msgid ""
+"Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen "
+"ergreifen"
+msgstr ""
+"Promuovere azioni per combattere il cambiamento climatico e i suoi effetti"
 
 #: setup/sdg.php:237
-msgid "Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die nationalen Politiken, Strategien und Planungen einbezogen werden. Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab 2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in Entwicklungsländern aufzubringen."
-msgstr "Si applica in un obiettivo, \"rafforzare in tutti i paesi la capacità di ripresa e di adattamento ai rischi legati al clima e ai disastri naturali\". A tal fine, le misure di protezione del clima devono essere incorporate nelle politiche, strategie e pianificazioni nazionali. Viene espressamente ricordato l'obbligo dei paesi sviluppati di raccogliere 100 miliardi di dollari USA all'anno per la protezione del clima nei paesi in via di sviluppo dal 2020 in poi."
+msgid ""
+"Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die "
+"Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen "
+"in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die "
+"nationalen Politiken, Strategien und Planungen einbezogen werden. "
+"Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab "
+"2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in "
+"Entwicklungsländern aufzubringen."
+msgstr ""
+"Si applica in un obiettivo, \"rafforzare in tutti i paesi la capacità di "
+"ripresa e di adattamento ai rischi legati al clima e ai disastri naturali\". "
+"A tal fine, le misure di protezione del clima devono essere incorporate "
+"nelle politiche, strategie e pianificazioni nazionali. Viene espressamente "
+"ricordato l'obbligo dei paesi sviluppati di raccogliere 100 miliardi di "
+"dollari USA all'anno per la protezione del clima nei paesi in via di "
+"sviluppo dal 2020 in poi."
 
 #: setup/sdg.php:238
 msgid "Leben unter dem Wasser"
 msgstr "La vita sott’acqua"
 
 #: setup/sdg.php:238
-msgid "Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung erhalten und nachhaltig nutzen"
-msgstr "Conservare e utilizzare in modo durevole gli oceani, i mari e le risorse marine per uno sviluppo sostenibile"
+msgid ""
+"Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung "
+"erhalten und nachhaltig nutzen"
+msgstr ""
+"Conservare e utilizzare in modo durevole gli oceani, i mari e le risorse "
+"marine per uno sviluppo sostenibile"
 
 #: setup/sdg.php:238
-msgid "Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die Beendigung der Überfischung."
-msgstr "Tutti i tipi di inquinamento marino devono essere fermati o ridotti in modo significativo entro il 2025. Inoltre, gli ecosistemi marini e costieri devono essere gestiti in modo sostenibile e l'acidificazione degli oceani deve essere combattuta. Un obiettivo perseguito è anche una regolamentazione efficace delle attività di pesca e la fine della pesca eccessiva."
+msgid ""
+"Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich "
+"verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme "
+"nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. "
+"Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die "
+"Beendigung der Überfischung."
+msgstr ""
+"Tutti i tipi di inquinamento marino devono essere fermati o ridotti in modo "
+"significativo entro il 2025. Inoltre, gli ecosistemi marini e costieri "
+"devono essere gestiti in modo sostenibile e l'acidificazione degli oceani "
+"deve essere combattuta. Un obiettivo perseguito è anche una regolamentazione "
+"efficace delle attività di pesca e la fine della pesca eccessiva."
 
 #: setup/sdg.php:239
 msgid "Leben an Land"
 msgstr "La vita sulla terra"
 
 #: setup/sdg.php:239
-msgid "Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen"
-msgstr "Proteggere, ripristinare e favorire un uso sostenibile dell’ecosistema terrestre, gestire le foreste in modo sostenibile, combattere la desertificazione, porre fine e invertire il degrado del suolo e porre fine alla perdita di diversità biologica"
+msgid ""
+"Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung "
+"fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, "
+"Bodendegradation beenden und umkehren und dem Verlust der biologischen "
+"Vielfalt ein Ende setzen"
+msgstr ""
+"Proteggere, ripristinare e favorire un uso sostenibile dell’ecosistema "
+"terrestre, gestire le foreste in modo sostenibile, combattere la "
+"desertificazione, porre fine e invertire il degrado del suolo e porre fine "
+"alla perdita di diversità biologica"
 
 #: setup/sdg.php:239
-msgid "Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten geschützt und ihr Aussterben verhindert werden."
-msgstr "L'uso sostenibile degli ecosistemi e delle foreste di acqua dolce terrestre e dell’entroterra deve essere raggiunto entro il 2020. Si cerca anche di combattere la desertificazione e la conservazione degli ecosistemi montuosi. Per arrestare la distruzione della biodiversità, bisogna proteggere le specie a rischio e prevenire la loro estinzione."
+msgid ""
+"Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-"
+"Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung "
+"der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den "
+"Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten "
+"geschützt und ihr Aussterben verhindert werden."
+msgstr ""
+"L'uso sostenibile degli ecosistemi e delle foreste di acqua dolce terrestre "
+"e dell’entroterra deve essere raggiunto entro il 2020. Si cerca anche di "
+"combattere la desertificazione e la conservazione degli ecosistemi montuosi. "
+"Per arrestare la distruzione della biodiversità, bisogna proteggere le "
+"specie a rischio e prevenire la loro estinzione."
 
 #: setup/sdg.php:240
 msgid "Frieden und Gerechtigkeit"
 msgstr "Pace e giustizia"
 
 #: setup/sdg.php:240
-msgid "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
-msgstr "Promuovere società pacifiche e inclusive per uno sviluppo sostenibile, fornire accesso alla giustizia per tutti e costruire istituzioni efficienti, responsabili e inclusive a tutti i livelli"
+msgid ""
+"Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung "
+"fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, "
+"rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
+msgstr ""
+"Promuovere società pacifiche e inclusive per uno sviluppo sostenibile, "
+"fornire accesso alla giustizia per tutti e costruire istituzioni efficienti, "
+"responsabili e inclusive a tutti i livelli"
 
 #: setup/sdg.php:240
-msgid "Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die illegalen Finanz- und Waffenströme deutlich zu verringern."
-msgstr "Per raggiungere questo obiettivo, tutte le forme di violenza dovrebbero essere ridotte e lo stato di diritto dovrebbe essere garantito, compreso lo sviluppo di istituzioni efficienti. È anche importante ridurre in modo significativo il finanziamento illecito e il traffico di armi entro il 2030."
+msgid ""
+"Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und "
+"Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau "
+"leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die "
+"illegalen Finanz- und Waffenströme deutlich zu verringern."
+msgstr ""
+"Per raggiungere questo obiettivo, tutte le forme di violenza dovrebbero "
+"essere ridotte e lo stato di diritto dovrebbe essere garantito, compreso lo "
+"sviluppo di istituzioni efficienti. È anche importante ridurre in modo "
+"significativo il finanziamento illecito e il traffico di armi entro il 2030."
 
 #: setup/sdg.php:241
 msgid "Partnerschaften zur Erreichung der Ziele"
 msgstr "Partnership per gli obiettivi"
 
 #: setup/sdg.php:241
-msgid "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung stärken"
-msgstr "Rafforzare i mezzi di attuazione e rinnovare la partnership mondiale per lo sviluppo sostenibile"
+msgid ""
+"Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige "
+"Entwicklung stärken"
+msgstr ""
+"Rafforzare i mezzi di attuazione e rinnovare la partnership mondiale per lo "
+"sviluppo sostenibile"
 
 #: setup/sdg.php:241
-msgid "Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es auch, ein gerechtes multilaterales Handelssystem unter dem Dach der Welthandelsorganisation zu schaffen."
-msgstr "I paesi industrializzati sono esortati a rispettare gli impegni presi in materia di aiuti pubblici allo sviluppo, in particolare a fornire lo 0,7% del loro reddito nazionale lordo per questi compiti. Occorre promuovere una maggiore cooperazione Nord-Sud e Sud-Sud nei settori della scienza, della tecnologia e dell'innovazione. Gli obiettivi includono anche la creazione di un sistema commerciale multilaterale equo sotto l'egida dell'organizzazione mondiale del commercio."
+msgid ""
+"Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher "
+"Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % "
+"ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll "
+"eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich "
+"Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es "
+"auch, ein gerechtes multilaterales Handelssystem unter dem Dach der "
+"Welthandelsorganisation zu schaffen."
+msgstr ""
+"I paesi industrializzati sono esortati a rispettare gli impegni presi in "
+"materia di aiuti pubblici allo sviluppo, in particolare a fornire lo 0,7% "
+"del loro reddito nazionale lordo per questi compiti. Occorre promuovere una "
+"maggiore cooperazione Nord-Sud e Sud-Sud nei settori della scienza, della "
+"tecnologia e dell'innovazione. Gli obiettivi includono anche la creazione di "
+"un sistema commerciale multilaterale equo sotto l'egida dell'organizzazione "
+"mondiale del commercio."
 
 #: setup/settings.php:25
 msgid "Einstellungen für die Quartiersplattform"
 msgstr "Impostazioni per la piattaforma di quartiere"
 
-#. Theme Name of the plugin/theme
-#: setup/settings.php:26
-msgid "Quartiersplattform"
-msgstr "Piattaforma di quartiere"
-
-#: setup/settings.php:30 setup/settings.php:39 setup/settings.php:42 setup/settings.php:49 setup/settings.php:52
+#: setup/settings.php:30 setup/settings.php:38 setup/settings.php:41
+#: setup/settings.php:48 setup/settings.php:51
 msgid "Aktualisieren"
 msgstr "Aggiorna"
 
-#: setup/settings.php:31 setup/settings.php:43 setup/settings.php:53
+#: setup/settings.php:31 setup/settings.php:42 setup/settings.php:52
 msgid "Die Einstellungen wurden gespeichert."
 msgstr "Le impostazioni sono state salvate."
 
-#: setup/settings.php:36 setup/settings.php:37 setup/settings.php:322 setup/settings.php:326
+#: setup/settings.php:35 setup/settings.php:36 setup/settings.php:325
+#: setup/settings.php:329
 msgid "Wartungsmodus"
 msgstr "Modalità manutenzione"
 
-#: setup/settings.php:46 setup/settings.php:47
+#: setup/settings.php:45 setup/settings.php:46
 msgid "API-Schlüssel"
 msgstr "Chiave API"
 
-#: setup/settings.php:75
+#: setup/settings.php:74
 msgid "Quartierseinstellungen"
 msgstr "Impostazioni quartiere"
 
-#: setup/settings.php:79 setup/settings.php:241
-msgid "Logo"
-msgstr "Logo"
-
-#: setup/settings.php:82
-msgid "Hier kannst du das Logo von deinem Quartier oder deiner Organisation einfügen, welches unter jeder Seite eingeblendet wird."
-msgstr "Qui puoi inserire il logo del tuo quartiere o della tua organizzazione, che verrà visualizzato sotto ogni pagina."
-
-#: setup/settings.php:103
+#: setup/settings.php:78
 msgid "Name"
 msgstr "Nome"
 
-#: setup/settings.php:106
-msgid "Hier kannst du den Namen festlegen, welcher den Besuchern der Quartiersplattform angezeigt wird und im Menü angezeigt wird."
-msgstr "Qui puoi stabilire il nome che verrà mostrato ai visitatori della piattaforma del quartiere e visualizzato nel menu."
+#: setup/settings.php:81
+msgid ""
+"Hier kannst du den Namen festlegen, welcher den Besuchern der "
+"Quartiersplattform angezeigt wird und im Menü angezeigt wird."
+msgstr ""
+"Qui puoi stabilire il nome che verrà mostrato ai visitatori della "
+"piattaforma del quartiere e visualizzato nel menu."
 
-#: setup/settings.php:115
+#: setup/settings.php:90
 msgid "Name der Quartiersplattform"
 msgstr "Nome della piattaforma di quartiere"
 
-#: setup/settings.php:122
+#: setup/settings.php:99
 msgid "Bild für die Quartiersstartseite"
 msgstr "Descrizione per la pagina iniziale del quartiere"
 
-#: setup/settings.php:125
-msgid "Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet wird."
+#: setup/settings.php:102
+msgid ""
+"Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet "
+"wird."
 msgstr "Qui puoi fissare la pagina sulla pagina del quartiere."
 
-#: setup/settings.php:146
+#: setup/settings.php:123
 msgid "Überschrift für die Quartiersstartseite"
 msgstr "Titolo della pagina iniziale del quartiere"
 
-#: setup/settings.php:149
-msgid "Hier kannst du die Überschrift festlegen, welche den Besuchern der Quartiersplattform auf der Startseite ."
-msgstr "Qui puoi stabilire il titolo che i visitatori della piattaforma di quartiere vedranno nella pagina iniziale."
+#: setup/settings.php:126
+msgid ""
+"Hier kannst du die Überschrift festlegen, welche den Besuchern der "
+"Quartiersplattform auf der Startseite ."
+msgstr ""
+"Qui puoi stabilire il titolo che i visitatori della piattaforma di quartiere "
+"vedranno nella pagina iniziale."
 
-#: setup/settings.php:158 setup/settings.php:365
+#: setup/settings.php:135 setup/settings.php:368
 msgid "Überschrift"
 msgstr "Titolo"
 
-#: setup/settings.php:165
+#: setup/settings.php:142
 msgid "Beschreibung für die Quartiersstartseite"
 msgstr "Descrizione per la pagina iniziale del quartiere"
 
-#: setup/settings.php:168
-msgid "Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher auf der Startseite eingeblendet wird."
-msgstr "Qui è possibile inserire un testo descrittivo che verrà visualizzato nella pagina iniziale per i visitatori."
+#: setup/settings.php:145
+msgid ""
+"Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher "
+"auf der Startseite eingeblendet wird."
+msgstr ""
+"Qui è possibile inserire un testo descrittivo che verrà visualizzato nella "
+"pagina iniziale per i visitatori."
 
-#: setup/settings.php:177
+#: setup/settings.php:154
 msgid "Beschreibungstext"
 msgstr "Testo descrittivo"
 
-#: setup/settings.php:222
+#: setup/settings.php:201 setup/settings.php:244
+msgid "Logo"
+msgstr "Logo"
+
+#: setup/settings.php:204
+msgid ""
+"Hier kannst du das Logo von deinem Quartier oder deiner Organisation "
+"einfügen, welches unter jeder Seite eingeblendet wird."
+msgstr ""
+"Qui puoi inserire il logo del tuo quartiere o della tua organizzazione, che "
+"verrà visualizzato sotto ogni pagina."
+
+#: setup/settings.php:225
 msgid "Sponsoren"
 msgstr "Sponsor"
 
-#: setup/settings.php:225
+#: setup/settings.php:228
 msgid "Hier kannst du die Partner deiner Quartiersplattform eintragen."
 msgstr "Qui puoi inserire i partner della tua piattaforma di quartiere."
 
-#: setup/settings.php:284 setup/veranstaltungen.php:177
+#: setup/settings.php:287 setup/veranstaltungen.php:177
 msgid "Website"
 msgstr "Sito web"
 
-#: setup/settings.php:329
+#: setup/settings.php:332
 msgid "Schalte hier den Wartungsmodus für die Quartiersseite ein."
 msgstr "Attiva qui la modalità manutenzione per la pagina del quartiere."
 
-#: setup/settings.php:368
+#: setup/settings.php:371
 msgid "Hier kannst du eine Überschrift für die Wartungsseite eintragen."
 msgstr "Qui puoi inserire un titolo per la pagina di manutenzione."
 
-#: setup/settings.php:376
+#: setup/settings.php:379
 msgid "Deine Quatiersplattform wird aktualisiert."
 msgstr "La tua piattaforma di quartiere verrà aggiornata."
 
-#: setup/settings.php:384
+#: setup/settings.php:387
 msgid "Text"
 msgstr "Testo"
 
-#: setup/settings.php:387
+#: setup/settings.php:390
 msgid "Hier kannst du einen Beschreibungstext für den Wartungsmodus einfügen."
 msgstr "Qui puoi inserire un testo descrittivo per la modalità manutenzione."
 
-#: setup/settings.php:395
-msgid "Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier mit zugestalten. Wir sind bald wieder online."
-msgstr "Attendi con impazienza nuove funzioni entusiasmanti che puoi utilizzare per aiutare a progettare il tuo quartiere. Torneremo presto online."
+#: setup/settings.php:398
+msgid ""
+"Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier "
+"mit zugestalten. Wir sind bald wieder online."
+msgstr ""
+"Attendi con impazienza nuove funzioni entusiasmanti che puoi utilizzare per "
+"aiutare a progettare il tuo quartiere. Torneremo presto online."
 
-#: setup/settings.php:470
+#: setup/settings.php:473
 msgid "Matomo API Schlüssel"
 msgstr "Chiave API Matomo"
 
-#: setup/settings.php:473
+#: setup/settings.php:476
 msgid "Trage hier deinen Matomo API-Schlüssel ein."
 msgstr "Inserisci qui la tua chiave API Matomo."
 
@@ -1890,8 +2698,12 @@ msgid "Livestream"
 msgstr "Livestream"
 
 #: setup/veranstaltungen.php:196
-msgid "Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link veröffentlichen, damit noch mehr Menschen daran teilhaben können."
-msgstr "Il tuo evento verrà trasmesso in diretta? Qui puoi pubblicare un link in modo che possano partecipare ancora più persone."
+msgid ""
+"Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link "
+"veröffentlichen, damit noch mehr Menschen daran teilhaben können."
+msgstr ""
+"Il tuo evento verrà trasmesso in diretta? Qui puoi pubblicare un link in "
+"modo che possano partecipare ancora più persone."
 
 #: setup/veranstaltungen.php:209
 msgid "Ticket"
@@ -1926,40 +2738,46 @@ msgid "Post"
 msgstr "Post"
 
 #: template-parts/pagination.php:21
-msgid "Newer"
-msgstr "Newer"
+msgid "Newer "
+msgstr "Più recente"
 
 #: template-parts/pagination.php:21 template-parts/pagination.php:25
 msgid "Posts"
 msgstr "Posts"
 
 #: template-parts/pagination.php:25
-msgid "Older"
-msgstr "Older"
+msgid "Older "
+msgstr "Più vecchio"
 
 #: ultimate-member/email/changedpw_email.php:4
 msgid "Dein Passwort wurde geändert."
 msgstr "La tua password è stata modificata."
 
 #: ultimate-member/email/changedpw_email.php:8
-msgid "Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir gewesen sein, kontaktiere uns bitte umgehend."
-msgstr "La tua password è stata modificata di recente. Se non l'hai modificata tu, contattaci immediatamente."
+msgid ""
+"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
+"gewesen sein, kontaktiere uns bitte umgehend."
+msgstr ""
+"La tua password è stata modificata di recente. Se non l'hai modificata tu, "
+"contattaci immediatamente."
 
 #: ultimate-member/email/changedpw_email.php:14
 msgid "Sieh dir dein Konto an"
 msgstr "Visualizza il tuo account"
 
-#: ultimate-member/email/changedpw_email.php:16 ultimate-member/email/checkmail_email.php:39 ultimate-member/email/resetpw_email.php:39 ultimate-member/email/welcome_email.php:51
+#: ultimate-member/email/changedpw_email.php:16
+#: ultimate-member/email/checkmail_email.php:39
+#: ultimate-member/email/resetpw_email.php:39
+#: ultimate-member/email/welcome_email.php:51
 msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
 msgstr "In caso di problemi, non esitare a contattarci tramite e-mail."
 
-#: ultimate-member/email/changedpw_email.php:20 ultimate-member/email/checkmail_email.php:44 ultimate-member/email/resetpw_email.php:44 ultimate-member/email/welcome_email.php:56
+#: ultimate-member/email/changedpw_email.php:20
+#: ultimate-member/email/checkmail_email.php:44
+#: ultimate-member/email/resetpw_email.php:44
+#: ultimate-member/email/welcome_email.php:56
 msgid "Vielen Dank!"
 msgstr "Grazie mille!"
-
-#: ultimate-member/email/changedpw_email.php:33 ultimate-member/email/checkmail_email.php:58 ultimate-member/email/resetpw_email.php:58 ultimate-member/email/welcome_email.php:69
-msgid "Datenschutz"
-msgstr "Protezione dei dati"
 
 #: ultimate-member/email/checkmail_email.php:16
 msgid "Aktiviere dein Konto,"
@@ -1974,8 +2792,12 @@ msgid "Konto aktivieren"
 msgstr "Attiva account"
 
 #: ultimate-member/email/resetpw_email.php:22
-msgid "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
-msgstr "Puoi creare una nuova password utilizzando il link sottostante. Se non l'hai richiesto tu, ti preghiamo di ignorare questa email."
+msgid ""
+"Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
+"Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
+msgstr ""
+"Puoi creare una nuova password utilizzando il link sottostante. Se non l'hai "
+"richiesto tu, ti preghiamo di ignorare questa email."
 
 #: ultimate-member/email/resetpw_email.php:35
 msgid "Passwort zurücksetzen"
@@ -1986,16 +2808,30 @@ msgid "Willkommen im Quartier, "
 msgstr "Benvenuto nel quartiere, "
 
 #: ultimate-member/email/welcome_email.php:21
-msgid "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen und dein Quartier nachhaltig entwickeln und verbessern."
-msgstr "È bello averti qui! Puoi trovare tutte le informazioni rilevanti sul tuo quartiere sulla piattaforma di quartiere. In questo modo puoi conoscere nuove persone e sviluppare e migliorare il tuo quartiere in modo sostenibile."
+msgid ""
+"Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
+"Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
+"und dein Quartier nachhaltig entwickeln und verbessern."
+msgstr ""
+"È bello averti qui! Puoi trovare tutte le informazioni rilevanti sul tuo "
+"quartiere sulla piattaforma di quartiere. In questo modo puoi conoscere "
+"nuove persone e sviluppare e migliorare il tuo quartiere in modo sostenibile."
 
 #: ultimate-member/email/welcome_email.php:29
-msgid "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
-msgstr "Scopri e crea i tuoi progetti. C'è qualcosa che ti dà fastidio nel tuo parco preferito? Crea un progetto e trova altri attivisti!"
+msgid ""
+"Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
+"Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
+msgstr ""
+"Scopri e crea i tuoi progetti. C'è qualcosa che ti dà fastidio nel tuo parco "
+"preferito? Crea un progetto e trova altri attivisti!"
 
 #: ultimate-member/email/welcome_email.php:35
-msgid "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein."
-msgstr "Non perderti mai più i grandi eventi nel tuo quartiere. Qui troverai tutto ciò che devi sapere per esserci la prossima volta."
+msgid ""
+"Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
+"alles was du wissen musst, um bei nächsten mal dabei zu sein."
+msgstr ""
+"Non perderti mai più i grandi eventi nel tuo quartiere. Qui troverai tutto "
+"ciò che devi sapere per esserci la prossima volta."
 
 #: ultimate-member/email/welcome_email.php:47
 msgid "Entdecke dein Quartier!"
@@ -2006,8 +2842,16 @@ msgid "https://github.com/studio-arrenberg/quartiersplattform"
 msgstr "https://github.com/studio-arrenberg/quartiersplattform"
 
 #. Description of the plugin/theme
-msgid "Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz erstrahlen."
-msgstr "Diventa attivo nel tuo quartiere e crea la piattaforma di quartiere nella tua città! I tuoi progetti saranno visibili e trarrai vantaggio dalla comunità e dagli operatori locali. Usa il nostro Theme e lascia che il tuo quartiere risplenda di nuovo."
+msgid ""
+"Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner "
+"Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & "
+"lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz "
+"erstrahlen."
+msgstr ""
+"Diventa attivo nel tuo quartiere e crea la piattaforma di quartiere nella "
+"tua città! I tuoi progetti saranno visibili e trarrai vantaggio dalla "
+"comunità e dagli operatori locali. Usa il nostro Theme e lascia che il tuo "
+"quartiere risplenda di nuovo."
 
 #. Author of the plugin/theme
 msgid "Studio Arrenberg"
@@ -2017,11 +2861,54 @@ msgstr "Studio Arrenberg"
 msgid "https://arrenberg.studio"
 msgstr "https://arrenberg.studio"
 
+#~ msgid "Datenschutzerklärung"
+#~ msgstr "Informativa sulla protezione dei dati"
+
+#~ msgid "Energie Ampel "
+#~ msgstr "Semaforo energetico "
+
+#~ msgid "grüne Phase"
+#~ msgstr "fase verde"
+
+#~ msgid " CO2 pro kWh"
+#~ msgstr " CO2 per kWh"
+
+#~ msgid "Jetzt"
+#~ msgstr "Adesso"
+
+#~ msgid "Energie Ampel"
+#~ msgstr "Semaforo energetico"
+
+#~ msgid "Phase"
+#~ msgstr "e Phase"
+
+#~ msgid "gramm"
+#~ msgstr "grammi"
+
+#~ msgid "pro kWh"
+#~ msgstr "CO2 pro kWh"
+
+#~ msgid "Sprache"
+#~ msgstr "Lingua"
+
+#~ msgid "Zurück"
+#~ msgstr "Indietro"
+
+#~ msgid ""
+#~ "Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? "
+#~ "Erstelle ein Projekt und veröffentliche eine Veranstaltung."
+#~ msgstr ""
+#~ "Vorresti pubblicizzare un evento sulla tua piattaforma di quartiere? Crea "
+#~ "un progetto e pubblica un evento."
+
+#~ msgid "Erstelle eine Veranstaltung"
+#~ msgstr "Crea un evento"
+
+#~ msgid "Veröffentliche eine Veranstaltung"
+#~ msgstr "Crea un evento"
+
 #~ msgid "Projekt teilen"
 #~ msgstr "Condividi progetto"
-
-#~ msgid "Entdecke dein Quartier"
-#~ msgstr "Scopri il tuo quartiere"
 
 #~ msgid "Wichtige Seiten"
 #~ msgstr "Pagine importanti"

@@ -140,7 +140,7 @@ if (!is_user_logged_in()) {
                     _e('Als Administrator dieser Quartiersplattform werden deine Kontaktinformationen allen Besuchern angezeigt.');
                 }
                 else {
-                    _e('Deine Kontaktinformationen werden nur registieren Nutzer angezeigt und können daher nicht von Suchmaschienen gefunden werden.');
+                    _e('Deine Kontaktinformationen werden nur registrierten Nutzern angezeigt und können daher nicht von Suchmaschinen gefunden werden.');
                 }
                 ?>
             </p>
