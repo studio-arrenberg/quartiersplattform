@@ -3314,7 +3314,7 @@ function qp_detect_language() {
 	
 	// return $user_language;
 }
-add_filter( 'locale', 'qp_detect_language' );
+// add_filter( 'locale', 'qp_detect_language' );
 
 /**
  * QP visibility badge
