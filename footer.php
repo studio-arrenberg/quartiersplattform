@@ -100,7 +100,7 @@
 
     <div class="final-footer">
         <div>
-            <a href="https://www.studio-arrenberg.de" class="footer-link primary">© Studio Arrenberg
+            <!-- <a href="https://www.arrenberg.studio" class="footer-link primary">Quartiersplattform</a> -->
             <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
             <?php
                 if (get_privacy_policy_url()) {
