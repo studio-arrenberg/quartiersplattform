@@ -3302,15 +3302,14 @@ function qp_detect_language() {
 		// check user locale setting
 		if(!empty($_GET['lang'])){
 			setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
+			// update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
 			return $_GET['lang'];
-		}
-		// }else{
-		// 	// Notice: Undefined variable: current_user
-		// 	// Notice: Trying to get property 'ID' of non-object
-		// 	$lang = get_user_locale(get_current_user_id());
-		// 	return $lang;
-		// }	
+		}else{
+			// Notice: Undefined variable: current_user
+			// Notice: Trying to get property 'ID' of non-object
+			$lang = get_user_locale(get_current_user_id());
+			return $lang;
+		}	
 	}
 	// // update user locale
 	

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
 "POT-Creation-Date: 2021-06-14 10:48+0200\n"
-"PO-Revision-Date: 2021-06-14 10:52+0200\n"
+"PO-Revision-Date: 2021-06-14 11:26+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: en\n"
@@ -440,7 +440,7 @@ msgstr "Your projects"
 
 #: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
 msgid "Dein Projekt"
-msgstr "Your projects"
+msgstr "Your project"
 
 #: components/smart-card/projekte.php:55 elements/card-nachrichten.php:29
 #: setup/nachrichten.php:27
