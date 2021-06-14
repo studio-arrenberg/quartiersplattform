@@ -3306,15 +3306,13 @@ function qp_detect_language() {
 		}else{
 			// Notice: Undefined variable: current_user
 			// Notice: Trying to get property 'ID' of non-object
-			$lang = get_user_locale(get_current_user_id());
+			// $lang = get_user_locale(get_current_user_id());
 			return $lang;
 		}	
 	}
 	// // update user locale
-	
-	// return $user_language;
 }
-// add_filter( 'locale', 'qp_detect_language' );
+add_filter( 'locale', 'qp_detect_language' );
 
 /**
  * QP visibility badge
