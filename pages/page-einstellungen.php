@@ -30,7 +30,7 @@ get_header();
         <?php projekt_carousel(); ?>
     </div>
 
-    <div class="content">
+    <div class="main-content">
 
     <!-- heading -->
     <h1 class="heading-size-1"><?php echo __('Quartiersplattform Einstellungen','quartiersplattform'); ?></h1>
