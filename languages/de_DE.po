@@ -1,0 +1,2637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quartiersplattform\n"
+"POT-Creation-Date: 2021-06-14 10:48+0200\n"
+"PO-Revision-Date: 2021-06-14 11:46+0200\n"
+"Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Poedit-Basepath: ../../../../../../../Entwicklung/quartiersplattform/wp-"
+"content/themes/quartiersplattform\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
+"Language: de\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: 404.php:17
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"The page you were looking for could not be found. It might have been "
+"removed, renamed, or did not exist in the first place."
+msgstr ""
+
+#: 404.php:29
+msgid "404 not found"
+msgstr ""
+
+#: author.php:59
+msgid "Mein Profil bearbeiten"
+msgstr ""
+
+#: author.php:75 setup/kontakt.php:97
+msgid "Über mich"
+msgstr ""
+
+#: author.php:92
+msgid "Projekte von"
+msgstr ""
+
+#: author.php:111
+msgid "Beiträge von"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:81
+msgid "Retina logo"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:82
+msgid ""
+"Scales the logo to half its uploaded size, making it sharp on high-res "
+"screens."
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:101
+msgid "Header &amp; Footer Background Color"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:123
+msgid "Primary Color"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:125
+msgid "Default"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:126
+msgid "Custom"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:183
+msgid "Apply a custom color for links, buttons, featured images."
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:202
+msgid "Theme Options"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:225
+msgid "Show search in header"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:246
+msgid "Show author bio"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:267
+msgid "On archive pages, posts show:"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:269
+msgid "Full text"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:270
+msgid "Summary"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:281
+msgid "Cover Template"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:283
+msgid ""
+"Settings for the \"Cover Template\" page template. Add a featured image to "
+"use as background."
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:305
+msgid "Fixed Background Image"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:306
+msgid "Creates a parallax effect when the visitor scrolls."
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:352
+msgid "Overlay Background Color"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:353
+msgid "The color used for the overlay. Defaults to the accent color."
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:374
+msgid "Overlay Text Color"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:375
+msgid "The color used for the text in the overlay."
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:395
+msgid "Overlay Opacity"
+msgstr ""
+
+#: classes/class-twentytwenty-customize.php:396
+msgid ""
+"Make sure that the contrast is high enough so that the text is readable."
+msgstr ""
+
+#: classes/class-twentytwenty-walker-comment.php:65
+msgid "says:"
+msgstr ""
+
+#: classes/class-twentytwenty-walker-comment.php:81
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#. translators: 1: Comment date, 2: Comment time.
+#: classes/class-twentytwenty-walker-comment.php:91
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: classes/class-twentytwenty-walker-comment.php:98
+msgid "Edit"
+msgstr ""
+
+#. translators: %d: ID of a post.
+#: classes/class-twentytwenty-walker-page.php:70
+#, php-format
+msgid "#%d (no title)"
+msgstr ""
+
+#: classes/class-twentytwenty-walker-page.php:107 inc/template-tags.php:564
+msgid "Show sub menu"
+msgstr ""
+
+#: comments.php:45
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:46
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:59
+msgid "Comments"
+msgstr ""
+
+#: comments.php:98
+msgid "Comments are closed."
+msgstr ""
+
+#: components/calendar/calendar_download.php:47
+msgid "Datei kann nicht gespeichert werden!"
+msgstr ""
+
+#: components/calendar/calendar_download.php:75
+msgid "Termin im Kalender speichern"
+msgstr ""
+
+#: components/cookie/cookie-alert.php:6
+msgid "Wir verwenden Cookies"
+msgstr ""
+
+#: components/cookie/cookie-alert.php:10
+msgid ""
+"Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du "
+"der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten."
+msgstr ""
+
+#: components/cookie/cookie-alert.php:23 footer.php:108
+#: ultimate-member/email/changedpw_email.php:33
+#: ultimate-member/email/checkmail_email.php:58
+#: ultimate-member/email/resetpw_email.php:58
+#: ultimate-member/email/welcome_email.php:69
+msgid "Datenschutz"
+msgstr ""
+
+#: components/cookie/cookie-alert.php:30 footer.php:104 setup/main.php:182
+#: ultimate-member/email/changedpw_email.php:32
+#: ultimate-member/email/checkmail_email.php:57
+#: ultimate-member/email/resetpw_email.php:57
+#: ultimate-member/email/welcome_email.php:68
+msgid "Impressum"
+msgstr ""
+
+#: components/cookie/cookie-alert.php:38
+msgid "Zustimmen"
+msgstr ""
+
+#: components/general/author-card.php:57
+msgid "Hier kannst du deine Kontaktdaten hinterlegen,"
+msgstr ""
+
+#: components/general/author-card.php:57
+msgid " damit du kontaktiert werden kannst."
+msgstr ""
+
+#: components/general/map-card.php:36
+msgid "In Maps öffnen"
+msgstr ""
+
+#: components/general/map-card.php:66
+msgid "Zu Google Maps wechseln?"
+msgstr ""
+
+#: components/general/share-post.php:12
+msgid "Teilen"
+msgstr ""
+
+#: components/general/share-post.php:15
+msgid "Kopieren"
+msgstr ""
+
+#: components/general/share-post.php:50
+msgid "Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde."
+msgstr ""
+
+#: components/general/share-post.php:51
+msgid "Dein Projekt kann nicht geteilt werden"
+msgstr ""
+
+#: components/profil/reminder_card_reset.php:1
+msgid "Hinweise und Tipps"
+msgstr ""
+
+#: components/profil/reminder_card_reset.php:2
+msgid ""
+"Hier kannst du alle Hinweise und Tipps auf der Quartiersplattform wieder "
+"einblenden."
+msgstr ""
+
+#: components/profil/reminder_card_reset.php:4
+msgid "Hinweise und Tipps zurücksetzen"
+msgstr ""
+
+#: components/project/coming-events.php:30
+msgid "Aktuelle Veranstaltung"
+msgstr ""
+
+#: components/project/content.php:5 setup/umfragen.php:105
+#: setup/veranstaltungen.php:108
+msgid "Beschreibung"
+msgstr ""
+
+#: components/project/content.php:13
+msgid ""
+"Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und "
+"Inhalte noch besser zu erklären."
+msgstr ""
+
+#: components/project/content.php:14
+msgid "Beschreibung hinzufügen"
+msgstr ""
+
+#: components/project/content.php:22
+msgid "Beschreibung bearbeiten"
+msgstr ""
+
+#: components/project/content.php:35 pages/page-profil.php:192
+#: pages/page-quartier.php:73 pages/single-nachrichten.php:74
+#: pages/single-veranstaltungen.php:94 template-parts/content.php:59
+#: templates/center-header.php:46
+msgid "Continue reading"
+msgstr ""
+
+#: components/project/history.php:31
+msgid ""
+"Es wurden bisher noch keine Projektupdates veröffentlicht. Schaue später "
+"vorbei, um auf dem Laufenden zu bleiben."
+msgstr ""
+
+#: components/project/history.php:32
+msgid "Es wurden noch keine Beiträge veröffentlicht"
+msgstr ""
+
+#: components/project/history.php:36
+msgid ""
+"Du hast bisher noch keine Projektupdates veröffentlicht. Du kannst "
+"Nachrichten, Veranstaltungen und Umfragen veröffentlichen, um die Menschen "
+"in deinem Quartier über das Projekt zu informieren."
+msgstr ""
+
+#: components/project/history.php:37
+msgid "Du hast noch keine Beiträge veröffentlicht"
+msgstr ""
+
+#: components/project/pinned-posts.php:33
+msgid "Gepinnte Beiträge"
+msgstr ""
+
+#: components/project/sdg-display.php:13 components/project/sdg-display.php:48
+msgid "Ziele für nachhaltige Entwicklung"
+msgstr ""
+
+#: components/project/sdg-display.php:40 pages/page-quartier.php:164
+msgid "Übersicht der Ziele für nachhaltige Entwicklung"
+msgstr ""
+
+#: components/project/sdg-display.php:46
+msgid ""
+"Verfolgt dein Projekt Nachhaltigkeitsziele? In den Projekteinstellungen "
+"kannst du festlegen, welche Ziele dein Projekt unterstützt. Du weißt nicht "
+"genau was die nachhaligen Entwicklungsziele sind? Du kannst dich auf der "
+"Seite SDGs informieren, worum es sich dabei handelt."
+msgstr ""
+
+#: components/project/toolbox.php:10
+msgid "Was gibt es Neues?"
+msgstr ""
+
+#: components/project/toolbox.php:13
+msgid "Halte das Quartier auf dem Laufenden."
+msgstr ""
+
+#: components/project/toolbox.php:20
+msgid " Nachricht "
+msgstr ""
+
+#: components/project/toolbox.php:27
+msgid "Umfrage "
+msgstr ""
+
+#: components/project/toolbox.php:35
+msgid "Veranstaltung "
+msgstr ""
+
+#: components/reminder-card/reminder-backend.php:7
+msgid "Diese Meldung ausblenden."
+msgstr ""
+
+#: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:24
+#: future_translation.php:80
+msgid "Anheften"
+msgstr ""
+
+#: components/settings/pin_toggle.php:5
+msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
+msgstr ""
+
+#: components/settings/pin_toggle.php:12 components/settings/pin_toggle.php:31
+#: future_translation.php:73 setup/main.php:282
+msgid "Gepinnt"
+msgstr ""
+
+#: components/settings/pin_toggle.php:15 components/settings/pin_toggle.php:34
+#: future_translation.php:74 setup/main.php:283
+msgid "Nicht gepinnt"
+msgstr ""
+
+#: components/settings/pin_toggle.php:25
+msgid "Hier kannst du den Beitrag auf deine Projektseite pinnen."
+msgstr ""
+
+#: components/settings/visibility_toggle.php:1 future_translation.php:81
+msgid "Sichtbarkeit"
+msgstr ""
+
+#: components/settings/visibility_toggle.php:2
+msgid ""
+"Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
+msgstr ""
+
+#: components/settings/visibility_toggle.php:9 future_translation.php:75
+msgid "Öffentlich"
+msgstr ""
+
+#: components/settings/visibility_toggle.php:12 future_translation.php:77
+msgid "Privat"
+msgstr ""
+
+#: components/smart-card/projekte.php:20 pages/page-profil.php:160
+msgid "Deine Projekte"
+msgstr ""
+
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+msgid "Dein Projekt"
+msgstr ""
+
+#: components/smart-card/projekte.php:55 elements/card-nachrichten.php:29
+#: setup/nachrichten.php:27
+msgid "Nachricht"
+msgstr ""
+
+#: components/smart-card/projekte.php:57 elements/card-veranstaltungen.php:28
+#: elements/card-veranstaltungen.php:44 elements/card-veranstaltungen.php:72
+#: setup/veranstaltungen.php:26 setup/veranstaltungen.php:70
+msgid "Veranstaltung"
+msgstr ""
+
+#: components/views/veranstaltungen.php:26
+msgid "Aktuelle Veranstaltungen"
+msgstr ""
+
+#: components/views/veranstaltungen.php:34
+msgid ""
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
+"organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner "
+"Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten."
+msgstr ""
+
+#: components/views/veranstaltungen.php:35
+msgid "Momentan gibt es keine Veranstaltungen"
+msgstr ""
+
+#: components/views/veranstaltungen.php:35 setup/main.php:183
+msgid "Veranstaltung erstellen"
+msgstr ""
+
+#: elements/card-anmerkungen.php:25
+msgid "von"
+msgstr ""
+
+#: elements/card-nachrichten.php:31 elements/card-projekte.php:48
+#: elements/card-veranstaltungen.php:30
+msgid "von "
+msgstr ""
+
+#: elements/card-projekte.php:46 setup/projekte.php:28 setup/projekte.php:71
+#: setup/projekte.php:109
+msgid "Projekt"
+msgstr ""
+
+#: elements/card-umfragen.php:8 setup/umfragen.php:59
+msgid "Umfrage"
+msgstr ""
+
+#: elements/card-umfragen.php:10
+msgid "veröffentlicht von "
+msgstr ""
+
+#: elements/card-umfragen.php:70 elements/card-umfragen.php:126
+msgid " Stimmen"
+msgstr ""
+
+#: elements/card-umfragen.php:98
+msgid ""
+"Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen."
+msgstr ""
+
+#: elements/card-umfragen.php:100 maintenance.php:110
+msgid "Anmelden"
+msgstr ""
+
+#: elements/card-umfragen.php:103 maintenance.php:111
+msgid "Registrieren"
+msgstr ""
+
+#: elements/card-umfragen.php:162
+msgid "Stimmen"
+msgstr ""
+
+#: footer.php:64
+msgid "Die Plattform für dein Quartier!"
+msgstr ""
+
+#: footer.php:68
+msgid "Entdecke dein Viertel"
+msgstr ""
+
+#: footer.php:69
+msgid "Alle Projekte"
+msgstr ""
+
+#: footer.php:70 pages/page-quartier.php:111
+msgid "Neuigkeiten & Projektupdates"
+msgstr ""
+
+#: footer.php:71
+msgid "Veranstaltungskalender"
+msgstr ""
+
+#: footer.php:72 pages/page-quartier.php:150
+msgid "Ziele für nachhaltige Entwicklung im Quartier"
+msgstr ""
+
+#: footer.php:76
+msgid "Die Quartiersplattform"
+msgstr ""
+
+#: footer.php:78 pages/page-plattform.php:62 pages/page-profil.php:100
+#: pages/single-projekte.php:82 setup/main.php:190
+msgid "Einstellungen"
+msgstr ""
+
+#: footer.php:80
+msgid "Informationen zum Status deiner Plattform"
+msgstr ""
+
+#: footer.php:83
+msgid "Die Quartiersplattform "
+msgstr ""
+
+#: footer.php:91
+msgid "Jetzt registrieren"
+msgstr ""
+
+#: footer.php:95 pages/page-anmerkungen.php:27 pages/page-anmerkungen.php:83
+#: pages/page-plattform.php:138 pages/page-quartier.php:172
+#: pages/single-anmerkungen.php:27
+msgid "Feedback zur Quartiersplattform"
+msgstr ""
+
+#: footer.php:127
+msgid "Englisch"
+msgstr ""
+
+#: footer.php:128
+msgid "Türkisch"
+msgstr ""
+
+#: footer.php:129
+msgid "Italienisch"
+msgstr ""
+
+#: footer.php:130
+msgid "Deutsch"
+msgstr ""
+
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25
+#: forms/form-veranstaltungen.php:29
+msgid "Projekt konnte nicht verknüpft werden"
+msgstr ""
+
+#: forms/form-nachrichten.php:26 forms/form-umfragen.php:25
+#: forms/form-veranstaltungen.php:29
+msgid ""
+"Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es "
+"noch mal."
+msgstr ""
+
+#: forms/form-nachrichten.php:41 forms/form-projekte.php:25
+#: forms/form-umfragen.php:39 forms/form-veranstaltungen.php:43
+msgid "Projekt veröffentlichen"
+msgstr ""
+
+#: forms/form-nachrichten.php:41 forms/form-umfragen.php:39
+#: forms/form-veranstaltungen.php:43
+msgid ""
+"Dein Beitrag ist zunächst nicht sichtbar, weil du zuerst das Projekt in den "
+"Projekteinstellungen veröffentlichen musst. "
+msgstr ""
+
+#: forms/form-nachrichten.php:50
+msgid "Erstelle eine Nachricht"
+msgstr ""
+
+#: forms/form-nachrichten.php:68
+msgid "Nachricht veröffentlichen"
+msgstr ""
+
+#: forms/form-projekte.php:25
+msgid ""
+"Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte "
+"einstellen kannst. Wenn du soweit bist, kannst du es in den "
+"Projekteinstellungen veröffentlichen."
+msgstr ""
+
+#: forms/form-projekte.php:29
+msgid "Erstelle dein eigenes Projekt"
+msgstr ""
+
+#: forms/form-projekte.php:50 functions.php:2116 functions.php:2958
+#: pages/projekt-feed.php:49 setup/main.php:187
+msgid "Projekt erstellen"
+msgstr ""
+
+#: forms/form-projekte.php:62
+msgid ""
+"Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, "
+"Umfragen und Veranstaltungen zu erstellen."
+msgstr ""
+
+#: forms/form-projekte.php:63 pages/page-anmerkungen.php:102
+#: pages/single-anmerkungen.php:54
+msgid "Mitglied werden im Quartier"
+msgstr ""
+
+#: forms/form-projekte.php:63
+msgid "Jetzt Anmelden"
+msgstr ""
+
+#: forms/form-umfragen.php:64
+msgid "Umfrage veröffentlichen"
+msgstr ""
+
+#: forms/form-veranstaltungen.php:78
+msgid "Veranstaltung veröffentlichen"
+msgstr ""
+
+#: functions.php:290
+msgid "Desktop Horizontal Menu"
+msgstr ""
+
+#: functions.php:291
+msgid "Desktop Expanded Menu"
+msgstr ""
+
+#: functions.php:292
+msgid "Mobile Menu"
+msgstr ""
+
+#: functions.php:293
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:294
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:372
+msgid "Skip to the content"
+msgstr ""
+
+#: functions.php:397
+msgid "Footer #1"
+msgstr ""
+
+#: functions.php:399
+msgid ""
+"Widgets in this area will be displayed in the first column in the footer."
+msgstr ""
+
+#: functions.php:409
+msgid "Footer #2"
+msgstr ""
+
+#: functions.php:411
+msgid ""
+"Widgets in this area will be displayed in the second column in the footer."
+msgstr ""
+
+#: functions.php:515
+msgid "Accent Color"
+msgstr ""
+
+#: functions.php:520 inc/starter-content.php:177 inc/starter-content.php:187
+msgid "Primary"
+msgstr ""
+
+#: functions.php:525
+msgid "Secondary"
+msgstr ""
+
+#: functions.php:530
+msgid "Subtle Background"
+msgstr ""
+
+#: functions.php:543
+msgid "Background Color"
+msgstr ""
+
+#: functions.php:558
+msgctxt "Name of the small font size in the block editor"
+msgid "Small"
+msgstr ""
+
+#: functions.php:559
+msgctxt "Short name of the small font size in the block editor."
+msgid "S"
+msgstr ""
+
+#: functions.php:564
+msgctxt "Name of the regular font size in the block editor"
+msgid "Regular"
+msgstr ""
+
+#: functions.php:565
+msgctxt "Short name of the regular font size in the block editor."
+msgid "M"
+msgstr ""
+
+#: functions.php:570
+msgctxt "Name of the large font size in the block editor"
+msgid "Large"
+msgstr ""
+
+#: functions.php:571
+msgctxt "Short name of the large font size in the block editor."
+msgid "L"
+msgstr ""
+
+#: functions.php:576
+msgctxt "Name of the larger font size in the block editor"
+msgid "Larger"
+msgstr ""
+
+#: functions.php:577
+msgctxt "Short name of the larger font size in the block editor."
+msgid "XL"
+msgstr ""
+
+#: functions.php:881 functions.php:890
+msgid "Deine Quartiersplattform benötigt das Plugin"
+msgstr ""
+
+#: functions.php:881 functions.php:890
+msgid " um vollständig funktionieren zu können."
+msgstr ""
+
+#: functions.php:882
+msgid "Advanced Custom Fields"
+msgstr ""
+
+#: functions.php:882
+msgid "Installiere ACF"
+msgstr ""
+
+#: functions.php:891
+msgid "Installiere Ultimate Member"
+msgstr ""
+
+#: functions.php:899
+msgid "Gratulation, deine Quartiersplattform wurde erfolgreich eingerichtet."
+msgstr ""
+
+#: functions.php:908
+msgid "Das Ultimate Member Plugin wurde noch nicht vollständig eingerichtet."
+msgstr ""
+
+#: functions.php:909 functions.php:919
+msgid "Anleitung öffnen"
+msgstr ""
+
+#: functions.php:918
+msgid ""
+"Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-"
+"Zustellung zu gewährleisten."
+msgstr ""
+
+#: functions.php:927 functions.php:938
+msgid "Deine Quartiersplattform hat noch"
+msgstr ""
+
+#: functions.php:927
+msgid " keine Datenschutzerklärung."
+msgstr ""
+
+#: functions.php:928
+msgid "Datenschutzerklärung erstellen"
+msgstr ""
+
+#: functions.php:938
+msgid " kein Impressum."
+msgstr ""
+
+#: functions.php:939
+msgid "Impressum erstellen"
+msgstr ""
+
+#: functions.php:949
+msgid ""
+"Hier kannst du das Logo sowie den Namen deiner Quartiersplattform "
+"einrichten. "
+msgstr ""
+
+#: functions.php:950 pages/page-quartier.php:43
+msgid "Zu den Einstellungen"
+msgstr ""
+
+#: functions.php:959
+msgid "Wir empfehlen das Plugin "
+msgstr ""
+
+#: functions.php:959
+msgid ""
+" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten."
+msgstr ""
+
+#: functions.php:960
+msgid "installieren"
+msgstr ""
+
+#: functions.php:979
+msgid ""
+"Installiere die neue Version der Quartiersplattform und bringe neue features "
+"in dein Quartier. Der genaue ablauf wird in der <a href=\"https://github.com/"
+"studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"
+"\">Dokumentation</a> beschrieben."
+msgstr ""
+
+#: functions.php:980
+msgid "Link zum Download"
+msgstr ""
+
+#: functions.php:1834
+msgid "Copyright"
+msgstr ""
+
+#: functions.php:2426
+msgid "Morgen"
+msgstr ""
+
+#: functions.php:2430
+msgid "Heute"
+msgstr ""
+
+#: functions.php:2434
+msgid "Gestern"
+msgstr ""
+
+#: functions.php:2452
+msgid " um "
+msgstr ""
+
+#: functions.php:2471 functions.php:2475
+msgid "noch "
+msgstr ""
+
+#: functions.php:2471
+msgid " Minuten"
+msgstr ""
+
+#: functions.php:2475
+msgid " Stunden"
+msgstr ""
+
+#: functions.php:2479
+msgid "bis um "
+msgstr ""
+
+#: functions.php:2483
+msgid "bis Morgen"
+msgstr ""
+
+#: functions.php:2487 functions.php:2490
+msgid "vom "
+msgstr ""
+
+#: functions.php:2494
+msgid "bis zum "
+msgstr ""
+
+#: functions.php:3152
+msgid "Beitrag im Wordpress System bearbeiten"
+msgstr ""
+
+#: functions.php:3329
+msgid "Nicht Sichtbar"
+msgstr ""
+
+#: future_translation.php:8
+msgid "Hier kannst du noch keine Projekte entdecken."
+msgstr ""
+
+#: future_translation.php:9 future_translation.php:18 pages/projekt-feed.php:48
+msgid ""
+"Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern "
+"willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
+msgstr ""
+
+#: future_translation.php:12
+msgid "Hier gibt es leider noch keine Veranstaltungen."
+msgstr ""
+
+#: future_translation.php:13
+msgid ""
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
+"veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu "
+"erhalten.\n"
+"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream "
+"Link veröffentlichen."
+msgstr ""
+
+#: future_translation.php:17
+msgid "In der Projektchronik wurde noch nichts veröffentlicht."
+msgstr ""
+
+#: future_translation.php:24
+msgid "Es gibt ein neues Projektupdate."
+msgstr ""
+
+#: future_translation.php:25
+msgid ""
+"Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei "
+"deinen Lieblingsprojekten."
+msgstr ""
+
+#: future_translation.php:26 future_translation.php:56
+msgid "Projektupdate von"
+msgstr ""
+
+#: future_translation.php:27
+msgid "Zum Projekt"
+msgstr ""
+
+#: future_translation.php:30
+msgid "Jemand deine Nachricht kommentiert."
+msgstr ""
+
+#: future_translation.php:31 future_translation.php:39
+msgid "hat deine Nachricht kommentiert."
+msgstr ""
+
+#: future_translation.php:32 future_translation.php:40
+#: future_translation.php:48
+msgid "Hier kannst du dir den Kommentar ansehen."
+msgstr ""
+
+#: future_translation.php:33 future_translation.php:41
+#: future_translation.php:49
+msgid "Kommentar von"
+msgstr ""
+
+#: future_translation.php:34 future_translation.php:42
+#: future_translation.php:50
+msgid "Zum Kommentar"
+msgstr ""
+
+#: future_translation.php:35
+msgid "Zur Nachricht"
+msgstr ""
+
+#: future_translation.php:38
+msgid "Jemand deine Veranstaltung kommentiert."
+msgstr ""
+
+#: future_translation.php:43
+msgid "Zur Veranstaltung"
+msgstr ""
+
+#: future_translation.php:46
+msgid "Jemand deine Umfrage kommentiert."
+msgstr ""
+
+#: future_translation.php:47
+msgid "hat deine Umfrage kommentiert."
+msgstr ""
+
+#: future_translation.php:51
+msgid "Zur Umfrage"
+msgstr ""
+
+#: future_translation.php:54
+msgid "Es gibt Neuigkeiten in deinem Quartier."
+msgstr ""
+
+#: future_translation.php:55
+msgid ""
+"Sie dir die neuen Beiträge an und bleibe informiert bei deinen "
+"Lieblingsprojekten."
+msgstr ""
+
+#: future_translation.php:57
+msgid "Umfrage von"
+msgstr ""
+
+#: future_translation.php:58
+msgid "Nachricht von"
+msgstr ""
+
+#: future_translation.php:59
+msgid "Veranstaltung von"
+msgstr ""
+
+#: future_translation.php:60
+msgid "Neuigkeiten ansehen"
+msgstr ""
+
+#: future_translation.php:64
+msgid ""
+"Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es "
+"regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch "
+"Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das "
+"Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der "
+"einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, "
+"Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu "
+"lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
+msgstr ""
+
+#: future_translation.php:66
+msgid ""
+"Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen "
+"unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und "
+"regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der "
+"gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft "
+"aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion "
+"geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler "
+"Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen "
+"CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der "
+"Bergischen Universität und dem Klimaquartier Arrenberg wurden diese "
+"Berechnungen in Raster übertragen und das hier sichtbare Energiewetter "
+"entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob "
+"der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch "
+"oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt "
+"sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig "
+"von den eigenen finanziellen Möglichkeiten an der Energiewende und dem "
+"Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein "
+"smarter Schritt, den alle gehen können. "
+msgstr ""
+
+#: future_translation.php:68
+msgid "Energieampel"
+msgstr ""
+
+#: future_translation.php:71
+msgid "Sichtbar"
+msgstr ""
+
+#: future_translation.php:72
+msgid "Unsichtbar"
+msgstr ""
+
+#: future_translation.php:76
+msgid "Nicht öffentlicht"
+msgstr ""
+
+#: future_translation.php:79
+msgid "Pinnen"
+msgstr ""
+
+#: future_translation.php:83
+msgid "Hier kannst du die Seite auf die Quariersseite pinnen."
+msgstr ""
+
+#: future_translation.php:84
+msgid "Hier kannst du den Beitrag auf die Quariersseite pinnen."
+msgstr ""
+
+#: future_translation.php:85
+msgid "Hier kannst du den Akteur auf die Quariersseite pinnen."
+msgstr ""
+
+#: future_translation.php:88
+msgid "Vorschlag"
+msgstr ""
+
+#: future_translation.php:89
+msgid "Umgesetzt"
+msgstr ""
+
+#: future_translation.php:90
+msgid "In Bearbeitung"
+msgstr ""
+
+#: future_translation.php:93
+msgid "Bild auswählen"
+msgstr ""
+
+#: future_translation.php:96
+msgid "grüne"
+msgstr ""
+
+#: future_translation.php:97
+msgid "rote auswählen"
+msgstr ""
+
+#: future_translation.php:98
+msgid "gelbe auswählen"
+msgstr ""
+
+#: future_translation.php:101 future_translation.php:110
+msgid "Montag"
+msgstr ""
+
+#: future_translation.php:102 future_translation.php:111
+msgid "Dienstag"
+msgstr ""
+
+#: future_translation.php:103 future_translation.php:112
+msgid "Mittwoch"
+msgstr ""
+
+#: future_translation.php:104 future_translation.php:113
+msgid "Donnerstag"
+msgstr ""
+
+#: future_translation.php:105 future_translation.php:114
+msgid "Freitag"
+msgstr ""
+
+#: future_translation.php:106 future_translation.php:115
+msgid "Samstag"
+msgstr ""
+
+#: future_translation.php:107 future_translation.php:116
+msgid "Sonntag"
+msgstr ""
+
+#: future_translation.php:119
+msgid "January"
+msgstr "Januar"
+
+#: future_translation.php:120
+msgid "February"
+msgstr "Februar"
+
+#: future_translation.php:121
+msgid "March"
+msgstr "März"
+
+#: future_translation.php:122
+msgid "April"
+msgstr "April"
+
+#: future_translation.php:123
+msgid "May"
+msgstr "Mai"
+
+#: future_translation.php:124
+msgid "June"
+msgstr "Juni"
+
+#: future_translation.php:125
+msgid "July"
+msgstr "Juli"
+
+#: future_translation.php:126
+msgid "August"
+msgstr "August"
+
+#: future_translation.php:127
+msgid "September"
+msgstr "September"
+
+#: future_translation.php:128
+msgid "October"
+msgstr "Oktober"
+
+#: future_translation.php:129
+msgid "November"
+msgstr "November"
+
+#: future_translation.php:130
+msgid "December"
+msgstr "Dezember"
+
+#: header.php:121
+msgid "Horizontal"
+msgstr ""
+
+#: header.php:128 setup/main.php:50 setup/main.php:180 setup/projekte.php:27
+#: setup/projekte.php:32 setup/projekte.php:70 setup/projekte.php:75
+#: ultimate-member/email/welcome_email.php:27
+msgid "Projekte"
+msgstr ""
+
+#: inc/starter-content.php:39
+msgctxt "Theme starter content"
+msgid "The New UMoMA Opens its Doors"
+msgstr ""
+
+#: inc/starter-content.php:48
+msgid "The New UMoMA Opens its Doors"
+msgstr ""
+
+#: inc/starter-content.php:56
+msgid ""
+"The premier destination for modern art in Northern Sweden. Open from 10 AM "
+"to 6 PM every day during the summer months."
+msgstr ""
+
+#: inc/starter-content.php:67
+msgid "Works and Days"
+msgstr ""
+
+#: inc/starter-content.php:70 inc/starter-content.php:102
+msgid "August 1 -- December 1"
+msgstr ""
+
+#: inc/starter-content.php:73 inc/starter-content.php:88
+#: inc/starter-content.php:105 inc/starter-content.php:120
+msgid "Read More"
+msgstr ""
+
+#: inc/starter-content.php:82
+msgid "Theatre of Operations"
+msgstr ""
+
+#: inc/starter-content.php:85 inc/starter-content.php:117
+msgid "October 1 -- December 1"
+msgstr ""
+
+#: inc/starter-content.php:99
+msgid "The Life I Deserve"
+msgstr ""
+
+#: inc/starter-content.php:114
+msgid "From Signac to Matisse"
+msgstr ""
+
+#: inc/starter-content.php:130
+msgid ""
+"&#8220;Cyborgs, as the philosopher Donna Haraway established, are not "
+"reverent. They do not remember the cosmos.&#8221;"
+msgstr ""
+
+#: inc/starter-content.php:134
+msgid ""
+"With seven floors of striking architecture, UMoMA shows exhibitions of "
+"international contemporary art, sometimes along with art historical "
+"retrospectives. Existential, political and philosophical issues are "
+"intrinsic to our programme. As visitor you are invited to guided tours "
+"artist talks, lectures, film screenings and other events with free admission"
+msgstr ""
+
+#: inc/starter-content.php:137
+msgid ""
+"The exhibitions are produced by UMoMA in collaboration with artists and "
+"museums around the world and they often attract international attention. "
+"UMoMA has received a Special Commendation from the European Museum of the "
+"Year, and was among the top candidates for the Swedish Museum of the Year "
+"Award as well as for the Council of Europe Museum Prize."
+msgstr ""
+
+#: inc/starter-content.php:145
+msgid "Become a Member and Get Exclusive Offers!"
+msgstr ""
+
+#: inc/starter-content.php:148
+msgid ""
+"Members get access to exclusive exhibits and sales. Our memberships cost "
+"$99.99 and are billed annually."
+msgstr ""
+
+#: inc/starter-content.php:151
+msgid "Join the Club"
+msgstr ""
+
+#: inc/starter-content.php:197
+msgid "Social Links Menu"
+msgstr ""
+
+#. translators: %s: Post title. Only visible to screen readers.
+#: inc/template-tags.php:207
+msgid "Edit "
+msgstr ""
+
+#: inc/template-tags.php:356
+msgid "Post author"
+msgstr ""
+
+#. translators: %s: Author name.
+#: inc/template-tags.php:363 template-parts/entry-author-bio.php:20
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: inc/template-tags.php:380
+msgid "Post date"
+msgstr ""
+
+#: inc/template-tags.php:398 template-parts/content-cover.php:70
+#: template-parts/entry-header.php:36
+msgid "Categories"
+msgstr ""
+
+#: inc/template-tags.php:402
+msgctxt "A string that is output before one or more categories"
+msgid "In"
+msgstr ""
+
+#: inc/template-tags.php:416
+msgid "Tags"
+msgstr ""
+
+#: inc/template-tags.php:454
+msgid "Sticky post"
+msgstr ""
+
+#: index.php:32
+msgid "Search:"
+msgstr ""
+
+#: index.php:40
+#, php-format
+msgid "We found %s result for your search."
+msgid_plural "We found %s results for your search."
+msgstr[0] "We found %s result for your search."
+msgstr[1] "We found %s results for your search."
+
+#: index.php:48
+msgid ""
+"We could not find any results for your search. You can give it another try "
+"through the search form below."
+msgstr ""
+
+#: index.php:51
+msgid "Nothing Found"
+msgstr ""
+
+#: index.php:95
+msgid "search again"
+msgstr ""
+
+#: maintenance.php:27
+msgid " Update"
+msgstr ""
+
+#: maintenance.php:30 maintenance.php:34
+msgid "Hier entsteht deine Quatiersplattform"
+msgstr ""
+
+#: maintenance.php:87
+msgid "Zur Dokumentation"
+msgstr ""
+
+#: maintenance.php:100
+msgid "Gestalte dein Viertel"
+msgstr ""
+
+#: maintenance.php:101
+msgid "Hier entsteht"
+msgstr ""
+
+#: maintenance.php:101
+msgid " deine Quartiersplattform"
+msgstr ""
+
+#: maintenance.php:104 maintenance.php:158
+msgid ""
+"Bald findest du hier spannende Neuigkeiten aus Quartiersprojekten, kannst an "
+"Umfragen teilnehmen und eigene Projekte über die Plattform planen."
+msgstr ""
+
+#: maintenance.php:108
+msgid "Du möchtest dabei helfen, die Plattform für das Quartier vorzubereiten?"
+msgstr ""
+
+#: maintenance.php:108
+msgid "Dann registriere dich jetzt!"
+msgstr ""
+
+#: maintenance.php:115
+msgid "Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:"
+msgstr ""
+
+#: maintenance.php:156
+msgid "Plugins installieren"
+msgstr ""
+
+#: maintenance.php:161
+msgid "Du musst noch folgende Schritte durchführen:"
+msgstr ""
+
+#: maintenance.php:164
+msgid "Dokumentation Lesen"
+msgstr ""
+
+#: maintenance.php:174
+msgid "Bitte Advanced Custom Fields installieren"
+msgstr ""
+
+#: maintenance.php:176
+msgid "Bitte installiere das Plugin ACF über die Wordpress Plugin Seite."
+msgstr ""
+
+#: maintenance.php:188
+msgid "Bitte Ultimate Member installieren"
+msgstr ""
+
+#: maintenance.php:190
+msgid ""
+"Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite "
+"und stelle die in der Dokumentation beschriebenen Einstellungen ein."
+msgstr ""
+
+#: maintenance.php:203
+msgid "Bitte WP Mail SMTP installieren"
+msgstr ""
+
+#: maintenance.php:205
+msgid ""
+" Bitte installiere das Plugin WP Mail SMTP über die Wordpress Plugin Seite "
+"stelle die in der Dokumentation beschriebenen E-Mail Einstellungen ein."
+msgstr ""
+
+#: pages/page-anmerkungen.php:26 pages/page-plattform.php:137
+#: pages/page-quartier.php:171 pages/single-anmerkungen.php:26
+msgid ""
+"Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert "
+"etwas nicht oder hast du eine Idee zur weiterentwicklung."
+msgstr ""
+
+#: pages/page-anmerkungen.php:52
+msgid "Feedback senden"
+msgstr ""
+
+#: pages/page-anmerkungen.php:101 pages/single-anmerkungen.php:53
+msgid ""
+"Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen "
+"und Veranstaltungen zu erstellen."
+msgstr ""
+
+#: pages/page-anmerkungen.php:102 pages/single-anmerkungen.php:54
+msgid "Jetzt Registieren"
+msgstr ""
+
+#: pages/page-einstellungen.php:36
+msgid "Quartiersplattform Einstellungen"
+msgstr ""
+
+#: pages/page-einstellungen.php:37
+msgid ""
+"Hier kannst du die Einstellungen für die Quartiersplattform festlegen. Alle "
+"Einstellungen treten direkt in Kraft und gelten für die gesamte "
+"Quartiersseite."
+msgstr ""
+
+#: pages/page-einstellungen.php:47 pages/page-quartier.php:174
+msgid "Allgemeine und öffentliche Informationen zu der Quartiersplattform."
+msgstr ""
+
+#: pages/page-einstellungen.php:64
+msgid "Einstellungen speichern"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#: pages/page-plattform.php:30 setup/main.php:189 setup/settings.php:26
+msgid "Quartiersplattform"
+msgstr ""
+
+#: pages/page-plattform.php:31
+msgid "Allgemeine Informationen zu deiner Quartiersplattform"
+msgstr ""
+
+#: pages/page-plattform.php:58
+msgid "Es gibt eine neue Version"
+msgstr ""
+
+#: pages/page-plattform.php:58
+msgid ""
+"Installiere die neue Version der Quartiersplattform und bringe neue Features "
+"in dein Quartier. Der genaue ablauf wird in der <a href=\"https://github.com/"
+"studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"
+"\">Dokumentation</a> beschrieben unter "
+msgstr ""
+
+#: pages/page-plattform.php:61
+msgid ""
+"Bearbeite die Einstellungen der Quartiersplattform. Hier kannst du den "
+"Seitennamen, das Bild sowie den Text für die Quartiersstartseite festlegen."
+msgstr ""
+
+#: pages/page-plattform.php:73
+msgid "Admins der Quartiersplattform"
+msgstr ""
+
+#: pages/page-plattform.php:74
+msgid ""
+"Die Quartiersplattform wird von folgenden Personen und Vereinen gehostet. "
+"Wenn du Fragen hast oder Probleme wende dich bitte an uns."
+msgstr ""
+
+#: pages/page-plattform.php:100
+msgid "Installierte Plugins"
+msgstr ""
+
+#: pages/page-plattform.php:101
+msgid ""
+"Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen "
+"gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns."
+msgstr ""
+
+#: pages/page-plattform.php:122
+msgid "Dieses Plugin ist Aktiv"
+msgstr ""
+
+#: pages/page-plattform.php:138 pages/page-quartier.php:172
+msgid "Zur Wunschliste"
+msgstr ""
+
+#: pages/page-profil.php:96 setup/main.php:181
+msgid "Profil"
+msgstr ""
+
+#: pages/page-profil.php:136
+msgid "Deine Kontaktinformationen"
+msgstr ""
+
+#: pages/page-profil.php:140
+msgid ""
+"Als Administrator dieser Quartiersplattform werden deine "
+"Kontaktinformationen allen Besuchern angezeigt."
+msgstr ""
+
+#: pages/page-profil.php:143
+msgid ""
+"Deine Kontaktinformationen werden nur registrierten Nutzern angezeigt und "
+"können daher nicht von Suchmaschinen gefunden werden."
+msgstr ""
+
+#: pages/page-profil.php:174
+msgid "Deine Beiträge"
+msgstr ""
+
+#: pages/page-profil.php:205
+msgid "Bearbeite deine Kontaktinformationen"
+msgstr ""
+
+#: pages/page-profil.php:213 pages/page-profil.php:231
+#: pages/single-nachrichten.php:156 pages/single-projekte.php:184
+#: pages/single-projekte.php:209 pages/single-projekte.php:285
+#: pages/single-umfragen.php:112 pages/single-veranstaltungen.php:202
+msgid "Änderungen speichern"
+msgstr ""
+
+#: pages/page-profil.php:241
+msgid "Profil bearbeiten"
+msgstr ""
+
+#: pages/page-profil.php:245
+msgid "Abmelden"
+msgstr ""
+
+#: pages/page-projekte.php:23
+msgid ""
+"Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das "
+"Quartiersgeschehen, finde spannende Aktionen und beteilige dich. \n"
+"\t\t\tDu bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche "
+"es und halte deine Nachbarn auf dem Laufenden.  "
+msgstr ""
+
+#: pages/page-projekte.php:25
+msgid "Entdecke alle Projekte aus deinem Quartier"
+msgstr ""
+
+#: pages/page-projekte.php:82
+msgid ""
+"Auf der Quartiersplattform wurden bisher keine Projekte veröffentlicht. Du "
+"kannst selber aktiv werden und dein erstes eigenes Projekt anlegen."
+msgstr ""
+
+#: pages/page-projekte.php:83
+msgid "Es wurde noch keine Projekte veröffentlicht"
+msgstr ""
+
+#: pages/page-quartier.php:43
+msgid "Bild und Text für die Startseite festlegen"
+msgstr ""
+
+#: pages/page-quartier.php:43
+msgid ""
+"In den Quartierseinstellungen kannst du das Bild sowie den Text für die "
+"Startseite anpassen."
+msgstr ""
+
+#: pages/page-quartier.php:91
+msgid "Lokale Projekte"
+msgstr ""
+
+#: pages/page-quartier.php:92
+msgid "Entdecke spannende Projekte aus deinem Quartier"
+msgstr ""
+
+#: pages/page-quartier.php:93
+msgid ""
+"Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am "
+"Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in "
+"deiner Nachbarschaft."
+msgstr ""
+
+#: pages/page-quartier.php:112
+msgid "Alle Projekte anzeigen"
+msgstr ""
+
+#: pages/page-quartier.php:119
+msgid "Veranstaltungen in deinem Quartier"
+msgstr ""
+
+#: pages/page-quartier.php:120
+msgid ""
+"Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste "
+"Konzert oder die nächste Party in deiner Nachbarschaft - mit der "
+"Quartiersplattform bist du immer auf dem Laufenden!"
+msgstr ""
+
+#: pages/page-quartier.php:143
+msgid "Zu den Veranstaltungen"
+msgstr ""
+
+#: pages/page-quartier.php:151 pages/page-sdg.php:26
+msgid ""
+"Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung "
+"(Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht "
+"nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."
+msgstr ""
+
+#: pages/page-quartier.php:175
+msgid "Informationen zu deiner Quartiersplattform"
+msgstr ""
+
+#: pages/page-quartier.php:175
+msgid "Informationen"
+msgstr ""
+
+#: pages/page-sdg.php:23
+msgid " Ziele für nachhaltige Entwicklung"
+msgstr ""
+
+#: pages/page-veranstaltungen.php:23
+msgid ""
+"Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So "
+"verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer "
+"auf dem Laufenden."
+msgstr ""
+
+#: pages/page-veranstaltungen.php:24
+msgid "Veranstaltungen in deiner Nachbarschaft"
+msgstr ""
+
+#: pages/page-veranstaltungen.php:32
+msgid "Archiv"
+msgstr ""
+
+#: pages/projekt-feed.php:29
+msgid ""
+"Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem "
+"Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte "
+"kennen oder erstelle selbst ein eigenes Projekt."
+msgstr ""
+
+#: pages/projekt-feed.php:30
+msgid "Neuigkeiten und Projektupdates"
+msgstr ""
+
+#: pages/projekt-feed.php:49
+msgid "Hier kannst du noch keine Inhalte entdecken"
+msgstr ""
+
+#: pages/projekt-feed.php:61
+msgid "Mehr Projektinhalte laden"
+msgstr ""
+
+#: pages/single-anmerkungen.php:37
+msgid " Zu allen Vorschlägen"
+msgstr ""
+
+#: pages/single-nachrichten.php:83
+msgid "Nachricht bearbeiten"
+msgstr ""
+
+#: pages/single-nachrichten.php:84 pages/single-umfragen.php:56
+msgid "Willst du diesen Beitrag endgültig löschen?"
+msgstr ""
+
+#: pages/single-nachrichten.php:84
+msgid "Nachricht löschen"
+msgstr ""
+
+#: pages/single-nachrichten.php:102 pages/single-umfragen.php:77
+#: pages/single-veranstaltungen.php:126
+msgid "Dein Beitrag ist nicht öffentlich sichtbar."
+msgstr ""
+
+#: pages/single-nachrichten.php:191 pages/single-veranstaltungen.php:238
+msgid "Weitere Nachrichten und Veranstaltungen aus diesem Projekt"
+msgstr ""
+
+#: pages/single-projekte.php:74
+msgid "Übersicht"
+msgstr ""
+
+#: pages/single-projekte.php:77
+msgid "Chronik"
+msgstr ""
+
+#: pages/single-projekte.php:125
+msgid "Dein Projekt ist nicht öffentlich sichtbar."
+msgstr ""
+
+#: pages/single-projekte.php:176 pages/single-projekte.php:277
+msgid "Bearbeite dein Projekt"
+msgstr ""
+
+#: pages/single-projekte.php:202
+msgid "Ziele für nachhaltige Entwicklung bearbeiten"
+msgstr ""
+
+#: pages/single-projekte.php:225 pages/single-projekte.php:228
+msgid "Projekt löschen"
+msgstr ""
+
+#: pages/single-projekte.php:226
+msgid ""
+"Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
+"unwiederruflich gelöscht."
+msgstr ""
+
+#: pages/single-projekte.php:227
+msgid "Dieses Projekt endgültig löschen?"
+msgstr ""
+
+#: pages/single-umfragen.php:51
+msgid "Umfrage bearbeiten"
+msgstr ""
+
+#: pages/single-umfragen.php:56
+msgid "Umfrage löschen"
+msgstr ""
+
+#: pages/single-veranstaltungen.php:105
+msgid "Veranstaltung bearbeiten"
+msgstr ""
+
+#: pages/single-veranstaltungen.php:106
+msgid "Veranstaltung löschen"
+msgstr ""
+
+#: searchform.php:24
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:25
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:27
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#: setup/anmerkungen.php:27 setup/anmerkungen.php:90
+msgid "Anmerkung"
+msgstr ""
+
+#: setup/anmerkungen.php:31 setup/main.php:188
+msgid "Feedback"
+msgstr ""
+
+#: setup/anmerkungen.php:34
+msgid "Was wünschst du dir von der Quartiersplattform?"
+msgstr ""
+
+#: setup/anmerkungen.php:89 setup/anmerkungen.php:94
+msgid "Anmerkungen"
+msgstr ""
+
+#: setup/anmerkungen.php:135 setup/anmerkungen.php:136
+#: setup/anmerkungen.php:140
+msgid "Status"
+msgstr ""
+
+#: setup/blocks.php:34
+msgid "Link Block"
+msgstr ""
+
+#: setup/blocks.php:35
+msgid "Link Post and Pages"
+msgstr ""
+
+#: setup/blocks.php:96
+msgid "Link-Block"
+msgstr ""
+
+#: setup/kontakt.php:25
+msgid "Kontaktinformationen"
+msgstr ""
+
+#: setup/kontakt.php:29
+msgid "Telefonnummer"
+msgstr ""
+
+#: setup/kontakt.php:32
+msgid ""
+"Hier kannst du deine Telefonnummer angeben, damit dich andere Mitglieder "
+"kontaktieren können."
+msgstr ""
+
+#: setup/kontakt.php:50
+msgid "E-Mail"
+msgstr ""
+
+#: setup/kontakt.php:53
+msgid ""
+"Hier kannst du deine E-Mail Adresse eintragen, damit dich andere Nutzer "
+"kontaktieren können."
+msgstr ""
+
+#: setup/kontakt.php:100
+msgid ""
+"Hier kannst du ein wenig über dich und den Bezug zu deinem Viertel erzählen."
+msgstr ""
+
+#: setup/main.php:44
+msgid "Quartier"
+msgstr ""
+
+#: setup/main.php:177
+msgid "Startseite"
+msgstr ""
+
+#: setup/main.php:178 setup/veranstaltungen.php:25 setup/veranstaltungen.php:30
+#: ultimate-member/email/welcome_email.php:33
+msgid "Veranstaltungen"
+msgstr ""
+
+#: setup/main.php:179
+msgid "Projektverzeichnis"
+msgstr ""
+
+#: setup/main.php:184
+msgid "Nachricht erstellen"
+msgstr ""
+
+#: setup/main.php:185
+msgid "Angebot erstellen"
+msgstr ""
+
+#: setup/main.php:186
+msgid "Frage erstellen"
+msgstr ""
+
+#: setup/main.php:264
+msgid "Seiten Pin"
+msgstr ""
+
+#: setup/nachrichten.php:26 setup/nachrichten.php:31 setup/nachrichten.php:74
+msgid "Nachrichten"
+msgstr ""
+
+#: setup/nachrichten.php:78
+msgid "Deine Nachricht für dein Projekt"
+msgstr ""
+
+#: setup/nachrichten.php:81
+msgid "Was gibt es Neues in deinem Projekt?"
+msgstr ""
+
+#: setup/nachrichten.php:97 setup/projekte.php:170
+#: setup/veranstaltungen.php:243
+msgid "Bild"
+msgstr ""
+
+#: setup/projekte.php:113
+msgid "Emoji"
+msgstr ""
+
+#: setup/projekte.php:116
+msgid "Welches Emoji beschreibt dein Projekt am besten?"
+msgstr ""
+
+#: setup/projekte.php:132
+msgid "Kurzbeschreibung"
+msgstr ""
+
+#: setup/projekte.php:135
+msgid "Wie würdest du dein Projekt in wenigen Worten beschreiben?"
+msgstr ""
+
+#: setup/projekte.php:151
+msgid "Projektbeschreibung"
+msgstr ""
+
+#: setup/projekte.php:154
+msgid "Worum geht es in deinem Projekt?"
+msgstr ""
+
+#: setup/projekte.php:173
+msgid "Welches Bild beschreibt dein Projekt am besten?"
+msgstr ""
+
+#: setup/sdg.php:26 setup/sdg.php:31 setup/sdg.php:63
+msgid "SDGs"
+msgstr ""
+
+#: setup/sdg.php:27 setup/sdg.php:64 setup/sdg.php:68
+msgid "SDG"
+msgstr ""
+
+#: setup/sdg.php:225
+msgid "Keine Armut"
+msgstr ""
+
+#: setup/sdg.php:225
+msgid "Armut in all ihren Formen und überall beenden"
+msgstr ""
+
+#: setup/sdg.php:225
+msgid ""
+"Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf "
+"der Welt zu beseitigen. Allerdings wird extreme Armut mit einem "
+"gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur "
+"Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu "
+"niedrig."
+msgstr ""
+
+#: setup/sdg.php:226
+msgid "Keine Hungersnot"
+msgstr ""
+
+#: setup/sdg.php:226
+msgid ""
+"Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung "
+"erreichen und eine nachhaltige Landwirtschaft fördern"
+msgstr ""
+
+#: setup/sdg.php:226
+msgid ""
+"Alle Menschen sollen bis 2030 „ganzjährig Zugang zu sicheren, "
+"nährstoffreichen und ausreichenden Nahrungsmitteln haben“. Obwohl bereits "
+"heute genügend Nahrungsmittel zur Verfügung stehen, haben immer noch nicht "
+"alle Menschen Zugang zu ihnen. Ebenso sollen alle Formen der Mangelernährung "
+"beseitigt sowie die landwirtschaftliche Produktivität und die Einkommen der "
+"kleinen Nahrungsmittelproduzenten verdoppelt werden."
+msgstr ""
+
+#: setup/sdg.php:227
+msgid "Gute Gesundheitsversorgung"
+msgstr ""
+
+#: setup/sdg.php:227
+msgid ""
+"Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr "
+"Wohlergehen fördern"
+msgstr ""
+
+#: setup/sdg.php:227
+msgid ""
+"Bis 2030 soll die weltweite Müttersterblichkeit auf unter 70 je 100.000 "
+"Lebendgeburten sinken. Vermeidbare Todesfälle bei Neugeborenen und Kindern "
+"unter fünf Jahren sollen verhindert werden. In den Zielvorgaben sind die "
+"Beseitigung der Aids-, Tuberkulose- und Malaria-Epidemien sowie der "
+"vernachlässigten Tropenkrankheiten von besonderer Bedeutung, ebenso der "
+"Zugang zu einer Gesundheitsversorgung für alle."
+msgstr ""
+
+#: setup/sdg.php:228
+msgid "Hochwertige Bildung"
+msgstr ""
+
+#: setup/sdg.php:228
+msgid ""
+"Inklusive, gleichberechtigte und hochwertige Bildung und Möglichkeiten "
+"lebenslangen Lernens für alle fördern"
+msgstr ""
+
+#: setup/sdg.php:228
+msgid ""
+"Die wichtigste Zielvorgabe besagt, dass bis 2030 sichergestellt werden soll, "
+"„dass alle Mädchen und Jungen gleichberechtigt eine kostenlose und "
+"hochwertige Grund- und Sekundarschulbildung abschließen“. In weiteren "
+"Zielvorgaben werden Maßstäbe für Vorschulerziehung sowie Hochschul- und "
+"Berufsbildung formuliert."
+msgstr ""
+
+#: setup/sdg.php:229
+msgid "Gleichberechtigung der Geschlechter"
+msgstr ""
+
+#: setup/sdg.php:229
+msgid ""
+"Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur "
+"Selbstbestimmung befähigen"
+msgstr ""
+
+#: setup/sdg.php:229
+msgid ""
+"Zu den wesentlichen Anliegen gehört, alle Formen der Diskriminierung von "
+"Frauen und Mädchen zu beenden und die Gewalt gegen sie zu beseitigen. "
+"Weitere Zielvorgaben befassen sich mit individuellen Formen der "
+"geschlechtsspezifischen Diskriminierung, wie beispielweise Zwangsheirat, "
+"fehlende Chancengleichheit bei dem Erlangen von Führungspositionen und "
+"ungleiche Rechte auf wirtschaftliche Ressourcen."
+msgstr ""
+
+#: setup/sdg.php:230
+msgid "Sauberes Wasser und sanitäre Einrichtungen"
+msgstr ""
+
+#: setup/sdg.php:230
+msgid ""
+"Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und "
+"Sanitärversorgung für alle gewährleisten"
+msgstr ""
+
+#: setup/sdg.php:230
+msgid ""
+"Bis 2030 soll der Zugang zu einwandfreiem und bezahlbarem Trinkwasser sowie "
+"einer angemessenen und gerechten Sanitärversorgung für alle verwirklicht "
+"werden. In weiteren Zielvorgaben geht es u.a. um die Verbesserung der "
+"Wasserqualität, die Effizienz der Wassernutzung und den Schutz "
+"wasserverbundener Ökosysteme."
+msgstr ""
+
+#: setup/sdg.php:231
+msgid "Erneuerbare Energien"
+msgstr ""
+
+#: setup/sdg.php:231
+msgid ""
+"Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für "
+"alle sichern"
+msgstr ""
+
+#: setup/sdg.php:231
+msgid ""
+"Der allgemeine Zugang zu Energiedienstleistungen soll bis 2030 gesichert "
+"werden. Dabei soll der Anteil erneuerbarer Energie deutlich erhöht werden. "
+"Gleichzeitig soll die Steigerungsrate der Energieeffizienz verdoppelt werden."
+msgstr ""
+
+#: setup/sdg.php:232
+msgid "Gute Arbeitsplätze und wirtschaftliches Wachstum"
+msgstr ""
+
+#: setup/sdg.php:232
+msgid ""
+"Dauerhaftes, breitenwirksames und nachhaltiges Wirtschaftswachstum, "
+"produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern"
+msgstr ""
+
+#: setup/sdg.php:232
+msgid ""
+"Großes Gewicht wird auf Fragen des nachhaltigen Wirtschaftswachstums und der "
+"Beschäftigung gelegt. Ein hohes Wirtschaftswachstum wird vor allem in den am "
+"wenigsten entwickelten Ländern für erforderlich gehalten, mindestens 7 % im "
+"Jahr. Für alle Länder werden höhere wirtschaftliche Produktivität und "
+"Ressourceneffizienz angestrebt. Andere Zielvorgaben befassen sich mit "
+"menschenwürdigen Arbeitsplätzen, einer produktiven Vollbeschäftigung, der "
+"Beendigung von Zwangsarbeit, Sklaverei und Menschenhandel sowie dem Schutz "
+"der Arbeitsrechte."
+msgstr ""
+
+#: setup/sdg.php:233
+msgid "Innovation und Infrastruktur"
+msgstr ""
+
+#: setup/sdg.php:233
+msgid ""
+"Eine widerstandsfähige Infrastruktur aufbauen, breitenwirksame und "
+"nachhaltige Industrialisierung fördern und Innovation unterstützen"
+msgstr ""
+
+#: setup/sdg.php:233
+msgid ""
+"Es wird angestrebt, eine hochwertige, verlässliche, nachhaltige und "
+"widerstandsfähige Infrastruktur aufzubauen, um so wirtschaftliche "
+"Entwicklung und menschliches Wohlergehen zu unterstützen. Insbesondere in "
+"Entwicklungsländern sollen kleine Industriebetriebe einen besseren Zugang zu "
+"Finanzdienstleistungen, Wertschöpfungsketten und Märkten erhalten."
+msgstr ""
+
+#: setup/sdg.php:234
+msgid "Weniger Ungleichheiten"
+msgstr ""
+
+#: setup/sdg.php:234
+msgid "Ungleichheit in und zwischen Ländern verringern"
+msgstr ""
+
+#: setup/sdg.php:234
+msgid ""
+"Eine wichtige Zielvorgabe lautet: „Bis 2030 ein über dem nationalen "
+"Durchschnitt liegendes Einkommenswachstum der ärmsten 40 Prozent der "
+"Bevölkerung zu erreichen.“ Angestrebt wird außerdem u. a. eine „verstärkte "
+"Mitsprache der Entwicklungsländer bei der Entscheidungsfindung in den "
+"globalen internationalen Wirtschafts- und Finanzinstitutionen“."
+msgstr ""
+
+#: setup/sdg.php:235
+msgid "Nachhaltige Städte und Gemeinden"
+msgstr ""
+
+#: setup/sdg.php:235
+msgid ""
+"Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig "
+"gestalten"
+msgstr ""
+
+#: setup/sdg.php:235
+msgid ""
+"„Bis 2030 den Zugang zu angemessenem, sicherem und bezahlbarem Wohnraum und "
+"zur Grundversorgung für alle sicherstellen und Slums sanieren.“ Dazu gehören "
+"u. a. ein Verkehrssystem für alle, eine partizipative Siedlungsplanung, ein "
+"verbesserter Katastrophenschutz, eine Verminderung der Umweltbelastung und "
+"eine größere Widerstandsfähigkeit gegenüber den Folgen des Klimawandels."
+msgstr ""
+
+#: setup/sdg.php:236
+msgid "Nachhaltiger Konsum und Produktion"
+msgstr ""
+
+#: setup/sdg.php:236
+msgid "Nachhaltige Konsum- und Produktionsmuster sicherstellen"
+msgstr ""
+
+#: setup/sdg.php:236
+msgid ""
+"Zur Umsetzung dieses Ziels „sind an der Spitze die entwickelten Länder“ "
+"gefordert, während die Entwicklungsländer entsprechend ihrem "
+"Entwicklungsstand und ihren Kapazitäten Maßnahmen ergreifen sollen. Als "
+"wichtige Themen werden dabei u. a. die nachhaltige Bewirtschaftung und "
+"effiziente Nutzung der natürlichen Ressourcen, eine Halbierung der "
+"Nahrungsmittelverschwendung und ein umweltverträglicher Umgang mit "
+"Chemikalien und Abfällen aufgeführt. Angestrebt wird auch eine allmähliche "
+"Abschaffung der schädlichen Subventionen für fossile Brennstoffe."
+msgstr ""
+
+#: setup/sdg.php:237
+msgid "Maßnahmen zum Klimaschutz"
+msgstr ""
+
+#: setup/sdg.php:237
+msgid ""
+"Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen "
+"ergreifen"
+msgstr ""
+
+#: setup/sdg.php:237
+msgid ""
+"Es gilt, wird in einer Zielvorgabe formuliert, „die Widerstandskraft und die "
+"Anpassungsfähigkeit gegenüber klimabedingten Gefahren und Naturkatastrophen "
+"in allen Ländern“ zu stärken. Dafür müssen Klimaschutzmaßnahmen in die "
+"nationalen Politiken, Strategien und Planungen einbezogen werden. "
+"Ausdrücklich wird an die Verpflichtung der entwickelten Länder erinnert, ab "
+"2020 jährlich 100 Milliarden US-Dollar für den Klimaschutz in "
+"Entwicklungsländern aufzubringen."
+msgstr ""
+
+#: setup/sdg.php:238
+msgid "Leben unter dem Wasser"
+msgstr ""
+
+#: setup/sdg.php:238
+msgid ""
+"Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung "
+"erhalten und nachhaltig nutzen"
+msgstr ""
+
+#: setup/sdg.php:238
+msgid ""
+"Bis 2025 sollen alle Arten der Meeresverschmutzung gestoppt oder erheblich "
+"verringert werden. Außerdem sollen die Meeres- und Küstenökosysteme "
+"nachhaltig bewirtschaftet und die Versauerung der Ozeane bekämpft werden. "
+"Angestrebt werden auch eine wirksame Regelung der Fangtätigkeit und die "
+"Beendigung der Überfischung."
+msgstr ""
+
+#: setup/sdg.php:239
+msgid "Leben an Land"
+msgstr ""
+
+#: setup/sdg.php:239
+msgid ""
+"Landökosysteme schützen wiederherstellen und ihre nachhaltige Nutzung "
+"fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, "
+"Bodendegradation beenden und umkehren und dem Verlust der biologischen "
+"Vielfalt ein Ende setzen"
+msgstr ""
+
+#: setup/sdg.php:239
+msgid ""
+"Bis 2020 soll eine nachhaltige Nutzung der Land- und Binnensüßwasser-"
+"Ökosysteme sowie der Wälder erreicht werden. Ebenso werden eine Bekämpfung "
+"der Wüstenbildung und die Erhaltung der Bergökosysteme angestrebt. Um den "
+"Verlust der biologischen Vielfalt zu beenden, sollen bedrohte Arten "
+"geschützt und ihr Aussterben verhindert werden."
+msgstr ""
+
+#: setup/sdg.php:240
+msgid "Frieden und Gerechtigkeit"
+msgstr ""
+
+#: setup/sdg.php:240
+msgid ""
+"Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung "
+"fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, "
+"rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen"
+msgstr ""
+
+#: setup/sdg.php:240
+msgid ""
+"Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und "
+"Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau "
+"leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die "
+"illegalen Finanz- und Waffenströme deutlich zu verringern."
+msgstr ""
+
+#: setup/sdg.php:241
+msgid "Partnerschaften zur Erreichung der Ziele"
+msgstr ""
+
+#: setup/sdg.php:241
+msgid ""
+"Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige "
+"Entwicklung stärken"
+msgstr ""
+
+#: setup/sdg.php:241
+msgid ""
+"Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher "
+"Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % "
+"ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll "
+"eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich "
+"Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es "
+"auch, ein gerechtes multilaterales Handelssystem unter dem Dach der "
+"Welthandelsorganisation zu schaffen."
+msgstr ""
+
+#: setup/settings.php:25
+msgid "Einstellungen für die Quartiersplattform"
+msgstr ""
+
+#: setup/settings.php:30 setup/settings.php:38 setup/settings.php:41
+#: setup/settings.php:48 setup/settings.php:51
+msgid "Aktualisieren"
+msgstr ""
+
+#: setup/settings.php:31 setup/settings.php:42 setup/settings.php:52
+msgid "Die Einstellungen wurden gespeichert."
+msgstr ""
+
+#: setup/settings.php:35 setup/settings.php:36 setup/settings.php:325
+#: setup/settings.php:329
+msgid "Wartungsmodus"
+msgstr ""
+
+#: setup/settings.php:45 setup/settings.php:46
+msgid "API-Schlüssel"
+msgstr ""
+
+#: setup/settings.php:74
+msgid "Quartierseinstellungen"
+msgstr ""
+
+#: setup/settings.php:78
+msgid "Name"
+msgstr ""
+
+#: setup/settings.php:81
+msgid ""
+"Hier kannst du den Namen festlegen, welcher den Besuchern der "
+"Quartiersplattform angezeigt wird und im Menü angezeigt wird."
+msgstr ""
+
+#: setup/settings.php:90
+msgid "Name der Quartiersplattform"
+msgstr ""
+
+#: setup/settings.php:99
+msgid "Bild für die Quartiersstartseite"
+msgstr ""
+
+#: setup/settings.php:102
+msgid ""
+"Hier kannst du das Bild festlegen, das auf der Quartiersseite eingeblendet "
+"wird."
+msgstr ""
+
+#: setup/settings.php:123
+msgid "Überschrift für die Quartiersstartseite"
+msgstr ""
+
+#: setup/settings.php:126
+msgid ""
+"Hier kannst du die Überschrift festlegen, welche den Besuchern der "
+"Quartiersplattform auf der Startseite ."
+msgstr ""
+
+#: setup/settings.php:135 setup/settings.php:368
+msgid "Überschrift"
+msgstr ""
+
+#: setup/settings.php:142
+msgid "Beschreibung für die Quartiersstartseite"
+msgstr ""
+
+#: setup/settings.php:145
+msgid ""
+"Hier kannst einen Beschreibungstext hinterlegen, welcher für die Besucher "
+"auf der Startseite eingeblendet wird."
+msgstr ""
+
+#: setup/settings.php:154
+msgid "Beschreibungstext"
+msgstr ""
+
+#: setup/settings.php:201 setup/settings.php:244
+msgid "Logo"
+msgstr ""
+
+#: setup/settings.php:204
+msgid ""
+"Hier kannst du das Logo von deinem Quartier oder deiner Organisation "
+"einfügen, welches unter jeder Seite eingeblendet wird."
+msgstr ""
+
+#: setup/settings.php:225
+msgid "Sponsoren"
+msgstr ""
+
+#: setup/settings.php:228
+msgid "Hier kannst du die Partner deiner Quartiersplattform eintragen."
+msgstr ""
+
+#: setup/settings.php:287 setup/veranstaltungen.php:177
+msgid "Website"
+msgstr ""
+
+#: setup/settings.php:332
+msgid "Schalte hier den Wartungsmodus für die Quartiersseite ein."
+msgstr ""
+
+#: setup/settings.php:371
+msgid "Hier kannst du eine Überschrift für die Wartungsseite eintragen."
+msgstr ""
+
+#: setup/settings.php:379
+msgid "Deine Quatiersplattform wird aktualisiert."
+msgstr ""
+
+#: setup/settings.php:387
+msgid "Text"
+msgstr ""
+
+#: setup/settings.php:390
+msgid "Hier kannst du einen Beschreibungstext für den Wartungsmodus einfügen."
+msgstr ""
+
+#: setup/settings.php:398
+msgid ""
+"Freue dich auf spannende neue Fuktionen die du nutzen kannst um dein Quatier "
+"mit zugestalten. Wir sind bald wieder online."
+msgstr ""
+
+#: setup/settings.php:473
+msgid "Matomo API Schlüssel"
+msgstr ""
+
+#: setup/settings.php:476
+msgid "Trage hier deinen Matomo API-Schlüssel ein."
+msgstr ""
+
+#: setup/umfragen.php:58 setup/umfragen.php:63
+msgid "Umfragen"
+msgstr ""
+
+#: setup/umfragen.php:108
+msgid "Worum geht es in deiner Umfrage?"
+msgstr ""
+
+#: setup/umfragen.php:124
+msgid "Fragen"
+msgstr ""
+
+#: setup/umfragen.php:127
+msgid "Hier kannst du die Auswahlmöglichkeiten für deine Umfrage festlegen."
+msgstr ""
+
+#: setup/umfragen.php:139
+msgid "Weitere Auswahlmöglichkeit hinzufügen"
+msgstr ""
+
+#: setup/umfragen.php:143
+msgid "Frage"
+msgstr ""
+
+#: setup/veranstaltungen.php:111
+msgid "Worum geht es bei deiner Veranstaltung?"
+msgstr ""
+
+#: setup/veranstaltungen.php:127
+msgid "Datum"
+msgstr ""
+
+#: setup/veranstaltungen.php:130
+msgid "Wann wird deine Veranstaltung stattfinden?"
+msgstr ""
+
+#: setup/veranstaltungen.php:144
+msgid "Beginn"
+msgstr ""
+
+#: setup/veranstaltungen.php:147
+msgid "Wann startet deine Veranstaltung?"
+msgstr ""
+
+#: setup/veranstaltungen.php:161
+msgid "Ende"
+msgstr ""
+
+#: setup/veranstaltungen.php:164
+msgid "Wann endet deine Veranstaltung?"
+msgstr ""
+
+#: setup/veranstaltungen.php:193
+msgid "Livestream"
+msgstr ""
+
+#: setup/veranstaltungen.php:196
+msgid ""
+"Wird deine Veranstaltunge Live übertragen? Hier kannst du einen Link "
+"veröffentlichen, damit noch mehr Menschen daran teilhaben können."
+msgstr ""
+
+#: setup/veranstaltungen.php:209
+msgid "Ticket"
+msgstr ""
+
+#: setup/veranstaltungen.php:225
+msgid "Karte"
+msgstr ""
+
+#: setup/veranstaltungen.php:246
+msgid "Welches Bild beschreibt deine Veranstaltung am besten?"
+msgstr ""
+
+#: template-parts/content-cover.php:88
+msgid "Scroll Down"
+msgstr ""
+
+#: template-parts/content-cover.php:138
+msgid "Page"
+msgstr ""
+
+#: template-parts/content-cover.php:138
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/entry-author-bio.php:29
+msgid "View Archive "
+msgstr ""
+
+#: template-parts/navigation.php:25
+msgid "Post"
+msgstr ""
+
+#: template-parts/pagination.php:21
+msgid "Newer "
+msgstr "Neuer"
+
+#: template-parts/pagination.php:21 template-parts/pagination.php:25
+msgid "Posts"
+msgstr "Beiträge"
+
+#: template-parts/pagination.php:25
+msgid "Older "
+msgstr "Älter"
+
+#: ultimate-member/email/changedpw_email.php:4
+msgid "Dein Passwort wurde geändert."
+msgstr ""
+
+#: ultimate-member/email/changedpw_email.php:8
+msgid ""
+"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
+"gewesen sein, kontaktiere uns bitte umgehend."
+msgstr ""
+
+#: ultimate-member/email/changedpw_email.php:14
+msgid "Sieh dir dein Konto an"
+msgstr ""
+
+#: ultimate-member/email/changedpw_email.php:16
+#: ultimate-member/email/checkmail_email.php:39
+#: ultimate-member/email/resetpw_email.php:39
+#: ultimate-member/email/welcome_email.php:51
+msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
+msgstr ""
+
+#: ultimate-member/email/changedpw_email.php:20
+#: ultimate-member/email/checkmail_email.php:44
+#: ultimate-member/email/resetpw_email.php:44
+#: ultimate-member/email/welcome_email.php:56
+msgid "Vielen Dank!"
+msgstr ""
+
+#: ultimate-member/email/checkmail_email.php:16
+msgid "Aktiviere dein Konto,"
+msgstr ""
+
+#: ultimate-member/email/checkmail_email.php:22
+msgid "Schön das du da bist! Klicke auf den Link, um dein Konto zu aktivieren."
+msgstr ""
+
+#: ultimate-member/email/checkmail_email.php:35
+msgid "Konto aktivieren"
+msgstr ""
+
+#: ultimate-member/email/resetpw_email.php:22
+msgid ""
+"Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
+"Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
+msgstr ""
+
+#: ultimate-member/email/resetpw_email.php:35
+msgid "Passwort zurücksetzen"
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:14
+msgid "Willkommen im Quartier, "
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:21
+msgid ""
+"Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
+"Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
+"und dein Quartier nachhaltig entwickeln und verbessern."
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:29
+msgid ""
+"Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
+"Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:35
+msgid ""
+"Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
+"alles was du wissen musst, um bei nächsten mal dabei zu sein."
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:47
+msgid "Entdecke dein Quartier!"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/studio-arrenberg/quartiersplattform"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner "
+"Stadt! Deine Projekte werden sichtbar und du profitiert von der Community & "
+"lokalen Akteuren. Nutze unser Theme und lass dein Quartier in neuem Glanz "
+"erstrahlen."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Studio Arrenberg"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://arrenberg.studio"
+msgstr ""
+
+msgid "Datenschutzerklärung"
+msgstr "Privacy policy"
+
+msgid "Energie Ampel "
+msgstr "Energy traffic light "
+
+msgid "grüne Phase"
+msgstr "green phase"
+
+msgid " CO2 pro kWh"
+msgstr " CO2 per kWh"
+
+msgid "Jetzt"
+msgstr "Now"
+
+msgid "Energie Ampel"
+msgstr "Energy traffic light"
+
+msgid "Phase"
+msgstr "e phase"
+
+msgid "gramm"
+msgstr "grammes"
+
+msgid "pro kWh"
+msgstr "per kWh"
+
+msgid "Sprache"
+msgstr "Language"
+
+msgid "Zurück"
+msgstr "Back"
+
+msgid ""
+"Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? "
+"Erstelle ein Projekt und veröffentliche eine Veranstaltung."
+msgstr ""
+"Want to advertise an event on your district platform? Create a project and "
+"publish an event."
+
+msgid "Erstelle eine Veranstaltung"
+msgstr "Create an event"
+
+msgid "Veröffentliche eine Veranstaltung"
+msgstr "Create an event"
+
+msgid "Projekt teilen"
+msgstr "Share project"
+
+msgid "Wichtige Seiten"
+msgstr "Important websites"
+
+msgid "Deine Frage wurde gelöscht."
+msgstr "Your question was deleted."
+
+msgid "Gemeinsam"
+msgstr "Together"
+
+msgid "Umfrage teilen"
+msgstr "Share survey"
+
+msgid "Angebote"
+msgstr "Offers"
+
+msgid "Angebot"
+msgstr "Offer"
