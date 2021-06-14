@@ -53,7 +53,8 @@ else {
         </div>
 
         <?php 
-        if( !get_field('phone', $userid) && !get_field('mail', $userid) && $userid == get_current_user_id()) {
+        // reminder card to set contact information
+        if( is_user_logged_in() && $user_id == get_current_user_id() && !get_field('phone', $userid) && !get_field('mail', $userid) ) {
             $text = __('Hier kannst du deine Kontaktdaten hinterlegen,','quartiersplattform')."<br>".__(" damit du kontaktiert werden kannst.",'quartiersplattform');
             reminder_card('no-contact-information', 'Kontaktdaten hinterlegen', $text, 'Zum Profil', get_site_url().'/profil' );
         }
