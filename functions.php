@@ -3283,33 +3283,33 @@ function qp_detect_browser_language() {
  */
 
 function qp_detect_language() {
-	// $expiry = strtotime('+1 year');
-	// global $user;
+	$expiry = strtotime('+1 year');
+	global $user;
 	if (!is_user_logged_in()) {
-		// if(isset($_COOKIE['language'])) {     
-		// 	if(!empty($_GET['lang'])){
-		// 		setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-		// 		return $_GET['lang'];
-		// 	}else{
-		// 		return $_COOKIE['language'];
-		// 	}
+		if(isset($_COOKIE['language'])) {     
+			if(!empty($_GET['lang'])){
+				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+				return $_GET['lang'];
+			}else{
+				return $_COOKIE['language'];
+			}
 			
-		// }else{  	
-		// 	setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-		// 	return qp_detect_browser_language();
-		// }	
-	}else{
-		// check user locale setting
-		if(!empty($_GET['lang'])){
-			setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
-			return $_GET['lang'];
-		}else{
-			// Notice: Undefined variable: current_user
-			// Notice: Trying to get property 'ID' of non-object
-			$lang = get_user_locale(get_current_user_id());
-			return $lang;
+		}else{  	
+			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+			return qp_detect_browser_language();
 		}	
+	}else{
+		// // check user locale setting
+		// if(!empty($_GET['lang'])){
+		// 	setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+		// 	update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
+		// 	return $_GET['lang'];
+		// }else{
+		// 	// Notice: Undefined variable: current_user
+		// 	// Notice: Trying to get property 'ID' of non-object
+		// 	$lang = get_user_locale(get_current_user_id());
+		// 	return $lang;
+		// }	
 	}
 	// // update user locale
 	
