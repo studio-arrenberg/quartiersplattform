@@ -3253,20 +3253,6 @@ add_action( 'after_setup_theme', 'qp_translate_theme' );
 
 
 
-function qp_translate_um() {
-    // Load Theme textdomain
-	load_plugin_textdomain( 'ultimate-member', false, basename( dirname( __FILE__ ) ) . '/languages' );
-
-    // Include Theme text translation file
-    $locale = get_locale();
-	if (!empty($locale)) {
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable( $locale_file ) ) {
-			require_once( $locale_file );
-		}
-	}
-}
-add_action( 'after_setup_theme', 'qp_translate_um' );
 
 /**
  * QP detect browser language
@@ -3290,6 +3276,9 @@ function qp_detect_browser_language() {
 		return "de_DE";
 	}
 }
+
+//Ultimate Member Translation
+add_filter( 'um_language_locale', 'qp_detect_language' , 10, 1);
 
 /**
  * QP switch language
@@ -3331,16 +3320,11 @@ function qp_detect_language() {
 	
 	// return $user_language;
 }
-add_filter( 'locale', 'qp_detect_language' );
+add_filter( 'locale', 'qp_detect_language', 10, 1 );
 
-//Ultimate Member Translation
 
-// function my_language_locale() {
-// 	$locale = "de_DE";
-// 	return $locale;
-// }
-// add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
-// add_filter( 'um_language_file', 'my_language_file', 10, 1 );
+
+
 
 
 
