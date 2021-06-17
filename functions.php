@@ -3277,8 +3277,7 @@ function qp_detect_browser_language() {
 	}
 }
 
-//Ultimate Member Translation
-add_filter( 'um_language_locale', 'qp_detect_language' , 10, 1);
+
 
 /**
  * QP switch language
@@ -3288,7 +3287,7 @@ add_filter( 'um_language_locale', 'qp_detect_language' , 10, 1);
  * @return language string
  */
 
-function qp_detect_language() {
+function qp_detect_language($lang) {
 	$expiry = strtotime('+1 year');
 	global $user;
 	if (!is_user_logged_in()) {
@@ -3320,7 +3319,17 @@ function qp_detect_language() {
 	
 	// return $user_language;
 }
-add_filter( 'locale', 'qp_detect_language', 10, 1 );
+// add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
+// function my_language_locale( $locale ) {
+// 	$locale = "	";
+// 	return $locale;
+// }
+// add_filter( 'locale', 'de_DE', 10, 1 );
+//apply_filters( 'locale', 'qp_detect_language', 10, 1 );
+
+//Ultimate Member Translation
+
+
 
 
 

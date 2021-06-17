@@ -225,3 +225,18 @@ function qp_um_profile_image_upload_helper() {
 	}
 
 } add_action('wp_footer', 'qp_um_profile_image_upload_helper');
+
+//Ultimate Member Translation
+
+add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
+function my_language_locale( $locale ) {
+	$locale = "	";
+	return $locale;
+}
+apply_filters( "um_language_locale" );
+
+if(has_filter( "um_language_locale" == true)){
+	echo "<h1>WORKING</H1>";
+}else{
+	echo "<h1>NOPE</H1>";
+}

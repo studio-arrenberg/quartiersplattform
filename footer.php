@@ -128,6 +128,7 @@
                 echo get_locale();
                 echo qp_detect_browser_language();
                 echo ( get_locale() != '' ) ? get_locale() : 'en_US';
+                echo get_user_locale();
             ?>
             <a class="button <?php if($sprache == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🇬🇧&nbsp;<?php _e('English', ''); ?></a>
             <a class="button <?php if($sprache == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkçe', ''); ?></a>
