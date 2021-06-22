@@ -34,6 +34,7 @@
 - [ ] Multi Image upload preview!
 - [ ] Locations! (Calendar)
 - [ ] Projekt Liste (eigene als erstes)
+- [ ] Projektverzeichnis Card (mehr bild und beschreibung...)
 
 ## dokumentation
 - troubleshooting

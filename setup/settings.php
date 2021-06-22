@@ -296,7 +296,7 @@ if( function_exists('acf_add_local_field_group') ):
 							'id' => '',
 						),
 						'default_value' => '',
-						'placeholder' => '',
+						'placeholder' => 'http://quartiersplattform.org',
 					),
 				),
 			),

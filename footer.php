@@ -37,10 +37,10 @@
                 <?php
                 if(  !empty( $link ) ){
                 ?> 
-                    <a href="<?php echo $link; ?>">
+                    <a href="<?php echo $link; ?>" target="_blank" >
                 <?php } ?>
 
-                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php the_sub_field('field_6024f5dc3157f'); ?>"> 
+                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="Sponsor der Quartiersplattform" > 
             
                 <?php if( !empty( $link ) ){ ?> 
                     </a>
