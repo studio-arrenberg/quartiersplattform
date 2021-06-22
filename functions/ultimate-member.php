@@ -233,10 +233,14 @@ function my_language_locale( $locale ) {
 	$locale = "	";
 	return $locale;
 }
-apply_filters( "um_language_locale" );
+// apply_filters( "um_language_locale" );
 
 if(has_filter( "um_language_locale" == true)){
 	echo "<h1>WORKING</H1>";
 }else{
 	echo "<h1>NOPE</H1>";
+}
+
+if (has_filter( "um_language_locale") ) {
+	echo "<h1>YES</H1>"; 
 }

@@ -114,22 +114,50 @@
         <div class="sprache">
             <?php 
                 //Get correct language
-                if(!empty($_GET['lang'])){
-                    $sprache = $_GET['lang'];
-                }else{
-                    if (!is_user_logged_in()) {
-                        $sprache = qp_detect_language();
-                    }else{
-                        $sprache = get_user_locale( get_current_user_id() );
-                    }
-                }
+                // if(!empty($_GET['lang'])){
+                //     $sprache = $_GET['lang'];
+                // }else{
+                //     if (!is_user_logged_in()) {
+                //         $sprache = qp_detect_language();
+                //     }else{
+                //         $sprache = get_user_locale( get_current_user_id() );
+                //     }
+                // }
             ?>
             <?php
-                echo get_locale();
-                echo qp_detect_browser_language();
-                echo ( get_locale() != '' ) ? get_locale() : 'en_US';
-                echo get_user_locale();
+                // echo get_locale(); // influenced by installation main language
+                // echo qp_detect_browser_language();
+                // echo ( get_locale() != '' ) ? get_locale() : 'en_US'; // influenced by installation main language
+                // echo get_user_locale();
+                // echo $_GET['lang'];
             ?>
+
+            <!-- console logging -->
+            <script>
+                console.group();
+
+                    console.log('Language');
+
+                    function Entry(functionRun, ValueReturned) {
+                        this.functionRun = functionRun;
+                        this.ValueReturned = ValueReturned;
+                        }
+
+                    var locales = {};
+
+                    locales.get_locale = new Entry("get_locale()", "<?php echo get_locale(); ?>");
+                    locales.qp = new Entry("QP Detect Browser Language", "<?php //echo qp_detect_browser_language(); ?>");
+                    locales.get_locale_fallback = new Entry("get_locale() with fallback", "<?php echo ( get_locale() != '' ) ? get_locale() : 'en_US'; ?>");
+                    locales.lang_cookie = new Entry("Language Cookie", "<?php echo $_GET['lang']; ?>");
+                    locales.um_filter = new Entry("UM Filter 'um_language_locale' ", "<?php echo has_filter( "um_language_locale") ?>");
+                    locales.um_language_filter = new Entry("UM Language", "<?php echo apply_filters( 'um_language_locale', $language_locale ) ?>");
+                    locales.um_textdomain = new Entry("UM textdomain", "<?php echo apply_filters( 'um_language_textdomain', 'ultimate-member' ); ?>")
+
+                    console.table(locales);
+
+                console.groupEnd();
+            </script>
+
             <a class="button <?php if($sprache == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🇬🇧&nbsp;<?php _e('English', ''); ?></a>
             <a class="button <?php if($sprache == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkçe', ''); ?></a>
             <a class="button <?php if($sprache == "it_IT") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=it_IT'); ?>">🇮🇹&nbsp;<?php _e('Italiano', ''); ?></a>
