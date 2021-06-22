@@ -32,6 +32,8 @@
 - [x] Startseite Abstand der Inhalte
 - [ ] Cant login when login page is not set through UM...
 - [ ] Multi Image upload preview!
+- [ ] Locations! (Calendar)
+- [ ] Projekt Liste (eigene als erstes)
 
 ## dokumentation
 - troubleshooting
@@ -51,7 +53,7 @@
 - UM Profile Image Upload Helper
 ### Bugs
 - ACF Loading Spinner
-- 
+- Calendar Download File Fix
 
 ## v1.7.2 🚀
 - Login Weiterleitung zu Projekten

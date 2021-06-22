@@ -3,11 +3,25 @@
 // needed variabels
 $date = get_field('event_date', $post);
 $time = get_field('event_time', $post);
-$time_end = get_field('event_end', $post);
+$time_end = get_field('event_end_time', $post);
         
 $title = get_the_title();
 $start = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time"));
 $ende = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time_end"));
+
+if (empty($ende) || strtotime($start) > strtotime($ende) ) {
+    // one hour after start
+    $ende = date('Ymd', strtotime($start) + (60*60)) . "T" . date('His', strtotime($start) + (60*60));
+}
+
+// echo "<p>".$time_end."</p><br>";
+
+// echo "<p>".strtotime($start)."</p><br>";
+// echo "<p>".strtotime($ende)."</p><br>";
+
+// // $start = qp_date(get_field('event_date'), true, get_field('event_time'));
+// echo "<p>".$start."</p><br>";
+// echo "<p>".$ende."</p>";
 
 // directory
 $links = get_template_directory_uri();
@@ -25,7 +39,7 @@ else {
     $ort = "";
 }
 
-$kurz = get_field( "kurzbeschreibung" );
+$kurz = get_field( "text" );
 $file_name = $post->post_name;
 $dir = "/assets/generated/calendar-files/";
 
