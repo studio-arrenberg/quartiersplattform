@@ -8,29 +8,32 @@
 
     if (get_post_status() == 'publish') {
 ?>
-    <div class="share small-margin">
+    <div class="share">
         <h3><?php _e('Teilen', 'quartiersplattform'); ?>  </h3>
+
+        <div class="simple-card">
         <div class="copy-url">
             <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
-            <button class="copy is-primary" onclick="copy()"><?php _e('Kopieren', 'quartiersplattform'); ?> </button>
-
+            <button class="copy-button is-primary" onclick="copy()">
+            <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
+            </button>
         </div>
 
-        <div class="share-button">
-
-            <a class="button " target="blank"
+        <div class="button-group">
+            <a class="button is-transparent" target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Facebook', '<?php the_title(); ?>']);"
             href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Faceboook</a>
         
-            <a class="button " target="blank"
+            <a class="button is-transparent" target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Twitter', '<?php the_title(); ?>']);"
             href="https://twitter.com/intent/tweet?url=<?php echo esc_attr( esc_url( get_page_link( $page_for_posts ) ) ) ?>">Twitter</a>
         
-            <a class="button" target="blank"
+            <a class="button is-transparent" target="blank"
             onclick="_paq.push(['trackEvent', 'Share', 'Email', '<?php the_title(); ?>']);"
             href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"
             rel="nofollow">E-Mail</a>
 
+        </div>
         </div>
     </div>
 
