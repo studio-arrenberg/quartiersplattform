@@ -37,7 +37,7 @@ else {
                 <div class="share-button">
                     <?php if( get_field('mail', $userid) ){ ?>
                     <div class="button is-transparent button-has-icon is-one-row">
-                        <a class=" button-has-icon is-one-row" id="btn1" target="_blank" href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"rel="nofollow">
+                        <a class=" button-has-icon is-one-row" id="btn1" target="_blank" href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'first_name', $user_id );?>"rel="nofollow">
                             <?php require get_template_directory() . '/assets/icons/mail.svg'; ?>
                             <?php the_field('mail', $userid);?>
                         </a>
