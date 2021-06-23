@@ -3287,38 +3287,38 @@ function qp_detect_browser_language() {
  * @return language string
  */
 
-function qp_detect_language($lang) {
-	$expiry = strtotime('+1 year');
-	global $user;
-	if (!is_user_logged_in()) {
-		if(isset($_COOKIE['language'])) {     
-			if(!empty($_GET['lang'])){
-				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-				return $_GET['lang'];
-			}else{
-				return $_COOKIE['language'];
-			}
+// function qp_detect_language($lang) {
+// 	$expiry = strtotime('+1 year');
+// 	global $user;
+// 	if (!is_user_logged_in()) {
+// 		if(isset($_COOKIE['language'])) {     
+// 			if(!empty($_GET['lang'])){
+// 				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+// 				return $_GET['lang'];
+// 			}else{
+// 				return $_COOKIE['language'];
+// 			}
 			
-		}else{  	
-			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-			return qp_detect_browser_language();
-		}	
-	}else{
-		// check user locale setting
-		if(!empty($_GET['lang'])){
-			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
-			return $_GET['lang'];
-		}else{
-			// Notice: Undefined variable: current_user
-			// Notice: Trying to get property 'ID' of non-object
-			$lang = get_user_locale(get_current_user_id());
-			return $lang;
-		}	
-	}
-	// // update user locale
+// 		}else{  	
+// 			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+// 			return qp_detect_browser_language();
+// 		}	
+// 	}else{
+// 		// check user locale setting
+// 		if(!empty($_GET['lang'])){
+// 			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
+// 			return $_GET['lang'];
+// 		}else{
+// 			// Notice: Undefined variable: current_user
+// 			// Notice: Trying to get property 'ID' of non-object
+// 			$lang = get_user_locale(get_current_user_id());
+// 			return $lang;
+// 		}	
+// 	}
+// 	// // update user locale
 	
-	// return $user_language;
-}
+// 	// return $user_language;
+// }
 // add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
 // function my_language_locale( $locale ) {
 // 	$locale = "	";
@@ -3330,10 +3330,53 @@ function qp_detect_language($lang) {
 //Ultimate Member Translation
 
 
+add_filter( 'um_language_textdomain', 'my_textdomain', 10, 1 );
+function my_textdomain( $domain ) {
+	// your code here
+	$domain = "fallback-in-function";
+	$domain = qp_language();
+	return $domain;
+}
+
+add_filter( 'um_language_locale', 'qp_language_locale', 10, 1 );
+function qp_language_locale( $locale ) {
+    // your code here
+	$locale = "fallback-in-function";
+	$locale = qp_language();
+    return $locale;
+}
+
+function qp_language() {
+
+	// get locale for user
+	$language = $_GET['lang'];
+
+	if (!$language) {
+		$language = $_COOKIE['language'];
+	}
+
+	if (!$language && is_user_logged_in()) {
+		$language = get_user_locale(get_current_user_id());
+	}
+
+	// set locale for user
+	if ($language && !is_user_logged_in()) {
+		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+	}
+	else if ($language && is_user_logged_in()) {
+		update_user_meta(get_current_user_id(), 'locale', $language);
+		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+	}
+	// fallback to german
+	else {
+		$language = "de_DE";
+	}
 
 
+	return $language;
 
-
+}
+add_filter( 'locale', 'qp_language', 10, 1 );
 
 
 

@@ -244,3 +244,8 @@ if(has_filter( "um_language_locale" == true)){
 if (has_filter( "um_language_locale") ) {
 	echo "<h1>YES</H1>"; 
 }
+
+
+if (has_filter( "um_language_localew") ) {
+	echo "<h1>YES2</H1>"; 
+}
