@@ -9,7 +9,6 @@ else {
     $user_id = get_the_author_meta( 'ID' );
 }
 
-// echo $user_id;
 // name to be displayed
 if ( empty(get_the_author_meta( 'first_name', $user_id )) && empty(get_the_author_meta( 'last_name', $user_id ))) {
     $name = get_the_author_meta( 'display_name', $user_id );
@@ -40,9 +39,9 @@ else {
                     <div class="button is-transparent button-has-icon is-one-row">
                         <a class=" button-has-icon is-one-row" id="btn1" target="_blank" href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'display_name');?>"rel="nofollow">
                             <?php require get_template_directory() . '/assets/icons/mail.svg'; ?>
-                            <?php echo the_field('mail', $userid);?>
+                            <?php the_field('mail', $userid);?>
                         </a>
-                        <button class="is-primary copy-button" onclick="copyStringToClipboard1()" >
+                        <button class="is-primary copy-button" onclick="Clipboard('<?php the_field('mail', $userid);?>')" >
                         <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
                         </button>
                     </div>
@@ -52,9 +51,9 @@ else {
                         <div class="button is-transparent button-has-icon is-one-row">
                         <a class=" button-has-icon is-one-row" id="btn2" class="button is-transparent button-has-icon is-one-row" target="_blank" href="tel:<?php echo the_field('phone', $userid);?>" >
                             <?php require get_template_directory() . '/assets/icons/phone.svg'; ?>
-                            <?php echo the_field('phone', $userid); ?>
+                            <?php the_field('phone', $userid); ?>
                         </a>
-                        <button class="is-primary copy-button" onclick="copyStringToClipboard2()" >
+                        <button class="is-primary copy-button" onclick="Clipboard('<?php the_field('phone', $userid);  ?>')" >
                         <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
                         </button>
                     </div>
@@ -63,41 +62,15 @@ else {
                 </div>
 
                 <script>
-                function copyStringToClipboard1 () {
-                    var str = document.getElementById("btn1").innerText;
-                    // Create new element
-                    var el = document.createElement('textarea');
-                    // Set value (string to be copied)
-                    el.value = str;
-                    // Set non-editable to avoid focus and move outside of view
-                    el.setAttribute('readonly', '');
-                    el.style = {position: 'absolute', left: '-9999px'};
-                    document.body.appendChild(el);
-                    // Select text inside element
-                    el.select();
-                    // Copy text to clipboard
-                    document.execCommand('copy');
-                    // Remove temporary element
-                    document.body.removeChild(el);
-                }
 
-                function copyStringToClipboard2 () {
-                    var str = document.getElementById("btn2").innerText;
-                    // Create new element
-                    var el = document.createElement('textarea');
-                    // Set value (string to be copied)
-                    el.value = str;
-                    // Set non-editable to avoid focus and move outside of view
-                    el.setAttribute('readonly', '');
-                    el.style = {position: 'absolute', left: '-9999px'};
-                    document.body.appendChild(el);
-                    // Select text inside element
-                    el.select();
-                    // Copy text to clipboard
-                    document.execCommand('copy');
-                    // Remove temporary element
-                    document.body.removeChild(el);
-                }
+                    function Clipboard(value) {
+
+                        if (value) {
+                            navigator.clipboard.writeText(value)
+                        }
+
+                    }
+
                 </script>
 
         </div>
