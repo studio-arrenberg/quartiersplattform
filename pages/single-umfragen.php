@@ -112,7 +112,7 @@ get_header();
                             'submit_value' => __('Änderungen speichern','quartiersplattform'),
                             'post_title' => true,
                             'post_content' => false,    
-                            'field_groups' => array('group_601855a265b19'), //Arrenberg App
+                            'field_groups' => array('group_601855a265b19'), 
                         )
                     );
                     

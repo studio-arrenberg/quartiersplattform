@@ -185,7 +185,6 @@ get_header();
                                     'post_title' => true,
                                     'post_content' => false,    
                                     'uploader' => 'basic',
-                                    // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
                                     'fields' => array(
                                         'field_5fc64834f0bf2', // Emoji
                                         'field_5fc647f6f0bf0', // Kurzbeschreibung
@@ -287,7 +286,6 @@ get_header();
                                 'post_title' => false,
                                 'post_content' => false,    
                                 'uploader' => 'basic',
-                                // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
                                 'fields' => array(
                                     // 'field_5fc64834f0bf2', // Emoji
                                     // 'field_5fc647f6f0bf0', // Kurzbeschreibung
