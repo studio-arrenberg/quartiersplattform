@@ -98,7 +98,7 @@ get_header();
     
     <!-- installed plugins -->
     <h2 class="heading-size-1"><?php echo __('Installierte Plugins','quartiersplattform'); ?></h2>
-    <!-- <p><?php _e('Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p> -->
+    <br>
 
     <?php
 
@@ -118,9 +118,11 @@ get_header();
         <div class="margin-bottom">
             <h3><?php echo $value['Name']; ?></h3>
             <p><?php echo $description; ?></p>
-            <span><?php echo $value['Version']; ?></span>
-            <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span><br>
-       
+            <span><?php echo __('Version','quartiersplattform')." ".$value['Version']; ?></span>
+            <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span>
+            <br>
+            <br>
+        </div>
 
         <?php 
     }
