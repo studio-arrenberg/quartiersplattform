@@ -3231,11 +3231,10 @@ function qp_project_owner() {
 /**
  * QP register translation
  * 
- * @since Quartiersplattform 1.7
+ * @since Quartiersplattform 1.7.2
  * 
  * 
  */
-
 function qp_translate_theme() {
     // Load Theme textdomain
     load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages');
@@ -3252,6 +3251,27 @@ function qp_translate_theme() {
 add_action( 'after_setup_theme', 'qp_translate_theme' );
 
 
+/**
+ * QP register UM translation
+ * 
+ * @since Quartiersplattform 1.7.2
+ * 
+ * 
+ */
+function qp_translate_um() {
+    // Load Theme textdomain
+	load_plugin_textdomain( 'ultimate-member', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
+    // Include Theme text translation file
+    $locale = get_locale();
+	if (!empty($locale)) {
+		$locale_file = get_template_directory() . "/languages/$locale.php";
+		if ( is_readable( $locale_file ) ) {
+			require_once( $locale_file );
+		}
+	}
+}
+add_action( 'after_setup_theme', 'qp_translate_um' );
 
 
 /**
@@ -3259,7 +3279,7 @@ add_action( 'after_setup_theme', 'qp_translate_theme' );
  * 
  * @since Quartiersplattform 1.7
  * 
- * @return browser language
+ * @return string browser language
  */
 function qp_detect_browser_language() {
 	$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
@@ -3278,13 +3298,12 @@ function qp_detect_browser_language() {
 }
 
 
-
 /**
  * QP switch language
  * 
  * @since Quartiersplattform 1.7
  * 
- * @return language string
+ * @return string language 
  */
 
 // function qp_detect_language($lang) {
@@ -3330,22 +3349,27 @@ function qp_detect_browser_language() {
 //Ultimate Member Translation
 
 
-add_filter( 'um_language_textdomain', 'my_textdomain', 10, 1 );
-function my_textdomain( $domain ) {
-	// your code here
-	$domain = "fallback-in-function";
+// should be in UM Functions File
+function um_set_textdomain( $domain ) {
+	// $domain = "fallback-in-function";
 	$domain = qp_language();
 	return $domain;
-}
+} add_filter( 'um_language_textdomain', 'um_set_textdomain', 10, 1 );
 
-add_filter( 'um_language_locale', 'qp_language_locale', 10, 1 );
+// should be in UM Functions File
 function qp_language_locale( $locale ) {
-    // your code here
-	$locale = "fallback-in-function";
+	// $locale = "fallback-in-function";
 	$locale = qp_language();
     return $locale;
-}
+} add_filter( 'um_language_locale', 'qp_language_locale', 10, 1 );
 
+/**
+ * QP language function
+ * 
+ * @since Quartiersplattform 1.7.3
+ * 
+ * @return language string
+ */
 function qp_language() {
 
 	// get locale for user

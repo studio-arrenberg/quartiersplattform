@@ -235,17 +235,17 @@ function my_language_locale( $locale ) {
 }
 // apply_filters( "um_language_locale" );
 
-if(has_filter( "um_language_locale" == true)){
-	echo "<h1>WORKING</H1>";
-}else{
-	echo "<h1>NOPE</H1>";
-}
+// if(has_filter( "um_language_locale" == true)){
+// 	echo "<h1>WORKING</H1>";
+// }else{
+// 	echo "<h1>NOPE</H1>";
+// }
 
-if (has_filter( "um_language_locale") ) {
-	echo "<h1>YES</H1>"; 
-}
+// if (has_filter( "um_language_locale") ) {
+// 	echo "<h1>YES</H1>"; 
+// }
 
 
-if (has_filter( "um_language_localew") ) {
-	echo "<h1>YES2</H1>"; 
-}
+// if (has_filter( "um_language_localew") ) {
+// 	echo "<h1>YES2</H1>"; 
+// }
