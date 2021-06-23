@@ -4650,10 +4650,15 @@ left: 5px;
 
 @media (min-width: 782px) {
   .landscape{
-    height: 180px;
+    height: 220px;
   }
 }
 
+@media (min-width: 1335px) {
+  .landscape{
+    height: 300px;
+  }
+}
 
 
 .veranstaltung-ohne-bild .date{
