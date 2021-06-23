@@ -35,6 +35,7 @@
 - [ ] Locations! (Calendar)
 - [ ] Projekt Liste (eigene als erstes)
 - [ ] Projektverzeichnis Card (mehr bild und beschreibung...)
+- [ ] Open Graph Tags Extended
 
 ## dokumentation
 - troubleshooting
@@ -52,6 +53,7 @@
 - Redesign der Mails
 - Verbesserung der Übersetzungen
 - UM Profile Image Upload Helper
+- Software Licence Update
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix
