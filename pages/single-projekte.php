@@ -40,7 +40,7 @@ get_header();
             if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
 
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -116,7 +116,7 @@ get_header();
                 <div id="summary" class="bar bar-active">
 
                      <!-- Bild -->
-                     <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                     <img class="projekt-image" src="<?php echo esc_url( $image_url ) ?>" />
 
 
                     <?php 
