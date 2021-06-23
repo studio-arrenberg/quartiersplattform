@@ -31,11 +31,11 @@
 - [x] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
 - [x] Startseite Abstand der Inhalte
 - [ ] Cant login when login page is not set through UM...
-- [ ] Multi Image upload preview!
+- [x] Multi Image upload preview!
 - [ ] Locations! (Calendar)
 - [ ] Projekt Liste (eigene als erstes)
 - [ ] Projektverzeichnis Card (mehr bild und beschreibung...)
-- [ ] Open Graph Tags Extended
+- [x] Open Graph Tags Extended
 
 ## dokumentation
 - troubleshooting
@@ -56,6 +56,7 @@
 - Software Licence Update
 - Open Graph Tags zur SEO optimierung
 - Project Image Upload in settings
+- Multiple Image Upload Preview
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix
