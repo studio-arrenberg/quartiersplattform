@@ -189,6 +189,7 @@ get_header();
                                     'fields' => array(
                                         'field_5fc64834f0bf2', // Emoji
                                         'field_5fc647f6f0bf0', // Kurzbeschreibung
+                                        'field_600180493ab1a', // Bild
                                     ),
                                 )
                             );
@@ -291,7 +292,7 @@ get_header();
                                     // 'field_5fc64834f0bf2', // Emoji
                                     // 'field_5fc647f6f0bf0', // Kurzbeschreibung
                                     'field_5fc647e3f0bef', // Text
-                                    'field_600180493ab1a', // Bild
+                                    // 'field_600180493ab1a', // Bild
                                 ),
                             )
                         );

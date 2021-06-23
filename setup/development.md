@@ -54,6 +54,8 @@
 - Verbesserung der Übersetzungen
 - UM Profile Image Upload Helper
 - Software Licence Update
+- Open Graph Tags zur SEO optimierung
+- Project Image Upload in settings
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix
