@@ -55,7 +55,7 @@ get_header();
         $res = json_decode($resp, true);
         // display warning
         if (!empty($res['general']['latest_version']['version']) && $res['general']['latest_version']['version'] != wp_get_theme()->version) {
-            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quartiersplattform und bringe neue Features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben unter ','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
+            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quartiersplattform und bringe neue Features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben.','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
         }
         // Reminder Card Einstellungen
         $text = __('Bearbeite die Einstellungen der Quartiersplattform. Hier kannst du den Seitennamen, das Bild sowie den Text für die Quartiersstartseite festlegen.','quartiersplattform');
