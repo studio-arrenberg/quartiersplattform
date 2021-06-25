@@ -3,8 +3,8 @@
 acf_form_head();
 get_header();
 
-if (!is_user_logged_in(  )) {
-    exit(wp_redirect( home_url( ) ));
+if ( qp_project_owner($_GET['project']) == false ) {
+    exit( wp_redirect( home_url( ).'/projekte/' ) );
 }
 
 ?>

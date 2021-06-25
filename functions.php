@@ -3177,26 +3177,30 @@ function qp_parameter_permalink($suffix) {
  * 
  * @return boolean
  */
-function qp_project_owner() {
+function qp_project_owner($project = '') {
 
-	global $current_user;
 	global $post;
-	$project_id = '';
 
 	if (!is_user_logged_in()) {
 		return false;
 	}
-
-	// get post projekt
+	
+	// get post projekt ID
 	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  {
 		$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
 		$project_id = $term_list[0]->description;
 	}
 
-	if ($current_user->ID == $post->post_author) {
+	// get project ID based on slug
+	if (!empty($project)) {
+		$page = get_page_by_path($project, OBJECT, 'projekte');
+		$project_id = $page->ID;$page = get_page_by_path($project, OBJECT, 'projekte');
+	}
+
+	if (empty($project) && get_current_user_id() == $post->post_author) {
 		return true;
 	}
-	else if ($current_user->ID == get_post_field( 'post_author', $project_id)) {
+	else if (get_current_user_id() == get_post_field( 'post_author', $project_id)) {
 		return true;
 	}
 	else { 

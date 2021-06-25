@@ -3,16 +3,14 @@
 acf_form_head();
 get_header();
 
-if (!is_user_logged_in(  )) {
-    exit(wp_redirect( home_url( ) ));
+if ( qp_project_owner($_GET['project']) == false ) {
+    exit( wp_redirect( home_url( ).'/projekte/' ) );
 }
 
 ?>
 
 
 <main id="site-content" class="page-grid" role="main">
-
-
 
 	<div class="left-sidebar">
 		<?php projekt_carousel(); ?>
@@ -72,7 +70,7 @@ if (!is_user_logged_in(  )) {
                                 'field_5fc8d16e8765c', //Start AP1
                                 'field_5fc8d18b8765d', //End AP1 
                                 'field_5fc8d1e0d15c9', //Livestream
-                                'field_608a6c2c1be28', // Sichtbar
+                                'field_608a6c2c1be28', //Sichtbar
                                 'field_603f4c75747e9', //Bilder
                             ),
                             'submit_value'=> __('Veranstaltung veröffentlichen','quartiersplattform'),
