@@ -13,7 +13,7 @@
 
 ?>
 
-<div  id="site-content post-<?php the_ID(); ?>" class="page-grid" role="main">
+<div id="site-content post-<?php the_ID(); ?>" class="page-grid" role="main">
 
 	<div class="left-sidebar">
 		<?php projekt_carousel(); ?>
@@ -22,7 +22,6 @@
 	<div class="main-content">
 	
 		<?php
-
 		if (has_post_thumbnail()) {
 			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
 
@@ -31,9 +30,7 @@
 				$cover_header_classes = ' bg-image';
 			}
 		}
-
 		?>
-
 
 		<div class="single-header <?php if (!has_post_thumbnail()) echo "without-single-header-image"; ?>" >
 			<!-- Bild -->
@@ -48,8 +45,6 @@
 
 		</div>
 
-
-
 		<!-- Gutenberg Editor Content -->
 		<div class="gutenberg-content">
 			<?php
@@ -60,14 +55,13 @@
 				}
 			?>
 		</div>
-
 		
         <!-- Backend edit link -->
         <?php qp_backend_edit_link(); ?>
 
         <!-- kommentare -->
         <?php			
-            if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+        if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
         ?>
 
         <div class="comments-wrapper">
@@ -75,20 +69,19 @@
         </div><!-- .comments-wrapper -->
 		<!-- kommentare -->
 		<?php			
-				}       
-			?>
+			}       
+		?>
 
 	</div>
 
 
 	<div class="right-sidebar ">
-		<!-- <?php author_card(); ?> -->
-
 		<?php 
 			get_template_part('components/views/veranstaltungen');
 		?>	
 	</div>
-		</main>
+</div>
+</main>
 
 <?php get_footer(); ?>
 

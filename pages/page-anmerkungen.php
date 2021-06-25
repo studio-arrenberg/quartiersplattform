@@ -27,9 +27,6 @@ get_header();
 			reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text );
 		?>
 
-
-        <!-- <h2>Feedback zur Quartiersplattform</h2> -->
-        <!-- <p>Teile uns dein Feedback oder Anmerkunge zur Quartiersplattform.</p> -->
         <br>
         <?php 
         acf_form(
@@ -69,8 +66,7 @@ get_header();
 		if (count_query($args4)) {
 
 			?>
-                <div class="grid-4col" data-grid>
-                    
+                <div>
                     <br>
                     <?php card_list($args4);?>
                 </div>
@@ -92,15 +88,14 @@ get_header();
 
 	<div class="right-sidebar">
 		<?php 
-			// Projekte
-			if (is_user_logged_in(  )) {
-				get_template_part('components/smart-card/projekte');
-					
-			}
-			else {
+			
+			get_template_part('components/views/veranstaltungen');
+
+			if (!is_user_logged_in(  )) {
 				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
 				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
 			}
+			
 		?>	
 	</div>
 
