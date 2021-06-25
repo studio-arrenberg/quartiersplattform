@@ -1,22 +1,3 @@
-<?php
-
-
-// variable text length
-if (strlen(get_the_title()) < 35 ) {
-    $char = 200;
-}
-else {
-    $char = 200;
-}
-
-// variable text length
-// if (strlen($the_slug < 1 )) {
-//     $char = 200;
-// }
-
-?>
-
-
 <div class="card-group">
 
     <!-- main card -->
@@ -49,10 +30,10 @@ else {
                 <p class="text-size-2">
                     <?php  
                     if (strlen(get_field('text')) > 2) {
-                        shorten(get_field('text'), $char);
+                        shorten(get_field('text'), 200);
                     }
                     else {
-                        shorten(get_the_content(), $char);
+                        shorten(get_the_content(), 200);
                     }
                     ?>
                 </p>

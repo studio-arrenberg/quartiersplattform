@@ -1931,13 +1931,15 @@ add_action('save_post', 'update_taxonomy_projekt');
  */
 function shorten($text, $count = '55') {
 	$text = $text." ";
+	$text_length = strlen( $text );
 	$text = strip_tags($text);
 	$text = substr( $text , 0 , $count );
 	$text = substr( $text, 0, strripos( $text , ' ' ) );
-  
-	if ( strlen( $text ) > $count ) { 
+
+	if ( $text_length > $count ) { 
 		$text = $text."..."; 
 	}
+	
 	echo $text;
 }
 
