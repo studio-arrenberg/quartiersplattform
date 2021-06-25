@@ -60,6 +60,8 @@
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix
+- Layout Issues
+- Project security Fix
 
 ## v1.7.2 🚀
 - Login Weiterleitung zu Projekten

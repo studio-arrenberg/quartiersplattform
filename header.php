@@ -6,7 +6,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
 
 <!DOCTYPE html>
 
-<html class="no-js" <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?> >
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -15,6 +15,8 @@ wp_maintenance_mode(); // redirect for maintenance mode
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="alternate" href="https://example.com" hreflang="x-default" />
 
     <?php wp_head(); ?>
 

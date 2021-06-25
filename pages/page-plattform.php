@@ -29,7 +29,7 @@ get_header();
     $wordpress_version = get_bloginfo( 'version' );
     echo "<p>Wordpress Version: $wordpress_version</p>";
     ?>
-    <br><br>
+    <br>
 
     <?php 
     // Quartiersplattform Einstellungen

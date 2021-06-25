@@ -37,7 +37,7 @@
                 <?php
                 if(  !empty( $link ) ){
                 ?> 
-                    <a href="<?php echo $link; ?>" target="_blank" >
+                    <a href="<?php echo $link; ?>" target="_blank" rel="noreferrer">
                 <?php } ?>
 
                 <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="Sponsor der Quartiersplattform" > 
