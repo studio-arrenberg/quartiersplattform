@@ -1,7 +1,6 @@
 <?php
 
-// redirect for maintenance mode
-wp_maintenance_mode();
+wp_maintenance_mode(); // redirect for maintenance mode
 
 ?>
 

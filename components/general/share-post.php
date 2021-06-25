@@ -1,19 +1,16 @@
-<!-- Teilen -->
 <?php  
 
-    global $current_user;
-    // $page_for_posts = get_option( 'page_for_posts' );
+global $current_user;
+// $page_for_posts = get_option( 'page_for_posts' );
+if (get_post_status() == 'publish') {
 
-    // !!! check project and post
-
-    if (get_post_status() == 'publish') {
 ?>
     <div class="share">
         <h3><?php _e('Teilen', 'quartiersplattform'); ?>  </h3>
 
         <div class="simple-card">
             <div class="copy-url">
-                <input type="text" value="<?php echo esc_url(get_permalink()); ?>" id="myInput">
+                <input type="text" value="<?php echo esc_url(get_permalink()); ?>" >
                 <button class="copy-button is-primary" onclick="Clipboard('<?php echo get_permalink() ?>')">
                     <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
                 </button>
@@ -44,7 +41,9 @@
     </script>
 
 <?php 
-} else if (qp_project_owner()) {
+
+} 
+else if (qp_project_owner()) {
     $text = __("Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde.",'quartiersplattform');
     reminder_card('project-share'.get_the_ID(  ), __('Dein Projekt kann nicht geteilt werden','quartiersplattform'), $text);
 } 

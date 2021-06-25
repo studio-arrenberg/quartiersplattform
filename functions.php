@@ -1145,28 +1145,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 /**
- * Register Scripts & Stylesheets
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function register_scripts() {
-
-	// !!! update wp_register_script &  wp_register_style with timestemp
-
-	// create my own version codes
-    // $my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
-    $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
-     
-    // wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
-    wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
-    // wp_enqueue_style ( 'my_css' );
-
-} 
-// add_action('init', 'register_scripts', 9);
-
-/**
  * Control comment author URL
  *
  * @param $return
@@ -1804,22 +1782,21 @@ function post_remove () {
  *
  * @return void
  */
- add_filter('allowed_block_types', 'block_limit', 10, 2);
- function block_limit($block_types, $post) {
-	 $allowed = [
-		 'core/paragraph',
-		 'core/heading',
-		 'acf/link-card',
-		 'acf/arrenberg-wetter',
-		 'acf/arrenberg-geschichten'
-		 // 'core/image'
-	 ];
-	 // !!! dynaisch nicht statisch
+//  add_filter('allowed_block_types', 'block_limit', 10, 2);
+function block_limit($block_types, $post) {
+	$allowed = [
+		'core/paragraph',
+		'core/heading',
+		'acf/link-card',
+		'acf/arrenberg-wetter',
+		'acf/arrenberg-geschichten'
+		// 'core/image'
+	];
 	//  if ($post->post_title == "Startseite") {
 	// 	 return $allowed;
 	//  }
-	 return $block_types;
- }
+	return $block_types;
+}
  
 
 /**
@@ -2852,7 +2829,7 @@ function pin_toggle_callback() {
 		return false;
 	}
 	// validate type
-	if ($type != 'pin_main' && $type != 'pin_project') { // !!! wording
+	if ($type != 'pin_main' && $type != 'pin_project') {
 		return false;
 	}
 	// update post meta
@@ -3211,7 +3188,7 @@ function qp_project_owner() {
 	}
 
 	// get post projekt
-	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  { // !!! clean iterate posttypes
+	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  {
 		$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
 		$project_id = $term_list[0]->description;
 	}
