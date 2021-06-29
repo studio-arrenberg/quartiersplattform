@@ -92,11 +92,11 @@ function um_remove_scripts_and_styles() {
 		}
 	}
 
-	foreach ( $wp_styles->queue as $key => $style ) {
-		if ( strpos( $style, 'um_' ) === 0 || strpos( $style, 'um-' ) === 0 || strpos( $wp_styles->registered[$style]->src, '/ultimate-member/assets/' ) !== FALSE ) {
-			unset( $wp_styles->queue[$key] );
-		}
-	}
+	// foreach ( $wp_styles->queue as $key => $style ) {
+		// if ( strpos( $style, 'um_' ) === 0 || strpos( $style, 'um-' ) === 0 || strpos( $wp_styles->registered[$style]->src, '/ultimate-member/assets/' ) !== FALSE ) {
+		// 	unset( $wp_styles->queue[$key] );
+		// }
+	// }
 }
 add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
 add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );

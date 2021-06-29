@@ -36,7 +36,8 @@
 - [ ] Projekt Liste (eigene als erstes)
 - [ ] Projektverzeichnis Card (mehr bild und beschreibung...)
 - [x] Open Graph Tags Extended
-
+- [ ] Kalendar Uhrzeit Bis anzeigen (weitere felder ...?)
+- [ ] Kalendar Export Livestream..?
 ## dokumentation
 - troubleshooting
   - 404 error => permalinks neu initieren

@@ -37,7 +37,7 @@ get_header();
 		while ( have_posts() ) {
             the_post();
             
-            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+            if( empty($_GET['action']) ){
 
 			// prep image url
 			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' ) : '';

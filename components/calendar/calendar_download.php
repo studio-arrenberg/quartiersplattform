@@ -30,13 +30,26 @@ $man_link = getcwd()."/wp-content/themes/".get_template();
 
 // get ort name
 $taxonomies = get_object_taxonomies( $post );
-$product_terms = wp_get_object_terms( $post->ID, $taxonomies[1]);
+// $product_terms = wp_get_object_terms( $post->ID, $taxonomies[1]);
 
-if (!empty($product_terms[0]->name)) {
-    $ort = $product_terms[0]->name;
+// if (!empty($product_terms[0]->name)) {
+//     $ort = $product_terms[0]->name;
+// }
+// else {
+//     $ort = "";
+// }
+
+if (get_field('livestream')) {
+    $location = get_field('livestream');
 }
 else {
-    $ort = "";
+    $location = '';
+}
+if (get_field('website')) {
+    $website = get_field('website');'';
+}
+else {
+    $website = '';
 }
 
 $kurz = get_field( "text" );
@@ -45,11 +58,11 @@ $dir = "/assets/generated/calendar-files/";
 
 $kb_start = $start;
 $kb_end = $ende;
-$kb_current_time = $creation;
+$kb_current_time = date("Ymd")."T".date("His");
 $kb_title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
-$kb_location = preg_replace('/([\,;])/','\\\$1',$ort); 
+$kb_location = preg_replace('/([\,;])/','\\\$1',$location); 
 $kb_location = html_entity_decode($kb_location, ENT_COMPAT, 'UTF-8');
-$kb_description = html_entity_decode($kurz, ENT_COMPAT, 'UTF-8');
+$kb_description = html_entity_decode($kurz. "\n".$website, ENT_COMPAT, 'UTF-8');
 $kb_file_name = $file_name;
 
 $kb_url = get_permalink($post);

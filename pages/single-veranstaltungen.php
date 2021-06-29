@@ -31,8 +31,13 @@ get_header();
             if ( have_posts() ) {
                 while ( have_posts() ) {
                 the_post();
+
+                // get project by Term
+                $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+                $the_slug = $term_list[0]->slug;
+                $project_id = $term_list[0]->description;
                 
-                if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+                if( empty($_GET['action']) ){
 
                 // prep image url
                 $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
@@ -189,13 +194,15 @@ get_header();
                         'field_el' => 'div',
                         'post_content' => false,
                         'post_title' => true,
-                        'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
+                        'return' => get_site_url().'/projekte'.'/', 
                         'fields' => array(
                             'field_5fc8d0b28edb0', //Text
                             'field_5fc8d15b8765b', //Date
-                            'field_5fc8d16e8765c', //Start AP1
-                            'field_5fc8d18b8765d', //End AP1 
+                            'field_5fc8d16e8765c', //Start 
+                            'field_5fc8d18b8765d', //End  
                             'field_5fc8d1e0d15c9', //Livestream
+                            'field_5fc8d1f4d15ca', //Ticket
+                            'field_5fc8d1c4d15c8', //Website
                             'field_603f4c75747e9', //Bilder
                             
                         ),
@@ -227,7 +234,7 @@ get_header();
                 array(
                     'taxonomy' => 'projekt',
                     'field' => 'slug',
-                    'terms' => ".$the_slug."
+                    'terms' => "$the_slug"
                 )
             )
         );

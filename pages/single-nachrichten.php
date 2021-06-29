@@ -35,8 +35,13 @@ get_header();
             if ( have_posts() ) {
                 while ( have_posts() ) {
                     the_post();
+
+                    // get project by Term
+                    $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
+                    $the_slug = $term_list[0]->slug;
+                    $project_id = $term_list[0]->description;
                     
-                    if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+                    if( empty($_GET['action']) ){
 
                     $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
@@ -45,10 +50,6 @@ get_header();
                         $cover_header_classes = ' bg-image';
                     }
                     
-                    // get project by Term
-                    $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
-                    $the_slug = $term_list[0]->slug;
-                    $project_id = $term_list[0]->description;
 
                     ?>
 

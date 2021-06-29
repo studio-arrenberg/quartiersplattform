@@ -70,6 +70,8 @@ if ( qp_project_owner($_GET['project']) == false ) {
                                 'field_5fc8d16e8765c', //Start AP1
                                 'field_5fc8d18b8765d', //End AP1 
                                 'field_5fc8d1e0d15c9', //Livestream
+                                'field_5fc8d1f4d15ca', //Ticket
+                                'field_5fc8d1c4d15c8', //Website
                                 'field_608a6c2c1be28', //Sichtbar
                                 'field_603f4c75747e9', //Bilder
                             ),

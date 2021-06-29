@@ -3111,7 +3111,7 @@ function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') 
  * 
  * @return html
  */
-function qp_backend_edit_link() {
+function qp_backend_edit_link($text = null, $before = '', $after = '', $id = 0, $class = '') {
 
 	if ( ! current_user_can('administrator') ) { 
 		return false;
@@ -3202,7 +3202,7 @@ function qp_project_owner($project = '') {
 	if (empty($project) && get_current_user_id() == $post->post_author) {
 		return true;
 	}
-	else if (get_current_user_id() == get_post_field( 'post_author', $project_id)) {
+	else if (isset($project_id) && get_current_user_id() == get_post_field( 'post_author', $project_id)) {
 		return true;
 	}
 	else { 
