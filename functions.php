@@ -3373,9 +3373,11 @@ function qp_language_locale( $locale ) {
 function qp_language() {
 
 	// get locale for user
-	$language = $_GET['lang'];
-
-	if (!$language) {
+	if (isset($_GET['lang'])) {
+		$language = $_GET['lang'];
+	}
+	
+	if (empty($language)) {
 		$language = $_COOKIE['language'];
 	}
 
@@ -3413,7 +3415,7 @@ add_filter( 'um_language_file', 'my_language_file', 10, 1 );
 
 function my_language_file( $language_file ) {
 	$language_locale = get_user_locale(get_current_user_id(  ));
-    $language_file = get_template_directory_uri()."/ultimate-member/languages/ultimate-member".'-'. $language_locale.'.mo';
+    $language_file = get_template_directory()."/ultimate-member/languages/ultimate-member".'-'. $language_locale.'.mo';
 return $language_file;
 }
 
