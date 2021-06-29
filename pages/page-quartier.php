@@ -25,7 +25,6 @@ get_header();
     $image = get_field('quartier_image', 'option');
     if (empty( $image )) {
         $image = get_template_directory_uri()."/assets/images/quartier.png";
-        echo "<h1>Emmpty!!!</h1>";
     }
     else {
         $image = $image['url'];
