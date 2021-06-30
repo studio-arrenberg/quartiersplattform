@@ -29,7 +29,7 @@ get_header();
         while ( have_posts() ) {
             the_post();
 
-            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+            if( empty($_GET['action']) ){
 
             ?>
 
@@ -40,13 +40,9 @@ get_header();
             <div class="simple-card">
                 <div class="button-group">
 
-                    <?php
-                    
+                        <?php
                         $array = get_post_meta(get_the_ID(), 'polls', true);
-                        $array[$i]['total_voter'];
-
-                        if ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) ) {
-                        
+                        if ( !isset($array[0]['total_voter']) || ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) )) {
                         ?>
                             <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
 
@@ -112,7 +108,7 @@ get_header();
                             'submit_value' => __('Änderungen speichern','quartiersplattform'),
                             'post_title' => true,
                             'post_content' => false,    
-                            'field_groups' => array('group_601855a265b19'), //Arrenberg App
+                            'field_groups' => array('group_601855a265b19'), 
                         )
                     );
                     
@@ -120,8 +116,8 @@ get_header();
             }			
 
         // kommentare
-        if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ) {
-        if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+        if( empty($_GET['action']) ) {
+            if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 
         ?>
 

@@ -3,12 +3,13 @@
 acf_form_head();
 get_header();
 
-if (!is_user_logged_in(  )) {
-    exit(wp_redirect( home_url( ) ));
+
+if ( qp_project_owner($_GET['project']) == false ) {
+    exit( wp_redirect( home_url( ).'/projekte/' ) );
 }
 
-
 ?>
+
 <main id="site-content" class="page-grid" role="main">
 
     <div class="left-sidebar">
@@ -19,14 +20,15 @@ if (!is_user_logged_in(  )) {
 
 
         <div class="small-projekt-card">
-        <?php
+
+            <?php
             // Projekt Kachel
             project_card($_GET['project'], 'slug');
             if (!isset($_GET['project'])) {
                 reminder_card('warning', __('Projekt konnte nicht verknüpft werden','quartiersplattform'), __('Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es noch mal.','quartiersplattform'), 'Projekte', home_url( ).'/projekte/');
             }
+            ?>
 
-        ?>
         </div>
 
         <?php 
@@ -43,9 +45,7 @@ if (!is_user_logged_in(  )) {
 
             ?>
 
-            
-
-                <div class="publish-form">
+            <div class="publish-form">
 
                 <h2><?php _e('Erstelle eine Nachricht', 'quartiersplattform'); ?> </h2>
                 <br>
@@ -69,10 +69,12 @@ if (!is_user_logged_in(  )) {
                             'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
                         )
                     ); 
-        }
-            ?>
-        </div>
+    
+                ?>
+            </div>
+        <?php } ?>
     </div>
+
 
 </main><!-- #site-content -->
 

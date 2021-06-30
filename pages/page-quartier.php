@@ -7,13 +7,6 @@
  * 
  */
 
-
-# redirect before acf_form_head
-wp_maintenance_mode();
-
-// redirect to intro page when new visitor
-// redirect_visitor();
-
 get_header();
 
 ?>
@@ -63,47 +56,40 @@ get_header();
         </div>
 
         <?php if( '' !== get_post()->post_content ) { ?>
-        <div class="gutenberg-content">
-            <?php
-                // Gutenberg
-                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                    the_excerpt();
-                } else {
-                    the_content( __( 'Continue reading', 'twentytwenty' ) );
-                }
-            ?>
-        </div>
+
+            <div class="gutenberg-content">
+                <?php
+                    // Gutenberg
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
+                    }
+                ?>
+            </div>
             
-        <?php
-        } 
-        ?>
-
-        </section>
-
-    
-
-
+        <?php } ?>
+    </section>
  
 
     <section class="">
         <div class="stage-center">
-            <!-- <div class="pre-header highlight"><b><?php _e("Lokale Projekte", "quartiersplattform"); ?></b></div> -->
             <h2 class="heading-size-1 stage-title"><?php _e("Entdecke spannende Projekte aus deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Sieh dir die Projekte in deiner Nachbarschaft an und beteilige dich am Quartiersleben. Veröffentliche eigene Projekte und finde Unterstützung in deiner Nachbarschaft.", "quartiersplattform"); ?></p>
-           
         </div>
+
         <div class="link-card-container">
             <?php 
-                    $pinned_projects = array(
-                        'post_type' => 'projekte',
-                        'posts_per_page' => -1,
-                        'order_by' => 'date',
-                        'order' => 'DESC',
-                        'meta_key'   => 'pin_main',
-                        'meta_value' => array(true, 'true')
-                    );
-                    card_list($pinned_projects);
-                ?>
+                $pinned_projects = array(
+                    'post_type' => 'projekte',
+                    'posts_per_page' => -1,
+                    'order_by' => 'date',
+                    'order' => 'DESC',
+                    'meta_key'   => 'pin_main',
+                    'meta_value' => array(true, 'true')
+                );
+                card_list($pinned_projects);
+            ?>
          </div>
         
          <div class="button-container">

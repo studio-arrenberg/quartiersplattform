@@ -7,13 +7,6 @@
  * 
  */
 
-
-# redirect before acf_form_head
-wp_maintenance_mode();
-
-// redirect to intro page when new visitor
-// redirect_visitor();
-
 get_header();
 
 ?>
@@ -36,7 +29,7 @@ get_header();
     $wordpress_version = get_bloginfo( 'version' );
     echo "<p>Wordpress Version: $wordpress_version</p>";
     ?>
-    <br><br>
+    <br>
 
     <?php 
     // Quartiersplattform Einstellungen
@@ -55,7 +48,7 @@ get_header();
         $res = json_decode($resp, true);
         // display warning
         if (!empty($res['general']['latest_version']['version']) && $res['general']['latest_version']['version'] != wp_get_theme()->version) {
-            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quartiersplattform und bringe neue Features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben unter ','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
+            reminder_card('warning', __('Es gibt eine neue Version','quartiersplattform'), __('Installiere die neue Version der Quartiersplattform und bringe neue Features in dein Quartier. Der genaue ablauf wird in der <a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md">Dokumentation</a> beschrieben.','quartiersplattform'), 'Link zum Download', 'https://github.com/studio-arrenberg/quartiersplattform/releases');
         }
         // Reminder Card Einstellungen
         $text = __('Bearbeite die Einstellungen der Quartiersplattform. Hier kannst du den Seitennamen, das Bild sowie den Text für die Quartiersstartseite festlegen.','quartiersplattform');
@@ -98,7 +91,7 @@ get_header();
     
     <!-- installed plugins -->
     <h2 class="heading-size-1"><?php echo __('Installierte Plugins','quartiersplattform'); ?></h2>
-    <!-- <p><?php _e('Die Quartiersplaattform Moabit-West wird von folgenden Personen und Vereinen gehostet. Wenn du Fragen hast oder Probleme wende dich bitte an uns.', 'quartiersplattform'); ?></p> -->
+    <br>
 
     <?php
 
@@ -118,9 +111,11 @@ get_header();
         <div class="margin-bottom">
             <h3><?php echo $value['Name']; ?></h3>
             <p><?php echo $description; ?></p>
-            <span><?php echo $value['Version']; ?></span>
-            <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span><br>
-       
+            <span><?php echo __('Version','quartiersplattform')." ".$value['Version']; ?></span>
+            <span><?php _e('Dieses Plugin ist Aktiv', 'quartiersplattform'); ?></span>
+            <br>
+            <br>
+        </div>
 
         <?php 
     }

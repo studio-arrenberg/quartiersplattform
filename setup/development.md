@@ -31,8 +31,13 @@
 - [x] Startseite Scroll (ohne Inhalt in Firefox => .admin-bar)
 - [x] Startseite Abstand der Inhalte
 - [ ] Cant login when login page is not set through UM...
-- [ ] Multi Image upload preview!
-
+- [x] Multi Image upload preview!
+- [ ] Locations! (Calendar)
+- [ ] Projekt Liste (eigene als erstes)
+- [ ] Projektverzeichnis Card (mehr bild und beschreibung...)
+- [x] Open Graph Tags Extended
+- [ ] Kalendar Uhrzeit Bis anzeigen (weitere felder ...?)
+- [x] Kalendar Export Livestream..?
 ## dokumentation
 - troubleshooting
   - 404 error => permalinks neu initieren
@@ -49,9 +54,15 @@
 - Redesign der Mails
 - Verbesserung der Übersetzungen
 - UM Profile Image Upload Helper
+- Software Licence Update
+- Open Graph Tags zur SEO optimierung
+- Project Image Upload in settings
+- Multiple Image Upload Preview
 ### Bugs
 - ACF Loading Spinner
-- 
+- Calendar Download File Fix
+- Layout Issues
+- Project security Fix
 
 ## v1.7.2 🚀
 - Login Weiterleitung zu Projekten

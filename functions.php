@@ -1145,28 +1145,6 @@ add_action( 'wp_enqueue_scripts', function() {
 
 
 /**
- * Register Scripts & Stylesheets
- *
- * @since Quartiersplattform 1.0
- *
- * @return void
- */
-function register_scripts() {
-
-	// !!! update wp_register_script &  wp_register_style with timestemp
-
-	// create my own version codes
-    // $my_js_ver  = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'js/custom.js' ));
-    $my_css_ver = date("ymd-Gis", filemtime( plugin_dir_path( __FILE__ ) . 'style.css' ));
-     
-    // wp_enqueue_script( 'custom_js', plugins_url( 'js/custom.js', __FILE__ ), array(), $my_js_ver );
-    wp_register_style( 'my_css',    plugins_url( 'style.css',    __FILE__ ), false,   $my_css_ver );
-    // wp_enqueue_style ( 'my_css' );
-
-} 
-// add_action('init', 'register_scripts', 9);
-
-/**
  * Control comment author URL
  *
  * @param $return
@@ -1804,22 +1782,21 @@ function post_remove () {
  *
  * @return void
  */
- add_filter('allowed_block_types', 'block_limit', 10, 2);
- function block_limit($block_types, $post) {
-	 $allowed = [
-		 'core/paragraph',
-		 'core/heading',
-		 'acf/link-card',
-		 'acf/arrenberg-wetter',
-		 'acf/arrenberg-geschichten'
-		 // 'core/image'
-	 ];
-	 // !!! dynaisch nicht statisch
+//  add_filter('allowed_block_types', 'block_limit', 10, 2);
+function block_limit($block_types, $post) {
+	$allowed = [
+		'core/paragraph',
+		'core/heading',
+		'acf/link-card',
+		'acf/arrenberg-wetter',
+		'acf/arrenberg-geschichten'
+		// 'core/image'
+	];
 	//  if ($post->post_title == "Startseite") {
 	// 	 return $allowed;
 	//  }
-	 return $block_types;
- }
+	return $block_types;
+}
  
 
 /**
@@ -1954,13 +1931,15 @@ add_action('save_post', 'update_taxonomy_projekt');
  */
 function shorten($text, $count = '55') {
 	$text = $text." ";
+	$text_length = strlen( $text );
 	$text = strip_tags($text);
 	$text = substr( $text , 0 , $count );
 	$text = substr( $text, 0, strripos( $text , ' ' ) );
-  
-	if ( strlen( $text ) > $count ) { 
+
+	if ( $text_length > $count ) { 
 		$text = $text."..."; 
 	}
+	
 	echo $text;
 }
 
@@ -2388,7 +2367,7 @@ function extract_links( $text ) {
  * @param string $date date
  * @return string text with html a tags
  */
-function qp_date( $date, $detail = false, $time = '' ) {
+function qp_date( $date, $detail = false, $time = '', $time_only = false ) {
 
 	/**
 	 * Tested:
@@ -2450,6 +2429,10 @@ function qp_date( $date, $detail = false, $time = '' ) {
 
 	if ($detail) {
 		$string = $string.__(" um ",'quartiersplattform').date('H:i', $date);
+	}
+
+	if ($time_only) {
+		$string = date('H:i', $date);
 	}
 
 	return $string;
@@ -2852,7 +2835,7 @@ function pin_toggle_callback() {
 		return false;
 	}
 	// validate type
-	if ($type != 'pin_main' && $type != 'pin_project') { // !!! wording
+	if ($type != 'pin_main' && $type != 'pin_project') {
 		return false;
 	}
 	// update post meta
@@ -3132,7 +3115,7 @@ function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') 
  * 
  * @return html
  */
-function qp_backend_edit_link() {
+function qp_backend_edit_link($text = null, $before = '', $after = '', $id = 0, $class = '') {
 
 	if ( ! current_user_can('administrator') ) { 
 		return false;
@@ -3200,26 +3183,30 @@ function qp_parameter_permalink($suffix) {
  * 
  * @return boolean
  */
-function qp_project_owner() {
+function qp_project_owner($project = '') {
 
-	global $current_user;
 	global $post;
-	$project_id = '';
 
 	if (!is_user_logged_in()) {
 		return false;
 	}
-
-	// get post projekt
-	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  { // !!! clean iterate posttypes
+	
+	// get post projekt ID
+	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  {
 		$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
 		$project_id = $term_list[0]->description;
 	}
 
-	if ($current_user->ID == $post->post_author) {
+	// get project ID based on slug
+	if (!empty($project)) {
+		$page = get_page_by_path($project, OBJECT, 'projekte');
+		$project_id = $page->ID;$page = get_page_by_path($project, OBJECT, 'projekte');
+	}
+
+	if (empty($project) && get_current_user_id() == $post->post_author) {
 		return true;
 	}
-	else if ($current_user->ID == get_post_field( 'post_author', $project_id)) {
+	else if (isset($project_id) && get_current_user_id() == get_post_field( 'post_author', $project_id)) {
 		return true;
 	}
 	else { 

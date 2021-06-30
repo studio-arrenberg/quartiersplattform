@@ -8,15 +8,9 @@ Description: Werde aktiv in deinem Viertel und etabliere die Quartiersplattform 
 Author: Studio Arrenberg
 Author URI: https://arrenberg.studio
 Theme URI: https://github.com/studio-arrenberg/quartiersplattform
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-All files, unless otherwise stated, are released under the GNU General Public
-License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned
-with others.
+License: MIT License
+License URI: https://github.com/studio-arrenberg/quartiersplattform/blob/main/LICENSE
 */
 
 /*--------------------------------------------------------------
@@ -254,7 +248,7 @@ h2,
 .heading-size-2 {
   font-size: 2.2rem;
   line-height: 2.3rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 h3,
@@ -325,7 +319,6 @@ small, .text-size-3 {
   .heading-size-2 {
     font-size: 2.4rem;
     line-height: 2.6rem;
-    margin-bottom: 15px;
   }
 
 
@@ -692,7 +685,7 @@ textarea {
   border-radius: 15px;
   box-shadow: none;
   display: block;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   max-width: 100%;
   width: 100%;
   padding: 15px 15px 13px 20px;
@@ -864,6 +857,13 @@ input[type="submit"]:hover {
 .button-icon {
   display: inline;
 }
+.is-one-row {
+  justify-content: start;
+}
+
+.is-one-row svg{
+  margin: 0px 7px 0px 15px;
+}
 
 .button-has-icon-label {
   margin-bottom: -2.5px;
@@ -899,9 +899,12 @@ button a {
 .header-button:last-of-type {
   margin-right: 0px;
 }
-
+.button-has-icon{
+  padding: 0px;
+}
 .button-has-icon svg{
   height: 20px;
+  min-width: 20px;
 }
 
 .button-has-image {
@@ -913,7 +916,7 @@ button a {
 }
 
 .is-transparent{
-  background: transparent;
+  background: #f9fcff;
   box-shadow:none;
 }
 
@@ -1754,60 +1757,96 @@ th {
   margin: 30px 0px;
 }
 
+.share {
+  margin: 30px 0px;
+}
+
 .team .avatar {
   width: 75px;
   height: 75px;
   border-radius: 20px;
   margin-right: 10px;
+  margin: 0px;
 }
 
 .team-member {
   margin: 15px 0px;
-  display: flex;
   align-items: center;
 }
 
 .team-member a{
   color: #000;
   text-decoration: none;
-
   display: flex;
   align-items: center;
+  word-wrap: keep-all;
+  word-break: keep-all;
 }
-
 
 .team-member a:hover{
   color: #0091FF;
   text-decoration: none;
 }
 
+.team-member .heading-size-3{
+  margin-bottom: 0px;
+}
+
 .copy-url{
-  margin: 10px 0px;
+  margin: 0px 0px 10px 0px;
   display: flex;
+}
+
+
+.copy-url input{
+  margin: 0px;
 }
 
 .copy-url button{
   margin-left: 5px;
 }
 
+.copy-button{
+  min-height: 40px;
+  min-width: 45px;
+  border-radius: 14px;
+  margin-right: 2px;
+  padding: 0px;
+  margin-left: auto;
+}
+
+.copy-button svg{
+  fill: #fff;
+  margin: 0px;
+}
+
+.button:hover .copy-button svg path{
+  fill: #fff;
+}
 
 
 .share-button{
   display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
-.share-button a{
-  flex: 1;
+.share-button div{
+  flex-grow: 1;
+}
+
+.share-button div:first-of-type{
+  margin-right: 5px;
 }
 
 
-.share-button a{
-  margin-left: 10px;
-}
-
-
-.share-button a:first-of-type{
-  margin-left: 0px;
+@media (max-width: 582px) {
+  .share-button{
+    flex-direction: column;
+  }
+  .share-button div:first-of-type{
+    margin: 0px 0px 5px 0px;
+  }
 }
 
 
@@ -1849,6 +1888,13 @@ th {
     margin: 0px;
   }
 
+}
+
+/* Projektseite */
+
+.projekt-image {
+  border-radius: 20px;
+  margin: 0 auto 30px auto;
 }
 
 /* TEMPLATE for login and register, centers height*/
@@ -4604,10 +4650,15 @@ left: 5px;
 
 @media (min-width: 782px) {
   .landscape{
-    height: 180px;
+    height: 220px;
   }
 }
 
+@media (min-width: 1335px) {
+  .landscape{
+    height: 300px;
+  }
+}
 
 
 .veranstaltung-ohne-bild .date{

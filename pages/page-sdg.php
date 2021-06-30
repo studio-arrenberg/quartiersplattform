@@ -78,11 +78,7 @@ get_header();
 							array(
 								'taxonomy' => 'sdg',
 								'field' => 'slug',
-								'terms' => get_field('number'),
-								// 'field' => 'term_id',
-								// 'terms' => array('8',8, 10, 13),
-								// 'terms' => get_post_field( 'post_name' ),
-								// 'terms' => array('sgds',0,1,'0','1','06',8,19,'06. Sauberes Wasser und sanitäre Einrichtungen', 'Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten'),
+								'terms' => get_field('number')
 							)
 						)
 					);

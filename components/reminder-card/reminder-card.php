@@ -6,7 +6,7 @@
 		<h2 class="heading-size-2">
 			<?php echo get_query_var('reminder_card_title'); ?>
 		</h2>
-		<h3 class="text-size-1">
+		<h3 class="text-size-2">
 			<?php echo get_query_var('reminder_card_text'); ?>
 		</h3>
 	</div>

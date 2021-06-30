@@ -46,16 +46,22 @@ function my_acf_prepare_field( $field ) {
 // ACF Form show image uploaded
 function acf_form_show_image_uploaded(){
 
-	$REQUEST_URI = $_SERVER['REQUEST_URI'];
+	// $REQUEST_URI = $_SERVER['REQUEST_URI'];
 
-    if (
-		strpos($REQUEST_URI,'/nachricht-erstellen/') !== false /* '/angebot-erstellen/' */
-		|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
-		|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') !== false
-		|| (!empty($_GET['action']) && $_GET['action'] == 'edit') /* || isset($_GET['action']) */
-	) {
+    // if (
+	// 	strpos($REQUEST_URI,'/nachricht-erstellen/') !== false /* '/angebot-erstellen/' */
+	// 	|| strpos($REQUEST_URI,'/projekt-erstellen/') !== false
+	// 	|| strpos($REQUEST_URI,'/veranstaltung-erstellen/') !== false
+	// 	|| $_GET['action'] == 'edit' /* || isset($_GET['action']) */
+	// ) {
+	// 	wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false, true);
+	// 	wp_enqueue_script('image-upload-preview');
+	// }
+
+	if (is_user_logged_in(  )) {
 		wp_register_script('image-upload-preview', get_template_directory_uri() .'/assets/js/image-upload-preview.js', false, false, true);
 		wp_enqueue_script('image-upload-preview');
 	}
 
 } add_action('wp_footer', 'acf_form_show_image_uploaded');
+

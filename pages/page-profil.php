@@ -24,46 +24,6 @@ if (!is_user_logged_in()) {
 <main id="site-content" class="page-grid " role="main">
 
 	<div class="left-sidebar">
-    
-
-    <div class="single-header profil">
-        
-        <?php 
-            // User Avatar
-            // $current_user = wp_get_current_user();
-            // echo get_avatar( $current_user->user_email, 32 );
-        ?>
-
-        <!-- user name -->
-        <!-- <div class="single-header-content">
-            <h1><?php $current_user = wp_get_current_user(); echo $current_user->first_name." ".$current_user->last_name; ?></h1>
-        </div> -->
-
-        
-    </div>
-    <?php 
-        
-        // $options = array(
-        //     'post_id' => 'user_'.$current_user->ID,
-        //     'field_groups' => array(77),
-        //     'form' => true, 
-        //     'return' => add_query_arg( 'updated', 'true', get_permalink() ), 
-        //     'html_before_fields' => '',
-        //     'html_after_fields' => '',
-        //     'submit_value' => 'Test' 
-        // );
-        // acf_form( $options );
-        // echo $current_user->ID;
-
-        // if (user_can( $current_user, 'administrator')) {
-        //     echo do_shortcode('[avatar_upload user="'.$user->ID.'"]');
-        // }
-        // else {
-        //     echo do_shortcode('[avatar_upload]');
-        // }
-        
-    ?>
-
 		<div class="hidden-small">
             <?php projekt_carousel(); ?>
 		</div>

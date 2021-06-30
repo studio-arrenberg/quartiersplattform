@@ -92,11 +92,11 @@ function um_remove_scripts_and_styles() {
 		}
 	}
 
-	foreach ( $wp_styles->queue as $key => $style ) {
-		if ( strpos( $style, 'um_' ) === 0 || strpos( $style, 'um-' ) === 0 || strpos( $wp_styles->registered[$style]->src, '/ultimate-member/assets/' ) !== FALSE ) {
-			unset( $wp_styles->queue[$key] );
-		}
-	}
+	// foreach ( $wp_styles->queue as $key => $style ) {
+		// if ( strpos( $style, 'um_' ) === 0 || strpos( $style, 'um-' ) === 0 || strpos( $wp_styles->registered[$style]->src, '/ultimate-member/assets/' ) !== FALSE ) {
+		// 	unset( $wp_styles->queue[$key] );
+		// }
+	// }
 }
 add_action( 'wp_print_footer_scripts', 'um_remove_scripts_and_styles', 9 );
 add_action( 'wp_print_scripts', 'um_remove_scripts_and_styles', 9 );
@@ -226,26 +226,31 @@ function qp_um_profile_image_upload_helper() {
 
 } add_action('wp_footer', 'qp_um_profile_image_upload_helper');
 
-//Ultimate Member Translation
 
-add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
-function my_language_locale( $locale ) {
-	$locale = "	";
-	return $locale;
+/**
+ * 
+ * UM Secondary Button
+ * 
+ */
+add_filter( 'um_register_form_button_two', 'my_register_form_button_two', 10, 2 );
+function my_register_form_button_two( $secondary_btn_word, $args ) {
+    // your code here
+	$secondary_btn_word = __('Login','quartiersplattform');
+	return $secondary_btn_word;
 }
-// apply_filters( "um_language_locale" );
 
-// if(has_filter( "um_language_locale" == true)){
-// 	echo "<h1>WORKING</H1>";
-// }else{
-// 	echo "<h1>NOPE</H1>";
-// }
-
-// if (has_filter( "um_language_locale") ) {
-// 	echo "<h1>YES</H1>"; 
-// }
+add_filter( 'um_register_form_button_two_url', 'my_register_form_button_two_url', 10, 2 );
+function my_register_form_button_two_url( $secondary_btn_url, $args ) {
+    // your code here
+	$secondary_btn_url = home_url().'/login/';
 
 
-// if (has_filter( "um_language_localew") ) {
-// 	echo "<h1>YES2</H1>"; 
-// }
+	// debugToConsole($args);
+
+	// active secondary button if form is register
+	if ($args['core'] == 'register' && $args['mode'] == 'register') {
+		update_post_meta($args['form_id'], '_um_register_secondary_btn', 1);
+	}
+
+	return $secondary_btn_url;
+}

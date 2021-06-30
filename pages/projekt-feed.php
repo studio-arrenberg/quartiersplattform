@@ -7,11 +7,6 @@
  * 
  */
 
-
-// redirect before acf_form_head
-wp_maintenance_mode();
-
-// acf_form_head(); // before wp header !important!
 get_header();
 
 ?>
