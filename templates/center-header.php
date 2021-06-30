@@ -1,8 +1,6 @@
 <?php
 /**
  * Template Name: Center Header
- *
- *
  */
 
 get_header();

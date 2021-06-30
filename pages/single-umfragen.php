@@ -40,13 +40,9 @@ get_header();
             <div class="simple-card">
                 <div class="button-group">
 
-                    <?php
-                    
+                        <?php
                         $array = get_post_meta(get_the_ID(), 'polls', true);
-                        // $array[$i]['total_voter'];
-
                         if ( !isset($array[0]['total_voter']) || ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) )) {
-                        
                         ?>
                             <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
 
