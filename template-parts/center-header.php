@@ -31,7 +31,7 @@ if (has_post_thumbnail()) {
 
         <!-- Post title -->
         <div class="center-header-content <?php if (!has_post_thumbnail()) echo "text-only"; ?>">
-            <h1><?php the_title(); ?></h1>
+            <h1><?php _e(get_the_title(),'quartiersplattform'); ?></h1>
         </div>
     </div>
 

@@ -21,6 +21,20 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## translation
+- [ ] strategy 1: load from theme directory 2: load from wordpress directory (initiate multilanguge)
+- [ ] name qp files with `quartiersplattform.mo` => not compliant
+- [ ] add catalog in `/languages` dir (.php & .pot)
+- [ ] load `twentytwenty` translation files OR change strings in Theme to `quartiersplattform` (deutsch fehlt)
+- [ ] check & update `ultimate-member` translation files (..123)
+- [ ] check Page Name Translations
+- [ ] check pages: password reset, 404, archiv, anmelden, registrieren
+- [ ] check `twentytwenty` translation
+- [ ] check `reset-password.php`
+- [ ] check `404`
+- [ ] check `login`
+- [ ] check `profile`
+- [ ] check `archiv`
 ## future
 - [x] Energie Wetter API and Plugin
 - [x] cookie disclaimer
@@ -38,6 +52,7 @@
 - [x] Open Graph Tags Extended
 - [ ] Kalendar Uhrzeit Bis anzeigen (weitere felder ...?)
 - [x] Kalendar Export Livestream..?
+- [ ] no more `twentytwenty` language strings
 ## dokumentation
 - troubleshooting
   - 404 error => permalinks neu initieren
@@ -58,6 +73,7 @@
 - Open Graph Tags zur SEO optimierung
 - Project Image Upload in settings
 - Multiple Image Upload Preview
+- Translation der Quartiersplattform
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix

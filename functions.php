@@ -841,17 +841,17 @@ function remove_default_WP_widgets( ){
  *
  * @return void
  */
-require_once dirname( __FILE__ ) .'/setup/main.php'; # General
-require_once dirname( __FILE__ ) .'/setup/immigration.php'; # Immigration
-require_once dirname( __FILE__ ) .'/setup/settings.php'; # Setting Page
-require_once dirname( __FILE__ ) .'/setup/kontakt.php'; # Kontakt / Biografie
-require_once dirname( __FILE__ ) .'/setup/blocks.php'; # Blocks
-require_once dirname( __FILE__ ) .'/setup/projekte.php'; # Projekte
-require_once dirname( __FILE__ ) .'/setup/nachrichten.php'; # Nachrichten
-require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php'; # Veranstaltungen
-require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
-require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
-require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/main.php'; # General
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/immigration.php'; # Immigration
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/settings.php'; # Setting Page
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/kontakt.php'; # Kontakt / Biografie
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Blocks
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/projekte.php'; # Projekte
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/nachrichten.php'; # Nachrichten
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/veranstaltungen.php'; # Veranstaltungen
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/umfragen.php'; # Umfragen
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/sdg.php'; # SDG
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/anmerkungen.php'; # Anmerkungen
 
 /**
  * Call UM & ACF function files
@@ -861,10 +861,10 @@ require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
  * @return void
  */
 if (class_exists('UM')) { # Ultimate Member
-	require dirname( __FILE__ ) .'/functions/ultimate-member.php';
+	require dirname( __FILE__ ) .'/ultimate-member/ultimate-member.php';
 }
 if (class_exists('acf_pro')) { # Advanced custom fields
-	require dirname( __FILE__ ) .'/functions/advanced-custom-fields.php';
+	require dirname( __FILE__ ) .'/advanced-custom-fields/advanced-custom-fields.php';
 }
 
 /**
@@ -1053,15 +1053,15 @@ function custom_page_template( $page_template, $post_states ) {
 	}
 	else if ($post->post_title == "Anmelden") {
 		$post_states[] = $prefix.'Anmelden';
-		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
+		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
 	else if ($post->post_title == "Registrieren") {
 		$post_states[] = $prefix.'Registrieren';
-		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
+		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
 	else if ($post->post_title == "Passwort zurücksetzen") {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
-		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
+		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
 	
 	
@@ -3190,6 +3190,10 @@ function qp_project_owner($project = '') {
 	if (!is_user_logged_in()) {
 		return false;
 	}
+
+	if (!isset($post->ID)) {
+		return false;
+	}
 	
 	// get post projekt ID
 	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  {
@@ -3216,51 +3220,29 @@ function qp_project_owner($project = '') {
 }
 
 /**
- * QP register translation
+ * QP register Textdomains
  * 
- * @since Quartiersplattform 1.7
+ * @since Quartiersplattform 1.7.2
  * 
  * 
  */
-
 function qp_translate_theme() {
-    // Load Theme textdomain
-    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages');
-
-    // Include Theme text translation file
-    $locale = get_locale();
-	if (!empty($locale)) {
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable( $locale_file ) ) {
-			require_once( $locale_file );
-		}
-	}
+	// Quartiersplattform
+    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages/quartiersplattform');
+	// Utimate Member
+	load_theme_textdomain('ultimate-member', get_template_directory() . '/languages/ultimate-member/');
+	// Wordpress TwentyTwenty as Backup for several pages
+	load_theme_textdomain('twentytwenty', get_template_directory() . '/languages/twentytwenty/');
+	// load_theme_textdomain('twentytwenty', WP_LANG_DIR );
 }
 add_action( 'after_setup_theme', 'qp_translate_theme' );
-
-
-
-function qp_translate_um() {
-    // Load Theme textdomain
-	load_plugin_textdomain( 'ultimate-member', false, basename( dirname( __FILE__ ) ) . '/languages' );
-
-    // Include Theme text translation file
-    $locale = get_locale();
-	if (!empty($locale)) {
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable( $locale_file ) ) {
-			require_once( $locale_file );
-		}
-	}
-}
-add_action( 'after_setup_theme', 'qp_translate_um' );
 
 /**
  * QP detect browser language
  * 
  * @since Quartiersplattform 1.7
  * 
- * @return browser language
+ * @return string browser language
  */
 function qp_detect_browser_language() {
 	$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
@@ -3279,56 +3261,46 @@ function qp_detect_browser_language() {
 }
 
 /**
- * QP switch language
+ * QP language function
  * 
- * @since Quartiersplattform 1.7
+ * @since Quartiersplattform 1.7.3
  * 
  * @return language string
  */
+function qp_language() {
 
-function qp_detect_language() {
-	$expiry = strtotime('+1 year');
-	global $user;
-	if (!is_user_logged_in()) {
-		if(isset($_COOKIE['language'])) {     
-			if(!empty($_GET['lang'])){
-				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-				return $_GET['lang'];
-			}else{
-				return $_COOKIE['language'];
-			}
-			
-		}else{  	
-			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-			return qp_detect_browser_language();
-		}	
-	}else{
-		// check user locale setting
-		if(!empty($_GET['lang'])){
-			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
-			return $_GET['lang'];
-		}else{
-			// Notice: Undefined variable: current_user
-			// Notice: Trying to get property 'ID' of non-object
-			$lang = get_user_locale(get_current_user_id());
-			return $lang;
-		}	
+	// get locale for user
+	if (isset($_GET['lang'])) {
+		$language = $_GET['lang'];
 	}
-	// // update user locale
 	
-	// return $user_language;
+	if (isset($_COOKIE['language']) && !isset($language) ) {
+		$language = $_COOKIE['language'];
+	}
+
+	if (!isset($language) && is_user_logged_in()) {
+		$language = get_user_locale(get_current_user_id());
+	}
+
+	// set locale for user
+	if (isset($language) && !is_user_logged_in()) {
+		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+	}
+	else if (isset($language) && is_user_logged_in()) {
+		update_user_meta(get_current_user_id(), 'locale', $language);
+		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
+	}
+	// fallback to browser language
+	else {
+		$language = qp_detect_browser_language();
+	}
+	return $language;
+
 }
-add_filter( 'locale', 'qp_detect_language' );
+add_filter( 'determine_locale', 'qp_language', 10, 1 );
 
-//Ultimate Member Translation
-
-// function my_language_locale() {
-// 	$locale = "de_DE";
-// 	return $locale;
-// }
-// add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
-// add_filter( 'um_language_file', 'my_language_file', 10, 1 );
-
+// is it needed
+// switch_to_locale( qp_language() );
 
 
 /**
