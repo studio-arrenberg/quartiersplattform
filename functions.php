@@ -3309,6 +3309,12 @@ function my_textdomain( $domain ) {
 return $domain;
 }
 
+add_filter( 'um_language_file', 'my_language_file', 10, 1 );
+function my_language_file( $language_file ) {
+    $language_file = "fehler";
+return $language_file;
+}
+
 
 /**
  * QP visibility badge
