@@ -1005,7 +1005,7 @@ function custom_page_template( $page_template, $post_states ) {
 	}
 	else if ($post->post_title == "Projekte") {
 		$post_states[] = $prefix.'Projekte';
-		$page_template= get_stylesheet_directory() . '/pages/projekt-feed.php';
+		$page_template= get_stylesheet_directory() . '/pages/page-projekt-feed.php';
 	}
 	else if ($post->post_title == "Quartiersplattform") {
 		$post_states[] = $prefix.'Quartiersplattform';
@@ -1025,7 +1025,7 @@ function custom_page_template( $page_template, $post_states ) {
 	}
 	else if ($post->post_title == "Projekt erstellen") {
 		$post_states[] = $prefix.'Projekt erstellen';
-		$page_template= get_stylesheet_directory() . '/forms/form-projekte.php';
+		$page_template= get_stylesheet_directory() . '/pages/form-projekte.php';
 	}
 	else if ($post->post_title == "Feedback") {
 		$post_states[] = $prefix.'Feedback';
@@ -1037,15 +1037,15 @@ function custom_page_template( $page_template, $post_states ) {
 	}
 	else if ($post->post_title == "Nachricht erstellen") {
 		$post_states[] = $prefix.'Nachricht erstellen';
-		$page_template= get_stylesheet_directory() . '/forms/form-nachrichten.php';
+		$page_template= get_stylesheet_directory() . '/pages/form-nachrichten.php';
 	}
 	else if ($post->post_title == "Umfrage erstellen") {
 		$post_states[] = $prefix.'Umfrage erstellen';
-		$page_template= get_stylesheet_directory() . '/forms/form-umfragen.php';
+		$page_template= get_stylesheet_directory() . '/pages/form-umfragen.php';
 	}
 	else if ($post->post_title == "Veranstaltung erstellen") {
 		$post_states[] = $prefix.'Veranstaltung erstellen';
-		$page_template= get_stylesheet_directory() . '/forms/form-veranstaltungen.php';
+		$page_template= get_stylesheet_directory() . '/pages/form-veranstaltungen.php';
 	}
 	else if ($post->post_title == "SDGs") {
 		$post_states[] = $prefix.'SDGs';
