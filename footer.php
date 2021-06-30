@@ -161,9 +161,9 @@ print_r(wp_get_installed_translations( 'plugins' ));
                         locales.wp_filter = new Entry("WP locale Filter", "<?php echo apply_filters( 'locale', "fallback" ); ?>");
                         locales.um_filter_locale = new Entry("UM Filter 'um_language_locale' ", "<?php echo has_filter( "um_language_locale"); ?>");
                         locales.um_filter = new Entry("UM Filter 'um_language_file' ", "<?php echo has_filter( "um_language_file"); ?>");
-                        locales.um_filter = new Entry("UM File Filter 'um_language_file' ", "<?php echo apply_filters( 'um_language_file', "fallback" ); ?>");
-                        locales.um_language_filter = new Entry("UM Language", "<?php echo apply_filters( 'um_language_locale', "fallback" ) ?>");
-                        locales.um_textdomain = new Entry("UM textdomain", "<?php echo apply_filters( 'um_language_textdomain', 'ultimate-member' ); ?>");
+                        locales.um_filter = new Entry("UM File Filter 'um_language_file' ", "<?php //echo apply_filters( 'um_language_file', "fallback" ); ?>");
+                        locales.um_language_filter = new Entry("UM Language", "<?php //echo apply_filters( 'um_language_locale', "fallback" ) ?>");
+                        locales.um_textdomain = new Entry("UM textdomain", "<?php //echo apply_filters( 'um_language_textdomain', 'ultimate-member' ); ?>");
                         locales.qp_language = new Entry("QP Language", "<?php echo qp_language(); ?>");
                         locales.wp_filesystem_access = new Entry("WP Filesystem Access", "<?php//echo wp_can_install_language_pack(); ?>");
                         locales.wp_installed_translations = new Entry("WP installed translations", "<?php // echo wp_get_installed_translations( 'core' ); ?>");
@@ -173,7 +173,6 @@ print_r(wp_get_installed_translations( 'plugins' ));
 
                     console.groupEnd();
             </script>
-            <?php // echo my_language_file("de_DE"); ?>
             <a class="button <?php if(qp_language() == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🇬🇧&nbsp;<?php _e('English', ''); ?></a>
             <a class="button <?php if(qp_language() == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkçe', ''); ?></a>
             <a class="button <?php if(qp_language() == "it_IT") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=it_IT'); ?>">🇮🇹&nbsp;<?php _e('Italiano', ''); ?></a>

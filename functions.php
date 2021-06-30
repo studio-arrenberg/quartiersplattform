@@ -3230,36 +3230,11 @@ function qp_translate_theme() {
     // Load Theme textdomain
     load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages/QP');
 
-	load_theme_textdomain('ultimate-member', get_template_directory() . '/ultimate-member/languages');
+	load_theme_textdomain('ultimate-member', get_template_directory() . '/languages/ultimate-member/');
 
 	load_theme_textdomain('twentytwenty', WP_LANG_DIR );
 }
 add_action( 'after_setup_theme', 'qp_translate_theme' );
-
-
-/**
- * QP register UM translation
- * 
- * @since Quartiersplattform 1.7.2
- * 
- * 
- */
-function qp_translate_um() {
-    // Load Theme textdomain
-	load_plugin_textdomain( 'ultimate-member', false, basename( dirname( __FILE__ ) ) . '/languages' );
-	
-
-    // Include Theme text translation file
-    $locale = get_locale();
-	if (!empty($locale)) {
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable( $locale_file ) ) {
-			require_once( $locale_file );
-		}
-	}
-}
-// add_action( 'after_setup_theme', 'qp_translate_um' );
-
 
 /**
  * QP detect browser language
@@ -3283,72 +3258,6 @@ function qp_detect_browser_language() {
 		return "de_DE";
 	}
 }
-
-
-/**
- * QP switch language
- * 
- * @since Quartiersplattform 1.7
- * 
- * @return string language 
- */
-
-// function qp_detect_language($lang) {
-// 	$expiry = strtotime('+1 year');
-// 	global $user;
-// 	if (!is_user_logged_in()) {
-// 		if(isset($_COOKIE['language'])) {     
-// 			if(!empty($_GET['lang'])){
-// 				setcookie('language',  $_GET['lang'], time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-// 				return $_GET['lang'];
-// 			}else{
-// 				return $_COOKIE['language'];
-// 			}
-			
-// 		}else{  	
-// 			setcookie('language', qp_detect_browser_language(), time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
-// 			return qp_detect_browser_language();
-// 		}	
-// 	}else{
-// 		// check user locale setting
-// 		if(!empty($_GET['lang'])){
-// 			update_user_meta(get_current_user_id(), 'locale', $_GET['lang']);
-// 			return $_GET['lang'];
-// 		}else{
-// 			// Notice: Undefined variable: current_user
-// 			// Notice: Trying to get property 'ID' of non-object
-// 			$lang = get_user_locale(get_current_user_id());
-// 			return $lang;
-// 		}	
-// 	}
-// 	// // update user locale
-	
-// 	// return $user_language;
-// }
-// add_filter( 'um_language_locale', 'my_language_locale', 10, 1 );
-// function my_language_locale( $locale ) {
-// 	$locale = "	";
-// 	return $locale;
-// }
-// add_filter( 'locale', 'de_DE', 10, 1 );
-//apply_filters( 'locale', 'qp_detect_language', 10, 1 );
-
-//Ultimate Member Translation
-
-
-// should be in UM Functions File
-// function um_set_textdomain( $domain ) {
-// 	// $domain = "fallback-in-function";
-// 	$domain = qp_language();
-// 	return $domain;
-// } add_filter( 'um_language_textdomain', 'um_set_textdomain', 10, 1 );
-
-// // should be in UM Functions File
-// function qp_language_locale( $locale ) {
-// 	// $locale = "fallback-in-function";
-// 	$locale = qp_language();
-//     return $locale;
-// } add_filter( 'um_language_locale', 'qp_language_locale', 10, 1 );
 
 /**
  * QP language function
@@ -3391,23 +3300,6 @@ add_filter( 'determine_locale', 'qp_language', 10, 1 );
 
 // is it needed
 // switch_to_locale( qp_language() );
-
-/**
- * UM change language Filte
- * 
- * @since Quartiersplattform 1.7.3
- * 
- * @return language_file string
- */
-
-// add_filter( 'um_language_file', 'my_language_file', 10, 1 );
-function my_language_file( $language_file ) {
-	$language_locale = determine_locale();
-    // $language_file = get_template_directory()."/ultimate-member/languages/ultimate-member".'-'. $language_locale.'.mo';
-	$language_file = get_template_directory()."/languages/ultimate-member".'-'. $language_locale.'.mo';
-return $language_file;
-}
-
 
 
 /**
