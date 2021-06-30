@@ -3233,7 +3233,7 @@ function qp_translate_theme() {
 	load_theme_textdomain('ultimate-member', get_template_directory() . '/languages/ultimate-member/');
 	// Wordpress TwentyTwenty as Backup for several pages
 	load_theme_textdomain('twentytwenty', get_template_directory() . '/languages/twentytwenty/');
-	// load_theme_textdomain('twentytwenty', WP_LANG_DIR );
+	// load_theme_textdomain('ultimate-member', WP_LANG_DIR );
 }
 add_action( 'after_setup_theme', 'qp_translate_theme' );
 
@@ -3302,7 +3302,12 @@ add_filter( 'determine_locale', 'qp_language', 10, 1 );
 // is it needed
 // switch_to_locale( qp_language() );
 
-
+add_filter( 'um_language_file', 'my_language_file', 10, 1 );
+function my_language_file( $language_file ) {
+	// your code here
+	$language_file = get_template_directory() . '/languages/ultimate-member/';
+	return $language_file;
+}
 /**
  * QP visibility badge
  * 

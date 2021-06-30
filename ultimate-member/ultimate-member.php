@@ -295,3 +295,31 @@ function language_debugging() {
 
 	<?php
 }
+
+/**
+ * 
+ * Copy Translations Files
+ * 
+ */
+function copy_langugae_file() {
+
+	$languages = array('it_IT', 'de_DE', 'tr_TR');
+	$filename = array('mo', 'po');
+
+	foreach ($languages as $lang) {
+		foreach ($filename as $file) {
+			// copy language files
+			// $srcfile= get_template_directory() . '/languages/ultimate-member/'.$lang.'.'.$file;
+			// $dstfile= WP_LANG_DIR . '/plugins/ultimate-member-'.$lang.'.'.$file;
+			// mkdir(dirname($dstfile), 0777, true);
+			// copy($srcfile, $dstfile);
+
+			// delete files
+			if (file_exists(WP_LANG_DIR . '/plugins/ultimate-member-'.$lang.'.'.$file)) {
+				unlink(WP_LANG_DIR . '/plugins/ultimate-member-'.$lang.'.'.$file);
+			}
+		}
+	}	
+}
+
+copy_langugae_file();
