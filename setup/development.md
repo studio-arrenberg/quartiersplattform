@@ -21,6 +21,14 @@
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
+## translation
+- strategy 1: load from theme directory 2: load from wordpress directory (initiate multilanguge)
+- name qp files with `quartiersplattform.mo`
+- add catalog in `/languages` dir (.php & .pot)
+- load `twentytwenty` translation files OR change strings in Theme to `quartiersplattform` (deutsch fehlt)
+- check & update `ultimate-member` translation files (..123)
+- check Page Name Translations
+- check pages: password reset, 404, archiv, anmelden, registrieren
 ## future
 - [x] Energie Wetter API and Plugin
 - [x] cookie disclaimer

@@ -3190,6 +3190,10 @@ function qp_project_owner($project = '') {
 	if (!is_user_logged_in()) {
 		return false;
 	}
+
+	if (!isset($post->ID)) {
+		return false;
+	}
 	
 	// get post projekt ID
 	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  {
@@ -3224,16 +3228,11 @@ function qp_project_owner($project = '') {
  */
 function qp_translate_theme() {
     // Load Theme textdomain
-    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages');
+    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages/QP');
 
-    // Include Theme text translation file
-    $locale = get_locale();
-	if (!empty($locale)) {
-		$locale_file = get_template_directory() . "/languages/$locale.php";
-		if ( is_readable( $locale_file ) ) {
-			require_once( $locale_file );
-		}
-	}
+	load_theme_textdomain('ultimate-member', get_template_directory() . '/ultimate-member/languages');
+
+	load_theme_textdomain('twentytwenty', WP_LANG_DIR );
 }
 add_action( 'after_setup_theme', 'qp_translate_theme' );
 
@@ -3248,6 +3247,7 @@ add_action( 'after_setup_theme', 'qp_translate_theme' );
 function qp_translate_um() {
     // Load Theme textdomain
 	load_plugin_textdomain( 'ultimate-member', false, basename( dirname( __FILE__ ) ) . '/languages' );
+	
 
     // Include Theme text translation file
     $locale = get_locale();
@@ -3258,7 +3258,7 @@ function qp_translate_um() {
 		}
 	}
 }
-add_action( 'after_setup_theme', 'qp_translate_um' );
+// add_action( 'after_setup_theme', 'qp_translate_um' );
 
 
 /**
@@ -3337,18 +3337,18 @@ function qp_detect_browser_language() {
 
 
 // should be in UM Functions File
-function um_set_textdomain( $domain ) {
-	// $domain = "fallback-in-function";
-	$domain = qp_language();
-	return $domain;
-} add_filter( 'um_language_textdomain', 'um_set_textdomain', 10, 1 );
+// function um_set_textdomain( $domain ) {
+// 	// $domain = "fallback-in-function";
+// 	$domain = qp_language();
+// 	return $domain;
+// } add_filter( 'um_language_textdomain', 'um_set_textdomain', 10, 1 );
 
-// should be in UM Functions File
-function qp_language_locale( $locale ) {
-	// $locale = "fallback-in-function";
-	$locale = qp_language();
-    return $locale;
-} add_filter( 'um_language_locale', 'qp_language_locale', 10, 1 );
+// // should be in UM Functions File
+// function qp_language_locale( $locale ) {
+// 	// $locale = "fallback-in-function";
+// 	$locale = qp_language();
+//     return $locale;
+// } add_filter( 'um_language_locale', 'qp_language_locale', 10, 1 );
 
 /**
  * QP language function
@@ -3368,7 +3368,7 @@ function qp_language() {
 		$language = $_COOKIE['language'];
 	}
 
-	if (isset($language) && is_user_logged_in()) {
+	if (!isset($language) && is_user_logged_in()) {
 		$language = get_user_locale(get_current_user_id());
 	}
 
@@ -3388,7 +3388,9 @@ function qp_language() {
 
 }
 add_filter( 'determine_locale', 'qp_language', 10, 1 );
-switch_to_locale( qp_language() );
+
+// is it needed
+// switch_to_locale( qp_language() );
 
 /**
  * UM change language Filte
@@ -3398,11 +3400,11 @@ switch_to_locale( qp_language() );
  * @return language_file string
  */
 
-add_filter( 'um_language_file', 'my_language_file', 10, 1 );
-
+// add_filter( 'um_language_file', 'my_language_file', 10, 1 );
 function my_language_file( $language_file ) {
-	$language_locale = get_user_locale(get_current_user_id(  ));
-    $language_file = get_template_directory()."/ultimate-member/languages/ultimate-member".'-'. $language_locale.'.mo';
+	$language_locale = determine_locale();
+    // $language_file = get_template_directory()."/ultimate-member/languages/ultimate-member".'-'. $language_locale.'.mo';
+	$language_file = get_template_directory()."/languages/ultimate-member".'-'. $language_locale.'.mo';
 return $language_file;
 }
 

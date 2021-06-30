@@ -20,7 +20,7 @@ get_header();
 
 		<br><br>
 
-		<a class="button" href="<?php echo get_site_url(); ?>">Startseite</a>
+		<a class="button" href="<?php echo get_site_url(); ?>"><?php _e('Startseite','quartiersplattform'); ?></a>
 
 		<?php
 		if ( current_user_can('administrator') ) {
