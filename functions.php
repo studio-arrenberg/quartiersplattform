@@ -3364,19 +3364,19 @@ function qp_language() {
 		$language = $_GET['lang'];
 	}
 	
-	if (empty($language)) {
+	if (isset($_COOKIE['language']) && !isset($language) ) {
 		$language = $_COOKIE['language'];
 	}
 
-	if (!$language && is_user_logged_in()) {
+	if (isset($language) && is_user_logged_in()) {
 		$language = get_user_locale(get_current_user_id());
 	}
 
 	// set locale for user
-	if ($language && !is_user_logged_in()) {
+	if (isset($language) && !is_user_logged_in()) {
 		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 	}
-	else if ($language && is_user_logged_in()) {
+	else if (isset($language) && is_user_logged_in()) {
 		update_user_meta(get_current_user_id(), 'locale', $language);
 		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 	}
