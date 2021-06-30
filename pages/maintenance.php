@@ -1,6 +1,6 @@
 <?php
 # init wp files
-require_once("../../../wp-load.php");
+require_once("../../../../wp-load.php");
 
 # redirect if maintenence mode is off and plugins are installed
 if (class_exists('acf_pro') && class_exists('UM')) {
@@ -97,7 +97,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
       if (class_exists('acf_pro') && class_exists('UM')) {
       ?>
 
-        <h2 class="pre-title"><?php _e('Gestalte dein Viertel', 'quartiersplattform'); ?> </h2>
+        <h2 class="pre-title"><?php _e('Gestalte dein Quartier', 'quartiersplattform'); ?> </h2>
         <h1><?php _e('Hier entsteht', 'quartiersplattform'); ?>  <br><?php _e(' deine Quartiersplattform', 'quartiersplattform'); ?> </h1>
 
         <p class="big">
@@ -112,7 +112,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
         </div>
 
 
-        <h3><?php _e('Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:', 'quartiersplattform'); ?></h3>
+        <h3><?php _e('Die Quartiersplattform wird bereits in den folgenden Quartieren genutzt', 'quartiersplattform'); ?></h3>
         <div class="flex">
           <?php
           # map picture variables
@@ -136,13 +136,15 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
           $width = 500;
           $height = 300;
           ?>
-
+<!-- 
           <div class="card  shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://langerfeld.app">
                <h4 class="heading-size-3">Langerfeld</h4>
               <h5>Wuppertal</h5>
             </a>
-          </div>
+          </div> -->
+
+
         </div>
 
 

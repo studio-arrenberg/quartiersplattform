@@ -1677,12 +1677,12 @@ function wp_maintenance_mode() {
 
 	// if plugins not installed
 	if (!class_exists('acf_pro') || !class_exists('UM')) {
-		header("Location: ".get_template_directory_uri().'/maintenance.php');
+		header("Location: ".get_template_directory_uri().'/pages/maintenance.php');
 		exit();
 	}
 	// if maintenance mode on and not administrator
 	else if (get_field('maintenance', 'option') == true && !current_user_can('skip_maintenance') && ( strpos($REQUEST_URI,'/register/') === false && strpos($REQUEST_URI,'/login/') === false && strpos($REQUEST_URI,'/password-reset/') === false )) {
-		header("Location: ".get_template_directory_uri().'/maintenance.php');
+		header("Location: ".get_template_directory_uri().'/pages/maintenance.php');
 		exit();
 	}
 
