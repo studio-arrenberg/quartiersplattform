@@ -58,6 +58,10 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:description" content="Lerne deinen Stadtteil kennen, entdecke interesannte Projekte und partizipiere in der Gemeinschaft."/>
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
+
+                <meta property="og:url" content="<?php echo home_url(); ?>" />
+                <meta name="twitter:url" content="<?php echo home_url(); ?>"/>
+                <meta property="og:locale" content="<?php echo home_url(); ?>"/>
             <?php
         }
         else if (is_page( 'Projekte' )) {
@@ -74,6 +78,10 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:description" content="Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte kennen oder erstelle selbst ein eigenes Projekt."/>
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Projekte im Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
+
+                <meta property="og:url" content="<?php echo home_url().'/projekte'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/projekte'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/projekte'; ?>"/>
             <?php
         }
         else if (is_page( 'Veranstaltungen' )) {
@@ -90,6 +98,10 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:description" content="Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden."/>
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Veranstaltungen im Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
+
+                <meta property="og:url" content="<?php echo home_url().'/veranstaltungen'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/veranstaltungen'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/veranstaltungen'; ?>"/>
             <?php
         }
         else if (is_page( 'SDGs' )) {
@@ -106,6 +118,10 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:description" content="Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle."/>
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Ziele für nachhaltige Entwicklung im Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
+
+                <meta property="og:url" content="<?php echo home_url().'/sdgs'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/sdgs'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/sdgs'; ?>"/>
             <?php
         }
         // page, post, project, ...
@@ -127,24 +143,22 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:description" content="<?php if (get_field('text')) { shorten(get_field('text'), 200); } else { shorten(get_the_content(), 200); } ?>"/>
                 <meta name="twitter:image" content="<?php the_post_thumbnail_url('landscape_s' ); ?>"/>
                 <meta name="twitter:image:alt" content="<?php echo get_the_title(); ?>"/>
+
+                <meta property="og:url" content="<?php echo esc_url( get_page_link() ); ?>" />
+                <meta name="twitter:url" content="<?php echo esc_url( get_page_link() ); ?>"/>
+                <meta property="og:locale" content="<?php echo esc_attr( get_locale() ); ?>"/>
             <?php
         }
     ?>
-    <meta property="og:url" content="<?php echo esc_url( get_page_link() ); ?>" />
-    <meta name="twitter:url" content="<?php echo esc_url( get_page_link() ); ?>"/>
-    <meta property="og:locale" content="<?php echo esc_attr( get_locale() ); ?>"/>
+    
 
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_GB" />
     <meta property="og:locale:alternate" content="tr_TR" />
     <meta property="og:locale:alternate" content="it_IT" />
-
     <meta property="og:site_name" content="<?php echo 'Quartiersplattform '.get_field('quartiersplattform-name','option'); ?>"/>
-
     <meta name="twitter:card" content="summary"/>
     <!-- <meta name="twitter:site" content="<?php echo esc_attr( $twitter_site ); ?>"/> -->
-    <meta name="twitter:url" content="<?php echo esc_url( get_page_link() ); ?>"/>
-
 
     <!-- Matomo Tracking API Key -->
     <?php the_field('matomo_api', 'option'); ?>
