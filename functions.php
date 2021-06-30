@@ -2367,7 +2367,7 @@ function extract_links( $text ) {
  * @param string $date date
  * @return string text with html a tags
  */
-function qp_date( $date, $detail = false, $time = '' ) {
+function qp_date( $date, $detail = false, $time = '', $time_only = false ) {
 
 	/**
 	 * Tested:
@@ -2429,6 +2429,10 @@ function qp_date( $date, $detail = false, $time = '' ) {
 
 	if ($detail) {
 		$string = $string.__(" um ",'quartiersplattform').date('H:i', $date);
+	}
+
+	if ($time_only) {
+		$string = date('H:i', $date);
 	}
 
 	return $string;

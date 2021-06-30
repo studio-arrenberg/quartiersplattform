@@ -50,7 +50,7 @@ get_header();
                 // get project by Term
                 ?>
                 <h2 class="heading-size-3 highlight">
-                    <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); ?></span>
+                    <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); if (get_field('event_end_time')) echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true); ?></span>
                 </h2>
                 <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
                 <?php visibility_badge(); ?>
@@ -77,13 +77,11 @@ get_header();
                     echo "<br><br>";
 
                     // livestream
-                    if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >Zum Livestream</a>";
-
+                    if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >".__('Zum Livestream', 'quartiersplattform')."</a>";
                     // Ticket
-                    if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >Zum Livestream</a>";
-
+                    if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >".__('Ticket erwerben', 'quartiersplattform')."</a>";
                     // Website
-                    if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >Zum Livestream</a>";
+                    if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >".__('Zur Website der Veranstaltung', 'quartiersplattform')."</a>";
 
                     // calendar download
                     calendar_download($post);
