@@ -3303,6 +3303,19 @@ add_filter( 'determine_locale', 'qp_language', 10, 1 );
 // switch_to_locale( qp_language() );
 
 
+add_filter( 'um_language_textdomain', 'my_textdomain', 10, 1 );
+function my_textdomain( $domain ) {
+    $domain = "fehler";
+return $domain;
+}
+
+add_filter( 'um_language_file', 'my_language_file', 10, 1 );
+function my_language_file( $language_file ) {
+    $language_file = "fehler";
+return $language_file;
+}
+
+
 /**
  * QP visibility badge
  * 
