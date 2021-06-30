@@ -80,8 +80,8 @@ if ( comments_open() || pings_open() ) {
 	comment_form(
 		array(
 			'class_form'         => 'section-inner thin max-percentage',
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-			'title_reply_after'  => '</h2>',
+			'title_reply_before' => '<h3 id="reply-title" class="heading-size-3">',
+			'title_reply_after'  => '</h3>',
 		)
 	);
 

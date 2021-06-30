@@ -3302,12 +3302,7 @@ add_filter( 'determine_locale', 'qp_language', 10, 1 );
 // is it needed
 // switch_to_locale( qp_language() );
 
-add_filter( 'um_language_file', 'my_language_file', 10, 1 );
-function my_language_file( $language_file ) {
-	// your code here
-	$language_file = get_template_directory() . '/languages/ultimate-member/';
-	return $language_file;
-}
+
 /**
  * QP visibility badge
  * 

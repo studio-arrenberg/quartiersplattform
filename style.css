@@ -606,7 +606,7 @@ legend {
 form:not(.poll) label {
   display: block;
   font-size: 1.8rem;
-  font-weight: 500;
+  /* font-weight: 500; */
 }
 
 label.inline,
@@ -658,7 +658,9 @@ textarea{
   word-wrap: none;
   word-break: keep-all;
   background: #f9fcff;
-  border: 1px solid #dcf0ff;
+  border: 1px solid #dcf0ff;  
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+
 }
 
 code,
@@ -685,10 +687,11 @@ textarea {
   border-radius: 15px;
   box-shadow: none;
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   max-width: 100%;
   width: 100%;
-  padding: 15px 15px 13px 20px;
+  /* padding: 15px 15px 13px 20px; */
+  padding: 7px 10px;
 }
 
 input[type="text"]:focus,
@@ -982,6 +985,32 @@ input[type="submit"]:focus{
 
 
 @media (min-width: 782px) {
+  code,
+input[type="url"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+textarea {
+
+  /* padding: 15px 15px 13px 20px; */
+  padding: 10px 15px;
+}
+
+
+
   button,
   .button,
   .um-button,
@@ -1441,7 +1470,7 @@ th {
   }
 
   #site-content {
-    margin: 150px auto 100px auto;
+    margin: 120px auto 100px auto;
     padding: 15px;
     width: 100%;
     max-width: 1440px;
@@ -1603,6 +1632,9 @@ th {
   .badge-content{
     display: none;
   }
+  .badge-content span:first-of-type{
+    margin-right: 5px;
+  }
 }
 
 @media (min-width: 900px) {
@@ -1615,7 +1647,6 @@ th {
   .badge-link{
     display: flex;
     align-items: center;
-    width: auto !important;
     max-width: 300px;
     margin-bottom: 10px;
     text-align: left;
@@ -1765,8 +1796,7 @@ th {
   width: 75px;
   height: 75px;
   border-radius: 20px;
-  margin-right: 10px;
-  margin: 0px;
+  margin: 0px 10px 0px 0px;
 }
 
 .team-member {
@@ -1774,6 +1804,10 @@ th {
   align-items: center;
 }
 
+.contact-button:hover a svg path{
+  fill: #000;
+
+}
 .team-member a{
   color: #000;
   text-decoration: none;
@@ -1781,6 +1815,7 @@ th {
   align-items: center;
   word-wrap: keep-all;
   word-break: keep-all;
+  flex-grow: 1;
 }
 
 .team-member a:hover{
@@ -1788,9 +1823,14 @@ th {
   text-decoration: none;
 }
 
+.team-member a:hover svg path{
+  fill: #0091FF;
+}
+
 .team-member .heading-size-3{
   margin-bottom: 0px;
 }
+
 
 .copy-url{
   margin: 0px 0px 10px 0px;
@@ -1813,6 +1853,7 @@ th {
   margin-right: 2px;
   padding: 0px;
   margin-left: auto;
+  position: relative;
 }
 
 .copy-button svg{
@@ -1824,6 +1865,30 @@ th {
   fill: #fff;
 }
 
+.tooltiptext {
+  width: 100px;
+  height: 100%;
+  visibility: hidden;
+  background-color: #003054;
+  color: #fff;
+  text-align: right;
+  border-radius: 14px;
+  padding: 5px 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  right: 0px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.copy-button:hover .tooltiptext {
+  opacity: 1;
+  visibility:visible;
+
+}
 
 .share-button{
   display: flex;
@@ -2001,6 +2066,7 @@ th {
   display: flex;
   flex-shrink: 2;
   flex-direction: column;
+  justify-content: center;
 }
 
 .profil-header-content{
@@ -2133,9 +2199,10 @@ th {
 }
 
 .link-card-container .landscape{
-  width: 300px;
-  height: 150px;
+  width: 350px;
+  height: 175px;
 }
+
 
 .stage-title{
   font-weight: 700;
@@ -2267,7 +2334,7 @@ th {
 
 
 .badge-link{
-  width: 70px !important;
+  width: 70px;
   text-decoration: none;
   color: #000;
   cursor: pointer;
@@ -2300,7 +2367,7 @@ th {
 
 .badge img{
   height: 100%  !important;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 
 .badge img.emoji{
@@ -2340,38 +2407,41 @@ th {
   .badge-link{
     display: flex;
     align-items: center;
-    width: auto !important;
-    max-width: 300px;
+    width: 79px;
     margin-bottom: 10px;
     text-align: left;
     padding: 4px;
-  }
+    transition: all 0.15s ease-in-out;  }
 
   .badge-link:hover, .badge-is-active {
     color: #0091FF;
     transform: scale(1.01);
   }
 
+
+  .badge-is-active {
+    box-shadow: 0 1px 30px rgba(196, 196, 196, 0.9);
+    background-color:#fff;
+  }
+
+
   .badge{
     flex-shrink: 0;
     overflow: hidden;
     margin: 0px 10px 0px 0px;
   }
-}
 
-
-@media (min-width: 782px) {
   .badge-content{
     display: none;
   }
+
 }
 
 @media (min-width: 900px) {
   .badge-link{
     display: flex;
     align-items: center;
-    width: auto !important;
-    max-width: 300px;
+    width: 100% !important;
     margin-bottom: 10px;
     text-align: left;
   }
@@ -2810,7 +2880,12 @@ font-weight: 400;
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:hover {
   opacity: 1;
-  text-decoration: underline;
+  text-decoration: none;
+  color:#0091FF;
+  box-shadow: 0 1px 2px rgba(0, 145, 255, 0.15),
+0 2px 4px rgba(0, 145, 255, 0.15), 0 4px 8px rgba(0, 145, 255, 0.15),
+0 8px 16px rgba(0, 145, 255, 0.15), 0 16px 32px rgba(0, 145, 255, 0.15),
+0 32px 64px rgba(0, 145, 255, 0.15);
 }
 
 /* Block: Gallery ---------------------------- */
@@ -3584,7 +3659,7 @@ font-weight: 700;
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 20px 0px 40px calc( -1 * var(--gap));
+  margin: 20px 0px 20px calc( -1 * var(--gap));
   width: calc( 100% + var(--gap));
   max-width: 1440px;
   padding-left: 15px;
@@ -5929,8 +6004,8 @@ table.acf-table, table.acf-table th, table.acf-table td{
 
 .acf-label p{
   font-size: 1.6rem;
-  line-height: 2.3rem;
-  margin-bottom: 2px;
+  margin-bottom: 7px;
+  display: block;
 }
 
 
@@ -6014,7 +6089,7 @@ form.poll .answers{
 }
 
 .answers button{
-  display: block;
+  display: flex;
   width: 100%;
   flex-grow: 1;
   margin-top: 5px;
@@ -6022,8 +6097,12 @@ form.poll .answers{
   color: #0091FF ;
   background: #fff;
   box-shadow: none;
-  height: 46px;
+  min-height: 46px;
+  height: auto;
   padding: 0px;
+  overflow: hidden;
+  position: relative;
+  justify-content: space-between;
 }
 
 .answers button:hover{
@@ -6031,28 +6110,55 @@ form.poll .answers{
 }
 
 .answers button label{
-  position: absolute;
-  left: 20px;
-  margin-top: -29px;
+  padding: 8px 8px 8px 12px;
+  text-align: left;
+  position: relative;
+  display: block;
+  height: 100%;
+  z-index: 1;
+  line-height: 1.8rem;
+
+
 }
+.answers button div{
+  text-align: right;
+  margin-right: 5px;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+
+
+.scale{
+  display: block;
+  position: absolute;
+left: 0px;
+top: 0px;
+/* margin-right: 22px; */
+width: 0px;
+height: 100%;
+/* transform: translateY(-100%); */
+background: #c4e6ff;
+border-radius: 0px;
+
+transition: width 1s ease-in-out ;
+
+
+}
+
 
 
 .answers button label img{
   position: absolute;
   width: 15px;
   margin-left: 5px;
+  margin-top: 2px;
   min-width: initial;
   max-width: initial;
   background: transparent;
 }
 
-.answers button div{
-  position: absolute;
-  z-index: 1;
-  right: 20px;
-  margin-top: -29px;
-  text-align: right;
-}
+
 
 .card .poll .avatar {
   min-width: unset;
@@ -6096,15 +6202,6 @@ form.poll .answers{
 } 
 
 
-.scale{
-  display: block;
-  margin-top: 0px;
-  margin-right: 22px;
-  height: 44px;
-  background: #E8F5FF;
-  border-radius: 15px;
-  transition: width 1s ease-in-out ;
-}
 
 .ui-datepicker-calendar{
   margin: 10px 0px 0px 0px;
@@ -6196,16 +6293,24 @@ padding: 5px 0px;
   display: none;
 }
  */
+ 
+label.acf-basic-uploader{
+  cursor: pointer;
+  margin-top: 15px;
+}
 
 .acf-image-uploader input {
   color: transparent;
+  border: none;
+  display: none;
 }
 
-.acf-image-uploader input::-webkit-file-upload-button {
+.acf-image-uploader input::-webkit-file-upload-button , .acf-image-uploader input::file-selector-button{
   visibility: hidden;
 }
 
-.acf-image-uploader input::before {
+.acf-image-uploader input::before, 
+.acf-image-uploader .acf-basic-uploader::after{
   content: 'Bild auswählen';
   color: black;
   display: inline-block;
@@ -6215,9 +6320,11 @@ padding: 5px 0px;
   cursor: pointer;
   text-shadow: none;
   font-weight: 700;
-  background-color: rgb(0, 145, 255);
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(196, 196, 196, 0.75);
+font-weight: 700;
   border: none;
-  color: #fff;
+  color: #003054;
   cursor: pointer;
   display: inline-block;
   font-size: 1.7rem;
@@ -6225,7 +6332,14 @@ padding: 5px 0px;
   text-align: center;
   text-decoration: none;
   padding: 15px 20px 13px 20px;
-  font-weight: 500;
+  transition: all 0.15s linear;
+}
+
+
+.acf-image-uploader .acf-basic-uploader:hover::after {
+  color: rgb(0, 145, 255);
+  box-shadow: 0 1px 2px rgba(28, 29, 31, 0.15), 0 2px 4px rgba(0, 145, 255, 0.15), 0 4px 8px rgba(0, 145, 255, 0.15), 0 8px 16px rgba(0, 145, 255, 0.15), 0 16px 32px rgba(0, 145, 255, 0.15), 0 32px 64px rgba(0, 145, 255, 0.15);
+
 }
 .custom-file-input:hover::before {
   border-color: black;
@@ -6548,4 +6662,10 @@ a.text-link:hover {
 
 .um-field-error{
   color: red;
+}
+
+
+.arrenberg-wetter{
+  width: 350px;
+  height: 175px;
 }

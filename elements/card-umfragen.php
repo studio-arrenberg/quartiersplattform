@@ -59,8 +59,6 @@
 
                             <button id="poll<?php echo $i; ?>" name="poll" value="<?php echo $i; ?>" <?php  if (!is_user_logged_in()) echo "disabled"; if (is_user_logged_in()) echo "type='submit'"; if(in_array(get_current_user_id(), $array[$i]['user'])) echo "checked='true'"; ?> >
 
-                                <span class="scale" id="poll<?php echo $i; ?>"style="width: <?php if ($vote_state ) echo $array[$i]['percentage']; else echo '0'; ?>%"></span>
-
                                 <label id="poll<?php echo $i; ?>" for="<?php echo $sub_value; ?>">
                                     <?php echo $sub_value; ?>
                                     <img class="button-icon <?php if(!in_array(get_current_user_id(), $array[$i]['user'])) echo "hide"; ?>" src="<?php echo get_template_directory_uri()?>/assets/icons/star.svg" />
@@ -70,6 +68,12 @@
                                     <?php if ($vote_state ) echo $array[$i]['count'].__(" Stimmen",'quartiersplattform'); ?>
                                 </div>
 
+
+                                <span class="scale" id="poll<?php echo $i; ?>"style="width: <?php if ($vote_state ) echo $array[$i]['percentage']; else echo '0'; ?>%">
+                                </span>
+
+
+                             
                             </button>
 
                         <?php

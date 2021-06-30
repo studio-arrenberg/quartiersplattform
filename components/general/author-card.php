@@ -34,30 +34,35 @@ else {
                 ?>
             </a>
 
+
+            <!-- An Johann - wenn mail oder phone ausgefüllt sind zeige share button  -->  
+
                 <div class="share-button">
                     <?php if( get_field('mail', $userid) ){ ?>
-                    <div class="button is-transparent button-has-icon is-one-row">
+                    <div class="button is-transparent button-has-icon is-one-row contact-button">
                         <a class=" button-has-icon is-one-row" id="btn1" target="_blank" href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'first_name', $user_id );?>"rel="nofollow">
                             <?php require get_template_directory() . '/assets/icons/mail.svg'; ?>
                             <?php the_field('mail', $userid);?>
                         </a>
                         <button class="is-primary copy-button" onclick="Clipboard('<?php the_field('mail', $userid);?>')" >
                         <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
+                        <span class="tooltiptext"><?php _e('Kopieren', 'quartiersplattform'); ?></span>
+
                         </button>
                     </div>
                     <?php } ?>
                     
                     <?php if( get_field('phone', $userid) ){?>
-                        <div class="button is-transparent button-has-icon is-one-row">
-                        <a class=" button-has-icon is-one-row" id="btn2" class="button is-transparent button-has-icon is-one-row" target="_blank" href="tel:<?php echo the_field('phone', $userid);?>" >
-                            <?php require get_template_directory() . '/assets/icons/phone.svg'; ?>
-                            <?php the_field('phone', $userid); ?>
-                        </a>
-                        <button class="is-primary copy-button" onclick="Clipboard('<?php the_field('phone', $userid);  ?>')" >
-                        <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
-                        </button>
-                    </div>
-
+                        <div class="button is-transparent button-has-icon is-one-row contact-button">
+                            <a class=" button-has-icon is-one-row" id="btn2" class="button is-transparent button-has-icon is-one-row" target="_blank" href="tel:<?php echo the_field('phone', $userid);?>" >
+                                <?php require get_template_directory() . '/assets/icons/phone.svg'; ?>
+                                <?php the_field('phone', $userid); ?>
+                            </a>
+                            <button class="is-primary copy-button" onclick="Clipboard('<?php the_field('phone', $userid);  ?>')" >
+                                <?php require get_template_directory() . '/assets/icons/copy.svg'; ?>
+                                <span class="tooltiptext"><?php _e('Kopieren', 'quartiersplattform'); ?></span>
+                            </button>
+                        </div>
                     <?php } ?>
                 </div>
 
