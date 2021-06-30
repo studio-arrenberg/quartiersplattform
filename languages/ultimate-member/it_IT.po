@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Ultimate Member – User Profile, User Registration, Login &amp; Membership Plugin - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-06-30 17:18+0200\n"
+"PO-Revision-Date: 2021-06-30 18:01+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4034,12 +4034,12 @@ msgstr "data iscrizione"
 #: includes/class-config.php:132 includes/class-config.php:264
 #: includes/class-config.php:272 includes/class-config.php:794
 msgid "Login"
-msgstr "Accedi 123"
+msgstr "Accedi"
 
 #: includes/class-config.php:133 includes/class-config.php:262
 #: includes/class-config.php:276 includes/class-config.php:795
 msgid "Register"
-msgstr "Registrati 123"
+msgstr "Registrati"
 
 #: includes/core/class-permalinks.php:187
 msgid "This activation link is expired or have already been used."

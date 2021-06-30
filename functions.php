@@ -3303,6 +3303,13 @@ add_filter( 'determine_locale', 'qp_language', 10, 1 );
 // switch_to_locale( qp_language() );
 
 
+add_filter( 'um_language_textdomain', 'my_textdomain', 10, 1 );
+function my_textdomain( $domain ) {
+    $domain = "fehler";
+return $domain;
+}
+
+
 /**
  * QP visibility badge
  * 
