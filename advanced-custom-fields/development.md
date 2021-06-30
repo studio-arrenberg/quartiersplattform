@@ -31,11 +31,11 @@
 - [ ] check pages: password reset, 404, archiv, anmelden, registrieren
 - [ ] check `twentytwenty` translation
 - [ ] check `reset-password.php`
-- [ ] check `404`
+- [x] check `404`
 - [ ] check `login`
-- [ ] check `profile`
+- [x] check `profile`
 - [ ] check `archiv`
-- [ ] Wartungsmodus und Matomo field are gone
+- [x] Wartungsmodus und Matomo field are gone
 ## future
 - [x] Energie Wetter API and Plugin
 - [x] cookie disclaimer

@@ -130,8 +130,8 @@ wp_maintenance_mode(); // redirect for maintenance mode
             <?php
         }
     ?>
-    <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
-    <meta name="twitter:url" content="<?php echo esc_url( get_permalink() ); ?>"/>
+    <meta property="og:url" content="<?php echo esc_url( get_page_link() ); ?>" />
+    <meta name="twitter:url" content="<?php echo esc_url( get_page_link() ); ?>"/>
     <meta property="og:locale" content="<?php echo esc_attr( get_locale() ); ?>"/>
 
     <meta property="og:locale" content="de_DE" />
@@ -143,7 +143,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
 
     <meta name="twitter:card" content="summary"/>
     <!-- <meta name="twitter:site" content="<?php echo esc_attr( $twitter_site ); ?>"/> -->
-    <meta name="twitter:url" content="<?php echo esc_url( get_permalink() ); ?>"/>
+    <meta name="twitter:url" content="<?php echo esc_url( get_page_link() ); ?>"/>
 
 
     <!-- Matomo Tracking API Key -->
