@@ -79,9 +79,9 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Projekte im Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
 
-                <meta property="og:url" content="<?php echo home_url().'/projekte'; ?>" />
-                <meta name="twitter:url" content="<?php echo home_url().'/projekte'; ?>"/>
-                <meta property="og:locale" content="<?php echo home_url().'/projekte'; ?>"/>
+                <meta property="og:url" content="<?php echo home_url().'/projekte/'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/projekte/'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/projekte/'; ?>"/>
             <?php
         }
         else if (is_page( 'Veranstaltungen' )) {
@@ -99,9 +99,9 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Veranstaltungen im Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
 
-                <meta property="og:url" content="<?php echo home_url().'/veranstaltungen'; ?>" />
-                <meta name="twitter:url" content="<?php echo home_url().'/veranstaltungen'; ?>"/>
-                <meta property="og:locale" content="<?php echo home_url().'/veranstaltungen'; ?>"/>
+                <meta property="og:url" content="<?php echo home_url().'/veranstaltungen/'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/veranstaltungen/'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/veranstaltungen/'; ?>"/>
             <?php
         }
         else if (is_page( 'SDGs' )) {
@@ -119,9 +119,9 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta name="twitter:image" content="<?php echo esc_url($image['url']); ?>"/>
                 <meta name="twitter:image:alt" content="Ziele für nachhaltige Entwicklung im Quartier <?php the_field('quartiersplattform-name','option'); ?>"/>
 
-                <meta property="og:url" content="<?php echo home_url().'/sdgs'; ?>" />
-                <meta name="twitter:url" content="<?php echo home_url().'/sdgs'; ?>"/>
-                <meta property="og:locale" content="<?php echo home_url().'/sdgs'; ?>"/>
+                <meta property="og:url" content="<?php echo home_url().'/sdgs/'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/sdgs/'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/sdgs/'; ?>"/>
             <?php
         }
         // page, post, project, ...
