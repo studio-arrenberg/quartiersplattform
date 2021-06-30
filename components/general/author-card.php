@@ -34,9 +34,7 @@ else {
                 ?>
             </a>
 
-
-            <!-- An Johann - wenn mail oder phone ausgefüllt sind zeige share button  -->  
-
+                <?php if( get_field('mail', $userid) || get_field('phone', $userid) ){ ?>
                 <div class="share-button">
                     <?php if( get_field('mail', $userid) ){ ?>
                     <div class="button is-transparent button-has-icon is-one-row contact-button">
@@ -65,6 +63,7 @@ else {
                         </div>
                     <?php } ?>
                 </div>
+                <?php } ?>
 
                 <script>
 
@@ -80,18 +79,14 @@ else {
 
         </div>
     </div>
-    <?php } ?>
-
-   
         <?php 
+        } 
         // reminder card to set contact information
         if( is_user_logged_in() && $user_id == get_current_user_id() && !get_field('phone', $userid) && !get_field('mail', $userid) ) {
             $text = __('Hier kannst du deine Kontaktdaten hinterlegen,','quartiersplattform')."<br>".__(" damit du kontaktiert werden kannst.",'quartiersplattform');
             reminder_card('no-contact-information', 'Kontaktdaten hinterlegen', $text, 'Zum Profil', get_site_url().'/profil' );
         }
-        
-
+    
     }   
-
     ?>
 </div>
