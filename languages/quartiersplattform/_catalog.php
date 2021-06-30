@@ -1,9 +1,6 @@
 <?php 
 // Optionale Übersetzungen in Zukunft
 
-
-// Keine Inhalte Cards
-
 // Projekte
 __('Hier kannst du noch keine Projekte entdecken.', 'quartiersplattform');
 __('Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.', 'quartiersplattform');

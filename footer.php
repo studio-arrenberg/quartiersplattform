@@ -13,15 +13,6 @@
 
 ?>
 
-<?php 
-// get all installed translations
-// print_r(wp_get_installed_translations( 'core' )); 
-// for themes
-print_r(wp_get_installed_translations( 'plugins' )); 
-?>
-
-
-
 <div class="site-logo">
 <?php 
     $image = get_field('logo', 'option');
@@ -120,59 +111,6 @@ print_r(wp_get_installed_translations( 'plugins' ));
         </div>
               
         <div class="sprache">
-            <?php 
-                // Get correct language
-                // if(!empty($_GET['lang'])){
-                //     $sprache = $_GET['lang'];
-                // }else{
-                //     if (!is_user_logged_in()) {
-                //         $sprache = qp_detect_language();
-                //     }else{
-                //         $sprache = get_user_locale( get_current_user_id() );
-                //     }
-                // }
-            ?>
-            <?php
-                // echo get_locale(); // influenced by installation main language
-                // echo qp_detect_browser_language();
-                // echo ( get_locale() != '' ) ? get_locale() : 'en_US'; // influenced by installation main language
-                // echo get_user_locale();
-                // echo $_GET['lang'];
-            ?>
-
-            <!-- console logging -->
-            <script>
-                console.group('Language');
-
-                    // console.log('Language');
-
-                        function Entry(functionRun, ValueReturned) {
-                            this.functionRun = functionRun;
-                            this.ValueReturned = ValueReturned;
-                        }
-
-                        var locales = {};
-
-                        locales.get_locale = new Entry("get_locale()", "<?php echo get_locale(); ?>");
-                        locales.qp = new Entry("QP Detect Browser Language", "<?php //echo qp_detect_browser_language(); ?>");
-                        locales.get_locale_fallback = new Entry("get_locale() with fallback", "<?php echo ( get_locale() != '' ) ? get_locale() : 'en_US'; ?>");
-                        locales.user_locale = new Entry("User Locale", "<?php echo get_user_locale(get_current_user_id()); ?>");
-                        locales.lang_cookie = new Entry("Language Cookie", "<?php if (isset($_GET['lang'])) echo $_GET['lang']; ?>");
-                        locales.wp_filter = new Entry("WP locale Filter", "<?php echo apply_filters( 'locale', "fallback" ); ?>");
-                        locales.um_filter_locale = new Entry("UM Filter 'um_language_locale' ", "<?php echo has_filter( "um_language_locale"); ?>");
-                        locales.um_filter = new Entry("UM Filter 'um_language_file' ", "<?php echo has_filter( "um_language_file"); ?>");
-                        locales.um_filter = new Entry("UM File Filter 'um_language_file' ", "<?php //echo apply_filters( 'um_language_file', "fallback" ); ?>");
-                        locales.um_language_filter = new Entry("UM Language", "<?php //echo apply_filters( 'um_language_locale', "fallback" ) ?>");
-                        locales.um_textdomain = new Entry("UM textdomain", "<?php //echo apply_filters( 'um_language_textdomain', 'ultimate-member' ); ?>");
-                        locales.qp_language = new Entry("QP Language", "<?php echo qp_language(); ?>");
-                        locales.wp_filesystem_access = new Entry("WP Filesystem Access", "<?php//echo wp_can_install_language_pack(); ?>");
-                        locales.wp_installed_translations = new Entry("WP installed translations", "<?php // echo wp_get_installed_translations( 'core' ); ?>");
-                        locales.template_directory = new Entry("WP Template Directory", "<?php echo get_template_directory_uri(  ); ?>");
-                        locales.wp_lang_detection = new Entry("WP Language Detection", "<?php echo determine_locale(); ?>")
-                        console.table(locales);
-
-                    console.groupEnd();
-            </script>
             <a class="button <?php if(qp_language() == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🇬🇧&nbsp;<?php _e('English', ''); ?></a>
             <a class="button <?php if(qp_language() == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkçe', ''); ?></a>
             <a class="button <?php if(qp_language() == "it_IT") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=it_IT'); ?>">🇮🇹&nbsp;<?php _e('Italiano', ''); ?></a>

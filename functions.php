@@ -841,17 +841,17 @@ function remove_default_WP_widgets( ){
  *
  * @return void
  */
-require_once dirname( __FILE__ ) .'/setup/main.php'; # General
-require_once dirname( __FILE__ ) .'/setup/immigration.php'; # Immigration
-require_once dirname( __FILE__ ) .'/setup/settings.php'; # Setting Page
-require_once dirname( __FILE__ ) .'/setup/kontakt.php'; # Kontakt / Biografie
-require_once dirname( __FILE__ ) .'/setup/blocks.php'; # Blocks
-require_once dirname( __FILE__ ) .'/setup/projekte.php'; # Projekte
-require_once dirname( __FILE__ ) .'/setup/nachrichten.php'; # Nachrichten
-require_once dirname( __FILE__ ) .'/setup/veranstaltungen.php'; # Veranstaltungen
-require_once dirname( __FILE__ ) .'/setup/umfragen.php'; # Umfragen
-require_once dirname( __FILE__ ) .'/setup/sdg.php'; # SDG
-require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/main.php'; # General
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/immigration.php'; # Immigration
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/settings.php'; # Setting Page
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/kontakt.php'; # Kontakt / Biografie
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Blocks
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/projekte.php'; # Projekte
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/nachrichten.php'; # Nachrichten
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/veranstaltungen.php'; # Veranstaltungen
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/umfragen.php'; # Umfragen
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/sdg.php'; # SDG
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/anmerkungen.php'; # Anmerkungen
 
 /**
  * Call UM & ACF function files
@@ -861,10 +861,10 @@ require_once dirname( __FILE__ ) .'/setup/anmerkungen.php'; # Anmerkungen
  * @return void
  */
 if (class_exists('UM')) { # Ultimate Member
-	require dirname( __FILE__ ) .'/functions/ultimate-member.php';
+	require dirname( __FILE__ ) .'/ultimate-member/ultimate-member.php';
 }
 if (class_exists('acf_pro')) { # Advanced custom fields
-	require dirname( __FILE__ ) .'/functions/advanced-custom-fields.php';
+	require dirname( __FILE__ ) .'/advanced-custom-fields/advanced-custom-fields.php';
 }
 
 /**
@@ -1053,15 +1053,15 @@ function custom_page_template( $page_template, $post_states ) {
 	}
 	else if ($post->post_title == "Anmelden") {
 		$post_states[] = $prefix.'Anmelden';
-		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
+		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
 	else if ($post->post_title == "Registrieren") {
 		$post_states[] = $prefix.'Registrieren';
-		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
+		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
 	else if ($post->post_title == "Passwort zurücksetzen") {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
-		$page_template= get_stylesheet_directory() . '/templates/center-header.php';
+		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
 	
 	
@@ -3220,19 +3220,20 @@ function qp_project_owner($project = '') {
 }
 
 /**
- * QP register translation
+ * QP register Textdomains
  * 
  * @since Quartiersplattform 1.7.2
  * 
  * 
  */
 function qp_translate_theme() {
-    // Load Theme textdomain
-    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages/QP');
-
+	// Quartiersplattform
+    load_theme_textdomain('quartiersplattform', get_template_directory() . '/languages/quartiersplattform');
+	// Utimate Member
 	load_theme_textdomain('ultimate-member', get_template_directory() . '/languages/ultimate-member/');
-
-	load_theme_textdomain('twentytwenty', WP_LANG_DIR );
+	// Wordpress TwentyTwenty as Backup for several pages
+	load_theme_textdomain('twentytwenty', get_template_directory() . '/languages/twentytwenty/');
+	// load_theme_textdomain('twentytwenty', WP_LANG_DIR );
 }
 add_action( 'after_setup_theme', 'qp_translate_theme' );
 
@@ -3289,9 +3290,9 @@ function qp_language() {
 		update_user_meta(get_current_user_id(), 'locale', $language);
 		setcookie('language', $language, time()+62208000, COOKIEPATH, COOKIE_DOMAIN);
 	}
-	// fallback to german
+	// fallback to browser language
 	else {
-		$language = "de_DE";
+		$language = qp_detect_browser_language();
 	}
 	return $language;
 
