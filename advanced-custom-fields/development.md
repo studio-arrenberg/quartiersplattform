@@ -22,19 +22,17 @@
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square) -->
 
 ## translation
-- [ ] strategy 1: load from theme directory 2: load from wordpress directory (initiate multilanguge)
-- [ ] name qp files with `quartiersplattform.mo` => not compliant
+- [x] strategy 1: load from theme directory 2: load from wordpress directory (initiate multilanguge)
+- [x] name qp files with `quartiersplattform.mo` => not compliant
 - [ ] add catalog in `/languages` dir (.php & .pot)
-- [ ] load `twentytwenty` translation files OR change strings in Theme to `quartiersplattform` (deutsch fehlt)
+- [x] load `twentytwenty` translation files OR change strings in Theme to `quartiersplattform` (deutsch fehlt)
 - [ ] check & update `ultimate-member` translation files (..123)
-- [ ] check Page Name Translations
-- [ ] check pages: password reset, 404, archiv, anmelden, registrieren
-- [ ] check `twentytwenty` translation
-- [ ] check `reset-password.php`
+- [x] check `twentytwenty` translation
+- [x] check `reset-password.php`
 - [x] check `404`
-- [ ] check `login`
+- [x] check `login`
 - [x] check `profile`
-- [ ] check `archiv`
+- [x] check `archiv`
 - [x] Wartungsmodus und Matomo field are gone
 ## future
 - [x] Energie Wetter API and Plugin
@@ -59,6 +57,7 @@
   - 404 error => permalinks neu initieren
 - user kann seine deiträge nicht sehen
   - check rolle => contributor / mitarbeiter
+- [UM Language Packs](https://translate.wordpress.org/projects/wp-plugins/ultimate-member/language-packs/)
 
 ## v1.7.3 🗓
 - QP WP Actions (Overlays, Menu Buttons)
