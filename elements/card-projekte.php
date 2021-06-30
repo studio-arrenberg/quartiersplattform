@@ -69,8 +69,8 @@ fehlt:
                 <h3 class="heading-size-3">
                     <?php shorten(get_the_title(), '60'); ?>
                 </h3>
-                <?php visibility_badge(); ?>
                 <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
+                <?php visibility_badge(); ?>
             </div>
 
         </a>

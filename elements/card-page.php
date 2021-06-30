@@ -16,7 +16,7 @@ else {
 ?>
 
 
-<div class="card landscape shadow-on-hover link-card ">
+<div class="card landscape shadow ">
     
     <?php 
     // if (get_query_var('link_card_link')) {
@@ -26,18 +26,18 @@ else {
     // }
     // else {
         ?>
-            <a class="card-link" href="<?php echo esc_url( get_permalink($id) ); ?>">
+            <a class="card-link highlight" href="<?php echo esc_url( get_permalink($id) ); ?>">
         <?php
     // }
     ?>
 
-        <div class="content">
-            <h3 class="card-title">
+        <div class="content ">
+            <h3 class="card-title highlight">
                 <?php 
                         shorten(get_the_title($id), '60');
                 ?>
             </h3>
-            <p class="preview-text">
+            <p class="preview-text highlight">
                 <?php
 
                         shorten(get_the_content(null,false,$id), '100');
