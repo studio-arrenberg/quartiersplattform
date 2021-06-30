@@ -33,7 +33,7 @@ function qp_add_option_pages() {
 		
 		acf_add_options_sub_page(array(
 			'page_title' 	=> __('Wartungsmodus',"quartiersplattform"),
-			'menu_title'	=> __('Wartungsmodus',"quartiersplattform"),
+			'menu_title'	=> 'Wartungsmodus',
 			'parent_slug'	=> 'theme-general-settings',
 			'update_button' => __('Aktualisieren', 'acf'),
 			'capability'	=> 'edit_posts',
@@ -43,7 +43,7 @@ function qp_add_option_pages() {
 		));
 		acf_add_options_sub_page(array(
 			'page_title' 	=> __('API-Schlüssel', "quartiersplattform"),
-			'menu_title'	=> __('API-Schlüssel', "quartiersplattform"),
+			'menu_title'	=> 'Api-Schluessel',
 			'parent_slug'	=> 'theme-general-settings',
 			'update_button' => __('Aktualisieren', 'acf'),
 			'capability'	=> 'edit_posts',

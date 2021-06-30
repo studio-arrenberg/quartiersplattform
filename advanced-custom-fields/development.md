@@ -35,6 +35,7 @@
 - [ ] check `login`
 - [ ] check `profile`
 - [ ] check `archiv`
+- [ ] Wartungsmodus und Matomo field are gone
 ## future
 - [x] Energie Wetter API and Plugin
 - [x] cookie disclaimer

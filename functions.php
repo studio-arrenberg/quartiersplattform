@@ -843,7 +843,7 @@ function remove_default_WP_widgets( ){
  */
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/main.php'; # General
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/immigration.php'; # Immigration
-require_once dirname( __FILE__ ) .'/advanced-custom-fields/settings.php'; # Setting Page
+require_once dirname( __FILE__ ) .'/advanced-custom-fields/einstellungen.php'; # Setting Page
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/kontakt.php'; # Kontakt / Biografie
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/blocks.php'; # Blocks
 require_once dirname( __FILE__ ) .'/advanced-custom-fields/projekte.php'; # Projekte
