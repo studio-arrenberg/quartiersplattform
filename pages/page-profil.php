@@ -97,10 +97,10 @@ if (!is_user_logged_in()) {
             <p>
                 <?php 
                 if (current_user_can('administrator')) {
-                    _e('Als Administrator dieser Quartiersplattform werden deine Kontaktinformationen allen Besuchern angezeigt.');
+                    _e('Als Administrator dieser Quartiersplattform werden deine Kontaktinformationen allen Besuchern angezeigt.', "quartiersplattform");
                 }
                 else {
-                    _e('Deine Kontaktinformationen werden nur registrierten Nutzern angezeigt und können daher nicht von Suchmaschinen gefunden werden.');
+                    _e('Deine Kontaktinformationen werden nur registrierten Nutzern angezeigt und können daher nicht von Suchmaschinen gefunden werden.', "quartiersplattform");
                 }
                 ?>
             </p>
@@ -180,7 +180,7 @@ if (!is_user_logged_in()) {
             <br>
             <br>
             <!-- Biography Information -->   
-            <h2>Erzähle etwas über dich</h2>
+            <h2><?php _e('Erzähle etwas über dich', 'quartiersplattform'); ?> </h2>
             <?php
             $userid = "user_".$current_user->ID; 
             acf_form (
