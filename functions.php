@@ -999,6 +999,8 @@ function custom_page_template( $page_template, $post_states ) {
 	$post_states = [];
 	$prefix = "QP ";
 
+	// !!! use post_name (slug) not post_title 
+
 	if ($post->post_title == "Startseite") {
 		$post_states[] = $prefix.'Startseite';
 		$page_template= get_stylesheet_directory() . '/pages/page-quartier.php';
@@ -1051,15 +1053,15 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'SDGs';
 		$page_template= get_stylesheet_directory() . '/pages/page-sdg.php';
 	}
-	else if ($post->post_title == "Anmelden") {
+	else if ($post->post_name == "login") {
 		$post_states[] = $prefix.'Anmelden';
 		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
-	else if ($post->post_title == "Registrieren") {
+	else if ($post->post_name == "register") {
 		$post_states[] = $prefix.'Registrieren';
 		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
-	else if ($post->post_title == "Passwort zurücksetzen") {
+	else if ($post->post_name == "password-reset") {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
 		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}

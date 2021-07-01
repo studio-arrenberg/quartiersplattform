@@ -20,6 +20,8 @@
 	</div>
 
 	<div class="main-content">
+
+	<h1><?php echo $post->post_name; ?></h1>
 	
 		<?php
 		if (has_post_thumbnail()) {
