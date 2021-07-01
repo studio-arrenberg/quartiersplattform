@@ -11,6 +11,81 @@
  * @since Twenty Twenty 1.0
  */
 
+
+
+add_filter( 'themes_update_check_locales', 'themes_check_locales', 10 );
+function themes_check_locales( ) {
+    // your code here
+	$secondary_btn_word = "hi";
+    $secondary_btn_word = array("de_DE","es_ES","it_IT");
+	return $secondary_btn_word;
+}
+
+add_filter( 'core_version_check_locale', 'core_check_locales', 10 );
+function core_check_locales( ) {
+    // your code here
+	$secondary_btn_word = "hi2";
+    $secondary_btn_word = array("de_DE","es_ES","it_IT");
+
+	return $secondary_btn_word;
+}
+
+add_filter( 'plugins_update_check_locales', 'plugins_check_locales', 20 );
+function plugins_check_locales( ) {
+    // your code here
+	$secondary_btn_word = "hi2";
+    $secondary_btn_word = array("de_DE","es_ES","it_IT");
+
+	return $secondary_btn_word;
+}
+
+add_filter( 'get_available_languages', 'qp_get_available_languages', 10 );
+function qp_get_available_languages( ) {
+    // your code here
+	$secondary_btn_word = "hi2";
+    $secondary_btn_word = array("de_DE","es_ES","it_IT");
+
+	return $secondary_btn_word;
+}
+
+function update_check_include_all_locales( $locales ) {
+    return array_values( get_available_languages() );
+}
+add_filter( 'plugins_update_check_locales', 'update_check_include_all_locales' );
+add_filter( 'themes_update_check_locales', 'update_check_include_all_locales' );
+
+/**
+ * Filters the locale requested for WordPress core translations.
+ *
+ * @since 2.8.0
+ *
+ * @param string $locale Current locale.
+ */
+$locale = apply_filters( 'core_version_check_locale', get_locale() );
+
+// function update_check_include_all_locales( $locales ) {
+//     return array_values( array("de_DE","es_ES","it_IT") );
+//     // return array_values( get_available_languages() );
+//     // return array("de_DE","es_ES","it_IT");
+// }
+// add_filter( 'plugins_update_check_locales', 'update_check_include_all_locales' );
+// add_filter( 'themes_update_check_locales', 'update_check_include_all_locales' );
+
+
+$locales = array_values( get_available_languages() );
+print_r(get_available_languages());
+// add_filter('themes_update_check_locales', array('de_DE','tr_TR'));
+// add_filter('themes_update_check_locales', array($this, 'update_all_languages'));
+print_r( apply_filters( 'themes_update_check_locales', $locales ) );
+print_r( apply_filters( 'plugins_update_check_locales', $locales ) );
+
+// apply_filters( 'plugins_update_check_locales', $locales );
+
+// add_filter('themes_update_check_locales', array($this, 'update_all_languages'));
+// add_filter('plugins_update_check_locales', array($this, 'update_all_languages'));
+
+// read: https://core.trac.wordpress.org/ticket/34937
+
 ?>
 
 <div class="site-logo">
