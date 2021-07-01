@@ -10,7 +10,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
 
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -124,6 +124,22 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta property="og:locale" content="<?php echo home_url().'/sdgs/'; ?>"/>
             <?php
         }
+        else if (is_page( 'Quartiersplattform' )) {
+            ?>
+                <meta property="og:title" content="<?php echo 'Informationen zur Quartiersplattform | '.get_field('quartiersplattform-name','option'); ?>" />
+                <meta property="og:description" content="Die wichtigsten informationen zur deiner Quartiersplattform. Hier erhälst du einen technischen Überblick über den Status der Quartiersplattform wie auch allen hinuzgefügten Plugins. Bei Fragen oder Problemen kannst du die Betreiber kontaktieren." />
+                <meta property="og:type" content="website" />
+
+                <meta name="description" content="Die wichtigsten informationen zur deiner Quartiersplattform. Hier erhälst du einen technischen Überblick über den Status der Quartiersplattform wie auch allen hinuzgefügten Plugins. Bei Fragen oder Problemen kannst du die Betreiber kontaktieren."/>
+
+                <meta name="twitter:title" content="<?php echo 'Informationen zur Quartiersplattform | '.get_field('quartiersplattform-name','option'); ?>"/>
+                <meta name="twitter:description" content="Die wichtigsten informationen zur deiner Quartiersplattform. Hier erhälst du einen technischen Überblick über den Status der Quartiersplattform wie auch allen hinuzgefügten Plugins. Bei Fragen oder Problemen kannst du die Betreiber kontaktieren."/>
+
+                <meta property="og:url" content="<?php echo home_url().'/quartiersplattform/'; ?>" />
+                <meta name="twitter:url" content="<?php echo home_url().'/quartiersplattform/'; ?>"/>
+                <meta property="og:locale" content="<?php echo home_url().'/quartiersplattform/'; ?>"/>
+            <?php
+        }
         // page, post, project, ...
         else {
             ?>
@@ -216,7 +232,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
                     do_action('qp_menu_button');
                     ?> 
 
-                    <a class="button header-button button-has-icon <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
+                    <a class="button header-button button-has-icon veranstaltungen-button <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
                         <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
                     </a>
 
@@ -229,15 +245,16 @@ wp_maintenance_mode(); // redirect for maintenance mode
                         // backend login button for admins
                         if(current_user_can('administrator')) {
                             ?>
-                                <a class="button header-button  button-has-icon" href="<?php echo get_site_url(); ?>/wp-admin"><?php require get_template_directory() . '/assets/icons/gearshape.svg'; ?>
+                                <a class="button header-button button-has-icon backend-button" href="<?php echo get_site_url(); ?>/wp-admin">
+                                    <?php require get_template_directory() . '/assets/icons/gearshape.svg'; ?>
                                 </a>
                             <?php 
                         }
                         ?>
 
                         <!-- profil button -->
-                        <a class="button profil-button header-button button-is-transparent button-has-image " href="<?php echo get_site_url(); ?>/profil">
-                            <img class="button-image" src="<?php echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" />
+                        <a class="button profil-button header-button button-is-transparent button-has-image profil-button" href="<?php echo get_site_url(); ?>/profil">
+                            <img alt="profil-bild" class="button-image" src="<?php echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" />
                         </a>
 
                         <?php 
@@ -246,7 +263,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
                     else {
 
                         ?>
-                        <a class="button header-button button-has-icon" href="<?php echo get_site_url(); ?>/login">
+                        <a class="button header-button button-has-icon login-button" href="<?php echo get_site_url(); ?>/login">
                             <?php require get_template_directory() . '/assets/icons/person.svg'; ?>
                         </a>
                         <?php 

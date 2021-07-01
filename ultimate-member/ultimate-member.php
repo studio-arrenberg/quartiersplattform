@@ -236,17 +236,19 @@ add_filter( 'um_register_form_button_two', 'my_register_form_button_two', 10, 2 
 function my_register_form_button_two( $secondary_btn_word, $args ) {
     // your code here
 	$secondary_btn_word = __('Login','quartiersplattform');
-	// $secondary_btn_word = "sdsdsdds";
 	return $secondary_btn_word;
+}
+add_filter( 'um_register_form_button_one', 'my_register_form_button_one', 10, 2 );
+function my_register_form_button_one( $primary_btn_word, $args ) {
+    // your code here
+	$primary_btn_word = __('Register','quartiersplattform');
+	return $primary_btn_word;
 }
 
 add_filter( 'um_register_form_button_two_url', 'my_register_form_button_two_url', 10, 2 );
 function my_register_form_button_two_url( $secondary_btn_url, $args ) {
     // your code here
 	$secondary_btn_url = home_url().'/login/';
-
-
-	// debugToConsole($args);
 
 	// active secondary button if form is register
 	if ($args['core'] == 'register' && $args['mode'] == 'register') {
@@ -255,6 +257,25 @@ function my_register_form_button_two_url( $secondary_btn_url, $args ) {
 
 	return $secondary_btn_url;
 }
+
+/**
+ * 
+ * UM Login Button one / two
+ * 
+ */
+add_filter( 'um_login_form_button_one', 'my_login_form_button_one', 10, 2 );
+function my_login_form_button_one( $primary_btn_word, $args ) {
+    // your code here
+	$primary_btn_word = __('Login','quartiersplattform');
+	return $primary_btn_word;
+}
+add_filter( 'um_login_form_button_two', 'my_login_form_button_two', 10, 2 );
+function my_login_form_button_two( $secondary_btn_word, $args ) {
+    // your code here
+	$secondary_btn_word = __('Register','quartiersplattform');
+	return $secondary_btn_word;
+}
+
 
 /**
  * 

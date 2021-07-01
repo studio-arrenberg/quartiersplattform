@@ -1220,6 +1220,7 @@ function script_managment() {
 
 	$qp_pages = array(
 		'/sdgs/',
+		'/quartiersplattform/',
 	);
 
 	$cpts = array(
@@ -2937,7 +2938,7 @@ function projekt_carousel( ) {
 			<?php if (!wp_is_mobile(  )) { ?> 
 			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
 				<div class="badge badge-button">
-				<img src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
+				<img alt="Add Button" src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
 				</div>
 				<h3 class="heading-size-4">
 					<?php _e('Projekt erstellen', 'quartiersplattform'); ?>

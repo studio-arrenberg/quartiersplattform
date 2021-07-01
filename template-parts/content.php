@@ -20,8 +20,6 @@
 	</div>
 
 	<div class="main-content">
-
-	<h1><?php echo $post->post_name; ?></h1>
 	
 		<?php
 		if (has_post_thumbnail()) {
@@ -42,7 +40,7 @@
 
 			<!-- Post title -->
 			<div class="single-header-content">
-				<h1><?php the_title(); ?></h1>
+				<h1><?php _e(get_the_title(), 'quartiersplattform'); ?></h1>
 			</div>
 
 		</div>
