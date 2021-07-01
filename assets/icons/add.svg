@@ -1,3 +1,4 @@
-<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg role="img" aria-label="Grafic for Add Button" width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C11.3128 0 10.7568 0.556072 10.7568 1.24324V10.2568H1.74324C1.05607 10.2568 0.5 10.8128 0.5 11.5C0.5 12.1872 1.05607 12.7432 1.74324 12.7432H10.7568V21.7568C10.7568 22.4439 11.3128 23 12 23C12.6872 23 13.2432 22.4439 13.2432 21.7568V12.7432H22.2568C22.9439 12.7432 23.5 12.1872 23.5 11.5C23.5 10.8128 22.9439 10.2568 22.2568 10.2568H13.2432V1.24324C13.2432 0.556072 12.6872 0 12 0Z" fill="#CCCCCC"/>
 </svg>
+

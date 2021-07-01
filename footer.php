@@ -74,12 +74,12 @@
         <div>
             <h4 class="heading-size-3"><?php _e('Die Quartiersplattform', 'quartiersplattform'); ?></h4>
                 <?php if (current_user_can('administrator')) {?>
-                    <a class="footer-link " href="<?php echo  get_site_url(); ?>/einstellungen/"><?php _e('Einstellungen', 'quartiersplattform'); ?> ⚙️ </a>
+                    <a class="footer-link" href="<?php echo  get_site_url(); ?>/einstellungen/"><?php _e('Einstellungen', 'quartiersplattform'); ?> ⚙️ </a>
                 <?php } ?>
-                <a class="footer-link " href="<?php echo  get_site_url(); ?>/quartiersplattform/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
+                <a class="footer-link" href="<?php echo  get_site_url(); ?>/quartiersplattform/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
 
     
-            <a class="footer-link " href="https://github.com/studio-arrenberg/quartiersplattform" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>         
+            <a class="footer-link" rel="noreferrer" href="https://github.com/studio-arrenberg/quartiersplattform" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>         
         
         </div>
 
@@ -99,7 +99,7 @@
 
     <div class="final-footer">
         <div>
-            <!-- <a href="https://www.arrenberg.studio" class="footer-link primary">Quartiersplattform</a> -->
+            <!-- <a href="https://www.arrenberg.studio" rel="noreferrer" class="footer-link primary">Quartiersplattform</a> -->
             <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
             <?php
                 if (get_privacy_policy_url()) {
