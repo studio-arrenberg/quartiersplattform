@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
 "POT-Creation-Date: 2021-07-01 12:13+0200\n"
-"PO-Revision-Date: 2021-07-01 12:43+0200\n"
+"PO-Revision-Date: 2021-07-01 12:52+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: tr\n"
@@ -1730,7 +1730,7 @@ msgstr "Yazıyı Wordpress sisteminde düzenle"
 
 #: functions.php:3315
 msgid "Nicht Sichtbar"
-msgstr "Görünür"
+msgstr "Görünmez"
 
 #: header.php:193
 msgid "Horizontal"

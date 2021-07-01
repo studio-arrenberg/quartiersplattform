@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
 "POT-Creation-Date: 2021-07-01 12:11+0200\n"
-"PO-Revision-Date: 2021-07-01 12:45+0200\n"
+"PO-Revision-Date: 2021-07-01 12:59+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: en\n"
@@ -1702,7 +1702,7 @@ msgstr "Edit post in Wordpress system"
 
 #: functions.php:3315
 msgid "Nicht Sichtbar"
-msgstr "Visible"
+msgstr "Not visible"
 
 #: header.php:193
 msgid "Horizontal"
@@ -2505,7 +2505,10 @@ msgid ""
 "Hier findest du alle Nachrichten, Umfragen und Veranstaltungen in deinem "
 "Quartier. Lerne die Menschen in deiner Nachbarschaft und ihre Projekte "
 "kennen oder erstelle selbst ein eigenes Projekt."
-msgstr "Here you can find all the news, surveys and events in your district."
+msgstr ""
+"Here you can find all the news, surveys and events in your neighbourhood. "
+"Get to know the people in your neighbourhood and their projects or create "
+"your own project."
 
 #: pages/page-projekt-feed.php:25
 msgid "Neuigkeiten und Projektupdates"
