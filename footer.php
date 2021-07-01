@@ -85,6 +85,7 @@ print_r( apply_filters( 'plugins_update_check_locales', $locales ) );
 // add_filter('plugins_update_check_locales', array($this, 'update_all_languages'));
 
 // read: https://core.trac.wordpress.org/ticket/34937
+// core code: https://core.trac.wordpress.org/changeset/36630
 
 ?>
 
