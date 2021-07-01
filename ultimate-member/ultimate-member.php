@@ -236,6 +236,7 @@ add_filter( 'um_register_form_button_two', 'my_register_form_button_two', 10, 2 
 function my_register_form_button_two( $secondary_btn_word, $args ) {
     // your code here
 	$secondary_btn_word = __('Login','quartiersplattform');
+	// $secondary_btn_word = "sdsdsdds";
 	return $secondary_btn_word;
 }
 
