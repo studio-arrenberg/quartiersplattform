@@ -26,7 +26,7 @@
 - [x] name qp files with `quartiersplattform.mo` => not compliant
 - [ ] add catalog in `/languages` dir (.php & .pot)
 - [x] load `twentytwenty` translation files OR change strings in Theme to `quartiersplattform` (deutsch fehlt)
-- [ ] check & update `ultimate-member` translation files (..123)
+- [x] check & update `ultimate-member` translation files (..123)
 - [x] check `twentytwenty` translation
 - [x] check `reset-password.php`
 - [x] check `404`
