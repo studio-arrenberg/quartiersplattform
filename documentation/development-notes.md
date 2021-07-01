@@ -1,7 +1,15 @@
-# ⚙️ Development Notes
+# Quartiersplattform
+Notizen zur Entwicklung der Quarrtiersplattform
+<p>
+  <img src="https://img.shields.io/github/license/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="License"/>
+  <!-- <img src="https://img.shields.io/github/repo-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Repo Size"/> -->
+  <img src="https://img.shields.io/github/commit-activity/w/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Commits"/>
+  <img src="https://img.shields.io/tokei/lines/github/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Lines of code"/>
+  <img src="https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Code Size"/>
+</p>
+<br><br>
 
-
-## Image Sizes (Ratio)
+# Image Sizes (Ratio)
 
 | Name          | S       | M       | M(2)    | M(3)    | L       |
 | ------------- | ------- | ------- | ------- | ------- | ------- |
@@ -9,74 +17,9 @@
 | Preview 4:3   | 160x120 | 200x150 | 400x300 | 600x450 | 800x600 |
 | Landscape 2:1 | 400x200 | 750x375 | -       | -       | 970x485 |
 
+<br><br>
 
-## Translation
-- [WordPress Localization +](https://translatepress.com/wordpress-localization/)
-- [Not so good](https://www.sktthemes.org/wordpress/translate-wordpress-theme/)
-- [efficiently translate their themes and plugins](https://www.icanlocalize.com/site/tutorials/how-to-translate-wordpress-themes-and-plugins/)
-- [Everything You Need to Know About Translating WordPress Plugins](https://wpmudev.com/blog/translating-wordpress-plugins/)
-
-
-```php
-# create .po file in languages/
-de_DE.mo # german
-de_DE.pp # german
-quartiersplattform.pot # all strings list
-# init in functions
-load_theme_textdomain('YOUR_THEME', THEME_PATH.'/languages');
-# call in file
-<?php _e('Welcome to Great Theme!', 'YOUR_THEME'); ?>
-```
-
-## SEO
-
-1. Descriptions: Description Atribut = Bierdeckeltext
-2. Page Title 
-3. URL: arrenberg.de/projektname   — VS —  CUSTOM ALIAS   — VS —   arrenberg.de/projekte/Arrenberg-Farm
-3. Robots.txt!! Crawlbare seiten indexieren
-4. H1 H2 H3 P
-5. [Prüfen](https://search.google.com/test/rich-results) von Rich markup möglichkeiten
-6. Data Highlighter verwenden
-7. Veraltete Navigationsseite mit fehlerhaften Links (Alte Links weiterleiten!)
-8. Lasy load + Alt Text = z.b Copy Right oder Bildbeschreibung
-
-[Google PageSpeed](https://developers.google.com/speed/pagespeed/insights/?hl=de&url=http%3A%2F%2Fap1.arrenberg.studio%2F)
-
-## Matomo Event Tracking
-[Basics](https://matomo.org/docs/event-tracking/)
-[In Depth](https://developer.matomo.org/guides/tracking-javascript-guide)
-
-```js
-_paq.push(['trackEvent', 'Categories', 'Action', 'Name/Page URL', 1000]);
-```
-#### Tracked
-* Share (social media buttons)
-* Interaction (Energie Ampel, Slider)
-
-#### Track Content
-
-```js
-_paq.push(['trackVisibleContentImpressions']);
-```
-```html 
-<div data-track-content>
-    <div data-content-piece="arrenberg wetter" >
-    </div>
-</div>
-```
-#### Tracked
-* Arrenberg Wetter
-* List Card
-* Footer
-
-
-## Recources 
-- [Embla Carousel](https://davidcetinkaya.github.io/embla-carousel/#installation)
-- [Emoji Picker](https://github.com/OneSignal/emoji-picker)
-
-
-
-## Noted Queries 
+# Noted Queries 
 
 #### Loop Posts (list)
 
@@ -97,13 +40,6 @@ if ( have_posts() ) {
 }
 ```
 
-#### Date
-
-#### Post Date
-```php
-echo get_post_modified_time('F d, Y g:i a', true, null, true); // "März 21, 2017 7:02 pm"
-```
-
 ## WP_CLI
 [Documentation](https://developer.wordpress.org/cli/commands/)
 
@@ -113,7 +49,7 @@ echo get_post_modified_time('F d, Y g:i a', true, null, true); // "März 21, 201
 plesk ext wp-toolkit --wp-cli -instance-id 1 -- media regenerate --yes
 plesk ext wp-toolkit --list
 ```
-### WP-CLI Install
+## WP-CLI Install
 
 #### install needed dependencies 
 
