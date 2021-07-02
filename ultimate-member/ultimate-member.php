@@ -395,6 +395,7 @@ function my_email_template_html( $slug, $args ) {
 				color:#0091ff;
 			}
 			.button{	
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 				padding: 15px;		  
 				-webkit-appearance: none;
 				-moz-appearance: none;
@@ -419,6 +420,7 @@ function my_email_template_html( $slug, $args ) {
 				
 			}     
 			a{
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 				text-decoration: none;
 				color:black;
 				font-size: 16px;
