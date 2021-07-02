@@ -10,7 +10,7 @@ Entwicklung der Quartiersplattform
 </p>
 <br><br>
 
-# BackLog
+# Backlog
 - [ ] Project Notifications (Branch: `notifications`)
 - [ ] ACF Profile Upload [Avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 - [ ] Cant login when login page is not set through UM...
