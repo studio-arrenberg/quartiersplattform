@@ -374,13 +374,17 @@ function my_email_template_html( $slug, $args ) {
         <!--<![endif]-->
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
         
         <style type="text/css">
             body { 
-				font-family: Helvetica, Arial, sans-serif ;
+				/* font-family: Helvetica, Arial, sans-serif ; */
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 			}
 			h1{
-				font-family: Helvetica, sans-serif;
+				/* font-family: Helvetica, sans-serif; */
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 				text-align: left;
 				margin: 0px;
 				font-size: 84px;
@@ -429,7 +433,8 @@ function my_email_template_html( $slug, $args ) {
 				margin-left:20px;
 			}
 			.text{
-				font-family: Helvetica, sans-serif;
+				/* font-family: Helvetica, sans-serif; */
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
               	margin: 0px;
               	font-size: 16px;
               	line-height: 26px;
