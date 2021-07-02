@@ -27,7 +27,7 @@ else {
                 <span>
                     <b><?php _e('Veranstaltung', 'quartiersplattform'); ?> </b>
                     <br>
-                    <?php _e('von ', 'quartiersplattform'); ?><?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo __('veröffentlicht von ', 'quartiersplattform').get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                     <?php echo qp_date(get_the_date('Y-m-d'), false);  ?>
                 </span>
             </a>

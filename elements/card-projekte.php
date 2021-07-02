@@ -45,7 +45,7 @@ fehlt:
                 <span>
                     <b><?php _e('Projekt', 'quartiersplattform'); ?> </b>
                     <br>
-                    <?php _e('von ', 'quartiersplattform'); ?>  <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo __('veröffentlicht von ', 'quartiersplattform').get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                     <?php echo qp_date(get_the_date('Y-m-d H:i:s'), false); ?>
                 </span>
             </a>

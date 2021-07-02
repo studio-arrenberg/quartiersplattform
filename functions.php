@@ -2714,7 +2714,18 @@ function visibility_toggle_callback() {
 		// update all posts
 		foreach ( $p_posts as $s_post ) {
 
-			if ($status == 'draft' || ($status == 'publish' && $array[ $s_post->ID ] == 'publish')) {
+			// set post
+			// IF project goes draft
+			if ($status == 'draft' ) {
+
+				$my_post = array();
+				$my_post['ID'] = $s_post->ID;
+				$my_post['post_status'] = $status;
+				wp_update_post( $my_post );
+
+			}
+			// IF project goes publish AND post (array state) publish OR  post (array state) null/""
+			else if ($status == 'publish' && ($array[ $s_post->ID ] == 'publish') || empty($array[ $s_post->ID ]) ) {
 
 				$my_post = array();
 				$my_post['ID'] = $s_post->ID;
