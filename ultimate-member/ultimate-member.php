@@ -345,3 +345,108 @@ function copy_langugae_file() {
 }
 
 copy_langugae_file();
+
+
+/**
+ * 
+ * Add Custom Mail Styling
+ * 
+ */
+
+add_filter( 'um_email_template_html_formatting', 'my_email_template_html', 10, 2 );
+function my_email_template_html( $slug, $args ) {
+    ob_start(); ?>
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <!--[if gte mso 15]>
+        <xml>
+           <o:OfficeDocumentSettings>
+           <o:AllowPNG/>
+           <o:PixelsPerInch>96</o:PixelsPerInch>
+           </o:OfficeDocumentSettings>
+        </xml>
+        <![endif]-->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <!--[if !mso]><!-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!--<![endif]-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <style type="text/css">
+            body { 
+				font-family: Helvetica, Arial, sans-serif ;
+			}
+			h1{
+				font-family: Helvetica, sans-serif;
+				text-align: left;
+				margin: 0px;
+				font-size: 84px;
+				line-height: 84px;
+				letter-spacing: 3px;
+			}
+			.accent{
+				color:#0091ff;
+			}
+			.button{	
+				padding: 15px;		  
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				font-family: Helvetica, sans-serif;
+				user-select: none;
+				border-radius: 15px;
+				background-color: rgb(0, 145, 255);
+				border: none;
+				color: #ffffff;
+				cursor: pointer;
+				display: inline-block;
+				font-size: 16px;
+				line-height: 1.6rem;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.15s linear;
+				box-shadow: 0 1px 2px rgba(0, 145, 255, 0.07),
+				0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
+				0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
+				0 32px 64px rgba(0, 145, 255, 0.07);"
+				
+			}     
+			a{
+				text-decoration: none;
+				color:black;
+				font-size: 16px;
+			}       
+			.footer_link{
+				font-weight:normal;
+			}
+			hr{
+				color:red;
+			}
+			.distance{
+				margin-left:20px;
+			}
+			.text{
+				font-family: Helvetica, sans-serif;
+              	margin: 0px;
+              	font-size: 16px;
+              	line-height: 26px;
+              	letter-spacing: 0.5px;
+			}
+			.hide{
+				display: none;
+			}
+        </style>
+        
+    </head>
+    <?php $head = ob_get_clean();
+    return $head;
+}
+
+add_filter( 'um_email_template_body_attrs', 'my_email_template_body_attrs', 10, 3 );
+function my_email_template_body_attrs( $body_atts, $slug, $args ) {
+    $body_atts = "background: #FFFFFF;";
+return $body_atts;
+}
