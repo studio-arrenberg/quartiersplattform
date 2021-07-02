@@ -6,7 +6,6 @@
         <tr class="">
             <th style="padding-bottom: 40px" class="">
                 <h1>
-                    
                     <span class="accent"><?php _e('Willkommen  ', 'quartiersplattform'); ?> </span>
                     <br><?php _e('im Quartier,', 'quartiersplattform'); ?>{first_name}.
                 </h1>
@@ -20,19 +19,19 @@
 
                 <div class="column">
 
-          <h1><?php _e('Projekte', 'quartiersplattform'); ?> </h1>
+          <h2><?php _e('Projekte', 'quartiersplattform'); ?> </h2>
           <p>
             <?php _e('Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!', 'quartiersplattform'); ?> 
           </p>
         </div>
         <div class="column" >
-          <h1 ><?php _e('Veranstaltungen', 'quartiersplattform'); ?></h1>
+          <h2 ><?php _e('Veranstaltungen', 'quartiersplattform'); ?></h2>
           <p>
             <?php _e('Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein.', 'quartiersplattform'); ?>
           </p>
         </div>
         <div class="column" >
-          <h1 ><?php _e('Sprachen', 'quartiersplattform'); ?></h1>
+          <h2 ><?php _e('Sprachen', 'quartiersplattform'); ?></h2>
           <p>
             <?php _e('Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein.', 'quartiersplattform'); ?>
           </p>
@@ -59,7 +58,6 @@
                         ><?php the_field('quartiersplattform-name','option'); ?></span>
                     <br><br>
                 </h2>
-                
                 <br>
                 <hr>
                 <br>
