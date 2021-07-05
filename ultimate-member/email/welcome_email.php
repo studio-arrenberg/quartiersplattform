@@ -40,10 +40,10 @@
             <div class="column">
               <h2>
                 <?php _e('Sprachen', 'quartiersplattform'); ?>
-                🇬🇧🇹🇷🇮🇹🇩🇪
+                
               </h2>
               <p>
-                <?php _e('Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du alles was du wissen musst, um bei nächsten mal dabei zu sein.', 'quartiersplattform'); ?>
+                <?php _e('Deine Quartiersplattform spricht mehrere Sprachen. Sie ist in Türkisch, Italienisch, Deutsch und Englisch verfügbar.', 'quartiersplattform'); ?>
               </p>
             </div>
           </div>
