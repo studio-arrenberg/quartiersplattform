@@ -238,7 +238,7 @@ get_header();
         );
         
         $my_query = new WP_Query($args2);
-        if ($my_query->post_count > 0) {
+        if ($my_query->post_count > 0 && empty($_GET['action'])) {
         ?>
             <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
             <br>

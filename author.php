@@ -74,6 +74,7 @@ get_header();
         <?php if( get_field('about', $userid) ) { ?>
             <h2><?php _e('Über mich', 'quartiersplattform'); ?> </h2>
             <div><?php the_field('about', $userid); ?></div>
+            <br>
         <?php } ?>
 
     
