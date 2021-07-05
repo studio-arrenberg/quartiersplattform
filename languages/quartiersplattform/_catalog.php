@@ -77,9 +77,9 @@ __("Pinnen",'quartiersplattform');
 __("Anheften",'quartiersplattform');
 __("Sichtbarkeit",'quartiersplattform');
 
-__("Hier kannst du die Seite auf die Quariersseite pinnen.",'quartiersplattform');
-__("Hier kannst du den Beitrag auf die Quariersseite pinnen.",'quartiersplattform');
-__("Hier kannst du den Akteur auf die Quariersseite pinnen.",'quartiersplattform');
+__("Hier kannst du die Seite auf die Quartiersseite pinnen.",'quartiersplattform'); // updated rechtschreibung "Quariersseite" => "Quartiersseite"
+__("Hier kannst du den Beitrag auf die Quartiersseite pinnen.",'quartiersplattform'); // updated rechtschreibung "Quariersseite" => "Quartiersseite"
+__("Hier kannst du den Akteur auf die Quartiersseite pinnen.",'quartiersplattform'); // updated rechtschreibung "Quariersseite" => "Quartiersseite"
 
 //Anmerkungen
 __("Vorschlag",'quartiersplattform');

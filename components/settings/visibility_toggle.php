@@ -1,5 +1,5 @@
 <h3><?php _e('Sichtbarkeit', 'quartiersplattform'); ?></h3>
-<p><?php _e('Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen.', 'quartiersplattform'); ?></p>
+<p><?php _e('Hier kannst du die Sichtbarkeit des Beitrags auf der Quartiersseite festlegen.', 'quartiersplattform'); ?></p>
 
 <label class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>">
     <input class="toggle-input" type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >

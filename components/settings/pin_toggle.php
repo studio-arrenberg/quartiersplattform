@@ -2,7 +2,7 @@
     <?php if ( get_query_var( 'pin_type' ) == 'pin_main') { ?>
 
         <h4 class="heading-size-3"><?php _e('Anheften', 'quartiersplattform'); ?></h4>
-        <p><?php _e('Hier kannst du das Projekt auf die Quariersseite pinnen.', 'quartiersplattform'); ?></p>
+        <p><?php _e('Hier kannst du das Projekt auf die Quartiersseite pinnen.', 'quartiersplattform'); ?></p>
         
         
         <label class="pin_toggle pin_toggle-<?php echo get_the_ID(  ); ?>">
