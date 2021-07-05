@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-07-05 12:38+0200\n"
-"PO-Revision-Date: 2021-07-05 12:40+0200\n"
+"POT-Creation-Date: 2021-07-05 12:59+0200\n"
+"PO-Revision-Date: 2021-07-05 13:00+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: en\n"
@@ -959,11 +959,11 @@ msgstr "Which image best describes your event?"
 msgid "Mein Profil bearbeiten"
 msgstr "Edit my profile"
 
-#: author.php:92
+#: author.php:93
 msgid "Projekte von"
 msgstr "Project update from"
 
-#: author.php:111
+#: author.php:112
 msgid "Beiträge von"
 msgstr "Posts from"
 
@@ -1331,7 +1331,7 @@ msgstr "Private"
 msgid "Deine Projekte"
 msgstr "Your projects"
 
-#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:26
 msgid "Dein Projekt"
 msgstr "Your project"
 
@@ -2188,6 +2188,23 @@ msgstr "November"
 msgid "December"
 msgstr "December"
 
+#: languages/quartiersplattform/_catalog.php:130
+msgid "Datenschutzerklärung einblenden"
+msgstr "Show privacy policy"
+
+#: languages/quartiersplattform/_catalog.php:131
+msgid "Datenschutzerklärung ausblenden"
+msgstr "Hide privacy policy"
+
+#: languages/quartiersplattform/_catalog.php:132
+msgid ""
+"Bitte bestätige das du die Datenschutzerklärung zur Kenntnis genommen hast."
+msgstr "Please confirm that you have read the privacy policy."
+
+#: languages/quartiersplattform/_catalog.php:133
+msgid "Bitte akzeptiere die Datenschutzerklärung."
+msgstr "Please accept the privacy policy."
+
 #: pages/form-nachrichten.php:28 pages/form-umfragen.php:25
 #: pages/form-veranstaltungen.php:27
 msgid "Projekt konnte nicht verknüpft werden"
@@ -2906,12 +2923,10 @@ msgstr ""
 #: ultimate-member/ultimate-member.php:238
 #: ultimate-member/ultimate-member.php:269
 msgid "Login"
-msgstr ""
+msgstr "Login"
 
 #: ultimate-member/ultimate-member.php:244
 #: ultimate-member/ultimate-member.php:275
-#, fuzzy
-#| msgid "Registrieren"
 msgid "Register"
 msgstr "Register"
 

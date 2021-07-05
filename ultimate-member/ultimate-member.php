@@ -456,3 +456,16 @@ function my_email_template_body_attrs( $body_atts, $slug, $args ) {
     $body_atts = "background: #FFFFFF;";
 return $body_atts;
 }
+
+
+/**
+ * 
+ * Change UM User Role After Registration
+ * 
+ */
+add_filter( 'um_registration_user_role', 'my_registration_user_role', 10, 2 );
+function my_user_register_submitted__email( $role, $submitted ) {
+    $role = "contributor";
+	return $role;
+}
+?>
