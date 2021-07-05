@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-07-01 12:13+0200\n"
-"PO-Revision-Date: 2021-07-01 12:52+0200\n"
+"POT-Creation-Date: 2021-07-05 12:44+0200\n"
+"PO-Revision-Date: 2021-07-05 12:46+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: tr\n"
@@ -283,15 +283,17 @@ msgstr "Mahalle"
 #: advanced-custom-fields/projekte.php:27
 #: advanced-custom-fields/projekte.php:32
 #: advanced-custom-fields/projekte.php:70
-#: advanced-custom-fields/projekte.php:75 header.php:200
-#: ultimate-member/email/welcome_email.php:27
+#: advanced-custom-fields/projekte.php:75 header.php:216
+#: ultimate-member/email/welcome_email Kopie.php:27
+#: ultimate-member/email/welcome_email.php:29
 msgid "Projekte"
 msgstr "Projeler"
 
 #: advanced-custom-fields/main.php:178
 #: advanced-custom-fields/veranstaltungen.php:25
 #: advanced-custom-fields/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email.php:33
+#: ultimate-member/email/welcome_email Kopie.php:33
+#: ultimate-member/email/welcome_email.php:35
 msgid "Veranstaltungen"
 msgstr "Etkinlikler"
 
@@ -304,10 +306,10 @@ msgid "Profil"
 msgstr "Profil"
 
 #: advanced-custom-fields/main.php:182 components/cookie/cookie-alert.php:30
-#: footer.php:103 ultimate-member/email/changedpw_email.php:32
+#: footer.php:103 ultimate-member/email/changedpw_email Kopie.php:32
 #: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email.php:57
-#: ultimate-member/email/welcome_email.php:68
+#: ultimate-member/email/resetpw_email Kopie.php:57
+#: ultimate-member/email/welcome_email Kopie.php:68
 msgid "Impressum"
 msgstr "Künye"
 
@@ -327,7 +329,7 @@ msgstr "Teklif oluştur"
 msgid "Frage erstellen"
 msgstr "Soru oluştur"
 
-#: advanced-custom-fields/main.php:187 functions.php:2095 functions.php:2941
+#: advanced-custom-fields/main.php:187 functions.php:2098 functions.php:2955
 #: pages/form-projekte.php:50 pages/page-projekt-feed.php:44
 msgid "Projekt erstellen"
 msgstr "Proje oluştur"
@@ -381,7 +383,7 @@ msgstr "Resim"
 
 #: advanced-custom-fields/projekte.php:28
 #: advanced-custom-fields/projekte.php:71
-#: advanced-custom-fields/projekte.php:109 elements/card-projekte.php:46
+#: advanced-custom-fields/projekte.php:109 elements/card-projekte.php:33
 msgid "Projekt"
 msgstr "Proje"
 
@@ -943,10 +945,8 @@ msgid "Wann endet deine Veranstaltung?"
 msgstr "Etkinliğin ne zaman bitecek?"
 
 #: advanced-custom-fields/veranstaltungen.php:180
-#, fuzzy
-#| msgid "Veröffentliche eine Veranstaltung"
 msgid "Verlinke die Internetseite zur Veranstaltung."
-msgstr "Bir etkinlik oluştur"
+msgstr "Web sitesini etkinliğe bağlayın."
 
 #: advanced-custom-fields/veranstaltungen.php:193
 msgid "Livestream"
@@ -1152,10 +1152,10 @@ msgstr ""
 "kullanmıyoruz."
 
 #: components/cookie/cookie-alert.php:23 footer.php:107
-#: ultimate-member/email/changedpw_email.php:33
+#: ultimate-member/email/changedpw_email Kopie.php:33
 #: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email.php:58
-#: ultimate-member/email/welcome_email.php:69
+#: ultimate-member/email/resetpw_email Kopie.php:58
+#: ultimate-member/email/welcome_email Kopie.php:69
 msgid "Datenschutz"
 msgstr "Veri koruma"
 
@@ -1371,16 +1371,12 @@ msgstr ""
 msgid "Momentan gibt es keine Veranstaltungen"
 msgstr "Şu anda hiç etkinlik yok"
 
-#: elements/card-anmerkungen.php:25
+#: elements/card-anmerkungen.php:18
 msgid "von"
 msgstr "başlangıç"
 
-#: elements/card-nachrichten.php:12 elements/card-projekte.php:48
-#: elements/card-veranstaltungen.php:30
-msgid "von "
-msgstr "başlangıç "
-
-#: elements/card-umfragen.php:10
+#: elements/card-nachrichten.php:12 elements/card-projekte.php:35
+#: elements/card-umfragen.php:10 elements/card-veranstaltungen.php:30
 msgid "veröffentlicht von "
 msgstr "yayınlayan: "
 
@@ -1452,20 +1448,16 @@ msgid "Feedback zur Quartiersplattform"
 msgstr "Mahalle platformuyla ilgili geribildirim"
 
 #: footer.php:114
-#, fuzzy
-#| msgid "Englisch"
 msgid "English"
 msgstr "İngilizce"
 
 #: footer.php:115
 msgid "Türkçe"
-msgstr ""
+msgstr "Türkçe"
 
 #: footer.php:116
-#, fuzzy
-#| msgid "Italienisch"
 msgid "Italiano"
-msgstr "İtalyanca"
+msgstr "italyanca"
 
 #: footer.php:117
 msgid "Deutsch"
@@ -1676,63 +1668,63 @@ msgstr ""
 msgid "Link zum Download"
 msgstr "İndirmek için bağlantı"
 
-#: functions.php:1811
+#: functions.php:1814
 msgid "Copyright"
 msgstr "Telif hakkı"
 
-#: functions.php:2405
+#: functions.php:2408
 msgid "Morgen"
 msgstr "Yarın"
 
-#: functions.php:2409
+#: functions.php:2412
 msgid "Heute"
 msgstr "Bugün"
 
-#: functions.php:2413
+#: functions.php:2416
 msgid "Gestern"
 msgstr "Dün"
 
-#: functions.php:2431
+#: functions.php:2434
 msgid " um "
 msgstr " saat "
 
-#: functions.php:2454 functions.php:2458
+#: functions.php:2457 functions.php:2461
 msgid "noch "
 msgstr "kalan: "
 
-#: functions.php:2454
+#: functions.php:2457
 msgid " Minuten"
 msgstr " Dakika"
 
-#: functions.php:2458
+#: functions.php:2461
 msgid " Stunden"
 msgstr " Saat"
 
-#: functions.php:2462
+#: functions.php:2465
 msgid "bis um "
 msgstr "bitiş "
 
-#: functions.php:2466
+#: functions.php:2469
 msgid "bis Morgen"
 msgstr "yarına kadar"
 
-#: functions.php:2470 functions.php:2473
+#: functions.php:2473 functions.php:2476
 msgid "vom "
 msgstr "başlangıç "
 
-#: functions.php:2477
+#: functions.php:2480
 msgid "bis zum "
 msgstr "bitiş "
 
-#: functions.php:3135
+#: functions.php:3149
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr "Yazıyı Wordpress sisteminde düzenle"
 
-#: functions.php:3315
+#: functions.php:3329
 msgid "Nicht Sichtbar"
 msgstr "Görünmez"
 
-#: header.php:193
+#: header.php:209
 msgid "Horizontal"
 msgstr "Yatay"
 
@@ -2301,10 +2293,8 @@ msgid "Zur Dokumentation"
 msgstr "Dokümantasyona git"
 
 #: pages/maintenance.php:100
-#, fuzzy
-#| msgid "Gestalte dein Viertel"
 msgid "Gestalte dein Quartier"
-msgstr "Mahalleni şekillendir"
+msgstr "Odalarınızı tasarlayın"
 
 #: pages/maintenance.php:101
 msgid "Hier entsteht"
@@ -2332,11 +2322,8 @@ msgid "Dann registriere dich jetzt!"
 msgstr "Öyleyse hemen kaydol!"
 
 #: pages/maintenance.php:115
-#, fuzzy
-#| msgid ""
-#| "Die Quartiersplattform wird bereits in den folgenden Vierteln genutzt:"
 msgid "Die Quartiersplattform wird bereits in den folgenden Quartieren genutzt"
-msgstr "Mahalle platformu şu mahallelerde kullanılmaya başladı bile:"
+msgstr "Mahalle platformu aşağıdaki mahallelerde zaten kullanılıyor"
 
 #: pages/maintenance.php:158
 msgid "Plugins installieren"
@@ -2437,12 +2424,6 @@ msgid "Es gibt eine neue Version"
 msgstr "Yeni bir sürüm var"
 
 #: pages/page-plattform.php:51
-#, fuzzy
-#| msgid ""
-#| "Installiere die neue Version der Quartiersplattform und bringe neue "
-#| "features in dein Quartier. Der genaue ablauf wird in der <a href="
-#| "\"https://github.com/studio-arrenberg/quartiersplattform/blob/main/"
-#| "documentation/documentation.md\">Dokumentation</a> beschrieben."
 msgid ""
 "Installiere die neue Version der Quartiersplattform und bringe neue Features "
 "in dein Quartier. Der genaue ablauf wird in der <a href=\"https://github.com/"
@@ -2480,7 +2461,7 @@ msgstr "Yüklü eklentiler"
 
 #: pages/page-plattform.php:114
 msgid "Version"
-msgstr ""
+msgstr "Versiyon"
 
 #: pages/page-plattform.php:115
 msgid "Dieses Plugin ist Aktiv"
@@ -2741,26 +2722,20 @@ msgid "Umfrage löschen"
 msgstr "Anketi sil"
 
 #: pages/single-veranstaltungen.php:53
-#, fuzzy
-#| msgid "bis um "
 msgid "bis"
-msgstr "bitiş "
+msgstr "bitiş"
 
 #: pages/single-veranstaltungen.php:80
-#, fuzzy
-#| msgid "Livestream"
 msgid "Zum Livestream"
-msgstr "Canlı akış"
+msgstr "canlı yayına"
 
 #: pages/single-veranstaltungen.php:82
 msgid "Ticket erwerben"
-msgstr ""
+msgstr "Bilet satın al"
 
 #: pages/single-veranstaltungen.php:84
-#, fuzzy
-#| msgid "Zu den Veranstaltungen"
 msgid "Zur Website der Veranstaltung"
-msgstr "Etkinliklere git"
+msgstr "Etkinlik web sitesine"
 
 #: pages/single-veranstaltungen.php:108
 msgid "Veranstaltung bearbeiten"
@@ -2812,11 +2787,11 @@ msgstr ""
 msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: ultimate-member/email/changedpw_email.php:4
+#: ultimate-member/email/changedpw_email Kopie.php:4
 msgid "Dein Passwort wurde geändert."
 msgstr "Şifren değiştirildi."
 
-#: ultimate-member/email/changedpw_email.php:8
+#: ultimate-member/email/changedpw_email Kopie.php:8
 msgid ""
 "Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
 "gewesen sein, kontaktiere uns bitte umgehend."
@@ -2824,23 +2799,44 @@ msgstr ""
 "Kısa süre önce şifren değiştirildi. Bu değişikliği sen yapmadıysan lütfen "
 "hemen bizimle bağlantı kur."
 
-#: ultimate-member/email/changedpw_email.php:14
+#: ultimate-member/email/changedpw_email Kopie.php:14
+#: ultimate-member/email/changedpw_email.php:28
 msgid "Sieh dir dein Konto an"
 msgstr "Hesabını incele"
 
-#: ultimate-member/email/changedpw_email.php:16
+#: ultimate-member/email/changedpw_email Kopie.php:16
 #: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email.php:39
-#: ultimate-member/email/welcome_email.php:51
+#: ultimate-member/email/resetpw_email Kopie.php:39
+#: ultimate-member/email/welcome_email Kopie.php:51
 msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
 msgstr "Sorun çıkarsa, bize posta yoluyla başvurabilirsin."
 
-#: ultimate-member/email/changedpw_email.php:20
+#: ultimate-member/email/changedpw_email Kopie.php:20
 #: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email.php:44
-#: ultimate-member/email/welcome_email.php:56
+#: ultimate-member/email/resetpw_email Kopie.php:44
+#: ultimate-member/email/welcome_email Kopie.php:56
 msgid "Vielen Dank!"
 msgstr "Çok teşekkürler!"
+
+#: ultimate-member/email/changedpw_email.php:9
+msgid "Dein"
+msgstr "Sizin"
+
+#: ultimate-member/email/changedpw_email.php:10
+msgid "Passwort"
+msgstr "Parola"
+
+#: ultimate-member/email/changedpw_email.php:11
+msgid "wurde geändert."
+msgstr "değişti."
+
+#: ultimate-member/email/changedpw_email.php:19
+msgid ""
+"Dein Passwort wurde vor kurzem geändert. Sollte diese Änderung nicht von dir "
+"gewesen sein, kontaktiere uns bitte umgehend."
+msgstr ""
+"Şifreniz yakın zamanda değiştirildi. Bu değişikliği siz yapmadıysanız, "
+"lütfen hemen bizimle iletişime geçin."
 
 #: ultimate-member/email/checkmail_email.php:16
 msgid "Aktiviere dein Konto,"
@@ -2854,7 +2850,7 @@ msgstr "Gelmen çok güzel! Hesabını etkinleştirmek için linke tıkla."
 msgid "Konto aktivieren"
 msgstr "Hesabı etkinleşir"
 
-#: ultimate-member/email/resetpw_email.php:22
+#: ultimate-member/email/resetpw_email Kopie.php:22
 msgid ""
 "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
 "Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
@@ -2862,15 +2858,16 @@ msgstr ""
 "Aşağıdaki linki kullanarak kendine yeni bir şifre oluşturabilirsin. Bunu "
 "istemediysen lütfen bu postayı yok say."
 
-#: ultimate-member/email/resetpw_email.php:35
+#: ultimate-member/email/resetpw_email Kopie.php:35
 msgid "Passwort zurücksetzen"
 msgstr "Şifreyi sıfırla"
 
-#: ultimate-member/email/welcome_email.php:14
+#: ultimate-member/email/welcome_email Kopie.php:14
 msgid "Willkommen im Quartier, "
 msgstr "Mahalleye hoş geldin, "
 
-#: ultimate-member/email/welcome_email.php:21
+#: ultimate-member/email/welcome_email Kopie.php:21
+#: ultimate-member/email/welcome_email.php:26
 msgid ""
 "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
 "Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
@@ -2880,7 +2877,8 @@ msgstr ""
 "bulabilirsin. Böylece çevrendeki insanları tanıyabilir, mahalleni "
 "sürdürülebilir şekilde geliştirebilir ve iyileştirebilirsin."
 
-#: ultimate-member/email/welcome_email.php:29
+#: ultimate-member/email/welcome_email Kopie.php:29
+#: ultimate-member/email/welcome_email.php:31
 msgid ""
 "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
 "Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
@@ -2888,7 +2886,8 @@ msgstr ""
 "Projeleri keşfet ve kendi projelerini oluştur. En sevdiğin parkta seni "
 "rahatsız eden bir şey mi var? Bunu bir proje haline getir ve destekçiler bul!"
 
-#: ultimate-member/email/welcome_email.php:35
+#: ultimate-member/email/welcome_email Kopie.php:35
+#: ultimate-member/email/welcome_email.php:37
 msgid ""
 "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
 "alles was du wissen musst, um bei nächsten mal dabei zu sein."
@@ -2896,13 +2895,40 @@ msgstr ""
 "Bir daha asla mahallendeki harika etkinlikleri kaçırma. Burada, bir dahaki "
 "sefere katılabilmek için bilmen gereken her şeyi bulabilirsin."
 
-#: ultimate-member/email/welcome_email.php:47
+#: ultimate-member/email/welcome_email Kopie.php:47
+#: ultimate-member/email/welcome_email.php:57
 msgid "Entdecke dein Quartier!"
 msgstr "Mahalleni keşfet!"
 
-#: ultimate-member/ultimate-member.php:238
-msgid "Login"
+#: ultimate-member/email/welcome_email.php:15
+msgid "Willkommen  "
+msgstr "Hoşgeldiniz"
+
+#: ultimate-member/email/welcome_email.php:17
+msgid "im Quartier,"
+msgstr "çeyrekte,"
+
+#: ultimate-member/email/welcome_email.php:42
+msgid "Sprachen"
+msgstr "Diller"
+
+#: ultimate-member/email/welcome_email.php:46
+msgid ""
+"Deine Quartiersplattform spricht mehrere Sprachen. Sie ist in Türkisch, "
+"Italienisch, Deutsch und Englisch verfügbar."
 msgstr ""
+"Mahalle platformunuz birkaç dil konuşuyor. Türkçe, İtalyanca, Almanca ve "
+"İngilizce dillerinde mevcuttur."
+
+#: ultimate-member/ultimate-member.php:238
+#: ultimate-member/ultimate-member.php:269
+msgid "Login"
+msgstr "Giris"
+
+#: ultimate-member/ultimate-member.php:244
+#: ultimate-member/ultimate-member.php:275
+msgid "Register"
+msgstr "Kayıt ol"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/studio-arrenberg/quartiersplattform"
@@ -2927,6 +2953,9 @@ msgstr "Studio Arrenberg"
 #. Author URI of the plugin/theme
 msgid "https://arrenberg.studio"
 msgstr "https://arrenberg.studio"
+
+#~ msgid "von "
+#~ msgstr "başlangıç "
 
 #~ msgid "Türkisch"
 #~ msgstr "Türkçe"
@@ -2992,9 +3021,6 @@ msgstr "https://arrenberg.studio"
 
 #~ msgid "pro kWh"
 #~ msgstr "kWh başına CO2"
-
-#~ msgid "Sprache"
-#~ msgstr "Dil"
 
 #~ msgid "Zurück"
 #~ msgstr "Geri"

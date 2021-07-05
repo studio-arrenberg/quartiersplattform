@@ -125,4 +125,10 @@ __("September",'quartiersplattform');
 __("October",'quartiersplattform');
 __("November",'quartiersplattform');
 __("December",'quartiersplattform');
+
+//Ultimate Member Register Formular
+__("Datenschutzerklärung einblenden",'quartiersplattform');
+__("Datenschutzerklärung ausblenden",'quartiersplattform');
+__("Bitte bestätige das du die Datenschutzerklärung zur Kenntnis genommen hast.",'quartiersplattform');
+__("Bitte akzeptiere die Datenschutzerklärung.",'quartiersplattform');
 ?>

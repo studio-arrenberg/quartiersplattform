@@ -3180,10 +3180,10 @@ add_filter('pre_option_default_role', function($default_role){
 function qp_parameter_permalink($suffix) {
 
 	if(strpos(get_permalink(), '?')) {
-        $link = get_page_link().'&'.$suffix;
+        $link = get_permalink().'&'.$suffix;
     }
     else {
-        $link = get_page_link().'?'.$suffix;
+        $link = get_permalink().'?'.$suffix;
     }
 
 	echo $link;

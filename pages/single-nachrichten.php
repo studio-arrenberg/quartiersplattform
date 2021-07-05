@@ -43,88 +43,88 @@ get_header();
                     
                     if( empty($_GET['action']) ){
 
-                    $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
+                        $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
 
-                    if ( $image_url ) {
-                        $cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
-                        $cover_header_classes = ' bg-image';
-                    }
-                    
+                        if ( $image_url ) {
+                            $cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
+                            $cover_header_classes = ' bg-image';
+                        }
+                        
 
-                    ?>
-
-                    <h2 class="heading-size-3 highlight">
-                        <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - 
-                        <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
-                    </h2>
-                    <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
-                    <?php visibility_badge(); ?>
-
-                    <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-
-                    <div class="site-content">
-                        <?php extract_links(get_field('text')); ?>
-                    </div>
-
-                    <div class="gutenberg-content">
-                        <?php
-                            // Gutenberg Editor Content
-                            if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                                the_excerpt();
-                            } else {
-                                the_content( __( 'Continue reading', 'twentytwenty' ) );
-                            }
                         ?>
-                    </div>
 
-                    <?php if ( ( is_user_logged_in() && qp_project_owner() ) ) { ?>
+                        <h2 class="heading-size-3 highlight">
+                            <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - 
+                            <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
+                        </h2>
+                        <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
+                        <?php visibility_badge(); ?>
 
-                    <div class="simple-card">
-                        <div class="button-group">
-                            <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
-                            <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
+                        <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+
+                        <div class="site-content">
+                            <?php extract_links(get_field('text')); ?>
                         </div>
+
+                        <div class="gutenberg-content">
+                            <?php
+                                // Gutenberg Editor Content
+                                if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                                    the_excerpt();
+                                } else {
+                                    the_content( __( 'Continue reading', 'twentytwenty' ) );
+                                }
+                            ?>
+                        </div>
+
+                        <?php if ( ( is_user_logged_in() && qp_project_owner() ) ) { ?>
+
+                        <div class="simple-card">
+                            <div class="button-group">
+                                <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Nachricht bearbeiten', 'quartiersplattform'); ?></a>
+                                <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Nachricht löschen', 'quartiersplattform'); ?></a>
+                            </div>
+                        </div>
+                        <?php } ?>
                     </div>
-                    <?php } ?>
-                </div>
 
-                <br>
+                    <br>
 
-                <?php
+                    <?php
 
-                // anheften
-                pin_toggle(); 
+                    // anheften
+                    pin_toggle(); 
 
-                // sichtbarkeit
-                visibility_toggle(get_the_ID(  ));
+                    // sichtbarkeit
+                    visibility_toggle(get_the_ID(  ));
 
-                // project is not public
-                if (get_post_status() == 'draft' && qp_project_owner() ) {
-                    reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
-                }
+                    // project is not public
+                    if (get_post_status() == 'draft' && qp_project_owner() ) {
+                        reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+                    }
 
-                get_template_part('components/general/share-post');
+                    get_template_part('components/general/share-post');
 
-                // Projekt Kachel
-                project_card($post->ID);
+                    // Projekt Kachel
+                    project_card($post->ID);
 
-                // Author
-                author_card();
+                    // Author
+                    author_card();
 
-                // Map  Not ready jet
-                get_template_part('components/general/map-card'); 
-            
-                // Backend edit link
-                qp_backend_edit_link();
+                    // Map  Not ready jet
+                    get_template_part('components/general/map-card'); 
+                
+                    // Backend edit link
+                    qp_backend_edit_link();
 
-                // Kommentare		
-                if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-                ?>
-                    <div class="comments-wrapper">
-                        <?php comments_template('', true); ?>
-                    </div><!-- .comments-wrapper -->
-                <?php
-                } # kommentare
+                    // Kommentare		
+                    if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+                    ?>
+                        <div class="comments-wrapper">
+                            <?php comments_template('', true); ?>
+                        </div><!-- .comments-wrapper -->
+                    <?php
+                    } # kommentare
 
                 }   # main loop 
 
@@ -187,7 +187,7 @@ get_header();
             );
             
             $my_query = new WP_Query($args2);
-            if ($my_query->post_count > 0) {
+            if ($my_query->post_count > 0 && empty($_GET['action'])) {
             ?>
                 <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
                 <br>
