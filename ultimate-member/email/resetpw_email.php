@@ -51,11 +51,12 @@
           <hr />
           <br />
           <p>
-            <img
-              src="http://localhost:8888/wp-content/uploads/2021/06/Bildschirmfoto-2021-05-04-um-10.59.18.png"
-              alt=""
-              width="200"
+            <?php 
+                $image = get_field('logo', 'option');
+                if( !empty( $image ) ): ?>
+            <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>"
             />
+            <?php endif; ?>
           </p>
         </td>
       </tr>
