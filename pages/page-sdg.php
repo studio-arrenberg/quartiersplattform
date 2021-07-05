@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-<main id="site-content" class="full-width page-grid" role="main">
+<main id="site-content" class=" page-grid" role="main">
 	
 	<div class="left-sidebar">
 		<?php projekt_carousel(); ?>
@@ -19,17 +19,15 @@ get_header();
 
 	<div class="main-content">
 
-		<div class="">
-			<h1 class="page-title">
+			<h1 class="large-margin-bottom">
 				<?php _e(' Ziele für nachhaltige Entwicklung', 'quartiersplattform'); ?>
 			</h1>
 			<h2 class="text-size-1 large-margin-bottom"> 
 				<?php _e('Die Vereinten Nationen haben 2016 Ziele für eine nachhaltige Entwicklung (Sustainable Development Goals, SDGs) verabschiedet. Die SDGs spielen nicht nur international, sonder auch lokal in deinem Quartier eine wichtige Rolle.', 'quartiersplattform'); ?> 
 			</h2>
-		</div>
-
+		
 		<?php
-		// featured projekte
+		// SDGS
 		$args = array(
 			'post_type'=>'sdg', 
 			'post_status'=>'publish', 
@@ -54,15 +52,15 @@ get_header();
 							<span class="sdg-number">
 								<?php the_field('goal'); ?>
 							</span >
-							<h3 class="heading-size-3">
+							<h3 class="heading-size-2">
 								<?php 
 								_e(get_the_title(),'quartiersplattform'); ?>
 							</h3>
 
-							<h4 class="preview-text-large">
+							<h4 class="text-size-1">
 								<?php _e(get_field('slogan'),'quartiersplattform'); ?>
 							</h4>
-							<p class="preview-text">
+							<p class="sdg-content">
 								<?php _e(get_the_content(),'quartiersplattform'); ?>
 							</p>
 						</div>
@@ -80,11 +78,7 @@ get_header();
 							array(
 								'taxonomy' => 'sdg',
 								'field' => 'slug',
-								'terms' => get_field('number'),
-								// 'field' => 'term_id',
-								// 'terms' => array('8',8, 10, 13),
-								// 'terms' => get_post_field( 'post_name' ),
-								// 'terms' => array('sgds',0,1,'0','1','06',8,19,'06. Sauberes Wasser und sanitäre Einrichtungen', 'Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten'),
+								'terms' => get_field('number')
 							)
 						)
 					);

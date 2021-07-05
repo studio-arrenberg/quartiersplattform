@@ -1,29 +1,33 @@
 <div class="overlay visible cookie-alert">
     <div class="overlay-content">
-        <div class="card card-large reminder">
-            <div class="content content-shrink">
-                <h1 class="heading-size-3">
+        <div class="card card-large reminder shadow">
+            <div class="content large-margin-bottom">
+                <h4 class="heading-size-2">
                     🍪 <?php _e("Wir verwenden Cookies", "quartiersplattform"); ?>
-                </h1>
-                <h3>
+                </h4>
+                <p class="text-size-2">
+
                 <?php _e("Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten.", "quartiersplattform"); ?>
-                </h3>
+</p>
             </div>
+
+            <div class="button-group">
             
+
 
             <?php 
 
                 if (get_privacy_policy_url()) {
 
                     ?> 
-                        <a class="button is-style-outline" href="<?php echo get_privacy_policy_url(); ?>"><?php _e("Datenschutzerklärung", "quartiersplattform"); ?></a>
+                        <a class="button is-transparent" href="<?php echo get_privacy_policy_url(); ?>"><?php _e("Datenschutz", "quartiersplattform"); ?></a>
                     <?php
 
                 }
                 else {
 
                     ?> 
-                        <a class="button is-style-outline" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
+                        <a class="button " href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
                     <?php
 
                 }
@@ -31,7 +35,8 @@
             ?>
 
 
-            <a onclick="cookie_disclaimer();" class="button accept" ><?php _e('Zustimmen', 'quartiersplattform'); ?> </a>
+            <a onclick="cookie_disclaimer();" class="button accept is-primary" ><?php _e('Zustimmen', 'quartiersplattform'); ?> </a>
+        </div>
         </div>
     </div>
 </div>

@@ -20,7 +20,7 @@ get_header();
 
 	</div>
 
-	<div class="content">
+	<div class="main-content">
 
 		<?php 
 			$text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
@@ -44,15 +44,14 @@ get_header();
 
 	<div class="right-sidebar">
 		<?php 
-			// Projekte
-			if (is_user_logged_in(  )) {
-				get_template_part('components/smart-card/projekte');
-					
-			}
-			else {
+
+			get_template_part('components/views/veranstaltungen');
+
+			if (!is_user_logged_in(  )) {
 				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
 				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
 			}
+			
 		?>	
 	</div>
 

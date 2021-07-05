@@ -1,56 +1,16 @@
-=== Twenty Twenty ===
-Contributors: the WordPress team
-Tested up to: 5.5
-Stable tag: 1.5
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== Quartiersplattform ===
+Contributors: studio arrenberg, the WordPress team
+Tested up to: 1.7.2
+Stable tag: 1.7
+License: MIT License
+License URI: https://github.com/studio-arrenberg/quartiersplattform/blob/main/LICENSE
 
-Default theme for 2020.
 
 == Description ==
 
-Our default theme for 2020 is designed to take full advantage of the
-flexibility of the block editor. Organizations and businesses have the
-ability to create dynamic landing pages with endless layouts using the
-group and column blocks. The centered content column and fine-tuned
-typography also makes it perfect for traditional blogs. Complete editor
-styles give you a good idea of what your content will look like, even
-before you publish. You can give your site a personal touch by changing
-the background colors and the accent color in the Customizer. The colors of
-all elements on your site are automatically calculated based on the colors
-you pick, ensuring a high, accessible color contrast for your visitors.
-
-== Changelog ==
-
-= 1.5 =
-* Released: August 11, 2020
-
-https://wordpress.org/support/article/twenty-twenty-changelog/#Version_1.5
-
-= 1.4 =
-* Released: June 10, 2020
-
-https://wordpress.org/support/article/twenty-twenty-changelog/#Version_1.4
-
-= 1.3 =
-* Released: May 14, 2020
-
-https://wordpress.org/support/article/twenty-twenty-changelog/#Version_1.3
-
-= 1.2 =
-* Released: March 31, 2020
-
-https://wordpress.org/support/article/twenty-twenty-changelog/#Version_1.2
-
-= 1.1 =
-* Released: December 12, 2019
-
-https://wordpress.org/support/article/twenty-twenty-changelog/#Version_1.1
-
-= 1.0 =
-* Released: November 12, 2019
-
-Initial release
+Werde aktiv in deinem Viertel und etabliere die Quartiersplattform in deiner Stadt! 
+Deine Projekte werden sichtbar und du profitiert von der Community & lokalen Akteuren. 
+Nutze unser Theme und lass dein Quartier in neuem Glanz erstrahlen.
 
 == Copyright ==
 
@@ -72,35 +32,17 @@ Chaplin Theme is distributed under the terms of the GNU GPL version 2.0
 
 Twenty Twenty bundles the following third-party resources:
 
-Illustrations by Tammie Lister
-License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
 
-Inter Font
-Copyright (c) 2016-2019 The Inter Project Authors (me@rsms.me)
-License: SIL Open Font License, 1.1, https://opensource.org/licenses/OFL-1.1
-Source: https://rsms.me/inter/
+Code from Embla Libary
+License: MIT License
+License URI: https://github.com/davidcetinkaya/embla-carousel/blob/master/LICENSE
+Copyright (c) David Cetinkaya.
 
-Bespoke Icons Created For Twenty Twenty
-License: Creative Commons Zero (CC0), https://creativecommons.org/publicdomain/zero/1.0/
-List of bespoke icons:
-- Search icon
-- Menu icon
+Code from emoji-picker
+License: The MIT License (MIT)
+License URI: https://github.com/OneSignal/emoji-picker/blob/main/LICENSE
+Copyright (c) 2015 OneSignal
 
-Feather Icons
-Copyright (c) 2013-2017 Cole Bemis
-License: MIT License, https://opensource.org/licenses/MIT
-Source: https://feathericons.com
-Used for post meta icons, and the link icon in the social menu.
-
-TikTok Icon
-License: GPLv2
-Source: Émilie Lebrun - @Emlebrun
-Used for TikTok social icon.
-
-Social Icons
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Source: WordPress Social Link Block (See wp-includes\blocks\social-link.php)
 
 Code from Twenty Nineteen
 Copyright (c) 2018-2020 WordPress.org

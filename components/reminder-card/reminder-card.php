@@ -1,4 +1,4 @@
-<div class="card  reminder <?php echo get_query_var('reminder_card_slug')." ".get_query_var('reminder_card_style'); ?>">
+<div class="card  reminder <?php echo get_query_var('reminder_card_slug')." ".get_query_var('reminder_card_style'); if ( is_user_logged_in(  ) && get_query_var('reminder_card_fix') === false) { echo "has-close-card-link"; }?>">
 
 <!-- <?php print_r( get_user_option( 'qp_reminder_card', get_current_user_id( ) ) ); ?> -->
 
@@ -6,7 +6,7 @@
 		<h2 class="heading-size-2">
 			<?php echo get_query_var('reminder_card_title'); ?>
 		</h2>
-		<h3 class="text-size-1">
+		<h3 class="text-size-2">
 			<?php echo get_query_var('reminder_card_text'); ?>
 		</h3>
 	</div>

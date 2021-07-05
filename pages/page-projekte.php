@@ -14,11 +14,11 @@ get_header();
 <main id="site-content" class="page-grid" role="main">
 
 
-	<div class="left-sidebar">
+<div class="left-sidebar">
+	<?php projekt_carousel(); ?>
+</div>
 
-	</div>
-
-	<div class="content">
+	<div class="main-content">
 		<?php 
 			$text = __('Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
 			Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ','quartiersplattform');
@@ -86,22 +86,9 @@ get_header();
 
 		?>  
 		
-		
 	
 	</div>
 
-	<div class="right-sidebar">
-		<?php 
-			// Projekte
-			if (is_user_logged_in(  )) {
-				get_template_part('components/smart-card/projekte');
-			}
-			else {
-				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
-				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
-			}
-		?>	
-	</div>
 
 </main><!-- #site-content -->
 

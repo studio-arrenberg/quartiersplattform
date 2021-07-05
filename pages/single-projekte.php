@@ -37,10 +37,10 @@ get_header();
 		while ( have_posts() ) {
             the_post();
             
-            if( !isset($_GET['action']) && !$_GET['action'] == 'edit' ){
+            if( empty($_GET['action']) ){
 
 			// prep image url
-			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' ) : '';
 
 			if ( $image_url ) {
 				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -116,7 +116,7 @@ get_header();
                 <div id="summary" class="bar bar-active">
 
                      <!-- Bild -->
-                     <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+                     <img class="projekt-image" src="<?php echo esc_url( $image_url ) ?>" />
 
 
                     <?php 
@@ -185,10 +185,10 @@ get_header();
                                     'post_title' => true,
                                     'post_content' => false,    
                                     'uploader' => 'basic',
-                                    // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
                                     'fields' => array(
                                         'field_5fc64834f0bf2', // Emoji
                                         'field_5fc647f6f0bf0', // Kurzbeschreibung
+                                        'field_600180493ab1a', // Bild
                                     ),
                                 )
                             );
@@ -263,7 +263,7 @@ get_header();
 
             # delete post
             wp_delete_post( get_the_ID() );
-            wp_redirect( get_site_url() );
+            wp_redirect( get_site_url().'/projekte' );
 
         }
         # post bearbeiten
@@ -286,12 +286,11 @@ get_header();
                                 'post_title' => false,
                                 'post_content' => false,    
                                 'uploader' => 'basic',
-                                // 'field_groups' => array('group_5c5de08e4b57c'), //Arrenberg App
                                 'fields' => array(
                                     // 'field_5fc64834f0bf2', // Emoji
                                     // 'field_5fc647f6f0bf0', // Kurzbeschreibung
                                     'field_5fc647e3f0bef', // Text
-                                    'field_600180493ab1a', // Bild
+                                    // 'field_600180493ab1a', // Bild
                                 ),
                             )
                         );

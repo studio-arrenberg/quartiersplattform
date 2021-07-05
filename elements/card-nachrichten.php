@@ -1,22 +1,3 @@
-<?php
-
-
-// variable text length
-if (strlen(get_the_title()) < 35 ) {
-    $char = 90;
-}
-else {
-    $char = 56;
-}
-
-// variable text length
-// if (strlen($the_slug < 1 )) {
-//     $char = 200;
-// }
-
-?>
-
-
 <div class="card-group">
 
     <!-- main card -->
@@ -28,7 +9,7 @@ else {
                 <span>
                     <b><?php _e('Nachricht', 'quartiersplattform'); ?> </b>
                     <br>
-                    <?php _e('von ', 'quartiersplattform'); ?> <?php echo get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
+                    <?php echo __('veröffentlicht von ', 'quartiersplattform').get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                     <?php echo qp_date(get_the_date('Y-m-d H:i:s'), true); ?>
                 </span>
             </a>
@@ -49,10 +30,10 @@ else {
                 <p class="text-size-2">
                     <?php  
                     if (strlen(get_field('text')) > 2) {
-                        shorten(get_field('text'), $char);
+                        shorten(get_field('text'), 200);
                     }
                     else {
-                        shorten(get_the_content(), $char);
+                        shorten(get_the_content(), 200);
                     }
                     ?>
                 </p>

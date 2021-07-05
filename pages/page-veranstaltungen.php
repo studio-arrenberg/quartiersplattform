@@ -33,22 +33,7 @@ get_header();
 
 </div>
 	<div class="right-sidebar">
-		<?php 
-
-			// Projekte
-			if (is_user_logged_in(  )) {
-				get_template_part('components/smart-card/projekte');
-				
-				$text = __('Du möchtest eine Verantaltung auf deiner Quartiersplattform bewerben? Erstelle ein Projekt und veröffentliche eine Veranstaltung.','quartiersplattform');
-				reminder_card(__('Erstelle eine Veranstaltung','quartiersplattform'), __('Veröffentliche eine Veranstaltung','quartiersplattform'), $text, '', '' );
-				
-			}
-			else {
-				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
-				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
-			}
-			
-		?>	
+	
 	</div>
 	</main><!-- #site-content -->
 

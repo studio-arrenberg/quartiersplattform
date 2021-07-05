@@ -24,7 +24,6 @@
             }
             ?>
         </div>
-        <br>
 
     <?php
         $args4 = new WP_Query($args4);

@@ -40,39 +40,42 @@ get_header();
 
 
 	<div class="main-content">
-        <div class="center-header">
-            <img class="center-header-image" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
 
-            <div class="center-header-content center-mobile">
+        <div class="profil-header">
+            <div class="profil-header-avatar">
+                <img class="" src="<?php echo get_avatar_url( $curauth->ID ) ?>" />
 
+            </div>
+            <!-- user name -->
+            <div class="profil-header-content">
                 <h1><?php echo $curauth->first_name." ".$curauth->last_name; ?></h1>
-                <br>
-
-                <?php 
-                    if ($curauth->ID == get_current_user_id()) {
-                        ?>
-                            <a class="button" href="<?php echo get_site_url(); ?>/profil/"><?php _e('Mein Profil bearbeiten', 'quartiersplattform'); ?></a>
-                        <?php 
-                    }
-                ?>
-
-                <!-- Kontakt  -->
-                <?php 
-                
-                $userid = "user_".$curauth->ID; 
-                author_card(true, $curauth->ID, false);
-                
-                ?>
-
-                
-                <!-- About -->
-                <?php if( get_field('about', $userid) ) { ?>
-                    <h2><?php _e('Über mich', 'quartiersplattform'); ?> </h2>
-                    <div><?php the_field('about', $userid); ?></div>
-                <?php } ?>
-
             </div>
-            </div>
+        </div>
+
+
+        <?php 
+            if ($curauth->ID == get_current_user_id()) {
+                ?>
+                    <a class="button" href="<?php echo get_site_url(); ?>/profil/"><?php _e('Mein Profil bearbeiten', 'quartiersplattform'); ?></a>
+                <?php 
+            }
+        ?>
+
+        <!-- Kontakt  -->
+        <?php 
+        
+        $userid = "user_".$curauth->ID; 
+        author_card(true, $curauth->ID, false);
+        
+        ?>
+
+        
+        <!-- About -->
+        <?php if( get_field('about', $userid) ) { ?>
+            <h2><?php _e('Über mich', 'quartiersplattform'); ?> </h2>
+            <div><?php the_field('about', $userid); ?></div>
+        <?php } ?>
+
     
             
             <?php
@@ -86,11 +89,12 @@ get_header();
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<h2 class='margin-bottom'>".__("Projekte von",'quartiersplattform')." ".$curauth->first_name."</h2>";
+                    echo "<h2 class='margin-bottom'>".__("Projekte von",'quartiersplattform')." ".$curauth->first_name."</h2> <br>";
                     card_list($args4);      
                 }
             ?>
 
+            <br>
             <br>
 
 
@@ -104,7 +108,7 @@ get_header();
                     'offset' => '0', 
                 );
                 if (count_query($args4)) {
-                    echo "<h2 class='margin-bottom'>".__("Beiträge von",'quartiersplattform')." ".$curauth->first_name."</h2>";
+                    echo "<h2 class='margin-bottom'>".__("Beiträge von",'quartiersplattform')." ".$curauth->first_name."</h2> <br>";
                     card_list($args4);      
                 }
             ?>

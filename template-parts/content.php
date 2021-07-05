@@ -13,71 +13,78 @@
 
 ?>
 
-<section <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div id="site-content post-<?php the_ID(); ?>" class="page-grid" role="main">
 
+	<div class="left-sidebar">
+		<?php projekt_carousel(); ?>
+	</div>
 
-	<?php
+	<div class="main-content">
+	
+		<?php
+		if (has_post_thumbnail()) {
+			$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
 
-	if (has_post_thumbnail()) {
-		$image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), '' ) : '';
-
-		if ( $image_url ) {
-			$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
-			$cover_header_classes = ' bg-image';
+			if ( $image_url ) {
+				$cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
+				$cover_header_classes = ' bg-image';
+			}
 		}
-	}
+		?>
 
-	?>
+		<div class="single-header <?php if (!has_post_thumbnail()) echo "without-single-header-image"; ?>" >
+			<!-- Bild -->
+			<?php if (has_post_thumbnail()) { ?>
+				<img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
+			<?php } ?>
 
+			<!-- Post title -->
+			<div class="single-header-content">
+				<h1><?php _e(get_the_title(), 'quartiersplattform'); ?></h1>
+			</div>
 
-    <div class="single-header <?php if (!has_post_thumbnail()) echo "without-single-header-image"; ?>" >
-        <!-- Bild -->
-		<?php if (has_post_thumbnail()) { ?>
-        	<img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-		<?php } ?>
+		</div>
 
-        <!-- Post title -->
-        <div class="single-header-content">
-			<h1><?php the_title(); ?></h1>
-        </div>
+		<!-- Gutenberg Editor Content -->
+		<div class="gutenberg-content">
+			<?php
+				if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+					the_excerpt();
+				} else {
+					the_content( __( 'Continue reading', 'twentytwenty' ) );
+				}
+			?>
+		</div>
+		
+        <!-- Backend edit link -->
+        <?php qp_backend_edit_link(); ?>
+
+        <!-- kommentare -->
+        <?php			
+        if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
+        ?>
+
+        <div class="comments-wrapper">
+            <?php comments_template('', true); ?>
+        </div><!-- .comments-wrapper -->
+		<!-- kommentare -->
+		<?php			
+			}       
+		?>
 
 	</div>
 
 
-    <!-- Gutenberg Editor Content -->
-    <div class="gutenberg-content">
-    <?php
-        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-            the_excerpt();
-        } else {
-            the_content( __( 'Continue reading', 'twentytwenty' ) );
-        }
-    ?>
+	<div class="right-sidebar ">
+		<?php 
+			get_template_part('components/views/veranstaltungen');
+		?>	
+	</div>
+</div>
+</main>
 
-    </div>
+<?php get_footer(); ?>
 
-
-
-	
-	<?php
-	/**
-	 *  Output comments wrapper if it's a post, or if comments are open,
-	 * or if there's a comment number – and check for password.
-	 * */
-	if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
-		?>
-
-		<div class="comments-wrapper">
-
-			<?php comments_template(); ?>
-
-		</div><!-- .comments-wrapper -->
-
-		<?php
-	}
-	?>
-
-</section><!-- .post -->
 
 
 

@@ -13,12 +13,6 @@ if (strlen(get_the_title()) < 35 ) {
 else {
     $char = 56;
 }
-
-// variable text length
-if (strlen($the_slug < 1 )) {
-    $char = 40;
-}
-
 ?>
 
 <div class="list-item">

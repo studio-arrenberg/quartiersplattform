@@ -18,11 +18,11 @@
 $prev_text = sprintf(
 	'%s <span class="nav-prev-text">%s</span>',
 	'<span aria-hidden="true">&larr;</span>',
-	__('Newer','twentytwenty').'<span class="nav-short">'.__("Posts",'twentytwenty').'</span>'
+	__( 'Newer <span class="nav-short">Posts</span>', 'twentytwenty' )
 );
 $next_text = sprintf(
 	'<span class="nav-next-text">%s</span> %s',
-	__( 'Older','twentytwenty').'<span class="nav-short">'.__("Posts",'twentytwenty').'</span>',
+	__( 'Older <span class="nav-short">Posts</span>', 'twentytwenty' ),
 	'<span aria-hidden="true">&rarr;</span>'
 );
 

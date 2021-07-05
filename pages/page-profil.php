@@ -10,7 +10,7 @@
 if (!is_user_logged_in()) {
     header("Location: ".get_site_url());
     exit();
-    }
+}
 
     acf_form_head();
     wp_deregister_style( 'wp-admin' );
@@ -24,18 +24,7 @@ if (!is_user_logged_in()) {
 <main id="site-content" class="page-grid " role="main">
 
 	<div class="left-sidebar">
-
 		<div class="hidden-small">
-			<?php 
-				$args4 = array(
-					'post_type'=> array('projekte'), 
-					'post_status'=>'publish', 
-					'posts_per_page'=> 20,
-					'orderby' => 'date'
-				);
-			?>  
-
-
             <?php projekt_carousel(); ?>
 		</div>
 	</div>
@@ -76,8 +65,6 @@ if (!is_user_logged_in()) {
                     </div>
                 </div>
             </div>
-        
-
            
             <script>
 
@@ -86,8 +73,6 @@ if (!is_user_logged_in()) {
                 filterTabs.addEventListener("click", (event) => {                
                     const root = document.documentElement;
                     const targetTranslateValue = event.target.dataset.translateValue;
-                    // console.log(targetTranslateValue);
-                    // console.log(event.target.dataset.value);
 
                     if (targetTranslateValue == undefined) {
                         return false;
@@ -108,15 +93,19 @@ if (!is_user_logged_in()) {
         <div id="summary" class="bar bar-active">
 
 
-            <?php 
-            
-            author_card(true, $current_user->ID, false); 
-            
-            ?>
-
-            <br>
-            <br>
-
+            <h3><?php _e('Deine Kontaktinformationen', 'quartiersplattform'); ?></h3>
+            <p>
+                <?php 
+                if (current_user_can('administrator')) {
+                    _e('Als Administrator dieser Quartiersplattform werden deine Kontaktinformationen allen Besuchern angezeigt.', "quartiersplattform");
+                }
+                else {
+                    _e('Deine Kontaktinformationen werden nur registrierten Nutzern angezeigt und können daher nicht von Suchmaschinen gefunden werden.', "quartiersplattform");
+                }
+                ?>
+            </p>
+                        
+            <?php author_card(true, $current_user->ID, false); ?>
             
             <?php
                 $args4 = array(
@@ -130,7 +119,6 @@ if (!is_user_logged_in()) {
                 if (count_query($args4)) {
                     echo "<br><h2 class='margin-bottom'>".__('Deine Projekte', 'quartiersplattform')."</h2><br>";
                     card_list($args4);
-                    echo "<br>";
                 }
                 
 
@@ -174,8 +162,7 @@ if (!is_user_logged_in()) {
             <br><br>
 
             <!-- Contact Information -->   
-            <h2><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h2>
-            <br>
+            <h3><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h3>
                 <?php
                 $userid = "user_".$current_user->ID; 
                 acf_form (
@@ -193,8 +180,7 @@ if (!is_user_logged_in()) {
             <br>
             <br>
             <!-- Biography Information -->   
-            <h2>Erzähle etwas über dich</h2>
-            <br>
+            <h2><?php _e('Erzähle etwas über dich', 'quartiersplattform'); ?> </h2>
             <?php
             $userid = "user_".$current_user->ID; 
             acf_form (
@@ -217,7 +203,8 @@ if (!is_user_logged_in()) {
 
             <br>
             <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
-            <br><br>
+            <br><br><br><!-- wichtig  -->
+            
         </div>
 
     </div>
