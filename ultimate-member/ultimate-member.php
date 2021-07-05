@@ -400,7 +400,6 @@ function my_email_template_html( $slug, $args ) {
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
-				font-family: Helvetica, sans-serif;
 				user-select: none;
 				border-radius: 15px;
 				background-color: rgb(0, 145, 255);
