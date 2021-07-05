@@ -2222,7 +2222,14 @@ th {
 
 .link-card-container  .card{
   margin-bottom: 0px;
+  margin: 0px 10px 10px 0px; /* margin for cards */
 }
+
+.link-card-container  .card a:hover, .link-card-container  .card p:hover { 
+  color:#0091FF; /* temp fix */
+}
+
+
 
 .small-projekt-card .card img{
   height: 200px !important;
