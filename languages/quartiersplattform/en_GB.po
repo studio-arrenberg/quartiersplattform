@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-07-01 12:11+0200\n"
-"PO-Revision-Date: 2021-07-01 12:59+0200\n"
+"POT-Creation-Date: 2021-07-05 12:38+0200\n"
+"PO-Revision-Date: 2021-07-05 12:40+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: en\n"
@@ -53,7 +53,7 @@ msgstr "Feedback"
 
 #: advanced-custom-fields/anmerkungen.php:34
 msgid "Was wünschst du dir von der Quartiersplattform?"
-msgstr "This is where your district platform will be created"
+msgstr "What do you want from the neighbourhood platform?"
 
 #: advanced-custom-fields/anmerkungen.php:89
 #: advanced-custom-fields/anmerkungen.php:94
@@ -281,15 +281,17 @@ msgstr "District"
 #: advanced-custom-fields/projekte.php:27
 #: advanced-custom-fields/projekte.php:32
 #: advanced-custom-fields/projekte.php:70
-#: advanced-custom-fields/projekte.php:75 header.php:200
-#: ultimate-member/email/welcome_email.php:27
+#: advanced-custom-fields/projekte.php:75 header.php:216
+#: ultimate-member/email/welcome_email Kopie.php:27
+#: ultimate-member/email/welcome_email.php:29
 msgid "Projekte"
 msgstr "Projects"
 
 #: advanced-custom-fields/main.php:178
 #: advanced-custom-fields/veranstaltungen.php:25
 #: advanced-custom-fields/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email.php:33
+#: ultimate-member/email/welcome_email Kopie.php:33
+#: ultimate-member/email/welcome_email.php:35
 msgid "Veranstaltungen"
 msgstr "Events"
 
@@ -302,10 +304,10 @@ msgid "Profil"
 msgstr "Profile"
 
 #: advanced-custom-fields/main.php:182 components/cookie/cookie-alert.php:30
-#: footer.php:103 ultimate-member/email/changedpw_email.php:32
+#: footer.php:103 ultimate-member/email/changedpw_email Kopie.php:32
 #: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email.php:57
-#: ultimate-member/email/welcome_email.php:68
+#: ultimate-member/email/resetpw_email Kopie.php:57
+#: ultimate-member/email/welcome_email Kopie.php:68
 msgid "Impressum"
 msgstr "Legal notice"
 
@@ -325,7 +327,7 @@ msgstr "Create offer"
 msgid "Frage erstellen"
 msgstr "Create question"
 
-#: advanced-custom-fields/main.php:187 functions.php:2095 functions.php:2941
+#: advanced-custom-fields/main.php:187 functions.php:2098 functions.php:2955
 #: pages/form-projekte.php:50 pages/page-projekt-feed.php:44
 msgid "Projekt erstellen"
 msgstr "Create project"
@@ -379,7 +381,7 @@ msgstr "Image"
 
 #: advanced-custom-fields/projekte.php:28
 #: advanced-custom-fields/projekte.php:71
-#: advanced-custom-fields/projekte.php:109 elements/card-projekte.php:46
+#: advanced-custom-fields/projekte.php:109 elements/card-projekte.php:33
 msgid "Projekt"
 msgstr "Project"
 
@@ -1132,10 +1134,10 @@ msgstr ""
 "their use. Wo do not use third-party cookies."
 
 #: components/cookie/cookie-alert.php:23 footer.php:107
-#: ultimate-member/email/changedpw_email.php:33
+#: ultimate-member/email/changedpw_email Kopie.php:33
 #: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email.php:58
-#: ultimate-member/email/welcome_email.php:69
+#: ultimate-member/email/resetpw_email Kopie.php:58
+#: ultimate-member/email/welcome_email Kopie.php:69
 msgid "Datenschutz"
 msgstr "Privacy policy"
 
@@ -1350,16 +1352,12 @@ msgstr ""
 msgid "Momentan gibt es keine Veranstaltungen"
 msgstr "The are currently no events"
 
-#: elements/card-anmerkungen.php:25
+#: elements/card-anmerkungen.php:18
 msgid "von"
 msgstr "of "
 
-#: elements/card-nachrichten.php:12 elements/card-projekte.php:48
-#: elements/card-veranstaltungen.php:30
-msgid "von "
-msgstr "of "
-
-#: elements/card-umfragen.php:10
+#: elements/card-nachrichten.php:12 elements/card-projekte.php:35
+#: elements/card-umfragen.php:10 elements/card-veranstaltungen.php:30
 msgid "veröffentlicht von "
 msgstr "Published by "
 
@@ -1648,63 +1646,63 @@ msgstr ""
 msgid "Link zum Download"
 msgstr "Link to download"
 
-#: functions.php:1811
+#: functions.php:1814
 msgid "Copyright"
 msgstr "Copyright"
 
-#: functions.php:2405
+#: functions.php:2408
 msgid "Morgen"
 msgstr "Tomorrow"
 
-#: functions.php:2409
+#: functions.php:2412
 msgid "Heute"
 msgstr "Today"
 
-#: functions.php:2413
+#: functions.php:2416
 msgid "Gestern"
 msgstr "Yesterday"
 
-#: functions.php:2431
+#: functions.php:2434
 msgid " um "
 msgstr " at "
 
-#: functions.php:2454 functions.php:2458
+#: functions.php:2457 functions.php:2461
 msgid "noch "
 msgstr "still "
 
-#: functions.php:2454
+#: functions.php:2457
 msgid " Minuten"
 msgstr " minutes"
 
-#: functions.php:2458
+#: functions.php:2461
 msgid " Stunden"
 msgstr " hours"
 
-#: functions.php:2462
+#: functions.php:2465
 msgid "bis um "
 msgstr "until "
 
-#: functions.php:2466
+#: functions.php:2469
 msgid "bis Morgen"
 msgstr "until tomorrow"
 
-#: functions.php:2470 functions.php:2473
+#: functions.php:2473 functions.php:2476
 msgid "vom "
 msgstr "from "
 
-#: functions.php:2477
+#: functions.php:2480
 msgid "bis zum "
 msgstr "until "
 
-#: functions.php:3135
+#: functions.php:3149
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr "Edit post in Wordpress system"
 
-#: functions.php:3315
+#: functions.php:3329
 msgid "Nicht Sichtbar"
 msgstr "Not visible"
 
-#: header.php:193
+#: header.php:209
 msgid "Horizontal"
 msgstr "Horizontal"
 
@@ -2715,7 +2713,7 @@ msgstr "To the livestream"
 
 #: pages/single-veranstaltungen.php:82
 msgid "Ticket erwerben"
-msgstr ""
+msgstr "Purchase ticket"
 
 #: pages/single-veranstaltungen.php:84
 msgid "Zur Website der Veranstaltung"
@@ -2771,11 +2769,11 @@ msgstr ""
 msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: ultimate-member/email/changedpw_email.php:4
+#: ultimate-member/email/changedpw_email Kopie.php:4
 msgid "Dein Passwort wurde geändert."
 msgstr "Your password has been changed."
 
-#: ultimate-member/email/changedpw_email.php:8
+#: ultimate-member/email/changedpw_email Kopie.php:8
 msgid ""
 "Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
 "gewesen sein, kontaktiere uns bitte umgehend."
@@ -2783,23 +2781,44 @@ msgstr ""
 "Your password was recently changed. If you did not change your password, "
 "please contact us immediately."
 
-#: ultimate-member/email/changedpw_email.php:14
+#: ultimate-member/email/changedpw_email Kopie.php:14
+#: ultimate-member/email/changedpw_email.php:28
 msgid "Sieh dir dein Konto an"
 msgstr "Check out your account"
 
-#: ultimate-member/email/changedpw_email.php:16
+#: ultimate-member/email/changedpw_email Kopie.php:16
 #: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email.php:39
-#: ultimate-member/email/welcome_email.php:51
+#: ultimate-member/email/resetpw_email Kopie.php:39
+#: ultimate-member/email/welcome_email Kopie.php:51
 msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
 msgstr "If you have any problems, please feel free to contact us by email."
 
-#: ultimate-member/email/changedpw_email.php:20
+#: ultimate-member/email/changedpw_email Kopie.php:20
 #: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email.php:44
-#: ultimate-member/email/welcome_email.php:56
+#: ultimate-member/email/resetpw_email Kopie.php:44
+#: ultimate-member/email/welcome_email Kopie.php:56
 msgid "Vielen Dank!"
 msgstr "Thank you very much!"
+
+#: ultimate-member/email/changedpw_email.php:9
+msgid "Dein"
+msgstr "Your"
+
+#: ultimate-member/email/changedpw_email.php:10
+msgid "Passwort"
+msgstr "Password"
+
+#: ultimate-member/email/changedpw_email.php:11
+msgid "wurde geändert."
+msgstr "has been changed."
+
+#: ultimate-member/email/changedpw_email.php:19
+msgid ""
+"Dein Passwort wurde vor kurzem geändert. Sollte diese Änderung nicht von dir "
+"gewesen sein, kontaktiere uns bitte umgehend."
+msgstr ""
+"Your password has recently been changed. If this change was not made by you, "
+"please contact us immediately."
 
 #: ultimate-member/email/checkmail_email.php:16
 msgid "Aktiviere dein Konto,"
@@ -2813,7 +2832,7 @@ msgstr "Thanks for joining us! Click the link to activate your account."
 msgid "Konto aktivieren"
 msgstr "Activate account"
 
-#: ultimate-member/email/resetpw_email.php:22
+#: ultimate-member/email/resetpw_email Kopie.php:22
 msgid ""
 "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
 "Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
@@ -2821,15 +2840,16 @@ msgstr ""
 "You can create a new password using the link below. If you did not request "
 "this, please ignore this email."
 
-#: ultimate-member/email/resetpw_email.php:35
+#: ultimate-member/email/resetpw_email Kopie.php:35
 msgid "Passwort zurücksetzen"
 msgstr "Reset password"
 
-#: ultimate-member/email/welcome_email.php:14
+#: ultimate-member/email/welcome_email Kopie.php:14
 msgid "Willkommen im Quartier, "
 msgstr "Welcome to the district, "
 
-#: ultimate-member/email/welcome_email.php:21
+#: ultimate-member/email/welcome_email Kopie.php:21
+#: ultimate-member/email/welcome_email.php:26
 msgid ""
 "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
 "Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
@@ -2839,7 +2859,8 @@ msgstr ""
 "district on the district platform. This will help you to meet new people and "
 "get involved in the sustainable development and improvement of the district."
 
-#: ultimate-member/email/welcome_email.php:29
+#: ultimate-member/email/welcome_email Kopie.php:29
+#: ultimate-member/email/welcome_email.php:31
 msgid ""
 "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
 "Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
@@ -2848,7 +2869,8 @@ msgstr ""
 "change about your favourite park? Turn it into a project and find fellow "
 "campaigners!"
 
-#: ultimate-member/email/welcome_email.php:35
+#: ultimate-member/email/welcome_email Kopie.php:35
+#: ultimate-member/email/welcome_email.php:37
 msgid ""
 "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
 "alles was du wissen musst, um bei nächsten mal dabei zu sein."
@@ -2856,13 +2878,42 @@ msgstr ""
 "Never miss out on great events in your district again. Here you will find "
 "everything you need to know to be involved next time."
 
-#: ultimate-member/email/welcome_email.php:47
+#: ultimate-member/email/welcome_email Kopie.php:47
+#: ultimate-member/email/welcome_email.php:57
 msgid "Entdecke dein Quartier!"
 msgstr "Discover your district!"
 
+#: ultimate-member/email/welcome_email.php:15
+msgid "Willkommen  "
+msgstr "Welcome"
+
+#: ultimate-member/email/welcome_email.php:17
+msgid "im Quartier,"
+msgstr "in your district,"
+
+#: ultimate-member/email/welcome_email.php:42
+msgid "Sprachen"
+msgstr "Languages"
+
+#: ultimate-member/email/welcome_email.php:46
+msgid ""
+"Deine Quartiersplattform spricht mehrere Sprachen. Sie ist in Türkisch, "
+"Italienisch, Deutsch und Englisch verfügbar."
+msgstr ""
+"Your district platform speaks several languages. It is available in Turkish, "
+"Italian, German and English."
+
 #: ultimate-member/ultimate-member.php:238
+#: ultimate-member/ultimate-member.php:269
 msgid "Login"
 msgstr ""
+
+#: ultimate-member/ultimate-member.php:244
+#: ultimate-member/ultimate-member.php:275
+#, fuzzy
+#| msgid "Registrieren"
+msgid "Register"
+msgstr "Register"
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/studio-arrenberg/quartiersplattform"
@@ -2886,6 +2937,9 @@ msgstr "Studio Arrenberg"
 #. Author URI of the plugin/theme
 msgid "https://arrenberg.studio"
 msgstr "https://arrenberg.studio"
+
+#~ msgid "von "
+#~ msgstr "of "
 
 #~ msgid "Türkisch"
 #~ msgstr "Turkish"
@@ -2946,9 +3000,6 @@ msgstr "https://arrenberg.studio"
 
 #~ msgid "pro kWh"
 #~ msgstr "per kWh"
-
-#~ msgid "Sprache"
-#~ msgstr "Language"
 
 #~ msgid "Zurück"
 #~ msgstr "Back"
