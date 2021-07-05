@@ -20,6 +20,7 @@ Entwicklung der Quartiersplattform
 - [ ] Publish as Theme
 
 <br><br>
+
 # Versions
 ## v1.8 💬
 ### Features
