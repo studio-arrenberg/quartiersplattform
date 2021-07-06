@@ -157,7 +157,7 @@ get_header();
                                 'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                 'post_title' => true,
                                 'post_content' => false,    
-                                'uploader' => 'basic',
+                                'uploader' => qp_form_uploader(),
                                 'field_groups' => array('group_5c5de02092e76'),
                             )
                         );       

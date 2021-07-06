@@ -63,7 +63,7 @@ if ( qp_project_owner($_GET['project']) == false ) {
                             'field_el' => 'div',
                             'post_content' => false,
                             'post_title' => true,
-                            'uploader' => 'basic',
+                            'uploader' => qp_form_uploader(),
                             'fields' => array(
                                 'field_5fc8d0b28edb0', //Text
                                 'field_5fc8d15b8765b', //Date

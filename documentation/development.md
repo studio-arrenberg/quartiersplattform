@@ -28,8 +28,8 @@ Entwicklung der Quartiersplattform
 ## v1.8 💬
 ### Missing
 - [x] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
-- [ ] Pinnen feature richtig erklären
-- [ ] FB Teilen Link ist falsch
+- [-] Pinnen feature richtig erklären
+- [x] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
 - [ ] WP Bilder Hochladen Feature (für Admins)
 - [ ] Reihenfolge im Projekt Carousel

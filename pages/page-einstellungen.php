@@ -50,7 +50,7 @@ get_header();
             'post_id'=>'options',
             'honeypot' => true,
             'field_el' => 'div',
-            'uploader' => 'basic',
+            'uploader' => qp_form_uploader(),
             'post_content' => false,
             'post_title' => false,
             'return' => home_url().'/einstellungen',

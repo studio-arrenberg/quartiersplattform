@@ -39,7 +39,7 @@ get_header();
                         'post_status' => 'publish',
                     ),
                     'field_el' => 'div',
-                    'uploader' => 'basic',
+                    'uploader' => qp_form_uploader(),
                     'post_content' => false,
                     'post_title' => true,
                     'return' => get_site_url().'/projekte',
