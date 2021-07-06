@@ -84,4 +84,4 @@ fclose($kb_ical);
 
 ?>
 
-<a class="button is-primary" href="<?php echo get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics' ?>" target="_self"><?php _e('.iCal Herrunterladen','quartiersplattform'); ?></a>
+<a class="button" href="<?php echo get_bloginfo('template_url') .'/assets/generated/calendar-files/'.$kb_file_name.'.ics' ?>" target="_self"><?php _e('.iCal Herrunterladen','quartiersplattform'); ?></a>

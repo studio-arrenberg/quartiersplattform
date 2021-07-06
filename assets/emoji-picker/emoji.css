@@ -136,7 +136,7 @@ img.emoji {
   display: flex;
   align-items: center;
   padding: 0px;
-  height: 45px; /* 35 */
+  height: 45px !important; /* 35 */
   max-height: 284px;
   overflow: auto;
   line-height: 17px;

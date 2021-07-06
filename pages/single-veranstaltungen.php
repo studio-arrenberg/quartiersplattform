@@ -40,7 +40,7 @@ get_header();
                 if( empty($_GET['action']) ){
 
                 // prep image url
-                $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'preview_l' ) : '';
+                $image_url = ! post_password_required() ? get_the_post_thumbnail_url( get_the_ID(), 'post-thumbnail' ) : '';
 
                 if ( $image_url ) {
                     $cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
@@ -50,95 +50,92 @@ get_header();
                 // get project by Term
                 ?>
                 <h2 class="heading-size-3 highlight">
-                    <span class="date"><?php echo qp_date(get_field('event_date'), true, get_field('event_time')); if (get_field('event_end_time')) echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true); ?></span>
+                    <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> <br> <?php echo qp_date(get_field('event_date'), true, get_field('event_time')); if (get_field('event_end_time')) echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true); ?></span>
                 </h2>
                 <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
+                
                 <?php visibility_badge(); ?>
 
+                <div class="single-content">
+                    <?php extract_links(get_field('text')); ?>
+                </div>
+
+                <?php if ( !empty(get_post_thumbnail_id())) { ?>
+                    <img class="single-thumbnail" src="<?php echo esc_url( $image_url ) ?>" />
+                <?php  } ?>
+
+
+                <!-- Eventtext felder gibt es noch nicht -->
+                <div class="button-group --break-button-group">
+
+                <?php 
+                // temp fix
+                echo "<br>";
+
+                // livestream
+                if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >".__('Zum Livestream', 'quartiersplattform')."</a>";
+                // Ticket
+                if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >".__('Ticket erwerben', 'quartiersplattform')."</a>";
+                // Website
+                if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >".__('Zur Website der Veranstaltung', 'quartiersplattform')."</a>";
+
+                // calendar download
+                calendar_download($post);
+
+                ?>
+
+                </div>
+
+                <div class="gutenberg-content">
                     <?php
-                        if ( !empty(get_post_thumbnail_id())) {
-                    ?>
-
-                    <img class="single-header-image" src="<?php echo esc_url( $image_url ) ?>" />
-                
-                    <?php 
-                        }
-                        ?>
-
-                    <div class="site-content">
-                        <?php extract_links(get_field('text')); ?>
-                    </div>
-
-
-                    <!-- Eventtext felder gibt es noch nicht -->
-                
-                    <?php 
-                    // temp fix
-                    echo "<br><br>";
-
-                    // livestream
-                    if (get_field('livestream')) echo "<a class='button' target='_blank' href='".get_field('livestream')."' >".__('Zum Livestream', 'quartiersplattform')."</a>";
-                    // Ticket
-                    if (get_field('ticket')) echo "<a class='button' target='_blank' href='".get_field('ticket')."' >".__('Ticket erwerben', 'quartiersplattform')."</a>";
-                    // Website
-                    if (get_field('website')) echo "<a class='button' target='_blank' href='".get_field('website')."' >".__('Zur Website der Veranstaltung', 'quartiersplattform')."</a>";
-
-                    // calendar download
-                    calendar_download($post);
-
-                    ?>
-
-                    <div class="gutenberg-content">
-                        <?php
-                        // Gutenberg Editor Content
-                        if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
-                            the_excerpt();
-                        } else {
-                            the_content( __( 'Continue reading', 'twentytwenty' ) );
-                        }
-                        ?>
-                    </div>
-
-                    <?php
-                    if ( ( is_user_logged_in() && qp_project_owner() ) ) {
-                    ?>
-
-                    <div class="simple-card">
-                        <div class="button-group">
-                            <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
-                            <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
-                        </div>
-                    </div>
-
-                    <?php 
+                    // Gutenberg Editor Content
+                    if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
+                        the_excerpt();
+                    } else {
+                        the_content( __( 'Continue reading', 'twentytwenty' ) );
                     }
                     ?>
                 </div>
 
+            </div>
 
-                <?php
-
-                // anheften
-                pin_toggle(); 
-
-                // sichtbarkeit
-                visibility_toggle(get_the_ID(  ));
-
-                // project is not public
-                if (get_post_status() == 'draft' && qp_project_owner() ) {
-                    reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
-                }
-
-                get_template_part('components/general/share-post');
-
-                
-                // Projekt Kachel
-                project_card($post->ID);
-
-                // Author
-                author_card();
-
+            <?php
+                if ( ( is_user_logged_in() && qp_project_owner() ) ) {
                 ?>
+
+                <div class="simple-card">
+                    <div class="button-group">
+                        <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Veranstaltung bearbeiten', 'quartiersplattform'); ?></a>
+                        <a class="button is-style-outline button-red" onclick="return confirm(' Veranstaltung endgültig löschen?')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Veranstaltung löschen', 'quartiersplattform'); ?></a>
+                    </div>
+                </div>
+                <br>
+                <?php 
+                }
+                ?>
+            <?php
+
+            // anheften
+            pin_toggle(); 
+
+            // sichtbarkeit
+            visibility_toggle(get_the_ID(  ));
+
+            // project is not public
+            if (get_post_status() == 'draft' && qp_project_owner() ) {
+                reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
+            }
+
+            get_template_part('components/general/share-post');
+
+            
+            // Projekt Kachel
+            project_card($post->ID);
+
+            // Author
+            author_card();
+
+            ?>
 
     
         <!-- Map -->
