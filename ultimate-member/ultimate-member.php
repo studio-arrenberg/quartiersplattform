@@ -373,11 +373,21 @@ function my_email_template_html( $slug, $args ) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!--<![endif]-->
         <meta name="format-detection" content="telephone=no">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
 
 		<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
         
         <style type="text/css">
+			@media only screen and (max-width:480px){
+            .text, button, a {
+                        font-size:3em !important;						  
+            }
+			.button{
+				padding: 30px !important;
+			}
+			}
+
             body { 
 				/* font-family: Helvetica, Arial, sans-serif ; */
 				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
@@ -422,7 +432,7 @@ function my_email_template_html( $slug, $args ) {
 				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 				text-decoration: none;
 				color:black;
-				font-size: 16px;
+				font-size: 1.5em;
 			}       
 			.footer_link{
 				font-weight:normal;

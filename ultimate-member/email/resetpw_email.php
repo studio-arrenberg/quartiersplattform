@@ -22,8 +22,9 @@
       <tr class="">
         <td class="" style="padding-bottom: 18px">
           <div class="text">
+          <p>
           <?php _e('Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail.', 'quartiersplattform'); ?>
-            
+          </p>
           </div>
         </td>
       </tr>
