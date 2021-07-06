@@ -31,9 +31,9 @@ Entwicklung der Quartiersplattform
 - [-] Pinnen feature richtig erklären
 - [x] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
-- [ ] WP Bilder Hochladen Feature (für Admins)
-- [ ] Reihenfolge im Projekt Carousel
-- [ ] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
+- [x] WP Bilder Hochladen Feature (für Admins)
+- [-] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
+- [-] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
 - [ ] Officina im Backend verlinkt => Cairo
 - [ ] Emoji Picker (height) Projekt Einstellungen
 - [ ] Veranstaltungen Überlappung Startseite
@@ -55,11 +55,15 @@ Entwicklung der Quartiersplattform
 - Project Image Upload in settings
 - Multiple Image Upload Preview
 - Translation der Quartiersplattform
+- WP Bilder Hochladen Feature (für Admins)
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix
 - Layout Issues
 - Project security Fix
+- "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- FB Teilen Link ist falsch
+- Bild Auflösung im Projektfeed
 
 ## v1.7.2 🚀
 
