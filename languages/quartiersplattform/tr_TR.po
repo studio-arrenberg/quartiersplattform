@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-07-05 12:44+0200\n"
-"PO-Revision-Date: 2021-07-05 12:46+0200\n"
+"POT-Creation-Date: 2021-07-06 10:55+0200\n"
+"PO-Revision-Date: 2021-07-06 10:56+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: tr\n"
@@ -284,7 +284,6 @@ msgstr "Mahalle"
 #: advanced-custom-fields/projekte.php:32
 #: advanced-custom-fields/projekte.php:70
 #: advanced-custom-fields/projekte.php:75 header.php:216
-#: ultimate-member/email/welcome_email Kopie.php:27
 #: ultimate-member/email/welcome_email.php:29
 msgid "Projekte"
 msgstr "Projeler"
@@ -292,7 +291,6 @@ msgstr "Projeler"
 #: advanced-custom-fields/main.php:178
 #: advanced-custom-fields/veranstaltungen.php:25
 #: advanced-custom-fields/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email Kopie.php:33
 #: ultimate-member/email/welcome_email.php:35
 msgid "Veranstaltungen"
 msgstr "Etkinlikler"
@@ -306,10 +304,7 @@ msgid "Profil"
 msgstr "Profil"
 
 #: advanced-custom-fields/main.php:182 components/cookie/cookie-alert.php:30
-#: footer.php:103 ultimate-member/email/changedpw_email Kopie.php:32
-#: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email Kopie.php:57
-#: ultimate-member/email/welcome_email Kopie.php:68
+#: footer.php:103 ultimate-member/email/checkmail_email.php:57
 msgid "Impressum"
 msgstr "Künye"
 
@@ -976,11 +971,11 @@ msgstr "Hangi resim etkinliğini en iyi şekilde tarif ediyor?"
 msgid "Mein Profil bearbeiten"
 msgstr "Profilimi düzenle"
 
-#: author.php:92
+#: author.php:93
 msgid "Projekte von"
 msgstr "Proje güncellemesi yapan:"
 
-#: author.php:111
+#: author.php:112
 msgid "Beiträge von"
 msgstr "Yazıyı yazan:"
 
@@ -1152,10 +1147,7 @@ msgstr ""
 "kullanmıyoruz."
 
 #: components/cookie/cookie-alert.php:23 footer.php:107
-#: ultimate-member/email/changedpw_email Kopie.php:33
 #: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email Kopie.php:58
-#: ultimate-member/email/welcome_email Kopie.php:69
 msgid "Datenschutz"
 msgstr "Veri koruma"
 
@@ -1318,8 +1310,8 @@ msgid "Anheften"
 msgstr "Tuttur"
 
 #: components/settings/pin_toggle.php:5
-msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
-msgstr "Burada projeyi mahalle sayfasına tutturabilirsin."
+msgid "Hier kannst du das Projekt auf die Quartiersseite pinnen."
+msgstr "Burada projeyi çeyrek sayfaya sabitleyebilirsiniz."
 
 #: components/settings/pin_toggle.php:25
 msgid "Hier kannst du den Beitrag auf deine Projektseite pinnen."
@@ -1332,8 +1324,9 @@ msgstr "Görünürlük"
 
 #: components/settings/visibility_toggle.php:2
 msgid ""
-"Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
-msgstr "Burada yazının mahalle sayfasındaki görünürlüğünü belirleyebilirsin."
+"Hier kannst du die Sichtbarkeit des Beitrags auf der Quartiersseite "
+"festlegen."
+msgstr "Burada katkının mahalle sayfasındaki görünürlüğünü ayarlayabilirsiniz."
 
 #: components/settings/visibility_toggle.php:9
 #: languages/quartiersplattform/_catalog.php:72
@@ -1349,7 +1342,7 @@ msgstr "Özel"
 msgid "Deine Projekte"
 msgstr "Projelerin"
 
-#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:26
 msgid "Dein Projekt"
 msgstr "Senin projen"
 
@@ -2086,16 +2079,16 @@ msgid "Pinnen"
 msgstr "Tuttur"
 
 #: languages/quartiersplattform/_catalog.php:80
-msgid "Hier kannst du die Seite auf die Quariersseite pinnen."
-msgstr "Buradan sayfayı mahalle sayfasına tutturabilirsin."
+msgid "Hier kannst du die Seite auf die Quartiersseite pinnen."
+msgstr "Burada sayfayı çeyrek sayfaya sabitleyebilirsiniz."
 
 #: languages/quartiersplattform/_catalog.php:81
-msgid "Hier kannst du den Beitrag auf die Quariersseite pinnen."
-msgstr "Buradan yazıyı mahalle sayfasına tutturabilirsin."
+msgid "Hier kannst du den Beitrag auf die Quartiersseite pinnen."
+msgstr "Burada gönderiyi mahalle sayfasına sabitleyebilirsiniz."
 
 #: languages/quartiersplattform/_catalog.php:82
-msgid "Hier kannst du den Akteur auf die Quariersseite pinnen."
-msgstr "Buradan aktörü mahalle sayfasına tutturabilirsin."
+msgid "Hier kannst du den Akteur auf die Quartiersseite pinnen."
+msgstr "Burada oyuncuyu çeyrek sayfaya sabitleyebilirsiniz."
 
 #: languages/quartiersplattform/_catalog.php:85
 msgid "Vorschlag"
@@ -2207,6 +2200,23 @@ msgstr "Kasım"
 #: languages/quartiersplattform/_catalog.php:127
 msgid "December"
 msgstr "Aralık"
+
+#: languages/quartiersplattform/_catalog.php:130
+msgid "Datenschutzerklärung einblenden"
+msgstr "Gizlilik politikasını göster"
+
+#: languages/quartiersplattform/_catalog.php:131
+msgid "Datenschutzerklärung ausblenden"
+msgstr "Gizlilik politikasını gizle"
+
+#: languages/quartiersplattform/_catalog.php:132
+msgid ""
+"Bitte bestätige das du die Datenschutzerklärung zur Kenntnis genommen hast."
+msgstr "Lütfen gizlilik politikasını okuduğunuzu onaylayın."
+
+#: languages/quartiersplattform/_catalog.php:133
+msgid "Bitte akzeptiere die Datenschutzerklärung."
+msgstr "Lütfen gizlilik politikasını kabul edin."
 
 #: pages/form-nachrichten.php:28 pages/form-umfragen.php:25
 #: pages/form-veranstaltungen.php:27
@@ -2787,37 +2797,6 @@ msgstr ""
 msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: ultimate-member/email/changedpw_email Kopie.php:4
-msgid "Dein Passwort wurde geändert."
-msgstr "Şifren değiştirildi."
-
-#: ultimate-member/email/changedpw_email Kopie.php:8
-msgid ""
-"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
-"gewesen sein, kontaktiere uns bitte umgehend."
-msgstr ""
-"Kısa süre önce şifren değiştirildi. Bu değişikliği sen yapmadıysan lütfen "
-"hemen bizimle bağlantı kur."
-
-#: ultimate-member/email/changedpw_email Kopie.php:14
-#: ultimate-member/email/changedpw_email.php:28
-msgid "Sieh dir dein Konto an"
-msgstr "Hesabını incele"
-
-#: ultimate-member/email/changedpw_email Kopie.php:16
-#: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email Kopie.php:39
-#: ultimate-member/email/welcome_email Kopie.php:51
-msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
-msgstr "Sorun çıkarsa, bize posta yoluyla başvurabilirsin."
-
-#: ultimate-member/email/changedpw_email Kopie.php:20
-#: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email Kopie.php:44
-#: ultimate-member/email/welcome_email Kopie.php:56
-msgid "Vielen Dank!"
-msgstr "Çok teşekkürler!"
-
 #: ultimate-member/email/changedpw_email.php:9
 msgid "Dein"
 msgstr "Sizin"
@@ -2838,6 +2817,10 @@ msgstr ""
 "Şifreniz yakın zamanda değiştirildi. Bu değişikliği siz yapmadıysanız, "
 "lütfen hemen bizimle iletişime geçin."
 
+#: ultimate-member/email/changedpw_email.php:28
+msgid "Sieh dir dein Konto an"
+msgstr "Hesabını incele"
+
 #: ultimate-member/email/checkmail_email.php:16
 msgid "Aktiviere dein Konto,"
 msgstr "Hesabını etkinleştir,"
@@ -2850,7 +2833,23 @@ msgstr "Gelmen çok güzel! Hesabını etkinleştirmek için linke tıkla."
 msgid "Konto aktivieren"
 msgstr "Hesabı etkinleşir"
 
-#: ultimate-member/email/resetpw_email Kopie.php:22
+#: ultimate-member/email/checkmail_email.php:39
+msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
+msgstr "Sorun çıkarsa, bize posta yoluyla başvurabilirsin."
+
+#: ultimate-member/email/checkmail_email.php:44
+msgid "Vielen Dank!"
+msgstr "Çok teşekkürler!"
+
+#: ultimate-member/email/resetpw_email.php:15
+msgid "Passwort  "
+msgstr "Parola"
+
+#: ultimate-member/email/resetpw_email.php:17
+msgid "vergessen,"
+msgstr "unutmak,"
+
+#: ultimate-member/email/resetpw_email.php:25
 msgid ""
 "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
 "Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
@@ -2858,15 +2857,18 @@ msgstr ""
 "Aşağıdaki linki kullanarak kendine yeni bir şifre oluşturabilirsin. Bunu "
 "istemediysen lütfen bu postayı yok say."
 
-#: ultimate-member/email/resetpw_email Kopie.php:35
-msgid "Passwort zurücksetzen"
+#: ultimate-member/email/resetpw_email.php:34
+msgid "Passwort zurücksetzen!"
 msgstr "Şifreyi sıfırla"
 
-#: ultimate-member/email/welcome_email Kopie.php:14
-msgid "Willkommen im Quartier, "
-msgstr "Mahalleye hoş geldin, "
+#: ultimate-member/email/welcome_email.php:15
+msgid "Willkommen  "
+msgstr "Hoşgeldiniz"
 
-#: ultimate-member/email/welcome_email Kopie.php:21
+#: ultimate-member/email/welcome_email.php:17
+msgid "im Quartier,"
+msgstr "çeyrekte,"
+
 #: ultimate-member/email/welcome_email.php:26
 msgid ""
 "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
@@ -2877,7 +2879,6 @@ msgstr ""
 "bulabilirsin. Böylece çevrendeki insanları tanıyabilir, mahalleni "
 "sürdürülebilir şekilde geliştirebilir ve iyileştirebilirsin."
 
-#: ultimate-member/email/welcome_email Kopie.php:29
 #: ultimate-member/email/welcome_email.php:31
 msgid ""
 "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
@@ -2886,7 +2887,6 @@ msgstr ""
 "Projeleri keşfet ve kendi projelerini oluştur. En sevdiğin parkta seni "
 "rahatsız eden bir şey mi var? Bunu bir proje haline getir ve destekçiler bul!"
 
-#: ultimate-member/email/welcome_email Kopie.php:35
 #: ultimate-member/email/welcome_email.php:37
 msgid ""
 "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
@@ -2894,19 +2894,6 @@ msgid ""
 msgstr ""
 "Bir daha asla mahallendeki harika etkinlikleri kaçırma. Burada, bir dahaki "
 "sefere katılabilmek için bilmen gereken her şeyi bulabilirsin."
-
-#: ultimate-member/email/welcome_email Kopie.php:47
-#: ultimate-member/email/welcome_email.php:57
-msgid "Entdecke dein Quartier!"
-msgstr "Mahalleni keşfet!"
-
-#: ultimate-member/email/welcome_email.php:15
-msgid "Willkommen  "
-msgstr "Hoşgeldiniz"
-
-#: ultimate-member/email/welcome_email.php:17
-msgid "im Quartier,"
-msgstr "çeyrekte,"
 
 #: ultimate-member/email/welcome_email.php:42
 msgid "Sprachen"
@@ -2920,6 +2907,10 @@ msgstr ""
 "Mahalle platformunuz birkaç dil konuşuyor. Türkçe, İtalyanca, Almanca ve "
 "İngilizce dillerinde mevcuttur."
 
+#: ultimate-member/email/welcome_email.php:57
+msgid "Entdecke dein Quartier!"
+msgstr "Mahalleni keşfet!"
+
 #: ultimate-member/ultimate-member.php:238
 #: ultimate-member/ultimate-member.php:269
 msgid "Login"
@@ -2929,6 +2920,18 @@ msgstr "Giris"
 #: ultimate-member/ultimate-member.php:275
 msgid "Register"
 msgstr "Kayıt ol"
+
+#: ultimate-member/ultimate-member.php:485
+msgid "Passwort vergessen?"
+msgstr "Şifreyi unuttun mu?"
+
+#: ultimate-member/ultimate-member.php:488
+msgid "Dein Passwort wurde geändert!"
+msgstr "Şifren değiştirildi."
+
+#: ultimate-member/ultimate-member.php:491
+msgid "Willkommen im Quartier!"
+msgstr "Mahalleye hoş geldin, "
 
 #. Theme URI of the plugin/theme
 msgid "https://github.com/studio-arrenberg/quartiersplattform"
@@ -2953,6 +2956,13 @@ msgstr "Studio Arrenberg"
 #. Author URI of the plugin/theme
 msgid "https://arrenberg.studio"
 msgstr "https://arrenberg.studio"
+
+#~ msgid ""
+#~ "Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von "
+#~ "dir gewesen sein, kontaktiere uns bitte umgehend."
+#~ msgstr ""
+#~ "Kısa süre önce şifren değiştirildi. Bu değişikliği sen yapmadıysan lütfen "
+#~ "hemen bizimle bağlantı kur."
 
 #~ msgid "von "
 #~ msgstr "başlangıç "

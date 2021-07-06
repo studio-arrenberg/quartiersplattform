@@ -18,11 +18,28 @@ Entwicklung der Quartiersplattform
 - [ ] Projektverzeichnis Card (Picture + Text)
 - [ ] Remove `twentytwenty` Language strings
 - [ ] Publish as Theme
+- [ ] Bilder vergrößern
+- [ ] Werkzeugkasten immer sichtbar (über reitern)
+- [ ] Alternative zum Admin (eine rolle tiefer...)
 
 <br><br>
 
 # Versions
 ## v1.8 💬
+### Missing
+- [x] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- [-] Pinnen feature richtig erklären
+- [x] FB Teilen Link ist falsch
+- [x] "Quarier" Rechtschreibung
+- [x] WP Bilder Hochladen Feature (für Admins)
+- [-] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
+- [-] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
+- [ ] Officina im Backend verlinkt => Cairo
+- [ ] Emoji Picker (height) Projekt Einstellungen
+- [ ] Veranstaltungen Überlappung Startseite
+- [ ] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
+- [ ] Bilder im Newsfeed nicht in voller Auflösung
+
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)
 - Energie Ampel als Plugin
@@ -38,11 +55,15 @@ Entwicklung der Quartiersplattform
 - Project Image Upload in settings
 - Multiple Image Upload Preview
 - Translation der Quartiersplattform
+- WP Bilder Hochladen Feature (für Admins)
 ### Bugs
 - ACF Loading Spinner
 - Calendar Download File Fix
 - Layout Issues
 - Project security Fix
+- "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- FB Teilen Link ist falsch
+- Bild Auflösung im Projektfeed
 
 ## v1.7.2 🚀
 

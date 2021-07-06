@@ -184,7 +184,7 @@ get_header();
                                     'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                     'post_title' => true,
                                     'post_content' => false,    
-                                    'uploader' => 'basic',
+                                    'uploader' => qp_form_uploader(),
                                     'fields' => array(
                                         'field_5fc64834f0bf2', // Emoji
                                         'field_5fc647f6f0bf0', // Kurzbeschreibung

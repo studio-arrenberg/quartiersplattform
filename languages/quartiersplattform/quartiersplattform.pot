@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-07-01 13:43+0200\n"
+"POT-Creation-Date: 2021-07-06 10:55+0200\n"
 "PO-Revision-Date: 2021-07-01 13:42+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
@@ -266,15 +266,15 @@ msgstr ""
 #: advanced-custom-fields/projekte.php:27
 #: advanced-custom-fields/projekte.php:32
 #: advanced-custom-fields/projekte.php:70
-#: advanced-custom-fields/projekte.php:75 header.php:200
-#: ultimate-member/email/welcome_email.php:27
+#: advanced-custom-fields/projekte.php:75 header.php:216
+#: ultimate-member/email/welcome_email.php:29
 msgid "Projekte"
 msgstr ""
 
 #: advanced-custom-fields/main.php:178
 #: advanced-custom-fields/veranstaltungen.php:25
 #: advanced-custom-fields/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email.php:33
+#: ultimate-member/email/welcome_email.php:35
 msgid "Veranstaltungen"
 msgstr ""
 
@@ -287,10 +287,7 @@ msgid "Profil"
 msgstr ""
 
 #: advanced-custom-fields/main.php:182 components/cookie/cookie-alert.php:30
-#: footer.php:103 ultimate-member/email/changedpw_email.php:32
-#: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email.php:57
-#: ultimate-member/email/welcome_email.php:68
+#: footer.php:103 ultimate-member/email/checkmail_email.php:57
 msgid "Impressum"
 msgstr ""
 
@@ -310,7 +307,7 @@ msgstr ""
 msgid "Frage erstellen"
 msgstr ""
 
-#: advanced-custom-fields/main.php:187 functions.php:2097 functions.php:2943
+#: advanced-custom-fields/main.php:187 functions.php:2098 functions.php:2955
 #: pages/form-projekte.php:50 pages/page-projekt-feed.php:44
 msgid "Projekt erstellen"
 msgstr ""
@@ -327,11 +324,13 @@ msgstr ""
 
 #: advanced-custom-fields/main.php:282 components/settings/pin_toggle.php:12
 #: components/settings/pin_toggle.php:31
+#: languages/quartiersplattform/_catalog.php:70
 msgid "Gepinnt"
 msgstr ""
 
 #: advanced-custom-fields/main.php:283 components/settings/pin_toggle.php:15
 #: components/settings/pin_toggle.php:34
+#: languages/quartiersplattform/_catalog.php:71
 msgid "Nicht gepinnt"
 msgstr ""
 
@@ -362,7 +361,7 @@ msgstr ""
 
 #: advanced-custom-fields/projekte.php:28
 #: advanced-custom-fields/projekte.php:71
-#: advanced-custom-fields/projekte.php:109 elements/card-projekte.php:46
+#: advanced-custom-fields/projekte.php:109 elements/card-projekte.php:33
 msgid "Projekt"
 msgstr ""
 
@@ -834,11 +833,11 @@ msgstr ""
 msgid "Mein Profil bearbeiten"
 msgstr ""
 
-#: author.php:92
+#: author.php:93
 msgid "Projekte von"
 msgstr ""
 
-#: author.php:111
+#: author.php:112
 msgid "Beiträge von"
 msgstr ""
 
@@ -1002,10 +1001,7 @@ msgid ""
 msgstr ""
 
 #: components/cookie/cookie-alert.php:23 footer.php:107
-#: ultimate-member/email/changedpw_email.php:33
 #: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email.php:58
-#: ultimate-member/email/welcome_email.php:69
 msgid "Datenschutz"
 msgstr ""
 
@@ -1080,7 +1076,7 @@ msgstr ""
 #: components/project/content.php:35 pages/page-profil.php:152
 #: pages/page-quartier.php:66 pages/single-nachrichten.php:75
 #: pages/single-veranstaltungen.php:97 template-parts/center-header.php:44
-#: template-parts/content.php:56
+#: template-parts/content.php:54
 msgid "Continue reading"
 msgstr ""
 
@@ -1150,11 +1146,12 @@ msgid "Diese Meldung ausblenden."
 msgstr ""
 
 #: components/settings/pin_toggle.php:4 components/settings/pin_toggle.php:24
+#: languages/quartiersplattform/_catalog.php:77
 msgid "Anheften"
 msgstr ""
 
 #: components/settings/pin_toggle.php:5
-msgid "Hier kannst du das Projekt auf die Quariersseite pinnen."
+msgid "Hier kannst du das Projekt auf die Quartiersseite pinnen."
 msgstr ""
 
 #: components/settings/pin_toggle.php:25
@@ -1162,19 +1159,23 @@ msgid "Hier kannst du den Beitrag auf deine Projektseite pinnen."
 msgstr ""
 
 #: components/settings/visibility_toggle.php:1
+#: languages/quartiersplattform/_catalog.php:78
 msgid "Sichtbarkeit"
 msgstr ""
 
 #: components/settings/visibility_toggle.php:2
 msgid ""
-"Hier kannst du die Sichtbarkeit des Beitrags auf der Quariersseite festlegen."
+"Hier kannst du die Sichtbarkeit des Beitrags auf der Quartiersseite "
+"festlegen."
 msgstr ""
 
 #: components/settings/visibility_toggle.php:9
+#: languages/quartiersplattform/_catalog.php:72
 msgid "Öffentlich"
 msgstr ""
 
 #: components/settings/visibility_toggle.php:12
+#: languages/quartiersplattform/_catalog.php:74
 msgid "Privat"
 msgstr ""
 
@@ -1182,7 +1183,7 @@ msgstr ""
 msgid "Deine Projekte"
 msgstr ""
 
-#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:26
 msgid "Dein Projekt"
 msgstr ""
 
@@ -1201,16 +1202,12 @@ msgstr ""
 msgid "Momentan gibt es keine Veranstaltungen"
 msgstr ""
 
-#: elements/card-anmerkungen.php:25
+#: elements/card-anmerkungen.php:18
 msgid "von"
 msgstr ""
 
-#: elements/card-nachrichten.php:12 elements/card-projekte.php:48
-#: elements/card-veranstaltungen.php:30
-msgid "von "
-msgstr ""
-
-#: elements/card-umfragen.php:10
+#: elements/card-nachrichten.php:12 elements/card-projekte.php:35
+#: elements/card-umfragen.php:10 elements/card-veranstaltungen.php:30
 msgid "veröffentlicht von "
 msgstr ""
 
@@ -1492,63 +1489,63 @@ msgstr ""
 msgid "Link zum Download"
 msgstr ""
 
-#: functions.php:1813
+#: functions.php:1814
 msgid "Copyright"
 msgstr ""
 
-#: functions.php:2407
+#: functions.php:2408
 msgid "Morgen"
 msgstr ""
 
-#: functions.php:2411
+#: functions.php:2412
 msgid "Heute"
 msgstr ""
 
-#: functions.php:2415
+#: functions.php:2416
 msgid "Gestern"
 msgstr ""
 
-#: functions.php:2433
+#: functions.php:2434
 msgid " um "
 msgstr ""
 
-#: functions.php:2456 functions.php:2460
+#: functions.php:2457 functions.php:2461
 msgid "noch "
 msgstr ""
 
-#: functions.php:2456
+#: functions.php:2457
 msgid " Minuten"
 msgstr ""
 
-#: functions.php:2460
+#: functions.php:2461
 msgid " Stunden"
 msgstr ""
 
-#: functions.php:2464
+#: functions.php:2465
 msgid "bis um "
 msgstr ""
 
-#: functions.php:2468
+#: functions.php:2469
 msgid "bis Morgen"
 msgstr ""
 
-#: functions.php:2472 functions.php:2475
+#: functions.php:2473 functions.php:2476
 msgid "vom "
 msgstr ""
 
-#: functions.php:2479
+#: functions.php:2480
 msgid "bis zum "
 msgstr ""
 
-#: functions.php:3137
+#: functions.php:3149
 msgid "Beitrag im Wordpress System bearbeiten"
 msgstr ""
 
-#: functions.php:3314
+#: functions.php:3329
 msgid "Nicht Sichtbar"
 msgstr ""
 
-#: header.php:193
+#: header.php:209
 msgid "Horizontal"
 msgstr ""
 
@@ -1698,6 +1695,322 @@ msgstr ""
 
 #: index.php:95
 msgid "search again"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:5
+msgid "Hier kannst du noch keine Projekte entdecken."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:6
+#: languages/quartiersplattform/_catalog.php:15 pages/page-projekt-feed.php:43
+msgid ""
+"Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern "
+"willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:9
+msgid "Hier gibt es leider noch keine Veranstaltungen."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:10
+msgid ""
+"Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft "
+"veranstaltest, kannst du sie hier veröffentlichen um mehr Besucher zu "
+"erhalten.\n"
+"Wenn deine Veranstaltung nur Online stattfindet, kannst du einen Livestream "
+"Link veröffentlichen."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:14
+msgid "In der Projektchronik wurde noch nichts veröffentlicht."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:21
+msgid "Es gibt ein neues Projektupdate."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:22
+msgid ""
+"Hier kannst du dir das neue Projektupdate ansehen und informiert bleiben bei "
+"deinen Lieblingsprojekten."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:23
+#: languages/quartiersplattform/_catalog.php:53
+msgid "Projektupdate von"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:24
+msgid "Zum Projekt"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:27
+msgid "Jemand deine Nachricht kommentiert."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:28
+#: languages/quartiersplattform/_catalog.php:36
+msgid "hat deine Nachricht kommentiert."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:29
+#: languages/quartiersplattform/_catalog.php:37
+#: languages/quartiersplattform/_catalog.php:45
+msgid "Hier kannst du dir den Kommentar ansehen."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:30
+#: languages/quartiersplattform/_catalog.php:38
+#: languages/quartiersplattform/_catalog.php:46
+msgid "Kommentar von"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:31
+#: languages/quartiersplattform/_catalog.php:39
+#: languages/quartiersplattform/_catalog.php:47
+msgid "Zum Kommentar"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:32
+msgid "Zur Nachricht"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:35
+msgid "Jemand deine Veranstaltung kommentiert."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:40
+msgid "Zur Veranstaltung"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:43
+msgid "Jemand deine Umfrage kommentiert."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:44
+msgid "hat deine Umfrage kommentiert."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:48
+msgid "Zur Umfrage"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:51
+msgid "Es gibt Neuigkeiten in deinem Quartier."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:52
+msgid ""
+"Sie dir die neuen Beiträge an und bleibe informiert bei deinen "
+"Lieblingsprojekten."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:54
+msgid "Umfrage von"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:55
+msgid "Nachricht von"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:56
+msgid "Veranstaltung von"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:57
+msgid "Neuigkeiten ansehen"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:61
+msgid ""
+"Ziehst du eine Jacke an, wenn es kalt ist? Oder eine Kapuze auf, wenn es "
+"regnet? So einfach und praktisch wie der Umgang mit dem Wetter muss auch "
+"Klimaschutz sein. Wie das geht? Verbrauch deinen Strom einfach, wenn das "
+"Energiewetter auf Grün steht. Das ist Klimaschutz, den alle können. Denn der "
+"einfachste Weg, deinen eigenen C02-Ausstoß zu senken, ist Waschmaschine, "
+"Spülmaschine, Trockner und andere Geräte in den grünen Phasen laufen zu "
+"lassen. In diesen Phasen wird bis zu 70% weniger CO2 ausgestoßen. "
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:63
+msgid ""
+"Der Strom, den wir verbrauchen hat zu jeder Tages- und Nachtzeit einen "
+"unterschiedlich hohen CO2-Ausstoß. Je nachdem wie viel regional und "
+"regenerativ produzierter Strom gerade real im Netz fließt und wie hoch der "
+"gesamtstädtische Verbrauch ausfällt. Wird zum Beispiel gerade viel Windkraft "
+"aus Norddeutschland, Solarenergie aus dem Süden oder eigener Produktion "
+"geliefert, sinkt der gegenwärtige, reale CO2-Ausstoß. Die Wuppertaler "
+"Stadtwerke berechnen seit einigen Jahren diesen realen und stundengenauen "
+"CO2-Ausstoß hinter dem Strom, den wir verbrauchen. Zusammen mit der "
+"Bergischen Universität und dem Klimaquartier Arrenberg wurden diese "
+"Berechnungen in Raster übertragen und das hier sichtbare Energiewetter "
+"entwickelt. Es zeigt in den Phasen grün, gelb und rot in drei Stufen an, ob "
+"der CO2-Ausstoß jetzt gerade bzw. in den kommenden Stunden und Tagen hoch "
+"oder niedrig ist. Verlagerung statt Verzicht. Bestehende Geräte nutzen statt "
+"sofort neu kaufen zu müssen. Auf diesem Wege kann jeder Haushalt, unabhängig "
+"von den eigenen finanziellen Möglichkeiten an der Energiewende und dem "
+"Klimaschutz mitwirken. Das löst zwar noch nicht alle Probleme, ist aber ein "
+"smarter Schritt, den alle gehen können. "
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:65
+msgid "Energieampel"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:68
+msgid "Sichtbar"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:69
+msgid "Unsichtbar"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:73
+msgid "Nicht öffentlicht"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:76
+msgid "Pinnen"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:80
+msgid "Hier kannst du die Seite auf die Quartiersseite pinnen."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:81
+msgid "Hier kannst du den Beitrag auf die Quartiersseite pinnen."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:82
+msgid "Hier kannst du den Akteur auf die Quartiersseite pinnen."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:85
+msgid "Vorschlag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:86
+msgid "Umgesetzt"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:87
+msgid "In Bearbeitung"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:90
+msgid "Bild auswählen"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:93
+msgid "grüne"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:94
+msgid "rote auswählen"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:95
+msgid "gelbe auswählen"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:98
+#: languages/quartiersplattform/_catalog.php:107
+msgid "Montag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:99
+#: languages/quartiersplattform/_catalog.php:108
+msgid "Dienstag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:100
+#: languages/quartiersplattform/_catalog.php:109
+msgid "Mittwoch"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:101
+#: languages/quartiersplattform/_catalog.php:110
+msgid "Donnerstag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:102
+#: languages/quartiersplattform/_catalog.php:111
+msgid "Freitag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:103
+#: languages/quartiersplattform/_catalog.php:112
+msgid "Samstag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:104
+#: languages/quartiersplattform/_catalog.php:113
+msgid "Sonntag"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:116
+msgid "January"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:117
+msgid "February"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:118
+msgid "March"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:119
+msgid "April"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:120
+msgid "May"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:121
+msgid "June"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:122
+msgid "July"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:123
+msgid "August"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:124
+msgid "September"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:125
+msgid "October"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:126
+msgid "November"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:127
+msgid "December"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:130
+msgid "Datenschutzerklärung einblenden"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:131
+msgid "Datenschutzerklärung ausblenden"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:132
+msgid ""
+"Bitte bestätige das du die Datenschutzerklärung zur Kenntnis genommen hast."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:133
+msgid "Bitte akzeptiere die Datenschutzerklärung."
 msgstr ""
 
 #: pages/form-nachrichten.php:28 pages/form-umfragen.php:25
@@ -1990,12 +2303,6 @@ msgstr ""
 msgid "Neuigkeiten und Projektupdates"
 msgstr ""
 
-#: pages/page-projekt-feed.php:43
-msgid ""
-"Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern "
-"willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten."
-msgstr ""
-
 #: pages/page-projekt-feed.php:44
 msgid "Hier kannst du noch keine Inhalte entdecken"
 msgstr ""
@@ -2233,32 +2540,26 @@ msgstr ""
 msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: ultimate-member/email/changedpw_email.php:4
-msgid "Dein Passwort wurde geändert."
+#: ultimate-member/email/changedpw_email.php:9
+msgid "Dein"
 msgstr ""
 
-#: ultimate-member/email/changedpw_email.php:8
+#: ultimate-member/email/changedpw_email.php:10
+msgid "Passwort"
+msgstr ""
+
+#: ultimate-member/email/changedpw_email.php:11
+msgid "wurde geändert."
+msgstr ""
+
+#: ultimate-member/email/changedpw_email.php:19
 msgid ""
-"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
+"Dein Passwort wurde vor kurzem geändert. Sollte diese Änderung nicht von dir "
 "gewesen sein, kontaktiere uns bitte umgehend."
 msgstr ""
 
-#: ultimate-member/email/changedpw_email.php:14
+#: ultimate-member/email/changedpw_email.php:28
 msgid "Sieh dir dein Konto an"
-msgstr ""
-
-#: ultimate-member/email/changedpw_email.php:16
-#: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email.php:39
-#: ultimate-member/email/welcome_email.php:51
-msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
-msgstr ""
-
-#: ultimate-member/email/changedpw_email.php:20
-#: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email.php:44
-#: ultimate-member/email/welcome_email.php:56
-msgid "Vielen Dank!"
 msgstr ""
 
 #: ultimate-member/email/checkmail_email.php:16
@@ -2273,45 +2574,93 @@ msgstr ""
 msgid "Konto aktivieren"
 msgstr ""
 
-#: ultimate-member/email/resetpw_email.php:22
+#: ultimate-member/email/checkmail_email.php:39
+msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
+msgstr ""
+
+#: ultimate-member/email/checkmail_email.php:44
+msgid "Vielen Dank!"
+msgstr ""
+
+#: ultimate-member/email/resetpw_email.php:15
+msgid "Passwort  "
+msgstr ""
+
+#: ultimate-member/email/resetpw_email.php:17
+msgid "vergessen,"
+msgstr ""
+
+#: ultimate-member/email/resetpw_email.php:25
 msgid ""
 "Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
 "Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
 msgstr ""
 
-#: ultimate-member/email/resetpw_email.php:35
-msgid "Passwort zurücksetzen"
+#: ultimate-member/email/resetpw_email.php:34
+msgid "Passwort zurücksetzen!"
 msgstr ""
 
-#: ultimate-member/email/welcome_email.php:14
-msgid "Willkommen im Quartier, "
+#: ultimate-member/email/welcome_email.php:15
+msgid "Willkommen  "
 msgstr ""
 
-#: ultimate-member/email/welcome_email.php:21
+#: ultimate-member/email/welcome_email.php:17
+msgid "im Quartier,"
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:26
 msgid ""
 "Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
 "Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
 "und dein Quartier nachhaltig entwickeln und verbessern."
 msgstr ""
 
-#: ultimate-member/email/welcome_email.php:29
+#: ultimate-member/email/welcome_email.php:31
 msgid ""
 "Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
 "Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
 msgstr ""
 
-#: ultimate-member/email/welcome_email.php:35
+#: ultimate-member/email/welcome_email.php:37
 msgid ""
 "Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
 "alles was du wissen musst, um bei nächsten mal dabei zu sein."
 msgstr ""
 
-#: ultimate-member/email/welcome_email.php:47
+#: ultimate-member/email/welcome_email.php:42
+msgid "Sprachen"
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:46
+msgid ""
+"Deine Quartiersplattform spricht mehrere Sprachen. Sie ist in Türkisch, "
+"Italienisch, Deutsch und Englisch verfügbar."
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:57
 msgid "Entdecke dein Quartier!"
 msgstr ""
 
 #: ultimate-member/ultimate-member.php:238
+#: ultimate-member/ultimate-member.php:269
 msgid "Login"
+msgstr ""
+
+#: ultimate-member/ultimate-member.php:244
+#: ultimate-member/ultimate-member.php:275
+msgid "Register"
+msgstr ""
+
+#: ultimate-member/ultimate-member.php:485
+msgid "Passwort vergessen?"
+msgstr ""
+
+#: ultimate-member/ultimate-member.php:488
+msgid "Dein Passwort wurde geändert!"
+msgstr ""
+
+#: ultimate-member/ultimate-member.php:491
+msgid "Willkommen im Quartier!"
 msgstr ""
 
 #. Theme URI of the plugin/theme

@@ -193,6 +193,7 @@ get_header();
                         'post_content' => false,
                         'post_title' => true,
                         'return' => get_site_url().'/projekte'.'/', 
+                        'uploader' => qp_form_uploader(),
                         'fields' => array(
                             'field_5fc8d0b28edb0', //Text
                             'field_5fc8d15b8765b', //Date

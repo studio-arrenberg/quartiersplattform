@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Quartiersplattform\n"
-"POT-Creation-Date: 2021-07-05 12:37+0200\n"
-"PO-Revision-Date: 2021-07-05 12:37+0200\n"
+"POT-Creation-Date: 2021-07-06 08:23+0200\n"
+"PO-Revision-Date: 2021-07-06 08:24+0200\n"
 "Last-Translator: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language-Team: Studio Arrenberg <hallo@arrenberg.studio>\n"
 "Language: de\n"
@@ -268,7 +268,6 @@ msgstr ""
 #: advanced-custom-fields/projekte.php:32
 #: advanced-custom-fields/projekte.php:70
 #: advanced-custom-fields/projekte.php:75 header.php:216
-#: ultimate-member/email/welcome_email Kopie.php:27
 #: ultimate-member/email/welcome_email.php:29
 msgid "Projekte"
 msgstr ""
@@ -276,7 +275,6 @@ msgstr ""
 #: advanced-custom-fields/main.php:178
 #: advanced-custom-fields/veranstaltungen.php:25
 #: advanced-custom-fields/veranstaltungen.php:30
-#: ultimate-member/email/welcome_email Kopie.php:33
 #: ultimate-member/email/welcome_email.php:35
 msgid "Veranstaltungen"
 msgstr ""
@@ -290,10 +288,7 @@ msgid "Profil"
 msgstr ""
 
 #: advanced-custom-fields/main.php:182 components/cookie/cookie-alert.php:30
-#: footer.php:103 ultimate-member/email/changedpw_email Kopie.php:32
-#: ultimate-member/email/checkmail_email.php:57
-#: ultimate-member/email/resetpw_email Kopie.php:57
-#: ultimate-member/email/welcome_email Kopie.php:68
+#: footer.php:103 ultimate-member/email/checkmail_email.php:57
 msgid "Impressum"
 msgstr ""
 
@@ -841,11 +836,11 @@ msgstr ""
 msgid "Mein Profil bearbeiten"
 msgstr ""
 
-#: author.php:92
+#: author.php:93
 msgid "Projekte von"
 msgstr ""
 
-#: author.php:111
+#: author.php:112
 msgid "Beiträge von"
 msgstr ""
 
@@ -1009,10 +1004,7 @@ msgid ""
 msgstr ""
 
 #: components/cookie/cookie-alert.php:23 footer.php:107
-#: ultimate-member/email/changedpw_email Kopie.php:33
 #: ultimate-member/email/checkmail_email.php:58
-#: ultimate-member/email/resetpw_email Kopie.php:58
-#: ultimate-member/email/welcome_email Kopie.php:69
 msgid "Datenschutz"
 msgstr ""
 
@@ -1193,7 +1185,7 @@ msgstr ""
 msgid "Deine Projekte"
 msgstr ""
 
-#: components/smart-card/projekte.php:23 elements/badge-projekte.php:33
+#: components/smart-card/projekte.php:23 elements/badge-projekte.php:26
 msgid "Dein Projekt"
 msgstr ""
 
@@ -2006,6 +1998,39 @@ msgstr "November"
 msgid "December"
 msgstr "Dezember"
 
+#: languages/quartiersplattform/_catalog.php:130
+msgid "Datenschutzerklärung einblenden"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:131
+msgid "Datenschutzerklärung ausblenden"
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:132
+msgid ""
+"Bitte bestätige das du die Datenschutzerklärung zur Kenntnis genommen hast."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:133
+msgid "Bitte akzeptiere die Datenschutzerklärung."
+msgstr ""
+
+#: languages/quartiersplattform/_catalog.php:136
+msgid "Reset your password"
+msgstr "Passwort zurücksetzen"
+
+#: languages/quartiersplattform/_catalog.php:137
+msgid "Welcome to {site_name}!"
+msgstr "Willkommen auf {site_name}!"
+
+#: languages/quartiersplattform/_catalog.php:138
+msgid "Welcome to !"
+msgstr "Willkommen auf!"
+
+#: languages/quartiersplattform/_catalog.php:139
+msgid "Your {site_name} password has been changed!"
+msgstr "Dein {site_name} Passwort wurde aktualisiert."
+
 #: pages/form-nachrichten.php:28 pages/form-umfragen.php:25
 #: pages/form-veranstaltungen.php:27
 msgid "Projekt konnte nicht verknüpft werden"
@@ -2535,35 +2560,6 @@ msgstr ""
 msgid "Older <span class=\"nav-short\">Posts</span>"
 msgstr ""
 
-#: ultimate-member/email/changedpw_email Kopie.php:4
-msgid "Dein Passwort wurde geändert."
-msgstr ""
-
-#: ultimate-member/email/changedpw_email Kopie.php:8
-msgid ""
-"Dein Passwort wurde vor kurzem geändert.Sollte diese Änderung nicht von dir "
-"gewesen sein, kontaktiere uns bitte umgehend."
-msgstr ""
-
-#: ultimate-member/email/changedpw_email Kopie.php:14
-#: ultimate-member/email/changedpw_email.php:28
-msgid "Sieh dir dein Konto an"
-msgstr ""
-
-#: ultimate-member/email/changedpw_email Kopie.php:16
-#: ultimate-member/email/checkmail_email.php:39
-#: ultimate-member/email/resetpw_email Kopie.php:39
-#: ultimate-member/email/welcome_email Kopie.php:51
-msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
-msgstr ""
-
-#: ultimate-member/email/changedpw_email Kopie.php:20
-#: ultimate-member/email/checkmail_email.php:44
-#: ultimate-member/email/resetpw_email Kopie.php:44
-#: ultimate-member/email/welcome_email Kopie.php:56
-msgid "Vielen Dank!"
-msgstr ""
-
 #: ultimate-member/email/changedpw_email.php:9
 msgid "Dein"
 msgstr ""
@@ -2582,6 +2578,10 @@ msgid ""
 "gewesen sein, kontaktiere uns bitte umgehend."
 msgstr ""
 
+#: ultimate-member/email/changedpw_email.php:28
+msgid "Sieh dir dein Konto an"
+msgstr ""
+
 #: ultimate-member/email/checkmail_email.php:16
 msgid "Aktiviere dein Konto,"
 msgstr ""
@@ -2594,45 +2594,12 @@ msgstr ""
 msgid "Konto aktivieren"
 msgstr ""
 
-#: ultimate-member/email/resetpw_email Kopie.php:22
-msgid ""
-"Unter dem nachfolgenden Link kannst du dir ein neues Passwort erstellen. "
-"Solltest du dieses nicht angefordert haben, ignoriere bitte diese Mail."
+#: ultimate-member/email/checkmail_email.php:39
+msgid "Wenn Probleme auftreten, kannst du dich gerne per Mail an uns wenden."
 msgstr ""
 
-#: ultimate-member/email/resetpw_email Kopie.php:35
-msgid "Passwort zurücksetzen"
-msgstr ""
-
-#: ultimate-member/email/welcome_email Kopie.php:14
-msgid "Willkommen im Quartier, "
-msgstr ""
-
-#: ultimate-member/email/welcome_email Kopie.php:21
-#: ultimate-member/email/welcome_email.php:26
-msgid ""
-"Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
-"Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
-"und dein Quartier nachhaltig entwickeln und verbessern."
-msgstr ""
-
-#: ultimate-member/email/welcome_email Kopie.php:29
-#: ultimate-member/email/welcome_email.php:31
-msgid ""
-"Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
-"Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
-msgstr ""
-
-#: ultimate-member/email/welcome_email Kopie.php:35
-#: ultimate-member/email/welcome_email.php:37
-msgid ""
-"Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
-"alles was du wissen musst, um bei nächsten mal dabei zu sein."
-msgstr ""
-
-#: ultimate-member/email/welcome_email Kopie.php:47
-#: ultimate-member/email/welcome_email.php:57
-msgid "Entdecke dein Quartier!"
+#: ultimate-member/email/checkmail_email.php:44
+msgid "Vielen Dank!"
 msgstr ""
 
 #: ultimate-member/email/welcome_email.php:15
@@ -2641,6 +2608,25 @@ msgstr ""
 
 #: ultimate-member/email/welcome_email.php:17
 msgid "im Quartier,"
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:26
+msgid ""
+"Schön das du da bist! Auf der Quartiersplattform findest du alle relevanten "
+"Informationen rund um dein Viertel. So kannst du neue Menschen kennen lernen "
+"und dein Quartier nachhaltig entwickeln und verbessern."
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:31
+msgid ""
+"Entdecke und erstelle eigene Projekte. Dich stört etwas in deinem "
+"Lieblingspark? Mach ein Projekt draus und finde Mitstreiter!"
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:37
+msgid ""
+"Verpasse nie wieder tolle Veranstaltungen in deinem Viertel. Hier findest du "
+"alles was du wissen musst, um bei nächsten mal dabei zu sein."
 msgstr ""
 
 #: ultimate-member/email/welcome_email.php:42
@@ -2653,6 +2639,10 @@ msgstr "Language"
 msgid ""
 "Deine Quartiersplattform spricht mehrere Sprachen. Sie ist in Türkisch, "
 "Italienisch, Deutsch und Englisch verfügbar."
+msgstr ""
+
+#: ultimate-member/email/welcome_email.php:57
+msgid "Entdecke dein Quartier!"
 msgstr ""
 
 #: ultimate-member/ultimate-member.php:238
@@ -2693,9 +2683,6 @@ msgstr ""
 
 #~ msgid "Older "
 #~ msgstr "Älter"
-
-#~ msgid "Datenschutzerklärung"
-#~ msgstr "Privacy policy"
 
 #~ msgid "Energie Ampel "
 #~ msgstr "Energy traffic light "
