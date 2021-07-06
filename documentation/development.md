@@ -27,7 +27,7 @@ Entwicklung der Quartiersplattform
 # Versions
 ## v1.8 💬
 ### Missing
-- [ ] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- [x] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
 - [ ] Pinnen feature richtig erklären
 - [ ] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
