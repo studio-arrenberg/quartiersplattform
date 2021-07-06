@@ -1129,11 +1129,21 @@ button.toggle {
   text-transform: none;
 }
 
+
 .button-group{
-  display: flex;
-  width: 100%;
+  --gap: 5px;
+  display: inline-flex;
   flex-wrap: wrap;
+  /* justify-content: center; */
+
+  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+  width: calc(100% + var(--gap));
 }
+
+.button-group > * {
+  margin: var(--gap) 0 0 var(--gap);
+}
+
 
 .button-group .button, 
 .button-group button {
@@ -1149,22 +1159,16 @@ button.toggle {
   height: 70px;
 }
 
-.button-group{
-  --gap: 5px;
-  display: inline-flex;
-  flex-wrap: wrap;
-  margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
-  width: calc(100% + var(--gap));
-}
-
-.button-group > * {
-  margin: var(--gap) 0 0 var(--gap);
-}
-
 .button-group .button svg {
   margin-bottom: 5px;
 }
 
+.--break-button-group .button,
+.--break-button-group button {
+flex: auto;
+max-width: 445px;
+min-width: 140px;
+}
 
 /* Tables ------------------------------------ */
 
@@ -1369,7 +1373,7 @@ th {
   position: fixed;
   top: 0px;
   width: 100vw;
-  z-index: 101;
+  z-index: 225;
   background-color: #FFFFFF;
   border-bottom: 1px solid #dcf0ff;
   transition: all ease-in-out 0.2s; /* Animation */
@@ -1694,7 +1698,7 @@ th {
     grid-gap: 45px;
     grid-template-areas: "left-sidebar main-content right-sidebar ";
   }
-
+/* .right-sidebar
   .right-sidebar{
     display: block;
     margin-top: 0px;
@@ -1703,7 +1707,21 @@ th {
     position: -webkit-sticky;
     position: sticky;
     top: 115px;
-  }
+  } */
+
+  .right-sidebar{
+    display: block;
+    margin-top: 0px;
+    height: calc( 100vh - 100px);
+    grid-area: right-sidebar;
+    position: sticky;
+    top: 100px;
+    width: 385px;
+    right: 0px;
+    overflow: scroll;
+    padding: 20px 20px 20px 20px;
+    margin: -20px;
+    }
 
   .right-sidebar .landscape{
     height: 172px;
@@ -1770,6 +1788,13 @@ th {
 .single-content-fullwith{
   width: 100%;
   text-align: left;
+}
+
+.single-thumbnail {
+  margin: 15px auto 15px auto;
+  border-radius: 20px;
+  width: 100%;
+  /* max-height: 600px; */
 }
 
 .single-content-fullwith .embla{
@@ -2199,10 +2224,13 @@ th {
 }
 
 .link-card-container .landscape{
-  width: 350px;
-  height: 175px;
+  width: 300px;
+  height: 150px;
 }
 
+.link-card-container  .card a:hover, .link-card-container  .card p:hover { 
+  color:#0091FF; /* temp fix */
+}
 
 .stage-title{
   font-weight: 700;
@@ -2220,15 +2248,13 @@ th {
   margin-bottom: 5px;
 }
 
-.link-card-container  .card{
-  margin-bottom: 0px;
-  margin: 0px 10px 10px 0px; /* margin for cards */
+/* 
+@media (min-width: 782px) {
+  .link-card-container  .card{
+    margin: 5px;
+  }
 }
-
-.link-card-container  .card a:hover, .link-card-container  .card p:hover { 
-  color:#0091FF; /* temp fix */
-}
-
+   */
 
 
 .small-projekt-card .card img{
@@ -6047,9 +6073,11 @@ table.acf-table, table.acf-table th, table.acf-table td{
 margin-left: 0px;}
 
 
+/* Umfragen */
 
-
-
+.umfragen-single .card.shadow{
+  box-shadow: none;
+}
 
 form.poll{
   width: 100%;

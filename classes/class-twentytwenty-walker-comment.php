@@ -33,66 +33,52 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 			$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 
 			?>
-<<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?>
-    id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
+<<?php echo $tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?>>
     <div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-
         <?php
-							$comment_author_url = get_comment_author_url( $comment );
-							$comment_author     = get_comment_author( $comment );
-							$avatar             = get_avatar( $comment, $args['avatar_size'] );
-							// print_r($comment);
-							// echo $comment_author_url;
-							// echo get_comment_author_link($comment->comment_ID);
-							if ( 0 !== $args['avatar_size'] ) {
-								if ( empty( $comment_author_url ) ) {
-									echo wp_kses_post( $avatar );
-								} else {
-									// echo get_comment_author_link($comment->comment_ID);
-									printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --Escaped in https://developer.wordpress.org/reference/functions/get_comment_author_url/
-									echo wp_kses_post( $avatar );
-								}
-							}
-
+		$comment_author_url = get_comment_author_url( $comment );
+		$comment_author     = get_comment_author( $comment );
+		$avatar             = get_avatar( $comment, $args['avatar_size'] );
+		// print_r($comment);
+		// echo $comment_author_url;
+		// echo get_comment_author_link($comment->comment_ID);
+		if ( 0 !== $args['avatar_size'] ) {
+			if ( empty( $comment_author_url ) ) {
+				echo wp_kses_post( $avatar );
+			} else {
+				// echo get_comment_author_link($comment->comment_ID);
+				printf( '<a href="%s" rel="external nofollow" class="url">', $comment_author_url ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --Escaped in https://developer.wordpress.org/reference/functions/get_comment_author_url/
+				echo wp_kses_post( $avatar );
+			}
+		}
 	?>
 
         <div class="comment-content">
-
             <?php
-							printf(
-								'<span class="comment-author">%1$s</span>',
-								esc_html( $comment_author ),
-								__( 'says:', 'twentytwenty' )
-							);
+				printf(
+					'<span class="comment-author">%1$s</span>',
+					esc_html( $comment_author ),
+					__( 'says:', 'twentytwenty' )
+				);
+				if ( ! empty( $comment_author_url ) ) {
+					echo '</a>';
+				}
+				
+			comment_text();
 
-							if ( ! empty( $comment_author_url ) ) {
-								echo '</a>';
-							}
-							?>
-
-
-            <?php
-
-						comment_text();
-
-						if ( '0' === $comment->comment_approved ) {
-							?>
-            <p class="comment-awaiting-moderation">
-                <?php _e( 'Your comment is awaiting moderation.', 'twentytwenty' ); ?></p>
-            <?php
-						}
-
-						?>
+			if ( '0' === $comment->comment_approved ) { ?>
+				<p class="comment-awaiting-moderation">
+					<?php _e( 'Your comment is awaiting moderation.', 'twentytwenty' ); ?>
+				</p>
+            <?php } ?>
 
 
             <div class="comment-metadata">
-                <?php
-					/* translators: 1: Comment date, 2: Comment time. */
-					$comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentytwenty' ), get_comment_date( '', $comment ), get_comment_time() );
-					?>
+                <?php $comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentytwenty' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
                 <time datetime="<?php comment_time( 'c' ); ?>" title="<?php echo esc_attr( $comment_timestamp ); ?>">
                     <?php echo esc_html( $comment_timestamp ); ?>
                 </time>
+
                 <?php
 					if ( get_edit_comment_link() ) {
 						echo ' <span aria-hidden="true"></span> <a class="comment-edit-link" href="' . esc_url( get_edit_comment_link() ) . '">' . __( 'Edit', 'twentytwenty' ) . '</a>';
@@ -115,8 +101,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 
 					$by_post_author = twentytwenty_is_comment_by_post_author( $comment );
 
-					if ( $comment_reply_link || $by_post_author ) {
-						?>
+					if ( $comment_reply_link || $by_post_author ) { ?>
 
 
                 <?php

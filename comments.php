@@ -66,7 +66,6 @@ if ( $comments ) {
 
 		</div><!-- .comments-inner -->
 
-	</div><!-- comments -->
 
 	<?php
 }
@@ -97,6 +96,7 @@ if ( comments_open() || pings_open() ) {
 
 		<p class="comments-closed"><?php _e( 'Comments are closed.', 'twentytwenty' ); ?></p>
 
+	</div><!-- #respond -->
 	</div><!-- #respond -->
 
 	<?php

@@ -34,7 +34,7 @@ Entwicklung der Quartiersplattform
 - [x] WP Bilder Hochladen Feature (für Admins)
 - [-] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
 - [-] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
-- [ ] Officina im Backend verlinkt => Cairo
+- [x] Officina im Backend verlinkt => Cairo
 - [ ] Emoji Picker (height) Projekt Einstellungen
 - [ ] Veranstaltungen Überlappung Startseite
 - [ ] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
