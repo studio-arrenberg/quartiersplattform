@@ -38,7 +38,7 @@
                     ?>
                 </p>
             </div>
-            <?php the_post_thumbnail( 'preview_m' ); ?>
+            <?php the_post_thumbnail( 'preview_m3' ); ?>
         </a>
     </div>
 

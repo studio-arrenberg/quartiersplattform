@@ -18,10 +18,10 @@ if (get_post_status() == 'publish') {
 
             <div class="button-group">
                 <a class="button is-transparent" target="blank"
-                href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(get_permalink()); ?>">Faceboook</a>
+                href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_permalink()); ?>">Faceboook</a>
             
                 <a class="button is-transparent" target="blank"
-                href="https://twitter.com/intent/tweet?url=<?php esc_url(get_permalink()); ?>">Twitter</a>
+                href="https://twitter.com/intent/tweet?url=<?php echo esc_url(get_permalink()); ?>">Twitter</a>
             
                 <a class="button is-transparent" target="blank"
                 href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"

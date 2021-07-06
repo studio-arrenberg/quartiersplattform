@@ -62,7 +62,7 @@ if ( qp_project_owner($_GET['project']) == false ) {
                             'return' => get_site_url().'/gemeinsam', 
                             'field_el' => 'div',
                             'post_content' => false,
-                            'uploader' => 'basic',
+                            'uploader' => qp_form_uploader(),
                             'post_title' => true,
                             'field_groups' => array('group_5c5de02092e76'),
                             'submit_value'=> __('Nachricht veröffentlichen','quartiersplattform'),

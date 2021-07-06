@@ -3330,8 +3330,20 @@ function visibility_badge() {
 	}
 }
 
-
-
+/**
+ * QP Define ACF Form Uploader
+ * 
+ * @since Quartiersplattform 1.8
+ * 
+ * @return string
+ */
+function qp_form_uploader() {
+	if (current_user_can('administrator')) { 
+		return 'wp';
+	} else {
+		return 'basic';
+	}
+}
 
 
 /**
