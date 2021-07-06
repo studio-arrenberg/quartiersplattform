@@ -131,4 +131,10 @@ __("Datenschutzerklärung einblenden",'quartiersplattform');
 __("Datenschutzerklärung ausblenden",'quartiersplattform');
 __("Bitte bestätige das du die Datenschutzerklärung zur Kenntnis genommen hast.",'quartiersplattform');
 __("Bitte akzeptiere die Datenschutzerklärung.",'quartiersplattform');
+
+//Ultimate Member Mail Translations
+__('Reset your password', 'quartiersplattform');
+__('Welcome to {site_name}!', 'quartiersplattform');
+__('Welcome to !', 'quartiersplattform');
+__('Your {site_name} password has been changed!', 'quartiersplattform');
 ?>

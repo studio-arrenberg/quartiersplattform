@@ -468,4 +468,68 @@ function my_user_register_submitted__email( $role, $submitted ) {
     $role = "contributor";
 	return $role;
 }
+
+
+
+/**
+ * 
+ * Change UM Mail Subject
+ * 
+ */
+
+//Password Reset Mail
+add_filter( 'um_email_send_subject', 'my_email_send_subject_resetpw_email', 10, 2 );
+function my_email_send_subject_resetpw_email( $subject, $key) {
+	$paths = $key;
+	if($key == "resetpw_email")
+	{
+		$paths = __("Passwort zurücksetzen","quartiersplattform")." - ".get_field('quartiersplattform-name','option')	;
+	}
+	elseif($key == "changedpw_email"){
+		$paths = __("Passwort wurde geändert!","quartiersplattform")." - ".get_field('quartiersplattform-name','option')	;
+	}
+	elseif($key == 'welcome_email'){
+		$paths = __("Willkommens Mail!","quartiersplattform")." - ".get_field('quartiersplattform-name','option')	;
+	}
+	
+	return $paths;
+}
+
+// // //Password changed Mail
+// add_filter( 'um_email_send_subject', 'my_email_send_subject_changedpw_email', "changedpw_email", 10, 2 );
+// function my_email_send_subject_changedpw_email( $subject, $key) {
+//     $paths = __("Dein Passwort wurde geändert.","quartiersplattform")." - ".get_field('quartiersplattform-name','option')	;
+// return $paths;
+// }
+
+// //Verify User Mail
+// add_filter( 'um_email_send_subject', 'my_email_send_subject_checkmail_email', 10, 2 );
+// function my_email_send_subject_checkmail_email( $subject, $key = "checkmail_email" ) {
+//     $paths = __("Aktiviere deinen Benutzer")." - ".get_field('quartiersplattform-name','option')	;
+// return $paths;
+// }
+
+// //Welcome Mail
+// add_filter( 'um_email_send_subject', 'my_email_send_subject_welcome_email', 10, 2 );
+// function my_email_send_subject_welcome_email( $subject, $key = "welcome_email" ) {
+//     $paths = __("Willkommen im Quartier!","quartiersplattform")." - ".get_field('quartiersplattform-name','option')	;
+// return $paths;
+
+// add_filter( 'um_email_notifications', 'my_email_notifications', 10, 1 );
+// function my_email_notifications( $emails ) {
+//     // your code here
+// $emails['resetpw_email'] = array(
+// 'key'           => 'resetpw_email',
+// 'title'         => __( 'my_email_title','ultimate-member' ),
+// 'subject'       => 'my_email_subject',
+// 'body'          => 'my_email_body',
+// 'description'   => 'my_email_description',
+// 'recipient'     => 'user', // set 'admin' for make administrator as recipient
+// 'default_active' => true // can be false for make disabled by default
+// );
+
+// return $emails;
+// }
+// }
+
 ?>
