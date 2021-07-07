@@ -38,7 +38,7 @@ Entwicklung der Quartiersplattform
 - [ ] Emoji Picker (height) Projekt Einstellungen
 - [ ] Veranstaltungen Überlappung Startseite
 - [ ] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
-- [ ] Bilder im Newsfeed nicht in voller Auflösung
+- [x] Bilder im Newsfeed nicht in voller Auflösung
 
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)

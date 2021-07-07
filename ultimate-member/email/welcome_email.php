@@ -53,7 +53,7 @@
       <tr class="">
         <td style="padding-bottom: 18px" class="">
           <div>
-            <a class="button" href="{login_url}"
+            <a class="button" href="<?php echo home_url().'/projekte/'; ?>"
               ><?php _e('Entdecke dein Quartier!', 'quartiersplattform'); ?>
             </a>
           </div>
@@ -75,8 +75,9 @@
 
           <p>
             <?php 
-$image = get_field('logo', 'option');
-if( !empty( $image ) ): ?>
+              $image = get_field('logo', 'option');
+              if( !empty( $image ) ): 
+            ?>
             <img
               width="200"
               src="<?php echo esc_url($image['url']); ?>"
