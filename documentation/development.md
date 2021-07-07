@@ -25,15 +25,18 @@ Entwicklung der Quartiersplattform
 <br><br>
 
 # Versions
+
+### Bugs
+- [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt
 ## v1.8 💬
 ### Missing
 - [x] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
-- [-] Pinnen feature richtig erklären
+- [ ] Pinnen feature richtig erklären
 - [x] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
 - [x] WP Bilder Hochladen Feature (für Admins)
-- [-] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
-- [-] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
+- [ ] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
+- [ ] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
 - [ ] Officina im Backend verlinkt => Cairo
 - [ ] Emoji Picker (height) Projekt Einstellungen
 - [ ] Veranstaltungen Überlappung Startseite
