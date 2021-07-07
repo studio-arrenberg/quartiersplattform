@@ -36,6 +36,7 @@ else {
 
                 <?php if( get_field('mail', $userid) || get_field('phone', $userid) ){ ?>
                 <div class="share-button">
+
                     <?php if( get_field('mail', $userid) ){ ?>
                     <div class="button is-transparent button-has-icon is-one-row contact-button">
                         <a class=" button-has-icon is-one-row" id="btn1" target="_blank" href="mailto:<?php echo the_field('mail', $userid);?>?subject=Hallo <?php echo get_the_author_meta( 'first_name', $user_id );?>"rel="nofollow">
@@ -62,6 +63,7 @@ else {
                             </button>
                         </div>
                     <?php } ?>
+                    
                 </div>
                 <?php } ?>
 

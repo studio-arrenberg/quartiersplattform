@@ -53,26 +53,26 @@
       <tr class="">
         <td style="padding-bottom: 18px" class="">
           <div>
-            <a class="button" href="<?php echo home_url().'/projekte/'; ?>"
-              ><?php _e('Entdecke dein Quartier!', 'quartiersplattform'); ?>
+            <a class="button" href="<?php echo home_url().'/projekte/'; ?>">
+              <?php _e('Entdecke dein Quartier!', 'quartiersplattform'); ?>
             </a>
           </div>
         </td>
       </tr>
+
       <tr class="">
         <td style="padding-bottom: 48px" class="">
           <br />
           <h2>
             <span class="accent , hide">Quartiersplattform</span>
-            <span class="hide"
-              ><?php the_field('quartiersplattform-name','option'); ?></span
-            >
+            <span class="hide">
+              <?php the_field('quartiersplattform-name','option'); ?>
+            </span>
             <br /><br />
           </h2>
           <br />
           <hr />
           <br />
-
           <p>
             <?php 
               $image = get_field('logo', 'option');
