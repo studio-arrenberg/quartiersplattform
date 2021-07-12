@@ -31,6 +31,7 @@ Entwicklung der Quartiersplattform
 - [ ] Gestaltung der Startseite (Gutenberg Blocks)
 - [ ] Emojis laden manchmal nicht direkt
 - [ ] Energie Ampel Fallback/Error Display
+- [ ] Advanced Custom fields (free) compatible
 
 ### Bugs
 - [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt

@@ -1,4 +1,4 @@
-<div class="overlay visible cookie-alert">
+<div style="display:none;" class="cookie-alert">
     <div class="overlay-content">
         <div class="card card-large reminder shadow">
             <div class="content large-margin-bottom">
@@ -6,9 +6,8 @@
                     🍪 <?php _e("Wir verwenden Cookies", "quartiersplattform"); ?>
                 </h4>
                 <p class="text-size-2">
-
-                <?php _e("Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten.", "quartiersplattform"); ?>
-</p>
+                    <?php _e("Wir nutzen Cookies auf der Quartiersplattform. Mit der Nutzung stimmst du der Verwendung zu, jedoch verwenden wir keine Cookies von Dritten.", "quartiersplattform"); ?>
+                </p>
             </div>
 
             <div class="button-group">
@@ -34,7 +33,6 @@
 
             ?>
 
-
             <a onclick="cookie_disclaimer();" class="button accept is-primary" ><?php _e('Zustimmen', 'quartiersplattform'); ?> </a>
         </div>
         </div>
@@ -42,6 +40,12 @@
 </div>
 
 <script>
+
+    setTimeout(() => {
+        const disclaimer = document.querySelector("div.cookie-alert");
+        disclaimer.classList.add("visible", "overlay");  
+        disclaimer.style.display = "block"
+    }, 6000);
     
     function cookie_disclaimer() {
 
@@ -52,15 +56,7 @@
             'request': 1
         };
 
-        // $.ajax({
-        //     url: ajax_url,
-        //     type: 'post',
-        //     data: data,
-        //     dataType: 'json',
-        //     success: function(response){
-        //         $("div.cookie-alert").fadeOut();
-        //     }
-        // });
+        document.querySelector("div.cookie-alert").remove();
 
         var request = new XMLHttpRequest();
         request.open('POST', ajax_url, true);
@@ -70,7 +66,6 @@
                 // If successful
                 console.log(this.response);
                 // $("div.cookie-alert").fadeOut();
-                document.querySelector("div.cookie-alert").remove();
                 // alert('done');
             } else {
                 // If fail
