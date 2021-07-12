@@ -21,24 +21,43 @@ Entwicklung der Quartiersplattform
 - [ ] Bilder vergrößern
 - [ ] Werkzeugkasten immer sichtbar (über reitern)
 - [ ] Alternative zum Admin (eine rolle tiefer...)
+- [ ] Welcome screen for registered users
+- [ ] Progressiv Web App
+- [ ] Navigation durch die Projekte
+- [ ] View Pictures in Large
+- [ ] Cookie Warning mit Timeout (Relese Snapshots)
+- [ ] Cookie Warning hintergrund blöd! mehr transparent...
+- [ ] Bessere Einbettung der Kommentare (Einloggen zum Schreiben...) 
+- [ ] Gestaltung der Startseite (Gutenberg Blocks)
+- [ ] Emojis laden manchmal nicht direkt
+- [ ] Energie Ampel Fallback/Error Display
+- [ ] Advanced Custom fields (free) compatible
+
+### Bugs
+- [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt
 
 <br><br>
 
 # Versions
+
+## v1.8.2
+
+### Bugs
+- Author Card fix
 ## v1.8 💬
 ### Missing
-- [x] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
-- [-] Pinnen feature richtig erklären
+- [x] "Im Kalendar Eintragen" -> ".iCal Herunterladen"
+- [ ] Pinnen feature richtig erklären
 - [x] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
 - [x] WP Bilder Hochladen Feature (für Admins)
-- [-] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
-- [-] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
-- [x] Officina im Backend verlinkt => Cairo
+- [ ] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
+- [ ] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
+- [ ] Officina im Backend verlinkt => Cairo
 - [ ] Emoji Picker (height) Projekt Einstellungen
 - [ ] Veranstaltungen Überlappung Startseite
 - [ ] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
-- [ ] Bilder im Newsfeed nicht in voller Auflösung
+- [x] Bilder im Newsfeed nicht in voller Auflösung
 
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)
@@ -61,7 +80,7 @@ Entwicklung der Quartiersplattform
 - Calendar Download File Fix
 - Layout Issues
 - Project security Fix
-- "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- "Im Kalendar Eintragen" -> ".iCal Herunterladen"
 - FB Teilen Link ist falsch
 - Bild Auflösung im Projektfeed
 
