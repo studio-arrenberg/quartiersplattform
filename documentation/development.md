@@ -21,16 +21,31 @@ Entwicklung der Quartiersplattform
 - [ ] Bilder vergrößern
 - [ ] Werkzeugkasten immer sichtbar (über reitern)
 - [ ] Alternative zum Admin (eine rolle tiefer...)
+- [ ] Welcome screen for registered users
+- [ ] Progressiv Web App
+- [ ] Navigation durch die Projekte
+- [ ] View Pictures in Large
+- [ ] Cookie Warning mit Timeout (Relese Snapshots)
+- [ ] Cookie Warning hintergrund blöd! mehr transparent...
+- [ ] Bessere Einbettung der Kommentare (Einloggen zum Schreiben...) 
+- [ ] Gestaltung der Startseite (Gutenberg Blocks)
+- [ ] Emojis laden manchmal nicht direkt
+- [ ] Energie Ampel Fallback/Error Display
+
+### Bugs
+- [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt
 
 <br><br>
 
 # Versions
 
+## v1.8.2
+
 ### Bugs
-- [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt
+- Author Card fix
 ## v1.8 💬
 ### Missing
-- [x] "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- [x] "Im Kalendar Eintragen" -> ".iCal Herunterladen"
 - [ ] Pinnen feature richtig erklären
 - [x] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
@@ -64,7 +79,7 @@ Entwicklung der Quartiersplattform
 - Calendar Download File Fix
 - Layout Issues
 - Project security Fix
-- "Im Kalendar Eintragen" -> ".iCal Herrunterladen"
+- "Im Kalendar Eintragen" -> ".iCal Herunterladen"
 - FB Teilen Link ist falsch
 - Bild Auflösung im Projektfeed
 
