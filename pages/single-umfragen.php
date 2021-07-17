@@ -42,7 +42,7 @@ get_header();
                 </h1>
                 <?php visibility_badge(); ?>
                 <p class="text-size-2">
-                    <?php if (!is_single( )) shorten(get_field('text'), '50'); else the_field('text'); ?>
+                    <?php extract_links(get_field('text')); ?>
                 </p>
 
             <?php

@@ -32,9 +32,11 @@ Entwicklung der Quartiersplattform
 - [ ] Emojis laden manchmal nicht direkt
 - [ ] Energie Ampel Fallback/Error Display
 - [ ] Advanced Custom fields (free) compatible
+- [ ] Feedback Mail Use Template + Mail to Admins as well
 
 ### Bugs
 - [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt
+- [ ] Update Project Modify date when post is edited!
 
 <br><br>
 
