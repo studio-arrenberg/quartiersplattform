@@ -35,8 +35,8 @@ Entwicklung der Quartiersplattform
 - [ ] Feedback Mail Use Template + Mail to Admins as well
 
 ### Bugs
-- [ ] Leere Chronik `no content card` wird im falschen reiter angezeigt
-- [ ] Update Project Modify date when post is edited!
+- [x] Leere Chronik `no content card` wird im falschen reiter angezeigt
+- [x] Update Project Modify date when post is edited!
 
 <br><br>
 
@@ -46,6 +46,7 @@ Entwicklung der Quartiersplattform
 
 ### Bugs
 - Author Card fix
+- 
 ## v1.8 💬
 ### Missing
 - [x] "Im Kalendar Eintragen" -> ".iCal Herunterladen"
@@ -54,12 +55,18 @@ Entwicklung der Quartiersplattform
 - [x] "Quarier" Rechtschreibung
 - [x] WP Bilder Hochladen Feature (für Admins)
 - [ ] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
-- [ ] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
-- [ ] Officina im Backend verlinkt => Cairo
+- [x] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
+- [x] Officina im Backend verlinkt => Cairo
 - [ ] Emoji Picker (height) Projekt Einstellungen
-- [ ] Veranstaltungen Überlappung Startseite
-- [ ] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
+- [x] Veranstaltungen Überlappung Startseite
+- [x] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
 - [x] Bilder im Newsfeed nicht in voller Auflösung
+- [x] Author Card Fix
+- [x] Umfragen Link Highlight
+- [ ] Kommentar Link zum Profil
+- [x] Update Projekt on Post update
+- [ ] Mail inline styles (google mail...) `camilo`
+- [ ] Sponsor Images with WP Image function `moritz`
 
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)

@@ -12,7 +12,7 @@
 ?>
 
 
-<div id="sdg-card" class="card card-sgd shadow" style="border-color: <?php the_field('color'); ?>;"  >
+<div id="sdg-id-<?php the_field('goal'); ?>" class="card card-sgd shadow" style="border-color: <?php the_field('color'); ?>;"  >
     <a class="card-link" href="<?php echo get_site_url(); ?>/sdgs#sdg-id-<?php the_field('goal'); ?>">
         <div class="content" style="color: <?php the_field('color'); ?>;">
             <span class="sdg-number">

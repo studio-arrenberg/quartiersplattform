@@ -39,8 +39,15 @@
                     <a href="<?php echo $link; ?>" target="_blank" rel="noreferrer">
                 <?php } ?>
 
-                <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="Sponsor der Quartiersplattform" > 
-            
+                <!-- <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="Sponsor der Quartiersplattform" >  -->
+                <?php
+                echo wp_get_attachment_image($image['ID'], 'preview_s', false, array('class' => 'sponsoren-logo', 'alt' => 'Sponsor der Quartiersplattform')); 
+                //  print_r( $image);
+                // echo $image['ID'];
+                ?>
+
+
+
                 <?php if( !empty( $link ) ){ ?> 
                     </a>
                 <?php } ?>
