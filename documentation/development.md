@@ -67,6 +67,7 @@ Entwicklung der Quartiersplattform
 - [x] Update Projekt on Post update
 - [ ] Mail inline styles (google mail...) `camilo`
 - [ ] Sponsor Images with WP Image function `moritz`
+- [x] Umfragen Titel und Text nachträglich editierbar
 
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)

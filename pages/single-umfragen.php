@@ -159,13 +159,13 @@ get_header();
                 <div class="button-group">
 
                         <?php
-                        $array = get_post_meta(get_the_ID(), 'polls', true);
-                        if ( !isset($array[0]['total_voter']) || ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) )) {
+                        // $array = get_post_meta(get_the_ID(), 'polls', true);
+                        // if ( !isset($array[0]['total_voter']) || ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) )) {
                         ?>
                             <a class="button is-style-outline" href="<?php qp_parameter_permalink('action=edit'); ?>"><?php _e('Umfrage bearbeiten', 'quartiersplattform'); ?></a>
 
                         <?php
-                        }
+                        // }
                         ?> 
                         <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Umfrage löschen', 'quartiersplattform'); ?></a>
                     </div>
@@ -214,16 +214,42 @@ get_header();
             else {
                 if ( ( is_user_logged_in() && qp_project_owner() ) ) {
                     echo '<h2>Bearbeite deine Umfrage</h2><br>';
-                    acf_form (
-                        array(
-                            'form' => true,
-                            'return' => '%post_url%',
-                            'submit_value' => __('Änderungen speichern','quartiersplattform'),
-                            'post_title' => true,
-                            'post_content' => false,    
-                            'field_groups' => array('group_601855a265b19'), 
-                        )
-                    );
+
+                    $array = get_post_meta(get_the_ID(), 'polls', true);
+                    // check if poll already has no voter
+                    if ( !isset($array[0]['total_voter']) || ( $array[0]['total_voter'] == 0 || !isset($array[0]['total_voter']) )) {
+
+                        acf_form (
+                            array(
+                                'form' => true,
+                                'return' => '%post_url%',
+                                'submit_value' => __('Änderungen speichern','quartiersplattform'),
+                                'post_title' => true,
+                                'post_content' => false,    
+                                'field_groups' => array('group_601855a265b19'), 
+                            )
+                        );
+
+                    }
+                    // poll has one oor more voter
+                    else {
+
+                        acf_form (
+                            array(
+                                'form' => true,
+                                'return' => '%post_url%',
+                                'submit_value' => __('Änderungen speichern','quartiersplattform'),
+                                'post_title' => true,
+                                'post_content' => false,    
+                                'fields' => array(
+                                    'field_601855a9aa4be' // Description
+                                ),
+                            )
+                        );
+
+                    }
+
+                    
                     
                 }
             }			
