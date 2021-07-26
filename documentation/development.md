@@ -54,16 +54,14 @@ Entwicklung der Quartiersplattform
 - [x] FB Teilen Link ist falsch
 - [x] "Quarier" Rechtschreibung
 - [x] WP Bilder Hochladen Feature (für Admins)
-- [ ] Reihenfolge im Projekt Carousel (ist richtig, nur durch frontend werden die projekte erneuert)
 - [x] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
 - [x] Officina im Backend verlinkt => Cairo
-- [ ] Emoji Picker (height) Projekt Einstellungen
 - [x] Veranstaltungen Überlappung Startseite
 - [x] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
 - [x] Bilder im Newsfeed nicht in voller Auflösung
 - [x] Author Card Fix
 - [x] Umfragen Link Highlight
-- [ ] Kommentar Link zum Profil
+- [x] Kommentar Link zum Profil
 - [x] Update Projekt on Post update
 - [ ] Mail inline styles (google mail...) `camilo`
 - [ ] Sponsor Images with WP Image function `moritz`

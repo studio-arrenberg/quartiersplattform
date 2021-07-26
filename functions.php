@@ -1159,12 +1159,14 @@ function qp_comment_url_to_profile( $return, $author, $comment_ID ) {
 
 	$comment = get_comment( $comment_ID );
 
+	$author =  get_user_by('ID', $comment->user_id);
+
 	if( isset( $comment->user_id ) && ! empty(  $comment->user_id ) ){
-		$return = home_url( ).'/author/'.get_the_author();
+		$return = home_url( ).'/author/'.$author->nickname;
 	}
 
 	return $return;
-} add_filter('get_comment_author_url', 'qp_comment_url_to_profile', 10000, 3 );
+}  add_filter('get_comment_author_url', 'qp_comment_url_to_profile', 10000, 3 );
 
 /**
  * Control comment author Name
@@ -1182,7 +1184,7 @@ function qp_comment_author( $return, $author, $comment_ID ) {
 	$author =  get_user_by('ID', $comment->user_id);
 
 	if ($comment->user_id) {
-		return $author->first_name." ".$author->last_name;
+		return $author->first_name." ".$author->last_name." ";
 	}
 
 	return $return;
