@@ -4,9 +4,10 @@ Entwicklung der Quartiersplattform
 <p>
   <img src="https://img.shields.io/github/license/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="License"/>
   <!-- <img src="https://img.shields.io/github/repo-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Repo Size"/> -->
-  <img src="https://img.shields.io/github/commit-activity/w/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Commits"/>
   <img src="https://img.shields.io/tokei/lines/github/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Lines of code"/>
   <img src="https://img.shields.io/github/languages/code-size/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Code Size"/>
+  <img src="https://img.shields.io/github/commit-activity/m/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Commits"/>
+  <img alt="Scrutinizer code quality (GitHub/Bitbucket)" src="https://img.shields.io/scrutinizer/quality/g/studio-arrenberg/quartiersplattform/main?style=flat-square">
 </p>
 <br><br>
 
@@ -25,8 +26,8 @@ Entwicklung der Quartiersplattform
 - [ ] Progressiv Web App
 - [ ] Navigation durch die Projekte
 - [ ] View Pictures in Large
-- [ ] Cookie Warning mit Timeout (Relese Snapshots)
-- [ ] Cookie Warning hintergrund blöd! mehr transparent...
+- [x] Cookie Warning mit Timeout (Relese Snapshots)
+- [ ] Cookie Warning hintergrund blöd! mehr transparent/weniger blur...
 - [ ] Bessere Einbettung der Kommentare (Einloggen zum Schreiben...) 
 - [ ] Gestaltung der Startseite (Gutenberg Blocks)
 - [ ] Emojis laden manchmal nicht direkt
@@ -42,31 +43,27 @@ Entwicklung der Quartiersplattform
 
 # Versions
 
+
 ## v1.8.2
 
-### Bugs
-- Author Card fix
-- 
-## v1.8 💬
-### Missing
-- [x] "Im Kalendar Eintragen" -> ".iCal Herunterladen"
-- [ ] Pinnen feature richtig erklären
-- [x] FB Teilen Link ist falsch
-- [x] "Quarier" Rechtschreibung
-- [x] WP Bilder Hochladen Feature (für Admins)
-- [x] ACF Einstellungen Bilder Upload (Bisherige Werden gelöscht)
-- [x] Officina im Backend verlinkt => Cairo
-- [x] Veranstaltungen Überlappung Startseite
-- [x] Nachricht/Veranstaltungs Bild nicht voll sichtbar (Andreas)
-- [x] Bilder im Newsfeed nicht in voller Auflösung
-- [x] Author Card Fix
-- [x] Umfragen Link Highlight
-- [x] Kommentar Link zum Profil
-- [x] Update Projekt on Post update
+### Fixes
+- "Im Kalendar Eintragen" -> ".iCal Herunterladen"
+- Facebook Teilen Link
+- `Quartier` Rechtschreibung
+- WP Bilder Hochladen Feature (für Admins)
+- ACF Einstellungen Bilder Upload Fix
+- Backend Font `Cairo`
+- Veranstaltungen Überlappung Startseite `CSS` Fix
+- Featured Image vollständig sichtbar
+- Bilder im Newsfeed in voller Auflösung
+- Author Card Fix
+- Umfragen Link Highlight
+- Kommentar Link zum Profil Fix
+- Update Projekt on Post update
 - [ ] Mail inline styles (google mail...) `camilo`
 - [ ] Sponsor Images with WP Image function `moritz`
-- [x] Umfragen Titel und Text nachträglich editierbar
-
+- Umfragen Titel und Text nachträglich editierbar
+## v1.8 💬
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)
 - Energie Ampel als Plugin
