@@ -38,6 +38,7 @@ Entwicklung der Quartiersplattform
 - [ ] Advanced Custom fields (free) compatible
 - [ ] Feedback Mail Use Template + Mail to Admins as well
 - [ ] Decide between Project `icon` or `image` for the badge
+- [ ] Contact [Altengerechte Quartiere.NRW](https://www.aq-nrw.de/ueber-uns/landesbuero-altengerechte-quartierenrw/unsere-leistungen/?schluessel=praxis#praxis)
 
 ### Bugs
 - [x] Leere Chronik `no content card` wird im falschen reiter angezeigt
@@ -51,6 +52,7 @@ Entwicklung der Quartiersplattform
 ## v1.8.2
 
 ### Fixes
+- Neue Gestaltung der Projektkachel
 - "Im Kalendar Eintragen" -> ".iCal Herunterladen"
 - Facebook Teilen Link
 - Rechtschreibung

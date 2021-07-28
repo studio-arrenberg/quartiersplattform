@@ -3032,13 +3032,17 @@ add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
  * 
  * @return string
  */
-function count_query($query, $amount = 1) {
+function count_query($query, $amount = 1, $number = false) {
 
 	if (!$query) {
 		return false;
 	}
 
 	$my_query = new WP_Query($query);
+
+	if ($number) {
+		return $my_query->post_count;
+	}
 
 	if ($my_query->post_count >= $amount) {
 		return true;
