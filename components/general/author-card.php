@@ -26,11 +26,12 @@ else {
         <div class="team-member simple-card shadow">	
 
             <?php if (get_query_var('contact_profile') ) { ?>
-
-                <a href="<?php echo get_author_posts_url($user_id); ?>">
-                    <?php echo get_avatar( $user_id, 100 ); // 32 or 100 = size ?>
-                    <h3 class="heading-size-3"><?php echo $name; ?></h3>
-                </a>
+                <div>
+                    <a href="<?php echo get_author_posts_url($user_id); ?>">
+                        <?php echo get_avatar( $user_id, 100 ); // 32 or 100 = size ?>
+                        <h3 class="heading-size-3"><?php echo $name; ?></h3>
+                    </a>
+                </div>
 
             <?php 
             } 
