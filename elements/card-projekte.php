@@ -115,7 +115,6 @@ $num_project_posts = count_query($project_posts, 0, true);
                 </div>
 
             </div>
-
         </a>
     </div>
 </div>

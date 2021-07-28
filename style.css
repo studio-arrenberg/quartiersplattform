@@ -2100,6 +2100,11 @@ th {
   display: none;
 }
 
+.card.projekt .heading-size-3 .emoji {
+  width: unset;
+  height: 24px;
+  margin: 0px;
+}
 
 @media (min-width: 782px) {
   .card.projekt .cut-title .heading-size-3, .card.projekt .cut-title .text-size-3 {
