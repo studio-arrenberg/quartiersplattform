@@ -19,7 +19,7 @@
 
 	<?php if ( is_user_logged_in(  ) && get_query_var('reminder_card_fix') === false) { ?>
 		<a class="close-card-link" onclick="remove_reminder('<?php echo get_query_var('reminder_card_slug'); ?>')">
-			<img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+			<img class="close-card-icon" alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
 		</a>
 	<?php } ?>
 

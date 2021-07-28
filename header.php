@@ -207,7 +207,6 @@ wp_maintenance_mode(); // redirect for maintenance mode
                         ?>
 
                             <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
-
                                 <li class="<?php if (is_page( 'Startseite' )) echo "current-menu-item"; ?>">
                                     <a href="<?php echo home_url( ); ?>" aria-current="page"><?php the_field('quartiersplattform-name','option'); ?></a>
                                 </li>
@@ -249,6 +248,8 @@ wp_maintenance_mode(); // redirect for maintenance mode
                                     <?php require get_template_directory() . '/assets/icons/gearshape.svg'; ?>
                                 </a>
                             <?php 
+
+                            
                         }
                         ?>
 

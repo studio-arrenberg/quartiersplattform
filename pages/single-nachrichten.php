@@ -24,7 +24,7 @@ get_header();
 
 	<div class="main-content">
         <div class="page-card shadow">
-            <a class="close-card-link" onclick="history.go(-1);"><img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" /></a>
+            <a class="close-card-link" onclick="history.go(-1);"><img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" /></a>
             
             <?php
             if ( have_posts() ) {

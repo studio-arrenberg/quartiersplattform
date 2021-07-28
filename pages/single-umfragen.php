@@ -19,7 +19,7 @@ get_header();
 
     <div class="page-card umfragen-single shadow">
         <a class="close-card-link" onclick="history.go(-1);">
-            <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+            <img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
         </a>
     <?php
 
@@ -101,7 +101,7 @@ get_header();
                             <?php _e('Registrieren', 'quartiersplattform'); ?> 
                         </a>
                         <a class="close-card-link">
-                            <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+                            <img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
                         </a>
                     </div>
                 <?php

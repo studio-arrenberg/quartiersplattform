@@ -364,7 +364,8 @@ i i,
 cite em,
 cite i,
 b,
-strong {
+strong,
+.bold {
   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
 }
@@ -616,7 +617,8 @@ input[type="checkbox"] + label {
   margin-left: 0.5rem;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+.wpforms-container input[type=checkbox], .wpforms-container input[type=radio] {
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
@@ -627,12 +629,12 @@ input[type="checkbox"] {
   height: 25px;
   background: #fff;
   border-radius: 15px;
-  border-style: solid;
-  border-width: 0.1rem;
-  border-color: #dcd7ca;
   box-shadow: none;
   cursor: pointer;
   padding: 0px;
+
+  background: #f9fcff;
+border: 1px solid #dcf0ff;
 }
 
 input[type="checkbox"]:checked::before {
@@ -659,6 +661,11 @@ textarea{
   word-break: keep-all;
   background: #f9fcff;
   border: 1px solid #dcf0ff;  
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+}
+
+select{
+  font-size: 1.8rem ;
   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
 
 }
@@ -913,6 +920,10 @@ button a {
 .button-has-image {
   width: 40px;
 }
+.button-has-image img {
+  width: 40px;
+  height: 40px;
+}
 
 .button-image {
   border-radius: 15px;
@@ -1042,6 +1053,11 @@ textarea {
     padding: 0px;
   }
 
+  .button-has-image img {
+    width: 45px;
+    height:45px;
+  }
+
   .button-has-icon{
     padding: 0px;
   }
@@ -1075,6 +1091,10 @@ textarea {
   .button-has-image{
     width: 30px;
   }
+  .button-has-image img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 
@@ -1085,6 +1105,11 @@ textarea {
   }
   .button-has-image{
     width: 25px;
+  }
+
+  .button-has-image img {
+    width: 25px;
+    height: 25px;
   }
   .header-button .button-has-icon-label{
     margin-left: 0px;
@@ -1821,7 +1846,7 @@ th {
   width: 75px;
   height: 75px;
   border-radius: 15px;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 10px 10px 0px;
 }
 
 .team-member {
@@ -1917,7 +1942,7 @@ th {
 
 .share-button{
   display: flex;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   flex-wrap: wrap;
 }
 
@@ -2044,10 +2069,80 @@ th {
 /*	8. PROJEKT HEADER
 /* -------------------------------------------------------------------------- */
 
-.card.projekt, .card.projekt .content{
-  min-height: 150px;
+
+.card.projekt{
+  max-height: 85px;
 }
 
+.card.projekt .wp-post-image{
+  width: 100px;
+  height: 75px;
+  margin: 0px 10px 0px 0px;
+}
+
+.card.projekt .emoji-large{
+  text-align: center;
+  width: 100px;
+  height: 75px;
+  margin: 0px 10px 0px 0px;
+}
+.card.projekt .content{
+  display: flex;
+  padding: 0px;
+  align-items: center;
+}
+
+.card.projekt .content > div{
+  width: calc( 100% - 115px);
+}
+
+.quartier .counter, .counter {
+  display: none;
+}
+
+
+@media (min-width: 782px) {
+  .card.projekt .cut-title .heading-size-3, .card.projekt .cut-title .text-size-3 {
+    max-height: 2.4rem;
+    overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card.projekt{
+    max-height: 85px;
+  }
+  
+  .card.projekt .wp-post-image{
+    width: 100px;
+    height: 75px;
+    margin: 0px 10px 0px 0px;
+  }
+
+.counter {
+  display: flex;
+  align-items: center;
+  flex: 0 1;
+  margin-left: auto;  
+  text-align: right;
+  margin-right: 5px;
+}
+.counter > span {
+  width: 50px;
+  display: flex;
+  align-items: center;
+}
+.counter svg {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  display: inline;
+  margin: 0px 0px 0px 5px;
+}
+
+
+}
 .background-image{
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -2148,6 +2243,24 @@ th {
   background-size: cover !important;
 }
 
+.quartier section .gutenberg-content{
+  max-width: none;
+  width: 100%;
+}
+
+.quartier section .gutenberg-content > div{
+  max-width: 700px;
+  margin-left:  auto;
+  margin-right:  auto;
+}
+
+.quartier section .gutenberg-content > div.alignwide{
+  max-width: 1000px;
+}
+.quartier section .gutenberg-content > div.alignfull{
+  max-width: 100%;
+}
+
 .quartier .section-full-width{
   max-width: none;
   flex-direction: column;
@@ -2219,12 +2332,14 @@ th {
 }
 
 .link-card-container .card-group {
+  width: 100%;
   margin: 5px;
-  width: 300px;
+  max-width: 350px;
 }
 
 .link-card-container .landscape{
-  width: 300px;
+  width: 100%;
+  max-width: 350px;
   height: 150px;
 }
 
@@ -2413,7 +2528,7 @@ th {
 
 .badge-button img {
   height: 25px !important;
-}
+width: 26px ;}
 
 .yours {
   z-index: 1;
@@ -3724,6 +3839,7 @@ font-weight: 700;
 
 .sponsoren-logo{
   height: 25px;
+  width: auto;
 }
 
 .footer > div {
@@ -6120,6 +6236,7 @@ form.poll .answers{
 
 .close-card-icon{
   width: 20px;
+  height: auto;
   background: transparent;
 }
 
@@ -6697,8 +6814,8 @@ a.text-link:hover {
   color: red;
 }
 
-
 .arrenberg-wetter{
   width: 350px;
   height: 175px;
+  margin: 0 auto;
 }

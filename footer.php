@@ -17,7 +17,14 @@
 <?php 
     $image = get_field('logo', 'option');
     if( !empty( $image ) ): ?>
-        <img class="quartier-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+        <!-- <img class="quartier-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> -->
+        <?php
+                echo wp_get_attachment_image($image['ID'], 'medium', false, array('class' => 'quartier-logo')); 
+                //  print_r( $image);
+                // echo $image['ID'];
+                ?>
+
+
     <?php endif; ?>
 
 </div>
@@ -41,12 +48,10 @@
 
                 <!-- <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="Sponsor der Quartiersplattform" >  -->
                 <?php
-                echo wp_get_attachment_image($image['ID'], 'preview_s', false, array('class' => 'sponsoren-logo', 'alt' => 'Sponsor der Quartiersplattform')); 
+                echo wp_get_attachment_image($image['ID'], 'medium', false, array('class' => 'sponsoren-logo', 'alt' => 'Sponsor der Quartiersplattform')); 
                 //  print_r( $image);
                 // echo $image['ID'];
                 ?>
-
-
 
                 <?php if( !empty( $link ) ){ ?> 
                     </a>

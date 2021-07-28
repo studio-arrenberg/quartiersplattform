@@ -39,25 +39,40 @@ if (strlen(get_field('slogan')) > 1 ) {
         </div>
     <?php } ?>
 
-        <div class="projekt  background-image 
-        <?php
-                    if (empty(get_field('emoji'))) {
-                     echo 'blur' ;
-                    }
-                ?>
-                    <?php if (get_query_var('list-item') == false) echo 'card '; if (!is_single() && get_query_var('list-item') == false) echo 'shadow '; if (get_query_var('list-item')) echo 'list-item ';?>" style="background-image: url('<?php
-                    if (empty(get_field('emoji'))) {
-                        the_post_thumbnail_url('landscape_s' ); 
-                    }
-                ?>'); ">
+
+          
+   
+    <div class="projekt  shadow 
+        <?php if (get_query_var('list-item') == false) echo 'card '; if (get_query_var('list-item')) echo 'list-item ';?>" >
             <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-            <div class="content align-center">
-                <span class="emoji-large"><?php  shorten(get_field('emoji'), '200'); ?></span>
-                <h3 class="heading-size-3">
-                    <?php shorten(get_the_title(), '60'); ?>
-                </h3>
-                <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
-                <?php visibility_badge(); ?>
+            
+            <div class="content">
+                <?php if ( empty(get_post_thumbnail_id())) { ?> 
+                    <span class="emoji-large"><?php  shorten(get_field('emoji'), '200'); ?></span>
+                <?php } ?>
+
+                <?php the_post_thumbnail( 'preview_s' ); ?>
+            <div class="cut-title">
+                    <h3 class="heading-size-3">
+                     <?php shorten(get_the_title(), '60'); ?>
+                        <?php if ( !empty(get_post_thumbnail_id())) { ?>
+                        <?php  shorten(get_field('emoji'), '200'); ?>
+                    <?php } ?>
+                    </h3>
+                    <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
+                    <?php visibility_badge(); ?>
+            </div>
+
+            <div class="counter">
+                <span>
+                    <span class="text-size-3 bold">2</span> 
+                    <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
+                </span>
+                <span>
+                    <span class="text-size-3 bold">2</span> 
+                    <?php require get_template_directory() . '/assets/icons/newspaper.svg'; ?>
+                </span>                
+             </div>
             </div>
 
         </a>
