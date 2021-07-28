@@ -9,7 +9,10 @@ Entwicklung der Quartiersplattform
   <img src="https://img.shields.io/github/commit-activity/m/studio-arrenberg/quartiersplattform?color=%23f7f7f7&style=flat-square" alt="Commits"/>
   <img alt="Scrutinizer code quality (GitHub/Bitbucket)" src="https://img.shields.io/scrutinizer/quality/g/studio-arrenberg/quartiersplattform/main?style=flat-square">
 </p>
-<br><br>
+<br>
+
+#### Code Quality on [scrutinizer](https://scrutinizer-ci.com/g/studio-arrenberg/quartiersplattform/?branch=main)
+<br>
 
 # Backlog
 - [ ] Project Notifications (Branch: `notifications`)
@@ -34,6 +37,7 @@ Entwicklung der Quartiersplattform
 - [ ] Energie Ampel Fallback/Error Display
 - [ ] Advanced Custom fields (free) compatible
 - [ ] Feedback Mail Use Template + Mail to Admins as well
+- [ ] Decide between Project `icon` or `image` for the badge
 
 ### Bugs
 - [x] Leere Chronik `no content card` wird im falschen reiter angezeigt
@@ -49,10 +53,10 @@ Entwicklung der Quartiersplattform
 ### Fixes
 - "Im Kalendar Eintragen" -> ".iCal Herunterladen"
 - Facebook Teilen Link
-- `Quartier` Rechtschreibung
+- Rechtschreibung
 - WP Bilder Hochladen Feature (für Admins)
 - ACF Einstellungen Bilder Upload Fix
-- Backend Font `Cairo`
+- Backend Font *Cairo*
 - Veranstaltungen Überlappung Startseite `CSS` Fix
 - Featured Image vollständig sichtbar
 - Bilder im Newsfeed in voller Auflösung
@@ -60,9 +64,10 @@ Entwicklung der Quartiersplattform
 - Umfragen Link Highlight
 - Kommentar Link zum Profil Fix
 - Update Projekt on Post update
-- [ ] Mail inline styles (google mail...) `camilo`
-- [ ] Sponsor Images with WP Image function `moritz`
+- Mail with inline styles
+- Sponsor Images with WP Image function
 - Umfragen Titel und Text nachträglich editierbar
+- User und Admin informationen im Profil
 ## v1.8 💬
 ### Features
 - QP WP Actions (Overlays, Menu Buttons)
