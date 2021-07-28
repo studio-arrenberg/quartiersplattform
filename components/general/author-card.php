@@ -17,7 +17,16 @@ else {
     $name = get_the_author_meta( 'first_name', $user_id )." ".get_the_author_meta( 'last_name', $user_id );
 }
 
+// define user id for ACF field
+$userid = "user_".$user_id; 
+
+// abort if no information to be shown
+if( get_query_var('contact_profile') == false && get_query_var('contact_inforation') == true && empty(get_field('mail', $userid)) && empty(get_field('phone', $userid)) ){
+    return false;
+}
+
 ?>
+
 <div class="team">
 
     <?php if (get_query_var('contact_profile') || get_query_var('contact_inforation')) { ?>
@@ -34,12 +43,7 @@ else {
 
             <?php 
             } 
-            
             if($contact && is_user_logged_in() || $contact && user_can($user_id, 'administrator')) {
-
-                // define user id for ACF field
-                $userid = "user_".$user_id; 
-                
             ?>
 
                 <?php if( get_field('mail', $userid) || get_field('phone', $userid) ){ ?>
@@ -99,3 +103,4 @@ else {
     }   
     ?>
 </div>
+<?php 
