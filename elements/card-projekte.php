@@ -64,18 +64,17 @@ if (strlen(get_field('slogan')) > 1 ) {
                     <?php visibility_badge(); ?>
                 </div>
 
-            <div class="counter">
-                <span>
-                    <span class="text-size-3 bold">2</span> 
-                    <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
-                </span>
-                <span>
-                    <span class="text-size-3 bold">2</span> 
-                    <?php require get_template_directory() . '/assets/icons/newspaper.svg'; ?>
-                </span>                
-             </div>
+                <div class="counter">
+                    <span>
+                        <span class="text-size-3 bold">2</span> 
+                        <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
+                    </span>
+                    <span>
+                        <span class="text-size-3 bold">2</span> 
+                        <?php require get_template_directory() . '/assets/icons/newspaper.svg'; ?>
+                    </span>                
+                </div>
             </div>
-
         </a>
     </div>
 </div>
