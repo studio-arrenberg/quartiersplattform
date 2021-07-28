@@ -42,7 +42,7 @@ if (strlen(get_field('slogan')) > 1 ) {
 
           
    
-    <div class="projekt  shadow 
+    <div class="projekt shadow 
         <?php if (get_query_var('list-item') == false) echo 'card '; if (get_query_var('list-item')) echo 'list-item ';?>" >
             <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
             
@@ -52,7 +52,8 @@ if (strlen(get_field('slogan')) > 1 ) {
                 <?php } ?>
 
                 <?php the_post_thumbnail( 'preview_s' ); ?>
-            <div class="cut-title">
+                
+                <div class=" <?php if ( !empty(get_field('slogan'))) { echo 'cut-title'; } ?> ">
                     <h3 class="heading-size-3">
                      <?php shorten(get_the_title(), '60'); ?>
                         <?php if ( !empty(get_post_thumbnail_id())) { ?>
@@ -61,7 +62,7 @@ if (strlen(get_field('slogan')) > 1 ) {
                     </h3>
                     <h4 class="text-size-3 highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></h4> 
                     <?php visibility_badge(); ?>
-            </div>
+                </div>
 
             <div class="counter">
                 <span>
