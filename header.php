@@ -207,12 +207,11 @@ wp_maintenance_mode(); // redirect for maintenance mode
                         ?>
 
                             <ul class="menu reset-list-style" aria-label="<?php esc_attr_e( 'Horizontal', 'twentytwenty' ); ?>" role="navigation">
-
-                                <li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home <?php if (is_page( 'Startseite' )) echo "current-menu-item"; ?> page_item page-item-17 current_page_item menu-item-48">
+                                <li class="<?php if (is_page( 'Startseite' )) echo "current-menu-item"; ?>">
                                     <a href="<?php echo home_url( ); ?>" aria-current="page"><?php the_field('quartiersplattform-name','option'); ?></a>
                                 </li>
 
-                                <li id="menu-item-16" class="menu-item menu-item-type-post_type <?php if (is_page( 'Projekte' )) echo "current-menu-item"; ?> menu-item-object-page menu-item-16">
+                                <li class="<?php if (is_page( 'Projekte' )) echo "current-menu-item"; ?>">
                                     <a title="Projekte" href="<?php echo home_url( ).'/projekte/'; ?>"><?php _e('Projekte', 'quartiersplattform'); ?> </a>
                                 </li>                    
                             </ul>
@@ -249,6 +248,8 @@ wp_maintenance_mode(); // redirect for maintenance mode
                                     <?php require get_template_directory() . '/assets/icons/gearshape.svg'; ?>
                                 </a>
                             <?php 
+
+                            
                         }
                         ?>
 

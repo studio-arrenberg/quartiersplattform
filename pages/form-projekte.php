@@ -20,7 +20,6 @@ get_header();
 
 	<div class="main-content">
     <?php 
-    // _e('Kurzbeschreibung',"quartiersplattform");
     if (is_user_logged_in(  )) {
         reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen.','quartiersplattform'));
 	?>
@@ -45,7 +44,7 @@ get_header();
                     'return' => get_site_url().'/projekte',
                     'fields' => array(
                         'field_5fc64834f0bf2', // Emoji
-                        'field_5fc647f6f0bf0', // Kurzbeschreibung
+                        'field_5fc647f6f0bf0', // Description
                     ),
                     'submit_value'=> __('Projekt erstellen','quartiersplattform'),
                     'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',

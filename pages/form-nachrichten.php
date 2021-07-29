@@ -18,9 +18,6 @@ if ( qp_project_owner($_GET['project']) == false ) {
 
     <div class="main-content">
 
-
-        <div class="small-projekt-card">
-
             <?php
             // Projekt Kachel
             project_card($_GET['project'], 'slug');
@@ -29,7 +26,6 @@ if ( qp_project_owner($_GET['project']) == false ) {
             }
             ?>
 
-        </div>
 
         <?php 
 

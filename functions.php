@@ -1159,12 +1159,14 @@ function qp_comment_url_to_profile( $return, $author, $comment_ID ) {
 
 	$comment = get_comment( $comment_ID );
 
+	$author =  get_user_by('ID', $comment->user_id);
+
 	if( isset( $comment->user_id ) && ! empty(  $comment->user_id ) ){
-		$return = home_url( ).'/author/'.get_the_author();
+		$return = home_url( ).'/author/'.$author->nickname;
 	}
 
 	return $return;
-} add_filter('get_comment_author_url', 'qp_comment_url_to_profile', 10000, 3 );
+}  add_filter('get_comment_author_url', 'qp_comment_url_to_profile', 10000, 3 );
 
 /**
  * Control comment author Name
@@ -1182,7 +1184,7 @@ function qp_comment_author( $return, $author, $comment_ID ) {
 	$author =  get_user_by('ID', $comment->user_id);
 
 	if ($comment->user_id) {
-		return $author->first_name." ".$author->last_name;
+		return $author->first_name." ".$author->last_name." ";
 	}
 
 	return $return;
@@ -1262,7 +1264,7 @@ function script_managment() {
 	}
 	// landing page
 	if (is_front_page() && !is_user_logged_in()) {
-		files_none();
+		files_minimum(); // before none!
 	} 
 	// user is post owner
 	else if (qp_project_owner() && get_post_type() != 'projekte') {
@@ -1343,6 +1345,7 @@ function files_none() {
 	echo "<script>console.log('Resources: None')</script>";
 
 	wp_deregister_script('jquery');
+	// wp_register_script( 'jquery', "https://code.jquery.com/jquery-3.1.1.min.js", array(), '3.1.1' );
 
 	wp_deregister_script('jquery-ui-draggable');
 	wp_deregister_script('jquery-ui-mouse');
@@ -1601,7 +1604,7 @@ function cpt_save_worker( $post_id ) {
 		$array_prev = get_post_meta(get_the_ID(), 'polls', true);
 		// add or update array
 		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
-			update_post_meta ( $post_id, 'polls', $array );
+			// update_post_meta ( $post_id, 'polls', $array );
     	}
 
 		// set query vars
@@ -1641,6 +1644,18 @@ function cpt_save_worker( $post_id ) {
 				// update post 
 				wp_update_post( $my_post );
 			}
+		}
+		// update project timestamp (taxonomy not given)
+		else {
+			// get project
+			$term_list = wp_get_post_terms( $post_id, 'projekt', array( 'fields' => 'all' ) ); // !!! unstable
+			// check projekt visibility
+			$my_post = array();
+			$my_post['ID'] = $term_list[0]->description;
+			$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
+			$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
+			// update post 
+			wp_update_post( $my_post );
 		}
 
 		wp_redirect( get_post_permalink($post_id) ); 
@@ -3017,13 +3032,17 @@ add_action( 'wp_ajax_nopriv_projekt_feed', 'projekt_feed_callback' );
  * 
  * @return string
  */
-function count_query($query, $amount = 1) {
+function count_query($query, $amount = 1, $number = false) {
 
 	if (!$query) {
 		return false;
 	}
 
 	$my_query = new WP_Query($query);
+
+	if ($number) {
+		return $my_query->post_count;
+	}
 
 	if ($my_query->post_count >= $amount) {
 		return true;

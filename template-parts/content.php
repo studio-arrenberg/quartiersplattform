@@ -12,8 +12,8 @@
  */
 
 ?>
+<main id="site-content post-<?php the_ID(); ?>" class="page-grid" role="main">
 
-<div id="site-content post-<?php the_ID(); ?>" class="page-grid" role="main">
 
 	<div class="left-sidebar">
 		<?php projekt_carousel(); ?>
@@ -74,13 +74,11 @@
 
 	</div>
 
-
 	<div class="right-sidebar ">
 		<?php 
 			get_template_part('components/views/veranstaltungen');
 		?>	
 	</div>
-</div>
 </main>
 
 <?php get_footer(); ?>

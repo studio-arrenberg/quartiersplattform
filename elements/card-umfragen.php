@@ -94,7 +94,7 @@
                             <?php _e('Registrieren', 'quartiersplattform'); ?> 
                         </a>
                         <a class="close-card-link">
-                            <img class="close-card-icon" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
+                            <img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
                         </a>
                     </div>
                 <?php

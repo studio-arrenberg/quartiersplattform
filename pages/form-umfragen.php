@@ -17,7 +17,6 @@ if ( qp_project_owner($_GET['project']) == false ) {
 
 	<div class="main-content">
 
-        <div class="small-projekt-card">
             <?php
                 // Projekt Kachel
                 project_card($_GET['project'], 'slug');
@@ -25,7 +24,6 @@ if ( qp_project_owner($_GET['project']) == false ) {
                     reminder_card('warning', __('Projekt konnte nicht verknüpft werden','quartiersplattform'), __('Das formular konnte nicht mit einem Projekt verknüft werden. Versuche es noch mal.','quartiersplattform'), 'Projekte', home_url( ).'/projekte/');
                 }
             ?>
-        </div>
 
         <?php 
 

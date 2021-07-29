@@ -69,6 +69,7 @@ get_header();
         
         ?>
 
+        <br>
         
         <!-- About -->
         <?php if( get_field('about', $userid) ) { ?>

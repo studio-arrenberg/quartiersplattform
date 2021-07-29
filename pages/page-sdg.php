@@ -42,7 +42,7 @@ get_header();
 			$args->the_post();
 
 			?>
-				<div class="sdg-section" id="sdg-card sdg-id-<?php the_field('goal'); ?>" 
+				<div class="sdg-section" id="sdg-id-<?php the_field('goal'); ?>" 
 
 				style="
 					background: linear-gradient(<?php the_field('color'); ?>20, rgba(255,255,255,0));

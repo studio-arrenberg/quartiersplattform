@@ -2,12 +2,31 @@
 /*! This file is auto-generated */
 @media only screen and (min-width: 960px) {
 
-#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
-  width: 200px!important;
-  /* background: palevioletred !important; */
+  #adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    width: 200px!important;
+    /* background: palevioletred !important; */
+  }
+
+  .folded #adminmenu, .folded #adminmenu .wp-submenu, .folded #adminmenuback, .folded #adminmenuwrap, .folded.auto-fold #adminmenu, .folded.auto-fold #adminmenu .wp-submenu, .folded.auto-fold #adminmenuback, .folded.auto-fold #adminmenuwrap {
+    width: 36px !important;
+  }
 }
 
 #wpcontent, #wpfooter{
   margin-left: 200px;
 }
+
+@media (min-width: 961px) {
+  .auto-fold .interface-interface-skeleton {
+      left: 200px 
+  } 
+    
+  .folded.auto-fold .interface-interface-skeleton {
+    left: 36px !important;
+  }
+  .folded.auto-fold.is-fullscreen-mode .interface-interface-skeleton {
+    left: 0px !important;
+  }
+
 }
+

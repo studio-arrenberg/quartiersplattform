@@ -17,22 +17,35 @@ else {
     $name = get_the_author_meta( 'first_name', $user_id )." ".get_the_author_meta( 'last_name', $user_id );
 }
 
+// define user id for ACF field
+$userid = "user_".$user_id; 
+
+// abort if no information to be shown
+if( get_query_var('contact_profile') == false && get_query_var('contact_inforation') == true && empty(get_field('mail', $userid)) && empty(get_field('phone', $userid)) ){
+    return false;
+}
+
 ?>
+
 <div class="team">
 
-    <?php if (get_query_var('contact_profile')) { ?>
-    <div class="team">		
-        <div class="team-member simple-card shadow">	
-            <a href="<?php echo get_author_posts_url($user_id); ?>">
-                <?php echo get_avatar( $user_id, 100 ); // 32 or 100 = size ?>
-                <h3 class="heading-size-3"><?php echo $name; ?></h3>
+    <?php if (get_query_var('contact_profile') || get_query_var('contact_inforation')) { ?>
 
-                <?php 
-                if($contact && is_user_logged_in() || $contact && user_can($user_id, 'administrator')){
-                    // echo $user_id;
-                    $userid = "user_".$user_id; 
-                ?>
-            </a>
+    <div class="team inner">
+        <div class="team-member simple-card shadow">	
+
+            <?php if (get_query_var('contact_profile') ) { ?>
+                <div>
+                    <a href="<?php echo get_author_posts_url($user_id); ?>">
+                        <?php echo get_avatar( $user_id, 100 ); // 32 or 100 = size ?>
+                        <h3 class="heading-size-3"><?php echo $name; ?></h3>
+                    </a>
+                </div>
+
+            <?php 
+            } 
+            if($contact && is_user_logged_in() || $contact && user_can($user_id, 'administrator')) {
+            ?>
 
                 <?php if( get_field('mail', $userid) || get_field('phone', $userid) ){ ?>
                 <div class="share-button">
@@ -91,3 +104,4 @@ else {
     }   
     ?>
 </div>
+<?php 
