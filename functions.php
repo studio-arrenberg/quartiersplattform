@@ -1604,7 +1604,7 @@ function cpt_save_worker( $post_id ) {
 		$array_prev = get_post_meta(get_the_ID(), 'polls', true);
 		// add or update array
 		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
-			update_post_meta ( $post_id, 'polls', $array );
+			// update_post_meta ( $post_id, 'polls', $array );
     	}
 
 		// set query vars
