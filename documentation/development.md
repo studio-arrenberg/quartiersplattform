@@ -40,9 +40,11 @@ Entwicklung der Quartiersplattform
 - [ ] Decide between Project `icon` or `image` for the badge
 - [ ] Contact [Altengerechte Quartiere.NRW](https://www.aq-nrw.de/ueber-uns/landesbuero-altengerechte-quartierenrw/unsere-leistungen/?schluessel=praxis#praxis)
 
+
 ### Bugs
 - [x] Leere Chronik `no content card` wird im falschen reiter angezeigt
 - [x] Update Project Modify date when post is edited!
+- [ ] Share to facebook (open graph tags)
 
 <br><br>
 
