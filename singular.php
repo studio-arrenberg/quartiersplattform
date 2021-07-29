@@ -12,7 +12,8 @@
 get_header();
 ?>
 
-<main id="site-content" role="main">
+<main id="site-content" class="page-grid" role="main">
+
 
 	<?php
 
