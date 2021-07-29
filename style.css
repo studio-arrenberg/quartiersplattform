@@ -2108,6 +2108,8 @@ th {
   width: unset;
   height: 24px;
   margin: 0px;
+  font-size: unset !important;
+
 }
 
 @media (min-width: 782px) {
