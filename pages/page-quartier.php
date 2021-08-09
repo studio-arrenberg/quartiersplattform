@@ -108,9 +108,9 @@ get_header();
                         $args4 = array(
                             'post_type'=>'veranstaltungen', 
                             'post_status'=>'publish', 
-                            'posts_per_page'=> 20,
+                            'posts_per_page'=> 5,
                             'meta_key' => 'event_date',
-                            'orderby' => 'meta_val',
+                            'orderby' => 'meta_value_num',
                             'order' => 'ASC',
                             'offset' => '0', 
                             'meta_query' => array(

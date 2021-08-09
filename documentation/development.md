@@ -19,26 +19,29 @@ Entwicklung der Quartiersplattform
 - [ ] ACF Profile Upload [Avatar](https://thestizmedia.com/acf-pro-simple-local-avatars/)
 - [ ] Cant login when login page is not set through UM...
 - [ ] Projekt List function (rank by ownership)
-- [ ] Projektverzeichnis Card (Picture + Text)
+- [x] Projektverzeichnis Card (Picture + Text)
 - [ ] Remove `twentytwenty` Language strings
 - [ ] Publish as Theme
-- [ ] Bilder vergrößern
+- [x] Bilder vergrößern
 - [ ] Werkzeugkasten immer sichtbar (über reitern)
 - [ ] Alternative zum Admin (eine rolle tiefer...)
 - [ ] Welcome screen for registered users
 - [ ] Progressiv Web App
-- [ ] Navigation durch die Projekte
+- [ ] Navigation durch die Projekte (Mobile ansicht)
 - [ ] View Pictures in Large
 - [x] Cookie Warning mit Timeout (Relese Snapshots)
 - [ ] Cookie Warning hintergrund blöd! mehr transparent/weniger blur...
 - [ ] Bessere Einbettung der Kommentare (Einloggen zum Schreiben...) 
 - [ ] Gestaltung der Startseite (Gutenberg Blocks)
 - [ ] Emojis laden manchmal nicht direkt
-- [ ] Energie Ampel Fallback/Error Display
+- [x] Energie Ampel Fallback/Error Display
 - [ ] Advanced Custom fields (free) compatible
 - [ ] Feedback Mail Use Template + Mail to Admins as well
 - [ ] Decide between Project `icon` or `image` for the badge
 - [ ] Contact [Altengerechte Quartiere.NRW](https://www.aq-nrw.de/ueber-uns/landesbuero-altengerechte-quartierenrw/unsere-leistungen/?schluessel=praxis#praxis)
+- [ ] Menu as html buttons not list
+- [ ] Qartiersüberblick (Sprachen, Projekte, Wiki, Bezirksvertretung)
+- [ ] Hervorheben der Chronik in der Projektübersicht (als Slider..?)
 
 
 ### Bugs
