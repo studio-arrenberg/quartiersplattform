@@ -130,7 +130,7 @@ get_header();
                     get_template_part( 'components/project/toolbox' );
 
                     // Aktuelle Events
-                    get_template_part( 'components/project/coming-events' );
+                    get_template_part( 'components/project/events' );
                     
                     // Pinned Posts
                     get_template_part( 'components/project/pinned-posts' );
@@ -150,7 +150,6 @@ get_header();
                     // Map
                     // get_template_part('components/general/map-card');
 
-
                     // Pin Project to Landing Page
                     if ( current_user_can('administrator') ) {
                         pin_toggle('pin_main'); 
@@ -169,8 +168,16 @@ get_header();
                 <?php if (qp_project_owner()) { ?>
                 <div id="settings" class="bar bar-hidden">
 
-                    <?php visibility_toggle( get_the_ID(  ) ); ?>
-
+                    <?php 
+                    
+                    visibility_toggle( get_the_ID(  ) ); 
+                    
+                    // Pin Project to Landing Page
+                    if ( current_user_can('administrator') ) {
+                        pin_toggle('pin_main'); 
+                    }
+                    
+                    ?>
 
                     <div class="publish-form">
                         <h3><?php _e('Bearbeite dein Projekt', 'quartiersplattform'); ?> </h3>

@@ -46,8 +46,6 @@ if (!is_user_logged_in()) {
             </div>
         </div>
 
-    
-
          <!-- bar -->
             <div class="filters-container">
                 <div class="filters-wrapper">
@@ -92,7 +90,6 @@ if (!is_user_logged_in()) {
 
         <div id="summary" class="bar bar-active">
 
-
             <h3><?php _e('Deine Kontaktinformationen', 'quartiersplattform'); ?></h3>
             <p>
                 <?php 
@@ -106,6 +103,9 @@ if (!is_user_logged_in()) {
             </p>
                         
             <?php author_card(true, $current_user->ID, false); ?>
+
+            <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
+            <br>
             
             <?php
                 $args4 = array(

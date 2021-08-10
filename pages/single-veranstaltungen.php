@@ -23,6 +23,12 @@ get_header();
 	</div>
 
 	<div class="main-content">
+
+        <?php 
+        // Projekt Kachel
+        project_card($post->ID);
+        ?>
+
         <div class="page-card shadow">
             <a class="close-card-link" onclick="history.go(-1);">
                 <img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
@@ -128,10 +134,6 @@ get_header();
 
             get_template_part('components/general/share-post');
 
-            
-            // Projekt Kachel
-            project_card($post->ID);
-
             // Author
             author_card();
 
@@ -203,7 +205,6 @@ get_header();
                             
                         ),
                         'submit_value'=> __('Änderungen speichern','quartiersplattform'),
-                        
                     )
                 );       
             }
@@ -221,11 +222,29 @@ get_header();
         <?php
         // weitere Nachrichten
 		$args2 = array(
-			'post_type'=> array('nachrichten', 'veranstaltungen'), 
+			'post_type'=> array('veranstaltungen'), 
 			'post_status'=>'publish', 
 			'posts_per_page'=> 6,
-            'order' => 'DESC',
+            // 'order' => 'DESC',
             'post__not_in' => array(get_the_ID()),
+            'offset' => '0', 
+            'meta_query' => array(
+                'relation' => 'AND',
+                'date_clause' => array(
+                    'key' => 'event_date',
+                    // 'value' => date("Y-m-d"),
+                    'compare'	=> '=',
+                    // 'type' => 'DATE'
+                ),
+                'time_clause' => array(
+                    'key' => 'event_time',
+                    'compare'	=> '=',
+                ),
+            ),
+            'orderby' => array(
+                'date_clause' => 'DESC',
+                'time_clause' => 'ASC',
+            ),
             'tax_query' => array(
                 array(
                     'taxonomy' => 'projekt',
@@ -238,7 +257,7 @@ get_header();
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0 && empty($_GET['action'])) {
         ?>
-            <h3><?php _e('Weitere Nachrichten und Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
+            <h3><?php _e('Weitere Veranstaltungen aus diesem Projekt', 'quartiersplattform'); ?> </h3>
             <br>
         <?php
             card_list($args2);

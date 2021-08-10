@@ -109,18 +109,32 @@ get_header();
                             'post_type'=>'veranstaltungen', 
                             'post_status'=>'publish', 
                             'posts_per_page'=> 20,
-                            'meta_key' => 'event_date',
-                            'orderby' => 'meta_val',
-                            'order' => 'ASC',
-                            'offset' => '0', 
+                            // 'meta_key' => 'event_date',
+                            // 'orderby' => 'meta_value_num',
+                            // 'order' => 'ASC',
                             'meta_query' => array(
-                                array(
-                                    'key' => 'event_date', 
+                                'relation' => 'AND',
+                                'date_clause' => array(
+                                    'key' => 'event_date',
                                     'value' => date("Y-m-d"),
-                                    'compare' => '>=', 
+                                    'compare'	=> '>=',
                                     'type' => 'DATE'
-                                )
-                            )
+                                ),
+                                'time_clause' => array(
+                                    'key' => 'event_time',
+                                    'compare'	=> '=',
+                                ),
+                                // array(
+                                //     'key' => 'event_date', 
+                                //     'value' => date("Y-m-d"),
+                                //     'compare' => '>=', 
+                                //     'type' => 'DATE'
+                                // )
+                            ),
+                            'orderby' => array(
+                                'date_clause' => 'ASC',
+                                'time_clause' => 'ASC',
+                            ),
                         );
                     ?>  
                     <?php card_list($args4);?>

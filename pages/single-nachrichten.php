@@ -23,6 +23,13 @@ get_header();
 	</div>
 
 	<div class="main-content">
+
+
+        <?php 
+        // Projekt Kachel
+        project_card($post->ID);
+        ?>
+
         <div class="page-card shadow">
             <a class="close-card-link" onclick="history.go(-1);"><img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" /></a>
             
@@ -97,7 +104,7 @@ get_header();
             get_template_part('components/general/share-post');
 
             // Projekt Kachel
-            project_card($post->ID);
+            // project_card($post->ID);
 
             // Author
             author_card();
