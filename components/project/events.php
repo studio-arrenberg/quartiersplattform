@@ -4,9 +4,6 @@ $args_chronik = array(
     'post_type'=>'veranstaltungen', 
     'post_status'=>'publish', 
     'posts_per_page'=> 10,
-    // 'meta_key' => 'event_date',
-    // 'orderby' => 'rand',
-    // 'order' => 'ASC',
     'offset' => '0', 
     'meta_query' => array(
         'relation' => 'AND',
@@ -20,12 +17,6 @@ $args_chronik = array(
             'key' => 'event_time',
             'compare'	=> '=',
         ),
-        // array(
-        //     'key' => 'event_date', 
-        //     'value' => date("Y-m-d"),
-        //     'compare' => '>=', 
-        //     'type' => 'DATE'
-        // )
     ),
     'orderby' => array(
         'date_clause' => 'ASC',

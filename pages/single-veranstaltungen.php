@@ -23,7 +23,7 @@ get_header();
 	</div>
 
 	<div class="main-content">
-        
+
         <?php 
         // Projekt Kachel
         project_card($post->ID);
@@ -232,7 +232,9 @@ get_header();
                 'relation' => 'AND',
                 'date_clause' => array(
                     'key' => 'event_date',
+                    // 'value' => date("Y-m-d"),
                     'compare'	=> '=',
+                    // 'type' => 'DATE'
                 ),
                 'time_clause' => array(
                     'key' => 'event_time',
@@ -240,7 +242,7 @@ get_header();
                 ),
             ),
             'orderby' => array(
-                'date_clause' => 'ASC',
+                'date_clause' => 'DESC',
                 'time_clause' => 'ASC',
             ),
             'tax_query' => array(
