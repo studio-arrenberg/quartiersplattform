@@ -17,6 +17,11 @@ get_header();
 
 	<div class="main-content">
 
+        <?php 
+        // Projekt Kachel
+        project_card($post->ID);
+        ?>
+
     <div class="page-card umfragen-single shadow">
         <a class="close-card-link" onclick="history.go(-1);">
             <img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
@@ -147,6 +152,7 @@ get_header();
 
             </script>
             <?php if (!empty($array[0]['total_voter']) && $array[0]['total_voter'] >= 3) { ?>
+                <br>
                 <div class="content">
                     <p class="preview-text"><?php echo $array[0]['total_voter']." ".__('Stimmen','quartiersplattform'); ?></p>
                 </div>
@@ -185,8 +191,7 @@ get_header();
             if (get_post_status() == 'draft' && qp_project_owner()) {
                 reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Beitrag ist nicht öffentlich sichtbar.','quartiersplattform'), '');
             }
-                // Projekt Kachel
-                project_card($post->ID);
+
             ?>
 
 

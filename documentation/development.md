@@ -42,6 +42,15 @@ Entwicklung der Quartiersplattform
 - [ ] Menu as html buttons not list
 - [ ] Qartiersüberblick (Sprachen, Projekte, Wiki, Bezirksvertretung)
 - [ ] Hervorheben der Chronik in der Projektübersicht (als Slider..?)
+- [ ] In alten beträgen neue hervorheben (project zeigen!) (google "restaurant day" -> link zu alten beiträgen...)
+- [ ] Logout button direkt im Profil
+- [ ] WP Uploader Admin => Show all Uploads
+- [ ] I/O fields bestätigung ✅
+
+### ACF Issues
+- multiple image upload
+- wp uploader all images for admins
+- acf form time H:i (without seconds not possible)
 
 
 ### Bugs
