@@ -2696,7 +2696,7 @@ msgstr "Delete project"
 #: pages/single-projekte.php:226
 msgid ""
 "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
-"unwiederruflich gelöscht."
+"unwiderruflich gelöscht."
 msgstr ""
 "Only public projects can be deleted. All project content will be "
 "irretrievably deleted."

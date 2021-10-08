@@ -2732,7 +2732,7 @@ msgstr "Elimina progetto"
 #: pages/single-projekte.php:226
 msgid ""
 "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
-"unwiederruflich gelöscht."
+"unwiderruflich gelöscht."
 msgstr ""
 "È possibile eliminare solo i progetti pubblici. Tutti i contenuti del "
 "progetto verranno eliminati irrevocabilmente."
