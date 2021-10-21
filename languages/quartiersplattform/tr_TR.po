@@ -2714,7 +2714,7 @@ msgstr "Projeyi sil"
 #: pages/single-projekte.php:226
 msgid ""
 "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
-"unwiederruflich gelöscht."
+"unwiderruflich gelöscht."
 msgstr ""
 "Yalnızca herkese açık projeler silinebilir. Tüm proje içerikleri geri "
 "alınamayacak şekilde silinecek."

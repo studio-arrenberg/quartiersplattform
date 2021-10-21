@@ -40,12 +40,14 @@ Entwicklung der Quartiersplattform
 - [ ] Decide between Project `icon` or `image` for the badge
 - [ ] Contact [Altengerechte Quartiere.NRW](https://www.aq-nrw.de/ueber-uns/landesbuero-altengerechte-quartierenrw/unsere-leistungen/?schluessel=praxis#praxis)
 - [ ] Menu as html buttons not list
-- [ ] Qartiersüberblick (Sprachen, Projekte, Wiki, Bezirksvertretung)
+- [ ] Quartiersüberblick (Sprachen, Projekte, Wiki, Bezirksvertretung)
 - [ ] Hervorheben der Chronik in der Projektübersicht (als Slider..?)
 - [ ] In alten beträgen neue hervorheben (project zeigen!) (google "restaurant day" -> link zu alten beiträgen...)
-- [ ] Logout button direkt im Profil
+- [x] Logout button direkt im Profil
 - [ ] WP Uploader Admin => Show all Uploads
 - [ ] I/O fields bestätigung ✅
+- [ ] Projekt Seite => Seitenleiste besser nutzen
+- [ ] Anmerkungen Mails an Admins
 
 ### ACF Issues
 - multiple image upload
@@ -56,11 +58,14 @@ Entwicklung der Quartiersplattform
 ### Bugs
 - [x] Leere Chronik `no content card` wird im falschen reiter angezeigt
 - [x] Update Project Modify date when post is edited!
-- [ ] Share to facebook (open graph tags)
+- [x] Share to facebook (open graph tags)
 
 <br><br>
 
 # Versions
+
+## v1.8.2
+- Rechtschreibfehler
 
 
 ## v1.8.2

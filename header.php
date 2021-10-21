@@ -154,7 +154,6 @@ wp_maintenance_mode(); // redirect for maintenance mode
 
                 <meta name="description" content="<?php if (get_field('text')) { shorten(get_field('text'), 200); } else { shorten(get_the_content(), 200); } ?>"/>
 
-
                 <meta name="twitter:title" content="<?php echo get_the_title(); ?>  |  <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?><?php if (get_field('slogan')) echo " - ".get_field('slogan'); ?>"/>
                 <meta name="twitter:description" content="<?php if (get_field('text')) { shorten(get_field('text'), 200); } else { shorten(get_the_content(), 200); } ?>"/>
                 <meta name="twitter:image" content="<?php the_post_thumbnail_url('landscape_s' ); ?>"/>

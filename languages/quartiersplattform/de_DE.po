@@ -2477,7 +2477,7 @@ msgstr ""
 #: pages/single-projekte.php:226
 msgid ""
 "Nur Öffentliche Projekte können gelöscht werden. Alle Projektinhalte werden "
-"unwiederruflich gelöscht."
+"unwiderruflich gelöscht."
 msgstr ""
 
 #: pages/single-projekte.php:227
