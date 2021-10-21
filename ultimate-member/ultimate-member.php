@@ -473,7 +473,7 @@ return $body_atts;
  * 
  */
 add_filter( 'um_registration_user_role', 'my_registration_user_role', 10, 2 );
-function my_user_register_submitted__email( $role, $submitted ) {
+function my_registration_user_role( $role, $submitted ) {
     $role = "contributor";
 	return $role;
 }
