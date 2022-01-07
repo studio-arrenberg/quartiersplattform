@@ -2915,41 +2915,47 @@ function projekt_carousel( ) {
 
 	$array = [];
 
-	// get published posts
-	$args_public = array(
-		'post_type' => 'projekte',
-		'post_status' => array('publish'),
-		'posts_per_page'=> -1,
-	);
-	$args_public = new WP_Query($args_public);
-	while ( $args_public->have_posts() ) {
-		$args_public->the_post();
-		array_push($array, get_the_ID(  ) );
-	}
-	wp_reset_postdata();
-
-	if (is_user_logged_in(  )) {
-		// get drafts by user
-		$args_private = array(
+	if ( is_user_logged_in() ) {
+		// get all posts current user
+		$args_current     = array(
 			'post_type' => 'projekte',
 			'author__in' => $current_user->ID,
-			'post_status' => array('pending', 'draft', 'auto-draft'),
-			'posts_per_page'=> -1,   
+			'post_status' => array( 'publish', 'pending', 'draft', 'auto-draft' ),
+			'posts_per_page' => - 1,
 		);
-		$args_private = new WP_Query($args_private);
-		while ( $args_private->have_posts() ) {
-			$args_private->the_post();
-			array_push($array, get_the_ID(  ) );
-		}
-		wp_reset_postdata();
+		$args_current     = new WP_Query( $args_current );
+		$args_current_ids = wp_list_pluck( $args_current->posts, 'ID' );
+
+		// get published another users posts
+		$args_public     = array(
+			'post_type' => 'projekte',
+			'author__not_in' => $current_user->ID,
+			'post_status' => array( 'publish' ),
+			'posts_per_page' => - 1,
+			'orderby' => 'modified',
+		);
+		$args_public     = new WP_Query( $args_public );
+		$args_public_ids = wp_list_pluck( $args_public->posts, 'ID' );
+		$array           = array_merge( $args_current_ids, $args_public_ids );
+	} else {
+		// get all published posts
+		$args_public     = array(
+			'post_type' => 'projekte',
+			'post_status' => array( 'publish' ),
+			'posts_per_page' => - 1,
+			'orderby' => 'modified',
+		);
+		$args_public     = new WP_Query( $args_public );
+		$args_public_ids = wp_list_pluck( $args_public->posts, 'ID' );
+		$array           = $args_public_ids;
 	}
 
 	$args4 = array(
-		'post_type'=> array('projekte'), 
+		'post_type' => array( 'projekte' ),
 		'post__in' => $array,
-		'post_status'=> array('publish', 'draft', 'auto-draft'), 
-		'posts_per_page'=> -1,
-		'orderby' => 'modified',
+		'post_status' => array( 'publish', 'draft', 'auto-draft' ),
+		'posts_per_page' => - 1,
+		'orderby' => 'post__in',
 		// 'orderby' => 'DESC'
 	);
 
@@ -2957,34 +2963,34 @@ function projekt_carousel( ) {
 	set_query_var( 'projekt_carousel_add', true );
 	set_query_var( 'projekt_carousel_projekt_id', $project_ID );
 
-	?>  
-		<!-- projekt carousel -->
-		<div class="projekt-carousel">
+	?>
+	<!-- projekt carousel -->
+	<div class="projekt-carousel">
 
-			<?php if (!wp_is_mobile(  )) { ?> 
+		<?php if (!wp_is_mobile(  )) { ?>
 			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
 				<div class="badge badge-button">
-				<img alt="Add Button" src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
+					<img alt="Add Button" src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
 				</div>
 				<h3 class="heading-size-4">
 					<?php _e('Projekt erstellen', 'quartiersplattform'); ?>
 				</h3>
 			</a>
-			<?php } ?>
+		<?php } ?>
 
-			<?php  
-			
-			if (wp_is_mobile(  ) && $array) {
-				slider($args4, 'badge', 4, 'false', 'start');
-			}
-			else if ($array) {
-				card_list($args4, 'badge');
-			}
-			
-			?>
-		</div>
+		<?php
 
-	<?php 
+		if (wp_is_mobile(  ) && $array) {
+			slider($args4, 'badge', 4, 'false', 'start');
+		}
+		else if ($array) {
+			card_list($args4, 'badge');
+		}
+
+		?>
+	</div>
+
+	<?php
 
 	set_query_var( 'highlight_display', false );
 	set_query_var( 'projekt_carousel_add', false );
