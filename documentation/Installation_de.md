@@ -1,4 +1,4 @@
-# Installationsleitfaden (engl.)
+# Installationsleitfaden (deutsch)
 Ich habe versucht, meine Installation der QP zu dokumentieren. Vielleicht hilfreich für andere ;)
 
 ## Datenbank erstellen
