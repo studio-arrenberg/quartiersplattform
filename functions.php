@@ -878,8 +878,8 @@ add_action('admin_init', function() {
 	# ACF Pro
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>Advanced Custom Fields</strong>".__(" um vollständig funktionieren zu können.", 'quartiersplattform');
-			$link = '<strong>'.__("Advanced Custom Fields",'quartiersplattform').'</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">'.__("Installiere ACF",'quartiersplattform').'</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin ','quartiersplattform')."<strong>Advanced Custom Fields Pro</strong>".__(" um vollständig funktionieren zu können.", 'quartiersplattform');
+			$link = '<strong>'.__("Advanced Custom Fields Pro",'quartiersplattform').'</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields%20pro&tab=search&type=term">'.__("Installiere ACF Pro",'quartiersplattform').'</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}
@@ -887,7 +887,7 @@ add_action('admin_init', function() {
 	if (!class_exists('UM')) {
 
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>Ultimate Member,</strong>".__(' um vollständig funktionieren zu können.', 'quartiersplattform');
+			$notice = __('Deine Quartiersplattform benötigt das Plugin ','quartiersplattform')."<strong>Ultimate Member,</strong>".__(' um vollständig funktionieren zu können.', 'quartiersplattform');
 			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">'.__("Installiere Ultimate Member",'quartiersplattform').'</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
