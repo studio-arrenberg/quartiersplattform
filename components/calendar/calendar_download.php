@@ -4,14 +4,24 @@
 $date = get_field('event_date', $post);
 $time = get_field('event_time', $post);
 $time_end = get_field('event_end_time', $post);
+$date_end = get_field('event_end_date', $post);
+$frequenz = get_field('event_frequency',$post);
         
 $title = get_the_title();
 $start = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time"));
 $ende = date('Ymd', strtotime("$date $time")) . "T" . date('His', strtotime("$date $time_end"));
 
-if (empty($ende) || strtotime($start) > strtotime($ende) ) {
+if (empty($time_end) || strtotime($start) > strtotime($ende) ) {
     // one hour after start
     $ende = date('Ymd', strtotime($start) + (60*60)) . "T" . date('His', strtotime($start) + (60*60));
+}
+
+if (!empty($date_end)) {
+    // Enddatum given
+    $letzter = date('Ymd', strtotime("$date_end")) . "T" . date('His', strtotime("$ende"));
+}
+else {
+    $letzter = $ende;
 }
 
 // directory
@@ -40,6 +50,21 @@ $dir = "/assets/generated/calendar-files/";
 
 $kb_start = $start;
 $kb_end = $ende;
+
+if($frequenz == 'täglich' ) {
+    $kb_freq = 'daily';
+}
+else if($frequenz == 'wöchentlich' ) {
+    $kb_freq = 'weekly';
+}
+else if($frequenz == 'monatlich' ) {
+    $kb_freq = 'monthly';
+}
+else {
+    $kb_freq = 'yearly';
+}
+
+$kb_until = $letzter;
 $kb_current_time = date("Ymd")."T".date("His");
 $kb_title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
 $kb_location = preg_replace('/([\,;])/','\\\$1',$location); 
@@ -71,7 +96,7 @@ $kb_ics_content =
     'DTEND:'.$kb_end.$eol.
     'LOCATION:'.$kb_location.$eol.
     'DTSTAMP:'.$kb_current_time.$eol.
-    // 'RRULE:FREQ='.$kb_freq.';UNTIL='.ende_der_widerholung.
+    'RRULE:FREQ='.$kb_freq.';UNTIL='.$kb_until.$eol.
     'SUMMARY:'.$kb_title.$eol.
     'URL;VALUE=URI:'.$kb_url.$eol.
     'DESCRIPTION:'.$kb_description.$eol.
