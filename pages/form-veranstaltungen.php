@@ -66,7 +66,9 @@ if ( qp_project_owner($_GET['project']) == false ) {
                                 'field_5fc8d0b28edb0', //Text
                                 'field_5fc8d15b8765b', //Date
                                 'field_5fc8d16e8765c', //Start AP1
-                                'field_5fc8d18b8765d', //End AP1 
+                                'field_5fc8d18b8765d', //End AP1
+                                'field_5fc8d1ae96113', //EndDate
+                                'field_63137dc0b7174', //Frequenz
                                 'field_5fc8d1e0d15c9', //Livestream
                                 'field_5fc8d1f4d15ca', //Ticket
                                 'field_5fc8d1c4d15c8', //Website
