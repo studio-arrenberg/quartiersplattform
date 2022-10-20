@@ -58,6 +58,8 @@ Die Quartiersplattform wird von folgenden Quartieren und Stadtteilen genutzt.
 
 ## Entwicklung
 Die Quartiersplattform wird momentan vom [studio arrenberg](https://arrenberg.studio) Entwickelt. 
+- [Funktionen](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/functions.md)
+- [Struktur](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/structure.md)
 <!-- Um einen Einblick in die Entwicklung zu bekommen haben wir eine Liste der Features und deren Status erstellt.  -->
 
 ### Set up Development Environment
