@@ -173,7 +173,6 @@ wp_maintenance_mode(); // redirect for maintenance mode
     <meta property="og:locale:alternate" content="it_IT" />
     <meta property="og:site_name" content="<?php echo 'Quartiersplattform '.get_field('quartiersplattform-name','option'); ?>"/>
     <meta name="twitter:card" content="summary"/>
-    <!-- <meta name="twitter:site" content="<?php echo esc_attr( $twitter_site ); ?>"/> -->
 
     <!-- Matomo Tracking API Key -->
     <?php the_field('matomo_api', 'option'); ?>

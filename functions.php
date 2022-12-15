@@ -1952,6 +1952,9 @@ function shorten($text, $count = '55') {
 }
 
 
+// define( 'WP_DEBUG', true );
+// define( 'WP_DEBUG_LOG', true );
+
 /**
  * Debug Function
  *
@@ -3268,21 +3271,24 @@ add_action( 'after_setup_theme', 'qp_translate_theme' );
  * @return string browser language
  */
 function qp_detect_browser_language() {
-	$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
-	if(stripos($browser_language, "de") !== false ){
-		return "de_DE";
-	}elseif(stripos($browser_language, "it") !== false ){
-		return "it_IT";
-	}elseif(stripos($browser_language, "tr") !== false ){
-		return "tr_TR";
-	}elseif(stripos($browser_language, "en") !== false ){
-		return "en_GB";
-	}
-	else{
+	if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+		$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+		if(stripos($browser_language, "de") !== false ){
+			return "de_DE";
+		}elseif(stripos($browser_language, "it") !== false ){
+			return "it_IT";
+		}elseif(stripos($browser_language, "tr") !== false ){
+			return "tr_TR";
+		}elseif(stripos($browser_language, "en") !== false ){
+			return "en_GB";
+		}
+		else{
+			return "de_DE";
+		}
+	} else {
 		return "de_DE";
 	}
 }
-
 /**
  * QP language function
  * 
