@@ -22,8 +22,6 @@
 
         $('label.'+elementClass+' span.acf-spinner').addClass('is-active');
 
-        // alert('label.'+elementClass+' span.acf-spinner');
-
         var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
     
         var data = {

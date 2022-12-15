@@ -58,7 +58,18 @@ Die Quartiersplattform wird von folgenden Quartieren und Stadtteilen genutzt.
 
 ## Entwicklung
 Die Quartiersplattform wird momentan vom [studio arrenberg](https://arrenberg.studio) Entwickelt. 
+- [Funktionen](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/functions.md)
+- [Struktur](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/structure.md)
 <!-- Um einen Einblick in die Entwicklung zu bekommen haben wir eine Liste der Features und deren Status erstellt.  -->
+
+### Set up Development Environment
+1. Install WordPress with Database Server
+2. Login as Admin and go to the Dashboard
+3. Download Theme from Repository or clone in folder `/plugins/quartiersplattform`
+4. Activate Theme
+5. Download and Activate Ultimate Member Plugin in WordPress Dashboard
+6. Download and Activate ACF-Pro Plugin in WordPress Dashboard
+7. _You are all set_
 
 <br>
 

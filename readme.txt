@@ -1,7 +1,7 @@
 === Quartiersplattform ===
 Contributors: studio arrenberg, the WordPress team
-Tested up to: 1.8
-Stable tag: 1.8
+Tested up to: 1.8.3
+Stable tag: 1.8.3
 License: MIT License
 License URI: https://github.com/studio-arrenberg/quartiersplattform/blob/main/LICENSE
 

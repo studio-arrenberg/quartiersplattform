@@ -878,42 +878,38 @@ add_action('admin_init', function() {
 	# ACF Pro
 	if (!class_exists('acf_pro')) {
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>Advanced Custom Fields</strong>".__(" um vollständig funktionieren zu können.", 'quartiersplattform');
-			$link = '<strong>'.__("Advanced Custom Fields",'quartiersplattform').'</strong> <a href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">'.__("Installiere ACF",'quartiersplattform').'</a>';
-			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
+			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong> Advanced Custom Fields Pro</strong>".__(" um vollständig funktionieren zu können.", 'quartiersplattform');
+			// $link = __("Plugin installieren und aktivieren",'quartiersplattform').' <a class="button button-primary" href='.get_site_url().'/wp-admin/plugin-install.php?s=Advanced%20custom%20fields&tab=search&type=term">Advanced Custom Fields '.__("installieren",'quartiersplattform').'</a>';
+			$hint = __('Das Plugin bekommen Sie bei den erstellern der Quartiersplattform.','quartiersplattform');
+			echo "<div class='error'><p>$notice<br>$hint<br></p></div>";
 		});
 	}
 	# Ultimate Memmber
 	if (!class_exists('UM')) {
-
 		add_action('admin_notices', function() {
-			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong>Ultimate Member,</strong>".__(' um vollständig funktionieren zu können.', 'quartiersplattform');
-			$link = '<strong>Ultimate Member</strong> <a href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">'.__("Installiere Ultimate Member",'quartiersplattform').'</a>';
+			$notice = __('Deine Quartiersplattform benötigt das Plugin','quartiersplattform')."<strong> Ultimate Member,</strong>".__(' um vollständig funktionieren zu können.', 'quartiersplattform');
+			$link = __("Plugin installieren und aktivieren",'quartiersplattform').' <a class="button button-primary" href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">Ultimate Member '.__("installieren",'quartiersplattform').'</a>';
+			// $link = '<strong>Ultimate Member</strong> <a class="button button-primary" href="'.get_site_url().'/wp-admin/plugin-install.php?s=Ultimate%20Member&tab=search&type=term">'.__("Installiere Ultimate Member",'quartiersplattform').'</a>';
 			echo "<div class='error'><p>$notice<br>$link<br></p></div>";
 		});
 	}
 	# Quartiersplattform is running
 	if (class_exists('acf_pro') && class_exists('UM')) {
-
 		add_action('admin_notices', function() {
 			$notice = __("Gratulation, deine Quartiersplattform wurde erfolgreich eingerichtet.",'quartiersplattform');
 			reminder_backend('setup-finished', $notice, 'updated notice');
 		});
-
 	}
-	# Install Ultimate Member
-	if (class_exists('UM')) {
-
-		add_action('admin_notices', function() {
-			$notice = __("Das Ultimate Member Plugin wurde noch nicht vollständig eingerichtet.",'quartiersplattform');
-			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" class="button button-primary">'.__("Anleitung öffnen",'quartiersplattform').'</a>';
-			reminder_backend('install-UM', $notice.'<br>'.$link, 'updated notice');
-		});
-
-	}
+	# Install Ultimate Member Instructions
+	// if (class_exists('UM')) {
+	// 	add_action('admin_notices', function() {
+	// 		$notice = __("Das Ultimate Member Plugin wurde noch nicht vollständig eingerichtet.",'quartiersplattform');
+	// 		$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/Ultimate_Member.md" target="_blank" class="button button-primary">'.__("Anleitung öffnen",'quartiersplattform').'</a>';
+	// 		reminder_backend('install-UM', $notice.'<br>'.$link, 'updated notice');
+	// 	});
+	// }
 	# WP Mail SMTP suggestion
 	if (class_exists('wp_mail_smtp')) {
-
 		add_action('admin_notices', function() {
 			$notice = __("Richte das WP Mail SMTP Plugin vollständig ein, um eine zuverlässige E-Mail-Zustellung zu gewährleisten.",'quartiersplattform');
 			$link = '<a href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/WP_Mail_SMTP.md" class="button button-primary" target="_blank">'.__("Anleitung öffnen",'quartiersplattform').'</a>';
@@ -922,24 +918,20 @@ add_action('admin_init', function() {
 	}
 	# Datenschutz reminder
 	if (!get_privacy_policy_url() && class_exists('acf_pro') && class_exists('UM')) {
-
 		add_action('admin_notices', function() {
 			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" keine Datenschutzerklärung.",'quartiersplattform').'</strong>';
 			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/options-privacy.php">'.__("Datenschutzerklärung erstellen",'quartiersplattform').'</a>';
 			reminder_backend('datenschutz-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
-
 	}
 	# Impressum reminder
 	$page_impressum = get_page_by_title( 'Impressum' );
 	if (!get_the_content('','',$page_impressum->ID) && class_exists('acf_pro') && class_exists('UM')) {
-
 		add_action('admin_notices', function() {
 			$notice = __('Deine Quartiersplattform hat noch','quartiersplattform')."<strong>".__(" kein Impressum.",'quartiersplattform').'</strong>';
 			$link = '<a class="button button-primary" href="'.get_site_url().'/wp-admin/edit.php?post_type=page">'.__("Impressum erstellen",'quartiersplattform').'</a>';
 			reminder_backend('impressum-reminder-setup', $notice.'<br>'.$link, 'updated notice');
 		});
-
 	}
 	# reminder for settings
 	if (class_exists('acf_pro') && class_exists('UM')) {
@@ -954,13 +946,11 @@ add_action('admin_init', function() {
 	}
 	# WP Mail SMTP
 	if (!function_exists( 'wp_mail_smtp' )) {
-
 		add_action('admin_notices', function() {
 			$notice = __('Wir empfehlen das Plugin ','quartiersplattform')."<strong>WP Mail SMTP</strong>".__(" zu installieren, um eine zuverlässige E-Mail Zustellung zu gewährleisten.", 'quartiersplattform');
-			$link = '<strong>WP Mail SMTP</strong> <a class="button button-primary" href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">'.__("installieren",'quartiersplattform').'</a>';
+			$link = __("Plugin installieren und aktivieren",'quartiersplattform').' <a class="button button-primary" href="'.get_site_url().'/wp-admin/plugin-install.php?s=WP+Mail+SMTP&tab=search&type=term">WP Mail '.__("installieren",'quartiersplattform').'</a>';
 			reminder_backend('qp-mail-smtp-suggestion', $notice.'<br>'.$link, 'updated notice');
 		});
-
 	}
 	# Update Notes
 	$url = "http://api.quartiersplattform.org";
@@ -1222,7 +1212,7 @@ function script_managment() {
 
 	$qp_pages = array(
 		'/sdgs/',
-		'/quartiersplattform/',
+		// '/quartiersplattform/',
 	);
 
 	$cpts = array(
@@ -1962,6 +1952,9 @@ function shorten($text, $count = '55') {
 }
 
 
+// define( 'WP_DEBUG', true );
+// define( 'WP_DEBUG_LOG', true );
+
 /**
  * Debug Function
  *
@@ -2653,7 +2646,7 @@ function visibility_toggle_callback() {
 	$status = $_POST['status'];
 
 	// check privilage
-	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
+	if ($current_user->ID != $post->post_author && current_user_can('administrator') == false) {
 		return false;
 	}
 	// set post status
@@ -3278,21 +3271,24 @@ add_action( 'after_setup_theme', 'qp_translate_theme' );
  * @return string browser language
  */
 function qp_detect_browser_language() {
-	$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
-	if(stripos($browser_language, "de") !== false ){
-		return "de_DE";
-	}elseif(stripos($browser_language, "it") !== false ){
-		return "it_IT";
-	}elseif(stripos($browser_language, "tr") !== false ){
-		return "tr_TR";
-	}elseif(stripos($browser_language, "en") !== false ){
-		return "en_GB";
-	}
-	else{
+	if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+		$browser_language = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
+		if(stripos($browser_language, "de") !== false ){
+			return "de_DE";
+		}elseif(stripos($browser_language, "it") !== false ){
+			return "it_IT";
+		}elseif(stripos($browser_language, "tr") !== false ){
+			return "tr_TR";
+		}elseif(stripos($browser_language, "en") !== false ){
+			return "en_GB";
+		}
+		else{
+			return "de_DE";
+		}
+	} else {
 		return "de_DE";
 	}
 }
-
 /**
  * QP language function
  * 
