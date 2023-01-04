@@ -1952,6 +1952,7 @@ function shorten($text, $count = '55') {
 }
 
 
+
 // define( 'WP_DEBUG', true );
 // define( 'WP_DEBUG_LOG', true );
 
