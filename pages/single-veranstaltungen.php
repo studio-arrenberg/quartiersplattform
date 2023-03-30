@@ -56,7 +56,24 @@ get_header();
                 // get project by Term
                 ?>
                 <h2 class="heading-size-3 highlight">
-                    <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> <br> <?php echo qp_date(get_field('event_date'), true, get_field('event_time')); if (get_field('event_end_time')) echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true); ?></span>
+                    <span class="date">
+
+                    <?php
+                        if (get_field('event_end_date')) {
+		            echo _e('Veranstaltungsreihe', 'quartiersplattform'). "<br>";
+                            echo qp_date(get_field('event_date'), false, get_field('event_time'));
+                            echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_end_date'), false, get_field('event_end_time'));
+                        } else {
+                            echo _e('Veranstaltung', 'quartiersplattform'). "<br>";
+                            echo qp_date(get_field('event_date'), true, get_field('event_time'));
+                            if (get_field('event_end_time')) {
+                            	echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true) . " Uhr <br>";
+                            } else {
+                            echo " Uhr";
+                            }
+                        }
+                    ?>
+                    </span>
                 </h2>
                 <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
                 
@@ -197,7 +214,8 @@ get_header();
                             'field_5fc8d0b28edb0', //Text
                             'field_5fc8d15b8765b', //Date
                             'field_5fc8d16e8765c', //Start 
-                            'field_5fc8d18b8765d', //End  
+                            'field_5fc8d18b8765d', //End
+                            'field_5fc8d1ae96113', //EndDate
                             'field_5fc8d1e0d15c9', //Livestream
                             'field_5fc8d1f4d15ca', //Ticket
                             'field_5fc8d1c4d15c8', //Website

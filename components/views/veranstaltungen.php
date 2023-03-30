@@ -6,20 +6,30 @@ $veranstaltungen = array(
     'post_status'=>'publish', 
     'posts_per_page'=> -1,
     'offset' => '0', 
-    'meta_query' => array(
-        'relation' => 'AND',
-        'date_clause' => array(
-            'key' => 'event_date',
+    'meta_query' =>
+    array(
+        'relation' => 'OR',
+        'date_clause' =>
+        array(
+            'key' => 'event_end_date',
             'value' => date("Y-m-d"),
             'compare'	=> '>=',
             'type' => 'DATE'
         ),
-        'time_clause' => array(
-            'key' => 'event_time',
-            'compare'	=> '=',
+        array(
+            'key' => 'event_date',
+            'value' => date("Y-m-d"),
+            'compare'   => '>=',
+            'type' => 'DATE'
         ),
     ),
-    'orderby' => array(
+    'time_clause' =>
+    array(
+        'key' => 'event_time',
+        'compare'	=> '=',
+    ),
+    'orderby' =>
+    array(
         'date_clause' => 'ASC',
         'time_clause' => 'ASC',
     ),
