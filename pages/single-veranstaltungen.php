@@ -211,7 +211,7 @@ get_header();
                         'return' => get_site_url().'/projekte'.'/', 
                         'uploader' => qp_form_uploader(),
                         'fields' => array(
-                            'field_5fc8d0b28edb0', //Text
+                            'field_5fc8d0b28edb0', //Beschreibung
                             'field_5fc8d15b8765b', //Date
                             'field_5fc8d16e8765c', //Start 
                             'field_5fc8d18b8765d', //End
@@ -239,10 +239,10 @@ get_header();
 <div class="right-sidebar">
         <?php
         // weitere Nachrichten
-		$args2 = array(
-			'post_type'=> array('veranstaltungen'), 
-			'post_status'=>'publish', 
-			'posts_per_page'=> 6,
+        $args2 = array(
+            'post_type'=> array('veranstaltungen'), 
+            'post_status'=>'publish', 
+            'posts_per_page'=> 6,
             // 'order' => 'DESC',
             'post__not_in' => array(get_the_ID()),
             'offset' => '0', 

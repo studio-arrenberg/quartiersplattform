@@ -104,42 +104,61 @@ get_header();
             <h2 class="heading-size-1 stage-title"><?php _e("Veranstaltungen in deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!", "quartiersplattform"); ?></p>
             <div class="link-card-container force-landscape">
-                <?php 
-                        $args4 =
-                        array(
-                            'post_type'=>'veranstaltungen', 
-                            'post_status'=>'publish', 
-                            'posts_per_page'=> 20,
-                            'meta_query' =>
+                <?php
+                    $args4 =
+                    array(
+                        'post_type'      => 'veranstaltungen',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => 20,
+                        'offset'         => '0',
+                        'meta_query'     => array(
+                            'relation' => 'AND',
                             array(
                                 'relation' => 'OR',
-                                'date_clause' =>
                                 array(
-                                    'key' => 'event_end_date',
-                                    'value' => date('Y-m-d'),
+                                    'key'     => 'event_date',
+                                    'value'   => date('Y-m-d'),
                                     'compare' => '>=',
-                                    'type' => 'DATE',
+                                    'type'    => 'DATE'
                                 ),
                                 array(
-                                    'key' => 'event_date',
-                                    'value' => date("Y-m-d"),
-                                    'compare' => '>=',
-                                    'type' => 'DATE'
+                                    'relation' => 'AND',
+                                    array(
+                                        'key'     => 'event_date',
+                                        'value'   => date('Y-m-d'),
+                                        'compare' => '<',
+                                        'type'    => 'DATE'
+                                    ),
+                                    array(
+                                        'relation' => 'OR',
+                                        array(
+                                            'key'     => 'event_end_date',
+                                            'value'   => date('Y-m-d'),
+                                            'compare' => '>=',
+                                            'type'    => 'DATE'
+                                        ),
+                                        array(
+                                            'key'     => 'event_end_date',
+                                            'value'   => '',
+                                            'compare' => '=',
+                                        ),
+                                    ),
                                 ),
                             ),
-                            'time_clause' =>
                             array(
-                                'relation' => 'AND',
-                                'key' => 'event_time',
-                                'compare' => '=',
-                            ),
-                            'orderby' =>
-                            array(
-                                'date_clause' => 'ASC',
-                                'time_clause' => 'ASC',
-                            ),
-                        );
-                    ?>  
+                                'key'     => 'event_time',
+                                'compare'   => 'EXISTS',
+                            ),        
+                        ),
+                        'orderby' => array(
+                            'event_date'     => 'ASC',
+                            'meta_value_num' => 'ASC',
+                            'meta_key'       => 'event_end_date',
+                            'event_time'     => 'ASC',
+                            'ID'             => 'ASC'
+                        ),
+                    );
+                ?>
                     <?php card_list($args4);?>
                 </div>
                 <a class="button is-primary" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>

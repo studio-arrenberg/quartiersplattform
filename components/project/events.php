@@ -1,38 +1,62 @@
 <?php
-// Aktuelle Veranstaltungen
+// Veranstaltungen
 $args_chronik = array(
-    'post_type' => 'veranstaltungen', 
-    'post_status' => 'publish', 
+    'post_type'      => 'veranstaltungen',
+    'post_status'    => 'publish',
     'posts_per_page' => 10,
-    'offset' => '0', 
-    'meta_query' => array(
-        'relation' => 'OR', // change relation to OR
-        'date_clause' => array(
-            'key' => 'event_date',
-            'value' => date("Y-m-d"),
-            'compare' => '>=',
-            'type' => 'DATE'
+    'tax_query'      => array(
+        array(
+            'taxonomy' => 'projekt',
+            'field'    => 'slug',
+            'terms'    => $post->post_name,
+        ),
+    ),
+    'meta_query'     => array(
+        'relation' => 'AND',
+        array(
+            'relation' => 'OR',
+            array(
+                'key'     => 'event_date',
+                'value'   => date('Y-m-d'),
+                'compare' => '>=',
+                'type'    => 'DATE'
+            ),
+            array(
+                'relation' => 'AND',
+                array(
+                    'key'     => 'event_date',
+                    'value'   => date('Y-m-d'),
+                    'compare' => '<',
+                    'type'    => 'DATE'
+                ),
+                array(
+                    'relation' => 'OR',
+                    array(
+                        'key'     => 'event_end_date',
+                        'value'   => date('Y-m-d'),
+                        'compare' => '>=',
+                        'type'    => 'DATE'
+                    ),
+                    array(
+                        'key'     => 'event_end_date',
+                        'value'   => '',
+                        'compare' => '=',
+                    ),
+                ),
+            ),
         ),
         array(
-            'key' => 'event_end_date',
-            'value' => date("Y-m-d"),
-            'compare' => '>=',
-            'type' => 'DATE'
-        ),
-        'time_clause' => array(
-            'key' => 'event_time',
-            'compare' => '=',
-        )
+            'key'     => 'event_time',
+            'compare' => 'EXISTS',
+        ),        
     ),
     'orderby' => array(
-        'date_clause' => 'ASC',
-        'time_clause' => 'ASC',
+        'event_date'     => 'ASC',
+        'meta_value_num' => 'ASC',
+        'meta_key'       => 'event_end_date',
+        'event_time'     => 'ASC',
+        'ID'             => 'ASC'
     ),
-    'tax_query' => array(
-        'taxonomy' => 'projekt',
-        'field' => 'slug',
-        'terms' => ".$post->post_name."
-    )
 );
 
 if (count_query($args_chronik)) {

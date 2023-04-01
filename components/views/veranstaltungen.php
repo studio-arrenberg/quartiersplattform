@@ -2,36 +2,55 @@
 
 // Aktuelle veranstaltungen
 $veranstaltungen = array(
-    'post_type'=>'veranstaltungen', 
-    'post_status'=>'publish', 
-    'posts_per_page'=> -1,
-    'offset' => '0', 
-    'meta_query' =>
-    array(
-        'relation' => 'OR',
-        'date_clause' =>
+    'post_type'      => 'veranstaltungen',
+    'post_status'    => 'publish',
+    'posts_per_page' => -1,
+    'offset'         => '0',
+    'meta_query'     => array(
+        'relation' => 'AND',
         array(
-            'key' => 'event_end_date',
-            'value' => date("Y-m-d"),
-            'compare'	=> '>=',
-            'type' => 'DATE'
+            'relation' => 'OR',
+            array(
+                'key'     => 'event_date',
+                'value'   => date('Y-m-d'),
+                'compare' => '>=',
+                'type'    => 'DATE'
+            ),
+            array(
+                'relation' => 'AND',
+                array(
+                    'key'     => 'event_date',
+                    'value'   => date('Y-m-d'),
+                    'compare' => '<',
+                    'type'    => 'DATE'
+                ),
+                array(
+                    'relation' => 'OR',
+                    array(
+                        'key'     => 'event_end_date',
+                        'value'   => date('Y-m-d'),
+                        'compare' => '>=',
+                        'type'    => 'DATE'
+                    ),
+                    array(
+                        'key'     => 'event_end_date',
+                        'value'   => '',
+                        'compare' => '=',
+                    ),
+                ),
+            ),
         ),
         array(
-            'key' => 'event_date',
-            'value' => date("Y-m-d"),
-            'compare'   => '>=',
-            'type' => 'DATE'
-        ),
+            'key'     => 'event_time',
+            'compare' => 'EXISTS',
+        ),        
     ),
-    'time_clause' =>
-    array(
-        'key' => 'event_time',
-        'compare'	=> '=',
-    ),
-    'orderby' =>
-    array(
-        'date_clause' => 'ASC',
-        'time_clause' => 'ASC',
+    'orderby' => array(
+        'event_date'     => 'ASC',
+        'meta_value_num' => 'ASC',
+        'meta_key'       => 'event_end_date',
+        'event_time'     => 'ASC',
+        'ID'             => 'ASC'
     ),
 );
 
