@@ -53,12 +53,12 @@
 			}
 		?>
 	</div>
-	
+
 	<!-- Backend edit link -->
 	<?php qp_backend_edit_link(); ?>
 
 	<!-- kommentare -->
-	<?php			
+	<?php
 	if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
 	?>
 
@@ -66,20 +66,15 @@
 		<?php comments_template('', true); ?>
 	</div><!-- .comments-wrapper -->
 	<!-- kommentare -->
-	<?php			
-		}       
+	<?php
+		}
 	?>
 
 </div>
 
 <div class="right-sidebar ">
-	<?php 
+	<?php
 		get_template_part('components/views/veranstaltungen');
-	?>	
+	?>
 </div>
 <!-- </main> -->
-
-
-
-
-

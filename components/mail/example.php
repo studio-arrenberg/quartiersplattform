@@ -29,8 +29,8 @@
                 <tr class="">
                     <td style="padding-bottom: 18px" class="">
                         <div style="text-decoration: none;">
-                            <a style="		
-					padding: 15px;		  
+                            <a style="
+					padding: 15px;
 					-webkit-appearance: none;
 					-moz-appearance: none;
 					appearance: none;

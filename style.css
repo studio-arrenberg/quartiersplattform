@@ -118,7 +118,7 @@ html {
 body {
   background: #FCFCFE;  box-sizing: border-box;
   color: #000;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1.8rem;
   text-align: left;
@@ -226,7 +226,7 @@ main {
 }
 
 h1,.heading-size-1,
-h2,.heading-size-2, 
+h2,.heading-size-2,
 h3,.heading-size-3,
 h4,.heading-size-4,
 h5,.heading-size-5,
@@ -660,13 +660,13 @@ textarea{
   word-wrap: none;
   word-break: keep-all;
   background: #f9fcff;
-  border: 1px solid #dcf0ff;  
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  border: 1px solid #dcf0ff;
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 select{
   font-size: 1.8rem ;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 
 }
 
@@ -782,7 +782,7 @@ input[type="file"]::-webkit-file-upload-button {
   border: none;
   cursor: pointer;
   text-decoration: none;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
 
   display: inline-flex;
@@ -800,7 +800,7 @@ input[type="file"]::-webkit-file-upload-button {
   border-radius: 15px;
   background-color: #fff;
   color: #003054;
-  
+
   text-align: center;
   transition: all 0.15s linear;
 
@@ -1033,13 +1033,13 @@ textarea {
   .pagination .prev,
   .wp-block-file .wp-block-file__button,
   .wp-block-button__link,
-  input[type="submit"], 
+  input[type="submit"],
   input[type="submit" i]
   input {
     padding: 5px 15px;
     min-height: 45px;
     font-size: 1.6rem;
-    line-height: 1.6rem;    
+    line-height: 1.6rem;
   }
 
   .header-button {
@@ -1170,7 +1170,7 @@ button.toggle {
 }
 
 
-.button-group .button, 
+.button-group .button,
 .button-group button {
   flex-direction: column;
   white-space: normal;
@@ -1292,14 +1292,14 @@ th {
 .hidden{
   opacity: 0;
   display: none;
-  transition: all ease-in-out 0.2s; 
+  transition: all ease-in-out 0.2s;
 }
- 
+
 
 .overlay.hidden{
    display: block;
 }
- 
+
 
 
 
@@ -1359,7 +1359,7 @@ th {
 
 
 .bg_blue {
-  background: 
+  background:
   linear-gradient(to top right, rgba(0, 165, 255, 1), rgba(0, 138, 178, 1))
 }
 
@@ -1473,13 +1473,13 @@ th {
 
 .menu .current-menu-item > a, .menu a:hover  {
   color: #0091FF;
-} 
-  
+}
+
 .menu .current-menu-item > a {
   font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700;
-} 
-  
+}
+
 @media (min-width: 782px) {
 
   .menu li > a {
@@ -1528,7 +1528,7 @@ th {
   background-color: rgba(231, 245, 255, 0.95);
 
   opacity: 0;
-  visibility: hidden;  
+  visibility: hidden;
   transition: all ease-in-out 0.2s; /* Animation */
 
 }
@@ -1555,7 +1555,7 @@ th {
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
   }
-} 
+}
 
 .overlay .header-button{
   position: absolute;
@@ -1581,11 +1581,11 @@ th {
     margin-top: 75px;
     margin-bottom: 50px;
   }
-  
+
   .vpp-animation img{
     margin: 20px auto;
   }
-  
+
   .overlay .energie-ampel{
     margin-top: 25px;
   }
@@ -1619,7 +1619,7 @@ th {
     overflow-x: inherit !important;
   }
   .page-grid{
-    justify-content: unset; 
+    justify-content: unset;
     display: grid;
     margin: 0 auto;
     grid-template-columns: 100px minmax(450px, 700px);
@@ -2124,7 +2124,7 @@ th {
   .card.projekt{
     max-height: 85px;
   }
-  
+
   .card.projekt .wp-post-image{
     width: 100px;
     height: 75px;
@@ -2135,7 +2135,7 @@ th {
   display: flex;
   align-items: center;
   flex: 0 1;
-  margin-left: auto;  
+  margin-left: auto;
   text-align: right;
   margin-right: 5px;
 }
@@ -2177,7 +2177,7 @@ th {
 
 @supports (
   (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px) )) {
-    .blur::after{ 
+    .blur::after{
       background: rgba(255, 255, 255, 0.6);
       -webkit-backdrop-filter: blur(7px);
     backdrop-filter: blur(7px);
@@ -2292,7 +2292,7 @@ th {
 }
 
 .stage-center p{
-  padding-left: 20%;  
+  padding-left: 20%;
   padding-right: 20%;
   margin-bottom: 20px;
 }
@@ -2374,7 +2374,7 @@ th {
   margin-bottom: 5px;
 }
 
-/* 
+/*
 @media (min-width: 782px) {
   .link-card-container  .card{
     margin: 5px;
@@ -2440,7 +2440,7 @@ th {
 
 @media (max-width: 650px) {
 
- 
+
 
   .link-card-container{
     min-width: 0px;
@@ -2759,7 +2759,7 @@ width: 26px ;}
 
 .has-drop-cap:not(:focus)::first-letter {
   color: #0091FF;
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 font-weight: 400;
   font-size: 5.1em;
   font-weight: 500;
@@ -2787,7 +2787,7 @@ font-weight: 400;
 .entry-content .wp-block-pullquote,
 .entry-content .wp-block-quote.is-large,
 .entry-content .wp-block-quote.is-style-large {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 font-weight: 400;
 }
 
@@ -3467,7 +3467,7 @@ figure.wp-block-table.is-style-stripes {
 /* Font Families ----------------------------- */
 
 .entry-content {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
   letter-spacing: normal;
 }
@@ -3484,7 +3484,7 @@ figure.wp-block-table.is-style-stripes {
 .entry-content address,
 .entry-content .wp-caption-text,
 .entry-content .wp-block-file {
-  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+  font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 400;
 }
 
@@ -3929,9 +3929,9 @@ font-weight: 700;
   .sponsor:first-of-type {
     margin-left: 0px;
   }
- 
-  
-  
+
+
+
 
 }
 /* -------------------------------------------------------------------------- */

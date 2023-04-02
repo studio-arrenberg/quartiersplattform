@@ -25,14 +25,14 @@ get_header();
 	<div class="main-content">
 
 
-        <?php 
+        <?php
         // Projekt Kachel
         project_card($post->ID);
         ?>
 
         <div class="page-card shadow">
             <a class="close-card-link" onclick="history.go(-1);"><img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" /></a>
-            
+
             <?php
             if ( have_posts() ) {
                 while ( have_posts() ) {
@@ -55,7 +55,7 @@ get_header();
             ?>
 
             <h2 class="heading-size-3 highlight">
-                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> - 
+                <?php echo get_cpt_term_owner($post->ID, 'projekt'); ?> -
                 <span class="date"><?php echo qp_date(get_the_date('Y-m-d')); ?></span>
             </h2>
             <h1 class="heading-size-1"><?php the_title(); ?><br></h1>
@@ -91,7 +91,7 @@ get_header();
 
             <?php
             // anheften
-            pin_toggle(); 
+            pin_toggle();
 
             // sichtbarkeit
             visibility_toggle(get_the_ID(  ));
@@ -110,12 +110,12 @@ get_header();
             author_card();
 
             // Map  Not ready jet
-            get_template_part('components/general/map-card'); 
-        
+            get_template_part('components/general/map-card');
+
             // Backend edit link
             qp_backend_edit_link();
 
-            // Kommentare		
+            // Kommentare
             if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
             ?>
                 <div class="comments-wrapper">
@@ -124,7 +124,7 @@ get_header();
             <?php
             } # kommentare
 
-        } # main loop 
+        } # main loop
 
 
         # Post löschen
@@ -135,7 +135,7 @@ get_header();
             $project_id = $term_list[0]->description;
 
             wp_delete_post(get_the_ID());
-            
+
 
             if ($project_id) {
                 wp_redirect( get_permalink($project_id) );
@@ -154,24 +154,24 @@ get_header();
                         'return' => '%post_url%',
                         'submit_value' => __('Änderungen speichern','quartiersplattform'),
                         'post_title' => true,
-                        'post_content' => false,    
+                        'post_content' => false,
                         'uploader' => qp_form_uploader(),
                         'field_groups' => array('group_5c5de02092e76'),
                     )
-                );       
+                );
             }
         }
         }
     }
-    ?>  
+    ?>
     </div>
 
     <div class="right-sidebar">
             <?php
             // weitere Nachrichten
             $args2 = array(
-                'post_type'=> array('nachrichten', 'veranstaltungen'), 
-                'post_status'=>'publish', 
+                'post_type'=> array('nachrichten', 'veranstaltungen'),
+                'post_status'=>'publish',
                 'posts_per_page'=> 6,
                 'order' => 'DESC',
                 'post__not_in' => array(get_the_ID()),
@@ -183,7 +183,7 @@ get_header();
                     )
                 )
             );
-            
+
             $my_query = new WP_Query($args2);
             if ($my_query->post_count > 0 && empty($_GET['action'])) {
             ?>

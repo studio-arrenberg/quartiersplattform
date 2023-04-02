@@ -28,7 +28,7 @@ Entwicklung der Quartiersplattform
 - [ ] Navigation durch die Projekte (Mobile ansicht)
 - [ ] View Pictures in Large => Plugin
 - [x] Cookie Warning mit Timeout (Relese Snapshots)
-- [ ] Bessere Einbettung der Kommentare (Einloggen zum Schreiben...) 
+- [ ] Bessere Einbettung der Kommentare (Einloggen zum Schreiben...)
 - [ ] Gestaltung der Startseite (Gutenberg Blocks)
 - [ ] Emojis laden manchmal nicht direkt
 - [x] Energie Ampel Fallback/Error Display

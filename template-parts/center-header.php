@@ -49,7 +49,6 @@ if (has_post_thumbnail()) {
 
 
 
-    
 
 </main><!-- #site-content -->
 

@@ -43,7 +43,7 @@
           <br>
           <br>
           <p>
-            <?php 
+            <?php
                 $image = get_field('logo', 'option');
                 if( !empty( $image ) ): ?>
             <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">

@@ -29,7 +29,7 @@ function my_deregister_styles() {
 function my_acf_google_map_api( $api ){
 
 	$api['key'] = 'AIzaSyDPfffkf5pnMH5AmDLnVNb-3w1dNpdh-co';
-	return $api;	
+	return $api;
 
 } add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
@@ -39,7 +39,7 @@ function my_acf_prepare_field( $field ) {
 
 	$field['label'] = "Titel";
     return $field;
-    
+
 } add_filter('acf/prepare_field/name=_post_title', 'my_acf_prepare_field');
 
 

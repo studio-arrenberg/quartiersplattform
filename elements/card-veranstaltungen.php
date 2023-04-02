@@ -34,12 +34,12 @@ else {
         </div>
     <?php } ?>
 
-      
+
     <?php
         if ( !empty(get_post_thumbnail_id())) {
     ?>
 
-        <div class="veranstaltung card landscape background-image  shadow gardient"  style="background-image: url('<?php the_post_thumbnail_url('landscape_m') ?>')"> 
+        <div class="veranstaltung card landscape background-image  shadow gardient"  style="background-image: url('<?php the_post_thumbnail_url('landscape_m') ?>')">
             <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
                 <span class="date">
                 <?php
@@ -56,16 +56,16 @@ else {
                         <span class="yellow-tag">Nicht Sichtbar</span>
                     <?php } ?>
                     <p class="text-size-3">
-                        <?php 
+                        <?php
                         if (strlen(get_field('text')) > 2) {
                             shorten(get_field('text'), $char);
                         }
                         else {
                             shorten(get_the_content(), $char);
                         }
-                        ?> 
+                        ?>
                     </p>
-                    
+
                 </div>
             </a>
         </div>
@@ -99,7 +99,7 @@ else {
         </a>
     </div>
     <?php
-        } 
+        }
         ?>
 
 
@@ -113,5 +113,3 @@ else {
     <?php } ?>
 
 </div>
-
-

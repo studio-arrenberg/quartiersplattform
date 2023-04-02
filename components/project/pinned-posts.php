@@ -1,4 +1,3 @@
-
 <?php
 
 global $current_user;

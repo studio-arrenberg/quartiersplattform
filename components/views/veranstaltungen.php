@@ -52,11 +52,11 @@ if (count_query($veranstaltungen)) {
     ?>
 
         <h1 class="heading-size-3 margin-bottom"><?php _e('Aktuelle Veranstaltungen', 'quartiersplattform'); ?> </h1>
-        <?php card_list($veranstaltungen); 
-        
+        <?php card_list($veranstaltungen);
+
         ?>
 
-    <?php            
+    <?php
 }
 else {
     $text = __("Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten.",'quartiersplattform');

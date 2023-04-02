@@ -88,7 +88,7 @@ function register_sdg() {
 	 *  3. Pages and Taxonomy for Projekte
 	 *  --------------------------------------------------------
 	 */
-	
+
 
 	$sdgs = array(
 		0 => array('title' => 'Keine Armut', 'color' => '#E5243B', 'goal' => '1', 'class' => 'bg_red', 'slogan' => 'Armut in all ihren Formen und überall beenden', 'content' => 'Es gehört zu den zentralen Entwicklungszielen bis 2030 die extreme Armut auf der Welt zu beseitigen. Allerdings wird extreme Armut mit einem gegenwärtigen Grenzwert von 1,25 US-Dollar, die pro Person pro Tag zur Verfügung stehen, definiert. Kritiker halten diesen Wert für deutlich zu niedrig.'), 
@@ -109,7 +109,7 @@ function register_sdg() {
 		15 => array('title' => 'Frieden und Gerechtigkeit','color' => '#00689D','goal' => '16', 'class' => 'bg_blue', 'slogan' => 'Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen', 'content' => 'Um dieses Ziel zu erreichen, sollen alle Formen von Gewalt verringert und Rechtsstaatlichkeit gewährleistet werden, wozu auch der Aufbau leistungsfähiger Institutionen gehört. Ebenso gilt es, bis 2030 die illegalen Finanz- und Waffenströme deutlich zu verringern.'),
 		16 => array('title' => 'Partnerschaften zur Erreichung der Ziele','color' => '#19486A','goal' => '17', 'class' => 'bg_blue-dark', 'slogan' => 'Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung stärken', 'content' => 'Die Industrieländer werden aufgefordert, ihre Zusagen von öffentlicher Entwicklungshilfe einzuhalten, insbesondere die Bereitstellung von 0,7 % ihres Bruttonationaleinkommens für diese Aufgaben. Gefördert werden soll eine verstärkte Nord-Süd- und Süd-Süd-Zusammenarbeit im Bereich Wissenschaft, Technologie und Innovation. Zu den Zielvorgaben gehört es auch, ein gerechtes multilaterales Handelssystem unter dem Dach der Welthandelsorganisation zu schaffen.')
 	);
-	
+
 	for ($i = 0; $i < count($sdgs); $i++) {
 
 		$number = $i + 1;
@@ -149,23 +149,23 @@ function register_sdg() {
 			# update post
 			wp_update_post( $my_post );
 			# add/update class meta
-			if ( ! add_post_meta( $mypost_id->ID, 'class', $sdgs[$i]['class'], true ) ) { 
+			if ( ! add_post_meta( $mypost_id->ID, 'class', $sdgs[$i]['class'], true ) ) {
 				update_post_meta ( $mypost_id->ID, 'class', $sdgs[$i]['class'] );
 			}
 			# add/update number/goal meta
-			if ( ! add_post_meta( $mypost_id->ID, 'goal', $sdgs[$i]['goal'], true ) ) { 
+			if ( ! add_post_meta( $mypost_id->ID, 'goal', $sdgs[$i]['goal'], true ) ) {
 				update_post_meta ( $mypost_id->ID, 'goal', $sdgs[$i]['goal'] );
 			}
 			# add/update number/goal meta
-			if ( ! add_post_meta( $mypost_id->ID, 'number', $number, true ) ) { 
+			if ( ! add_post_meta( $mypost_id->ID, 'number', $number, true ) ) {
 				update_post_meta ( $mypost_id->ID, 'number', $number );
 			}
 			# add/update color meta
-			if ( ! add_post_meta( $mypost_id->ID, 'color', $sdgs[$i]['color'], true ) ) { 
+			if ( ! add_post_meta( $mypost_id->ID, 'color', $sdgs[$i]['color'], true ) ) {
 				update_post_meta ( $mypost_id->ID, 'color', $sdgs[$i]['color'] );
 			}
 			# add/update color meta
-			if ( ! add_post_meta( $mypost_id->ID, 'slogan', $sdgs[$i]['slogan'], true ) ) { 
+			if ( ! add_post_meta( $mypost_id->ID, 'slogan', $sdgs[$i]['slogan'], true ) ) {
 				update_post_meta ( $mypost_id->ID, 'slogan', $sdgs[$i]['slogan'] );
 			}
 
@@ -178,7 +178,7 @@ function register_sdg() {
 					'description' => $sdgs[$i]['slogan'],
 					'slug'        => $number
 					// 'slug' => $sdgs[$i]['title']
-				) 
+				)
 			);
 		}
 	}
@@ -202,7 +202,7 @@ function register_sdg() {
 		'post_author' => 1,
 		'post_slug' => $slug
 	);
-	
+
 	if ( ! function_exists( 'post_exists' ) ) {
 		require_once( ABSPATH . 'wp-admin/includes/post.php' );
 	}
@@ -210,7 +210,7 @@ function register_sdg() {
 	if(post_exists($title) === 0){
 		$page_id = wp_insert_post($page_args);
 	}
-	    
+
 }
 add_action( 'init', 'register_sdg' );
 

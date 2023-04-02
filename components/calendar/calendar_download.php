@@ -5,7 +5,7 @@ $date_start = get_field('event_date', $post); // Start date
 $time_start = get_field('event_time', $post); // Start time
 $time_end = get_field('event_end_time', $post); // End time
 $date_end = get_field('event_end_date', $post); // End date
-        
+
 $title = get_the_title();
 $start = !empty($date_start) ? date('Ymd', strtotime("$date_start $time_start")) . "T" . date('His', strtotime("$date_start $time_start")) : '';
 
@@ -50,7 +50,7 @@ $kb_end = $ende;
 
 $kb_current_time = date("Ymd")."T".date("His");
 $kb_title = html_entity_decode($title, ENT_COMPAT, 'UTF-8');
-$kb_location = preg_replace('/([\,;])/','\\\$1',$location); 
+$kb_location = preg_replace('/([\,;])/','\\\$1',$location);
 $kb_location = html_entity_decode($kb_location, ENT_COMPAT, 'UTF-8');
 $kb_description = html_entity_decode($description. "\n".$website, ENT_COMPAT, 'UTF-8');
 $kb_file_name = $file_name;
@@ -58,15 +58,15 @@ $kb_file_name = $file_name;
 $kb_url = get_permalink($post);
 
 if($ende == '19700101T000000' ) {
-    die(); 
+    die();
 }
 
 if ($start == '19700101T000000') {
     die();
 }
 
-$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die(__('Datei kann nicht gespeichert werden!','quartiersplattform')); 
-    
+$kb_ical = fopen($man_link.$dir.$kb_file_name.'.ics', 'w') or die(__('Datei kann nicht gespeichert werden!','quartiersplattform'));
+
 $eol = "\r\n";
 
 $kb_ics_content =

@@ -63,7 +63,7 @@ function twentytwenty_theme_support() {
 	// Add custom image size used in Cover Template.
 	// add_image_size( 'twentytwenty-fullscreen', 1980, 9999 );
 
-	// custom image sizes/ratios 
+	// custom image sizes/ratios
 	// https://developer.wordpress.org/reference/functions/add_image_size/
 	// with array( 'center', 'center' ) = (cropped to fit)
 
@@ -74,9 +74,9 @@ function twentytwenty_theme_support() {
 	add_image_size( 'square_l', 400, 400, array( 'center', 'center' ));
 	// preview (4:3)
 	add_image_size( 'preview_s', 160, 120, array( 'center', 'center' ));
-	add_image_size( 'preview_m', 200, 150, array( 'center', 'center' )); 
+	add_image_size( 'preview_m', 200, 150, array( 'center', 'center' ));
 	add_image_size( 'preview_m2', 400, 300, array( 'center', 'center' ));
-	add_image_size( 'preview_m3', 600, 450, array( 'center', 'center' )); 
+	add_image_size( 'preview_m3', 600, 450, array( 'center', 'center' ));
 	add_image_size( 'preview_l', 800, 600, array( 'center', 'center' ));
 	// landscape (2:1)
 	add_image_size( 'landscape_s', 400, 200, array( 'center', 'center' ));
@@ -241,7 +241,7 @@ function admin_style() {
 	}
 	add_action('admin_enqueue_scripts', 'admin_style');
 
-	
+
 /**
  * Fix skip link focus in IE11.
  *
@@ -971,7 +971,7 @@ add_action('admin_init', function() {
 			reminder_backend('qp-update', $notice.'<br>'.$link, 'updated notice');
 		});
 	}
-	
+
 });
 
 
@@ -1055,8 +1055,8 @@ function custom_page_template( $page_template, $post_states ) {
 		$post_states[] = $prefix.'Passwort zurücksetzen';
 		$page_template= get_stylesheet_directory() . '/template-parts/center-header.php';
 	}
-	
-	
+
+
 	if (doing_filter( 'page_template') && !empty($page_template)) {
 		return $page_template;
 	}
@@ -1255,7 +1255,7 @@ function script_managment() {
 	// landing page
 	if (is_front_page() && !is_user_logged_in()) {
 		files_minimum(); // before none!
-	} 
+	}
 	// user is post owner
 	else if (qp_project_owner() && get_post_type() != 'projekte') {
 		files_edit();
@@ -1357,7 +1357,7 @@ function files_none() {
  *
  * @return void
  */
-function embla_carousel() { 
+function embla_carousel() {
     wp_register_script('embla-carousel', get_template_directory_uri() .'/assets/embla-carousel-master/embla-carousel.umd.js', false, false);
     wp_enqueue_script('embla-carousel');
 } add_action("wp_enqueue_scripts", "embla_carousel");
@@ -1429,8 +1429,8 @@ function set_cookie_callback(){
 
 		return;
     }
-	return;  
-} 
+	return;
+}
 // add_action('init', 'set_user_cookie_inc_guest');
 add_action( 'wp_ajax_set_cookie', 'set_cookie_callback' );
 add_action( 'wp_ajax_nopriv_set_cookie', 'set_cookie_callback' );
@@ -1446,7 +1446,7 @@ add_action( 'wp_ajax_nopriv_set_cookie', 'set_cookie_callback' );
  */
 function add_custom_cookie_admin() {
 	wp_set_auth_cookie( get_current_user_id( ), true, is_ssl() );
-} 
+}
 add_action('wp_login', 'add_custom_cookie_admin');
 
 
@@ -1526,13 +1526,13 @@ function cpt_save_worker( $post_id ) {
 
 	// Post Type Anmerkungen
 	if ( get_post_type($post_id) == 'anmerkungen' ) {
-		// Get Post ID 
+		// Get Post ID
 		$my_post = array();
 		$my_post['ID'] = $post_id;
 		// Get Text
 		$text = get_field( 'text', $post_id );
 		$my_post['post_title'] = shorten($text, 50);
-		wp_update_post( $my_post ); 
+		wp_update_post( $my_post );
 		// update taxonomy
 		if(!has_term('', 'anmerkungen_status') ){
 			wp_set_object_terms( $post_id, 'vorschlag', 'anmerkungen_status', false );
@@ -1560,12 +1560,12 @@ function cpt_save_worker( $post_id ) {
 
 
 	}
-	// Post type fragen & angebote 
+	// Post type fragen & angebote
 	else if ( get_post_type($post_id) == 'angebote' || get_post_type($post_id) == 'fragen' ) {
-		// Get Post ID 
+		// Get Post ID
 		$my_post = array();
 		$my_post['ID'] = $post_id;
-		$text = get_field( 'text', $post_id );		
+		$text = get_field( 'text', $post_id );
 		$my_post['post_title'] = shorten($text, 50);
 		// create slug
 		$my_post['post_name'] = wp_unique_post_slug( sanitize_title($my_post['post_title']), $my_post['ID'], $my_post['post_status'], $my_post['post_type'], $my_post['post_parent'] );
@@ -1593,7 +1593,7 @@ function cpt_save_worker( $post_id ) {
 		}
 		$array_prev = get_post_meta(get_the_ID(), 'polls', true);
 		// add or update array
-		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) { 
+		if ( ! add_post_meta($post_id, 'polls', $array, true) || $array_prev[0]['total_voter'] == 0 || !isset($array_prev[0]['total_voter']) ) {
 			// update_post_meta ( $post_id, 'polls', $array );
     	}
 
@@ -1618,11 +1618,11 @@ function cpt_save_worker( $post_id ) {
   	}
 	// assign post to project
 	if (in_array( get_post_type($post_id), array('nachrichten', 'veranstaltungen', 'umfragen') )) {
-		
+
 		// assign post to project
 		$tax = $_POST['project_tax'];
 		if (!empty($tax)) {
-			// set taxonomy 
+			// set taxonomy
 			wp_set_object_terms( $post_id, $tax, 'projekt', false);
 			// update project date
 			$page = get_page_by_path($tax, OBJECT, 'projekte');
@@ -1631,7 +1631,7 @@ function cpt_save_worker( $post_id ) {
 				$my_post['ID'] = $page->ID;
 				$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
 				$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
-				// update post 
+				// update post
 				wp_update_post( $my_post );
 			}
 		}
@@ -1644,11 +1644,11 @@ function cpt_save_worker( $post_id ) {
 			$my_post['ID'] = $term_list[0]->description;
 			$my_post['post_modified'] = gmdate( "Y-m-d H:i:s", time() );
 			$my_post['post_modified_gmt'] = gmdate( "Y-m-d H:i:s", ( $time + get_option( 'gmt_offset' ) * HOUR_IN_SECONDS )  );
-			// update post 
+			// update post
 			wp_update_post( $my_post );
 		}
 
-		wp_redirect( get_post_permalink($post_id) ); 
+		wp_redirect( get_post_permalink($post_id) );
 		exit;
 
 	}
@@ -1665,7 +1665,7 @@ function cpt_save_worker( $post_id ) {
 
 		}
 
-		wp_redirect( get_post_permalink($post_id) ); 
+		wp_redirect( get_post_permalink($post_id) );
 		exit;
 
 	}
@@ -1762,7 +1762,7 @@ function polling() {
 
 	// send response
 	wp_send_json_success( $array );
-	// wp_send_json_success( $_POST );	
+	// wp_send_json_success( $_POST );
 
 }
 
@@ -1778,11 +1778,11 @@ function polling() {
  *
  * @return void
  */
-function post_remove () { 
+function post_remove () {
 	remove_menu_page('edit.php');
  }
  add_action('admin_menu', 'post_remove');
- 
+
 /**
  * Restrict Blocks for the Landing Page
  *
@@ -1805,7 +1805,7 @@ function block_limit($block_types, $post) {
 	//  }
 	return $block_types;
 }
- 
+
 
 /**
  * Adding a "Copyright" field to the media uploader $form_fields array
@@ -1833,7 +1833,7 @@ add_filter( 'attachment_fields_to_edit', 'add_copyright_field_to_media_uploader'
  * @return void
  */
 function add_copyright_field_to_media_uploader_save( $post, $attachment ) {
-	if ( ! empty( $attachment['copyright_field'] ) ) 
+	if ( ! empty( $attachment['copyright_field'] ) )
 		update_post_meta( $post['ID'], '_custom_copyright', $attachment['copyright_field'] );
 	else
 		delete_post_meta( $post['ID'], '_custom_copyright' );
@@ -1944,10 +1944,10 @@ function shorten($text, $count = '55') {
 	$text = substr( $text , 0 , $count );
 	$text = substr( $text, 0, strripos( $text , ' ' ) );
 
-	if ( $text_length > $count ) { 
-		$text = $text."..."; 
+	if ( $text_length > $count ) {
+		$text = $text."...";
 	}
-	
+
 	echo $text;
 }
 
@@ -1962,7 +1962,7 @@ function shorten($text, $count = '55') {
  *
  * @return string
  */
-function debugToConsole($msg) { 
+function debugToConsole($msg) {
 	echo "<script>console.log(".json_encode($msg).")</script>";
 }
 
@@ -1981,7 +1981,6 @@ function get_cpt_term_owner($post_ID, $term, $type = 'name') {
 	else if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) {
 		return get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) );
 	}
-	                     
 }
 
 /**
@@ -1999,7 +1998,6 @@ function get_term_id($post_ID, $term = 'projekt') {
 	else {
 		return false;
 	}
-	                     
 }
 
 /**
@@ -2064,7 +2062,7 @@ function cms_is_in_menu( $menu = null, $object_id = null ) {
  * @return string
  */
 function calendar_download($post) {
-	
+
 	get_template_part( 'components/calendar/calendar_download');
 
 }
@@ -2120,7 +2118,6 @@ function slider($args, $type = 'card', $slides = '1', $dragfree = 'true', $align
 				wp_reset_postdata();
 			?>
 
-			
 
 		</div>
 	</div>
@@ -2334,7 +2331,7 @@ function emoji_picker_init($id) {
 
 		</script>
 
-		<?php 
+		<?php
 	}
 }
 
@@ -2357,11 +2354,11 @@ function extract_links( $text ) {
 	preg_match_all($pattern_url, $text, $out);
 	preg_match_all($pattern_mail, $text, $out_mail);
 
-	for ($i=0; $i < count($out[0]); $i++) { 
+	for ($i=0; $i < count($out[0]); $i++) {
 		$text = str_replace($out[0][$i], "<a class='text-link' href='".$out[0][$i]."' target='_blank'>".$out[0][$i]."</a>", $text);
 	}
 
-	for ($i=0; $i < count($out_mail[0]); $i++) { 
+	for ($i=0; $i < count($out_mail[0]); $i++) {
 		$text = str_replace($out_mail[0][$i], "<a class='text-link' href='mailto:".$out_mail[0][$i]."'>".$out_mail[0][$i]."</a>", $text);
 
 	}
@@ -2400,7 +2397,7 @@ function qp_date( $date, $detail = false, $time = '', $time_only = false ) {
 	}
 	// set php locale
 	setlocale(LC_TIME, $lo);
-	
+
 
 	if (!empty($time)) {
 		// echo "help: ". $date." t: ".$time;
@@ -2470,7 +2467,7 @@ function qp_remaining( $date ) {
 	}
 	// today
 	else if (date('Ymd', current_time('timestamp')) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
-		$time = __("bis um ",'quartiersplattform').wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+		$time = __("bis um ",'quartiersplattform').wp_date('G:i', get_post_meta(get_the_ID(), 'expire_timestamp', true));
 	}
 	// tomorrow
 	else if (date('Ymd', (current_time('timestamp') + 86400)) == date('Ymd', get_post_meta(get_the_ID(), 'expire_timestamp', true))) {
@@ -2485,7 +2482,7 @@ function qp_remaining( $date ) {
 	}
 	// other
 	else {
-		$time = __("bis zum ",'quartiersplattform').wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));    
+		$time = __("bis zum ",'quartiersplattform').wp_date('j. M', get_post_meta(get_the_ID(), 'expire_timestamp', true));
 	}
 
 	return " ".$time;
@@ -2512,13 +2509,13 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	// check user option
 	if ( is_user_logged_in(  ) ) {
 		$array = get_user_option( 'qp_reminder_card', get_current_user_id( ) );
-		
+
 		if ($array && in_array($slug, $array, true) ) {
 			return false;
 		}
 	}
-	
-	// define query vars 
+
+	// define query vars
 	set_query_var('reminder_card_fix', false);
 	set_query_var('reminder_card_slug', $slug);
 	set_query_var('reminder_card_title', $title);
@@ -2534,7 +2531,7 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 		set_query_var('reminder_card_style', 'warning');
 	}
 	else if (strpos($slug, 'warning') !== false) {
-		set_query_var('reminder_card_style', 'warning');	
+		set_query_var('reminder_card_style', 'warning');
 	}
 	if (strpos($slug, '!') !== false || !$slug ) {
 		set_query_var('reminder_card_fix', true);
@@ -2542,7 +2539,6 @@ function reminder_card( $slug, $title, $text, $button = '', $link = '' ) {
 	// template part
 	get_template_part( 'components/reminder-card/reminder-card' );
 
-	
 
 }
 
@@ -2569,8 +2565,8 @@ function reminder_backend( $slug, $html, $state = 'notice' ) {
 			return false;
 		}
 	}
-	
-	// define query vars 
+
+	// define query vars
 	set_query_var('reminder_card_slug', $slug);
 	set_query_var('reminder_card_html', $html);
 	set_query_var('reminder_card_state', $state);
@@ -2605,7 +2601,7 @@ function remove_reminder_callback(){
 
 	return;
 
-} 
+}
 add_action( 'wp_ajax_remove_reminder', 'remove_reminder_callback' );
 add_action( 'wp_ajax_nopriv_remove_reminder', 'remove_reminder_callback' );
 
@@ -2624,7 +2620,7 @@ function reset_reminder_cards_callback(){
 	update_user_option( get_current_user_id( ), 'qp_reminder_card', $array );
 	return;
 
-} 
+}
 add_action( 'wp_ajax_reset_reminder_cards', 'reset_reminder_cards_callback' );
 add_action( 'wp_ajax_nopriv_reset_reminder_cards', 'reset_reminder_cards_callback' );
 
@@ -2657,7 +2653,7 @@ function visibility_toggle_callback() {
 		$status = 'draft';
 	}
 
-	// if post 
+	// if post
 	if (get_post_type( $post_id ) != 'projekte') {
 
 		// get projekt id
@@ -2702,7 +2698,7 @@ function visibility_toggle_callback() {
 		wp_update_post( $my_post );
 
 		// get projekt slug
-		$post_retrieve = get_post($post_id); 
+		$post_retrieve = get_post($post_id);
 		$slug = $post_retrieve->post_name;
 
 		// get posts by projekt slug
@@ -2750,7 +2746,7 @@ function visibility_toggle_callback() {
 
 	return;
 
-} 
+}
 add_action( 'wp_ajax_visibility_toggle', 'visibility_toggle_callback' );
 add_action( 'wp_ajax_nopriv_visibility_toggle', 'visibility_toggle_callback' );
 
@@ -2772,12 +2768,12 @@ function visibility_toggle( $id = '' ) {
 	if (empty($id)) {
 		$id = get_the_ID();
 	}
-	
+
 	if (qp_project_owner() == false) {
 		return false;
 	}
 
-	// no projekt and project is private 
+	// no projekt and project is private
 	if (get_post_type( $id ) != 'projekte' ) {
 
 		// get project id
@@ -2861,13 +2857,13 @@ function pin_toggle_callback() {
 		return false;
 	}
 	// update post meta
-	if ( ! add_post_meta( $post_id, $type, $status, true ) ) { 
+	if ( ! add_post_meta( $post_id, $type, $status, true ) ) {
 		update_post_meta ( $post_id, $type, $status );
 	}
 
 	return;
 
-} 
+}
 add_action( 'wp_ajax_pin_toggle', 'pin_toggle_callback' );
 add_action( 'wp_ajax_nopriv_pin_toggle', 'pin_toggle_callback' );
 
@@ -2927,7 +2923,7 @@ function projekt_carousel( ) {
 			'post_type' => 'projekte',
 			'author__in' => $current_user->ID,
 			'post_status' => array('pending', 'draft', 'auto-draft'),
-			'posts_per_page'=> -1,   
+			'posts_per_page'=> -1,
 		);
 		$args_private = new WP_Query($args_private);
 		while ( $args_private->have_posts() ) {
@@ -2938,9 +2934,9 @@ function projekt_carousel( ) {
 	}
 
 	$args4 = array(
-		'post_type'=> array('projekte'), 
+		'post_type'=> array('projekte'),
 		'post__in' => $array,
-		'post_status'=> array('publish', 'draft', 'auto-draft'), 
+		'post_status'=> array('publish', 'draft', 'auto-draft'),
 		'posts_per_page'=> -1,
 		'orderby' => 'modified',
 		// 'orderby' => 'DESC'
@@ -2950,11 +2946,11 @@ function projekt_carousel( ) {
 	set_query_var( 'projekt_carousel_add', true );
 	set_query_var( 'projekt_carousel_projekt_id', $project_ID );
 
-	?>  
+	?>
 		<!-- projekt carousel -->
 		<div class="projekt-carousel">
 
-			<?php if (!wp_is_mobile(  )) { ?> 
+			<?php if (!wp_is_mobile(  )) { ?>
 			<a class="badge-link shadow-on-hover " href="<?php echo home_url() ?>/projekt-erstellen/">
 				<div class="badge badge-button">
 				<img alt="Add Button" src="<?php echo get_template_directory_uri()?>/assets/icons/add.svg" />
@@ -2965,19 +2961,19 @@ function projekt_carousel( ) {
 			</a>
 			<?php } ?>
 
-			<?php  
-			
+			<?php
+
 			if (wp_is_mobile(  ) && $array) {
 				slider($args4, 'badge', 4, 'false', 'start');
 			}
 			else if ($array) {
 				card_list($args4, 'badge');
 			}
-			
+
 			?>
 		</div>
 
-	<?php 
+	<?php
 
 	set_query_var( 'highlight_display', false );
 	set_query_var( 'projekt_carousel_add', false );
@@ -3000,8 +2996,8 @@ function projekt_feed_callback() {
 	$posts = $_POST['posts'];
 
 	$args = array(
-		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'), 
-		'post_status'=>'publish', 
+		'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'),
+		'post_status'=>'publish',
 		'posts_per_page'=> $posts,
 		'offset' => $offset,
 		'orderby' => 'date'
@@ -3010,7 +3006,7 @@ function projekt_feed_callback() {
 	set_query_var( 'additional_info', true );
 
 	card_list($args);
-	wp_die(); 
+	wp_die();
 	return;
 
 }
@@ -3043,7 +3039,7 @@ function count_query($query, $amount = 1, $number = false) {
 	else {
 		return false;
 	}
-    
+
 }
 
 /**
@@ -3055,7 +3051,7 @@ function count_query($query, $amount = 1, $number = false) {
  * @param string $id id
  * @return string
  */
-function project_card($id, $type = "post") { 
+function project_card($id, $type = "post") {
 
 	if (empty($id)) {
 		return false;
@@ -3099,7 +3095,6 @@ function project_card($id, $type = "post") {
 		// query and display
 		card_list( $args, 'card' );
 	}
-	
 
 }
 
@@ -3143,7 +3138,7 @@ function no_content_card($icon, $title, $text, $link_text = '', $link_url = '') 
  */
 function qp_backend_edit_link($text = null, $before = '', $after = '', $id = 0, $class = '') {
 
-	if ( ! current_user_can('administrator') ) { 
+	if ( ! current_user_can('administrator') ) {
 		return false;
 	}
 
@@ -3151,16 +3146,16 @@ function qp_backend_edit_link($text = null, $before = '', $after = '', $id = 0, 
     if ( ! $post ) {
         return;
     }
- 
+
     $url = get_edit_post_link( $post->ID );
     if ( ! $url ) {
         return;
     }
- 
+
     if ( null === $text ) {
         $text = __( 'Beitrag im Wordpress System bearbeiten', 'quartiersplattform' );
     }
- 
+
     $link = '<a class="button is-style-outline ' . esc_attr( $class ) . '" href="' . esc_url( $url ) . '">' . $text . '</a>';
 
 	echo $link;
@@ -3220,7 +3215,7 @@ function qp_project_owner($project = '') {
 	if (!isset($post->ID)) {
 		return false;
 	}
-	
+
 	// get post projekt ID
 	if (get_post_type() != 'projekte' && get_post_type() != 'page' )  {
 		$term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
@@ -3239,7 +3234,7 @@ function qp_project_owner($project = '') {
 	else if (isset($project_id) && get_current_user_id() == get_post_field( 'post_author', $project_id)) {
 		return true;
 	}
-	else { 
+	else {
 		return false;
 	}
 
@@ -3302,7 +3297,7 @@ function qp_language() {
 	if (isset($_GET['lang'])) {
 		$language = $_GET['lang'];
 	}
-	
+
 	if (isset($_COOKIE['language']) && !isset($language) ) {
 		$language = $_COOKIE['language'];
 	}
@@ -3353,7 +3348,7 @@ function visibility_badge() {
  * @return string
  */
 function qp_form_uploader() {
-	if (current_user_can('administrator')) { 
+	if (current_user_can('administrator')) {
 		return 'wp';
 	} else {
 		return 'basic';

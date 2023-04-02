@@ -30,7 +30,7 @@
 	function remove_reminder(element_slug) {
 
 		var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
-    
+
         var data = {
 			'action': 'remove_reminder',
 			'slug': element_slug,

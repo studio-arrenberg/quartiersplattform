@@ -7,7 +7,7 @@
     </div>
 <?php } ?>
 
-<?php 
+<?php
 
 if (!get_field('text') && qp_project_owner()) {
     $text = __('Du kannst deinem Projekt eine Beschreibung hinzufügen, um die Ziele und Inhalte noch besser zu erklären.','quartiersplattform');

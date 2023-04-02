@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 acf_form_head();
 get_header();
@@ -25,7 +25,7 @@ if ( qp_project_owner($_GET['project']) == false ) {
                 }
             ?>
 
-        <?php 
+        <?php
 
         if (isset($_GET['project'])) {
 
@@ -42,10 +42,10 @@ if ( qp_project_owner($_GET['project']) == false ) {
 
 
             <div class="publish-form">
-                
+
                 <br>
 
-                <?php 
+                <?php
                     acf_form(
                         array(
                             'id' => 'nachrichten-form',
@@ -63,7 +63,7 @@ if ( qp_project_owner($_GET['project']) == false ) {
                             'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
                         )
                     );
-        } 
+        }
             ?>
 
         </div>

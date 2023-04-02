@@ -4,7 +4,7 @@ $contact = get_query_var('contact_inforation');
 
 if (get_query_var('contact_user_id')) {
     $user_id = get_query_var('contact_user_id');
-} 
+}
 else {
     $user_id = get_the_author_meta( 'ID' );
 }
@@ -18,7 +18,7 @@ else {
 }
 
 // define user id for ACF field
-$userid = "user_".$user_id; 
+$userid = "user_".$user_id;
 
 // abort if no information to be shown
 if( get_query_var('contact_profile') == false && get_query_var('contact_inforation') == true && empty(get_field('mail', $userid)) && empty(get_field('phone', $userid)) ){
@@ -32,7 +32,7 @@ if( get_query_var('contact_profile') == false && get_query_var('contact_inforati
     <?php if (get_query_var('contact_profile') || get_query_var('contact_inforation')) { ?>
 
     <div class="team inner">
-        <div class="team-member simple-card shadow">	
+        <div class="team-member simple-card shadow">
 
             <?php if (get_query_var('contact_profile') ) { ?>
                 <div>
@@ -42,8 +42,8 @@ if( get_query_var('contact_profile') == false && get_query_var('contact_inforati
                     </a>
                 </div>
 
-            <?php 
-            } 
+            <?php
+            }
             if($contact && is_user_logged_in() || $contact && user_can($user_id, 'administrator')) {
             ?>
 
@@ -62,7 +62,7 @@ if( get_query_var('contact_profile') == false && get_query_var('contact_inforati
                         </button>
                     </div>
                     <?php } ?>
-                    
+
                     <?php if( get_field('phone', $userid) ){?>
                         <div class="button is-transparent button-has-icon is-one-row contact-button">
                             <a class=" button-has-icon is-one-row" id="btn2" class="button is-transparent button-has-icon is-one-row" target="_blank" href="tel:<?php echo the_field('phone', $userid);?>" >
@@ -89,19 +89,19 @@ if( get_query_var('contact_profile') == false && get_query_var('contact_inforati
                     }
 
                 </script>
-                
+
             <?php } ?>
         </div>
     </div>
-        <?php 
-        // } 
+        <?php
+        // }
         // reminder card to set contact information
         if( is_user_logged_in() && $user_id == get_current_user_id() && !get_field('phone', $userid) && !get_field('mail', $userid) ) {
             $text = __('Hier kannst du deine Kontaktdaten hinterlegen,','quartiersplattform')."<br>".__(" damit du kontaktiert werden kannst.",'quartiersplattform');
             reminder_card('no-contact-information', 'Kontaktdaten hinterlegen', $text, 'Zum Profil', get_site_url().'/profil' );
         }
-    
-    }   
+
+    }
     ?>
 </div>
-<?php 
+<?php

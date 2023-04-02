@@ -19,21 +19,21 @@ get_header();
 </div>
 
 	<div class="main-content">
-		<?php 
-			$text = __('Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich. 
+		<?php
+			$text = __('Projekte sind der Dreh- und Angelpunkt in deinem Quartier. Erkunde das Quartiersgeschehen, finde spannende Aktionen und beteilige dich.
 			Du bist bereits Ansprechpartner in einem Lokalprojekt? Veröffentliche es und halte deine Nachbarn auf dem Laufenden.  ','quartiersplattform');
 			reminder_card('projekte-intro', __('Entdecke alle Projekte aus deinem Quartier','quartiersplattform'), $text );
 		?>
 
 		<?php
-		
+
 		// !!! function to list all projects for user (save 30 lines ;))
 		$array = [];
 		// get published posts
 		$args_public = array(
 			'post_type' => 'projekte',
 			'post_status' => array('publish'),
-			'posts_per_page'=> -1,   
+			'posts_per_page'=> -1,
 		);
 		$args_public = new WP_Query($args_public);
 		while ( $args_public->have_posts() ) {
@@ -59,9 +59,9 @@ get_header();
 		}
 
 		$args4 = array(
-			'post_type'=> array('projekte'), 
+			'post_type'=> array('projekte'),
 			'post__in' => $array,
-			'post_status'=> 'any', 
+			'post_status'=> 'any',
 			'posts_per_page'=> -1,
 			'orderby' => 'modified'
 		);
@@ -74,7 +74,7 @@ get_header();
 				<?php card_list($args4);?>
 			</div>
 
-			<?php 
+			<?php
 
 		}
 		else {
@@ -84,9 +84,9 @@ get_header();
 
 		}
 
-		?>  
-		
-	
+		?>
+
+
 	</div>
 
 

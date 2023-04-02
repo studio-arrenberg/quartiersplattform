@@ -19,10 +19,10 @@ Arial;font-size: 16px;background-color: white;display: inline-block;border-radiu
     <div> </div>
     <div>
       <div class="text" style="width: 60%;display: inline-block;line-height: 24px;font-family: Titillium Web, Helvetica Neue, Helvetica, sans-serif;margin: 0px;font-size: 1.5em;letter-spacing: 0.5px;">
-        <span><?php _e('Schön das du da bist! Klicke auf den Link, um dein Konto zu aktivieren.', 'quartiersplattform'); ?> 
+        <span><?php _e('Schön das du da bist! Klicke auf den Link, um dein Konto zu aktivieren.', 'quartiersplattform'); ?>
       </span></div>
       <p></p>
-      
+
     </div>
 
     <div style="padding: 0 30px 30px 30px">
@@ -32,7 +32,7 @@ Arial;font-size: 16px;background-color: white;display: inline-block;border-radiu
 Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0,
 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);font-size: 16px;" href="{account_activation_link}">
-<?php _e('Konto aktivieren', 'quartiersplattform'); ?> 
+<?php _e('Konto aktivieren', 'quartiersplattform'); ?>
         </a>
       </div>
       <div style="padding: 20px">
@@ -46,13 +46,13 @@ Arial;margin-top: 100px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0
   </div>
   <div class="footer" style="text-align: center;margin-top: 5%;">
     <p>
-    <?php 
+    <?php
     $image = get_field('logo', 'option');
     if( !empty( $image ) ): ?>
         <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
     <?php endif; ?>
 
     </p>
-    
+
   </div>
 </div>

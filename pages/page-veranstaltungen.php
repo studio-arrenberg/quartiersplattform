@@ -19,13 +19,12 @@ get_header();
 
 <div class="main-content">
 
-	<?php 
+	<?php
 		$text = __('Hier kannst du lokale Veranstaltungen in deinem Quartier entdecken. So verpasst du keine Aktionen mehr in deiner Nachbarschaft und bleibst immer auf dem Laufenden.', "quartiersplattform");
 		reminder_card('veranstaltungen-intro', __('Veranstaltungen in deiner Nachbarschaft','quartiersplattform'), $text );
 
 		get_template_part('components/views/veranstaltungen');
-	?>  
-	
+	?>
 
 
 <!-- archive Veranstaltungen -->
@@ -33,7 +32,7 @@ get_header();
 
 </div>
 	<div class="right-sidebar">
-	
+
 	</div>
 	</main><!-- #site-content -->
 

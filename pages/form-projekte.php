@@ -14,12 +14,12 @@ get_header();
 
 		</div>
 
-		
+
 	</div>
 
 
 	<div class="main-content">
-    <?php 
+    <?php
     if (is_user_logged_in(  )) {
         reminder_card(get_the_ID(  ).'draft', __('Projekt veröffentlichen','quartiersplattform'), __('Dein Projekt ist zunächst nicht öffentlich, damit du in Ruhe deine Inhalte einstellen kannst. Wenn du soweit bist, kannst du es in den Projekteinstellungen veröffentlichen.','quartiersplattform'));
 	?>
@@ -28,10 +28,10 @@ get_header();
         <h2><?php _e('Erstelle dein eigenes Projekt', 'quartiersplattform'); ?> </h2>
         <br>
 
-        <?php 
+        <?php
             acf_form(
                 array(
-                    'id' => 'projekte-form',         
+                    'id' => 'projekte-form',
                     'post_id'=>'new_post',
                     'new_post'=>array(
                         'post_type' => 'projekte',
@@ -49,13 +49,13 @@ get_header();
                     'submit_value'=> __('Projekt erstellen','quartiersplattform'),
                     'html_before_fields' => '<input type="text" name="project_status" value="draft" style="display:none;">',
                 )
-            ); 
+            );
         ?>
 
     </div>
 
-    <?php 
-        emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
+    <?php
+        emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker
     }
     else {
         $text = __('Melde dich dich auf deiner Quartiersplattform an, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');

@@ -13,7 +13,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="alternate" href="https://example.com" hreflang="x-default" />
@@ -38,8 +38,8 @@ wp_maintenance_mode(); // redirect for maintenance mode
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri()?>/assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-   
-    <!-- Open Graph Tags  --> 
+
+    <!-- Open Graph Tags  -->
     <?php
         // read: https://ogp.me/
         // page specific
@@ -148,7 +148,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <meta property="og:image" content="<?php the_post_thumbnail_url('landscape_s' ); ?> " />
                 <meta property="og:image:alt" content="<?php echo get_the_title(); ?>"/>
                 <meta property="og:type" content="article" />
-                
+
                 <meta property="article:section" content="Quartiersentwicklung" />
                 <meta property="article:author" content="<?php echo get_cpt_term_owner($post->ID, 'projekt'); ?>" />
 
@@ -165,7 +165,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
             <?php
         }
     ?>
-    
+
 
     <meta property="og:locale" content="de_DE" />
     <meta property="og:locale:alternate" content="en_GB" />
@@ -211,11 +211,11 @@ wp_maintenance_mode(); // redirect for maintenance mode
 
                                 <li class="<?php if (is_page( 'Projekte' )) echo "current-menu-item"; ?>">
                                     <a title="Projekte" href="<?php echo home_url( ).'/projekte/'; ?>"><?php _e('Projekte', 'quartiersplattform'); ?> </a>
-                                </li>                    
+                                </li>
                             </ul>
 
-                        <?php 
-                        }   
+                        <?php
+                        }
                     }
                 ?>
 
@@ -224,10 +224,10 @@ wp_maintenance_mode(); // redirect for maintenance mode
                 <div class="push-right">
 
 
-                    <?php 
-                    // QP filter for menu buttons 'qp_menu_button' 
+                    <?php
+                    // QP filter for menu buttons 'qp_menu_button'
                     do_action('qp_menu_button');
-                    ?> 
+                    ?>
 
                     <a class="button header-button button-has-icon veranstaltungen-button <?php if (is_page( 'Veranstaltungen' )) echo "is-primary"; ?> " href="<?php echo get_site_url(); ?>/veranstaltungen">
                         <?php require get_template_directory() . '/assets/icons/calendar.svg'; ?>
@@ -238,16 +238,16 @@ wp_maintenance_mode(); // redirect for maintenance mode
                     if (is_user_logged_in()) {
                     ?>
 
-                        <?php 
+                        <?php
                         // backend login button for admins
                         if(current_user_can('administrator')) {
                             ?>
                                 <a class="button header-button button-has-icon backend-button" href="<?php echo get_site_url(); ?>/wp-admin">
                                     <?php require get_template_directory() . '/assets/icons/gearshape.svg'; ?>
                                 </a>
-                            <?php 
+                            <?php
 
-                            
+
                         }
                         ?>
 
@@ -256,7 +256,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
                             <img alt="profil-bild" class="button-image" src="<?php echo um_get_user_avatar_url(get_current_user_id(), $size = '300' ) ?>" />
                         </a>
 
-                        <?php 
+                        <?php
                     }
                     // logged out user
                     else {
@@ -265,7 +265,7 @@ wp_maintenance_mode(); // redirect for maintenance mode
                         <a class="button header-button button-has-icon login-button" href="<?php echo get_site_url(); ?>/login">
                             <?php require get_template_directory() . '/assets/icons/person.svg'; ?>
                         </a>
-                        <?php 
+                        <?php
                     }
                     ?>
 
@@ -298,10 +298,8 @@ wp_maintenance_mode(); // redirect for maintenance mode
         }
     </script>
 
-    <?php 
-    // QP filter for overlays 'qp_overlays' 
+    <?php
+    // QP filter for overlays 'qp_overlays'
     do_action('qp_overlays');
-    ?> 
+    ?>
 
-
-    

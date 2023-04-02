@@ -19,14 +19,14 @@ Notizen zur Entwicklung der Quarrtiersplattform
 
 <br><br>
 
-# Noted Queries 
+# Noted Queries
 
 #### Loop Posts (list)
 
 ```php
 $args = array(
-	'post_type'=>'veranstaltungen', 
-	'post_status'=>'publish', 
+	'post_type'=>'veranstaltungen',
+	'post_status'=>'publish',
 	'posts_per_page'=> -1
 );
 query_posts( $args );
@@ -51,15 +51,15 @@ plesk ext wp-toolkit --list
 ```
 ## WP-CLI Install
 
-#### install needed dependencies 
+#### install needed dependencies
 
 ```bash
 # check php version
-php -v 
+php -v
 # in root dir
-yum install php-json 
-yum install php-mysql 
-yum install php-mysqli 
+yum install php-json
+yum install php-mysql
+yum install php-mysqli
 # check mysqli
 php -m | grep mysql
 # install GD
@@ -76,15 +76,15 @@ See [WP-CLI](https://wp-cli.org) for instructions
 [Source](https://developer.wordpress.org/cli/commands/media/regenerate/)
 ```bash
 # path to wp dir
-cd var/www/vhosts/arrenberg.studio/ap1.arrenberg.studio/ 
+cd var/www/vhosts/arrenberg.studio/ap1.arrenberg.studio/
 # in wp dir
-wp media regenerate --allow-root 
+wp media regenerate --allow-root
 ```
 
 
 ## Change Meta name
 [Link](https://support.advancedcustomfields.com/forums/topic/changing-field-name-question/)
-```php 
+```php
 UPDATE wp_postmeta
 SET meta_key='new_name'
 where meta_key='old_name';
@@ -94,11 +94,11 @@ SET meta_key='_new_name'
 where meta_key='_old_name';
 ```
 [Other](https://support.advancedcustomfields.com/forums/topic/best-practice-for-changing-custom-fields/)
-```php 
+```php
 UPDATE wp_postmeta
 SET meta_key = 'new_field_name'
 WHERE meta_key = 'old_field_name';
-# and 
+# and
 UPDATE wp_postmeta
 SET meta_key = '_new_field_name'
 WHERE meta_key = '_old_field_name';
@@ -112,7 +112,7 @@ WHERE meta_key = '_old_field_name';
 // CTP anmerkungen TAX version
 function add_theme_box() {
     add_meta_box('theme_box_ID', __('Version'), 'your_styling_function', 'anmerkungen', 'side', 'core');
-}   
+}
 function add_theme_menus() {
     if ( ! is_admin() )
         return;
@@ -125,7 +125,7 @@ add_theme_menus();
 function your_styling_function($post) {
     echo '<input type="hidden" name="taxonomy_noncename" id="taxonomy_noncename" value="' . wp_create_nonce( 'taxonomy_theme' ) . '" />';
     // Get all theme taxonomy terms
-    $themes = get_terms('version', 'hide_empty=0'); 
+    $themes = get_terms('version', 'hide_empty=0');
 ?>
 <select name='post_theme' id='post_theme'>
     <!-- Display themes as options -->
@@ -133,27 +133,27 @@ function your_styling_function($post) {
         <option class='theme-option' value=''<?php if (!count($names)) echo "selected";?>>None</option>
         <?php
 		foreach ($themes as $theme) {
-			if (!is_wp_error($names) && !empty($names) && !strcmp($theme->slug, $names[0]->slug)) 
-				echo "<option class='theme-option' value='" . $theme->slug . "' selected>" . $theme->name . "</option>\n"; 
+			if (!is_wp_error($names) && !empty($names) && !strcmp($theme->slug, $names[0]->slug))
+				echo "<option class='theme-option' value='" . $theme->slug . "' selected>" . $theme->name . "</option>\n";
 			else
-				echo "<option class='theme-option' value='" . $theme->slug . "'>" . $theme->name . "</option>\n"; 
+				echo "<option class='theme-option' value='" . $theme->slug . "'>" . $theme->name . "</option>\n";
 		}
    ?>
-</select>    
+</select>
 <?php
 }
 
 function save_taxonomy_data($post_id) {
 // verify this came from our screen and with proper authorization.
- 
+
     if ( !wp_verify_nonce( $_POST['taxonomy_noncename'], 'taxonomy_theme' )) {
         return $post_id;
     }
- 
+
     // verify if this is an auto save routine. If it is our form has not been submitted, so we dont want to do anything
-    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) 
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
         return $post_id;
- 
+
     // Check permissions
     if ( 'page' == $_POST['post_type'] ) {
         if ( !current_user_can( 'edit_page', $post_id ) )
@@ -162,10 +162,10 @@ function save_taxonomy_data($post_id) {
         if ( !current_user_can( 'edit_post', $post_id ) )
         return $post_id;
     }
- 
+
     // OK, we're authenticated: we need to find and save the data
     $post = get_post($post_id);
-    if (($post->post_type == 'anmerkungen') || ($post->post_type == 'page')) { 
+    if (($post->post_type == 'anmerkungen') || ($post->post_type == 'page')) {
            // OR $post->post_type != 'revision'
            $theme = $_POST['post_theme'];
        wp_set_object_terms( $post_id, $theme, 'version' );

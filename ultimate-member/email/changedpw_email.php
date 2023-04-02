@@ -13,7 +13,7 @@
                 </h1>
             </th>
         </tr>
-        
+
         <tr class="">
             <td style="padding-bottom: 18px" class="">
                 <div class="text" style="font-family: Titillium Web, Helvetica Neue, Helvetica, sans-serif;margin: 0px;font-size: 1.5em;letter-spacing: 0.5px;">
@@ -21,7 +21,7 @@
                 </div>
             </td>
         </tr>
-        
+
 
         <tr class="">
             <td style="padding-bottom: 18px" class="">
@@ -39,7 +39,7 @@
                 <br>
                 <br>
 <p>
-<?php 
+<?php
 $image = get_field('logo', 'option');
 if( !empty( $image ) ): ?>
 <img width="200" src="<?php echo esc_url($image['url']); ?>;" alt="<?php echo esc_attr($image['alt']); ?>;">

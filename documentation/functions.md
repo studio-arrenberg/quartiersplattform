@@ -10,11 +10,11 @@ landscape_card($args, 'Geschichte', '', '', '/geschichten'); // combination Quer
 ```php
 slider($query, $type = 'card', $slides = '2', $dragfree = 'true');
 slider($query, $type = 'square_card', $slides = '4', $dragfree = 'true');
-slider($query,'landscape_card', '1','false'); 
+slider($query,'landscape_card', '1','false');
 ```
 `slides` get multiplied by 2 for desktop view
 ### Shorten
-```php 
+```php
 shorten($text, $count = '55'); // für alles
 ```
 Prints String with in function.
@@ -32,22 +32,22 @@ Including projekts
 get_cpt_term_owner($post_ID, $term, $type = 'name');
 ```
 ### Get Author of Post Type
-Should be used in the Wordpress Loop 
+Should be used in the Wordpress Loop
 ```php
 // contact true/false => show mail and phone
 // $user int => specify user id
 // $profile true/false => show profile picture and name
-author_card($contact = true, $user = '', $profile = true); 
+author_card($contact = true, $user = '', $profile = true);
 ```
 ### Creat Mail and Website links in Text
-```php 
+```php
 extract_links($text);
 ```
 Create `HTML` Links for Mails and Website Links in text.
 ### Display Date
 ```php
 // $date => timestamp in Unix time format
-// $datail true/false => display H:i
+// $detail true/false => display H:i
 // $time H:i:s => if Daytime is seperated
 // $time_only true/false => Show H:i without date
 echo qp_date( $date, $detail = false, $time = '', $time_only = false );
@@ -89,7 +89,7 @@ pin_toggle($type = 'pin_project');
 ```
 
 ### Visibility badge
-Post status of Project or Post, shown when invisible 
+Post status of Project or Post, shown when invisible
 Can only be used in Loop
 ```php
 visibility_badge();
@@ -104,7 +104,7 @@ qp_project_owner($project = '');
 ```
 
 ### QP Permalink Parameter
-Creates Link to current page if added parameter. 
+Creates Link to current page if added parameter.
 ```php
 qp_parameter_permalink($suffix);
 ```
@@ -118,7 +118,7 @@ qp_backend_edit_link();
 ### Project Card
 Displays the Project of a Post as Card
 ```php
-project_card($id, $type = "post") 
+project_card($id, $type = "post")
 ```
 
 ### Count Query
@@ -128,8 +128,8 @@ if (count_query($args, $amount))
 ```
 
 ### QP Language
-Detect, Sets & Returns the user Language. 
-```php 
+Detect, Sets & Returns the user Language.
+```php
 qp_language();
 ```
 ### QP Detect Browser Language
@@ -144,7 +144,7 @@ Action for Displaying Items in the Quartiersplattform.
 - Overlay `qp_overlays`
 
 ### How to use
-```php 
+```php
 do_action('qp_menu_button'); // define location and slug
 
 function energie_ampel_overlay() { // init function
@@ -152,14 +152,14 @@ function energie_ampel_overlay() { // init function
 } add_action('qp_menu_button', 'energie_ampel_overlay', 10, 3);
 ```
 
-### QP filter for menu buttons 'qp_menu_button' 
+### QP filter for menu buttons 'qp_menu_button'
 Used for buttons in the menu
-```php 
+```php
 do_action('qp_menu_button');
 ```
 
-### QP filter for overlays 'qp_overlays' 
+### QP filter for overlays 'qp_overlays'
 Used for Overlays
-```php 
+```php
 do_action('qp_overlays');
 ```

@@ -24,7 +24,7 @@ get_header();
 
 	<div class="main-content">
 
-        <?php 
+        <?php
         // Projekt Kachel
         project_card($post->ID);
         ?>
@@ -42,7 +42,7 @@ get_header();
                 $term_list = wp_get_post_terms( $post->ID, 'projekt', array( 'fields' => 'all' ) );
                 $the_slug = $term_list[0]->slug;
                 $project_id = $term_list[0]->description;
-                
+
                 if( empty($_GET['action']) ){
 
                 // prep image url
@@ -52,7 +52,7 @@ get_header();
                     $cover_header_style   = ' style="background-image: url( ' . esc_url( $image_url ) . ' );"';
                     $cover_header_classes = ' bg-image';
                 }
-                
+
                 // get project by Term
                 ?>
                 <h2 class="heading-size-3 highlight">
@@ -80,7 +80,7 @@ get_header();
                     </span>
                 </h2>
                 <h1 class="heading-size-1 large-margin-bottom"><?php the_title(); ?></h1>
-                
+
                 <?php visibility_badge(); ?>
 
                 <div class="single-content">
@@ -95,7 +95,7 @@ get_header();
                 <!-- Eventtext felder gibt es noch nicht -->
                 <div class="button-group --break-button-group">
 
-                <?php 
+                <?php
                 // temp fix
                 echo "<br>";
 
@@ -137,13 +137,13 @@ get_header();
                     </div>
                 </div>
                 <br>
-                <?php 
+                <?php
                 }
                 ?>
             <?php
 
             // anheften
-            pin_toggle(); 
+            pin_toggle();
 
             // sichtbarkeit
             visibility_toggle(get_the_ID(  ));
@@ -160,16 +160,16 @@ get_header();
 
             ?>
 
-    
+
         <!-- Map -->
         <!-- not ready yet -->
         <?php get_template_part('components/general/map-card'); ?>
-    
+
         <!-- Backend edit link -->
         <?php qp_backend_edit_link(); ?>
 
         <!-- kommentare -->
-        <?php			
+        <?php
             if ( ( is_single() || is_page() ) && ( comments_open() || get_comments_number() ) && ! post_password_required() ) {
         ?>
 
@@ -180,7 +180,7 @@ get_header();
         <?php
             } # kommentare
 
-        }   # main loop 
+        }   # main loop
 
         # post löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && qp_project_owner() ) {
@@ -199,11 +199,11 @@ get_header();
             else {
                 exit( wp_redirect( get_site_url() ) );
             }
-            
+
         }
         # posst bearbeiten
         else {
-            
+
             if ( ( is_user_logged_in() && qp_project_owner() ) ) {
                 echo '<h2>Bearbeite deine Veranstaltung</h2><br>';
                 acf_form (
@@ -212,28 +212,28 @@ get_header();
                         'field_el' => 'div',
                         'post_content' => false,
                         'post_title' => true,
-                        'return' => get_site_url().'/projekte'.'/', 
+                        'return' => get_site_url().'/projekte'.'/',
                         'uploader' => qp_form_uploader(),
                         'fields' => array(
                             'field_5fc8d0b28edb0', //Beschreibung
                             'field_5fc8d15b8765b', //Date
-                            'field_5fc8d16e8765c', //Start 
+                            'field_5fc8d16e8765c', //Start
                             'field_5fc8d18b8765d', //End
                             'field_5fc8d1ae96113', //EndDate
                             'field_5fc8d1e0d15c9', //Livestream
                             'field_5fc8d1f4d15ca', //Ticket
                             'field_5fc8d1c4d15c8', //Website
                             'field_603f4c75747e9', //Bilder
-                            
+
                         ),
                         'submit_value'=> __('Änderungen speichern','quartiersplattform'),
                     )
-                );       
+                );
             }
         }
     }
 }
-    
+
 ?>
 
 </div>
@@ -244,12 +244,12 @@ get_header();
         <?php
         // weitere Nachrichten
         $args2 = array(
-            'post_type'=> array('veranstaltungen'), 
-            'post_status'=>'publish', 
+            'post_type'=> array('veranstaltungen'),
+            'post_status'=>'publish',
             'posts_per_page'=> 6,
             // 'order' => 'DESC',
             'post__not_in' => array(get_the_ID()),
-            'offset' => '0', 
+            'offset' => '0',
             'meta_query' => array(
                 'relation' => 'AND',
                 'date_clause' => array(
@@ -275,7 +275,7 @@ get_header();
                 )
             )
         );
-        
+
         $my_query = new WP_Query($args2);
         if ($my_query->post_count > 0 && empty($_GET['action'])) {
         ?>

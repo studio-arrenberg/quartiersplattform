@@ -269,11 +269,7 @@ add_action('init', 'my_acf_add_local_field_groups');
 		));
 
 		endif;
-	
+
 }
-
-
-
-
 
 ?>
