@@ -28,17 +28,17 @@ get_header();
 
 	<?php // projekt_carousel(); ?>
 
-	<?php 
+	<?php
 		$args4 = array(
-			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'), 
-			'post_status'=>'publish', 
+			'post_type'=> array('veranstaltungen', 'nachrichten', 'projekte', 'umfragen'),
+			'post_status'=>'publish',
 			'posts_per_page'=> 20,
 			'orderby' => 'date'
 		);
-	?> 
+	?>
 
-	<?php 
-	
+	<?php
+
 	if(!count_query($args4)){
 		$text = __("Wenn du gemeinsam mit anderen Menschen in deinem Quartier etwas verändern willst, kannst du dein eigenes Projekt veröffentlichen und daran arbeiten.",'quartiersplattform');
 		no_content_card("", __("Hier kannst du noch keine Inhalte entdecken",'quartiersplattform'), $text, $link_text = __('Projekt erstellen','quartiersplattform'), $link_url = get_site_url().'/projekt-erstellen');
@@ -58,13 +58,12 @@ get_header();
 		</div>
 
 
-		<?php 
+		<?php
 
 	}
-	?>	
+	?>
 
 
-	
 	<script>
 
 		var offset = 20;
@@ -76,7 +75,7 @@ get_header();
 			$('div.newsfeed_loadmore span.acf-spinner').addClass('is-active');
 
 			var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
-    
+
 			var data = {
 				'action': 'projekt_feed',
 				'offset': offset,
@@ -100,14 +99,14 @@ get_header();
 				}
 			});
 		}
-		
+
 	</script>
 	</div>
 
 <div class="right-sidebar ">
-	<?php 
+	<?php
 		get_template_part('components/views/veranstaltungen');
-	?>	
+	?>
 </div>
 		</main>
 

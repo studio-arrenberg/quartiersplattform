@@ -11,21 +11,20 @@
             </div>
 
             <div class="button-group">
-            
 
 
-            <?php 
+            <?php
 
                 if (get_privacy_policy_url()) {
 
-                    ?> 
+                    ?>
                         <a class="button is-transparent" href="<?php echo get_privacy_policy_url(); ?>"><?php _e("Datenschutz", "quartiersplattform"); ?></a>
                     <?php
 
                 }
                 else {
 
-                    ?> 
+                    ?>
                         <a class="button " href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
                     <?php
 
@@ -43,14 +42,14 @@
 
     setTimeout(() => {
         const disclaimer = document.querySelector("div.cookie-alert");
-        disclaimer.classList.add("visible", "overlay");  
+        disclaimer.classList.add("visible", "overlay");
         disclaimer.style.display = "block"
     }, 6000);
-    
+
     function cookie_disclaimer() {
 
         var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
-    
+
         var data = {
             'action': 'set_cookie',
             'request': 1

@@ -34,7 +34,7 @@ function create_form_umfragen(){
         'post_author' => 1,
         'post_slug' => $slug
 	);
-	
+
 	if ( ! function_exists( 'post_exists' ) ) {
 		require_once( ABSPATH . 'wp-admin/includes/post.php' );
 	}
@@ -178,5 +178,5 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    
+
     endif;

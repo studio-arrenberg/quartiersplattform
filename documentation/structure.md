@@ -6,7 +6,7 @@
 * Veranstaltungen `veranstaltungen`
 * Umfragen `umfragen`
 * Anmerkungen `anmerkungen`
-  
+
 #### Taxonomys
 * Projekte `projekt` in `nachrichten`, `veranstaltungen`, `umfragen`
 * Status `anmerkungen_status` in `anmerkungen`

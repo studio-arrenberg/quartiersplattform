@@ -36,7 +36,7 @@ get_header();
 
 		while ( have_posts() ) {
             the_post();
-            
+
             if( empty($_GET['action']) ){
 
 			// prep image url
@@ -93,7 +93,7 @@ get_header();
 
                 const filterTabs = document.querySelector(".filter-tabs");
 
-                filterTabs.addEventListener("click", (event) => {                
+                filterTabs.addEventListener("click", (event) => {
                     const root = document.documentElement;
                     const targetTranslateValue = event.target.dataset.translateValue;
                     // console.log(targetTranslateValue);
@@ -119,7 +119,7 @@ get_header();
                      <img class="projekt-image" src="<?php echo esc_url( $image_url ) ?>" />
 
 
-                    <?php 
+                    <?php
                     // project is not public
                     if (get_post_status() == 'draft' && qp_project_owner()) {
                         reminder_card('!warning visibilty-warning-'.get_the_ID(  ), __('Dein Projekt ist nicht öffentlich sichtbar.','quartiersplattform'), '');
@@ -131,7 +131,7 @@ get_header();
 
                     // Aktuelle Events
                     get_template_part( 'components/project/events' );
-                    
+
                     // Pinned Posts
                     get_template_part( 'components/project/pinned-posts' );
 
@@ -152,11 +152,11 @@ get_header();
 
                     // Pin Project to Landing Page
                     if ( current_user_can('administrator') ) {
-                        pin_toggle('pin_main'); 
+                        pin_toggle('pin_main');
                     }
 
                     ?>
-                    
+
                 </div>
 
 
@@ -168,15 +168,15 @@ get_header();
                 <?php if (qp_project_owner()) { ?>
                 <div id="settings" class="bar bar-hidden">
 
-                    <?php 
-                    
-                    visibility_toggle( get_the_ID(  ) ); 
-                    
+                    <?php
+
+                    visibility_toggle( get_the_ID(  ) );
+
                     // Pin Project to Landing Page
                     if ( current_user_can('administrator') ) {
-                        pin_toggle('pin_main'); 
+                        pin_toggle('pin_main');
                     }
-                    
+
                     ?>
 
                     <div class="publish-form">
@@ -190,7 +190,7 @@ get_header();
                                     'return' => '%post_url%',
                                     'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                     'post_title' => true,
-                                    'post_content' => false,    
+                                    'post_content' => false,
                                     'uploader' => qp_form_uploader(),
                                     'fields' => array(
                                         'field_5fc64834f0bf2', // Emoji
@@ -215,7 +215,7 @@ get_header();
                                             'return' => '%post_url%',
                                             'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                             'post_title' => false,
-                                            'post_content' => false,    
+                                            'post_content' => false,
                                             'uploader' => 'basic',
                                             'fields' => array(
                                                 'field_602e74121ff45',
@@ -248,7 +248,7 @@ get_header();
 
         # projekt löschen
         else if (isset($_GET['action']) && $_GET['action'] == 'delete' && is_user_logged_in() && $current_user->ID == $post->post_author) {
-            
+
             // delete all taxnomied posts
             $p_posts = get_posts( array(
                 'post_type' => array('veranstaltungen', 'nachrichten', 'umfragen'),
@@ -263,7 +263,7 @@ get_header();
                     )
                 )
             ) );
- 
+
             foreach ( $p_posts as $s_post ) {
                 wp_delete_post( $s_post->ID, true); // Set to False if you want to send them to Trash.
             }
@@ -275,8 +275,8 @@ get_header();
         }
         # post bearbeiten
         else {
-            
-            if ( qp_project_owner() ) { 
+
+            if ( qp_project_owner() ) {
 
                 ?>
 
@@ -291,7 +291,7 @@ get_header();
                                 'return' => '%post_url%',
                                 'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                 'post_title' => false,
-                                'post_content' => false,    
+                                'post_content' => false,
                                 'uploader' => 'basic',
                                 'fields' => array(
                                     // 'field_5fc64834f0bf2', // Emoji
@@ -304,11 +304,11 @@ get_header();
                     ?>
 
                 </div>
-            
+
             <?php
             }
 
-            // emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker 
+            // emoji_picker_init('acf-field_5fc64834f0bf2'); // load emoji picker
 
             }
         }

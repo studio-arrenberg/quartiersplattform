@@ -6,15 +6,15 @@ global $current_user;
 
 <a class="badge-link <?php if (get_query_var( 'highlight_display') === true && get_query_var( 'projekt_carousel_projekt_id' ) ==  get_the_ID(  )) echo "badge-is-active" ?>" href="<?php echo esc_url( get_permalink() ); ?>">
     <div class="badge shadow <?php if(qp_project_owner()) echo ' yours'; ?>">
-        <div class="emoji"><?php the_field('emoji'); ?></div> 
-        
+        <div class="emoji"><?php the_field('emoji'); ?></div>
+
         <?php
             if (empty(get_field('emoji'))) {
-                the_post_thumbnail( 'square_s' ); 
+                the_post_thumbnail( 'square_s' );
             }
         ?>
     </div>
-    
+
     <div class="badge-content">
         <h3 class="heading-size-4"><?php shorten(get_the_title(), '60'); ?></h3>
 

@@ -22,7 +22,7 @@ else {
             <?php shorten(get_the_title(), '30'); ?>
         </h3>
         <p class="preview-text">
-            <?php  
+            <?php
             if (strlen(get_field('text')) > 2) {
                 shorten(get_field('text'), $char);
             }

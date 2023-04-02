@@ -13,7 +13,7 @@
 
             <div class="content ">
                 <h3 class="card-title">
-                    <?php 
+                    <?php
                         shorten(get_the_title($id), '60');
                     ?>
                 </h3>

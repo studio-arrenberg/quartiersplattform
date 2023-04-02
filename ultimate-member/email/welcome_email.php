@@ -38,7 +38,7 @@
             <div class="column">
               <h2>
                 <?php _e('Sprachen', 'quartiersplattform'); ?>
-                
+
               </h2>
               <p>
                 <?php _e('Deine Quartiersplattform spricht mehrere Sprachen. Sie ist in Türkisch, Italienisch, Deutsch und Englisch verfügbar.', 'quartiersplattform'); ?>
@@ -66,9 +66,9 @@
           <br>
           <br>
           <p>
-            <?php 
+            <?php
               $image = get_field('logo', 'option');
-              if( !empty( $image ) ): 
+              if( !empty( $image ) ):
             ?>
             <img width="200" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>;>
             <?php endif; ?>

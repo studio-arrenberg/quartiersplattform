@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 
@@ -6,7 +6,7 @@ if ( $curauth->ID == get_current_user_id() ) {
     exit(wp_redirect( home_url().'/profil'));
 }
 
-get_header(); 
+get_header();
 
 
 ?>
@@ -20,14 +20,14 @@ get_header();
 
 		<div class="hidden-small">
 
-			<?php 
+			<?php
 				$args4 = array(
-					'post_type'=> array('projekte'), 
-					'post_status'=>'publish', 
+					'post_type'=> array('projekte'),
+					'post_status'=>'publish',
 					'posts_per_page'=> 20,
 					'orderby' => 'date'
 				);
-			?>  
+			?>
 
 			<?php // card_list($args4); ?>
 
@@ -35,7 +35,6 @@ get_header();
 
 		</div>
 
-		
 	</div>
 
 
@@ -53,24 +52,24 @@ get_header();
         </div>
 
 
-        <?php 
+        <?php
             if ($curauth->ID == get_current_user_id()) {
                 ?>
                     <a class="button" href="<?php echo get_site_url(); ?>/profil/"><?php _e('Mein Profil bearbeiten', 'quartiersplattform'); ?></a>
-                <?php 
+                <?php
             }
         ?>
 
         <!-- Kontakt  -->
-        <?php 
-        
-        $userid = "user_".$curauth->ID; 
+        <?php
+
+        $userid = "user_".$curauth->ID;
         author_card(true, $curauth->ID, false);
-        
+
         ?>
 
         <br>
-        
+
         <!-- About -->
         <?php if( get_field('about', $userid) ) { ?>
             <h2><?php _e('Über mich', 'quartiersplattform'); ?> </h2>
@@ -78,21 +77,21 @@ get_header();
             <br>
         <?php } ?>
 
-    
-            
+
+
             <?php
                 // Projekte
                 $args4 = array(
-                    'post_type'=> array('projekte'), 
-                    'post_status'=>'publish', 
+                    'post_type'=> array('projekte'),
+                    'post_status'=>'publish',
                     'author' =>  $curauth->ID,
-                    'posts_per_page'=> -1, 
+                    'posts_per_page'=> -1,
                     'order' => 'DESC',
-                    'offset' => '0', 
+                    'offset' => '0',
                 );
                 if (count_query($args4)) {
                     echo "<h2 class='margin-bottom'>".__("Projekte von",'quartiersplattform')." ".$curauth->first_name."</h2> <br>";
-                    card_list($args4);      
+                    card_list($args4);
                 }
             ?>
 
@@ -102,16 +101,16 @@ get_header();
 
             <?php
                 $args4 = array(
-                    'post_type'=> array('veranstaltungen', 'nachrichten','umfragen'), 
-                    'post_status'=>'publish', 
+                    'post_type'=> array('veranstaltungen', 'nachrichten','umfragen'),
+                    'post_status'=>'publish',
                     'author' =>  $curauth->ID,
-                    'posts_per_page'=> 20, 
+                    'posts_per_page'=> 20,
                     'order' => 'DESC',
-                    'offset' => '0', 
+                    'offset' => '0',
                 );
                 if (count_query($args4)) {
                     echo "<h2 class='margin-bottom'>".__("Beiträge von",'quartiersplattform')." ".$curauth->first_name."</h2> <br>";
-                    card_list($args4);      
+                    card_list($args4);
                 }
             ?>
 

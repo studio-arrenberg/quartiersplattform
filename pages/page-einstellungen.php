@@ -31,11 +31,11 @@ get_header();
     <p><?php _e('Hier kannst du die Einstellungen für die Quartiersplattform festlegen. Alle Einstellungen treten direkt in Kraft und gelten für die gesamte Quartiersseite.', 'quartiersplattform')." ".get_field('quartiersplattform-name','option'); ?></p>
     <br>
     <a href="<?php echo home_url().'/wp-admin/admin.php?page=theme-general-settings' ?>" class="button">Wordpress Einstellungen</a>
-    
+
     <br><br><br>
 
     <h2 class="heading-size-2"> Allgemeine Einstellungen <span class="highlight">beta</span> </h2>
-    
+
     <?php
 
     $text = __('Allgemeine und öffentliche Informationen zu der Quartiersplattform.','quartiersplattform');
@@ -57,12 +57,11 @@ get_header();
             'field_groups' => array('group_6023ea77ebd53'),
             'submit_value'=> __('Einstellungen speichern', 'quartiersplattform'),
         )
-    ); 
+    );
 
     ?>
 
     </div>
-    
 
 
 </main><!-- #site-content -->

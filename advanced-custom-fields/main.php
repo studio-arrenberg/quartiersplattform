@@ -26,7 +26,7 @@ function menu_setup() {
     $menuname = 'qp_menu';
     // get menu id
     $menu_array = wp_get_nav_menus();
-    for ($i=0; $i < count($menu_array) ; $i++) { 
+    for ($i=0; $i < count($menu_array) ; $i++) {
 
         if ($menu_array[$i]->slug == $menuname) {
             $menu_id = $menu_array[$i]->term_id;
@@ -52,9 +52,9 @@ function menu_setup() {
         // 3 => array ('title' => 'Gemeinsam', 'page_name' => 'Gemeinsam', 'ID' => '100400', 'attr' => 'Gemeinsam'),
         // 4 => array ('title' => 'Impressum', 'page_name' => 'Impressum', 'ID' => '100700', 'attr' => 'fifth'),
     );
-    // create menu if not exists 
+    // create menu if not exists
     if (!$menu_id) {
-        $menu_id = wp_create_nav_menu($menuname);        
+        $menu_id = wp_create_nav_menu($menuname);
     }
 
     // get menu items
@@ -62,10 +62,10 @@ function menu_setup() {
     // print_r($menu_items);
 
     // iterate through given menu items
-    for ($i=0; $i < count($defined_menu_item); $i++) { 
+    for ($i=0; $i < count($defined_menu_item); $i++) {
         $id = '0';
         // iterate and check existing menu items
-        for ($a=0; $a < count($menu_items); $a++) { 
+        for ($a=0; $a < count($menu_items); $a++) {
             if ($defined_menu_item[$i]['attr'] == $menu_items[$a]->attr_title) {
                 $id = $menu_items[$a]->ID;
             }
@@ -113,14 +113,14 @@ add_action( 'after_switch_theme', 'flush_rewrite_rules' );
  */
 
 function qp_rewrite_permalink() {
-    
-    global $wp_rewrite; 
+
+    global $wp_rewrite;
 
     //Write the rule
-    $wp_rewrite->set_permalink_structure('/%postname%/'); 
+    $wp_rewrite->set_permalink_structure('/%postname%/');
 
     //Set the option
-    update_option( "rewrite_rules", FALSE ); 
+    update_option( "rewrite_rules", FALSE );
 
     //Flush the rules and tell it to write htaccess
     $wp_rewrite->flush_rules( true );
@@ -147,15 +147,15 @@ function themename_after_setup_theme() {
         }
 
     }
-    
-    
+
+
     $site_type = get_option('show_on_front');
     $home = get_page_by_title( 'Startseite', OBJECT, 'page' );
     // if($site_type == 'posts') {
         update_option( 'show_on_front', 'page' );
         // update_option( 'page_for_posts', $home->ID );
         update_option( 'page_on_front', $home->ID );
-        
+
     // }
     // $site_type = get_option('page_for_posts');
 
@@ -256,7 +256,7 @@ if (!current_user_can('manage_options')) {
 
 add_action('init', 'qp_add_pins_field_group');
 function qp_add_pins_field_group() {
-	
+
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -301,8 +301,8 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    
+
     endif;
-	
-	
+
+
 }

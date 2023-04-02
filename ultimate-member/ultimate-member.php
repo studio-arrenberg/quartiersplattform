@@ -16,7 +16,7 @@
  */
 
 
-// UM show profil image upload 
+// UM show profil image upload
 function um_show_hidden_field(){
 	if ( is_page( 'profil' ) ) {
 			echo "<script>document.querySelector('div.um-profile-photo div').style.display = 'block';</script>";
@@ -55,7 +55,7 @@ function um_remove_scripts_and_styles() {
 	if ( is_admin() || is_ultimatemember() ) {
 		return;
 	}
-	
+
 	$REQUEST_URI = $_SERVER['REQUEST_URI'];
 	if ( in_array( $REQUEST_URI, $um_urls ) ) {
 		return;
@@ -69,7 +69,7 @@ function um_remove_scripts_and_styles() {
 	if ( !empty( $um_load_assets ) ) {
 		return;
 	}
-	
+
 	if ( isset( $post ) && is_a( $post, 'WP_Post' ) ) {
 		if ( in_array( $post->ID, $um_posts ) ) {
 			return;
@@ -341,7 +341,7 @@ function copy_langugae_file() {
 				unlink(WP_LANG_DIR . '/plugins/ultimate-member-'.$lang.'.'.$file);
 			}
 		}
-	}	
+	}
 }
 
 copy_langugae_file();
@@ -377,24 +377,24 @@ function my_email_template_html( $slug, $args ) {
 
 
 		<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
-        
+
         <style type="text/css">
 			@media only screen and (max-width:480px){
             .text, button, a {
-                        font-size:3em !important;						  
+                        font-size:3em !important;
             }
 			.button{
 				padding: 30px !important;
 			}
 			}
 
-            body { 
+            body {
 				/* font-family: Helvetica, Arial, sans-serif ; */
-				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 			}
 			h1{
 				/* font-family: Helvetica, sans-serif; */
-				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 				text-align: left;
 				margin: 0px;
 				font-size: 84px;
@@ -404,9 +404,9 @@ function my_email_template_html( $slug, $args ) {
 			.accent{
 				color:#0091ff;
 			}
-			.button{	
-				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
-				padding: 15px;		  
+			.button{
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
+				padding: 15px;
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
@@ -426,14 +426,14 @@ function my_email_template_html( $slug, $args ) {
 				0 2px 4px rgba(0, 145, 255, 0.07), 0 4px 8px rgba(0, 145, 255, 0.07),
 				0 8px 16px rgba(0, 145, 255, 0.07), 0 16px 32px rgba(0, 145, 255, 0.07),
 				0 32px 64px rgba(0, 145, 255, 0.07);"
-				
-			}     
+
+			}
 			a{
-				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
 				text-decoration: none;
 				color:black;
 				font-size: 1.5em;
-			}       
+			}
 			.footer_link{
 				font-weight:normal;
 			}
@@ -445,7 +445,7 @@ function my_email_template_html( $slug, $args ) {
 			}
 			.text{
 				/* font-family: Helvetica, sans-serif; */
-				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif; 
+				font-family: "Titillium Web", "Helvetica Neue", Helvetica, sans-serif;
               	margin: 0px;
               	font-size: 1.5em;
               	letter-spacing: 0.5px;
@@ -454,7 +454,7 @@ function my_email_template_html( $slug, $args ) {
 				display: none;
 			}
         </style>
-        
+
     </head>
     <?php $head = ob_get_clean();
     return $head;

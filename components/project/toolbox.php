@@ -1,4 +1,4 @@
-<?php global $current_user; 
+<?php global $current_user;
 // echo $current_user->ID."<br>";
 // echo $post->post_author;
 ?>
@@ -24,7 +24,7 @@
         <a class="button is-style-outline button-has-icon" href="<?php echo get_site_url(); ?>/umfrage-erstellen/?project=<?php echo $post->post_name; ?>">
         <?php require get_template_directory() . '/assets/icons/message.svg'; ?>
 
-            <?php _e('Umfrage ', 'quartiersplattform'); ?> 
+            <?php _e('Umfrage ', 'quartiersplattform'); ?>
         </a>
 
         <!-- Veranstaltung erstellen -->
@@ -32,7 +32,7 @@
             href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">
             <?php require get_template_directory() . '/assets/icons/calendar-badge-plus.svg'; ?>
 
-            <?php _e('Veranstaltung ', 'quartiersplattform'); ?> 
+            <?php _e('Veranstaltung ', 'quartiersplattform'); ?>
         </a>
     </div>
 </div>

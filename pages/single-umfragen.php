@@ -17,7 +17,7 @@ get_header();
 
 	<div class="main-content">
 
-        <?php 
+        <?php
         // Projekt Kachel
         project_card($post->ID);
         ?>
@@ -38,11 +38,11 @@ get_header();
 
                 <h2 class="heading-size-3 highlight">
                     <?php echo qp_date(get_the_date('Y-m-d'), false); ?>
-                </h2> 
+                </h2>
                 <h1 class="heading-size-1">
-                    <?php  
-                        if (!is_single( )) shorten(get_the_title(), '50'); 
-                        else echo get_the_title(); 
+                    <?php
+                        if (!is_single( )) shorten(get_the_title(), '50');
+                        else echo get_the_title();
                     ?>
                 </h1>
                 <?php visibility_badge(); ?>
@@ -53,7 +53,7 @@ get_header();
             <?php
             // get poll meta data
             $array = get_post_meta(get_the_ID(), 'polls', true);
-            // set vote state 
+            // set vote state
             $vote_state = false;
             for ($i = 0; $i < count($array); $i++) if(in_array(get_current_user_id(),$array[$i]['user'])) $vote_state = true;
             $randId = md5(rand());
@@ -85,7 +85,7 @@ get_header();
                     ?>
                 </div>
 
-                <?php 
+                <?php
                 if (is_user_logged_in()) {
                 ?>
                     <div class="card-footer">
@@ -100,10 +100,10 @@ get_header();
                     <div class="login-wall hidden">
                         <p><?php _e('Melde dich auf der Quartiersplattform an um an der Umfrage teilzunehmen.', 'quartiersplattform'); ?> </p>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/login">
-                            <?php _e('Anmelden', 'quartiersplattform'); ?> 
+                            <?php _e('Anmelden', 'quartiersplattform'); ?>
                         </a>
                         <a class="button card-button" href="<?php echo get_site_url(); ?>/register">
-                            <?php _e('Registrieren', 'quartiersplattform'); ?> 
+                            <?php _e('Registrieren', 'quartiersplattform'); ?>
                         </a>
                         <a class="close-card-link">
                             <img class="close-card-icon"  alt="Close" src="<?php echo get_template_directory_uri()?>/assets/icons/close.svg" />
@@ -116,7 +116,7 @@ get_header();
             </form>
 
             <script>
-            
+
             <?php if (is_user_logged_in()) { ?>
 
             jQuery(document).ready(function($) {
@@ -125,7 +125,7 @@ get_header();
                         $.each(response.data, function(k, v) {
                             $('form#poll-<?php echo get_the_ID(  ).$randId; ?> div#poll' + k).text(v['count'] + '<?php _e(' Stimmen', 'quartiersplattform'); ?>');
                             $('form#poll-<?php echo get_the_ID(  ).$randId; ?> span#poll' + k).css('width', v['percentage'] + '%');
-                            
+
                             if (v['user'] == 'true') {
                                 $('form#poll-<?php echo get_the_ID(  ).$randId; ?> label#poll' + k + ' img.button-icon').removeClass('hide');
                             }
@@ -139,15 +139,15 @@ get_header();
                 })
             });
 
-            <?php 
+            <?php
             } else {
                 ?>
                 jQuery('#poll-<?php echo get_the_ID(  ).$randId; ?> div.login-wall').on('click', function(e) {
                     $('#poll-<?php echo get_the_ID(  ).$randId; ?> div.login-wall').toggleClass('hidden');
                 });
 
-                <?php 
-            } 
+                <?php
+            }
             ?>
 
             </script>
@@ -172,7 +172,7 @@ get_header();
 
                         <?php
                         // }
-                        ?> 
+                        ?>
                         <a class="button is-style-outline button-red" onclick="return confirm('<?php _e('Willst du diesen Beitrag endgültig löschen?','quartiersplattform'); ?>')" href="<?php qp_parameter_permalink('action=delete'); ?>"><?php _e('Umfrage löschen', 'quartiersplattform'); ?></a>
                     </div>
                 </div>
@@ -230,8 +230,8 @@ get_header();
                                 'return' => '%post_url%',
                                 'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                 'post_title' => true,
-                                'post_content' => false,    
-                                'field_groups' => array('group_601855a265b19'), 
+                                'post_content' => false,
+                                'field_groups' => array('group_601855a265b19'),
                             )
                         );
 
@@ -245,7 +245,7 @@ get_header();
                                 'return' => '%post_url%',
                                 'submit_value' => __('Änderungen speichern','quartiersplattform'),
                                 'post_title' => true,
-                                'post_content' => false,    
+                                'post_content' => false,
                                 'fields' => array(
                                     'field_601855a9aa4be' // Description
                                 ),
@@ -254,10 +254,8 @@ get_header();
 
                     }
 
-                    
-                    
                 }
-            }			
+            }
 
         // kommentare
         if( empty($_GET['action']) ) {
@@ -271,8 +269,8 @@ get_header();
 
         <?php } ?>
         </div>
-        <?php		
-    	
+        <?php
+
         }
     }
 }

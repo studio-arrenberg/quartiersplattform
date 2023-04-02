@@ -20,7 +20,7 @@
 
 function update_poll_naming() {
 
-    global $wpdb;   
+    global $wpdb;
 	$table = $wpdb->prefix."posts";
     $result = $wpdb->get_results( "UPDATE `$table` SET  `post_type` =  'umfragen' WHERE `post_type` = 'poll'");
 
@@ -37,10 +37,10 @@ add_action( 'init', 'update_poll_naming' );
 
 # Veranstaltungen rebuild datetime field
 // function veranstaltungen_field_zeitpunkt() {
-		
+
 // 	$args3 = array(
-// 		'post_type'=>'veranstaltungen', 
-// 		'post_status'=>'publish', 
+// 		'post_type'=>'veranstaltungen',
+// 		'post_status'=>'publish',
 // 		'posts_per_page'=> -1,
 // 		'meta_query' => array(
 // 			'relation' => 'OR',

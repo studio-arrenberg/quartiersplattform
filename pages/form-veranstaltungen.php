@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 acf_form_head();
 get_header();
@@ -27,7 +27,7 @@ if ( qp_project_owner($_GET['project']) == false ) {
                 }
             ?>
 
-        <?php 
+        <?php
 
         if (isset($_GET['project'])) {
 
@@ -45,7 +45,7 @@ if ( qp_project_owner($_GET['project']) == false ) {
 
                 <br>
 
-                <?php 
+                <?php
                     acf_form(
                         array(
                             'id' => 'veranstaltungen-form',
@@ -57,16 +57,17 @@ if ( qp_project_owner($_GET['project']) == false ) {
                                 'post_type' => 'veranstaltungen',
                                 'post_status' => $status,
                             ),
-                            'return' => get_site_url().'/projekte'.'/'.$_GET['project'], 
+                            'return' => get_site_url().'/projekte'.'/'.$_GET['project'],
                             'field_el' => 'div',
                             'post_content' => false,
                             'post_title' => true,
                             'uploader' => qp_form_uploader(),
                             'fields' => array(
-                                'field_5fc8d0b28edb0', //Text
+                                'field_5fc8d0b28edb0', //Beschreibung
                                 'field_5fc8d15b8765b', //Date
                                 'field_5fc8d16e8765c', //Start AP1
-                                'field_5fc8d18b8765d', //End AP1 
+                                'field_5fc8d18b8765d', //End AP1
+                                'field_5fc8d1ae96113', //EndDate
                                 'field_5fc8d1e0d15c9', //Livestream
                                 'field_5fc8d1f4d15ca', //Ticket
                                 'field_5fc8d1c4d15c8', //Website
@@ -76,10 +77,10 @@ if ( qp_project_owner($_GET['project']) == false ) {
                             'submit_value'=> __('Veranstaltung veröffentlichen','quartiersplattform'),
                             'html_before_fields' => '<input type="text" id="project_tax" name="project_tax" value="'.$_GET['project'].'" style="display:none;">',
                         )
-                    ); 
+                    );
         }
         ?>
-        
+
         </div>
     </div>
     </div>

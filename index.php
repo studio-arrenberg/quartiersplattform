@@ -17,7 +17,7 @@
 get_header();
 ?>
 
-	
+
 <main id="site-content" class="page-grid" role="main">
 
 	<?php
@@ -56,7 +56,7 @@ get_header();
 	}
 
 	if ( $archive_title || $archive_subtitle ) {
-		
+
 	}
 
 	if ( have_posts() ) {
@@ -66,7 +66,7 @@ get_header();
 			<h1 class="large-margin-bottom"><?php the_archive_title(); ?></h1>
 
 			<div class="card-container force-landscape">
-			
+
 
 			<?php
 

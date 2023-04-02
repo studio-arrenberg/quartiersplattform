@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 global $current_user;
 // $page_for_posts = get_option( 'page_for_posts' );
@@ -19,10 +19,10 @@ if (get_post_status() == 'publish') {
             <div class="button-group">
                 <a class="button is-transparent" target="blank"
                 href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url(get_permalink()); ?>">Facebook</a>
-            
+
                 <a class="button is-transparent" target="blank"
                 href="https://twitter.com/intent/tweet?url=<?php echo esc_url(get_permalink()); ?>">Twitter</a>
-            
+
                 <a class="button is-transparent" target="blank"
                 href="mailto:?subject=<?php the_title(); ?>&body=%20<?php echo get_permalink(); ?>"
                 rel="nofollow">E-Mail</a>
@@ -40,12 +40,12 @@ if (get_post_status() == 'publish') {
         }
     </script>
 
-<?php 
+<?php
 
-} 
+}
 else if (qp_project_owner()) {
     $text = __("Dein Projekt kann erst geteilt werden, wenn es veröffentlicht wurde.",'quartiersplattform');
     reminder_card('project-share'.get_the_ID(  ), __('Dein Projekt kann nicht geteilt werden','quartiersplattform'), $text);
-} 
+}
 
 ?>

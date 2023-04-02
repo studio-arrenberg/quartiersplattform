@@ -22,7 +22,7 @@ get_header();
 
 	<div class="main-content">
 
-		<?php 
+		<?php
 			$text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
 			reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text );
 		?>
@@ -39,11 +39,11 @@ get_header();
 		<div class="comments-wrapper">
             <?php comments_template('', true); ?>
         </div><!-- .comments-wrapper -->
-	
+
 	</div>
 
 	<div class="right-sidebar">
-		<?php 
+		<?php
 
 			get_template_part('components/views/veranstaltungen');
 
@@ -51,8 +51,8 @@ get_header();
 				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
 				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
 			}
-			
-		?>	
+
+		?>
 	</div>
 
 </main><!-- #site-content -->

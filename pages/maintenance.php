@@ -21,7 +21,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      <?php 
+      <?php
         if (class_exists('acf_pro')) {
           if (get_field('quartiersplattform-name', 'option')) {
               echo get_field('quartiersplattform-name', 'option').__(" Update",'quartiersplattform');
@@ -38,7 +38,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
 
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/maintenance.css">
@@ -92,7 +92,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
     <div class="center-desktop">
 
-      <?php 
+      <?php
       # Maintanance View
       if (class_exists('acf_pro') && class_exists('UM')) {
       ?>
@@ -117,7 +117,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
           <?php
           # map picture variables
           $latlong = "7.128,51.2485,";
-          $map_zoom = 15.48; 
+          $map_zoom = 15.48;
           $width = 500;
           $height = 300;
           ?>
@@ -132,11 +132,11 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
           <?php
           # map picture variables
           $latlong = "7.244365,51.274734,";
-          $map_zoom = 13.48; 
+          $map_zoom = 13.48;
           $width = 500;
           $height = 300;
           ?>
-<!-- 
+<!--
           <div class="card  shadow" style="background: url('https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $latlong.$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ')">
             <a class="card-link" href="https://langerfeld.app">
                <h4 class="heading-size-3">Langerfeld</h4>
@@ -148,12 +148,12 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
         </div>
 
 
-      <?php 
+      <?php
       }
       # Setup View
       else {
       ?>
-      
+
       <h2 class="pre-title">Erste Schritte</h2>
         <h1><?php _e('Plugins installieren', 'quartiersplattform'); ?> </h1>
         <p class="big">
@@ -166,7 +166,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
         <!-- <a class="button" href="https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/documentation.md"><?php _e('Dokumentation Lesen', 'quartiersplattform'); ?> </a> -->
 
         <div class="flex">
-      
+
         <?php
           if (!class_exists('acf_pro')) {
           ?>
@@ -175,7 +175,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
             <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
               <h2><?php _e('Bitte Advanced Custom Fields installieren', 'quartiersplattform'); ?> </h2>
               <p>
-                <?php _e('Bitte installiere das Plugin ACF über die Wordpress Plugin Seite.', 'quartiersplattform'); ?> 
+                <?php _e('Bitte installiere das Plugin ACF über die Wordpress Plugin Seite.', 'quartiersplattform'); ?>
               </p>
             </a>
           </div>
@@ -189,7 +189,7 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
         <a class="card-link" href="<?php echo get_site_url(); ?>/wp-admin/plugins.php">
           <h2><?php _e('Bitte Ultimate Member installieren', 'quartiersplattform'); ?> </h2>
           <p>
-            <?php _e('Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite und stelle die in der Dokumentation beschriebenen Einstellungen ein.', 'quartiersplattform'); ?> 
+            <?php _e('Bitte installiere das Plugin Ultimate Member über die Wordpress Plugin Seite und stelle die in der Dokumentation beschriebenen Einstellungen ein.', 'quartiersplattform'); ?>
           </p>
         </a>
       </div>
@@ -218,14 +218,14 @@ if (class_exists('acf_pro') && class_exists('UM') && (current_user_can('skip_mai
 
       <div class="logo">
         <a href="https://www.arrenberg.studio">
-          
+
           <?php include get_stylesheet_directory() . '/assets/icons/studio-arrenberg.svg'; ?>
-          
+
         </a>
     </div>
   </div>
 
-  
+
     </body>
 
   <script>

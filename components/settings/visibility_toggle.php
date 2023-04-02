@@ -3,27 +3,27 @@
 
 <label class="visibility_toggle visibility_toggle-<?php echo get_the_ID(  ); ?>">
     <input class="toggle-input" type="checkbox" <?php if (get_post_status() == 'publish') echo "checked"; ?> onclick="visibility_toggle('<?php echo get_the_ID(  ); ?>', 'visibility_toggle-<?php echo get_the_ID(  ); ?>')" >
-    
+
     <div class="toggle-wrapper  <?php if (get_post_status() == 'publish') echo "is-checked"; ?> ">
         <span class="button toggle-button slider toggle_a ">
-            <?php _e('Öffentlich', 'quartiersplattform'); ?> 
+            <?php _e('Öffentlich', 'quartiersplattform'); ?>
         </span>
         <span class="button toggle-button slider toggle_b <?php if (get_post_status() == 'publish') ?>">
-            <?php _e('Privat', 'quartiersplattform'); ?> 
+            <?php _e('Privat', 'quartiersplattform'); ?>
         </span>
         <span class="toggle-slider" style="display: inline-block;"></span>
     </div>
     <span class="acf-spinner " style="display: inline-block;"></span>
-</label> 
+</label>
 
-<script> 
+<script>
 
     function visibility_toggle(id, elementClass) {
 
         $('label.'+elementClass+' span.acf-spinner').addClass('is-active');
 
         var ajax_url = "<?= admin_url('admin-ajax.php'); ?>";
-    
+
         var data = {
             'action': 'visibility_toggle', // !!! wording
             'post_id': id,

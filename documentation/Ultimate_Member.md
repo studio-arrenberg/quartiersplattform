@@ -6,7 +6,7 @@ Hier finden sich alle Informationen und Einstellungen die für die korrekte Einr
 ### Plugin Ultimate Member
 
 #### Installation
-1. Installieren Sie das Plugin über den Wordpress Plugin Manager. [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/) 
+1. Installieren Sie das Plugin über den Wordpress Plugin Manager. [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/)
 2. Aktivieren Sie das Plugin.
 3. Öffnen Sie den Bereich Ultimate Member im Wordpress Admin Panel.
 4. Erstellen Sie die Seiten durch das Ultimate Member Plugin.

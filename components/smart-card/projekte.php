@@ -2,20 +2,20 @@
 <?php
 
     $args4 = array(
-        'post_type'=> array('projekte'), 
+        'post_type'=> array('projekte'),
         'post_status' => array('publish', 'pending', 'draft', 'auto-draft'),
         'author' =>  get_current_user_id(),
-        'posts_per_page'=> -1, 
+        'posts_per_page'=> -1,
         'order' => 'DESC',
-        'offset' => '0', 
+        'offset' => '0',
     );
-    
+
     $my_query = new WP_Query($args4);
     if ($my_query->post_count > 0) {
         ?>
 
         <div class="pre-card">
-            <?php 
+            <?php
             if ($my_query->post_count > 1) {
                 echo '<h2>'._e("Deine Projekte",'quartiersplattform').'</h2>';
             }
@@ -47,7 +47,7 @@
                                 <h3 class="heading-size-3">
                                     <?php shorten(get_the_title(), '60'); ?>
                                 </h3>
-                                <div class="highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div> 
+                                <div class="highlight"><?php  the_field('slogan'); // echo get_the_date('j. F'); ?></div>
                             </div>
                         </a>
                             <div class="card-footer">
@@ -59,10 +59,6 @@
                                 <!-- <a class="button card-button"  href="<?php echo get_site_url(); ?>/veranstaltung-erstellen/?project=<?php echo $post->post_name; ?>">+</a> -->
                             </div>
                     </div>
-                    
-                    
-                    
-            
             <?php
         }
         wp_reset_postdata();

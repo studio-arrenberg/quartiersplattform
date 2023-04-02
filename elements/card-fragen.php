@@ -34,9 +34,9 @@
                     <span class=" green-text"><?php echo " ".qp_remaining(get_post_meta(get_the_ID(), 'expire_timestamp', true)); ?><span>
                 </div>
                 <p class="preview-text-large">
-                <?php  
-                    if (!is_single( )) shorten(get_field('text'), '300'); 
-                    else the_field('text'); 
+                <?php
+                    if (!is_single( )) shorten(get_field('text'), '300');
+                    else the_field('text');
                 ?>
                 </p>
                 <div class="emoji">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <?php if (get_query_var('list-item') === false) echo get_avatar( get_the_author_meta( 'ID' ), 15 ); ?>
-            
+
         <?php if(!is_single()) { ?>
         </a>
         <?php } ?>

@@ -34,7 +34,7 @@ if (!is_user_logged_in()) {
 
         <div class="profil-header">
             <div class="profil-header-avatar">
-                <?php 
+                <?php
                     // User Avatar
                     $current_user = wp_get_current_user();
                     echo get_avatar( $current_user->user_email, 125 );
@@ -63,12 +63,12 @@ if (!is_user_logged_in()) {
                     </div>
                 </div>
             </div>
-           
+
             <script>
 
                 const filterTabs = document.querySelector(".filter-tabs");
 
-                filterTabs.addEventListener("click", (event) => {                
+                filterTabs.addEventListener("click", (event) => {
                     const root = document.documentElement;
                     const targetTranslateValue = event.target.dataset.translateValue;
 
@@ -92,7 +92,7 @@ if (!is_user_logged_in()) {
 
             <h3><?php _e('Deine Kontaktinformationen', 'quartiersplattform'); ?></h3>
             <p>
-                <?php 
+                <?php
                 if (current_user_can('administrator')) {
                     _e('Als Administrator dieser Quartiersplattform werden deine Kontaktinformationen allen Besuchern angezeigt.', "quartiersplattform");
                 }
@@ -101,38 +101,38 @@ if (!is_user_logged_in()) {
                 }
                 ?>
             </p>
-                        
+
             <?php author_card(true, $current_user->ID, false); ?>
 
             <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
             <br>
-            
+
             <?php
                 $args4 = array(
-                    'post_type'=> 'projekte', 
-                    'post_status'=> array('publish', 'draft'), 
+                    'post_type'=> 'projekte',
+                    'post_status'=> array('publish', 'draft'),
                     'author' =>  $current_user->ID,
-                    'posts_per_page'=> 10, 
+                    'posts_per_page'=> 10,
                     'order' => 'DESC',
-                    'offset' => '0', 
+                    'offset' => '0',
                 );
                 if (count_query($args4)) {
                     echo "<br><h2 class='margin-bottom'>".__('Deine Projekte', 'quartiersplattform')."</h2><br>";
                     card_list($args4);
                 }
-                
+
 
                 $args4 = array(
-                    'post_type'=> array('veranstaltungen', 'nachrichten','umfragen'), 
-                    'post_status'=>'publish', 
+                    'post_type'=> array('veranstaltungen', 'nachrichten','umfragen'),
+                    'post_status'=>'publish',
                     'author' =>  $current_user->ID,
-                    'posts_per_page'=> 20, 
+                    'posts_per_page'=> 20,
                     'order' => 'DESC',
-                    'offset' => '0', 
+                    'offset' => '0',
                 );
                 if (count_query($args4)) {
                     echo "<br><h2 class='margin-bottom'>".__('Deine Beiträge','quartiersplattform')." "."</h2><br>";
-                    card_list($args4);      
+                    card_list($args4);
                     // echo "<br>";
                 }
             ?>
@@ -143,7 +143,7 @@ if (!is_user_logged_in()) {
         <div id="settings" class="bar bar-hidden">
 
 
-            <!-- Gutenberg Editor Content -->    
+            <!-- Gutenberg Editor Content -->
             <div class="gutenberg-content ">
                 <?php
                     if ( is_search() || ! is_singular() && 'summary' === get_theme_mod( 'blog_content', 'full' ) ) {
@@ -161,10 +161,10 @@ if (!is_user_logged_in()) {
 
             <br><br>
 
-            <!-- Contact Information -->   
+            <!-- Contact Information -->
             <h3><?php _e("Bearbeite deine Kontaktinformationen", "quartiersplattform"); ?></h3>
                 <?php
-                $userid = "user_".$current_user->ID; 
+                $userid = "user_".$current_user->ID;
                 acf_form (
                     array(
                         'form' => true,
@@ -172,17 +172,17 @@ if (!is_user_logged_in()) {
                         'return' => get_site_url()."/profil"."/",
                         'submit_value' => __('Änderungen speichern','quartiersplattform'),
                         'post_title' => false,
-                        'post_content' => false,    
+                        'post_content' => false,
                         'field_groups' => array('group_6034e1d00f273'),
                     )
                 );
                 ?>
             <br>
             <br>
-            <!-- Biography Information -->   
+            <!-- Biography Information -->
             <h2><?php _e('Erzähle etwas über dich', 'quartiersplattform'); ?> </h2>
             <?php
-            $userid = "user_".$current_user->ID; 
+            $userid = "user_".$current_user->ID;
             acf_form (
                 array(
                     'form' => true,
@@ -190,7 +190,7 @@ if (!is_user_logged_in()) {
                     'return' => get_site_url()."/profil/",
                     'submit_value' => __('Änderungen speichern','quartiersplattform'),
                     'post_title' => false,
-                    'post_content' => false,    
+                    'post_content' => false,
                     'field_groups' => array('group_605dc2bb690d9'),
                 )
             );
@@ -204,13 +204,11 @@ if (!is_user_logged_in()) {
             <br>
             <a class="button" href="<?php echo get_site_url().'/logout/'; ?>"><?php _e('Abmelden', 'quartiersplattform'); ?> </a>
             <br><br><br><!-- wichtig  -->
-            
+
         </div>
 
     </div>
 
-    
-   
 </main><!-- #site-content -->
 
 

@@ -2,21 +2,43 @@
 
 // Aktuelle veranstaltungen
 $veranstaltungen = array(
-    'post_type'=>'veranstaltungen', 
-    'post_status'=>'publish', 
-    'posts_per_page'=> -1,
-    'offset' => '0', 
+    'post_type'      => 'veranstaltungen',
+    'post_status'    => 'publish',
+    'posts_per_page' => -1,
+    'offset'         => '0',
     'meta_query' => array(
-        'relation' => 'AND',
-        'date_clause' => array(
-            'key' => 'event_date',
-            'value' => date("Y-m-d"),
-            'compare'	=> '>=',
-            'type' => 'DATE'
+        'relation' => 'OR',
+        array(
+            'relation'    => 'AND',
+            'date_clause' => array(
+                'key'     => 'event_date',
+                'value'   => date('Y-m-d'),
+                'compare' => '>=',
+                'type'    => 'DATE'
+            ),
+            'time_clause' => array(
+                'key'     => 'event_time',
+                'compare' => '=',
+            ),
         ),
-        'time_clause' => array(
-            'key' => 'event_time',
-            'compare'	=> '=',
+        array(
+            'relation'    => 'AND',
+            'end_date_clause' => array(
+                'key' => 'event_end_date',
+                'value' => date('Y-m-d'),
+                'compare'   => '>=',
+                'type' => 'DATE'
+            ),
+            'end_time_clause' => array(
+                'key' => 'event_end_time',
+                'compare'   => '=',
+            ),
+            'date_clause' => array(
+                'key' => 'event_date',
+                'value' => date('Y-m-d'),
+                'compare'   => '<',
+                'type' => 'DATE'
+            ),
         ),
     ),
     'orderby' => array(
@@ -30,11 +52,11 @@ if (count_query($veranstaltungen)) {
     ?>
 
         <h1 class="heading-size-3 margin-bottom"><?php _e('Aktuelle Veranstaltungen', 'quartiersplattform'); ?> </h1>
-        <?php card_list($veranstaltungen); 
-        
+        <?php card_list($veranstaltungen);
+
         ?>
 
-    <?php            
+    <?php
 }
 else {
     $text = __("Wenn du eine Kulturveranstaltung oder eine Feier in deiner Nachbarschaft organisierst, kannst du sie hier veröffentlichen, um die Menschen in deiner Nachbarschaft kennen zu lernen und mit ihnen in Kontakt zu treten.",'quartiersplattform');

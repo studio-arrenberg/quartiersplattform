@@ -21,8 +21,8 @@ $id = url_to_postid( $link );
 ?>
 <div class="card-group">
     <div class="card landscape shadow-on-hover link-card ">
-        
-        <?php 
+
+        <?php
         // if (get_query_var('link_card_link')) {
             ?>
                 <!-- <a href="<?php echo get_site_url(); echo get_query_var('link_card_link'); ?>"> -->
@@ -37,7 +37,7 @@ $id = url_to_postid( $link );
 
             <div class="content">
                 <h3 class="card-title">
-                    <?php 
+                    <?php
                             shorten(get_the_title($id), '60');
                     ?>
                 </h3>

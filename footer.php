@@ -14,12 +14,12 @@
 ?>
 
 <div class="site-logo">
-<?php 
+<?php
     $image = get_field('logo', 'option');
     if( !empty( $image ) ): ?>
         <!-- <img class="quartier-logo" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /> -->
         <?php
-                echo wp_get_attachment_image($image['ID'], 'medium', false, array('class' => 'quartier-logo')); 
+                echo wp_get_attachment_image($image['ID'], 'medium', false, array('class' => 'quartier-logo'));
                 //  print_r( $image);
                 // echo $image['ID'];
                 ?>
@@ -32,9 +32,9 @@
 <?php if ( is_front_page() || cms_is_in_menu( 'qp_menu') ) { ?>
 
 <div class="sponsoren">
-    <?php if( have_rows('sponsors', 'option') ): ?>    
+    <?php if( have_rows('sponsors', 'option') ): ?>
 
-        <?php while( have_rows('sponsors', 'option') ): the_row();  
+        <?php while( have_rows('sponsors', 'option') ): the_row();
             $image = get_sub_field('field_6024f5b43157e');
             $link = get_sub_field('field_6036469e6db06');
         ?>
@@ -42,18 +42,18 @@
 
                 <?php
                 if(  !empty( $link ) ){
-                ?> 
+                ?>
                     <a href="<?php echo $link; ?>" target="_blank" rel="noreferrer">
                 <?php } ?>
 
                 <!-- <img class="sponsoren-logo" src="<?php echo esc_url($image['url']); ?>" alt="Sponsor der Quartiersplattform" >  -->
                 <?php
-                echo wp_get_attachment_image($image['ID'], 'medium', false, array('class' => 'sponsoren-logo', 'alt' => 'Sponsor der Quartiersplattform')); 
+                echo wp_get_attachment_image($image['ID'], 'medium', false, array('class' => 'sponsoren-logo', 'alt' => 'Sponsor der Quartiersplattform'));
                 //  print_r( $image);
                 // echo $image['ID'];
                 ?>
 
-                <?php if( !empty( $link ) ){ ?> 
+                <?php if( !empty( $link ) ){ ?>
                     </a>
                 <?php } ?>
             </div>
@@ -68,9 +68,9 @@
 
 <footer id="site-footer" role="contentinfo" class="header-footer-group" data-track-content data-content-name="Footer">
     <div class="site-footer-content">
-        
+
     <div class="footer">
-  
+
         <div>
             <h4 class="heading-size-3"><?php _e('Die Plattform für dein Quartier!', 'quartiersplattform'); ?> </p>
         </div>
@@ -90,22 +90,22 @@
                 <?php } ?>
                 <a class="footer-link" href="<?php echo  get_site_url(); ?>/quartiersplattform/"> <?php _e('Informationen zum Status deiner Plattform', 'quartiersplattform'); ?> </a>
 
-    
-            <a class="footer-link" rel="noreferrer" href="https://github.com/studio-arrenberg/quartiersplattform" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>         
-        
+
+            <a class="footer-link" rel="noreferrer" href="https://github.com/studio-arrenberg/quartiersplattform" target="_blank"><?php _e('Die Quartiersplattform ', 'quartiersplattform'); ?> </a>
+
         </div>
 
         <div>
- 
+
         <?php if (!is_user_logged_in()) {?>
 
             <a class="heading-size-3 " href="<?php echo  get_site_url(); ?>/register/" ><?php _e('Jetzt registrieren', 'quartiersplattform'); ?></a>
-            <?php } ?>       
+            <?php } ?>
 
             <?php if (is_user_logged_in()) {?>
                 <a class="heading-size-3 " href="<?php echo  get_site_url(); ?>/feedback/" ><?php _e('Feedback zur Quartiersplattform', 'quartiersplattform'); ?></a>
-           <?php } ?>       
-        
+           <?php } ?>
+
         </div>
     </div>
 
@@ -115,13 +115,13 @@
             <a class="footer-link" href="<?php echo get_site_url(); ?>/impressum/"><?php _e('Impressum', 'quartiersplattform'); ?> </a>
             <?php
                 if (get_privacy_policy_url()) {
-                    ?> 
+                    ?>
                 <a class="footer-link" href="<?php echo get_privacy_policy_url(); ?>"><?php _e('Datenschutz', 'quartiersplattform'); ?> </a>
                     <?php
-                } 
+                }
             ?>
         </div>
-              
+
         <div class="sprache">
             <a class="button <?php if(qp_language() == "en_GB") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=en_GB'); ?>">🇬🇧&nbsp;<?php _e('English', ''); ?></a>
             <a class="button <?php if(qp_language() == "tr_TR") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=tr_TR'); ?>">🇹🇷&nbsp;<?php _e('Türkçe', ''); ?></a>
@@ -129,7 +129,7 @@
             <a class="button <?php if(qp_language() == "de_DE") echo "is-primary"; ?>" href="<?php echo qp_parameter_permalink('lang=de_DE'); ?>">🇩🇪&nbsp;<?php _e('Deutsch', ''); ?></a>
         </div>
 
-        
+
     </div><!-- .section-inner -->
 
 

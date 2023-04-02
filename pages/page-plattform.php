@@ -25,13 +25,13 @@ get_header();
 
     <!-- general information -->
     <!-- qp version -->
-    <?php 
+    <?php
     $wordpress_version = get_bloginfo( 'version' );
     echo "<p>Wordpress Version: $wordpress_version</p>";
     ?>
     <br>
 
-    <?php 
+    <?php
     // Quartiersplattform Einstellungen
     if ( current_user_can('administrator') ) {
 
@@ -53,7 +53,7 @@ get_header();
         // Reminder Card Einstellungen
         $text = __('Bearbeite die Einstellungen der Quartiersplattform. Hier kannst du den Seitennamen, das Bild sowie den Text für die Quartiersstartseite festlegen.','quartiersplattform');
 		reminder_card('settings', __('Einstellungen','quartiersplattform'), $text, __('Einstellungen','quartiersplattform'), home_url().'/einstellungen' );
-	
+
         ?>
             <a href="<?php echo home_url().'/einstellungen'; ?>" class="button">Quartierseinstellungen</a>
             <br><br>
@@ -68,11 +68,11 @@ get_header();
 
 
     <!-- admins der quartiersplattform -->
-    <?php 
+    <?php
     $user_query = new WP_User_Query( array( 'role' => 'Administrator' ) );
     // Get the results
     $authors = $user_query->get_results();
-    
+
     // Check for results
     if (!empty($authors)) {
         // loop through each author
@@ -83,12 +83,12 @@ get_header();
             author_card(true, $author->ID);
             // echo '<p>' . $author_info->first_name . ' ' . $author_info->last_name . '</p>';
         }
-    } 
+    }
 	wp_reset_postdata();
 
     ?>
     <br><br>
-    
+
     <!-- installed plugins -->
     <h2 class="heading-size-1"><?php echo __('Installierte Plugins','quartiersplattform'); ?></h2>
     <br>
@@ -117,7 +117,7 @@ get_header();
             <br>
         </div>
 
-        <?php 
+        <?php
     }
 
 
@@ -128,7 +128,7 @@ get_header();
     <!-- not ready yet -->
 
 
-    <?php 
+    <?php
 	    $text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
 		reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text, __('Zur Wunschliste','quartiersplattform'), home_url().'/feedback' );
 	?>

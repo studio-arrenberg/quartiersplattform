@@ -15,14 +15,14 @@ und unterstützt durch das [Wuppertal Institut für Klima, Umwelt, Energie](http
 
 <br>
 
-<!-- 
+<!--
 ![Feature 1](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-1.png)
 <br>
 
 ![Feature 2](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-2.png)
 <br>
 
-![Feature 3](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-3.png) 
+![Feature 3](https://github.com/studio-arrenberg/quartiersplattform/raw/main/.github/assets/banner-feature-3.png)
 -->
 
 
@@ -36,7 +36,7 @@ und unterstützt durch das [Wuppertal Institut für Klima, Umwelt, Energie](http
 
 
 ## Installation
-Die Quartiersplattform wird als *Wordpress Theme* genutzt und setzt daher einen Server mit einer Wordpress-Installation voraus. Zusätzlich müssen zwei Plugins installiert werden um die Plattform nutzen zu können. 
+Die Quartiersplattform wird als *Wordpress Theme* genutzt und setzt daher einen Server mit einer Wordpress-Installation voraus. Zusätzlich müssen zwei Plugins installiert werden um die Plattform nutzen zu können.
 #### Erforderliche Plugins
 - [Advanced Custom Fields Pro](https://de.wordpress.org/plugins/advanced-custom-fields/)
 - [Ultimate Member](https://de.wordpress.org/plugins/ultimate-member/)
@@ -57,7 +57,7 @@ Die Quartiersplattform wird von folgenden Quartieren und Stadtteilen genutzt.
 <br>
 
 ## Entwicklung
-Die Quartiersplattform wird momentan vom [studio arrenberg](https://arrenberg.studio) Entwickelt. 
+Die Quartiersplattform wird momentan vom [studio arrenberg](https://arrenberg.studio) Entwickelt.
 - [Funktionen](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/functions.md)
 - [Struktur](https://github.com/studio-arrenberg/quartiersplattform/blob/main/documentation/structure.md)
 <!-- Um einen Einblick in die Entwicklung zu bekommen haben wir eine Liste der Features und deren Status erstellt.  -->

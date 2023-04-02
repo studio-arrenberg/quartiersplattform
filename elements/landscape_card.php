@@ -10,8 +10,8 @@
 
 
 <div class="card landscape shadow gardient">
-    
-    <?php 
+
+    <?php
     if (get_query_var('link_card_link')) {
         ?>
             <a class="card-link" href="<?php echo get_site_url(); echo get_query_var('link_card_link'); ?>">
@@ -26,7 +26,7 @@
 
         <div class="content">
             <h3 class="card-title">
-                <?php 
+                <?php
                     $title = get_query_var('link_card_title');
                     if (get_query_var('link_card_title')) {
                         echo get_query_var('link_card_title');
@@ -62,5 +62,3 @@
         ?>
     </a>
 </div>
-
-

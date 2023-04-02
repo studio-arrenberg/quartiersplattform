@@ -22,13 +22,13 @@ get_header();
 
 	<div class="main-content">
 
-		<?php 
+		<?php
 			$text = __('Teile uns dein Feedback oder Anregungen zur Quartiersplattform. Funktionert etwas nicht oder hast du eine Idee zur weiterentwicklung.','quartiersplattform');
 			reminder_card('', __('Feedback zur Quartiersplattform','quartiersplattform'), $text );
 		?>
 
         <br>
-        <?php 
+        <?php
         acf_form(
             array(
                 'id' => 'feedback-form',
@@ -48,7 +48,7 @@ get_header();
                 'field_groups' => array('group_5fb50c8393d52'),
                 'submit_value'=> __('Feedback senden', 'quartiersplattform'),
             )
-        ); 
+        );
         ?>
 
         <br>
@@ -56,8 +56,8 @@ get_header();
 		<?php
 
 		$args4 = array(
-			'post_type'=> array('anmerkungen'), 
-			'post_status'=> 'publish', 
+			'post_type'=> array('anmerkungen'),
+			'post_status'=> 'publish',
 			'posts_per_page'=> -1,
 			'orderby' => 'date',
             'order' => 'DESC'
@@ -70,7 +70,7 @@ get_header();
                     <br>
                     <?php card_list($args4);?>
                 </div>
-			<?php 
+			<?php
 
 		}
 		else {
@@ -80,23 +80,23 @@ get_header();
 
 		}
 
-		?>  
-		
-		
-	
+		?>
+
+
+
 	</div>
 
 	<div class="right-sidebar">
-		<?php 
-			
+		<?php
+
 			get_template_part('components/views/veranstaltungen');
 
 			if (!is_user_logged_in(  )) {
 				$text = __('Registriere dich auf deiner Quartiersplattform, um eigene Projekte, Umfragen und Veranstaltungen zu erstellen.','quartiersplattform');
 				reminder_card('register', __('Mitglied werden im Quartier','quartiersplattform'), $text, __('Jetzt Registieren','quartiersplattform'), home_url( ).'/register' );
 			}
-			
-		?>	
+
+		?>
 	</div>
 
 </main><!-- #site-content -->

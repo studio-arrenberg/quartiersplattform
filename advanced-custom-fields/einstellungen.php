@@ -18,9 +18,9 @@
 
 add_action('init', 'qp_add_option_pages');
 function qp_add_option_pages() {
-	
+
 	if( function_exists('acf_add_options_page') ) {
-		
+
 		acf_add_options_page(array(
 			'page_title' 	=> __('Einstellungen für die Quartiersplattform',"quartiersplattform"),
 			'menu_title'	=> __('Quartiersplattform', "quartiersplattform"),
@@ -30,7 +30,7 @@ function qp_add_option_pages() {
 			'update_button' => __('Aktualisieren', 'acf'),
 			'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
 		));
-		
+
 		acf_add_options_sub_page(array(
 			'page_title' 	=> __('Wartungsmodus',"quartiersplattform"),
 			'menu_title'	=> 'Wartungsmodus',
@@ -52,7 +52,7 @@ function qp_add_option_pages() {
 			'updated_message' => __("Die Einstellungen wurden gespeichert.", 'acf'),
 		));
 	}
-		
+
 }
 
 
@@ -66,7 +66,7 @@ function qp_add_option_pages() {
 
 add_action('init', 'qp_add_settings_field_group');
 function qp_add_settings_field_group() {
-	
+
 if( function_exists('acf_add_local_field_group') ):
 
 	acf_add_local_field_group(array(
@@ -156,7 +156,7 @@ if( function_exists('acf_add_local_field_group') ):
 				'append' => '',
 				'maxlength' => '',
 			),
-			
+
 			// array(
 			// 	'key' => 'field_6024ef4c228a9',
 			// 	'label' => 'Beschreibung',
@@ -319,7 +319,7 @@ if( function_exists('acf_add_local_field_group') ):
 		'active' => true,
 		'description' => '',
 	));
-    
+
 	acf_add_local_field_group(array(
 			'key' => 'group_60241960f114c',
 			'title' => __('Wartungsmodus',"quartiersplattform"),
@@ -420,8 +420,8 @@ if( function_exists('acf_add_local_field_group') ):
 			'active' => true,
 			'description' => '',
 		));
-	
-    
+
+
     endif;
 
 	if( function_exists('acf_add_local_field_group') ):
@@ -506,7 +506,7 @@ if( function_exists('acf_add_local_field_group') ):
 			'active' => true,
 			'description' => '',
 		));
-		
+
 		endif;
 
 		// if( function_exists('acf_add_local_field_group') ):
@@ -576,10 +576,8 @@ if( function_exists('acf_add_local_field_group') ):
 		// 		'active' => true,
 		// 		'description' => '',
 		// 	));
-			
+
 		// 	endif;
-	
-	
+
+
 }
-
-

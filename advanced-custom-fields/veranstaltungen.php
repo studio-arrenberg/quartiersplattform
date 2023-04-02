@@ -107,7 +107,11 @@ if( function_exists('acf_add_local_field_group') ):
                 'key' => 'field_5fc8d0b28edb0',
                 'label' => __('Beschreibung','quartiersplattform'),
                 'name' => 'text',
-                'type' => 'textarea',
+                'type' => 'textarea', // 'wysiwyg'
+	//	'tabs' => 'visual',  // 'visual' || 'text' || 'all'
+	//	'toolbar' => 'basic',  // 'full' || 'basic'
+	//	'media_upload' => 1,
+	//	'delay' => 1,
                 'instructions' => __('Worum geht es bei deiner Veranstaltung?','quartiersplattform'),
                 'required' => 0,
                 'conditional_logic' => 0,
@@ -127,7 +131,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => __('Datum','quartiersplattform'),
                 'name' => 'event_date',
                 'type' => 'date_picker',
-                'instructions' => __('Wann wird deine Veranstaltung stattfinden?','quartiersplattform'),
+                'instructions' => __('Wann wird deine Veranstaltung stattfinden bzw. beginnen?','quartiersplattform'),
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(
@@ -135,7 +139,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'display_format' => 'F j, Y',
+                'display_format' => 'j. F Y',
                 'return_format' => 'Y-m-d',
                 'first_day' => 1,
             ),
@@ -171,6 +175,23 @@ if( function_exists('acf_add_local_field_group') ):
                 ),
                 'display_format' => 'H:i',
                 'return_format' => 'H:i:s',
+            ),
+            array(
+                'key' => 'field_5fc8d1ae96113',
+                'label' => __('Enddatum (bei mehrtägigen Veranstaltungen)','quartiersplattform'),
+                'name' => 'event_end_date',
+                'type' => 'date_picker',
+                'instructions' => __('Wann findet die mehrtägige Veranstaltung zuletzt statt?','quartiersplattform'),
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'display_format' => 'j. F Y',
+                'return_format' => 'Y-m-d',
+                'first_day' => 1,
             ),
             array(
                 'key' => 'field_5fc8d1c4d15c8',
@@ -296,5 +317,5 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    
+
     endif;

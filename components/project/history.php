@@ -1,4 +1,4 @@
-<?php 
+<?php
 // Projektverlauf
 global $current_user;
 if (qp_project_owner()) {

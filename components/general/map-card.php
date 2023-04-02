@@ -1,11 +1,11 @@
 <?php
 
 $location = get_field('map');
-$map_zoom = 15; 
+$map_zoom = 15;
 $width = 500;
 $height = 300;
 
-if ( current_user_can('administrator') && get_field('map') ) { // new feature only for admins 
+if ( current_user_can('administrator') && get_field('map') ) { // new feature only for admins
 
 
     // Fehler (divs)
@@ -18,7 +18,7 @@ if ( current_user_can('administrator') && get_field('map') ) { // new feature on
        <div class="content">
 
             <div class="pre-title">
-                <span> 
+                <span>
                     <?php // if(get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) )) echo "Projekt von ".get_the_author_meta( 'user_firstname', get_the_author_meta( 'ID' ) ); ?>
                 </span>
             </div>
@@ -42,18 +42,18 @@ if ( current_user_can('administrator') && get_field('map') ) { // new feature on
 
             <div class="marker">
                  <?php
-                    if (empty(get_field('emoji'))) { 
-                        the_post_thumbnail( 'square_m' ); 
-                    } else { 
-                        echo '<span class="emoji-marker">'; 
-                        the_field('emoji'); 
-                        echo "</span>"; 
-                    } 
+                    if (empty(get_field('emoji'))) {
+                        the_post_thumbnail( 'square_m' );
+                    } else {
+                        echo '<span class="emoji-marker">';
+                        the_field('emoji');
+                        echo "</span>";
+                    }
                     ?>
             </div>
 
         </div>
-        
+
          <img src="https://api.mapbox.com/styles/v1/studioarrenberg/ckl9rpmct17pi17mxw1zw46h0/static/<?php echo $location['lng'].",".$location['lat'].",".$map_zoom."/".$width."x".$height; ?>@2x?access_token=pk.eyJ1Ijoic3R1ZGlvYXJyZW5iZXJnIiwiYSI6ImNraWc5aGtjZzBtMGQyc3FrdXplcG5kZXYifQ._bNxRJxhINPtn18Y-hztEQ" alt="Projekt Ort">
 
         </div>

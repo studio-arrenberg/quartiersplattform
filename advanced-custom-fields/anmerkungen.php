@@ -19,7 +19,7 @@
  */
 add_action('init', 'qp_add_anmerkungen_field_group');
 function qp_add_anmerkungen_field_group() {
-    
+
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -64,7 +64,7 @@ if( function_exists('acf_add_local_field_group') ):
         'active' => true,
         'description' => '',
     ));
-    
+
     endif;
 }
 
@@ -182,7 +182,7 @@ function register_amerkung_tax_fields() {
         array(
             'description' => '',
             'slug'        => 'in-bearbeitung'
-        ) 
+        )
     );
 
     # Umgesetzt
@@ -192,7 +192,7 @@ function register_amerkung_tax_fields() {
         array(
             'description' => '',
             'slug'        => 'umgesetzt'
-        ) 
+        )
     );
 
 }

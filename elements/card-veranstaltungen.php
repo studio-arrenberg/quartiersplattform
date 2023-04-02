@@ -34,30 +34,38 @@ else {
         </div>
     <?php } ?>
 
-      
+
     <?php
         if ( !empty(get_post_thumbnail_id())) {
     ?>
 
-        <div class="veranstaltung card landscape background-image  shadow gardient"  style="background-image: url('<?php the_post_thumbnail_url('landscape_m') ?>')"> 
+        <div class="veranstaltung card landscape background-image  shadow gardient"  style="background-image: url('<?php the_post_thumbnail_url('landscape_m') ?>')">
             <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-                <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> - <?php echo qp_date(get_field('event_date')); ?></span>
+                <span class="date">
+                <?php
+                if (get_field('event_end_date')) {
+                    echo _e('Aktion', 'quartiersplattform')." - ".qp_date(get_field('event_date'))." - ".qp_date(get_field('event_end_date'));
+                    } else {
+                    echo _e('Veranstaltung', 'quartiersplattform')." - ".qp_date(get_field('event_date'));
+                    }
+                ?>
+                </span>
                 <div class="content">
                     <h3 class="heading-size-3 "><?php shorten(get_the_title(), '30'); ?></h3>
                     <?php if (get_post_status() == 'draft' && qp_project_owner()) { ?>
                         <span class="yellow-tag">Nicht Sichtbar</span>
                     <?php } ?>
                     <p class="text-size-3">
-                        <?php 
+                        <?php
                         if (strlen(get_field('text')) > 2) {
                             shorten(get_field('text'), $char);
                         }
                         else {
                             shorten(get_the_content(), $char);
                         }
-                        ?> 
+                        ?>
                     </p>
-                    
+
                 </div>
             </a>
         </div>
@@ -69,7 +77,15 @@ else {
 
     <div class="card shadow veranstaltung-ohne-bild">
         <a class="card-link" href="<?php echo esc_url( get_permalink() ); ?>">
-        <span class="date"><?php _e('Veranstaltung', 'quartiersplattform'); ?> - <?php echo qp_date(get_field('event_date')); ?></span>
+        <span class="date">
+        <?php
+            if (get_field('event_end_date')) {
+                echo _e('Aktion', 'quartiersplattform')." - ".qp_date(get_field('event_date'))." - ".qp_date(get_field('event_end_date'));
+            } else {
+                echo _e('Veranstaltung', 'quartiersplattform')." - ".qp_date(get_field('event_date'));
+            }
+            ?>
+            </span>
 
             <div class="content">
                 <h3 class="heading-size-3 small-margin-bottom">
@@ -83,7 +99,7 @@ else {
         </a>
     </div>
     <?php
-        } 
+        }
         ?>
 
 
@@ -97,5 +113,3 @@ else {
     <?php } ?>
 
 </div>
-
-
