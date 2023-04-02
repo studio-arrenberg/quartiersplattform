@@ -2,21 +2,43 @@
 
 // Aktuelle veranstaltungen
 $veranstaltungen = array(
-    'post_type'=>'veranstaltungen', 
-    'post_status'=>'publish', 
-    'posts_per_page'=> -1,
-    'offset' => '0', 
+    'post_type'      => 'veranstaltungen',
+    'post_status'    => 'publish',
+    'posts_per_page' => -1,
+    'offset'         => '0',
     'meta_query' => array(
-        'relation' => 'AND',
-        'date_clause' => array(
-            'key' => 'event_date',
-            'value' => date("Y-m-d"),
-            'compare'	=> '>=',
-            'type' => 'DATE'
+        'relation' => 'OR',
+        array(
+            'relation'    => 'AND',
+            'date_clause' => array(
+                'key'     => 'event_date',
+                'value'   => date('Y-m-d'),
+                'compare' => '>=',
+                'type'    => 'DATE'
+            ),
+            'time_clause' => array(
+                'key'     => 'event_time',
+                'compare' => '=',
+            ),
         ),
-        'time_clause' => array(
-            'key' => 'event_time',
-            'compare'	=> '=',
+        array(
+            'relation'    => 'AND',
+            'end_date_clause' => array(
+                'key' => 'event_end_date',
+                'value' => date('Y-m-d'),
+                'compare'   => '>=',
+                'type' => 'DATE'
+            ),
+            'end_time_clause' => array(
+                'key' => 'event_end_time',
+                'compare'   => '=',
+            ),
+            'date_clause' => array(
+                'key' => 'event_date',
+                'value' => date('Y-m-d'),
+                'compare'   => '<',
+                'type' => 'DATE'
+            ),
         ),
     ),
     'orderby' => array(

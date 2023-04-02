@@ -104,30 +104,54 @@ get_header();
             <h2 class="heading-size-1 stage-title"><?php _e("Veranstaltungen in deinem Quartier", "quartiersplattform"); ?></h2>
             <p><?php _e("Verpasse keine Veranstaltung mehr in deinem Quartier. Egal ob das nächste Konzert oder die nächste Party in deiner Nachbarschaft - mit der Quartiersplattform bist du immer auf dem Laufenden!", "quartiersplattform"); ?></p>
             <div class="link-card-container force-landscape">
-                <?php 
-                        $args4 = array(
-                            'post_type'=>'veranstaltungen', 
-                            'post_status'=>'publish', 
-                            'posts_per_page'=> 20,
-                            'meta_query' => array(
-                                'relation' => 'AND',
+                <?php
+                    $args4 =
+                    array(
+                        'post_type'      => 'veranstaltungen',
+                        'post_status'    => 'publish',
+                        'posts_per_page' => 20,
+                        'offset'         => '0',
+                        'meta_query' => array(
+                            'relation' => 'OR',
+                            array(
+                                'relation'    => 'AND',
                                 'date_clause' => array(
-                                    'key' => 'event_date',
-                                    'value' => date("Y-m-d"),
-                                    'compare'	=> '>=',
-                                    'type' => 'DATE'
+                                    'key'     => 'event_date',
+                                    'value'   => date('Y-m-d'),
+                                    'compare' => '>=',
+                                    'type'    => 'DATE'
                                 ),
                                 'time_clause' => array(
-                                    'key' => 'event_time',
-                                    'compare'	=> '=',
+                                    'key'     => 'event_time',
+                                    'compare' => '=',
                                 ),
                             ),
-                            'orderby' => array(
-                                'date_clause' => 'ASC',
-                                'time_clause' => 'ASC',
+                            array(
+                                'relation'    => 'AND',
+                                'end_date_clause' => array(
+                                    'key' => 'event_end_date',
+                                    'value' => date('Y-m-d'),
+                                    'compare'   => '>=',
+                                    'type' => 'DATE'
+                                ),
+                                'end_time_clause' => array(
+                                    'key' => 'event_end_time',
+                                    'compare'   => '=',
+                                ),
+                                'date_clause' => array(
+                                    'key' => 'event_date',
+                                    'value' => date('Y-m-d'),
+                                    'compare'   => '<',
+                                    'type' => 'DATE'
+                                ),
                             ),
-                        );
-                    ?>  
+                        ),
+                        'orderby' => array(
+                            'date_clause' => 'ASC',
+                            'time_clause' => 'ASC',
+                        ),
+                    );
+                ?>
                     <?php card_list($args4);?>
                 </div>
                 <a class="button is-primary" href="<?php echo get_site_url()."/veranstaltungen"; ?>"><?php _e("Zu den Veranstaltungen", "quartiersplattform"); ?></a>
