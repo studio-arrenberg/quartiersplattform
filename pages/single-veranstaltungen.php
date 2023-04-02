@@ -60,16 +60,20 @@ get_header();
 
                     <?php
                         if (get_field('event_end_date')) {
-		            echo _e('Veranstaltungsreihe', 'quartiersplattform'). "<br>";
-                            echo qp_date(get_field('event_date'), false, get_field('event_time'));
-                            echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_end_date'), false, get_field('event_end_time'));
+		            echo _e('Aktion', 'quartiersplattform'). "<br>";
+                            echo qp_date(get_field('event_date'));
+                            if (get_field('event_end_time')) {
+                                echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_end_date'), true, get_field('event_end_time'))." ".__('Uhr','quartiersplattform');
+                            } else {
+                                echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_end_date'));
+                            }
                         } else {
                             echo _e('Veranstaltung', 'quartiersplattform'). "<br>";
                             echo qp_date(get_field('event_date'), true, get_field('event_time'));
                             if (get_field('event_end_time')) {
-                            	echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true) . " Uhr <br>";
+                            	echo " ".__('bis','quartiersplattform')." ".qp_date(get_field('event_date'), true, get_field('event_end_time'), true)." ".__('Uhr','quartiersplattform')."<br>";
                             } else {
-                            echo " Uhr";
+                            echo " ".__('Uhr','quartiersplattform');
                             }
                         }
                     ?>

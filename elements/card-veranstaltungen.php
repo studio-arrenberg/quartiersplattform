@@ -44,7 +44,7 @@ else {
                 <span class="date">
                 <?php
                 if (get_field('event_end_date')) {
-                    echo _e('Veranstaltungsreihe', 'quartiersplattform')." - ".__('bis','quartiersplattform')." ".qp_date(get_field('event_end_date'), false, get_field('event_end_time'));
+                    echo _e('Aktion', 'quartiersplattform')." - ".qp_date(get_field('event_date'))." - ".qp_date(get_field('event_end_date'));
                     } else {
                     echo _e('Veranstaltung', 'quartiersplattform')." - ".qp_date(get_field('event_date'));
                     }
@@ -80,7 +80,7 @@ else {
         <span class="date">
         <?php
             if (get_field('event_end_date')) {
-                echo _e('Veranstaltungsreihe', 'quartiersplattform')." - ".__('bis','quartiersplattform')." ".qp_date(get_field('event_end_date'), false, get_field('event_end_time'));
+                echo _e('Aktion', 'quartiersplattform')." - ".qp_date(get_field('event_date'))." - ".qp_date(get_field('event_end_date'));
             } else {
                 echo _e('Veranstaltung', 'quartiersplattform')." - ".qp_date(get_field('event_date'));
             }
